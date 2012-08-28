@@ -1,0 +1,30 @@
+
+# note that this server doesn't include the necessary drivers.
+
+java_library(name = "server",
+  srcs = [
+    "CapabilitiesComparator.java",
+    "DefaultDriverFactory.java",
+    "DefaultDriverSessions.java",
+    "DriverFactory.java",
+    "DriverServlet.java",
+    "DriverSessions.java",
+    "KnownElements.java",
+    "JsonParametersAware.java",
+    "Session.java",
+    "DefaultSession.java",
+    "SessionCleaner.java",
+    "SnapshotScreenListener.java",
+    "handler/**/*.java",
+    "renderer/*.java",
+    "rest/*.java",
+  ],
+  deps = [
+    "//java/client/src/org/openqa/selenium:base",
+    "//java/client/src/org/openqa/selenium:webdriver-api",
+    "//java/client/src/org/openqa/selenium/remote",
+    "//java/client/src/org/openqa/selenium/support/events",
+    "//java/server/src/org/openqa/selenium/server:logging",
+    "//third_party/java/guava-libraries",
+    "//third_party/java/servlet-api",
+  ])

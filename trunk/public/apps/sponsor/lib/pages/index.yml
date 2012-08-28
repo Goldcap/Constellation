@@ -1,0 +1,18 @@
+template: cst1
+layout: cst_home
+title: Constellation.tv
+#/js/upcoming.js,/js/videoplayer.js,/js/trailer.js,/js/login.js,/js/carousel.js,screenings_carousel.js,/js/screening_list.js,/js/genre_search.js
+javascripts: []
+css: [/css/screening_carousel.css]
+widgets:
+  masterhead:
+    Header:
+  main:
+    Body:
+  column1:
+    BodyLeftColumn:
+  column2:
+    BodyRightColumn:
+  footer:
+    Footer:
+  zzdiv:

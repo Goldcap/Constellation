@@ -1,0 +1,152 @@
+
+/* HTML ELEMENTS */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	color: black;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+
+a:LINK,a:ACTIVE,a:VISITED{
+	color: black;
+	text-decoration: none;
+}
+
+a:HOVER{
+	background-color:white;
+	border-bottom: none;
+	text-decoration:none;
+}
+
+
+
+ul, ol, dl {
+	list-style: none;
+}
+
+ul#root {
+	margin: 0px;
+}
+
+ul#root ul, ul#root ol, ul#root dl { margin: 10px 0px 0px 0px; }
+
+ul#root li {
+	border-bottom: 2px solid #FFFFFF;
+	overflow: hidden;
+	padding: 5px 2px 5px 25px;
+}
+
+ul#root li li {
+	border-bottom: 1px solid #FFF;
+	border-left: 1px solid #9AB;
+}
+
+li span {
+	color: #FFFFFF;
+	font-style: italic;
+}
+
+dl {
+	background: #EFEFEF;
+	clear: left;
+	padding: 10px 10px 20px;
+	display:none;
+}
+
+dt, dd {
+	color: #646668;
+	font-weight: bold;
+	line-height: 18px;
+}
+
+dd {
+	font-weight: normal;
+	padding-bottom: 3px;
+}
+
+
+.contents {	display: none; }
+.contents_open{
+	display: block;
+	margin-bottom:5px;
+}
+
+
+ul#root li a.properties {
+	background: transparent url("icons/show_more.gif") 0px 1px no-repeat;
+	border: none;
+	clear: right;
+	margin: 0px 0px 0px 10px;
+}
+
+ul#root li a.properties span {
+	font-size: 1.1em;
+	letter-spacing: -.4em;
+	word-spacing: -.3em;
+	visibility: hidden;
+}
+
+
+h1, h2 {
+	color: #333;
+	display: inline;
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-right: 0.8em;
+	margin-bottom:10px;
+}
+
+h3 {
+	color: #333;
+	display: inline;
+	font-size: 1em;
+	font-weight: normal;
+	margin-right: 0.8em;
+	margin-bottom:10px;
+}
+
+h1 {
+	background: transparent url("icons/filenice_logo_small.gif") 2px 2px no-repeat;
+	padding-left: 20px;
+	font-family: "Trebuchet MS", Tahoma, sans-serif;
+	font-size: 1.8em;
+}
+
+h1 a, h2 a, h3 a {
+	border: none;
+	color: #494339;
+}
+
+h3 { font-weight: bold;}
+
+
+/* DISPLAY OF BUSY STATE WHEN OPENING A FOLDER */
+
+#overDiv{
+	display:none;
+	background:url("icons/busy_bg.gif");
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	zIndex:1000;
+}
+#busy{
+	display:none;
+	font-family:Helvetica,Verdana,Arial,sans-serif;
+	font-weight:bold;
+	font-size:24px;
+	padding-left: 46px;
+	width:46px;
+	height:46px;
+	background:url("icons/busy.gif");
+	background-repeat:no-repeat;
+	zIndex:1001;
+}

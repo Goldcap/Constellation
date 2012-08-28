@@ -1,0 +1,4 @@
+<map table="alias" result="alias_list_datamap"><column column="fk_film_id" type="INTEGER" size="11" key="" order="1"></column><column column="alias_name" type="VARCHAR" size="255" key="" order="2"></column><column column="alias_status" type="TINYINT" size="4" key="" order="3"></column><column column="alias_id" type="INTEGER" size="11" key="PRI" order="4"></column><criterion limit="0" distinct="true"><ascorderby column="alias_id"></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="fk_film_id" base="/alias/detail/"><attribute name="alias_id"></attribute></maplink></maplinks></map>

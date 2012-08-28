@@ -1,0 +1,16 @@
+Akamai Secure Streaming, PHP token tools version 3.0.1
+Release Notes
+
+File Descriptions:
+------------------
+NIST_CBC.php            NIST standard cypher interface.
+RijndaelConstants.php   Constant for Rijndael encryption. 
+TypeCToken.php          Type C Token class.
+gentoken.php            Command line tool for token generation.
+README.txt              Command line tool documenation
+StreamToken.php         Base class for all tokens. 
+TypeDToken.php          Type C Token class.
+testpage.php            An example web page.
+RijndaelAlgorithm.php   Encryption implementation class.
+StreamTokenFactory.php  Factory interface for generating tokens.
+TypeEToken.php          Type E Token class.

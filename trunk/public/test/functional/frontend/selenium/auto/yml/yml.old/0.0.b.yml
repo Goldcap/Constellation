@@ -1,0 +1,8 @@
+click: [link=Log In]
+clickAndWait: [id="login_fb_link"]
+click: [id="email"]
+type: [id="email", testt3113@gmail.com]
+click: [id="pass"]
+type: [id="pass", testtesttest]
+clickAndWait: [name="login"]
+verifyElementPresent: [id="loggedUser"]

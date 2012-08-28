@@ -1,0 +1,58 @@
+http://www.wormly.com/blog/2008/11/05/relay-gmail-google-smtp-postfix/
+
+Ensure that you have Postfix:
+yum install postfix -y
+
+We need to create the client keys for the TLS connection to Google.s SMTP service . and to do that we first need to become our own certificate authority (CA):
+
+/etc/pki/tls/misc/CA -newca
+(On AWS, the passphrase is "constellation2010")
+
+Follow the prompts and make intelligent responses.
+
+Now, create the client keys/certs (again with intelligent responses, and ensuring you use the same common name and country code):
+
+cd /etc/postfix
+openssl genrsa -out postfixclient.key 1024
+openssl req -new -key postfixclient.key -out postfixclient.csr
+openssl ca -out ./postfixclient.pem -infiles postfixclient.csr
+
+Now you can configure Postfix accordingly. Add these to the top of /etc/postfix/main.cf
+relayhost = [smtp.gmail.com]:587
+smtp_connection_cache_destinations = smtp.gmail.com
+relay_destination_concurrency_limit = 1
+default_destination_concurrency_limit = 5
+smtp_sasl_auth_enable=yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_use_tls = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+smtp_tls_note_starttls_offer = yes
+tls_random_source = dev:/dev/urandom
+smtp_tls_scert_verifydepth = 5
+smtp_tls_key_file=/etc/postfix/postfixclient.key
+smtp_tls_cert_file=/etc/postfix/postfixclient.pem
+smtp_tls_enforce_peername = no
+smtpd_tls_req_ccert =no
+smtpd_tls_ask_ccert = yes
+soft_bounce = yes
+
+And store your password in /etc/postfix/sasl_passwd
+gmail-smtp.l.google.com username@yourdomain.com:password
+smtp.gmail.com username@yourdomain.com:password
+
+(Note that if you.re using a regular gmail account instead of Google Apps For Your Domain, you would use username@gmail.com above)
+
+Get Postfix to parse the password file:
+postmap /etc/postfix/sasl_passwd
+
+Optionally configure Postfix to run on a different port (so as not to clash with your regular SMTP relay):
+
+Open /etc/postfix/master.cf and change the first line to:
+10025 inet n - n - - smtpd
+
+Now start Postfix!
+service postfix start
+
+And add it to your startup scripts:
+ln -s /etc/init.d/postfix /etc/rc3.d/S96postfix

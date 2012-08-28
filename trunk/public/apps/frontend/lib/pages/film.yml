@@ -1,0 +1,22 @@
+template: cst1_film
+layout: cst_home_alt
+title: Constellation | Your Online Movie Theater | Film
+javascripts: [/js/CTV.Trailer.js, /js/CTV.Synopsis.js, /js/CTV.Film.Review.js, /js/featured_slider.js]
+css: []
+widgets:
+  masterhead:
+    HeaderAlt:
+  marqee_moon:
+    FilmMarquee:
+  info_block:
+    FilmHeader:
+  showtime-wrap:
+    FilmList:
+  conversation-wrap:
+    Conversation:     
+  featured_footer:
+    FilmCarousel:
+  footer:
+    FooterAlt:
+  zzdiv:
+    GoogleAnalytics:

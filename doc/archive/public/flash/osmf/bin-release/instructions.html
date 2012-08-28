@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style type="text/css">
+          body {  background-color: #FFFFFF; margin: 10px; padding: 0; text-decoration: none; font: normal normal 700 12px Arial, Helvetica, Verdena, Geneva, sans-serif; }
+          .green { background-color: #44FF44; }
+          .yellow { background-color: #FFFF44; }
+        </style>
+    </head>
+    <body>
+    <h2>Customize & Download</h2>
+    <p>Copy and paste the following code into your HTML web pages to deliver Flash Player and content</p>
+    <p>
+        &lt;script type="text/javascript" src="scripts/swfobject.js"&gt;&lt;/script&gt;                                     <br>
+        &lt;script type="text/javascript" src="scripts/ParsedQueryString.js"&gt;&lt;/script&gt;                             <br>
+        &lt;script type="text/javascript"&gt;                                                                               <br>
+            var pqs = new ParsedQueryString();                                                                              <br>
+            var parameterNames = pqs.params(false);                                                                         <br>
+            var parameters =                                                                                                <br>
+                {id: "1"                                                                                             <br>
+                    , url: <span class="green">"http://llnwqa.vo.llnwd.net/o18/content/lexsamplecontent/king_1500flv.flv"</span>                                                      <br>
+                    , llnwStreamType: "Progressive"                                                                <br>
+                    , plugin: "http://plugins.osmf.llnw.com/StreamingPlugin/1.5/LimelightStreamingPlugin.swf"               <br>
+                    , volume: 50                                                                       <br>
+                };                                                                                                          <br>
+            swfobject.embedSWF                                                                                              <br>
+                ( <span class="yellow">"LLNWPlayer.swf"</span>                                                                <br>
+                    , "player"                                                                                              <br>
+                    , "480"                                                                               <br>
+                    , "360"                                                                              <br>
+                    , "10.0.0"                                                                                              <br>
+                    , {}                                                                                                    <br>
+                    , parameters                                                                                            <br>
+                    , { allowFullScreen: "true" }                                                                           <br>
+                    , { name: "OSMFPlayer" }                                                                                <br>
+                );                                                                                                          <br>
+        &lt;/script&gt;                                                                                                     <br>
+    </p>
+<p>
+&lt;div id="player"&gt;<br>
+&nbsp;&lt;p&gt;Alternative content&lt;/p&gt;<br>
+&lt;/div&gt;<br>
+</p>
+
+
+    <p>
+      <span class="green">Flash Files</span><br>
+      This is where you will put the Limelight URL for your content (file).<ul>
+        <li>The file should be an FLV</li>
+        <li>Use the "rtmp" protocol for Flash streaming</li>
+        <li>Use the "http" protocol for progressive download</li>
+      </ul>
+    </p>
+    <p>
+      <span class="yellow">SWF files</span><br>
+      Insert the Limelight URL for the SWF that your downloaded from the LUX Flash Player page. <ul>
+        <li>You will need to upload the SWF to your FTP account to be delivered by Limelight</li>
+        <li>You can deliver the SWF from your servers if you choose to do so</li>
+        <li>Limelight Flash players will only play files delivered by Limelight</li>
+      </ul>
+    </p>
+</html>

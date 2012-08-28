@@ -1,0 +1,56 @@
+<THESTATES>
+<ASTATE abbr="AA" name="ARMED FORCES AMERICA" />
+<ASTATE abbr="AE" name="ARMED FORCES EUROPE" />
+<ASTATE abbr="AL" name="ALABAMA" />
+<ASTATE abbr="AK" name="ALASKA" />
+<ASTATE abbr="AP" name="ARMED FORCES PACIFIC" />
+<ASTATE abbr="AZ" name="ARIZONA" />
+<ASTATE abbr="AR" name="ARKANSAS" />
+<ASTATE abbr="CA" name="CALIFORNIA" />
+<ASTATE abbr="CO" name="COLORADO" />
+<ASTATE abbr="CT" name="CONNECTICUT" />
+<ASTATE abbr="DE" name="DELAWARE" />
+<ASTATE abbr="DC" name="DC" />
+<ASTATE abbr="FL" name="FLORIDA" />
+<ASTATE abbr="GA" name="GEORGIA" />
+<ASTATE abbr="HI" name="HAWAII" />
+<ASTATE abbr="ID" name="IDAHO" />
+<ASTATE abbr="IL" name="ILLINOIS" />
+<ASTATE abbr="IN" name="INDIANA" />
+<ASTATE abbr="IA" name="IOWA" />
+<ASTATE abbr="KS" name="KANSAS" />
+<ASTATE abbr="KY" name="KENTUCKY" />
+<ASTATE abbr="LA" name="LOUISIANA" />
+<ASTATE abbr="ME" name="MAINE" />
+<ASTATE abbr="MD" name="MARYLAND" />
+<ASTATE abbr="MA" name="MASSACHUSETTS" />
+<ASTATE abbr="MI" name="MICHIGAN" />
+<ASTATE abbr="MN" name="MINNESOTA" />
+<ASTATE abbr="MS" name="MISSISSIPPI" />
+<ASTATE abbr="MO" name="MISSOURI" />
+<ASTATE abbr="MT" name="MONTANA" />
+<ASTATE abbr="NE" name="NEBRASKA" />
+<ASTATE abbr="NV" name="NEVADA" />
+<ASTATE abbr="NH" name="NEW HAMPSHIRE" />
+<ASTATE abbr="NJ" name="NEW JERSEY" />
+<ASTATE abbr="NM" name="NEW MEXICO" />
+<ASTATE abbr="NY" name="NEW YORK" />
+<ASTATE abbr="NC" name="NORTH CAROLINA" />
+<ASTATE abbr="ND" name="NORTH DAKOTA" />
+<ASTATE abbr="OH" name="OHIO" />
+<ASTATE abbr="OK" name="OKLAHOMA" />
+<ASTATE abbr="OR" name="OREGON" />
+<ASTATE abbr="PA" name="PENNSYLVANIA" />
+<ASTATE abbr="RI" name="RHODE ISLAND" />
+<ASTATE abbr="SC" name="SOUTH CAROLINA" />
+<ASTATE abbr="SD" name="SOUTH DAKOTA" />
+<ASTATE abbr="TN" name="TENNESSEE" />
+<ASTATE abbr="TX" name="TEXAS" />
+<ASTATE abbr="UT" name="UTAH" />
+<ASTATE abbr="VT" name="VERMONT" />
+<ASTATE abbr="VA" name="VIRGINIA" />
+<ASTATE abbr="WA" name="WASHINGTON" />
+<ASTATE abbr="WV" name="WEST VIRGINIA" />
+<ASTATE abbr="WI" name="WISCONSIN" />
+<ASTATE abbr="WY" name="WYOMING" />
+</THESTATES>

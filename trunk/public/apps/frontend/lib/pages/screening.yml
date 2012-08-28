@@ -1,0 +1,6 @@
+template: cst3
+layout: cst_film
+title: Constellation.tv
+widgets:
+  column1:
+    Purchase:

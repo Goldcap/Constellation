@@ -1,0 +1,13 @@
+http://zeromq.github.com/pyzmq/eventloop.html#
+
+wget https://github.com/zeromq/libzmq/zipball/master  zeromq.zip
+unzip -x zeromq.zip
+run the autoconf generator
+./configure
+make
+make install
+
+https://github.com/zeromq/pyzmq/downloads/pyzmq-2.1.11.tar.gz
+python setup.py install --zmq=/usr/local
+
+hg clone https://bitbucket.org/ssc/pyzmq-article

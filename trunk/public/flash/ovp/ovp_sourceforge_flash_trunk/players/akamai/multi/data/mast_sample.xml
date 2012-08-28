@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MAST xsi:schemaLocation="http://openvideoplayer.sf.net/mast http://openvideoplayer.sf.net/mast/mast.xsd" xmlns="http://openvideoplayer.sf.net/mast" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<triggers>
+		<trigger id="preroll" description="preroll before every item" >
+			<startConditions>
+				<condition type="event" name="OnItemStart" >
+				</condition>
+			</startConditions>
+			<endConditions>
+				<condition type="property" name="IsPlaying" operator="EQ" value="true" /> <!-- This 'resets' the trigger so the pre-roll will happen again if the "load" button is clicked again -->
+			</endConditions>
+			<sources>
+				<source uri="http://ad.doubleclick.net/pfadx/N270.135279.6816128834321/B3442378.2;dcadv=1379578;sz=0x0;ord=123;dcmt=text/html" format="vast">
+					<targets>
+						<target regionName="linear" id="linear" >
+						</target>
+					</targets>
+				</source>
+			</sources>
+		</trigger>
+	</triggers>
+</MAST>

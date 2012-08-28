@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/test/unit/plugin/fixtures/http/pear.example.com/REST/r/sffooplugin
+END
+deps.1.0.0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/test/unit/plugin/fixtures/http/pear.example.com/REST/r/sffooplugin/deps.1.0.0.txt
+END
+1.0.0.xml
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/test/unit/plugin/fixtures/http/pear.example.com/REST/r/sffooplugin/1.0.0.xml
+END
+allreleases.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/test/unit/plugin/fixtures/http/pear.example.com/REST/r/sffooplugin/allreleases.xml
+END

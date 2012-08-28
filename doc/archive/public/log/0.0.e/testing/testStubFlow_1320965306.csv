@@ -1,0 +1,7 @@
+"Method"|"Label"|"Message"|"Status"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Login Email Accessible","===========","Success"
+"assertElementPresent","Login Password Accessible","===========","Success"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Asserting Login Successful","===========","Success"
+"assertElementPresent","Time Zone Change Link Accessible","===========","Success"

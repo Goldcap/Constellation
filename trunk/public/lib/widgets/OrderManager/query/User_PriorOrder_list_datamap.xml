@@ -1,0 +1,16 @@
+<map table="user_order_product" result="user_order_list_datamap" docount="false">
+  <column column="fk_user_order_id" type="VARCHAR" size="255" key="" order="1"></column>
+  <join table="user_order" local="fk_user_order_id" foreign="user_order_id"></join>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="user_id" column="fk_user_id"/>
+    <criteria scope="POST" value="id" column="fk_product_id"/>
+    <criteria value="1" table="user_order" column="user_order_status" constant="GREATER_EQUAL" />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="1"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

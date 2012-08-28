@@ -1,0 +1,16 @@
+template: cst1_films
+layout: cst_films
+title: Constellation | Your Online Movie Theater | All Films
+javascripts: [/js/all_films.js]
+css: [/css/all_films.css]
+widgets:
+  masterhead:
+    HeaderAlt:
+  sub_head:
+    AllFilmsHeader:
+  content:
+    AllFilms:
+  footer:
+    FooterAlt:
+  zzdiv:
+    GoogleAnalytics:

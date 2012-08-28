@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+		<!-- 
+			This sample has no head tag.
+		-->
+	<body>
+		<div xml:lang="en">
+			<p begin="00:00:05">This caption has <span tts:color="red">color</span> text mixed in.  The word 'color' in the previous sentence should red."</p>
+			<p begin="00:00:10" dur="00:00:10">This caption contains bold text. <span tts:fontWeight="bold">This text should be bold.</span> This text should not be bold.</p>
+		</div>
+	</body>
+</tt>

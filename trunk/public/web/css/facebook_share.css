@@ -1,0 +1,54 @@
+#invite_facebook_lb {
+	width: 575px;
+	left: -305px;
+	border: 10px solid #888;
+	padding: 0px !important;
+	z-index:2000;
+}
+
+#fb_in {
+	margin: 0px;
+	padding: 0px;
+}
+
+#fb_user_list {
+	display: inline-block;
+	padding: 0px 10px;
+	height: 353px;
+	overflow-y: auto;
+}
+
+#fb_user_list .selectItem {
+	display: inline-block;
+	width: 175px;
+	padding-bottom: 5px;
+}
+
+#fb_user_list .selectItem img {
+	height: 30px;
+}
+
+#fb_invite_message {
+	width: 100%;
+}
+
+.platform_dialog_header_container{background-color:#6d84b4;border:1px solid #3b5998}
+.platform_dialog_header_container .platform_dialog_header{color:#fff;font-size: 14px;font-weight:bold;padding:5px}
+.platform_dialog_icon{background:#6D84B4 url(https://s-static.ak.facebook.com/rsrc.php/v1/yd/r/Cou7n-nqK52.gif) no-repeat scroll center;float:left;height:16px;margin:5px;width:16px}
+.uiBoxGray{background-color:#f2f2f2;border:1px solid #ccc;padding: 10px 5px;}
+.fwb_parent { margin-bottom: 4px;}
+.fwb { font-weight: bold; font-size: 11px; margin-bottom: 4px;}
+.uiProfilePhotoLarge{display: inline-block;width: 50px;float: left; margin-right: 5px;}
+.uiProfilePhotoMedium{display: inline-block;width: 32px;float: left;margin-right: 5px;}
+.UIImageBlock_Content { font-size: 11px;}
+.platform_dialog_bottom_bar { display: inline-block; background-color: #F2F2F2;border: 1px solid #cccccc; padding: 10px; width: 553px; position: relative; bottom: -2px;}
+.platform_dialog_bottom_bar_border { float: right; right: 0px; }
+.uiButton .uiButtonText,.uiButton input{background:none;border:0;color:#333;cursor:pointer;display:-moz-inline-box;display:inline-block;font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;font-size: 11px;font-weight:bold;margin:0;outline:none;padding:1px 0 2px;white-space:nowrap}
+.uiButtonConfirm{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yA/r/N8T_oGDfkMw.png);background-repeat:no-repeat;background-position:0 -98px;background-color:#5b74a8;border-color:#29447e #29447e #1a356e}
+.uiButton,.uiButtonSuppressed:active,.uiButtonSuppressed:focus,.uiButtonSuppressed:hover{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yA/r/N8T_oGDfkMw.png);background-repeat:no-repeat;background-position:0 -49px;background-color:#eee;border:1px solid #999;border-bottom-color:#888;box-shadow:0 1px 0 rgba(0, 0, 0, .1);cursor:pointer;display:-moz-inline-box;display:inline-block;font-size: 11px;font-weight:bold;line-height:13px;padding:2px 6px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap}
+.uiButtonConfirm{background-image:url(https://s-static.ak.facebook.com/rsrc.php/v1/yA/r/N8T_oGDfkMw.png);background-repeat:no-repeat;background-position:0 -98px;background-color:#5b74a8;border-color:#29447e #29447e #1a356e}
+.uiButtonConfirm:active{background:#4f6aa3;border-bottom-color:#29447e}
+.async_saving .uiButton.uiButtonSpecial .uiButtonText,.async_saving .uiButton.uiButtonSpecial input,.async_saving .uiButton.uiButtonConfirm .uiButtonText,.async_saving .uiButton.uiButtonConfirm input,.uiButtonSpecial .uiButtonText,.uiButtonSpecial input,.uiButtonSpecial.uiButtonDisabled .uiButtonText,.uiButtonSpecial.uiButtonDisabled input,.uiButtonConfirm .uiButtonText,.uiButtonConfirm input,.uiButtonConfirm.uiButtonDisabled .uiButtonText,.uiButtonConfirm.uiButtonDisabled input{color:#fff}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:4px !important;top:7px !important;width:15px;top:8px\9;right:7px\9}
+
+

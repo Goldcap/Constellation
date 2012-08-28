@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend.php/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend.php/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend.php/filmManagement/list">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend.php/screeningManagement/list">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend.php/userManagement/list">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend.php/payment/list">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend.php/credit/list">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend.php/timingStatistics/list">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/audience.html">Audience List</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend.php/auth/logout">
+			Logout
+		</a>
+	</div>
+
+</div><div id="main">
+<div class="title">
+	<h2>Audience Details</h2>
+</div>
+
+<table class="table-list">
+	<tr class="type-1">
+		<td>
+			Screening:
+		</td>
+		<td>
+
+			<a href="/backend.php/screeningManagement/edit/id/697">
+				2012: Time for Change - Thursday Dec 09, 2010 5:00PM EST			</a>
+		</td>
+	</tr>
+	<tr class="type-2">
+		<td>
+			User:
+		</td>
+		<td>
+
+			<a href="/backend.php/userManagement/edit/id/732">
+				marklandis2008@yahoo.com			</a>		
+		</td>
+	</tr>
+	<tr class="type-1">
+		<td>
+			Created At:
+		</td>
+		<td>
+
+			09, Dec 2010 01:46am		</td>
+	</tr>
+	<tr class="type-2">
+		<td colspan="2">
+			Payment For This Audience:
+		</td>
+	</tr>
+	<tr class="type-1">
+		<td colspan="2">
+
+							<div class="user-screening-details" id="payments-count-details" style="display: block;">
+						<div class="top">
+							<div class="top-detail-item">P.ID</div>
+							<div class="top-detail-item">SCREENING</div>
+							<div class="top-detail-item">AUDIENCE</div>
+							<div class="top-detail-item">CREATED AT</div>
+							<div class="top-detail-item">AMOUNT</div>
+
+							<div class="top-detail-item">STATUS</div>							
+						</div>
+														<div class="detail-item">
+									<div><a href="/backend.php/payment/viewDetails/id/1188">1188</a></div>
+									<div><a href="/backend.php/screeningManagement/edit/id/697">2012: Time for Change - contact@thelotteryfilm.com</a></div>
+									<div>
+																					<a href="/backend.php/audience/viewDetails/id/1430">
+																						1430																					</a>
+
+																			</div>
+									<div>09, Dec 01 2010:46am</div>
+									<div>2.99</div>
+									<div>Completed</div>
+								</div>
+											</div>
+					</td>
+
+	</tr>
+</table></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>

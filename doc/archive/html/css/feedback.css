@@ -1,0 +1,22 @@
+/* CSS Document */
+.fdbk_tab_left {
+    background-image: url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/FeedbackTab.png");
+    color: white;
+    cursor: pointer;
+    width: 30px;
+    height: 100px;
+    left: 0;
+    margin-left: -7px;
+    overflow: hidden;
+    position: fixed;
+    text-indent: -100000px;
+    top: 25%;
+    z-index: 100000;
+}
+
+.feedback_form .clearfix{margin-bottom:13px}
+		.feedback_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		#feedbody .description, .feedback_form .description{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; display:block; float:left; padding-top: 4px;}
+		.feedback_form .clearfix .input{width:315px; float:right}
+		.feedback_form .short{width:100px; position:relative; left:52px}
+    .feedback_form textarea{width:480px; height:80px; float:left}

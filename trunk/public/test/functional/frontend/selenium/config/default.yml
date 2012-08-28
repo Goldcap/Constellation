@@ -1,0 +1,29 @@
+BROWSER: "*firefox"
+#BROWSER: "*iexplore"
+#BROWSER: "*safari"
+#BROWSER: "*googlechrome"
+
+SITE_URL: http://dev.constellation.tv/
+
+#Local Data
+HOST_LOGIN: amadsen@gmail.com
+HOST_PASSWORD: console072
+VISITOR_LOGIN: amadsen@operislabs.com
+VISITOR_PASSWORD: rjr457#2
+
+#Facebook Data
+TWITTER_LOGIN: Goldcap
+TWITTER_PASSWORD: 1hsvy5qb
+
+#Facebook Data
+FACEBOOK_LOGIN: amadsen@operislabs.com
+FACEBOOK_PASSWORD: rjr457#2
+
+#Signup Data
+SIGNUP_NAME: test tester
+SIGNUP_USER_NAME: testingtest
+SIGNUP_MONTH: Dec
+SIGNUP_DAY: 30
+SIGNUP_YEAR: 1978
+SIGNUP_EMAIL: testuser@test.com
+SIGNUP_PASSWORD: blah123

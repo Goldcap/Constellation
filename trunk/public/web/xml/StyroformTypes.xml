@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<styroformtypes>
+  <selects>
+    <selector>
+      <name>state</name>
+    </selector>
+    <selector>
+      <name>country</name>
+    </selector>
+    <selector>
+      <name>makes</name>
+    </selector>
+    <selector>
+      <name>select</name>
+    </selector>
+    <selector>
+      <name>selectdb</name>
+    </selector>
+    <selector>
+      <name>selectnumber</name>
+    </selector>
+  </selects>
+  <compounds>
+    <compound name="monthday">
+      <element name="month" type="select" />
+			<element name="day" type="select" />
+		</compound>
+		<compound name="monthyear">
+      <element name="month" type="select" />
+			<element name="year" type="select" />
+		</compound>
+		<compound name="numericmonthyear">
+      <element name="month" type="select" />
+			<element name="year" type="select" />
+		</compound>
+		<compound name="datetime">
+      <element name="month" type="select" />
+			<element name="day" type="select" />
+			<element name="year" type="select" />
+			<element name="hour" type="select" />
+			<element name="minute" type="select" />
+		</compound>
+	</compounds>
+</styroformtypes>

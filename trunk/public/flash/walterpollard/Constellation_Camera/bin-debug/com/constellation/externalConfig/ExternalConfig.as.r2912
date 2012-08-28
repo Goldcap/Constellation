@@ -1,0 +1,268 @@
+/**
+ * ExternalConfig holds all the known flashvars as properties that are exposed<br>
+ * Just a tool to easily pull flashvars from anywhere in the project<br>
+ * Singleton Object<br>
+ * loadOptions must be called with the main stage display object<br>
+ * 
+ * @author Walter Steve Pollard Jr - walter.pollard.jr@gmail.com
+ */
+package com.constellation.externalConfig
+{
+	import com.constellation.config.errorConfig;
+	
+	import flash.display.DisplayObject;
+	import flash.display.LoaderInfo;
+	
+	
+	public class ExternalConfig
+	{
+		
+			private static var instance:ExternalConfig;
+			/**
+			 * Stores parameters of the stage.loaderInfo <br>
+			 * Only populated once
+			 */
+			public var _loaderInfo:LoaderInfo;
+			//are we testing
+			private var _testLocal:Boolean = true;
+			 
+			public var smilTestPath:String = "../data/elephants_dream.smil";
+			
+			private var _logServicePath:String = "/services/log?i=";
+			//stock values that were before wsp 
+			private var _bitrates:String;//bit rates passed in
+			private var _ticketParams:String = "pvxP6s/ySk4eZJCg RqFyaK8FF3/yxaTedK97w=="
+			//test values
+			public var testTokenData:String = '{"tokenResponse":{"status":"success","token":"da.aPandGbUcideaidYb.dwavb4coc3cYdW-bosfBa-vga-DnEF0BDqzxr-rbkomXl9kepbo8p6kgs0l0n0mJq9sJ"}}'
+			//heartbeat values
+			private var _heartbeatInterval:int = 10;//rate in seconds of how long to wait between heartbeats
+			private var _heartbeatLimit:int = 4;//number of times the heartbeat needs to fail before a heart attack
+			private var _heartbeatPath:String = "/heartbeat?i=";
+			private var _heartbeatFailMessage:String = "Timeout Occured with Server, Please Refresh"
+				//"../data/dummyHeartBeat.txt?k=";
+			
+			private var _watermarkDuration:int;
+			
+			//for heartbeat testing currently taking flashvars to set
+			private var _heartbeatIP:String;
+			private var _heartbeatPort:String;
+			private var  _heartbeatProgressFailLimit:int = 4;
+			private var _defaultErrorMessage:String = "<b><font size=\"20\">We're sorry, there was an error with this screening.</font></b> <br> Please refresh your browser<br><br>Click here to contact <u><a href=\"event:SupportEmail\">customer service</a></u><br> Or<br> email support@constellation.tv with this code: "
+			
+			
+			//timestamp from server
+			private var _initTimeStamp:Number;
+			private var _seekInto:int	
+			public var ticketDecrypted:String;
+			
+			public function ExternalConfig(enforcer:SingletonEnforcer)
+			{
+			}
+			public static function getInstance():ExternalConfig
+			{
+				
+				if (ExternalConfig.instance == null)
+				{
+					ExternalConfig.instance = new ExternalConfig(new SingletonEnforcer());
+				}
+				return ExternalConfig.instance;
+			}
+			
+			/**
+			 *Load the flashvar values targeted in the ExternalConfig class.<br>
+			 * Can only populate this class once 
+			 * @param sp The displayObject to load flashvars from
+			 * 
+			 */			
+			
+			public function loadOptions(sp:DisplayObject):void
+			{
+				
+				if(this._loaderInfo!=null){
+					return;
+				}
+				this._loaderInfo = sp.stage.loaderInfo;
+				
+				var paramObj:Object = LoaderInfo(sp.stage.loaderInfo).parameters;
+				
+					
+					
+				var keyStr:String;
+				var valueStr:String;
+				
+				for (keyStr in paramObj)
+				{
+					
+					valueStr = String(paramObj[keyStr]);
+					
+					switch (keyStr)
+					{
+						case "ticketParams":
+							this._ticketParams = valueStr;
+						break;
+						case "bitrates":
+							this._bitrates = valueStr;
+						break;
+						case "heartbeatInterval":
+							this._heartbeatInterval = int(valueStr);
+						break;
+						case "heartbeatLimit":
+							this._heartbeatLimit = int(valueStr);
+						break;
+						case "heartbeatPath":
+							this._heartbeatPath = valueStr;
+						break;
+						case "watermarkDuration":
+							this._watermarkDuration = int(valueStr);
+							break;
+						case "sip":
+							this._heartbeatIP = valueStr;
+							break;
+						case "sprt":
+							this._heartbeatPort = valueStr;
+							break;
+						case "heartbeatProgressFailLimit":
+							this._heartbeatProgressFailLimit = int(valueStr);
+							break;
+						case "timestamp":
+							this._initTimeStamp = Number(valueStr);
+							break;
+						case "seekInto":
+							this._seekInto = int(valueStr);
+							break;
+					}
+				}
+			}
+
+			
+			/**
+			 * The bitrates passed in from flashvar (usually a comma seperated string)
+			 * @return 
+			 * 
+			 */
+			public function get bitrates():String
+			{
+				return _bitrates;
+			}
+
+			/**
+			 * The interval in which heartbeats should operate (in seconds)
+			 * This is translated in the usage of this value
+			 * @return  
+			 * 
+			 */
+			public function get heartbeatInterval():int
+			{
+				return _heartbeatInterval;
+			}
+
+			/**
+			 * The amount of heartbeats that are missed before a heart attack occurs
+			 * @return  int
+			 * 
+			 */
+			public function get heartbeatLimit():int
+			{
+				return _heartbeatLimit;
+			}
+
+			/**
+			 * The path to get a heartbeat value if one was set in the flashvars  
+			 * @return string 
+			 * 
+			 */
+			public function get heartbeatPath():String
+			{
+				return _heartbeatPath;
+			}
+			/**
+			 * The heartbeat IP for targeting the correct server that handles the hearbeat  
+			 * @return string 
+			 * 
+			 */
+			public function get heartbeatIP():String
+			{
+				return _heartbeatIP;
+			}
+			/**
+			 * The heartbeat port for targeting the correct server that handles the hearbeat  
+			 * @return string 
+			 * 
+			 */
+			public function get heartbeatPort():String
+			{
+				return _heartbeatPort;
+			}
+
+
+			/**
+			 * ID of the ticket passed in as a flashvar that IDs the user
+			 * @return string 
+			 */
+			public function get ticketParams():String
+			{
+				return _ticketParams;
+			}
+			/**
+			 *How long to show the watermark 
+			 * @return int
+			 * 
+			 */
+			public function get watermarkDuration():int
+			{
+				return _watermarkDuration;
+			}
+			
+			/**
+			 *Is this in a local testing mode? 
+			 * @return 
+			 * 
+			 */
+			public function get testLocal():Boolean
+			{
+				return _testLocal;
+			}
+
+			public function get heartbeatProgressFailLimit():int
+			{
+				return _heartbeatProgressFailLimit;
+			}
+
+			public function get heartbeatFailMessage_unknown():String
+			{
+				return _defaultErrorMessage+errorConfig.heartbeat_Unknown;
+			}
+			public function get heartbeatFailMessage():String
+			{
+				return _defaultErrorMessage;
+			}
+
+			public function get defaultErrorMessage():String
+			{
+				return _defaultErrorMessage;
+			}
+
+			public function get initTimeStamp():Number
+			{
+				return _initTimeStamp;
+			}
+
+			public function get logServicePath():String
+			{
+				return _logServicePath;
+			}
+
+			public function get seekInto():int
+			{
+				return _seekInto;
+			}
+
+			
+			
+			
+		
+	}
+}
+class SingletonEnforcer
+{
+}

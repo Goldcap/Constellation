@@ -1,0 +1,400 @@
+/* CSS Document */
+#right_sidebar, #private_invite {
+  position: absolute;
+  float: right;
+  z-index: 100;
+  right: 20px;
+  width: 200px;
+}
+
+#right_sidebar div.rs {
+  position: absolute;
+  top: 30px;
+  clear: both;
+  float: left;
+  border: 1px solid #666;
+  width: 99%;
+  top: 40px;
+  padding: 5px;
+  display: none; /* important */
+  background: #000;
+}
+
+#private_invite {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  clear: both;
+  float: left;
+  border: 1px solid #666;
+  padding: 5px;
+  display: none; /* important */
+}
+
+#adminmessage_invite {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  clear: both;
+  float: left;
+  border: 1px solid #cc0000;
+  color: 1px solid #ff0000;
+  padding: 5px;
+  display: none; /* important */
+}
+
+#right_sidebar div h2, #private_invite h2, #adminmessage_invite h2  {
+  float: left;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0px !important;
+}
+
+#right_sidebar div h4, #private_invite h4, #adminmessage_invite h4 {
+  float: right;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+#right_sidebar div.rs p, #private_invite p, #adminmessage_invite p {
+  margin-top: 20px !important;
+  font-size: 11px;
+  color: #ddd;
+}
+
+#right_sidebar div.rs p a, #private_invite p a, #adminmessage_invite p a {
+  color: #fff;
+  text-decoration: none;
+}
+
+div #chat_panel {
+  /*right: 320px !important;*/
+}
+
+div #chat_panel #inbox, div #private_chat_panel #private-inbox {
+  border: 1px solid #ddd;
+  overflow: auto;
+  height: 300px;
+  margin-bottom: 10px;
+  width: 195px;
+  top: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+
+div #adminmessage_panel #adminmessage-inbox {
+  border: 1px solid #ddd;
+  overflow: auto;
+  height: 100px;
+  margin-bottom: 10px;
+  width: 195px;
+  top: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+
+div #adminmessage_panel #adminmessage-users {
+  border: 1px solid #ddd;
+  overflow: auto;
+  height: 100px;
+  margin-bottom: 10px;
+  width: 195px;
+  top: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+/* QANDA USER PANEL */
+div #qanda_panel #qanda-inbox {
+  overflow: auto;
+  margin-bottom: 10px;
+  width: 195px;
+  top: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+
+/* QANDA HOST QUESTION PANELS */
+div #qanda_panel #qanda-host-inbox, div #qanda_panel #qanda-host-selected-inbox  {
+  overflow: auto;
+  margin-bottom: 10px;
+  width: 188px;
+  min-height: 50px;
+  top: 20px;
+  font-size: 12px;
+  border: 1px dashed #444;
+  padding: 4px;
+}
+
+div #qanda_panel #qanda-host-inbox .question, div #qanda_panel #qanda-host-selected-inbox .question {
+  padding: 4px 2px 4px 2px;
+}
+
+div #qanda_panel #qanda-host-selected-inbox .handle, div #qanda_panel #qanda-host-inbox .handle {
+  padding: 3px 4px 0px 0px;
+}
+
+div #qanda_panel #qanda-host-selected-inbox .sequence {
+  padding-right: 4px;
+}
+
+div #qanda_panel #qanda-inbox .question, div #qanda_panel #qanda-host-inbox .question, div #qanda_panel #qanda-host-selected-inbox .question {
+  clear: both;
+  width: 180px;
+  border-bottom: 1px solid #eee;
+}
+
+div #qanda_panel #qanda-inbox .question a, div #qanda_panel #qanda-host-inbox .question .quest a, div #qanda_panel #qanda-host-selected-inbox .question .quest a{
+  color: #eee;
+}
+
+div #qanda_panel #qanda-host-inbox .question .quest {
+  color: #666;
+}
+
+div #qanda_panel #qanda-host-inbox .question .closed {
+  color: #ff0000 !important;
+  font-weight: bold;
+}
+
+div #qanda_panel #qanda-host-selected-inbox .question .quest {
+  color: #99CC33;
+}
+
+
+div #chat_panel #message, div #private_chat_panel #private, div #qanda_panel #qanda_message, div #adminmessage_panel #adminmessage {
+  border: 1px solid #ddd;
+  overflow: auto;
+  width: 195px;
+  margin-bottom: 10px;
+  background: #7D7D7D;
+  color: #eee;
+  font-size: 12px;
+}
+
+.reqs,
+#room, 
+#seat,
+#userid, 
+#pairid, 
+#toid,
+#adminmessage-pairid, 
+#adminmessage-toid,
+#location,
+#chatport  {
+  visibility: hidden;
+}
+
+.watermark {
+  color: #555;
+}
+
+#status_panel {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 160px;
+  color: #eee;
+  font-size: 11px;
+  border: 1px solid #eee;
+}
+
+.theater #col02 {
+  text-align: center;
+}
+
+.theater_panel {
+  position: absolute;
+  left: 360px;
+  top: 100px;
+  width: 530px;
+	text-align: left;
+	padding: 10px;
+	z-index: 0;
+}
+
+.theater_subpanel {
+  position: absolute;
+  left: 270px;
+  top: 10px;
+  width: 710px;
+  height: 230px;
+	text-align: left;
+	padding: 10px;
+	z-index: 10;
+	border: 1px solid #666;
+	background: #222;
+}
+
+.theater_subpanel h1 {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  width: 400px !important;
+}
+
+
+.theater_panel p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.theater_panel h1 {
+  text-align: left;
+  font-size: 16px;
+  color: #99ccff;
+}
+
+.panel a {
+  color: grey;
+}
+.panel p.share a {
+  float: left;
+  margin-right: 2px;
+}
+.panel .share_inset {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.panel h4 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+#prescreening_panel {
+  margin-left: 40px;
+	background: url(../images/popup%5bscreening%5d.png) left top no-repeat;
+	width: 480px;
+  padding-left: 40px;
+}
+
+#prescreening_panel image.poster {
+  float: left;
+}
+
+#prescreening_panel p.how-to span {
+  position: relative;
+  top: -50px;
+  left: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+#qa_panel p.how-to {
+  margin: 0px;
+  width: 650px;
+  height: 110px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+  overflow: auto;
+}
+
+#prescreening_panel h2 {
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+  color: #99ccff;
+}
+
+#prescreening_panel h3 {
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+  color: #99ccff;
+}
+
+#prescreening_panel h4 {
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#prescreening_panel p.invite {
+  padding: 7px !important;
+  background: url("../images/btn%5binvite-more%5d.png") no-repeat scroll 0 0 transparent;
+  height: 30px;
+  width: 150px;
+  margin-top: 30px !important;
+}
+
+#prescreening_panel p.invite a {
+  font-size: 10px;
+  color: white;
+}
+
+#prescreening_panel img.host {
+  position: relative;
+  top: -100px;
+  left: 320px;
+}
+
+#qa_panel, #review_panel {
+  border: 1px solid #ddd;
+}
+
+/*Review Panel*/
+#after-screening-popup #screening-info a.button { 
+	width: 216px;
+	height: 26px;
+	margin-bottom: 5px;
+	line-height: 32px;
+}
+.panel a#btn-host { width: 200px; height: 20px; background: url(../images/btn%5bscreening-host%5d.png) left top no-repeat; }
+.panel a#btn-send { width: 220px; height: 30px; background: url(../images/btn%5bscreening-recommend%5d.png) left top no-repeat; }
+.panel a#btn-write { width: 220px; height: 30px; background: url(../images/btn%5bscreening-write%5d.png) left top no-repeat; }
+
+#review_panel textarea, #answer_popup textarea { 
+	width: 100%;
+	height: 80px;
+	background: #d1d0ce; 
+	border: 0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+#screening-popup #invite_more_friends {
+	height:30px;
+}
+#screening-popup #invite_more_friends  a {
+	background: url(../images/btn%5binvite-more%5d.png) no-repeat;
+	color: white;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 7px;
+	text-decoration: none;
+}
+
+#info {
+	display: block;
+	padding: 10px; margin-bottom: 20px;
+	border: 1px solid #333;
+	background-color: #efefef;
+}
+
+#test-list {
+	list-style: none;
+}
+
+#test-list li {
+	display: block;
+	padding: 20px 10px; margin-bottom: 3px;
+	background-color: #efefef;
+}
+
+#test-list li img.handle {
+	margin-right: 20px;
+	cursor: move;
+}
+
+#video_stream {
+  display:block;
+  width:425px;
+  height:300px;
+}

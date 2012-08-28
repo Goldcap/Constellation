@@ -1,0 +1,85 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+dbc:
+  film:
+    key: film_id
+    vars:
+      setFilmName: Some Test Film
+      setFilmMakers: Some Test Maker
+      setFilmProductionCompany: Some Test Company
+      setFilmLogo: 4c344b074236c.jpg
+      setFilmTrailerFile: lottery-trailer.trailer.mp4
+      setFilmMovieFile: mp4
+      setFilmTicketPrice: 2.99
+      setFilmStatus: 2
+      setFilmFeatured: 1
+      setFilmCreatedAt: =date:TS
+      setFilmUpdatedAt: =date:TS
+      setFilmSetupPrice: 4.99
+      setFilmInfo: Some Test Info
+      setFilmRunningTime: 1:20:00
+      setFilmTotalSeats: 200
+      setFilmShortName: sometest
+      setFilmStillImage: 546b6806d9bf6f90b0523bb36169d698.jpg
+      setFilmBitrateSmall: 300
+      setFilmBitrateMedium: 800
+      setFilmBitrateLarge: 2000
+      setFilmUseSponsorCodes: 0
+      setFilmAllowUserHosting: 1
+      setFilmAlternateTemplate: 0
+  screening: 
+    key: screening_id
+    vars:
+      setScreeningUniqueKey: "abcdef"
+      setScreeningDate: =date:MDY-
+      setScreeningTime: =date:time
+      setScreeningEndTime: =date:TS:+H1
+      setScreeningDefaultTimezoneId: "America/New_York"
+      setFkHostId: =user:getUserId
+      setFkFilmId: =dbc:getFilmId:film
+      setScreeningHasQanda: 0
+      setScreeningLiveWebcam: 0
+      setScreeningDescription: "Some Description"
+      setScreeningFeatured: 1
+      setScreeningPaidStatus: 2
+      setScreeningTotalSeats: 100
+      setScreeningType: 2
+      setScreeningIsPrivate: 0
+  sponsor_code:
+    key: sponsor_code_id
+    vars:
+      setSponsorCode: abctest123
+      setFkFilmId: =dbc:getFilmId:film
+      setSponsorCodeStartDate: =date:TS:-D1
+      setSponsorCodeEndDate: =date:TS:+D1
+      setSponsorCodeUse: 100
+      setSponsorCodeUseCount: 1
+      setSponsorCodeUserFname: =user:getUserFname
+      setSponsorCodeUserLname: =user:getUserLname
+      setSponsorCodeUserEmail: =user:getUserEmail
+      setSponsorCodeUserUsername: =user:getUserUsername
+      setSponsorCodeUserNotified: 0
+      setFkUserId: =user:getUserId
+      setFkScreeningId: =dbc:getScreeningId:screening
+      setFkScreeningUniqueKey: =dbc:getScreeningUniqueKey:screening
+get:
+post:
+  ticket: =dbc:getSponsorCode:sponsor_code
+  film: =dbc:getFilmId:film
+  screening: =dbc:getScreeningUniqueKey:screening
+session:
+action:
+  styroaction: submit
+
+dbo:
+  sponsor_code: 
+    key: sponsor_code_id
+    vars:
+      getSponsorCodeId: =dbc:getSponsorCodeId:sponsor_code
+      getSponsorCodeUseCount: 2

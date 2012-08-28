@@ -1,0 +1,46 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_uid" type="INTEGER" size="11" key="PRI" order="1"></column>
+  <column column="film_id" type="INTEGER" size="11" key="PRI" order="1" format="%0d"></column>
+  <column column="film_name" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="film_synopsis" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="film_info" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="film_trailer_file" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="film_allow_user_hosting" type="TINYINT" size="255" key="" order="6" format="%0d"></column>
+  <column column="logo_type" type="TINYINT" size="255" key="" order="6"></column>
+  <column column="screening_count" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <column column="program_short_name" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <sql connection="propel">
+    <sqlselect><![CDATA[
+              select 
+              concat('f',film_id),
+              film_id,
+              film_name,
+              film_logo,
+              film_synopsis,
+              film_info,
+              film_trailer_file,
+              film_allow_user_hosting,
+              'screeningResources',
+              (select count(screening_id)
+              from screening
+              where screening.fk_film_id = film.film_id
+              and screening.screening_status = 2
+              and screening_date > ?) as screening_count,
+              film_name
+              from film
+              where film_featured = 1]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <descorderby column="screening_count"></descorderby>
+    <criteria scope="SYSTEM" value="floor_now()" type="datetime" />
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

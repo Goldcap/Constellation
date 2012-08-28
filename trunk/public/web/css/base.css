@@ -1,0 +1,473 @@
+/* =============================================================================
+   Base class helpers
+   ========================================================================== */
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.left {float: left;}
+.right {float: right;}
+.clear {clear: both;}
+.center {text-align:center;}
+.uppercase {text-transform: uppercase;}
+strong {font-weight: bold;}
+
+/* =============================================================================
+   Overide Fucked Css
+   ========================================================================== */
+
+
+body {
+    /*background: #e1e1e1;*/
+    background: #000;
+    color: #000;
+    font: 12px/14px "helveticaneue", Helvetica, sans-serif;
+}
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+.masterhead {
+    height:  75px;
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/header_bg.png') repeat-x top left;
+  zoom:1;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+.headline {
+    height: 75px;
+    width: 940px;
+    margin: 0px auto;
+}
+
+.searchbar_alt {
+    display: none;
+}
+
+.header_nav {
+    float: left;
+    font-family: "helveticaneue",verdana,helvetica,sans-serif;
+    margin: 34px 0 0 20px;
+}
+
+.header_nav li {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #C8C8C8;
+    /* old padding was 0 14px */
+}
+
+.header_nav a{
+    color: #C8C8C8;
+    
+}
+
+.logo_alt_set {
+    float: right;
+    margin: 30px 0 -10px;
+    padding: 0;
+    width: auto;
+}
+
+.acc_timezone_link {
+    float: right !important;
+}
+.header_timezone {
+    position: relative;
+    top: -18px;
+    table-layout: right;
+    width: 105px;
+    text-align: right;
+}
+.header_timezone > p {
+    font-size: 10px;
+} 
+
+.header_user {
+    width: 170px;
+    position: relative;
+    margin-left: 10px;
+    top: -10px;
+
+}
+.user_info {
+    position: absolute;
+    width: 170px;
+    background: #000;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 20;
+}
+.logo_alt_set .user_info li {
+    display: block;
+}
+.logo_alt_set .user_info li a {
+    display: block;
+    padding: 8px 14px;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.user_info li a:hover {
+    background: #262626;
+}
+
+.header_user_block {
+   border-radius: 5px 5px 0 0;
+   -moz-border-radius:  5px 5px 0 0;
+   -webkit-border-radius:  5px 5px 0 0;
+   padding: 10px;
+   border-top: solid 1px #222;
+   background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/header_arrow.png") 144px 17px no-repeat;
+   cursor: pointer;
+}
+.header_user .header_user_block {
+    background-color: #080808;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.header_user.active .header_user_block {
+    background-color: #000;
+    -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+/*.header_user.active .user_info {
+    display: block;
+}*/
+.header_user_icon img {
+    vertical-align: middle;
+}
+.header_user_icon {float:left;}
+.header_user_name {
+  display: block;
+  margin-left: 30px;
+  margin-top: 4px;
+  margin-right: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.sub_nav {
+   background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/footer_marquee.png") repeat-x scroll 0 100%;
+   font-family: "helveticaneue", helvetica, Arials, sans-serif;
+}
+
+.sub_nav li {
+    float: left;
+
+}
+.sub_nav li a {
+  font-size: 14px;
+  padding: 20px 30px;
+  display: block;
+  color:#f4f4f4;
+}
+.sub_nav li.active a {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/slideshow_sprite.png") 0 -15px repeat-x;
+    
+}
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+#content {
+    background: #eeeeee url(../images/whitey.png) 0 0 repeat;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+    position: relative;
+    /*z-index:2;*/
+    zoom:1;
+}
+
+
+
+/* =============================================================================
+  Footer
+   ========================================================================== */
+.footer ul { padding:0}
+.footer li, .footer li a {
+    float: none;
+}
+.footer li {
+    padding: 0;
+    margin: 0;
+}
+
+.logo_alt a {
+    background: url("../images/bg/logo-constellation.png") no-repeat scroll left top transparent;
+    color: #8C8C8C !important;
+    float: left;
+    font-size: 20px;
+    height: 75px;
+    text-indent: 150px;
+    width: 205px;
+    margin-left: 0;
+     padding-top: 0;
+}
+.logo_alt_set li, .logo_alt_set li a {
+    float: none;
+    display: inline-block;
+    *display: inline;
+    color:white;
+    zoom:1;
+}
+
+#timezone-select {
+    cursor: pointer;
+}
+
+textarea {
+ font-family: "helveticaneue",Helvetica,sans-serif;
+ font-size: 12px;
+}
+
+.footer ul { padding:0}
+.footer li, .footer li a {
+    float: none;
+}
+.footer li {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* =============================================================================
+   Page Header
+   ========================================================================== */
+.sub_head {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/info_bg.png") repeat-x scroll left top transparent;
+    height: 85px;
+    position: relative;
+    z-index:3;
+}
+
+.inner_container {
+    width: 940px;
+    margin: auto;
+    text-align:left;
+}
+
+h2.page_title {
+    color: #000;
+    text-transform: none;
+    float: left;
+    font-size: 38px;
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+}
+.sub_head h2.page_title {
+    line-height: 80px;
+    margin: 0;
+}
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+#footer {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/footer-bg.png") 0 0 repeat-x;
+}
+#footer > div.inner_container {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/footer-logo.png") 0 0 no-repeat;
+    height: 124px;
+}
+#footer .left{
+    margin: 34px 0 0 130px;
+}
+#footer .copy {
+    font-size: 13px;
+    margin: 10px 0;
+    color: #828282;
+}
+#footer .footer_nav {
+    margin: 10px 0;
+}
+#footer .footer_nav li {
+    color: #000;
+    display: block;
+    float: left;
+    padding: 0 8px;
+    font-size: 13px;
+    border-left: solid 1px #000;
+}
+#footer .footer_nav a {
+        color: #000;
+        font-size: 13px;
+    
+}
+#footer .footer_nav li.first {
+    border-left: none;
+    padding-left: 0;
+}
+
+#footer .facebook_footer_block {
+
+
+    background: none repeat scroll 0 0 #F4F4F4;
+  border: 1px solid #B0B0B0;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+  height: 68px;
+  margin: 20px 0 0;
+  overflow: hidden;
+  padding: 4px 10px;
+  width: 280px;
+}
+#footer .facebook_footer_block img {
+    float: left;
+    margin: 10px;
+     
+}
+#footer .facebook_footer_block .details {
+    float: left;
+    margin: 10px 0 0;
+    width: 200px;
+}
+#footer .facebook_footer_block a strong {
+    font-size: 14px;
+}
+#footer .facebook_footer_block a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#footer {background: #000; color:#fff;}
+#footer .footer_nav a {color: #fff;}
+#footer > div.inner_container {
+  background-image: url(../images/bg/footer-logo-home.png);
+}
+
+.tooltip {
+    z-index: 20;
+    color:#fff;
+    font-size: 12px;
+}
+
+
+.showtime_count {
+    background: none repeat scroll 0 0 #C300BD;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color: #FFFFFF;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 4px;
+}
+
+#howItWorks {
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    left: 0;
+    line-height: 30px;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 385px;
+    width: 940px;
+
+}
+#howItWorks a {color:#0F8BC2;}
+
+
+.marqee_moon .const_info,.slideshow_container .const_info { z-index:19!important; }
+
+
+
+
+.reqs {
+  display: none;
+}
+
+#film,
+#host,
+#port,
+#room,
+#instance,
+#seat,
+#userid,
+#pairid,
+#toid,
+#location,
+#adminmessage-pairid,
+#adminmessage-owner,
+#adminmessage-toid {
+  visibility: hidden;
+}
+
+#status_panel {
+  display: none;
+  /*
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 160px;
+  color: #eee;
+  font-size: 11px;
+  border: 1px solid #eee;
+  z-index: 100;
+  */
+}
+.bandwidth_warning {
+    color: #cc0000;
+    text-transform: uppercase;
+}
+.or {
+  border-top: solid 1px #fff;
+  margin: 20px 0 0;
+  text-align: center;
+}
+.or span {
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  padding: 4px 8px;
+  background: #fff;
+  color: #999;
+}
+
+.error-block.error-block-small {
+  margin: 0 0 10px;
+  background: #FDDFDE url(../images/bg/restrictions-sm.png) 20px 50% no-repeat;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 18px;
+  font-size:14px;
+  padding: 10px 10px 10px 60px;
+  text-align:left;  
+}
+
+.login-social-icon {
+    background: url(../images/login-social-sprites.png) 0 0 no-repeat;
+  height: 31px;
+  width: 46px;
+     vertical-align: middle;   
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+}
+.login-social-icon.login-social-icon-twitter {
+  background-position: -6px -3px;
+  height: 23px;
+  margin-right: 4px;
+  width: 32px;
+}
+.login-social-icon.login-social-icon-facebook {
+  background-position: -54px 0;
+  height: 25px;
+  width: 20px;
+  margin-right: 4px;
+
+}

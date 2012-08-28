@@ -1,0 +1,25 @@
+<map table="user_address" result="user_address_list_datamap">
+  <column column="user_address_id" name="object_id" type="INTEGER" size="" key="" order="1" format="useraddress%d" />
+  <column column="user_address_id" name="object_type" type="INTEGER" size="" key="" order="1" format="useraddress" />
+  <column column="user_address" name="object_name" type="INTEGER" size="" key="" order="2" />
+  <column column="fk_user_id" name="user_address_user_id" type="INTEGER" size="" key="" order="1"></column>
+  <column column="user_phone" name="user_address_phone" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_address" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="user_address_2" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="user_city" name="user_address_city" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="user_state" name="user_address_state" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="user_zip" name="user_address_zip" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="user_country" name="user_address_country" type="VARCHAR" size="255" key="" order="8"></column>
+  <column column="user_address_id" type="INTEGER" size="" key="PRI" order="9"></column>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="user_id" column="fk_user_id"/>
+    <ascorderby column="user_address_id"></ascorderby>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

@@ -1,0 +1,24 @@
+
+android_test(name = "android-test",
+  srcs = [ "AndroidDriverTestSuite.java" ],
+  binary = "//android/app:android-server",
+  deps = [
+   ":base",
+  ])
+
+java_test(name = "java-test",
+  srcs = [ "AndroidDriverTestSuite.java" ],
+  binary = "//android:android-server",
+  deps = [
+   ":base",
+  ])
+
+java_library(name = "base",
+  srcs = [
+    "**/*.java",
+  ],
+  deps = [
+    "//java/client/src/org/openqa/selenium/android",
+    "//java/client/test/org/openqa/selenium:base",
+    "//java/client/test/org/openqa/selenium:tests",
+  ])

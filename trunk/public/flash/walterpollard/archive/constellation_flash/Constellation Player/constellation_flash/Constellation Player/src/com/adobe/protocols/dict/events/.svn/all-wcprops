@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 206
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events
+END
+DictionaryServerEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 231
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/DictionaryServerEvent.as
+END
+MatchEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 220
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/MatchEvent.as
+END
+DefinitionHeaderEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 231
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/DefinitionHeaderEvent.as
+END
+ConnectedEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 224
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/ConnectedEvent.as
+END
+DisconnectedEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 227
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/DisconnectedEvent.as
+END
+DatabaseEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 223
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/DatabaseEvent.as
+END
+MatchStrategiesEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 230
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/MatchStrategiesEvent.as
+END
+DefinitionEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 225
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/DefinitionEvent.as
+END
+ErrorEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 220
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/ErrorEvent.as
+END
+NoMatchEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 222
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/flash/walterpollard/archive/constellation_flash/Constellation%20Player/constellation_flash/Constellation%20Player/src/com/adobe/protocols/dict/events/NoMatchEvent.as
+END

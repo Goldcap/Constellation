@@ -1,0 +1,40 @@
+<map table="film" result="screening" allow_add="false">
+  <column column="audience_id" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="audience_film_id" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="audience_film_name" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="audience_film_alt_name" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="audience_film_still_image" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="audience_film_logo" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="audience_user_id" type="INT" size="" key="" order="9" format=""></column>
+  <column column="audience_user_email" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="audience_screening_name" type="LONGVARCHAR" size="" key="" order="2" ></column>
+  <column column="audience_screening_date" type="LONGVARCHAR" size="monthtimezone" key="" order="2" format="dateformat"></column>
+  <column column="audience_screening_end_time" type="LONGVARCHAR" size="monthtimezone" key="" order="3" format="dateformat"></column>
+  <column column="audience_screening_id" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_description" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_still_image" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_constellation_image" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_invite_code" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_short_url" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_paid_status" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_ticket_price" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_user_id" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_user_full_name" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_user_photo_url" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_user_image" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <column column="audience_screening_timezone_id" type="LONGVARCHAR" key="" order="3" hidden="true"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="screening_id" column="audience_screening_id" type="AND" />
+    <criteria value="2" column="audience_paid_status" />
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <ascorderby column="screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

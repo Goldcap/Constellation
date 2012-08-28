@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+//
+// Copyright (c) 2008, the Open Video Player authors. All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without 
+// modification, are permitted provided that the following conditions are 
+// met:
+//
+//    * Redistributions of source code must retain the above copyright 
+//		notice, this list of conditions and the following disclaimer.
+//    * Redistributions in binary form must reproduce the above 
+//		copyright notice, this list of conditions and the following 
+//		disclaimer in the documentation and/or other materials provided 
+//		with the distribution.
+//    * Neither the name of the openvideoplayer.org nor the names of its 
+//		contributors may be used to endorse or promote products derived 
+//		from this software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR 
+// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, 
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY 
+// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+-->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" backgroundColor="#000000" applicationComplete="initApp()">
+	
+	<mx:Style source="test.css" />
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.textClasses.TextRange;
+			
+		import flash.events.NetStatusEvent;
+		import mx.controls.Alert;		
+		import mx.collections.*;
+		
+		import org.openvideoplayer.net.*;
+		import org.openvideoplayer.events.*;
+		import org.openvideoplayer.cc.*;
+		
+		private var _video:Video;
+		private var _nc:OvpConnection;
+		private var _ns:OvpNetStream;
+		private var _scrubberDragging:Boolean;
+		private var _playBtnStatePlaying:Boolean;
+		private var _url:String;
+		private var _waitForSeek:Boolean;
+		private var _streamLength:Number;
+		private var _filename:String;
+		private var _ccMgr:OvpCCManager;
+		private var _captionTimer:Timer;
+				
+		[Bindable]
+		private var _dfxpUrlList:Array = [
+			"../data/cc/adobe_sample.xml",
+
+			"../data/cc/ovp_sample_2.xml",
+			"../data/cc/ovp_sample_1.xml",			 
+			
+			 "../data/cc/BasicTiming001.xml",
+			 "../data/cc/BasicTiming002.xml",
+			 "../data/cc/BasicTiming003.xml",
+			 "../data/cc/BasicTiming006.xml",
+			 "../data/cc/BeginDur001.xml",
+			 "../data/cc/BeginEnd001.xml",
+			 "../data/cc/BeginEnd002.xml",
+			 "../data/cc/BeginEnd003.xml",
+			 "../data/cc/FixedBeginEnd002.xml"
+			 ];
+				
+		[Bindable]
+		private var _pdlUrlList:Array = [
+			"http://products.edgeboss.net/download/products/content/demo/video/oomt/elephants_dream_700k.flv",
+			"http://products.edgeboss.net/download/products/content/demo/video/oomt/big_buck_bunny_700k.flv" ];
+				
+		// Initialize the application
+		private function initApp():void {
+			_scrubberDragging = false;
+			_playBtnStatePlaying = false;
+			_waitForSeek = false;
+			_streamLength = 0;
+			
+			// Create the connection object and add the necessary event listeners
+			_nc = new OvpConnection();
+			_nc.addEventListener(OvpEvent.ERROR, errorHandler);
+			_nc.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+			
+			uic.setActualSize(480,270);
+			_video = new Video(480,270);
+			_video.x = 0;
+			_video.y = 0;
+			uic.addChild(_video);
+			
+			var pt:Point = videoContainer.contentToGlobal(new Point(videoContainer.x, videoContainer.y));
+			pt = captionLabel.globalToContent(pt);
+			captionLabel.x = pt.x + 5;
+			captionLabel.y = pt.y + videoContainer.height - captionLabel.height - 6;
+
+			_captionTimer = new Timer(10000);
+			_captionTimer.addEventListener(TimerEvent.TIMER, onCaptionTimer);		
+		}
+		
+
+		// Perform a seek operation
+   		private function doSeek():void {
+   			captionLabel.styleName = "cuePointContainerStyle"; 
+   			hideCaption();
+   			_ns.seek(scrubber.value);
+   		}
+
+		// Handles the displaying of the caption
+		private function showCaption(ccObj:Caption):void {
+			captionLabel.htmlText = ccObj.text;
+			captionLabel.validateNow();	// IMPORTANT!  This line causes the LayoutManager to run immediately, allowing us to change the style below
+		
+			// Formatting within the caption string
+			trace("*** ccObj.captionFormatCount()=="+ccObj.captionFormatCount());
+			
+			for (var i:uint = 0; i < ccObj.captionFormatCount(); i++) {
+				var ccFormatObj:CaptionFormat = ccObj.getCaptionFormatAt(i);
+				var txtRange:TextRange = new TextRange(captionLabel, false, ccFormatObj.startIndex, ccFormatObj.endIndex);
+				var styleObj:Style = ccFormatObj.styleObj;
+				
+				if (styleObj) {
+					trace("*** styleObj.id="+styleObj.id);
+					if (styleObj.backgroundColor != "") {
+						// FYI: setStyle is one of the most expensive calls, performance-wise, in the Flex SDK
+						captionLabel.setStyle("backgroundColor", styleObj.backgroundColor);
+					}
+					
+					callLater(changeTextRange, [txtRange, styleObj]);
+					
+					if (captionLabel.wordWrap != styleObj.wrapOption) {
+						captionLabel.wordWrap = styleObj.wrapOption;
+						trace("$$$$$ just set word wrap to "+styleObj.wrapOption);						
+					}
+				}
+			}
+				
+			captionLabel.visible = true;
+			
+			if (ccObj.endTime > 0) {
+				_captionTimer.delay = (ccObj.endTime - ccObj.startTime)*1000;
+				_captionTimer.start();
+				trace("***** timer delay was set to "+_captionTimer.delay);
+			}
+		}
+		
+		private function changeTextRange(txtRange:TextRange, styleObj:Style):void {
+			if (styleObj.color != "") {
+				txtRange.color = styleObj.color;
+			}
+			if (styleObj.fontFamily != "") {
+				txtRange.fontFamily = styleObj.fontFamily;
+			}
+			if (styleObj.fontSize > 0) {
+				txtRange.fontSize = styleObj.fontSize;
+			}
+			if (styleObj.fontStyle != "") {
+				txtRange.fontStyle = styleObj.fontStyle;
+			}
+			if (styleObj.fontWeight != "") {
+				txtRange.fontWeight = styleObj.fontWeight;
+			}
+			if (styleObj.textAlign != "") {
+				txtRange.textAlign = styleObj.textAlign;
+			}			
+		}
+		
+		// Handles the hiding of the caption
+		private function hideCaption():void {
+			_captionTimer.stop();
+			captionLabel.visible = false;
+		}
+	
+		// Starts the video playing when everything is ready
+   		private function playVideo(name:String):void {
+   			_playBtnStatePlaying = true;
+   			this.playBtn.label = "pause";
+   			_ns.play(name);
+   			uic.visible = true;
+   		}
+		
+		private function showScrubTime(val:String):String {
+   			var sec:Number = Number(val);
+			var h:Number = Math.floor(sec/3600);
+			var m:Number = Math.floor((sec%3600)/60);
+			var s:Number = Math.floor((sec%3600)%60);
+			return (h == 0 ? "":(h<10 ? "0"+h.toString()+":" : h.toString()+":"))+(m<10 ? "0"+m.toString() : m.toString())+":"+(s<10 ? "0"+s.toString() : s.toString());
+		}
+
+		// This method is called from the netStatusHandler below when we receive a good connection		
+		private function connectedHandler():void {
+			trace("Successfully connected to: " + _nc.netConnection.uri);
+			playBtn.enabled = true;
+
+			// Instantiate an OvpNetStream object
+			_ns = new OvpNetStream(_nc);
+			
+			// Add the necessary listeners
+			_ns.addEventListener(NetStatusEvent.NET_STATUS, streamStatusHandler);
+			_ns.addEventListener(OvpEvent.NETSTREAM_PLAYSTATUS, streamPlayStatusHandler);
+			_ns.addEventListener(OvpEvent.NETSTREAM_METADATA, metadataHandler);
+			_ns.addEventListener(OvpEvent.PROGRESS, update);
+			_ns.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler); 
+
+			// Tell the OvpNetStream object we want it to generate NetStream.Pause.Notify 
+			// for progressive download files because the Flash Player will not
+			_ns.createProgressivePauseEvents = true;
+			
+			// Create the closed captioning object and give it the net stream
+			_ccMgr = new OvpCCManager(_ns);
+			_ccMgr.addEventListener(OvpEvent.ERROR, errorHandler);		
+			_ccMgr.addEventListener(OvpEvent.CAPTION, captionHandler);
+			_ccMgr.parse(dfxpURL.text);
+			
+			// Give the video object our net stream object
+			_video.attachNetStream(_ns);
+						
+			playVideo(_filename);
+		}
+		
+		//-------------------------------------------------------------------
+		//
+		// Event Handlers
+		//
+		//-------------------------------------------------------------------
+		
+		private function onCaptionTimer(e:TimerEvent):void {
+			trace("******* onCaptionTimer *********");
+			this.hideCaption();
+		}
+		
+		// Receives caption events dispatched by OvpCCManager class
+		private function captionHandler(e:OvpEvent):void {
+			if (e && e.data && (e.data is Caption)) {
+				hideCaption();
+				showCaption(Caption(e.data));				
+			}
+		}
+				
+		// Handles the OvpEvent.PROGRESS event fired by the OvpNetStream class
+   		private function update(e:OvpEvent):void {
+   			timeDisplay.text =  _ns.timeAsTimeCode + "|"+ _nc.streamLengthAsTimeCode(_streamLength);
+   			if (!_scrubberDragging && !_waitForSeek) {
+   				scrubber.value=_ns.time;
+   			}
+			progressBar.setProgress(_ns.bytesLoaded,_ns.bytesTotal);
+   		}
+		
+		// Handles all OvpEvent.ERROR events
+		private function errorHandler(e:OvpEvent):void {
+			Alert.show("Error #" + e.data.errorNumber+": " + e.data.errorDescription, "ERROR", Alert.OK);
+		}
+		
+		// Handles NetStatusEvent.NET_STATUS events fired by the OvpConnection class
+		private function netStatusHandler(e:NetStatusEvent):void {
+			trace(e.info.code);
+			switch (e.info.code) {
+				case "NetConnection.Connect.Rejected":
+					trace("Rejected by server. Reason is "+e.info.description);
+					break;
+				case "NetConnection.Connect.Success":
+					connectedHandler();
+					break;
+			}
+		}
+
+		// Handles the NetStatusEvent.NET_STATUS events fired by the OvpNetStream class			
+		private function streamStatusHandler(e:NetStatusEvent):void {
+			trace("streamStatusHandler() - event.info.code="+e.info.code);
+			switch(e.info.code) {
+				case "NetStream.Buffer.Full":
+					// _waitForSeek is used to stop the scrubber from updating
+					// while the stream transtions after a seek
+					_waitForSeek = false;
+					break;
+			}
+		}
+		
+		// Handles the OvpEvent.NETSTREAM_PLAYSTATUS events fired by the OvpNetStream class
+		private function streamPlayStatusHandler(e:OvpEvent):void {				
+			trace(e.data.code);
+		}
+			
+		// Handles the OvpEvent.NETSTREAM_METADATA events fired by the OvpNetStream class	
+		private function metadataHandler(e:OvpEvent):void {
+			for (var propName:String in e.data) {
+				trace("metadata: "+propName+" = "+e.data[propName]);
+			}
+			_video.x = 0;
+			_video.y = 0;
+			_video.width = e.data.width;
+			uic.width = e.data.width + 6;
+			_video.height = e.data.height;
+			uic.height = e.data.height + 6;	
+			
+			videoContainer.width = e.data.width + 11;
+			videoContainer.height = e.data.height + 11;	
+				
+			captionLabel.width = e.data.width;		
+		}
+
+		// Handles scrubber events (an HSlider object)
+   		private function toggleDragging(state:Boolean):void {
+   			_scrubberDragging = state;
+   			if (!state) {
+   				_waitForSeek = true;
+   				doSeek();
+   			}
+   		}
+
+		// Handles play button events
+		private function onClickPlay(event:MouseEvent):void {			
+			if (_playBtnStatePlaying) {
+				this._captionTimer.stop();
+				_ns.pause();
+				playBtn.label = "play";
+			}
+			else {
+				this._captionTimer.start();
+				_ns.resume();
+				playBtn.label = "pause";
+			}
+			_playBtnStatePlaying = !_playBtnStatePlaying;			
+		}
+		
+		// Handles the Load button click for progressive downloads
+		private function onClickLoadPDL(event:MouseEvent):void {
+			hideCaption();
+			
+			_filename = this.cbPdlUrl.text;
+			
+			if (_nc.netConnection is NetConnection) {
+				_nc.close();
+			}
+			
+			_nc.connect(null);
+		}
+		
+		private function streamLengthHandler(e:OvpEvent):void {
+			trace("Stream length is " + e.data.streamLength);
+			scrubber.maximum = e.data.streamLength;
+			scrubber.enabled = true;
+			_streamLength = e.data.streamLength;
+		}
+		
+								
+		]]>
+	</mx:Script>
+	<mx:VBox id="container" paddingLeft="20" paddingTop="20">
+		<mx:HBox id="titleContainer" width="100%">
+			<mx:Label text="Closed Captioning Test" styleName="title" />
+		</mx:HBox>
+		<mx:Spacer height="20" />
+		<mx:HBox>
+			<mx:Label text="DFXP File URL:" styleName="label" />
+			<mx:ComboBox id="dfxpURL" dataProvider="{_dfxpUrlList}" editable="true" />
+		</mx:HBox>
+		<mx:HBox id="pdlContainer">
+			<mx:Label text="URL: " styleName="label"/>
+			<mx:ComboBox id="cbPdlUrl" dataProvider="{_pdlUrlList}" editable="true"/>
+			<mx:Button id="loadPdlBtn" label="load" click="onClickLoadPDL(event)" useHandCursor="true" buttonMode="true" />
+		</mx:HBox>
+		<mx:Spacer height="20" />
+		<mx:HBox>
+			<mx:VBox horizontalAlign="center">
+				<mx:VBox backgroundColor="#333333" verticalGap="0" horizontalAlign="center">
+					<mx:VBox id="videoContainer" paddingLeft="5" paddingTop="5" backgroundColor="#242424" 
+						width="491" height="281" verticalScrollPolicy="off" horizontalScrollPolicy="off" horizontalAlign="center">
+						<mx:UIComponent id="uic" visible="false" />
+					</mx:VBox>
+					<mx:HRule width="100%" strokeColor="black" strokeWidth="1" />
+					<mx:HBox paddingLeft="6" paddingTop="3" paddingBottom="3">
+						<mx:Button id="playBtn" label="pause" click="onClickPlay(event)" enabled="false" 
+							useHandCursor="true" buttonMode="true" />
+						<mx:VBox>
+							<mx:HSlider id="scrubber" width="320" allowTrackClick="true" enabled="false" dataTipFormatFunction="showScrubTime" 
+								thumbPress="toggleDragging(true)" thumbRelease="toggleDragging(false)" />
+							<mx:ProgressBar id="progressBar" width="320" labelPlacement="center" 
+								mode="manual" minimum="0" indeterminate="false" />					
+						</mx:VBox>
+						<mx:Text id="timeDisplay" text="00:00|00:00" />
+					</mx:HBox>
+				</mx:VBox>
+			</mx:VBox>
+			<mx:Spacer width="10" />
+		</mx:HBox>
+	</mx:VBox>
+
+	<mx:TextArea wordWrap="true" id="captionLabel" styleName="cuePointContainerStyle"
+		width="489" borderStyle="none" horizontalScrollPolicy="off" verticalScrollPolicy="off" visible="false"/>							
+	
+</mx:Application>

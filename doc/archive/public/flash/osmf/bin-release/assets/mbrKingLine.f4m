@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://ns.adobe.com/f4m/1.0">
+	<baseURL>rtmp://llnwqa.fcod.llnwd.net/a1218/o18/</baseURL>
+	<urlIncludesFMSApplicationInstance>true</urlIncludesFMSApplicationInstance>
+	<media url="mp4:lexsamplecontent/king_500.f4v"  bitrate="500" width="480" height="270" />
+	<media url="mp4:lexsamplecontent/king_800.f4v"  bitrate="800" width="480" height="270" />
+	<media url="mp4:lexsamplecontent/king_1200.f4v"  bitrate="1200" width="640" height="360" />
+	<media url="mp4:lexsamplecontent/king_1500.f4v"  bitrate="1500" width="640" height="360"/>
+	<media url="mp4:lexsamplecontent/king_2400.f4v"  bitrate="2400" width="640" height="360"/>
+</manifest>

@@ -1,0 +1,53 @@
+<map table="users" result="Users" allow_add="false"  title="Users">
+  <column column="month" name="Month" type="VARCHAR" size="" key="" order="1" ></column>
+  <column column="day" name="Day" type="VARCHAR" size="" key="" order="2" ></column>
+  <column column="year" name="Year" type="VARCHAR" size="" key="" order="3" ></column>
+  <column column="count" name="Users" type="VARCHAR" size="" key="" order="4"></column>
+  <column column="total" name="Total Users" type="VARCHAR" size="" key="" order="5" util="item::totalCount"></column>
+  <column column="total" name="FB Users" type="VARCHAR" size="" key="" order="6" util="item::FBCount"></column>
+  <column column="total" name="TW Users" type="VARCHAR" size="" key="" order="7" util="item::TWCount"></column> 
+  <column column="total" name="Other Users" type="VARCHAR" size="" key="" order="8" util="item::ECount"></column> 
+  <column column="total" name="Daily Tickets" type="VARCHAR" size="" key="" order="9" util="item::TicketCount"></column>
+  <column column="total" name="Total Tickets" type="VARCHAR" size="" key="" order="10" util="item::totalTicketCount"></column> 
+  <column column="total" name="Daily Amount" type="VARCHAR" size="" key="" order="11" util="item::TicketAmount"></column>
+  <column column="total" name="Total Amount" type="VARCHAR" size="" key="" order="12" util="item::totalTicketAmount"></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[
+      select month(user_created_at),
+			day(user_created_at),
+			year(user_created_at),
+			count(user_id),
+			''
+			from user 
+			where user.user_ual != 'a:2:{i:0;s:1:\"1\";i:1;s:1:\"2\";}'
+			group by month(user_created_at),
+			day(user_created_at),
+			year(user_created_at)
+			order by year(user_created_at),
+			month(user_created_at),
+			day(user_created_at)
+      ]]>
+    </sqlselect>
+   </sql>    
+  <criterion limit="0" distinct="true">
+  	<!--<criteria value="11" column="month" type="int" />
+  	<criteria value="1" column="day" type="int" />
+  	<criteria value="2011" column="year" type="int" />
+    <criteria scope="PROCESS" value="month" column="month" type="int" />
+  	<criteria scope="PROCESS" value="day" column="day" type="int" />
+  	<criteria scope="PROCESS" value="year" column="year" type="int" />-->
+    
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <!--<maplinks>
+    <maplink column="Session" base="/stats/session/">
+      <attribute name="Session"></attribute>
+    </maplink>
+  </maplinks>-->
+</map>

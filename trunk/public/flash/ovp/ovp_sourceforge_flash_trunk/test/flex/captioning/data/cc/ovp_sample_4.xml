@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+	<head>
+		<!-- 
+			This sample tests the various ways to set font size.
+		-->
+	</head>
+	<body>
+		<div xml:lang="en">
+			<p begin="00:00:05">This caption using scalar: 14 - <span tts:fontSize="14px 12px">This text at 14 px.</span> This text back to default.</p>
+			<p begin="00:00:10">This caption using percentage: 50% - <span tts:fontSize="50%">This text should be default because we don't support percentages.</span></p>
+			<p begin="00:00:15">This caption using 14px - <span tts:fontSize="14px">This text at 14 px.</span> This text back to default.</p>
+			<p begin="00:00:20">This caption using 14em - <span tts:fontSize="14em">This text at 14 px.</span> This text back to default.</p>
+			<p begin="00:00:25">This caption using 14c - <span tts:fontSize="14em">This text at 14 px.</span> This text back to default.</p>
+			<p begin="00:00:30">This caption using +5 - <span tts:fontSize="+12">This text at +5.</span> This text back to default.</p>
+			<p begin="00:00:35">This caption using -5 - <span tts:fontSize="-5">This text at -5.</span> This text back to default.</p>
+			<p begin="00:00:40">This caption using a real number 14.4 - <span tts:fontSize="14.4">This text at 14 px.</span> This text back to default.</p>
+		</div>
+	</body>
+</tt>

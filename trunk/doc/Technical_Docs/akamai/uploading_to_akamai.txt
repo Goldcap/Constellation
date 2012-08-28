@@ -1,0 +1,27 @@
+A) Login to Akamai's Portal to configure streams
+   http://control.akamai.com
+B) Login
+   Raj's credentials are rkumar@constellation.tv/con201
+  (Note: psswords at 6 chars long)
+
+C) Expand the Netstorage Tab on the left
+D) Expand "manage users" to the right
+E) Add yourself a user id (Add Upload Account button on bottom right)
+   Note: you can do it with just a username/password or 
+   you can use ssh (enter a ssh key if you paln to do this)
+
+F) The upload machine  is constell.upload.akamai.com
+   the username is the one you created (and password if created) 
+   a)  If you use plain ftp, 
+   	> ftp constell.upload.akamai.com
+   	> user <username>
+   	> enter the password
+   	> then upload (mput *)
+
+	b) If using scp
+    # scp * user@constell.upload.akamai.com
+----------------------------------------------------------------------
+
+user: constellation2010
+password: constellation2010
+

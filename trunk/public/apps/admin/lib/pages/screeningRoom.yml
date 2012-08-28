@@ -1,0 +1,10 @@
+template: blank
+layout: screening
+title: Constellation.tv Screening
+javascripts: []
+css: []
+ual: [1]
+widgets:
+  wrapper:
+    ScreeningJs:
+  zzdiv:

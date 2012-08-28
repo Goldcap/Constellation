@@ -1,0 +1,28 @@
+<map table="users" result="Ticket Purchase" allow_add="false"  title="Ticket Purchase Levels">
+  <column column="total" name="Ticket Purchase Amount" type="VARCHAR" size="" key="" order="1"></column>
+  <column column="total" name="Total Users" type="VARCHAR" size="" key="" order="2" format="%0d"></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[
+      select total,
+			count(total)
+			from user_payments
+			group by total
+			order by total desc;
+      ]]>
+    </sqlselect>
+   </sql>    
+  <criterion limit="0" distinct="true">
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Ticket Purchase Amount" base="/metric/tickets/">
+      <attribute name="Ticket Purchase Amount"></attribute>
+    </maplink>
+  </maplinks>
+</map>

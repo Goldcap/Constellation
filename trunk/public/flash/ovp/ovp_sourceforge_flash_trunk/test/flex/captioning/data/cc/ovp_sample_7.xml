@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+		<head>
+		<!-- 
+			This sample has no div tag.
+		-->
+			<styling>
+				<style id="wt_on_bk" tts:backgroundColor="#000000" tts:color="#ffffff"/>
+				<style id="bl_on_wt" tts:backgroundColor="#ffffff" tts:color="#0000ff"/> 
+			</styling>
+		</head>
+		<body>
+			<p begin="00:00:00" dur="00:00:03">There is no style on this text showing at 0 secs for 3 secs.</p>
+			<p begin="00:00:05" dur="00:00:03" style="wt_on_bk">This caption should be white text on a black background.</p>
+			<p begin="00:00:08" style="bl_on_wt">This caption should be blue text on a white background.</p>
+			<p begin="00:00:11" style="wt_on_bk">Back to w on bk, <span tts:color="red" tts:fontWeight="bold" tts:fontStyle="italic">red, bold, italic</span> normal.</p>
+		</body>
+</tt>

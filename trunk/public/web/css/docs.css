@@ -1,0 +1,44 @@
+/* CSS Document */
+
+#docs {
+	font-size: 12px !important;
+	width: 600px;
+}
+
+#docs p {
+	margin-bottom: 10px;
+}
+
+#docs p strong {
+	color: #3366cc;
+	font-weight: bold;
+}
+
+#docs ul {
+	margin-left: 10px !important;
+	margin-bottom: 10px !important;
+}
+
+#docs ul li a.title{
+	color: #00CC00;
+}
+
+#docs h1 { 
+	font-size: 24px !important;
+	margin: 10px 0px; 
+	font-weight: bold;
+}
+
+#docs h2 { 
+	font-size: 18px !important;
+	margin: 10px 0px;
+	font-weight: bold;
+}
+
+
+#docs h3 { 
+	font-size: 14px !important;
+	margin: 10px 0px;
+	font-weight: bold;
+	color: #3366ff;
+}

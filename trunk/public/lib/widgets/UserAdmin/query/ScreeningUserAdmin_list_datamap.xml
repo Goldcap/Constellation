@@ -1,0 +1,43 @@
+<map table="film" result="screening" allow_add="false">
+  <column column="screening_film_name" name="Film_Name" type="LONGVARCHAR" size="" key="" order="1"></column>
+  <column column="screening_date" name="Screening_Date" type="LONGVARCHAR" size="pretty" key="" order="2" format="dateformat"></column>
+  <column column="screening_short_url" name="Screening URL" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="screening_id" name="Reset" type="VARCHAR" size="255" key="" order="4" filter="resetLink"></column>
+  <column column="audience_status" name="Status" type="VARCHAR" size="" key="" order="5" filter="setStatus"></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[select film.film_name,
+        concat(screening.screening_date,' ',screening.screening_time),
+        audience.audience_short_url,
+        audience_id,
+        audience_status
+        from audience
+        left join screening
+        on audience.fk_screening_id = screening.screening_id
+        left join film on screening.fk_film_id = film.film_id
+        inner join payment on payment.fk_audience_id = audience.audience_id
+        where payment.fk_user_id = ?
+        and audience.audience_paid_status = 2
+      ]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="screening_date" type="AND" />
+    <criteria scope="PROCESS" value="startdate" column="screening_date" constant="native" type="AND" />-->
+    <criteria scope="GET" value="id" />
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <ascorderby column="screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Film_Name">
+      <attribute name="screening_short_url"></attribute>
+    </maplink>
+  </maplinks>
+</map>

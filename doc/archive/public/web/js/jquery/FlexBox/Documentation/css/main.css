@@ -1,0 +1,53 @@
+body {
+	font-family:Calibri,Tahoma,Arial;
+	font-size:93%;
+	margin:0 auto;
+	padding:0;
+	width:800px;
+}
+h2 {
+	background-color:#f2f2f2;
+	border-bottom:solid 1px #117EBF;
+	border-top:solid 1px #117EBF;
+	padding-left:4px;
+}
+img {
+	border:0;
+}
+a {
+	color:#117EBF;
+}
+a.big {
+	font-size:125%;
+}
+p.margin-top {
+	margin-top:.5em;
+}
+table.demo {
+	border-collapse: collapse;
+	border:solid 1px black;
+	margin-bottom:12px;
+	width:800px;
+}
+table.demo tr, table.demo tr td {
+	vertical-align: top;
+}
+table.demo td {
+	padding:4px;
+	border-bottom:dashed 1px black;
+}
+table.demo td.col {
+	width:450px;
+}
+table.demo tr.example {
+	font-size: 105%;
+	background-color: #f2f2f2;
+}
+table.demo tr.example td {
+	border-bottom:solid 1px black;
+}
+table.demo tr.example td span
+{
+	font-weight: bold;
+	float: left;
+}

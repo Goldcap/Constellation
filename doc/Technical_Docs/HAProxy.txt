@@ -1,0 +1,45 @@
+yum install pcre-devel pcre
+
+#Download ha proxy source from the official website
+wget http://haproxy.1wt.eu/download/1.4/src/haproxy-1.4.19.tar.gz
+
+make TARGET=linux26 USE_PCRE=1 ARCH=i386
+make install
+
+cp haproxy /usr/sbin/haproxy
+
+#Download a sample config file
+wget http://layer1.rack911.com/haproxy/haproxy-standard.cfg -O /etc/haproxy.cfg
+
+#Download a launcher
+wget http://layer1.rack911.com/haproxy/haproxy.init -O /etc/init.d/haproxy
+
+#adjust the startup settings
+chmod +x /etc/init.d/haproxy
+chkconfig --add haproxy
+chkconfig haproxy on
+
+
+http://haproxy.1wt.eu/download/1.4/doc/configuration.txt
+http://unethicalblogger.com/2010/01/16/virtual-hosting-with-haproxy-and-wsgi.html
+http://itand.me/haproxy-nginx-php-architecture
+
+http://www.softwareprojects.com/resources/programming/t-how-to-install-and-configure-haproxy-as-an-http-loa-1752.html
+
+http://www.completefusion.com/ssl-load-balancing-with-haproxy-and-stunnel-on-debian/
+
+http://agiletesting.blogspot.com/2009/02/load-balancing-in-amazon-ec2-with.html
+
+
+SSL
+To handle SSL traffic in HAProxy, you need 3 things:
+
+1) Define a frontend with a unique name which handles *:443
+2) Send traffic to real_server_IP_1:443 through real_server_IP_N:443 in the backend(s) associated with the frontend
+3) Specify 'mode tcp' instead of 'mode http' both in the frontend section and in the backend section(s) which handle port 443. Otherwise you won't see any SSL traffic hitting your real servers, and you'll wonder why....
+
+              
+token   8091
+prod    8097
+admin   8098 
+affiliate 8099

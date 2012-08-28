@@ -1,0 +1,5 @@
+divs:
+  header:
+  content:
+    attributes: 'class="clearfix"'
+  footer:

@@ -1,0 +1,55 @@
+//init-
+
+missingTicketParams = "001";
+
+parseDataFileError = "002";
+
+initError = "003";
+
+//auth related
+
+//autx-
+
+serverAuthRejection = "001" 
+
+tokenHTTPError = "002";
+
+//stream related
+
+//stvl-
+
+ smilMalformed = "001";
+
+netStream_streamNotFound ="002";
+
+netStream_securityError = "003";
+
+netStream_playFailed = "004";
+
+netStream_timeout = "005";
+
+stream_netRejectError = "006";
+
+stream_netFailError = "007";
+
+stream_ioError= "008";
+
+stream_f4mFileInvalid= "009";
+
+stream_httpGetFail = "010";
+
+//error not able to be id
+
+osmf_relatedError = "099"
+
+//heart attack related
+
+//htbt-
+
+ heartAttack_skippedBeats = "001";
+
+heartAttack_failedResponseLimit = "002";
+
+heartAttack_serverReject = "003";
+
+ heartAttack_unknownCause = "004";

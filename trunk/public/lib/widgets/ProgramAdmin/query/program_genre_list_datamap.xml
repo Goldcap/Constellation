@@ -1,0 +1,16 @@
+<map table="program_genre" result="program_info_list_datamap">
+  <join foreigntable="genre" local="fk_genre_id" foreign="genre_id" left="false">
+    <foreigncolumn column="genre_name" type="TINYINT" size="1" key="" order="1"></foreigncolumn>
+  </join>
+  <criterion limit="0" distinct="true">
+    <criteria scope="GET" value="id" column="fk_program_id"/>
+    <ascorderby column="fk_genre_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

@@ -1,0 +1,4 @@
+<map table="user_session" result="user_session_list_datamap"><column column="sess_data" type="LONGVARCHAR" size="" key="" order="1"></column><column column="sess_time" type="BIGINT" size="20" key="" order="2"></column><column column="id" type="INTEGER" size="11" key="" order="3"></column><column column="sess_id" type="VARCHAR" size="255" key="MUL" order="4"></column><criterion limit="0" distinct="true"><ascorderby column=""></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="sess_id" base="/user_session/detail/"><attribute name=""></attribute></maplink></maplinks></map>

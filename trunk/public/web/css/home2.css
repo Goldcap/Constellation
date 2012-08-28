@@ -1,0 +1,139 @@
+#home-slide-ui {
+
+}
+
+.home_content_inner {
+
+}
+.home-hero {
+	background: #000 url(../images/pages/index/c-front.jpg) 50% 0 no-repeat;
+	height:350px;
+}
+.home-hero h1 {
+	text-align: center;
+	font-size: 60px;
+	line-height: 68px;
+	color: #fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+	margin: 20px 20px 10px;
+}
+.home-hero h2 {
+	text-align: center;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: normal;
+	color: #ddd;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+	margin: 10px 40px 20px;
+}
+
+.hero-content-signup {
+	background: #333;
+	text-align: center;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+	-moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+	border-top: solid 1px #444;
+	/*	float: right;
+	width: 340px;
+	*/
+	/*margin-top: 80px;
+	*/
+}
+.hero-content-signup .button { 
+	/*display: block; */
+	text-align:center;
+	width: 384px;
+}
+.hero-content-video {
+	float: left;
+	width: 500px;
+}
+.hero-content-signup .or {
+	display: inline-block;
+	*display: inline;
+	text-align: center;
+	background: rgba(0,0,0,0.5);
+	border-radius: 50px;
+	padding: 10px;
+	line-height: 20px;
+	text-align: center;
+	font-style: italic;
+	color: #fff;
+	margin: 20px ;
+	width: 20px;
+	height: 20px;
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.slide-container {
+	position: relative;
+}
+.slide-container .slide-1, .slide-container .slide-2, .slide-container .slide-3, .slide-container .slide-4{
+
+	background: transparent url(../images/pages/index/interact-slide.png) 0 0 no-repeat;
+	height: 230px;
+	width: 550px;
+	position: absolute;
+	top: 36px;
+	left: 210px;
+	display: block;
+
+}
+.slide-container .slide-2 {
+ 	background-image: url(../images/pages/index/watch-slide.png);
+}
+.slide-container .slide-3 {
+ 	background-image: url(../images/pages/index/chat-slide.png);
+}
+.slide-container .slide-4 {
+ 	background-image: url(../images/pages/index/event-slide.png);
+}
+.emoicon1 {
+	background: transparent url(../images/pages/index/emoicon-1.png) 0 0 no-repeat;
+	width: 50px;
+	height: 56px;	
+	position: absolute;
+	top: 240px;
+	left: 610px;
+	display: block;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+.emoicon2 {
+	background: transparent url(../images/pages/index/emoicon-2.png) 0 0 no-repeat;
+	width: 50px;
+	height: 56px;	
+	position: absolute;
+	top: 240px;
+	left: 390px;
+	display: block;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+.emoicon3 {
+	background: transparent url(../images/pages/index/emoicon-3.png) 0 0 no-repeat;
+	width: 50px;
+	height: 56px;	
+	position: absolute;
+	top: 210px;
+	left: 894px;
+	display: block;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+.emoicon4 {
+	background: transparent url(../images/pages/index/emoicon-4.png) 0 0 no-repeat;
+	width: 50px;
+	height: 56px;	
+	position: absolute;
+	top: 210px;
+	left: 660px;
+	display: block;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}

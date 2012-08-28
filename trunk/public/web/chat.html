@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Strophe.js Basic Example</title>
+    <script src='/js/jquery/jquery-1.6.4.min.js'></script>
+    <script src='/js/strophe.js'></script>
+    <script src='/js/basic.js'></script>
+  </head>
+  <body>
+    <div id='login' style='text-align: center'>
+      <form name='cred'>
+        <label for='jid'>JID:</label>
+        <input type='text' id='jid' value='bob@constellation.tv'>
+        <label for='pass'>Password:</label>
+        <input type='password' id='pass' value='123456'>
+        <input type='button' id='connect' value='connect'>
+      </form>
+    </div>
+    <hr>
+    <div id="thechat" style="display:none">
+		<form name='chat'>
+      <label for='jid'>Message:</label>
+      <input type='message' id='message' value='hi there!'>
+      <input type='button' id='chat' value='send'>
+    </form>
+    </div>
+    <div id='log'></div>
+    
+    <hr />
+    
+    <div id='messages'></div>
+  </body>
+</html>

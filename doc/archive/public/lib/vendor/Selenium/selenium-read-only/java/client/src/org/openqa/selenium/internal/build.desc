@@ -1,0 +1,10 @@
+
+java_library(name = "codecs",
+  srcs = [
+    "Base64Encoder.java",
+  ])
+
+java_library(name = "build_info",
+  srcs = [
+    "BuildInfo.java",
+  ])

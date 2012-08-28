@@ -1,0 +1,24 @@
+<map table="user" result="User">
+  <column column="user_nickname" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_fname" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_lname" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="user_email" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="user_password" type="VARCHAR" size="255" key="" order="5" filter="decrypt"></column>
+  <column column="user_ual" type="INTEGER" size="" key="" order="6" hidden="true"></column>
+  <column column="user_website" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="user_id" type="INTEGER" size="" key="PRI" order="1"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="user_id"></ascorderby>
+    <criteria column="object_type" value="user" type="AND" constant="pregroup_native"/>
+    <criteria scope="GET" column="user_id" value="id" constant="postgroup_native"/>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>-->
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="1"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

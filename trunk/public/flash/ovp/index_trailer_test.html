@@ -1,0 +1,127 @@
+﻿<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+
+
+<title>CTV Trailer Test</title>
+<!-- this causes some weird characters for some reason -->
+<!--meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"-->
+
+<script type="text/javascript" src="swfobject.js"></script>
+
+<script type="text/javascript">
+
+	
+	function ChangeVol () {	
+		document.getElementById('flash').setVolume(document.getElementById('volumeSetting').value);
+	}
+
+	function ToggleMute () {	
+		document.getElementById('flash').toggleSound();
+	}
+
+
+    function HideTrailer () {	
+        // Do something here to hide the Trailer SWF 
+        // which is presumably in a DIV or something
+        alert ("Got to HideTrailer in js");
+	}
+
+
+	function ResizeEvent () {
+		//alert ("Reached ResizeEvent in JS. Now tell Flash.");
+		document.getElementById('flash').resizeNotification();
+	}
+    
+    var flashvars = 
+		{src:'./data/elephants.smil',
+		autostart: 'true',
+        trailerMode:'true',
+        /* themeColor: '0395d3', */
+	    themeColor: '444444',
+        mode: 'overlay', // mode: 'sidebyside', //mode: 'overlay',
+		scaleMode: 'fit',
+		/*frameColor: '333333', */
+		frameColor: '000000',
+		backgroundColor: '000000',
+		videoBackgroundColor_ignore: 'ff0000',
+		controlBarOverlayColor: '3c3c3c',
+		fontColor: 'cccccc',
+		/*fontColor: '00ff00', */
+		link: '',
+		embed: '',
+		loadMode: '2',
+		showVideo: 'true',
+		showMuteButton: 'false',
+		debugConsole: 'false',
+        hideDebugPanel:"false", 
+        debug:"false",
+		usePostMethod: 'false',
+		useSubstitution: 'false',
+		appendParams: 'true',
+		seekInto: '4000',
+		ticketParams:'XgBwvQdbg019R9xx/1KlPSVc11h9bx4iuJ+LSKw7vQ==',
+        streamName:'constellation', 
+        streamID:'45907', 
+        cpCode:'113557',
+        auth:"yyyy", 
+        aifp:"zzzz",
+      
+		bufferMin:"2", 
+        bufferMax:"10",
+		
+		   dialogAlpha_ignore:"0.5",
+          
+          borderSize_ignore:"20",
+          autostartLiveViewer_ignore:"true",
+          trailerVideoX_ignore:"50",
+          trailerVideoY_ignore:"45",
+          trailerVideoW_ignore:"420",
+          trailerVideoH_ignore:"230"
+		};
+
+		var params = {allowFullScreen: 'true', allowfullscreen: 'true', allowScriptAccess: 'always',
+                       bgcolor:"#333333"};
+		var attributes = {id: 'flash', name: 'flash', movie: 'flash'};
+		var swfName = 'AkamaiMultiPlayerExample.swf'; 
+		//swfName = 'http://www.zeusprod.com/flash/fruitslices.swf';
+		swfobject.embedSWF(swfName, 'myPlayerGoesHere',
+						 '524', '320', 
+                        '10.0.0', 'expressInstall.swf', 
+						flashvars, params, attributes);
+              
+                       
+                        
+</script>
+<style media="screen" type="text/css">#myPlayerGoesHere {visibility:visible}</style>
+</head>
+<body bgcolor="#aa4444">
+
+     <form id="form1" name="form1" method="post" action="">
+
+      
+	<input type="text" id="volumeSetting" name="volumeSetting" />
+<br/>
+     
+ 	<input name="resizeArrow" id="resizeArrow" value="Simulate Resize Event" onclick="ResizeEvent()" type="button">
+
+	 <input name="volButton" id="volButton" value="Change Vol" onclick="ChangeVol()" type="button">
+	<input name="muteButton" id="muteButton" value="Toggle Mute" onclick="ToggleMute()" type="button">
+
+
+    </form>
+<br>
+	<div id="flashwrapper">
+<div id='myPlayerGoesHere' align="center">
+		<a href='http://www.adobe.com/go/getflashplayer'>
+			<img src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif' 
+					alt='Get Adobe Flash player' />
+		</a>
+
+
+  
+	</div>
+
+
+	</div>
+
+</body><html>

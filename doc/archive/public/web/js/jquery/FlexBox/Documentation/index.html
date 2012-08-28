@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>.: Fairway Technologies jQuery FlexBox :.</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link href="css/dp.syntaxhighlighter.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="../FlexBox/css/jquery.flexbox.css" />
+		<script type="text/javascript" src="js/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../FlexBox/js/jquery.flexbox.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shCore.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushCSharp.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushJScript.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushXml.js"></script>
+		<script type="text/javascript" src="js/countries.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				dp.SyntaxHighlighter.ClipboardSwf = 'js/dp.SyntaxHighlighter/clipboard.swf';
+				dp.SyntaxHighlighter.HighlightAll('code');
+				$('#ffb1').flexbox(countries);
+			});
+		</script>
+	</head>
+	</body>
+		<div style="padding:10px">
+			<a href="http://fairwaytech.com"><img style="float:left" src="img/fairwaylogo.jpg"/></a>
+			
+			<div style="float:right;border:solid 3px #1D9ED8;padding:16px;background-color:#f2f2f2">
+				<a target="_blank" class="big" href="http://fairwaytech.com/flexbox"><b>FlexBox</b> Home Page</a><br />
+				<a target="_blank" class="big" href="http://www.codeplex.com/flexbox"><b>FlexBox</b> CodePlex Project Page</a><br />
+				<a target="_blank" class="big" href="http://plugins.jquery.com/project/FlexBox"><b>FlexBox</b> jQuery Plugin Page</a><br />
+			</div>
+				
+			<h1 style="clear:both">FlexBox</h1>
+			
+			<a href="demos.html">Take Me To FlexBox Demos!</a>
+
+			<p>FlexBox is a jQuery plugin that is intended to be a very flexible replacement for html
+			   textboxes and dropdowns, optionally using ajax to retrieve and bind JSON data.</p>
+			
+			<p>
+				It can be used as a:
+				<ul>
+					<li>ComboBox, with optional per-result html templates</li>
+					<li>Suggest box, like Google's search</li>
+					<li>Data-driven type-ahead input box</li>
+				</ul>
+				It supports:
+				<ul>
+					<li>Auto-completion using local (JSON) or remote (JSON via ajax) data</li>
+					<li>Skinning via css</li>
+					<li>Flexible paging of results</li>
+					<li>Configurable client-side caching</li>
+					<li>Much more... (see <a href="#config">Configuration Options</a>)</li>
+				</ul>
+			</p>
+
+			<h2>Download</h2>
+			
+			<p>Please visit the <a target="_blank" href="http://www.codeplex.com/flexbox">CodePlex Project Page</a> to download FlexBox</p>
+
+			<h2>Demonstration</h2>
+			
+			<p>Here is a teaser... (click the arrow, or type a character or two in the input box)</p>
+			
+			<div id="ffb1"></div>
+			
+			<p style="clear:both">To see the power and flexibility of FlexBox, please check out <a href="demos.html">all the demos</a>!</p>
+			
+			<h2>Getting Started</h2>
+
+			<p><a target="_blank" href="http://flexbox.codeplex.com/releases">Download the latest version of FlexBox</a>, which includes the following files:</p>
+			
+			<table>
+				<tr>
+					<td><img src="img/files.png" /></td>
+					<td style="width:400px">
+						Please note that by default, FlexBox expects to see files in this directory structure.
+						If you need to move the "sel*.gif" image (which is a sprite for the arrow), be sure to update the
+						css file to point to the new location.
+					</td>
+				</tr>
+			</table>
+			
+			<p>Add an empty div to the &lt;body&gt; tag wherever you want the FlexBox to appear:</p>
+			<textarea name="code" class="html:nocontrols">
+				<div id="fb"></div>
+			</textarea>
+			
+			<p>Make sure you have a reference to jQuery, and the FlexBox js and css files in the &lt;head&gt; tag:</p>
+			<textarea name="code" class="html:nocontrols">
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" />
+				<script type="text/javascript" src="path/to/jquery.flexbox.min.js" /><!-- or use jquery.flexbox.js for debugging -->
+				<link type="text/css" rel="stylesheet" href="path/to/jquery.flexbox.css" />
+			</textarea>
+
+			<p>Also within the &lt;head&gt; tag, below the references to jQuery and FlexBox,
+			call the jQuery ready() function, and within it, call the FlexBox using the id
+			of the &lt;div&gt; you just created.  The only parameter you must pass is the
+			page name that will return the results as a JSON string.  You may also pass a 
+			second parameter, which is a JSON object containing any of the <a href="#config">Configuration 
+			Options</a>:</p>
+			<textarea name="code" class="js:nocontrols">
+				<script type="text/javascript">
+					$(function() { // $(function() { ... });  is equivalent to $(document).ready(function() { ... });
+						$('#fb').flexbox('results.aspx'); // results.aspx is the page that returns json data in the expected format
+					});
+				</script>
+			</textarea>
+
+			<p>The call to results.aspx is ajax, and should return a JSON string in the format shown below.</p>
+			<ul>
+				<li>The "id" property is a string or integer, and is the value submitted when the form is submitted
+					(like the "value" attribute of the html &lt;option&gt; tag)</li>
+				<li>The "name" property is a string or integer, and is the text displayed for each result, and when
+					a result is selected (like the text between the html &lt;option&gt; open and &lt;/option&gt; close tags)</li>
+				<li>All of these names and values are configurable to match the format of your JSON data</li>
+			</ul>
+			
+			<textarea name="code" class="js:nocontrols">
+				{"results":[
+					{"id":1,"name":"Ant"}, 
+					{"id":2,"name":"Bear"},
+					{...} // more results here...
+				]}
+			</textarea>
+			
+			<p>This produces the following (when the default css styles are used):</p>
+			
+			<img src="img/ffb-default.gif" />
+					
+			<a name="config"></a>
+			<h2>Configuration Options</h2>
+
+			<p>Here are all the available options for customizing the FlexBox:</p>
+
+			<table class="demo">
+				<tr class="example"><td><b>Appearance</b></td></tr>
+				<tr>
+					<td>
+						<b>showArrow</b> : boolean (default = true)
+						<p class="margin-top">
+							Set to false to simulate Google Suggest, which forces the user to type before results
+							are displayed.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>showResults</b> : boolean (default = true)
+						<p class="margin-top">
+							Set to false to hide the dropdown results.  Exact matches appear immediately,
+							and are selected in the input box.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>noResultsText</b> : string (default = 'No matching results')
+						<p class="margin-top">
+							Text to display when there are no results matching what the user typed.
+							Appears as a one-row dropdown below the input box.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>width</b> : number (default = 200)
+						<p class="margin-top">
+							Specifies the overall width of the FlexBox.  Automatically adjusts to
+							accommodate the arrow as necessary.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>maxVisibleRows</b> : number (default = 0)
+						<p class="margin-top">
+							When set to 0 (zero), this option is ignored.  Otherwise, you can set
+							this value to force scrolling.  This can be used in conjunction with
+							paging.pageSize.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>watermark</b> : string (default = '')
+						<p class="margin-top">
+							Helpful text that appears in the input box when it is loaded.
+							Automatically hides when the arrow is clicked, or the input box gets
+							focus.  Ignored if initialValue is set.  This option can be styled
+							by changing the class '.ffb-input.watermark'.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>resultTemplate</b> : string (default = '{name}')
+						<p class="margin-top">
+							This very flexible property allows you to specify a template that is
+							applied to each row of data returned.  The template is a combination of
+							html and JSON properties (in curly braces).  For example, to create a
+							two-column result template that displays the id in the first column, and 
+							the name in the second column, you might use this:
+							<textarea name="code" class="html:nocontrols:nogutter">
+								$('#fb').flexbox('results.aspx', {
+									resultTemplate: '<div class="col1">{id}</div><div class="col2">{name}</div>'
+								}
+							</textarea>
+							For each object in the JSON results array, the resultTemplate is applied, and the
+							actual value in the JSON data is substituted for the {property}.
+							You can also use dot notation for nested JSON properties (e.g. {Thumbnail.Url}).
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="demo">
+				<tr class="example"><td><b>Behavior</b></td></tr>
+				<tr>
+					<td>
+						<b>method</b> : string (default = 'GET')
+						<p class="margin-top">
+							If 'GET', will call jQuery's $.getJSON() function.  If 'POST', will call jQuery's
+							$.post() method, with "post" as the fourth parameter.  "POST" is useful for ASP.NET
+							Web Services (Script methods).  When POSTing to an ASP.NET page, remember to check
+							Request.Form (or just Request) in the code-behind, instead of Request.QueryString.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>autoCompleteFirstMatch</b> : boolean (default = false)
+						<p class="margin-top">
+							If set to true, the input box will automatically populate the first match for the text entered,
+							and highlight the remaining characters.  If set to false, the input box will always display only
+							what the user types until a selection is made.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>selectFirstMatch</b> : boolean (default = true)
+						<p class="margin-top">
+							If set to true, the first matching item in the list will appear selected.
+							If set to false, no items will be selected when a match is made.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>allowInput</b> : boolean (default = true)
+						<p class="margin-top">
+							If set to false, behaves more like a standard &lt;select&gt; element, disallowing
+							user input.  If set to true (the default), acts like a combobox.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>queryDelay</b> : number (default = 100)
+						<p class="margin-top">
+							The number of milliseconds to wait before the query is executed (after the user clicks or types in the FlexBox).<br />
+							Note: if this number is reduced, backspacing on highlighted matches in the input box may not work as expected.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>minChars</b> : number (default = 1)
+						<p class="margin-top">
+							The minimum number of characters the user must enter before a search is executed.
+							Note that if showArrow = true, and arrowQuery = '', the user can click the arrow
+							to view results (without typing any characters).  Zero (0) is an invalid option
+							for this property.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>highlightMatches</b> : boolean (default = true)
+						<p class="margin-top">
+							Specifies whether the text the user types should be highlighted within the results.
+							Use the matchClass option to set the css class for highlighted characters.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>highlightMatchesRegExModifier</b> : string (default = 'i')
+						<p class="margin-top">
+							Specifies the type of RegEx modifier to apply when determining how to highlight matches.
+							Options are:
+							<ul>
+								<li>'i': case-insensitive match</li>
+								<li>'g': global match (match all occurrences within the string)</li>
+								<li>'gi': global, case-insensitive match</li>
+								<li>'m': multi-line match</li>
+							</ul>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>arrowQuery</b> : string (default = '')
+						<p class="margin-top">
+							The query to pass to the server when the arrow is clicked.  By default, clicking the
+							arrow will return all results (up to paging.pageSize, which is 10 by default).  If you
+							wanted to limit the results returned to those that start with the letter 'a', you can
+							set arrowQuery to 'a', 
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>onSelect</b> : object (default = false)
+						<p class="margin-top">
+							The function to run when a result is selected.  Use the full power of jQuery to write
+							values to divs, or even make another JSON call!  Within this function, if you want to get
+							the text displayed in the input box, use this.value, and if you want to get the hidden
+							value (see the hiddenValue configuration options), use this.getAttribute('hiddenValue').
+							<textarea name="code" class="js:nocontrols:nogutter">
+								$('#fb').flexbox('results.aspx', {
+									onSelect: function() {
+										$('#fb-result').html('You selected "' + this.value + '", ' +
+															 'which has a hidden value of ' +
+															 this.getAttribute('hiddenValue'));
+									}
+								});
+							</textarea>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>maxCacheBytes</b> : number (default = 32768)
+						<p class="margin-top">
+							The amount of data you will allow to be cached on the client side.  Setting this
+							value to 0 (zero) disables the cache.  maxCacheBytes uses a JavaScript
+							associative array to quickly access data based on query and current page, and uses
+							an array to maintain a list of most recently used items (MRU).
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="demo">
+				<tr class="example"><td><b>CSS Class Overrides</b></td></tr>
+				<tr>
+					<td>
+						<b>containerClass</b> : string (default = 'ffb')
+						<p class="margin-top">
+							Overrides the name of the class for the main FlexBox div.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>contentClass</b> : string (default = 'content')
+						<p class="margin-top">
+							Overrides the name of the class for the content div.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>inputClass</b> : string (default = 'ffb-input')
+						<p class="margin-top">
+							Overrides the name of the class for the input element.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>arrowClass</b> : string (default = 'ffb-arrow')
+						<p class="margin-top">
+							Overrides the name of the class for the arrow image.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>selectClass</b> : string (default = 'ffb-sel')
+						<p class="margin-top">
+							Overrides the name of the class for "selected" items (rows).
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>matchClass</b> : string (default = 'ffb-match')
+						<p class="margin-top">
+							Overrides the name of the class for showing where your query matches the result.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>noResultsClass</b> : string (default = 'ffb-no-results')
+						<p class="margin-top">
+							Specifies the class to apply to the noResultsText configuration options.
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="demo">
+				<tr class="example"><td><b>Form Field Values</b></td></tr>
+				<tr>
+					<td>
+						<b>displayValue</b> : string (default = 'name')
+						<p class="margin-top">
+							JSON property whose value is displayed in the input box when a result is selected.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>hiddenValue</b> : string (default = 'id')
+						<p class="margin-top">
+							JSON property whose value is submitted when the form is submitted.  Automatically
+							updated whenever the displayValue changes.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>initialValue</b> : string (default = '')
+						<p class="margin-top">
+							Specifies the value that should appear in the input box when the FlexBox is loaded.
+							You can also set this manually using the setValue() method.
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="demo">
+				<tr class="example"><td><b>JSON Properties</b></td></tr>
+				<tr>
+					<td>
+						<b>resultsProperty</b> : string (default = 'results')
+						<p class="margin-top">
+							JSON property in returned results that references the array of JSON objects
+							representing each row of data.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>totalProperty</b> : string (default = 'total')
+						<p class="margin-top">
+							JSON property in returned results that references the total number of results
+							the query returned (used for paging only, so the paging toolbar can properly
+							calculate how many pages of data exist).
+						</p>
+					</td>
+				</tr>
+			</table>
+			
+			<table class="demo">
+				<tr class="example"><td><b>Paging</b></td></tr>
+				<tr>
+					<td>
+						<b>paging</b> : object
+						<p class="margin-top">
+							The paging object contains many properties to customize the appearance of the paging toolbar:
+							<textarea name="code" class="js:nocontrols:nogutter">
+								paging: {
+									style: 'input',             // or 'links'
+									cssClass: 'paging',         // prefix with containerClass (e.g. .ffb .paging)
+									pageSize: 10,               // acts as a threshold.  if <= pageSize results, paging doesn't appear
+									showSummary: true,          // whether to show 'displaying 1-10 of 200 results' text
+									summaryClass: 'summary',    // class for 'displaying 1-10 of 200 results', prefix with containerClass
+									summaryTemplate: 'Displaying {start}-{end} of {total} results', // can use {page} and {pages} as well
+									maxPageLinks: 5             // used only if style is 'links'
+								}
+							</textarea>
+						</p>
+					</td>
+				</tr>
+			</table>
+		
+			<h2>Methods</h2>
+			
+			<p>setValue() is the only method, and allows you to set the display value of the input box after the FlexBox has loaded.</p>
+			
+			<h2>Skinning/Styling</h2>
+
+			<p>See <a href="../FlexBox/css/jquery.flexbox.css">jquery.flexbox.css</a> for default styles.  Important classes and attributes are commented.</p>
+
+			<h2>Known Issues</h2>
+			
+			<p>Please use the <a target="_blank" href="http://www.codeplex.com/flexbox/WorkItem/List.aspx">Issue Tracker</a> to view and report issues</p>
+		</div>
+	</body>
+</html>

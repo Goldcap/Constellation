@@ -1,0 +1,22 @@
+get:
+  id: 0
+post:
+  promotion_name: "Test Promotion"
+  promotion_html: "Genre Films"
+  promotion_start_date: "2001-01-01 00:00:00"
+  promotion_end_date: "2001-01-02 00:00:00"
+  promotion_duration: 30
+  promotion_priority: 1
+session:
+action:
+  styroaction: submit
+
+dbo:
+  promotion: 
+    key: promotion_id
+    vars:
+      getPromotionName: =post:promotion_name
+      getPromotionHtml: =post:promotion_html
+      getPromotionStartDate: =post:promotion_start_date
+      getPromotionEndDate: =post:promotion_end_date
+      getPromotionDuration: =post:promotion_duration

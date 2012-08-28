@@ -1,0 +1,14 @@
+<smil>
+  <head>
+    <meta base="rtmp://cp67126.edgefcs.net/ondemand" />
+  </head>
+  <body>
+    <switch>
+      <video src="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_768x428_24.0fps_408kbps.mp4" system-bitrate="408000"/>
+      <video src="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_768x428_24.0fps_608kbps.mp4" system-bitrate="608000"/>
+      <video src="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1024x522_24.0fps_908kbps.mp4" system-bitrate="908000"/>
+      <video src="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1024x522_24.0fps_1308kbps.mp4" system-bitrate="1308000"/>
+      <video src="mp4:mediapm/ovp/content/demo/video/elephants_dream/elephants_dream_1280x720_24.0fps_1708kbps.mp4" system-bitrate="1708000"/>
+    </switch>
+  </body>
+</smil>

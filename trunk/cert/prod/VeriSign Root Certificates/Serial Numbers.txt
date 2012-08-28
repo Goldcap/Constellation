@@ -1,0 +1,27 @@
+Serial Numbers of the VeriSign Roots:
+
+Generation 1 (G1) PCAs
+Class 1 Public Primary Certification Authority = 00 cd ba 7f 56 f0 df e4 bc 54 fe 22 ac b3 72 aa 55
+Class 2 Public Primary Certification Authority = 2d 1b fc 4a 17 8d a3 91 eb e7 ff f5 8b 45 be 0b
+Class 3 Public Primary Certification Authority = 3c 91 31 cb 1f f6 d0 1b 0e 9a b8 d0 44 bf 12 be
+
+Generation 2 (G2) PCAs
+Class 1 Public Primary Certification Authority - G2 = 4c c7 ea aa 98 3e 71 d3 93 10 f8 3d 3a 89 91 92
+Class 2 Public Primary Certification Authority - G2 = 00 b9 2f 60 cc 88 9f a1 7a 46 09 b8 5b 70 6c 8a af
+Class 3 Public Primary Certification Authority - G2 = 7d d9 fe 07 cf a8 1e b7 10 79 67 fb a7 89 34 c6
+Class 4 Public Primary Certification Authority - G2 = 32 88 8e 9a d2 f5 eb 13 47 f8 7f c4 20 37 25 f8
+
+Generation 3 (G3) PCAs
+VeriSign Class 1 Public Primary Certification Authority - G3 = 00 8b 5b 75 56 84 54 85 0b 00 cf af 38 48 ce b1 a4
+VeriSign Class 2 Public Primary Certification Authority - G3 = 61 70 cb 49 8c 5f 98 45 29 e7 b0 a6 d9 50 5b 7a
+VeriSign Class 3 Public Primary Certification Authority - G3 = 00 9b 7e 06 49 a3 3e 62 b9 d5 ee 90 48 71 29 ef 57
+VeriSign Class 4 Public Primary Certification Authority - G3 = 00 ec a0 a7 8b 6e 75 6a 01 cf c4 7c cc 2f 94 5e d7
+
+Generation 4 (G4) PCA
+VeriSign Class 3 Public Primary Certification Authority - G4 = 2f 80 fe 23 8c 0e 22 0f 48 67 12 28 91 87 ac b3
+
+Generation 5 (G5) PCA
+VeriSign Class 3 Public Primary Certification Authority - G5 = 18 da d1 9e 26 7d e8 bb 4a 21 58 cd cc 6b 3b 4a
+
+VeriSign Universal Root
+VeriSign Universal Root Certification Authority = 40 1a c4 64 21 b3 13 21 03 0e bb e4 12 1a c5 1d

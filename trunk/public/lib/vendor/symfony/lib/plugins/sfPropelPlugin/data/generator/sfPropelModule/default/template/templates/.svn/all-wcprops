@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates
+END
+showSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates/showSuccess.php
+END
+editSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates/editSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates/indexSuccess.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates/_form.php
+END
+newSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/data/generator/sfPropelModule/default/template/templates/newSuccess.php
+END

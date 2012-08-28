@@ -1,0 +1,17 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      wrapper:
+        attributes: 'class="content"'
+        divs:
+          home-hero:
+          home-content:
+            attributes: 'class="home-content clearfix"'
+            divs:
+              home-tabs:
+              home-panels:
+                attributes: 'class="panelset"'
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  zzdiv:

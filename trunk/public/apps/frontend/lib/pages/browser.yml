@@ -1,0 +1,8 @@
+template: cst_pre
+layout: cst_preuser
+title: Constellation | Your Online Movie Theater | Browser Incompatible
+javascripts: []
+css: []
+widgets:
+  first-splash:
+    Browser:

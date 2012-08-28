@@ -1,0 +1,13 @@
+FFMpeg install instructions
+----------------------------
+
+Windows
+-------
+Follow the instructions here for windows
+http://www.wowzamedia.com/forums/content.php?213-FFmpeg-with-Wowza-Server-(MPEG-TS)
+
+Linux
+-----
+As root
+# yum install ffmpeg ffmpeg-devel
+

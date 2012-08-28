@@ -1,0 +1,4 @@
+UserHelper.php:  	putLog("USER:: ".$user." | MESSAGE:: MCAPI Error:: Unable to process ".$email); 
+UserHelper.php:  	putLog("USER:: ".$user." | MESSAGE::MCAPI Error:: Code ".$api->errorCode); 
+UserHelper.php:  	putLog("USER:: ".$user." | MESSAGE::MCAPI Error:: Message ".$api->errorMessage);
+UserHelper.php:  	putLog("USER:: ".$user." | MESSAGE::MCAPI Success:: ".$email);

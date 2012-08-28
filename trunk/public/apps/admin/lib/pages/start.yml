@@ -1,0 +1,9 @@
+template: blank
+layout: yui
+title: Constellation.tv Chat
+javascripts: [/js/jquery.chat.js]
+css: [/css/chat.css]
+widgets:
+  wrapper:
+    html: {html: html/start.html }
+  zzdiv:

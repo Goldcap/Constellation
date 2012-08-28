@@ -1,0 +1,160 @@
+<?php require 'includes/head.php'; ?>
+
+<link href="/css/styles.css" rel="stylesheet" type="text/css" />
+<link href="/css/jquery-ui-1.8.16.host-show.css" rel="stylesheet" type="text/css" />
+    
+    <?php require 'partials/header.php' ?>
+    <div id="content" class="host_show content">
+        <div class="inner_container clearfix">
+        
+  <h2 class="about_title">Constellation Terms of Service</h2>
+  <p>Last Revised: June 21, 2011</p>
+
+<div class="host_container about_container">
+
+<div class="host_container_top"></div>
+<div class="host_container_center clearfix">
+
+  <p>Welcome to Constellation (the "Site"), a website and online service by Constellation Holdings, LLC ("Constellation", "we," or "us"). This page explains the terms by which you may use the Constellation applications, web Site, web widgets, feeds, mobile device software applications, applications for third-party web Sites and services, and any other mobile or web services or applications owned, controlled, or offered by Constellation (collectively the "Service"). By accessing or using the Service, you signify that you have read, understood, and agree to be bound by this Terms of Service Agreement ("TOS", "Agreement").
+  </p>
+  <p>We reserve the right to amend this Agreement at any time and without notice. If we do this, we will post the amended Agreement on this page and indicate at the top of the page the date the Agreement was last revised. Your continued use of the Service after any such change constitutes your acceptance of the new Terms of Use. If you do not agree to any of these terms or any future Terms of Use, do not use or access (or continue to access) the Service. This Agreement applies to all visitors, users, and others who access the Service ("Users").
+  </p>
+  <h4>Use of Constellation Services</h4>
+  <p>Constellation is an online movie theater that sells tickets to and exhibits movies and other media events on the Site. You are responsible for obtaining access to the Site, and agree that access to the Site may involve paying third-party fees (such as Internet service provider or airtime charges). In addition, you must provide and are responsible for all equipment necessary to access the Site.  A full list of internet browsers that are supported by the Site is available here.
+    <a href="/faq">FAQ</a>. 
+  </p>
+  <p>This Service is intended solely for Users who are thirteen (13) years of age or older, and any use or access to the Service by anyone under 13 is strictly prohibited and in violation of this Agreement.
+  </p>
+  <h4>Permitted Use</h4>
+  <p>The Service is for your personal and non-commercial use. Unless otherwise agreed to in writing by Constellation, you agree that you will not use the Service or duplicate, download, publish, modify or otherwise distribute or use any material included in the Service for any purpose, except to review the information included in the Service, to subscribe to programs included in the Service, and to purchase movie or other event tickets, or other products offered by Constellation for your personal use. Use of the Service or the materials or content contained in the Service for any purpose not set forth in these Terms of Use is prohibited.
+  </p>
+  <h4>Registration, Accounts and Passwords</h4>
+  <p>You agree to (1) provide true, accurate, current and complete data about
+yourself on the Constellation signup form and payment fields when purchasing your tickets, and (2) promptly update this data to keep it true, accurate, current and complete. If you fail to do any of these things, Constellation will have the right to suspend or terminate your use of the Service and/or terminate your account. You are solely responsible for maintaining the confidentiality of your password and account, and you are solely responsible for all use of your password or account, whether authorized by you or not. You agree to (a) immediately notify Constellation of any unauthorized use of your password or account or any other breach of security and (b) ensure that you exit from your account each time you use the Service. Access and use of password protected and/or secure areas of the Service is restricted to users who have been assigned a valid password by Constellation. Unauthorized individuals attempting to access these areas of the Service may be subject to prosecution.
+  </p>
+  <h4>Privacy Policy</h4>
+  <p>Your use of the Service is governed by the Constellation Privacy Policy located 
+    <a href="/privacy">Privacy Policy</a>. You agree to Constellation's collection, use and sharing of your information as set forth in the Constellation Privacy Policy.
+  </p>
+  <h4>Purchases</h4>
+  <p class="terms_of_service ">You agree that all purchases made by you on the Service are not refundable and cannot be exchanged, except as described in the Constellation Purchase Policy 
+    <a href="/purchase">Purchase Policy</a>. You will be responsible for paying all applicable taxes in connection with your purchase of any tickets. You may not be able to use tickets purchased on the Service if you do not follow our Purchase Policy, located at 
+    <a href="/purchase">Purchase Policy</a>.
+  </p>
+  <h4>Proprietary Rights</h4>
+  <p class="terms_of_service ">Constellation owns all right, title and interest in and to the Service and all materials and content contained in the Service, including, without limitation, all content, Site design, logos, button icons, images, digital downloads, data compilations, text, and graphics are protected by copyright, trademark and other intellectual property laws. Any unauthorized use of the materials provided as part of the Service is strictly prohibited.
+  </p>
+  <p class="terms_of_service ">Any use of materials on the Site, including reproduction, modification, distribution, or republication, any form of data extraction or data mining, or other commercial exploitation of any kind, without prior written permission of an authorized officer of Constellation is strictly prohibited. You agree that you will not use any robot, spider, other automatic device, or manual process to monitor or copy our Web pages or the content contained therein without prior written permission of an authorized officer of Constellation.
+  </p>
+  <h4>Electronic Communication
+  </h4>
+  <p class="terms_of_service ">When you use the Site or send emails to Constellation, you are communicating with Constellation electronically. You consent to receive communications electronically from Constellation and its Site Affiliates (as defined in the Privacy Policy). Constellation will communicate with you by email or by posting notices on the Site. You agree that all agreements, notices, disclosures and other communications that are provided to you electronically satisfy any legal requirement that such communications be in writing.
+  </p>
+  <p class="terms_of_service ">Use of the Site may require users to receive email communications from the Site.  All tickets that are bought on the Site, for example, will be sent to users in email form.  To ensure receipt of such communications from the Site, be sure to add [emails from Constellation] to the �white list� of your ISP so that they are not directed to spam.  By using the Services, User assumes responsibility for enabling receipt of any necessary email communications from the Site.
+  </p>
+  <h4>Site-Provided Email and Postings
+  </h4>
+  <p class="terms_of_service ">The Site may provide users with the ability to send email messages to other users and non-users and to post messages on the Site. Constellation is under no obligation to review any messages, information or content ("Postings") posted on the Site by users and assumes no responsibility or liability relating to any such Postings. Notwithstanding the above, Constellation may from time to time monitor the Postings on the Site and may decline to accept and/or remove any email or Postings. You understand and agree not to use any functionality provided by the Site to post content or initiate communications that contain:
+  </p>
+  <ol>
+    <li>Any unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, profane, hateful, racially, ethnically or otherwise objectionable material of any kind, including, but not limited to, any material which encourages conduct that would constitute a criminal offense, give rise to civil liability or otherwise violate any applicable local, state, national or international law.
+    </li>
+    <li>Advertisements or solicitations of any kind.
+    </li>
+    <li>Impersonate others or provide any kind of false information.
+    </li>
+    <li>Personal information such as messages which state phone numbers, social security numbers, account numbers, addresses, or employer references.
+    </li>
+    <li>Messages by non-spokesperson employees of Constellation purporting to speak on behalf of Constellation or containing confidential information or expressing opinions concerning Constellation.
+    </li>
+    <li>Messages that offer unauthorized downloads of any copyrighted or private information.
+    </li>
+    <li>Multiple messages placed within individual folders by the same user restating the same point.
+    </li>
+    <li>Chain letters of any kind.
+    </li>
+    <li>Identical (or substantially similar) messages to multiple recipients advertising any product or service, expressing a political or other similar message, or any other type of unsolicited commercial message. This prohibition includes but is not limited to a) Using Constellation invitations to send messages to people who do not know you or who are unlikely to recognize you as a known contact; b) Using Constellation to connect to people who do not know you and then sending unsolicited promotional messages to those direct connections without their permission; and c) Sending messages to distribution lists, newsgroup aliases, or group aliases.
+    </li>
+  </ol>
+  <h4>License Grant
+  </h4>
+  <p>You retain all your ownership rights in your User Content. By posting any User Content on or through the Service, you expressly grant, and you represent and warrant that you have a right to grant, to Constellation a royalty-free, sublicensable, transferable, perpetual, irrevocable, non-exclusive, worldwide license to use, reproduce, modify, publish, list information regarding, edit, translate, distribute, publicly perform, publicly display, and make derivative works of all such User Content, in whole or in part, and in any form, media or technology, whether now known or hereafter developed, solely to provide and promote the Constellation Service. This license does not give us the right to sell your photos to any third party. 
+  </p>
+  <h4>Links</h4>
+  <p>The Site or third parties may provide links to other web sites or resources. Because Constellation has no control over such sites and resources, you acknowledge and agree that Constellation is not responsible for the availability of such external sites or resources, and does not endorse and is not responsible or liable for any content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that Constellation shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such site or resource.
+  </p>
+  <h4>Access To Password-Protected/Secure Areas</h4>
+  <p>Access to and use of password-protected and/or secure areas of the Site is restricted to authorized users only. Unauthorized individuals attempting to access these areas of the Site may be subject to prosecution.
+  </p>
+  <h4>Trademarks</h4>
+  <p>The trademarks, logos and service marks ("Marks") displayed on the Site are the property of Constellation and other parties. Users are prohibited from using any Marks for any purpose including, but not limited to use as metatags on other pages or Sites on the World Wide Web without the written permission of Constellation or such third party that may own the Marks. All information and content including any software programs available on or through the Site ("Content") is protected by copyright. Users are prohibited from modifying, copying, distributing, transmitting, displaying, publishing, selling, licensing, creating derivative works or using any Content available on or through the Site for commercial or public purposes.
+  </p>
+  <h4>Security</h4>
+  <p>We have implemented commercially reasonable technical and organizational measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration or disclosure. However, we cannot guarantee that unauthorized third parties will never be able to defeat those measures or use your personal information for improper purposes. You acknowledge that you provide your personal information at your own risk.
+  </p>
+  <h4>Indemnity</h4>
+  <p>You agree to indemnify and hold Constellation (and its officers, directors, agents, subsidiaries, joint ventures, and employees) harmless from any claim or demand, including reasonable attorney's fees, or arising out of or related to your breach of this TOS, or your violation of any law or the rights of a third party.
+  </p>
+  <h4>Procedure for Claims of Intellectual Property Infringement</h4>
+  <p>Constellation respects the intellectual property of others, and we ask our users to do the same. Constellation may, in appropriate circumstances and at its discretion, disable and/or terminate the accounts of users who may be infringing the intellectual property of a third party. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please provide Constellation's Copyright Agent the following information:
+  </p>
+  <ol>
+    <li>an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;
+    </li>
+    <li>a description of the copyrighted work or other intellectual property that you claim has been infringed;
+    </li>
+    <li>a description of where the material that you claim is infringing is located on the Site;
+    </li>
+    <li>your address, telephone number, and email address;
+    </li>
+    <li>a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;
+    </li>
+    <li>a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf.
+    </li>
+  </ol>
+  <p>Constellation�s agent for notice of claims of copyright or other intellectual property infringement can be reached as follows:
+  </p>
+  <p>By mail: Copyright Agent c/o Constellation Media, LLC, 754 Greenwich Street 4B New York NY 10014.
+  </p>
+  <p>Constellation may update this mailing address from time to time. You agree that changes to this mailing address shall not constitute a modification to this TOS for the purposes of Section 12.
+  </p>
+  <h4>Survival of Terms After Agreement Ends
+  </h4>
+  <p>Notwithstanding any other provisions of this TOS, or any general legal principles to the contrary, any provision of this TOS that imposes or contemplates continuing obligations on a party will survive the expiration or termination of this TOS.
+  </p>
+  <h4>Disclaimer of Warranty</h4>
+  <p>ALL CONTENT, PRODUCTS, AND SERVICES ON THE SITE, OR OBTAINED FROM A WEBSITE TO WHICH THE SITE IS LINKED (A "LINKED SITE") ARE PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND EITHER EXPRESS OR IMPLIED INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, SECURITY OR ACCURACY.
+</p>
+
+<p>Constellation DOES NOT ENDORSE AND IS NOT RESPONSIBLE FOR (A) THE ACCURACY OR RELIABILITY OF ANY OPINION, ADVICE OR STATEMENT MADE THROUGH THE SITE BY ANY PARTY OTHER THAN CONSTELLATION, (B) ANY CONTENT PROVIDED ON LINKED SITES OR (C) THE CAPABILITIES OR RELIABILITY OF ANY PRODUCT OR SERVICE OBTAINED FROM A LINKED SITE.</p>
+
+<p>OTHER THAN AS REQUIRED UNDER APPLICABLE CONSUMER PROTECTION LAW, UNDER NO CIRCUMSTANCE WILL CONSTELLATION BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY A USER'S RELIANCE ON INFORMATION OBTAINED THROUGH THE SITE OR A LINKED SITE, OR USER'S RELIANCE ON ANY PRODUCT OR SERVICE OBTAINED FROM A LINKED SITE. IT IS THE RESPONSIBILITY OF THE USER TO EVALUATE THE ACCURACY, COMPLETENESS OR USEFULNESS OF ANY OPINION, ADVICE OR OTHER CONTENT AVAILABLE THROUGH THE SITE, OR OBTAINED FROM A LINKED SITE. PLEASE SEEK THE ADVICE OF PROFESSIONALS, AS APPROPRIATE, REGARDING THE EVALUATION OF ANY SPECIFIC OPINION, ADVICE, PRODUCT, SERVICE, OR OTHER CONTENT.
+  </p>
+  <h4>Limitation of Liability</h4>
+  <p>YOU EXPRESSLY UNDERSTAND AND AGREE THAT Constellation AND ITS SUBSIDIARIES, AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS AND LICENSORS SHALL NOT BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF CONSTELLATION HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM USE OF THE SITE, CONTENT OR ANY RELATED SERVICES.
+  </p>
+  <h4>General</h4>
+  <p>If any of these conditions are deemed invalid, void, or for any reason unenforceable, the parties agree that the court should endeavor to give effect to the parties intentions as reflected in the provision, and the unenforceable condition shall be deemed severable and shall not affect the validity and enforceability of any remaining condition. This Agreement and the relationship between you and Constellation will be governed by the laws of the State of New York without regard to its conflict of law provisions. You and Constellation agree to submit to the personal jurisdiction of the federal and state courts located in the State of New York with respect to any legal proceedings that may arise in connection with this TOS. The failure of Constellation to act with respect to a breach by you or others does not waive its right to act with respect to subsequent or similar breaches. Constellation does not guarantee it will take action against all breaches of this TOS. Except as otherwise expressly provided in this TOS, there shall be no third-party beneficiaries to this TOS. This TOS constitutes the entire agreement between you and Constellation and governs your use of the Site, superseding any prior agreements between you and Constellation with respect to the Site.
+  </p>
+</div>
+                <div class="host_container_bottom"></div>
+
+</div>
+<ul class="about_nav">
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li>Terms</li>
+        <li><a href="">Faq</a></li>
+    </ul>
+
+
+
+    </div>
+        </div>
+
+    <?php include 'includes/footer.php' ?>    
+    <?php include 'includes/footscripts.php' ?>
+</body> 
+</html> 
+
+    

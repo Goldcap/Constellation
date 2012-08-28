@@ -1,0 +1,19 @@
+<map table="film_info" result="film_info_list_datamap">
+  <column column="film_info_type" type="TINYINT" size="1" key="" order="1"></column>
+  <column column="film_info" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="film_info_url" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="film_info_updated_at" type="TIMESTAMP" size="" key="" order="4"></column>
+  <column column="film_info_created_at" type="TIMESTAMP" size="" key="" order="5"></column>
+  <column column="film_info_id" type="INTEGER" size="11" key="PRI" order="7"></column>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="film_id" column="fk_film_id"/>
+    <ascorderby column="film_info_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

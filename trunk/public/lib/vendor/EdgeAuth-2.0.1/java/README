@@ -1,0 +1,18 @@
+
+COMPILING:
+################################################################################
+AkamaiToken uses ant. To compile simply cd to the project root (usually this
+directory) and type "ant".  This will compile the library and create a jar file
+for inclusion in your project.  For those use to typing "make" there's a
+makefile that will run ant appropriately as well.
+
+USAGE:
+################################################################################
+command-line:
+	todo...
+
+library:
+	see the source code in the AkamaiTokenTest.java file for an example of how
+	to use the token generation library.  There are quite a few overloaded
+	methods for the more common use-cases of the library but all result in the
+	generation of an EdgeAuth 2.0 Token.

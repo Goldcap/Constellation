@@ -1,0 +1,240 @@
+.host_show_header {
+    text-align: center;
+    margin: 40px 0 30px;
+}
+
+.host_show_header h3 {
+    font-size: 24px;
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+}
+.host_show_header h3 span {
+    font-family: "helveticaneue",Helvetica,sans-serif;
+}
+
+.host_show_steps {
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+.host_show_steps li {
+    display: inline-block;
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+}
+
+.host_show_steps li.active {
+       font-family: "helveticaneue",Helvetica,sans-serif;
+    
+}
+.host_show_steps li.host_show_steps_sep {
+    font-size: 13px;
+    margin: 0 8px;
+}
+
+.host_container {
+    width: 700px;
+    margin: 0 auto 50px;
+}
+.host_container_top {
+    background: url(https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/container_sides_large.png) 0 0 no-repeat;
+    height: 10px;
+}
+.host_container_bottom {
+    background: url(https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/container_sides_large.png) 0 -60px no-repeat;
+    height: 20px;
+}
+.host_container_center {
+    background: url(https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/container_edges_large.png) 0 0 repeat;
+    padding:  14px 22px 8px;
+    
+}
+
+.host_container_center .film_details {
+    width: 180px;
+    float: left;   
+}
+
+.host_container_center .film_details img {
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border: solid 1px #fff;
+}
+.film_details .hosted_by {
+    margin: 10px 0;
+    width: 150px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #565656;
+}
+.film_details .hosted_by li {
+    margin-bottom: 8px;
+}
+.film_details .hosted_by li.film_title {
+    font-weight: bold;
+}
+
+.host_container_center .host_form {
+    width: 470px;
+    float: left;
+}
+
+.host_form {
+    float: left;
+}
+.host_form label {
+    display: block;
+    color: #565656;
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.host_form label.checkbox_label {
+    text-transform: none;
+    color: #000;
+    display: inline;
+    margin-left: 6px;
+}
+.host_form input[type=text] {
+    width: 200px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: solid 1px #bfbfbf;
+    padding: 5px 12px;
+    font-size: 14px;
+}
+
+.host_form #host-fld-cc_security_number{
+    width: 40px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: solid 1px #bfbfbf;
+    padding: 5px 12px;
+    font-size: 14px;
+}
+
+.selectOveride {
+  width: 200px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: solid 1px #bfbfbf;
+  padding: 5px 12px;
+  line-height: 18px;
+  font-size: 14px;
+  position: relative;
+}
+.shortyOveride {
+  width: 40px !important;
+  display: inline-block;
+}
+.selectOveride .displayDiv {
+    background: url(https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/drop-down-tip.png) 190px 50% no-repeat;
+    padding-right: 20px;
+    overflow: hidden;
+    height: 18px;
+}
+.selectOveride select {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    left: 0;
+    opacity: 0;
+    padding: 5px 12px;
+    position: absolute;
+    top: 0;
+    width: 224px;
+}
+
+.selectOveride select.shorty {
+    width: 40px;
+}
+
+.host_form input[type=text]:focus {
+    outline: 0;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.form_row {
+		float: left;
+    margin-bottom: 16px;
+}
+
+.host_form .button {
+    width: 160px;
+    margin-top: 8px;
+}
+
+
+
+#ui-datepicker-div {
+    font-size: 10px;
+     border: medium none;
+
+ }
+ .ui-date-picker {
+    padding: 6px 4px 4px ; 
+ } 
+ #ui-datepicker-div {
+     padding: 6px 4px 4px ;
+    -moz-border-radius: 5px;
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+ .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; display: none;}
+ .ui-timepicker-div dl{ text-align: left; }
+ .ui-timepicker-div dl dt{ height: 25px; }
+ .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+ .ui-timepicker-div td { font-size: 90%; }
+
+
+.green {
+    color: #40B325;
+    font-weight: bold;
+}
+
+.host_container .ticket_price {
+    margin: 26px 0 0;
+    width: 150px;
+    text-align: right;
+    font-size: 13px;
+    color: #999;
+}
+.ticket_price .label {
+    display: block;
+    color: #565656;
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+}
+.ticket_price .price {
+    
+}
+.ticket_price .discount {
+        margin: 6px 0 10px;
+        text-align: right;
+        
+    
+}
+.ticket_price .discount strong {
+    color: #333;
+}
+.ticket_price .total {
+    font-size: 16px;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top: solid 1px #c0c0c0;
+    text-align: right;
+}
+
+#hosting_aval {
+	color:red;
+	margin-top:5px;
+}

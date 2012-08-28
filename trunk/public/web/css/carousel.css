@@ -1,0 +1,82 @@
+/* CSS Document */
+#carousel {
+	position: relative;
+	overflow: hidden;
+	height: 320px;
+}
+
+#carousel .jcarousel-container-horizontal {
+  height: 320px;
+} 
+
+#carousel .jcarousel-clip-horizontal {
+  height: 320px;
+  overflow: hidden !important;
+}
+
+#carousel ul {
+	padding-top: 33px !important;
+	list-style: none;
+	/*overflow: visible !important;*/
+	min-width: 880px;
+	height: 320px;
+}
+#carousel li {
+	float: left;
+	padding-right: 12px;
+	width: 163px;
+	height: 265px;
+	position: relative;
+	z-index: 2;
+}
+
+#carousel li .overlay {
+	width: 139px;
+	height: 207px;
+	z-index: 5;
+}
+#carousel .img-container {
+	position: absolute;
+	top: -27px;
+	left: -13px;
+	z-index: 4;
+	width: 153px;
+	height: 228px;
+	display: none;
+}
+
+#carousel .jcarousel-container img.reflected {
+	display: block;
+	margin-bottom: 8px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+	z-index: 4;
+}
+/*#carousel .jcarousel-container img:hover { z-index: 4; }*/
+#carousel .canvas {
+	position: absolute;
+	bottom: -25px;
+	left: 0px;
+}
+#carousel .jcarousel-prev {
+	background: url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_large.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 152px;
+	position: absolute;
+	top: 89px;
+	left: -24px;
+	cursor: pointer;
+	z-index: 50;
+}
+#carousel .jcarousel-next {
+	background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_large.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 152px;
+	position: absolute;
+	top: 89px;
+	right: -18px;
+	cursor: pointer;
+	z-index: 50;
+}

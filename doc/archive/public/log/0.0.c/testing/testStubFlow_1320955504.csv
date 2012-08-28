@@ -1,0 +1,6 @@
+"Method"|"Label"|"Message"|"Status"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Twitter Username Field Accessible","===========","Success"
+"assertElementPresent","Twitter Password Field Accessible","===========","Success"
+"assertElementPresent","Authorize Button Accessible","===========","Success"
+"assertElementPresent","User is Logged in","===========","Failure"

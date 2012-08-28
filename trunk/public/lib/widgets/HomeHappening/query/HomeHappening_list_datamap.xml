@@ -1,0 +1,40 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_id" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="film_name" type="VARCHAR" size="255" key="" order="1"></column> 
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="audience_count" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <column column="film_director" type="VARCHAR" size="255" key="" order="1"></column>
+  <sql connection="propel">
+  	<sqlselect><![CDATA[
+			select film.film_id,
+			film.film_name,
+			film.film_logo,
+			count(audience_id),
+			film_info.film_info
+			from film
+			inner join screening
+			on screening.fk_film_id = film.film_id
+			inner join audience
+			on audience.fk_screening_id = screening.screening_id
+			left join film_info
+			on film_info.fk_film_id = film.film_id
+			and film_info.film_info_type = 1
+			where film.film_status = 1
+			and film_use_sponsor_codes = 0
+			and audience.audience_paid_status = 2
+			group by film.film_id
+			order by count(audience_id) desc
+		]]>
+		</sqlselect>
+	</sql>
+	<criterion distinct="true">
+    <ascorderby column="screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

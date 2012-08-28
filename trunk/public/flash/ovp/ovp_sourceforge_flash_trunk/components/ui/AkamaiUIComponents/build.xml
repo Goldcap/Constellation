@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<project name="AkamaiUIComponents" default="release_all" basedir=".">
+	<property file="build.properties" />
+	<property name="FLEXTASKS" value="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	<taskdef resource="flexTasks.tasks" classpath="${FLEXTASKS}"/>
+		
+	<property name="RELEASE_NAME" value="AkamaiUIComponents" />
+	<property name="VERSION" value="v1.1" />
+		
+	<target name="release_all">
+		<antcall target="clean" />
+		<antcall target="build" />
+		<antcall target="doc" />	
+		<antcall target="package" />	
+	</target>
+		
+	<target name="clean">
+		<echo>Cleaning...</echo>
+		<delete includeemptydirs="true" failonerror="false">			
+			<fileset dir="bin"/>			
+		</delete>
+	</target>
+		
+	<target name="build" >
+	    <echo message="building ${RELEASE_NAME}.swc..." />
+		<compc
+			output="bin/${RELEASE_NAME}.swc"
+		 	debug="false" 
+		 	incremental="false"
+		 	strict="true"
+		 	accessible="false"
+	        link-report="link_report.xml"
+	        static-link-runtime-shared-libraries="false">
+		<raw-metadata>AkamaiUIComponents v1.0.0 by Akamai 2011</raw-metadata>
+		<optimize>true</optimize>
+        <include-sources dir="src" includes="**/*.as"/>
+		<target-player>10.0.0</target-player>
+		<source-path path-element ="src" />
+		</compc>
+	</target>
+		
+ 	<target name="doc">
+		 <echo message="building doc..." />
+	     <asdoc output="asdocs" lenient="true" failonerror="false">
+        	<doc-sources path-element="src/org/openvideoplayer/components/ui"/>
+	     	<library-path file="bin/${RELEASE_NAME}.swc" append="true"/>
+		 </asdoc>
+	</target>
+		
+	<target name="package">
+		<delete includeemptydirs="true" failonerror="false">			
+			<fileset dir="release"/>			
+		</delete>
+		<copy todir="release/bin" flatten="false">		 	
+			<fileset dir="bin"/>
+		</copy>
+		<copy todir="release/asdocs" flatten="false">		 	
+			<fileset dir="asdocs"/>			   
+		</copy>
+		<copy todir="release/src" flatten="false">
+			<fileset dir="src"/>
+		</copy>
+		<copy file="build.xml" todir="release" flatten="false" />
+		<copy file="build.properties" todir="release" flatten="false" />
+        <copy file="readme.txt" todir="release" flatten="false" />
+        
+		<zip destfile="${RELEASE_NAME}_${VERSION}.zip" basedir="release"/>
+	</target>
+		
+</project>
+	

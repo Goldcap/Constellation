@@ -1,0 +1,16 @@
+get:
+post:
+  pre_user_email: test@operislabs.com
+  preuser_status: approved
+  pre_user_code: test
+session:
+action:
+  styroaction: submit
+
+dbo:
+  pre_user: 
+    key: pre_user_id
+    vars:
+      getPreUserEmail: =post:pre_user_email
+      getPreUserStatus: 1
+      getPreUserCode: =post:pre_user_code

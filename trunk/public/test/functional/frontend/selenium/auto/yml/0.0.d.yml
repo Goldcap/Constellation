@@ -1,0 +1,35 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type: assertElementPresent,locator: link=Log In,value: Login Button Accessible}
+ - {type: click,locator: link=Log In}
+ - {type: assertElementPresent,locator: id=main-choose-signup,value: Signup Button Accessible}
+ - {type:click,locator: id=main-choose-signup}
+ - {type: assertElementPresent,locator: id=main-signup-name,value: Signup Name Field Accessible}
+ - {type:click,locator: id=main-signup-name}
+ - {type:type,locator: id=main-signup-name, value: $::SIGNUP_NAME}
+ - {type: assertElementPresent,locator: id=main-signup-username,value: Signup Username Field Accessible}
+ - {type:click,locator: id=main-signup-username}
+ - {type:type,locator: id=main-signup-username, value: $::SIGNUP_USER_NAME}
+ - {type: assertElementPresent,locator: name=month,value: Signup Month Field Accessible}
+ - {type:click,locator: name=month}
+ - {type:select,locator: name=month, value: $::SIGNUP_MONTH}
+ - {type: assertElementPresent,locator: name=day,value: Signup Day Field Accessible}
+ - {type:click,locator: name=day}
+ - {type:select,locator: name=day, value: $::SIGNUP_DAY}
+ - {type: assertElementPresent,locator: name=year,value: Signup Year Field Accessible}
+ - {type:click,locator: name=year}
+ - {type:select,locator: name=year, value: $::SIGNUP_YEAR}
+ - {type: assertElementPresent,locator: id=main-signup-email,value: Signup Email Field Accessible}
+ - {type:click,locator: id=main-signup-email}
+ - {type:type,locator: id=main-signup-email, value: $::SIGNUP_EMAIL}
+ - {type: assertElementPresent,locator: id=main-signup-password,value: Signup Password Field Accessible}
+ - {type:click,locator: id=main-signup-password}
+ - {type:type,locator: id=main-signup-password, value: $::SIGNUP_PASSWORD}
+ - {type: assertElementPresent,locator: id=main-signup-password2,value: Signup Confirm Password Field Accessible}
+ - {type:click,locator: id=main-signup-password2}
+ - {type:type,locator: id=main-signup-password2, value: $::SIGNUP_PASSWORD}
+ - {type: assertElementPresent,locator: id=signup-button,value: Signup Submit Button Accessible}
+ - {type:clickAndWait,locator: id=signup-button}
+ - {type:assertElementPresent,locator: id=loggedUser,,value: Asserting Signup Successful}

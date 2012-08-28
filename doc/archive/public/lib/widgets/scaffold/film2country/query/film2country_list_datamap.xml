@@ -1,0 +1,4 @@
+<map table="film2country" result="film2country_list_datamap"><column column="fk_film_id" type="INTEGER" size="11" key="MUL" order="1"></column><column column="film2country_country_iso" type="VARCHAR" size="3" key="MUL" order="2"></column><column column="film2country_id" type="INTEGER" size="11" key="PRI" order="3"></column><criterion limit="0" distinct="true"><ascorderby column="film2country_id"></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="fk_film_id" base="/film2country/detail/"><attribute name="film2country_id"></attribute></maplink></maplinks></map>

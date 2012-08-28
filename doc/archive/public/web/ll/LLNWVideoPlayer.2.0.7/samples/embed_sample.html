@@ -1,0 +1,67 @@
+
+
+
+
+<html>
+  <head>
+
+    <style type="text/css">
+      body {  background-color: #FFFFFF; margin: 10px; padding: 0; text-decoration: none; font: normal normal 700 12px Arial, Helvetica, Verdena, Geneva, sans-serif; }
+      .green { background-color: #44FF44; }
+      .yellow { background-color: #FFFF44; }
+    </style>
+
+  </head>
+  <body>
+          
+  <h1> Flash player embed method example</h1>
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="480" height="360" id="videoObjectID" align="middle"> 
+<param name="allowScriptAccess" value="always" /> 
+<param name="flashVars" value="mediaURL=rtmp://llnwqa.fcod.llnwd.net/a1218/o18/StreamSample_action.flv&buffer=15&imageURL=&streamType=Streaming&autoPlay=true&playerWidth=480&playerHeight=360&autoHideControls=false&autoHideTime=5&initialVolume=50" /> 
+<param name="movie" value="LLNWPlayer.swf" /><param name="quality" value="high" /><param name="allowFullScreen" value="true" /> 
+<param name="bgcolor" value="#000000" /> 
+<embed src="LLNWPlayer.swf" allowfullscreen="true" quality="high" bgcolor="#000000" width="480" height="360" name="" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashVars="mediaURL=rtmp://llnwqa.fcod.llnwd.net/a1218/o18/StreamSample_action.flv&buffer=15&imageURL=&streamType=Streaming&autoPlay=true&playerWidth=480&playerHeight=360&autoHideControls=false&autoHideTime=5&initialVolume=50"/> 
+</object> 
+
+    <p>Copy and paste the following code into your HTML web pages to deliver Flash Player and content</p>
+    <p>
+&lt;object classid=&quot;clsid:d27cdb6e-ae6d-11cf-96b8-444553540000&quot; codebase=&quot;http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0&quot; width=&quot;480&quot; height=&quot;360&quot; id=&quot;&quot; align=&quot;middle&quot;&gt;
+<br>
+  &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot; /&gt;
+<br>
+  &lt;param name=&quot;flashVars&quot; value=&quot;mediaURL=<span class="green">rtmp://llnwqa.fcod.llnwd.net/a1218/o18/StreamSample_action.flv</span>&amp;buffer=15&amp;imageURL=&amp;streamType=Streaming&amp;autoPlay=true&amp;playerWidth=480&amp;playerHeight=360&amp;autoHideControls=false&amp;autoHideTime=5&amp;initialVolume=50&quot; /&gt;
+<br>
+  &lt;param name=&quot;movie&quot; value=&quot;<span class="yellow">LLNWPlayer.swf</span>&quot; /&gt;&lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+<br>
+  &lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot; /&gt;
+<br>
+  &lt;embed src=&quot;<span class="yellow">LLNWPlayer.swf</span>&quot; allowfullscreen=&quot;true&quot; quality=&quot;high&quot; bgcolor=&quot;#000000&quot; width=&quot;480&quot; height=&quot;360&quot; name=&quot;&quot; align=&quot;middle&quot; allowScriptAccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot; flashVars=&quot;mediaURL=<span class="green">rtmp://llnwqa.fcod.llnwd.net/a1218/o18/StreamSample_action.flv</span>&amp;buffer=15&amp;imageURL=&amp;streamType=Streaming&amp;autoPlay=true&amp;playerWidth=480&amp;playerHeight=360&amp;autoHideControls=false&amp;autoHideTime=5&amp;initialVolume=50&quot;/&gt;
+<br>
+&lt;/object&gt;
+<br>
+
+<br>
+
+<br>
+
+
+    </p>
+    <p>
+      <span class="green">Flash files</span><br>
+      This is where you will put the Limelight URL for your content (file).      <ul>
+        <li>The file should be an FLV</li>
+        <li>Use the "rtmp" protocol for Flash streaming</li>
+        <li>Use the "http" protocol for progressive download</li>
+      </ul>
+    </p>
+    <p>
+      <span class="yellow">SWF files</span><br>
+      Insert the Limelight URL for the SWF that your downloaded from the LUX Flash Player page.      <ul>
+        <li>You will need to upload the SWF to your FTP account to be delivered by Limelight</li>
+        <li>You can deliver the SWF from your servers if you choose to do so</li>
+        <li>Limelight Flash players will only play files delivered by Limelight</li>
+      </ul>
+    </p>
+            
+  </body>
+</html>

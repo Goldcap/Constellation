@@ -1,0 +1,11 @@
+BROWSER: "*firefox"
+#BROWSER: "*iexplore"
+#BROWSER: "*safari"
+#BROWSER: "*googlechrome"
+
+SITE_URL: http://www.google.com/
+
+HOST_LOGIN: amadsen@gmail.com
+HOST_PASSWORD: console072
+VISITOR_LOGIN: amadsen@operislabs.com
+VISITOR_PASSWORD: rjr457#2

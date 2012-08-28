@@ -1,0 +1,6 @@
+"Method"|"Label"|"Message"|"Status"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Facebook Link Accessible","===========","Success"
+"assertElementPresent","Facebook Email Field Accessible","===========","Success"
+"assertElementPresent","Facebook Password Field Accessible","===========","Success"
+"assertElementPresent","assertElementPresent","===========","Success"

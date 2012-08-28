@@ -1,0 +1,20 @@
+[exception]   500 | Internal Server Error | MongoConnectionException[message]     192.168.2.7[stack trace]
+  at () in SF_ROOT_DIR/lib/vendor/MongoSession/MongoSessionStorage.class.php line 33
+  at Mongo->__construct('192.168.2.7') in SF_ROOT_DIR/lib/vendor/MongoSession/MongoSessionStorage.class.php line 33
+  at MongoSessionStorage->sessionOpen('/var/lib/php/session', 'constellation_frontend') in n/a line n/a
+  at session_start() in SF_ROOT_DIR/lib/vendor/symfony/lib/storage/sfDatabaseSessionStorage.class.php line 73
+  at sfDatabaseSessionStorage->initialize(array('auto_shutdown' => , 'session_id' => <em>null</em>, 'database' => <em>object</em>('MongoDatabase'), 'session_name' => 'constellation_frontend', 'session_cookie_domain' => '.constellation.tv', 'db_table' => 'session', 'db_id_col' => 'session_uuid', 'db_data_col' => 'session_data', 'db_time_col' => 'session_time')) in SF_ROOT_DIR/lib/vendor/symfony/lib/storage/sfStorage.class.php line 33
+  at sfStorage->__construct(array('auto_shutdown' => , 'session_id' => <em>null</em>, 'database' => <em>object</em>('MongoDatabase'), 'session_name' => 'constellation_frontend', 'session_cookie_domain' => '.constellation.tv', 'db_table' => 'session', 'db_id_col' => 'session_uuid', 'db_data_col' => 'session_data', 'db_time_col' => 'session_time')) in SF_ROOT_DIR/cache/frontend/dev/config/config_factories.yml.php line 119
+  at require('/var/www/html/sites/dev.constellation.tv/public/cache/frontend/dev/config/config_factories.yml.php') in SF_ROOT_DIR/lib/vendor/symfony/lib/util/sfContext.class.php line 155
+  at sfContext->loadFactories() in SF_ROOT_DIR/lib/vendor/symfony/lib/util/sfContext.class.php line 77
+  at sfContext->initialize(object('frontendConfiguration')) in SF_ROOT_DIR/lib/vendor/symfony/lib/util/sfContext.class.php line 60
+  at sfContext::createInstance(object('frontendConfiguration')) in SF_ROOT_DIR/lib/task/pagewidgetTask.class.php line 98
+  at pagewidgetTask->execWidget(array('task' => 'widget', 'op' => 'exec', 'widget' => 'artist_users', 'application' => 'frontend', 'env' => 'dev', 'args' => 'flash'), array('help' => , 'quiet' => , 'trace' => , 'version' => , 'color' => , 'application' => 'frontend', 'env' => 'dev', 'connection' => 'propel', 'args' => 'flash')) in SF_ROOT_DIR/lib/task/pagewidgetTask.class.php line 79
+  at pagewidgetTask->execute(array('task' => 'widget', 'op' => 'exec', 'widget' => 'artist_users', 'application' => 'frontend', 'env' => 'dev', 'args' => 'flash'), array('help' => , 'quiet' => , 'trace' => , 'version' => , 'color' => , 'application' => 'frontend', 'env' => 'dev', 'connection' => 'propel', 'args' => 'flash')) in SF_ROOT_DIR/lib/vendor/symfony/lib/task/sfBaseTask.class.php line 68
+  at sfBaseTask->doRun(object('sfCommandManager'), null) in SF_ROOT_DIR/lib/vendor/symfony/lib/task/sfTask.class.php line 97
+  at sfTask->runFromCLI(object('sfCommandManager'), null) in SF_ROOT_DIR/lib/vendor/symfony/lib/command/sfSymfonyCommandApplication.class.php line 76
+  at sfSymfonyCommandApplication->run() in SF_ROOT_DIR/lib/vendor/symfony/lib/command/cli.php line 20
+  at include('/var/www/html/sites/dev.constellation.tv/public/lib/vendor/symfony/lib/command/cli.php') in SF_ROOT_DIR/symfony line 14
+[symfony]     v. 1.4.8 (symfony-project.org)
+[PHP]         v. 5.3.2
+Fatal error: spl_autoload(): Class sfDatabaseException could not be loaded in /var/www/html/sites/dev.constellation.tv/public/lib/vendor/MongoSession/MongoSessionStorage.class.php on line 161

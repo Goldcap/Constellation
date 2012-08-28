@@ -1,0 +1,24 @@
+Jul 29 17:41:56 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Jul 29 17:41:59 symfony [err] {MongoConnectionException} Transport endpoint is not connected
+Jul 29 17:41:59 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 29 17:41:59 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 29 17:41:59 symfony [info] {sfWebDebugLogger} Configuration 13755.15 ms (5)
+Jul 29 17:41:59 symfony [info] {sfWebDebugLogger} Factories 3680.60 ms (1)
+Jul 29 17:42:58 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Jul 29 17:43:01 symfony [err] {MongoConnectionException} Transport endpoint is not connected
+Jul 29 17:43:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 29 17:43:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 29 17:43:01 symfony [info] {sfWebDebugLogger} Configuration 0.70 ms (5)
+Jul 29 17:43:01 symfony [info] {sfWebDebugLogger} Factories 3409.06 ms (1)
+Jul 29 17:44:25 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Jul 29 17:44:28 symfony [err] {MongoConnectionException} Transport endpoint is not connected
+Jul 29 17:44:43 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 29 17:44:43 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 29 17:44:43 symfony [info] {sfWebDebugLogger} Configuration 0.78 ms (5)
+Jul 29 17:44:43 symfony [info] {sfWebDebugLogger} Factories 17318.99 ms (1)
+Jul 29 17:51:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Jul 29 17:51:33 symfony [err] {MongoConnectionException} Transport endpoint is not connected
+Jul 29 17:51:34 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 29 17:51:34 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 29 17:51:34 symfony [info] {sfWebDebugLogger} Configuration 0.69 ms (5)
+Jul 29 17:51:34 symfony [info] {sfWebDebugLogger} Factories 3468.56 ms (1)

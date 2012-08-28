@@ -1,0 +1,66 @@
+Howto setup Dynamic Streaming on Akamai.
+----------------------------------------
+
+Base: c:\Program Files\Adobe\Flash Media Server4\
+
+Notes: Should work without changes on the openplayer, and on the flowplayer.
+
+1) Turn on dynamic streaming through the Akamai control page
+Manage Streams -> Configure Format -> Edit
+(Click Dynamic/MBR)
+
+2) Send multiple streams out to the akamai entry point. 
+   a) Create multiple applications in FMS
+      For example if you want to create two streams ds1 and ds2
+
+	  Create 2 applications instances in FMS:
+	  	  Create 2 directories <base>\applications\ds1Test and 
+	  		 <base>\applications\ds2Test 
+   	  	  copy the contents of <base>\applications\akamaiTest to each of
+	  	   these two directories.
+		  
+    b) Restart FMS
+ 	   i ) Start -> All Programs -> Adobe -> Flash Media Server 4 -> Stop Server
+ 	   ii ) Start -> All Programs -> Adobe -> Flash Media Server 4 -> Start Server
+	c) Send two streams to the two FMS application instances created
+	  i) ffmpeg -i <file1> -re -ar 22050 -vcodec libx264 -vpre medium 
+	  -f flv rtmp://localhost/ds1Test/ds1@43841
+	  ii) ffmpeg -i <file2> -re -ar 22050 -vcodec libx264 -vpre medium 
+	  -f flv rtmp://localhost/ds2Test/ds2@43841
+
+	d) Check that you can see the two streams on the akamai suppot potal. 
+	  i) rtmp://cp113557.live.edgefcs.net/live/ds1@43841
+	  ii) rtmp://cp113557.live.edgefcs.net/live/ds2@43841
+
+
+3) Create a SMIL file listing the various names and bitrates. 
+   A sample is below
+<smil>
+  <head>
+    <meta base="rtmp://cp113557.live.edgefcs.net/live" />
+  </head>
+  <body>
+    <switch>
+      <video src="ds1@43841" system-bitrate="12000"/>
+      <video src="ds2@43841" system-bitrate="24000"/>
+    </switch>
+  </body>
+</smil>
+
+  Save it as <somename>.smil (say dsTest.smil)
+
+4) Provide this file name int the url in your web server that calls the
+video player. See http://flowplayer.org/plugins/streaming/smil.html
+on instructions about how to do this. 
+
+   It basically involves
+
+   a) Downloading a bandwidth plugin (.swf) from flowplayer.
+   b) Downloading a smil plugin (.swf) from flowplayer.
+   c) Setting up the html correctly. 
+
+   Look at ../flowplayer/dsTest.smil and ../flowplayer/dsTest.html 
+   for an example on howto use smil and bandwidth-checking and 
+   dynamic streaming with flowplayer. 
+
+http://204.236.239.237/test/flowplayer/example/overlay.html

@@ -1,0 +1,112 @@
+/* CSS Document */
+
+
+.swfuploader { 
+	/*height: 100px; */
+	width: 400px; 
+}
+#FORM_vow_element_original .swfupload {
+	display: block;
+}
+.progressContainer { 
+	overflow: hidden; 
+	display: none; 
+	/*float: left;*/
+	width: 380px; 
+	/*height: 40px;*/
+}
+#FORM_vow_element_original {
+	margin-bottom: 10px;
+}
+.messageContainer {
+	color: #666666;
+    display: none;
+    /*float: left;*/
+    /*height: 40px;*/
+    position: absolute;
+    left: 220px;
+    line-height: 15px;
+    overflow: hidden;
+    padding-top: 4px;
+    width: 308px;
+}
+.uploadmessage { 
+	float: left;
+	overflow: hidden;
+	width: 380px;
+	height: 15px;
+}
+.pops div p.completeMessageSuccess {
+	color: #3ba647;
+	font-weight: bold;
+	margin-bottom: 0!important;
+}
+.cancelContainer { 
+    float: left;
+    height: 20px;
+    left: -14px;
+    /*padding-left: 9px;*/
+    position: relative;
+    top: 4px;
+    width: 380px;
+}
+.cancelButton { 
+	float: left;  
+	width: 110px; 
+	height: 24px; 
+}
+.progressbar { 
+    display: inline-block;
+    height: 7px;
+    left: 30px;
+    margin-right: 1em;
+    padding: 0;
+    position: absolute;
+    width: 308px;
+	/*display:-moz-inline-stack; */
+	display:inline-block; 
+	zoom:1; 
+	*display:inline; 
+}
+#FILE_vow_element_original_uploading {
+	display: inline-block;
+    height: 7px;
+    left: 40px;
+    margin-right: 1em;
+    padding: 0;
+    position: absolute;
+    width: 280px;
+}
+.progressbar div { 
+	background-color: #e2089d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e1089c), to(#b80680));   
+    background-image: -webkit-linear-gradient(top, #e1089c, #b80680); 
+    background-image: -moz-linear-gradient(top, #e1089c, #b80680);
+    border: solid 1px #bc0783;
+	font-size: 1pt;
+	height:10px;
+	/*float:left;*/
+}
+span.asyncUploader object {
+	position: relative;
+	/*top: 5px;*/
+	/*left: 10px;*/
+}
+.imageupload { 
+	height: 80px !important; 
+}
+.uploadText { 
+	font-size: 13px; 
+	font-family: arial, sans-serif;
+}
+.vow_uploader {
+	font-size: 14px;
+	color: #686868;
+	margin-bottom: 20px;
+}
+.vow_upload_content {
+	font-size: 14px;
+	color: #686868;
+	margin-bottom: 50px;
+	
+}

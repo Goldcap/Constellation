@@ -1,0 +1,66 @@
+
+
+
+Version 3 Certificate
+
+Issuer Name:
+Country = ZA
+State = Western Cape
+Locality = Cape Town
+Organization = Thawte Consulting
+Organizational Unit = Certification Services Division
+Common Name = Thawte Personal Premium CA
+Email Address = <IA5>personal-premium@thawte.com
+
+Subject Name:
+Country = ZA
+State = Western Cape
+Locality = Cape Town
+Organization = Thawte Consulting
+Organizational Unit = Certification Services Division
+Common Name = Thawte Personal Premium CA
+Email Address = <IA5>personal-premium@thawte.com
+
+Validity Start: 01/01/1996 00:00:00 GMT
+Validity End: 12/31/2020 23:59:59 GMT
+
+Algorithm: MD5 With RSA
+
+Cert Hash:
+36 86 35 63 fd 51 28 c7 be a6 f0 05 cf e9 b4 36 
+68 08 6c ce 
+
+Cert Info Hash:
+a9 8f 93 bf ca e9 28 14 cb 58 1f af e0 01 44 9d 
+c6 d0 4f 75 
+
+Issuer Name and Serial Number Hash:
+2b 2a 6b 9e 18 f4 a6 ca bf c2 1a fc 0c c0 92 8b 
+f1 8f 04 80 
+
+Public Key Hash:
+e8 4e e5 c9 ed 84 83 53 9a e1 42 0e d5 4e c2 b8 
+7e 5b e1 f4 
+
+Serial Number:
+00 
+
+Public Key:
+30 81 9f 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 
+05 00 03 81 8d 00 30 81 89 02 81 81 00 c9 66 d9 
+f8 07 44 cf b9 8c 2e f0 a1 ef 13 45 6c 05 df de 
+27 16 51 36 41 11 6c 6c 3b ed fe 10 7d 12 9e e5 
+9b 42 9a fe 60 31 c3 66 b7 73 3a 48 ae 4e d0 32 
+37 94 88 b5 0d b6 d9 f3 f2 44 d9 d5 88 12 dd 76 
+4d f2 1a fc 6f 23 1e 7a f1 d8 98 45 4e 07 10 ef 
+16 42 d0 43 75 6d 4a de e2 aa c9 31 ff 1f 00 70 
+7c 66 cf 10 25 08 ba fa ee 00 e9 46 03 66 27 11 
+15 3b aa 5b f2 98 dd 36 42 b2 da 88 75 02 03 01 
+00 01 
+
+Extensions List (1):
+
+1) Basic Constraint Extension - Critical
+   Extension Value:
+   Is CA: TRUE
+   Max Path Len: N/A

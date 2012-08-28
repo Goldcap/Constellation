@@ -1,0 +1,31 @@
+/* CSS Document */
+
+body {
+  background: #F0F0F0 !important;
+  color: #000000;
+}
+
+a {
+  color: #000000 !important;
+}
+
+.wrapper {
+  width: 550px !important;
+}
+
+.row .headline {
+  color: #000000 !important;
+}
+
+.masterhead {
+  height: 0px !important;
+}
+
+.main {
+  border: 0px solid transparent;
+}
+
+.fb_thanks {
+  font-size: 16px;
+  color: #CC0000;
+}

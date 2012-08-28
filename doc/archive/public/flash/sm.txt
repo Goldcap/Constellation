@@ -1,0 +1,15 @@
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var nativeItem:ContextMenuItem=new ContextMenuItem("Video scale: NATIVE",false,_model.scaleMode!=_model.SCALE_MODE_NATIVE);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var nativeOrSmallerItem:ContextMenuItem=new ContextMenuItem("Video scale: NATIVE OR SMALLER",false,_model.scaleMode!=_model.SCALE_MODE_NATIVE_OR_SMALLER);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_FIT;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_STRETCH;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_NATIVE;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_NATIVE_OR_SMALLER;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:	 * <li>scaleMode - the scaling mode for the video, one of four possible values:
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var fitItem:ContextMenuItem=new ContextMenuItem("Video scale: FIT",true,_model.scaleMode!=_model.SCALE_MODE_FIT);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var stretchItem:ContextMenuItem=new ContextMenuItem("Video scale: STRETCH",false,_model.scaleMode!=_model.SCALE_MODE_STRETCH);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var nativeItem:ContextMenuItem=new ContextMenuItem("Video scale: NATIVE",false,_model.scaleMode!=_model.SCALE_MODE_NATIVE);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			var nativeOrSmallerItem:ContextMenuItem=new ContextMenuItem("Video scale: NATIVE OR SMALLER",false,_model.scaleMode!=_model.SCALE_MODE_NATIVE_OR_SMALLER);
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_FIT;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_STRETCH;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_NATIVE;
+ovp/ovp_sourceforge_flash_trunk/players/akamai/multi/AkamaiMultiPlayer.as:			_model.scaleMode=_model.SCALE_MODE_NATIVE_OR_SMALLER;

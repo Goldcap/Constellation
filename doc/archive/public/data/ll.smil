@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<smil>
+  <head>
+    <meta base="rtmp://consteltv.fcod.llnwd.net/a6284/o38" />
+  </head>
+  <body>
+    <switch>
+      <map></map>
+    </switch>
+  </body>
+</smil>

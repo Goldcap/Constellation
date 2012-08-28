@@ -1,0 +1,38 @@
+ovp_core/src/org/openvideoplayer/net/OvpNetStream.as:         * Note the onMetaData event handler in this class will dispatch an OvpEvent.STREAM_LENGTH event, just as the
+ovp_core/src/org/openvideoplayer/net/OvpNetStream.as:         * @see org.openvideoplayer.events.OvpEvent#STREAM_LENGTH
+ovp_core/src/org/openvideoplayer/net/OvpNetStream.as:                dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data));
+ovp_core/src/org/openvideoplayer/net/.svn/text-base/OvpNetStream.as.svn-base:         * Note the onMetaData event handler in this class will dispatch an OvpEvent.STREAM_LENGTH event, just as the
+ovp_core/src/org/openvideoplayer/net/.svn/text-base/OvpNetStream.as.svn-base:         * @see org.openvideoplayer.events.OvpEvent#STREAM_LENGTH
+ovp_core/src/org/openvideoplayer/net/.svn/text-base/OvpNetStream.as.svn-base:                dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data));
+ovp_core/src/org/openvideoplayer/net/.svn/text-base/OvpConnection.as.svn-base:			dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data)); 
+ovp_core/src/org/openvideoplayer/net/.svn/text-base/OvpConnection.as.svn-base:			dispatchEvent(new OvpEvent(OvpEvent.ERROR, new OvpError(OvpError.STREAM_LENGTH_REQ_ERROR)));
+ovp_core/src/org/openvideoplayer/net/OvpConnection.as:			dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data)); 
+ovp_core/src/org/openvideoplayer/net/OvpConnection.as:			dispatchEvent(new OvpEvent(OvpEvent.ERROR, new OvpError(OvpError.STREAM_LENGTH_REQ_ERROR)));
+ovp_core/src/org/openvideoplayer/events/OvpEvent.as:		 * The OvpEvent.STREAM_LENGTH constant defines the value of the OvpEvent's
+ovp_core/src/org/openvideoplayer/events/OvpEvent.as:  		public static const STREAM_LENGTH:String = "streamlength";
+ovp_core/src/org/openvideoplayer/events/.svn/text-base/OvpEvent.as.svn-base:		 * The OvpEvent.STREAM_LENGTH constant defines the value of the OvpEvent's
+ovp_core/src/org/openvideoplayer/events/.svn/text-base/OvpEvent.as.svn-base:  		public static const STREAM_LENGTH:String = "streamlength";
+ovp_core/src/org/openvideoplayer/events/.svn/text-base/OvpError.as.svn-base:		public static const STREAM_LENGTH_REQ_ERROR:uint	= 10;
+ovp_core/src/org/openvideoplayer/events/.svn/text-base/OvpError.as.svn-base:			{n:STREAM_LENGTH_REQ_ERROR,	d:"Error requesting stream length"},
+ovp_core/src/org/openvideoplayer/events/OvpError.as:		public static const STREAM_LENGTH_REQ_ERROR:uint	= 10;
+ovp_core/src/org/openvideoplayer/events/OvpError.as:			{n:STREAM_LENGTH_REQ_ERROR,	d:"Error requesting stream length"},
+players/akamai/multi/.svn/text-base/AkamaiMultiPlayer.as.svn-base:			_model.addEventListener( OvpEvent.STREAM_LENGTH, playStartSeekHandler );
+players/akamai/multi/.svn/text-base/AkamaiMultiPlayer.as.svn-base:			_model.removeEventListener( OvpEvent.STREAM_LENGTH , playStartSeekHandler );
+players/akamai/multi/controller/VideoController.as:					_ns.addEventListener(OvpEvent.STREAM_LENGTH, handleStreamLength);
+players/akamai/multi/controller/VideoController.as:					_ns.removeEventListener(OvpEvent.STREAM_LENGTH, handleStreamLength);
+players/akamai/multi/controller/VideoController.as:				_ak.addEventListener(OvpEvent.STREAM_LENGTH,handleStreamLength);
+players/akamai/multi/controller/.svn/text-base/VideoController.as.svn-base:					_ns.addEventListener(OvpEvent.STREAM_LENGTH, handleStreamLength);
+players/akamai/multi/controller/.svn/text-base/VideoController.as.svn-base:					_ns.removeEventListener(OvpEvent.STREAM_LENGTH, handleStreamLength);
+players/akamai/multi/controller/.svn/text-base/VideoController.as.svn-base:				_ak.addEventListener(OvpEvent.STREAM_LENGTH,handleStreamLength);
+players/akamai/multi/AkamaiMultiPlayer.as:			_model.addEventListener( OvpEvent.STREAM_LENGTH, playStartSeekHandler );
+players/akamai/multi/AkamaiMultiPlayer.as:			_model.removeEventListener( OvpEvent.STREAM_LENGTH , playStartSeekHandler );
+players/akamai/multi/model/.svn/text-base/Model.as.svn-base:			dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data));
+players/akamai/multi/model/Model.as:			dispatchEvent(new OvpEvent(OvpEvent.STREAM_LENGTH, data));
+plugins/AdPlayer/src/org/openvideoplayer/flashadplayer/controller/VideoController.as:			_ns.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler, false, 0, true);
+plugins/AdPlayer/src/org/openvideoplayer/flashadplayer/controller/VideoController.as:					_nc.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler, false, 0, true);
+plugins/AdPlayer/src/org/openvideoplayer/flashadplayer/controller/.svn/text-base/VideoController.as.svn-base:			_ns.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler, false, 0, true);
+plugins/AdPlayer/src/org/openvideoplayer/flashadplayer/controller/.svn/text-base/VideoController.as.svn-base:					_nc.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler, false, 0, true);
+test/flex/captioning/src/.svn/text-base/main.mxml.svn-base:			_ns.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler); 
+test/flex/captioning/src/main.mxml:			_ns.addEventListener(OvpEvent.STREAM_LENGTH, streamLengthHandler); 
+test/unit_tests/net/OvpConnectionStreamLengthTest.as:			instance.addEventListener(OvpEvent.STREAM_LENGTH,streamLengthHandler); 
+test/unit_tests/net/.svn/text-base/OvpConnectionStreamLengthTest.as.svn-base:			instance.addEventListener(OvpEvent.STREAM_LENGTH,streamLengthHandler); 

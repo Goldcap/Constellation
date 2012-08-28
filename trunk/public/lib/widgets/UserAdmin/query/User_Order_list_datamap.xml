@@ -1,0 +1,27 @@
+<map table="order_search" result="order_search" title="All Orders" docache="false" allow_add="false">
+  <column column="user_order_id" type="string"  order="1"/>
+  <column column="user_order_guid" type="string"  order="2"/>
+  <column column="user_order_total_fs" type="float"  order="4"/>
+  <column column="user_order_status" type="int"  order="5"/>
+  <column column="user_order_process" type="int"  order="6"/>
+  <column column="user_order_download" type="int"  order="6"/>
+  <column column="user_order_date" type="datetime"  order="7" size="SM" format="dateformat" />
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <descorderby column="product_rank"></descorderby>
+    <criteria value="order" column="object_type" type="AND" />
+    <criteria scope="GET" value="id" column="user_order_user_id" />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <!--<maplinks>
+    <maplink column="Title" base="/video/detail/">
+      <attribute name="tnf_video_id"></attribute>
+    </maplink>
+  </maplinks>-->
+</map>

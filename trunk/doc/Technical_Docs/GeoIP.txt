@@ -1,0 +1,8 @@
+Download API from here, configure, make, make install
+
+http://geolite.maxmind.com/download/geoip/api/c/
+
+pecl install geoip
+
+DB Location:
+/usr/local/share/GeoIP/

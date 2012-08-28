@@ -1,0 +1,3119 @@
+/********** START MAIN CSS ***************/
+/* Style Sheets for [] website
+created by bkkwebdesign.com
+TOC
+	1. Defaults
+	2. Structure
+	3. Links and Navigation 
+	4. Fonts
+	5. Added By Andy
+
+Notes
+*/
+ 
+/* -------------- 1. Defaults --------------------------- */
+
+/*@font-face{
+font-family: 'helveticaneue'; 
+src: url('helveticaneue-webfont.ttf') format('truetype');
+}*/
+
+@font-face {  
+  font-family: "helveticaneue";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.eot ); /* IE */  
+  src: local("HelveticaNeue-Regular"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.ttf ) format("truetype"); /* non-IE */  
+}
+
+@font-face {  
+  font-family: "helveticaneuelight";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.eot ); /* IE */  
+  src: local("HelveticaNeue-Light"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.ttf ) format("truetype"); /* non-IE */  
+}
+   
+*{margin:0; padding:0;}
+body{font-size: 12px; font-family: "helveticaneue", Helvetica, sans-serif; background:#000000 url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/tbg.png") no-repeat center top; color:#9cf}
+
+a img{border:0;}
+ul{list-style-type:none; }
+
+.clear{clear:both}
+.left{float:left;}
+.right{float:right;}
+fieldset{border:none;}
+
+.ui-sortable-helper {
+  border: 1px solid transparent;
+}
+
+/* -------------- 2. Structure -------------------------- */
+.wrapper { margin:0 auto; width:912px; position:relative}
+
+/* -------------- 2.b Master Head ----------------------------- */
+	.masterhead{ height:117px; margin:5px 0 10px;}
+		.masterhead .logo a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/logo_beta.png") no-repeat; height:117px; width:210px; display:block; float:left; text-indent:-10000px}
+		.masterhead .login {text-transform:uppercase; color:#9cf; font:bold 13px Helvetica, sans-serif; float:right; position:relative; top:60px;}
+    .masterhead .username{ color:#9cf; font:bold 13px Helvetica, sans-serif; float:right; position:relative; top:60px;}
+    .masterhead .username #full-name { font-style: italic; }
+    .masterhead .main-login{cursor:pointer}
+    .masterhead .photo-container { width: 45px; height: 32px; overflow: hidden;}
+    .masterhead .photo-container img { position: relative; top: -5px; }
+/* -------------- 2.c Content ----------------------------- */
+	.content{}
+	.one_column .wrapper .content {float: left; margin-bottom: 20px;}
+  .one_column .left_column {}
+	.one_column .right_column{ display:none;}
+  
+	.two_column .left_column { float:left; padding-left:40px; padding-bottom: 20px; width:165px;}
+	.two_column .right_column{ float:right; width:660px; padding-bottom: 60px;}
+		.two_column .right_column .column1{ width:425px; float:left}
+		.two_column .right_column .column2{ width:218px; float:right; text-align:left; padding-bottom: 20px; }
+			.image_holder{margin-bottom:45px; width: 205px; height: 141px;}
+			.image_holder .host_inset_image {float: right; margin-top: 89px !important; border: 1px solid #cc6600; }
+			#detail-form #host_submit {margin-top: 24px; margin-left: 5px;}
+			
+	.one_column .left_column .column1{float:left; width:580px;margin-bottom: 80px;}
+	.one_column .left_column .column2{float:right; width:285px; }
+		
+
+/* -------------- 2.d Footer ----------------------------- */
+	.footer{ border-top:2px solid #527aad; clear:both; }
+	.footer .logo a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/logo_small.png") no-repeat; 
+                height:59px; 
+                width:105px; 
+                display:block; 
+                float:right;
+                position: relative;
+                top: -60px;
+                right: -50px;
+                text-indent: -10000px; 
+                }
+  .footer, .footer a{color:#369; font:10px Helvetica, sans-serif}
+	.footer li, .footer li a{float:left; padding-right:5px; }
+	.footer li {margin-top:15px}
+	.footer li.copy{padding-left:10px;}
+	.footer li img{position: relative; top:-10px;}
+	.footer .face{padding-left:70px; margin-right:2px}
+	.footer .face a, .footer .twit a, .footer li.face, .footer li.twit{padding-right:0px; }
+	.footer .seat_surrender { padding-right: 10px; }
+	.footer li.face, .footer li.twit{position:relative; top:4px}
+	
+/* -------------- 3. Links and Navigation --------------- */
+a {color:#fff; outline:none;  text-decoration:none;}
+a:hover{}
+span.arrow { display:block; padding-top:5px}
+span.arrow a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/go_arrow.gif") right  center no-repeat; padding:1px 12px 0 0; color:#9cf; text-transform:uppercase; font-size:10px;}
+.pop_up span.arrow a{font-size:15px;}
+
+.buttons {position:absolute; left:-2px; top:-18px; width:800px}
+.buttons li{padding-right:14px; float:left;}
+.buttons li a{display:block;  text-transform:uppercase; background-color:#369; padding:2px 40px 1px}
+
+/* -------------- 4. Fonts ------------------------------ */
+h1{}
+h2{font:normal 22px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px}
+h3{font:bold 10px Helvetica, sans-serif; margin:10px 0; text-transform:uppercase;}
+h4{font:bold 18px Helvetica, sans-serif; margin-bottom:18px; text-transform:uppercase;}
+h5{font:bold 16px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; border-bottom:#c60 2px solid; color:#fff;}
+h6{font:normal 13px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; padding-left:20px; float:left}
+
+h4.future{float: left; position: relative; font-size: 14px;left: 85px; top: 0px; margin:0px !important; width: 160px !important;display: inline;}
+
+h4.future_showtimes {
+  float: left;
+  bottom: 0px;
+  width: 160px;
+  font-size: 14px;
+  margin: 0px !important;
+  display: inline;
+}
+
+.ui-datepicker {
+  z-index: 1200 !important;
+}
+
+.ui-datepicker-trigger {background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/calendar.png") no-repeat right top; 
+          border: 0px transparent; 
+          height:34px; 
+          width:33px; 
+          float:right; 
+          text-align:center; 
+          position:relative; 
+          margin-left:10px; 
+          top:-5px;
+          padding-top: 1px;
+          font:bold 10px/9px "helveticaneue", Arial, sans-serif;  
+          color:#003; 
+          text-transform:uppercase}
+.two_column .ui-datepicker-trigger {
+  float:left; 
+}
+
+.two_column .left_column p{font:11px/14px Helvetica, sans-serif; padding-top:13px}
+.two_column .left_column p strong{text-transform:uppercase; display:block}
+.two_column .left_column a{color: #99CCFF}
+
+/* -------------- 5. Buzz ----------------------------- */
+.buzz {
+  margin-bottom: 20px;
+}
+.buzz li{margin-bottom:14px}
+
+.color1 a, .color2 a, .color3 {color:#99ccff}
+
+.color4 {color:#5f7eb1}
+.color5 {color:#405689}
+.color6 {color:#394c7f}
+.color7 {color:#2c3b6e}
+
+/* -------------- 6. Show Times ----------------------------- */
+.showtimes{padding-left:10px; margin-bottom:15px;}
+.showtimes div{padding-bottom:0px}
+.showtimes a{display:block; padding:6px 10px 5px; margin-bottom: 10px ;font:bold 16px Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; float:left; text-transform:uppercase; letter-spacing:1px}
+.showtimes span{ color:#fff; text-transform:uppercase; font-size:11px; position:relative; left:16px; display:block; margin-left: 55px;}
+.showtimes span strong{font-size:16px; display:block; font-weight:normal; font-size:16px}
+.main-showtimes { cursor: pointer; text-transform: uppercase; }
+#today_screenings .screening_list {
+  position: absolute;
+  float: left;
+  margin-left: -20px;
+}
+
+.subscreen_title { font-size: 18px !important; font-weight: bold !important; text-align: left !important; }
+.subscreen { font-size: 12px !important; text-align: left !important; }
+
+/* -------------- 7. Image Gallery ----------------------------- */
+.image_gallery {margin-bottom:20px;}
+.one_column .image_gallery { width: 910px; overflow: hidden; padding: 0px 25px 0px 24px;}
+.large, .large .navigation, .large div.scroll{ width:534px; }
+.small, .small .navigation, .small div.scroll {width:384px; }
+
+.large div.scroll { overflow: hidden; }
+.small div.scroll { overflow: hidden; }
+
+.image_gallery .navigation{position:absolute;}
+	.image_gallery .navigation a{display:block; width:14px; text-indent:-10000px; float:left;  position:absolute;}
+	.image_gallery .navigation .previous{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left.png") no-repeat;  height:32px;  left:-20px;}
+	.image_gallery .navigation .next{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right.png") no-repeat; height:33px; right:-20px}
+	.large .navigation .next, .large .navigation .previous{top:7px}
+	.navigation .next, .navigation .previous{top:1px}
+	
+	.image_gallery .main_image{margin-bottom:7px}
+	.image_gallery ul{width:4000px;}
+	.image_gallery ul li{float:left; padding-right:5px}
+	.one_column .image_gallery ul li{float:left; padding-right:0px}
+	.one_column .large ul li{float:left;}
+	
+.main { padding:30px 20px 0px; margin-bottom:20px; position:relative}	
+	.main .navigation, .main div.scroll{width:868px}
+	.main{border:2px solid #369;}
+	.main .navigation .previous{ background:url("..http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_blue.png") no-repeat;  height:152px; width:21px;  left:-20px; top:60px}
+	.main .navigation .next{ background:url("..http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_blue.png") no-repeat;  height:152px; width:21px; right:-20px; top:60px}
+	.main .image_gallery ul li{ padding-right:12px}
+
+.one_column .main { padding:0px 0px 0px; width: 910px; height: 340px; margin-bottom:20px; position:relative; }	
+	.one_column .main .navigation, .main div.scroll{width:868px}
+	.one_column .main{border:2px solid #369;}
+	.one_column .main .navigation .previous{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_blue.png") no-repeat;  height:152px; width:21px;  left:-20px; top:60px}
+	.one_column .main .navigation .next{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_blue.png") no-repeat;  height:152px; width:21px; right:-20px; top:60px}
+  .main .image_gallery ul li{ padding-right:0px}
+
+.lobby .main { border: 0px transparent !important; 
+  width: 900px; 
+  margin:0px 0px 100px; 
+  padding:0px;
+	text-align:center;}	
+	
+.lobby #left_column {
+  min-height: 500px;
+}
+#lobby_panel {
+  width:500px;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+}
+
+#lobby_panel h1 {
+  font-size: 36px;
+}
+
+#lobby_panel .filminfo {
+  color: #cc6600;
+  border-top: 2px solid #cc6600;
+  padding-top: 10px;
+  border-bottom: 2px solid #cc6600;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#lobby_panel .filminfo p {
+  color: #cc6600;
+  padding-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+#lobby_panel .errormessage p {
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.blank .main{border:0px solid transparent;}
+	  
+.featured_datepicker {margin-left: 10px;}
+.one_column .large{padding-left:25px}
+	
+/* -------------- 8. Search ----------------------------- */
+.search{position:absolute; right:-2px; top:-24px; width:200px;}
+.search form{display:block; height:24px; overflow:hidden; padding: 0px; margin: 0px;}
+.search form input{color:#fff; background-color:#003; border:none; width:22px; padding:2px; height:18px; text-align: right;}
+.search form input.field{border:2px solid #369; width:170px; }
+.search .btn_search{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/mag_glass.png") 0 0 no-repeat; cursor:pointer; }
+#gv { padding-top: 0px !important; font-size: 10px; }
+
+/* -------------- 9. ERROR-up --------------------------------- */
+.error{ text-align: left !important; top:140px; height:1px; width:1px; left:190px; float:left; z-index: 100; }
+	.error_top{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_top.png") no-repeat left; height:20px; top:-20px;}
+	.error_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.error_mid{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_mid.png") repeat-y left; min-height: 100px; }
+	.error_bot{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+	.error_top, .error_bot, .error_mid{ position:relative; width:657px; }
+	
+	.error .title strong{font:bold 32px/28px Arial, Helvetica, sans-serif; color:white;}
+	.error .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+
+  /* -------------- 9. QANDA-up --------------------------------- */
+  .qa_pop_up{position:absolute; top:140px; height:1px; width:1px; left:300px; float:left; z-index: 100; }
+	.qa_pop_up.hidden{left:-9000px}
+	.qa_pop_top{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_top.png") no-repeat left; height:20px; top:-20px;}
+	.qa_pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.qa_pop_mid{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_mid.png") repeat-y left; min-height: 150px; }
+	.qa_pop_bot{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+  .qa_pop_top, .qa_pop_bot, .qa_pop_mid{ position:relative; width:700px; }
+	.qa_pop_up .layout-1 .chalkboard { height: 140px; }
+	.qa_pop_up .layout-1 .chalkboard .status { font-size: 10px; color: #00CE32; margin-bottom: 15px; }
+	.qa_pop_up .layout-1 .chalkboard .title { font-size: 16px; color: white; }
+	.qa_pop_up .layout-1 .chalkboard .title_blue { font-size: 16px; color: #97CCFF; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .title_white { font-size: 18px; color: white; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question_author { font-size: 14px; color: white; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question_question { font-size: 14px; color: #97CCFF; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question { font-size: 12px; color: white; }
+	.qa_pop_up .layout-1 .chalkboard .top_control { float: right; bottom: 0px; }
+  .qa_pop_up .layout-1 .myquestions { border-top: 3px solid #6799CC; border-bottom: 3px solid #6799CC; height: 150px; padding-top: 20px; }
+  .qa_pop_up .layout-1 .myquestions .title_blue { padding-top: 5px; }
+  .qa_pop_up .layout-1 .inputs { border-top: 3px solid #6799CC; border-bottom: 3px solid #6799CC; height: 150px; }
+  .qa_pop_up .layout-1 .inputs .left { border-right: 3px solid #6799CC; width: 330px; height: 150px; }
+  .qa_pop_up .layout-1 .inputs .right { width: 310px; height: 150px; }
+  .qa_pop_up .layout-1 .inputs div p {padding-top: 5px; font-size: 14px;}
+  .qa_pop_up .layout-1 .push_buttons { padding-top: 20px; }
+  .qa_pop_up .layout-1 input { padding-top: 5px; padding-bottom: 5px; margin-right: 5px; }
+  .qa_pop_up .layout-1 #qa_showing_list {}
+  .qa_pop_up .layout-1 #qa_showing_questions ul li { color: white; font-size: 14px; }
+  .qa_pop_up .layout-1 #qa_showing_question ul li { color: white; font-size: 14px;  }
+  .vscroller { margin-top: 5px; height: 120px !important; width: 650px !important; }
+  
+/* -------------- 9. POP-up --------------------------------- */
+.pop_up{position:absolute; top:140px; height:1px; width:1px; left:190px; float:left; z-index: 1000; }
+	
+  .pop_up p{color:#fff; margin-bottom:6px}
+  .pop_up p.pad_bot, .pop_up div.pad_bot{margin-bottom:20px}
+  .pop_up p.p_l{padding-left:173px; margin-bottom:2px}
+  .pop_up p strong{text-transform:uppercase}
+
+  .pop_top{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_top.png") no-repeat left; height:20px; top:-20px;}
+	.pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.pop_mid{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_mid.png") repeat-y left; min-height: 150px; }
+	.pop_bot{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+	.pop_top, .pop_bot, .pop_mid{ position:relative; width:524px; }
+	
+	.pop_up .title strong{font:bold 32px/26px Arial, Helvetica, sans-serif; color:#9cf;}
+	.pop_up .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+	#carousel-popup .title { height: 217px; }
+	#carousel_film_description { text-transform: none; height: 48px; width: 200px; overflow: hidden;}
+	#carousel_film_info { text-transform: none; height: 130px; overflow: hidden; font-size: 11px;}
+
+  
+	a.btn_large{background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top; height:38px; padding-top:12px; margin-bottom:10px; text-transform:uppercase; font:bold 22px Helvetica, sans-serif; display:block; text-align:center}
+	.btn_tiny{border:none; color:#fff; padding:4px 10px 5px; font:bold 11px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; cursor:pointer}
+	.btn_tiny_og{border:none; color:#fff; padding:4px 10px 5px; font:bold 11px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; text-transform:uppercase; cursor:pointer}
+	.btn_medium{border:none; color:#fff; padding:2px 6px 3px; font:bold 13px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_medium_og{border:none; color:#fff; padding:2px 6px 3px; font:bold 13px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_small{float:right; border:none; color:#fff; padding:4px 10px 5px; font:bold 16px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_og{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; padding:6px 8px 0; height:24px; text-transform:uppercase; font-weight:bold; font-size:16px; display:block; float:left; margin-right:4px; letter-spacing:1px}
+	input.btn_og{float:right; border:none; color:#fff; padding: 4px 8px; height:auto; margin:5px 0 0 0; position:relative; left:-13px; font-size:10px}
+	.btn_med{height:31px; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top;  padding:2px 20px 0; text-transform:uppercase; font:bold 16px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left; margin-bottom: 20px }
+	.btn_med-og{height:31px; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-med-org.png") repeat-x top;  padding:2px 20px 0; text-transform:uppercase; font:bold 16px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left; margin-bottom: 20px }
+	.btn_large-blue{height:51px; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top;  padding:2px 30px 0; text-transform:uppercase; font:bold 22px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left }
+	.btn_large-og{height:51px; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg-org.png") repeat-x top;  padding:2px 30px 0; text-transform:uppercase; font:bold 22px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left }
+	
+   #log-in { width: 100%; float: left; }
+   #sign-up { width: 100%; float: left; }	
+   #password-out { width: 100%; float: left; }	
+	.login_form{width: 100%;margin-bottom:10px}
+		.login_form div{float:left; padding-right:4px;}
+		.login_form .btn_small{float:left; width:88px; padding:7px 0 5px; text-align:center}
+		.login_form .input{width:180px; height:28px; float:left; border:none; margin-right: 5px; padding-left: 5px; font-size: 12px; font-weight: bold;}
+		*:first-child+html .input { height: 23px; padding-top: 5px; }
+    .login_form label{font: 14px Helvetica,sans-serif; color:#fff; float:left; text-transform:capitalize; padding:4px 0 0; display:block}
+			.or_login_w{width: 100%;float: left; font:bold 16px  Helvetica, sans-serif;  text-transform:uppercase; color:#fff; margin-bottom:25px}
+			.or_login_w a{position:relative; top:13px}
+			.forgot_sign-up{width: 100%;float: left;font:10px  Helvetica, sans-serif; text-transform:uppercase}
+	
+  .password_form{ width: 100%; border-top:4px solid #6494c5; margin-top:17px; padding-top:27px;}
+		.password_form.clearfix{margin-bottom:13px}
+		.password_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.password_form .button input{float:left; margin-left:164px}
+		.password_form .input{width:185px; height:28px; float:left; border:none; margin-right: 5px; padding-left: 5px; font-size: 12px; font-weight: bold;}
+		
+	.sign-up_form{ width: 100%; border-top:4px solid #6494c5; margin-top:17px; padding-top:27px;}
+		.sign-up_form .clearfix{margin-bottom:13px}
+		.sign-up_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.sign-up_form .button input{float:left; margin-left:164px}
+		.sign-up_form .input{width:314px;}
+
+	.email_enter-form div.left{width:258px}
+		.email_enter-form div.right {width:215px !important; }
+	.email_enter-form textarea{height:214px; float:left}
+	.email_enter-form .right input{width:106px; float:left; margin-top:4px}
+	.email_enter-form a{float:right	; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+	
+	.landing #preview-invite-popup { margin-left: 200px; }
+	
+  .current_screening_host, .current_screening_time, .current_host_screening_time { display: inline !important; padding: 0px !important; margin: 0px !important; }
+	.host-form span{ float: left; margin-bottom: 5px;}
+	    .host-form .col1{ float: left; font-weight: bold; width: 125px; font: 12px Helvetica,sans-serif; color:#fff; text-transform:capitalize; padding:4px 0 0; display:block}
+			.host-form .col2{ float: left; width: 45px; display:block}
+			.host-form .col3{ float: left; display:block}
+			.host-form .fullcol{ width: 480px; float: left; display:block}
+      .host-form span input{width:109px}
+			.host-form span label{ text-transform:uppercase}
+		.info_box{}
+			.info_box .textarea{ width:310px; float:right; color:#fff}
+			.info_box textarea{ width:310px; height:114px; margin-bottom:4px}
+			.upload_box{float:left; width:167px; margin-bottom:20px}
+			.upload_box input{width:160px}
+			.upload_box img{float:left; margin-bottom:5px; height:76px}
+			.upload_box span{display:block; float:right; width:80px; color:#fff }
+			
+			
+	.host-form .btn_small{ float:none}
+	.host-form p.clearfix{height:34px}
+	
+	.your-screening-area, .your-hosting-area {
+    clear: both;
+    float: left;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  
+  .your-screening-area .title, .your-hosting-area .title {
+    color: #99ccff !important;
+  }
+  
+  .your-screening-area {
+    border-bottom: 2px solid #cc6600;
+  }
+  
+	.logout-area {
+    float: right;
+    font-style: italic;
+  }
+  
+  .screening-payload .screening, .screening-payload .screening a {
+    clear: both;
+    float: left;
+    text-transform: uppercase;
+    color: #99ccff !important;
+  }
+  
+  .logout-area, .logout-area a {
+    text-transform: uppercase;
+    color: #99ccff !important;
+    font-size: 11px;
+  }
+  
+	.mr_3{margin-right:5px}
+	.ml_3{ position:relative; left:7px}
+	
+	.layout-error{padding:0px 40px 0px 50px;}
+		
+	.layout-1{padding:0 20px}
+		.layout-1 div.right{width:254px}
+		.layout-1 .email_enter-form div.right{width:219px; margin-bottom:20px}
+		
+		.layout-1 .spacer{ height:138px}
+		.layout-1 .right a.btn_large{font: bold 16px Helvetica,sans-serif; height:30px}
+		
+	.layout-2{padding:0 30px 0 80px}
+	
+	.layout-3{padding:0 20px 0 5px}
+		.layout-3 .title{margin-bottom:20px}
+		
+	.soc-app {width:377px; margin-bottom:10px;}
+	 	.soc-app input{ width:116px; margin:0 8px 5px 0; float:left}
+	
+	
+	.soc-note {width:377px; margin-bottom:10px;}
+	
+/* -------------- 9. landing page --------------------------------- */
+		body.landing{background:#000000 url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/tbg.png") no-repeat center top}
+		body.landing .wrapper{ width:auto; position:static}
+		body.landing .masterhead{ height:140px}
+		body.landing .left_column{margin:0 auto; position:relative; height:1px; width:1px}
+			body.landing .column1{ font-size:22px; text-align:center; text-transform:uppercase; letter-spacing:2px}
+			body.landing .column1 strong{font-size:40px}
+			body.landing .column1 .timer{font-size:110px; margin-bottom:20px}
+			
+			body.landing .column2{width:500px; margin:auto;}
+			body.landing .column2 .left{ padding-bottom:5px;}
+			body.landing .column2 .right{ width:259px; }
+			body.landing .column2 .right strong{display:block; text-transform:uppercase; font-size:19px; letter-spacing:1px}
+			body.landing .column2 p{color:#fff; font: normal 15px/18px  Helvetica, sans-serif; margin-bottom:10px}
+			
+			body.landing .footer{
+        background-color:#333; 
+        border-top:none; 
+        height:50px; 
+        width:100%; 
+        position: fixed;
+        bottom:0px;
+        clear: both;
+        float: left;
+      }
+			
+      body.landing #countdown {height: 128px;}
+			body.landing #timer_panel{ margin-top: -70px; }
+      body.landing .filmhost { text-transform: uppercase;}
+			body.landing .filminfo { height: 100px; overflow: hidden; }
+			
+			body.landing .crash_file .username{
+				color:#fff; 
+				text-transform:uppercase; 
+				font-size:10px; 
+				letter-spacing:1px; 
+				margin:0 auto; 
+				position:absolute; 
+				left:130px; 
+				top:-35px}
+			
+			.invite_more{width:405px; padding:20px 30px;  position:absolute; left:-225px; background-color:#333333; opacity:0.90; top: -40px;}
+			*:first-child+html .invite_more{filter:alpha(opacity=90);} 
+			* html .invite_more{filter:alpha(opacity=90);}
+
+				.invite_more span{font:bold 44px/50px helveticaneue, Helvetica, sans-serif; text-transform:uppercase; letter-spacing:1px; position:relative; left:40px; display:block}
+				.invite_more a{display:block; float:left; margin:7px 4px 0 0}
+				.invite_more p{color:#fff; margin-bottom:6px}
+				.invite_more p strong{text-transform:uppercase; font-face: Helvetica, sans-serif}
+				.invite_more div.left{width:224px}
+				.invite_more div.right, .invite_more textarea{width:170px; }
+				.invite_more textarea{height:214px; float:left}
+				.invite_more .right input{width:82px; float:left; margin-top:4px; font-size:14px; letter-spacing: 0;}
+				.invite_more .left a{float:right; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+			   
+			   
+/* -------------- Notes --------------------------------- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+*:first-child+html .date_icon span{left: 4px; }
+*:first-child+html .title strong{ font:bold 32px/30px Arial,Helvetica,sans-serif}
+
+/* ANDY ADDED THIS */
+.code_break {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 2px solid #CC6600;
+  border-bottom: 2px solid #CC6600;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+
+.swfuploader { height: 80px; width: 400px; }
+.progressContainer { overflow: hidden; display: none; float: left; width: 380px; height: 40px; }
+.messageContainer { overflow: hidden; display: none; float: left; width: 380px; height: 36px; padding-top: 4px; color: black; }
+.uploadmessage { float: left; overflow: hidden; width: 380px; height: 15px; }
+.cancelContainer { float: left; width: 380px; height: 20px; padding-left: 9px; padding-top: 6px; }
+.cancelButton { float: left;  width: 110px; height: 24px; }
+.progressbar { width: 390px; padding: 0; border: 1px solid #999; margin-right: 1em; height:7px; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
+.progressbar div { background-color: #ccffff; font-size: 1pt; height:100%; float:left; }
+span.asyncUploader object { position: relative; top: 5px; left: 10px; }
+.imageupload { height: 80px !important; }
+.uploadText {font-size: 13px; font-family: arial, sans-serif;}
+
+.reqs {
+  display: none;
+}
+
+#film,
+#host,
+#port,
+#room,
+#instance,
+#seat,
+#userid,
+#pairid,
+#toid,
+#location,
+#adminmessage-pairid,
+#adminmessage-owner,
+#adminmessage-toid {
+  visibility: hidden;
+}
+
+#status_panel {
+  display: none;
+  /*
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 160px;
+  color: #eee;
+  font-size: 11px;
+  border: 1px solid #eee;
+  z-index: 100;
+  */
+}
+#movie_trailer_container {
+    width: 420px;
+    height: 242px;
+    margin: 1px auto 1em;
+}
+
+
+#import-contacts-container, #host-import-contacts-container, .subscription_buttons {
+  border-top: 4px solid #CC6600;
+  border-bottom: 4px solid #CC6600;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#import-contacts-container h4, #host-import-contacts-container h4 {
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.import_field {
+  font-size: 11px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.border_under {
+  border-bottom: 4px solid #6494C5;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.add_invite {
+  width: 170px !important;
+}
+
+#host_add_invite, #add_invite {
+  width: 200px !important;
+  height: 14px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-top: 1px;
+}
+
+#host_add_invite form textarea, #add_invite form textarea {
+  width: 140px;
+  height: 12px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#host_add_invite form button, #add_invite form button {
+  background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top;
+  height: 14px;
+  font-size: 10px;
+  color: white;
+  padding: 0px 2px 3px 2px;
+  margin-left: 4px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  border: 0px;
+}
+
+#accepted-invites-container, #host-accepted-invites-container, #fld-invites-container, #host-fld-invites-container {
+	width: 215px;
+	height: 215px;
+	padding: 6px 3px 0 0;
+	background: #fff;
+	overflow-y: auto;
+	float: left;
+}
+#fld-invites-container li, #host-fld-invites-container li, #accepted-invites-container li, #host-accepted-invites-container li {
+	background-color: #EFF2F7;
+	border: 1px solid #CCD5E4;
+	float: left;
+	padding: 2px 12px 2px 2px;
+	margin: 0 4px 2px 5px;
+	position: relative;
+	font-size: 10px;
+	width: 170px;
+	overflow: hidden;
+}
+#fld-invites-container li div, #host-fld-invites-container li div, #accepted-invites-container li div, #host-accepted-invites-container li div {
+	width: 160px;
+	overflow: hidden;
+	color: #383838;
+}
+
+#fld-invites-container li div, #host-fld-invites-container li div {
+  position: relative;
+  float: left;
+}
+
+#fld-invites-container li div img, #host-fld-invites-container li div img {
+  margin-right: 4px;
+}
+
+#fld-invites-container li a.add-btn, #host-fld-invites-container li a.add-btn{
+  /*position: absolute;*/
+  position: relative;
+  float: left;
+	background: none;
+	text-align: right;
+	top: -5px;
+	left: 4px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #339900;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+
+#accepted-invites-container li a.remove-btn, #host-accepted-invites-container li a.remove-btn {
+  position: absolute;
+	background: none;
+	top: 0px;
+	right: 1px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #ff0000;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+.soc_message {
+  float: left;
+  width: 480px;
+  margin-bottom: 20px;
+}
+.soc_message .btn_small {
+  margin-right: 10px;
+}
+.host-invite {
+  height: 50px !important;
+  width: 480px !important;
+}
+#preview-invite-popup { 
+	position: absolute;
+  width: auto;
+	height: 432px;;
+	left: 70px; /* temporary */
+	top: 200px;
+	padding: 10px;
+	z-index: 400;
+	padding: 10px;
+	background: white;
+}
+
+.popup .close-bar #close-preview-invite-popup {
+	/*margin-bottom: 10px;
+	text-align: right;
+	float: right;
+	right: 5px;*/
+	/*RIGHT: -405px; FLOAT: right; POSITION: relative*/
+	right: 12px! important;
+	position: absolute;
+	top: 11px! important;
+}
+
+#inviting-popup {
+  position: absolute;
+  margin: 0px auto;
+  width: 391px;
+	height: 150px;
+	top: 500px;
+	padding: 10px;
+	padding-top: 50px;
+	background: #000;
+	border: 3px solid white;
+	z-index: 200;
+}
+
+#already-invited-popup .popup-content { 
+	height: 165px;
+}
+#already-invited-popup .popup-content div{ 
+	overflow: auto;
+}
+#already-invited-popup .popup-content p {
+	color: #FFF;
+}
+#already-invited-popup .email-item {
+	font-weight: bold;
+	margin-top: 3px;
+}
+#already-invited-popup .email-items-list {
+	overflow: auto;
+	height: 85px;
+}
+#view-already-invited { cursor: pointer; }
+#after-screening-popup #recommendation h2{
+	font-size: 17px;
+	margin: 37px;
+}
+
+ul.cclist, ul.cclist li {
+  float: left;
+  list-style: none;
+  display: inline;
+  margin-right: 3px;
+}
+
+#contacts-loading-area, #host-contacts-loading-area {
+	display: none;
+	text-align: center;
+	clear: both;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+#grab-contacts, #host-grab-contacts {
+  margin-top: 10px;
+}
+
+div.growlUI { 
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/Neu/24x24/actions/dialog-cancel.png') no-repeat 10px 10px;
+}
+div.growlUI h1 {
+  padding: 10px 5px 0px 45px; 
+  text-align: left;
+  font-size: 20px;
+  color: red;
+}
+div.growlUI h2 {
+  font-size: 12px;
+  color: yellow;
+}
+
+.drop_genre {
+  display: none;
+  position: absolute;
+  margin-top: 1px;
+  width: 135px;
+  z-index: 200;
+  background: white;
+  padding: 10px 10px 10px 30px;
+  font-size: 11px;
+}
+
+.drop_genre li {
+  width: 125px;
+  height: 14px;
+  color: #000033;
+  background: white;
+  text-transform: uppercase;
+  padding: 1px 0px 1px 0px;
+}
+
+.drop_genre li:hover {
+  width: 125px;
+  height: 14px;
+  color: #cc6600;
+  background: white;
+  text-transform: uppercase;
+}
+
+.screening_list li {
+  padding-bottom: 34px;
+}
+
+.showtimes {
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  z-index: 50;
+}
+
+.screening_list {
+  height: 310px;
+  overflow: hidden;
+}
+
+.one_column .screening_list {
+  width: 380px;
+}
+
+.one_column .screening_list ul {
+  width: 360px;
+}
+
+.two_column .screening_list {
+  width: 380px;
+}
+
+.two_column .screening_list ul {
+  width: 360px;
+}
+
+.screening_list ul {
+  margin-left: 20px;
+}
+
+.jspPane {
+  margin-left: 0px !important;
+}
+.jspVerticalBar {
+  left: 0px !important;
+}
+.landing .jspPane {
+  margin-left: 10px !important;
+}
+.jspDrag {
+  background: #cc6600 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_arrow.gif') no-repeat top !important;
+}
+.two_column .jspTrack, .landing .jspTrack {
+  background: #303033  url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_1.png') repeat-y right top !important;
+  background-color: transparent !important;
+}
+.landing #chat_panel .jspTrack {
+  background-color: transparent !important;
+}
+.one_column .jspTrack {
+  background: #000033  url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back.png') repeat-y right top !important;
+}
+
+.jclock {
+  float: left;
+  width: 100px;
+}
+
+#growler {
+  margin-left: -100px;
+  float: left;
+}
+#growler_body {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.error_notice {
+  text-align: left !important;
+}
+
+.error_notice h2 {
+  font-weight: bold;
+}
+.friggin_squished {
+  padding-top: 0px !important;
+}
+.static_content {
+  float: left;
+  padding-bottom: 40px;
+}
+
+.static_content p {
+  font-weight: normal !important;
+  color: white !important;
+  padding-bottom: 15px !important;
+}
+
+.static_content a {
+  color: #99CCFF !important;
+}
+
+.static_content ol, .static_content ul {
+  font-weight: normal !important;
+  margin-left: 50px !important;
+  width: 80%;
+  padding-bottom: 15px !important;
+}
+
+#send_popup, #write_popup {
+  margin-top: 10px;
+}
+
+.scroll_film_info {
+  height: 200px;
+}
+.filminfowrap {
+  margin-left: 10px !important;
+  margin-bottom: 10px;
+}
+
+#prescreening_panel_main {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+}
+#prescreening_panel_main .prescreening_left {
+  float:left;
+  width: 300px;
+  text-align: right;
+  padding-right: 30px
+}
+#prescreening_panel_main .prescreening_center{
+  padding: 20px 400px;
+}
+#prescreening_panel_main .prescreening_right {
+  float:right;
+  width:300px;
+  text-align: center;
+  padding-right: 80px;
+}
+#hometime {
+  position: absolute;
+  margin-top: -50px;
+  width: 500px;
+  left: 0;
+}
+
+#hometime .buzz h5 {
+  font-size: 12px;
+  border-bottom: 0px !important;
+  float: left;
+  position: relative;
+}
+#hometime .buzz #current-time {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+}
+#hometime .buzz #current-time-pick {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+  margin-top: -5px;
+}
+.one_column #timezone-select-popup {
+  clear: both;
+  position: absolute;
+  top: -300px;
+}
+.one_column #timezone-select-popup p {
+  font-size: 14px;
+}
+body.landing .column2 .screening_still p {
+	color: #000000 !important; 
+}
+body.landing .column2 .screening_still p a {
+	color: #330099 !important; 
+}
+.widget_video_still {
+	width:420px;
+	margin:0px auto;
+	text-align:left;
+	overflow: hidden;
+}
+.bandwidth_warning {
+	color: red;
+	text-transform: uppercase;
+}
+/********** END MAIN CSS ***************/
+/********** START MAIN ALT CSS ***************/
+/* Style Sheets for [] website
+created by AMadsen
+TOC
+	1. Defaults
+	2. Structure
+	3. Links and Navigation 
+	4. Fonts
+	5. Added By Andy
+
+Notes
+*/
+
+body {
+  background: #F0F0F0 !important;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100% !important;
+	text-align:center;
+}
+
+.masterhead {
+	height: 76px !important;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/header_bg.png') repeat-x top left;
+}
+
+.headline {
+	padding: 0px;
+	height: 76px !important;
+	width: 1100px !important;
+  margin: 0px auto;
+}
+
+#timezone-select-popup {
+	margin-top: 100px;
+}
+
+#timezone-select-popup p {
+  color: #000000;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.logo_alt a {
+  float: left;
+  width: 205px;
+  margin-left: 78px;
+  height: 76px;
+  padding-top: 36px;
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/film_logo.png') top left no-repeat;
+  text-indent:150px;
+  font-size: 20px;
+  color: #8C8C8C !important;
+}
+
+.searchbar_alt {
+	float: left;
+	width: 360px;
+	margin-left: 45px;
+  height: 76px;
+	padding-top: 26px;
+}
+
+.searchbar_alt input {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/search_bg.png');
+	background-color: #2C2C2C;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	width: 286px;
+	height: 26px;
+	padding: 5px;
+	color: #8C8C8C;
+	border: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.logo_alt_set {
+	float: left;
+	font-family:"helveticaneue", verdana, helvetica, sans-serif;
+  list-style: none;
+  padding-top: 18px;
+  width: 350px;
+}
+
+.logo_alt_set li, .logo_alt_set li a {
+  float: right;
+  text-align: left;
+  font-size: 12px;
+  color: #C8C8C8;
+}
+
+.logo_alt_set li a.pad {  
+  margin-left: 70px;
+}
+
+.acc_image {
+	position: absolute;
+	margin-left: 20px;
+	margin-top: -10px;
+}
+
+.acc_timezone {
+  float: right;
+  top: 10px;
+}
+
+.acc_timezone_link {
+  float: left !important;
+  font-size: 10px;
+  color: #A7A7A7;
+}
+
+.acc_timezone_link a {
+  float: left !important;
+  margin-left: 5px !important;
+  font-size: 10px;
+  color: #00AEEF !important;
+}
+
+.acc_name {
+  /*font-size: 20px;*/
+}
+
+a.acc_link {
+	position: absolute;
+  margin-top: 18px;
+  font-size: 10px !important;
+  color: #00AEEF !important;
+}
+
+a.acc_sign {
+	position: absolute;
+  margin-top: 30px;
+  font-size: 10px !important;
+  color: #00AEEF !important;
+}
+
+.your-screening-area, .your-hosting-area {
+  clear: both;
+  float: left;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.your-hosting-area {
+  margin-top: 20px;
+}
+
+.your-screening-area .title, .your-hosting-area .title {
+  color: black !important;
+  font-size: 18px;
+}
+
+.your-screening-area {
+  border-bottom: 2px solid #F0F0F0;
+}
+
+.screening-payload .screening, .screening-payload .screening a {
+  color: #A7A7A7 !important;
+}
+
+
+.logout-area, .logout-area a {
+  text-transform: uppercase;
+  color: #black !important;
+  font-size: 10px;
+  font-style: normal;
+  
+}
+
+.main-showtimes {
+  text-transform: none !important;
+}
+
+.allfilms {
+	position: absolute;
+	z-index: 1000;
+	margin-left: -170px;
+	margin-top: -9px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/allfilms.png') no-repeat 0 0;
+	width: 447px;
+	height: 260px;
+	padding: 0px 20px;
+	color: #C8C8C8;
+	display:none;
+}
+
+.allfilms .film_title {
+	position: absolute;
+	margin-top: 9px;
+	font-size: 12px;
+	padding-left: 150px;
+}
+
+.allfilms .film_content {
+	position: absolute;
+	margin-top: 59px;
+}
+
+.allfilms .film_title a {
+	color: #C8C8C8;
+}
+
+.allfilms .afilm a {
+	float: left;
+	width: 33%;
+	height: 14px;
+	margin-bottom: 13px;
+	color: #C8C8C8;
+	overflow: hidden;
+	font-size: 11px;
+}
+
+#content {
+	width: 100%;
+	background: #F0F0F0;
+	margin:0px; 
+	padding:0px;
+	text-align:center;
+}
+
+.marqee {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #000000;
+	text-align: center;
+}
+
+.marqee_moon {
+  height: 382px;
+  width: 1100px;
+  margin:0px auto;
+  text-align: left;
+}
+
+.watch_trailer {
+	position: absolute;
+	margin-top: 270px;
+	margin-left: 79px;
+	width: 158px;
+	height: 97px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/watch_trailer.png') no-repeat top left;
+}
+
+.const_info {
+	position: absolute;
+	margin-top: 30px;
+	margin-left: 697px;
+	width: 300px;
+	height: 161px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/const_info.png') no-repeat top left;
+	padding: 10px 25px 10px 15px;
+	color: black;
+	font-size: 16px;
+}
+
+.get_info {
+	position: absolute;
+	margin-top: 270px;
+	margin-left: 250px;
+	width: 398px;
+	height: 97px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/bg_info.png') no-repeat top left;
+	padding: 10px 20px 10px 10px;
+	color: white;
+}
+
+.get_info a {
+	color: #10A3DC !important;
+}
+
+#movie_trailer_container {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 80px;
+  width: 540px;
+  height: 335px;
+}
+
+.featured_screens, .all_screens, .footer {
+  background: #F0F0F0 !important;
+}
+
+.info {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+  height: 85px;
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/info_bg.png') repeat-x top left;	
+	text-align: center;
+}
+
+.info_moon {
+  height: 85px;
+  color: #000000;
+	width: 1100px !important;
+  margin:0px auto;
+}
+
+.info_moon div {
+	float: left;
+	width: 33%;
+}
+
+.info_moon .share {	
+	margin-top: 32px;
+	height: 36px;
+	cursor: pointer;
+}
+
+.info_moon .share div {	
+	width: 100%;
+}
+
+.fb_iframe_widget, .twitter-share-button {
+	float: left;
+}
+
+.twitter-share-button {
+	margin-top: 0px;
+}
+
+.info_moon .share div {
+	padding-left: 80px;
+}
+
+.info_moon .attend {
+	margin-top: 22px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/screening_arrow.png') no-repeat center center;
+	height: 36px;
+	cursor: pointer;
+}
+
+.info_moon .watchbyrequest {
+	margin-top: 16px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/screening_impatient.png') no-repeat center center;
+	height: 44px;
+	cursor: pointer;
+}
+
+.info_moon a {
+  text-decoration: underline;
+  color: #0072BC;
+}
+
+.featured_screens {
+  margin:0px auto;
+	padding-top: 40px;
+  padding-left: 20px;
+  width: 1080px !important;
+	text-align: center;
+}
+
+.featured_screens h2 {
+	font-family:  helveticaneuelight, Helvetica, sans-serif;
+	color: black;
+	font-weight: normal;
+	font-size: 21px;
+	padding-bottom: 20px;
+}
+
+.featured_screens .featured_item {
+  background: transparent url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/showtime_bg.png') top left no-repeat;
+  width: 952px;
+  height: 205px;
+  margin-left: 50px;
+  padding-bottom: 12px;
+	text-align: left;
+}
+
+.featured_screens .featured_item h4 {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  margin-left: 34px;
+  padding-top: 18px;
+  text-transform: none;
+}
+
+.featured_content {
+  margin-top: 20px;
+  float: left;
+  clear:both;
+  padding-left: 25px;
+} 
+
+.featured_still, .featured_title, .featured_time {
+  float: left;
+	color: black !important;
+	font-family:"helveticaneuelight", verdana, helvetica, sans-serif;
+}
+
+.featured_still {
+  width: 147px;
+}
+
+.featured_title {
+  width: 730px;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.featured_title h5, .featured_title h5 a {
+	font-family:"helveticaneue", verdana, helvetica, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px !important;
+  font-size: 24px;
+  color: black;
+  text-transform: none;
+  border-bottom: none;
+}
+
+.featured_time {
+  text-align: center;
+  font-size: 18px;
+	color: #C8C8C8;
+	font-weight: normal;
+}
+
+.time_remaining {
+	position: relative;
+	top: -10px;
+	font-size: 16px;
+	display: none;
+}
+
+.featured_time a {
+  color: black;
+  padding: 0px 5px;
+}
+
+.featured_countdown {
+	clear: both;
+	
+}
+
+.countdown_start {
+	float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #A5A396;
+	margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.timekeeper {
+	font-family:"helveticaneuelight", verdana, helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #25A62F;
+}
+
+.timekeeper .shorty{
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-left: 2px;
+  margin-right: 8px;
+}
+
+.user_images {
+	float: left;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/user_bg.png') no-repeat top left;
+	width: 578px;
+	height: 70px;
+	padding-left: 5px;
+}
+
+.user_images img {
+	margin: 10px 0px 5px 5px;
+}
+
+.user_list {
+	float: left;
+}
+
+.user_count {
+	font-family:"helveticaneuelight", verdana, helvetica, sans-serif;
+	float: left;
+	color: #2A98DC;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-left: 10px;
+	margin-top: 25px;
+}
+
+/* -------------- 2.d Footer ----------------------------- */
+	.footer{ 
+	border-top:none !important; 
+	clear:both; 
+	float: left; 
+	width: 100%;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/footer_bg.png') repeat-x top left !important;
+	 }
+	.footer ul {padding: 40px;}
+	.footer ul li, .footer ul li a { color: #898989; }
+
+.popout_up{position:absolute; top:140px; height:1px; width:1px; margin-left:50%; float:left; z-index: 100; }
+	.popout_top{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popout_up_top.png") no-repeat left; height:9px; top:-9px;}
+	.popout_top a{ background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popout_close.png") no-repeat right; color:#A7A7A7; font:12px Helvetica, sans-serif; float:right; padding:4px 25px 4px 0px; margin: 10px 15px; display:block;}
+	.popout_mid{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popout_up_mid.png") repeat-y left; min-height: 150px; }
+	.popout_bot{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popout_up_btm.png") no-repeat left; height:9px; bottom:-9px; position:absolute!important}
+	
+	.popout_top, .popout_bot, .popout_mid{ position:relative; width:367px; }
+	.popout_up .title{font:normal 24px Arial, Helvetica, sans-serif; color:#A7A7A7; overflow: hidden;}
+
+/* -------------- 9. POP-up --------------------------------- */
+.poplg_up{position:absolute; top:140px; height:1px; width:1px; left:250px; float:left; z-index: 100; }
+	.poplg_top{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popoutlg_up_top.png") no-repeat left; height:9px; top:-9px;}
+	.poplg_top a{ background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popout_close.png") no-repeat right; color:#A7A7A7; font:12px Helvetica, sans-serif; float:right; padding:4px 25px 4px 0px; margin: 10px 15px; display:block;}
+	.poplg_mid{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popoutlg_up_mid.png") repeat-y left; min-height: 150px;  padding-bottom: 10px; }
+	.poplg_bot{background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/popoutlg_up_btm.png") no-repeat left; height:9px; bottom:-9px; position:absolute!important}
+	
+	.poplg_top, .poplg_bot, .poplg_mid{ position:relative; width:560px; }
+	
+	.poplg_up .title strong{font:bold 32px/26px Arial, Helvetica, sans-serif; color:#9cf;}
+	.poplg_up h3 {font:normal 28px Arial, Helvetica, sans-serif; color:#A7A7A7; overflow: hidden; margin-top: 15px; text-transform: none;}
+  .poplg_up p { color: #A7A7A7; font-size: 14px; margin-bottom: 10px; }
+  .poplg_up ol { margin-left: 25px; }
+  .poplg_up li { color: #F47A3F; font-size: 14px; margin-bottom: 10px; }
+  .poplg_up li span { color: #A7A7A7; font-size: 14px; margin-bottom: 10px; }
+  
+.login_form { float: left; padding-bottom: 20px; }
+  .login_form .input{width:310px; height:28px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 12px; font-weight: bold; margin-bottom: 10px;}
+  .login_form p {color: black; font-size: 14px; padding-bottom: 4px;}
+  .login_form #login_password {margin-bottom: 25px;}
+  .login_form .signup {
+    float: left;
+    width:320px;
+  }
+  .login_form .signup a {color: #0000FF;text-decoration: underline;}
+  .login_form .signup span {
+    float: left;
+    width: 50%;
+}
+
+.password_form{ width: 100%; border-top:2px solid #000000; margin-top:17px; padding-top:27px;}
+		.password_form.clearfix{margin-bottom:2px !important}
+		.password_form label{color:#000000; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.password_form .input{width:310px; height:28px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 14px; font-weight: bold; margin-bottom: 10px;}
+		
+.sign-up_form{ width: 100%; border-top:2px solid #000000; margin-top:17px; padding-top:27px;}
+		.sign-up_form .clearfix{margin-bottom:2px !important}
+		.sign-up_form label{color:#000000; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.sign-up_form .birthday{margin-bottom:10px !important;}
+		.sign-up_form .birthday label{width: 98px !important;}
+    .sign-up_form .input{width:310px; height:28px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 14px; font-weight: bold; margin-bottom: 10px;}
+		.sign-up_form select{width: 70px; height:28px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 16px;}
+
+.buy-ticket_form .clearfix{margin-bottom:13px}
+	.buy-ticket_form label{color:#000000; font:14px Helvetica, sans-serif; width:120px; display:block; float:left; padding-top: 4px; margin-left: 15px; }
+	.buy-ticket_form .clearfix .input{width:290px; float:left}
+  .buy-ticket_form .input{width:310px; height:28px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 14px; margin-bottom: 10px;}
+	.buy-ticket_form select{height: 24px; float:left; border: 1px solid #A7A7A7; margin-right: 5px; padding-left: 5px; font-size: 16px;}
+  .buy-ticket_form .cc-state-drop { margin-top: 3px; }
+  .buy-ticket_form .cc-country-drop { width: 290px; }
+  .buy-ticket_form .fld-cc_exp_month {width: 80px;}
+  .buy-ticket_form .fld-cc_exp_year {width: 120px;}
+  .buy-ticket_form .cc-submit { text-align: right; }
+  .buy-ticket_form .cc_title { float: left; display: inline; text-transform: uppercase; font-weight: bold; padding-top: 4px !important; }
+  .buy-ticket_form .cc_title, .buy-ticket_form .cc_title a { color: #F26522; }
+  .buy-ticket_form .paypal_icon { margin-left: 10px; float: left; background: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/paypal.png') no-repeat top left; width: 120px; height: 22px; }
+  .buy-ticket_form .short{width:90px !important; position:relative; left:10px}
+	.buy-ticket_form .code{width:90px !important; position:relative; }
+	.buy-ticket_form .dcode{ margin-left: 15px; width:260px !important; float: left; }
+	.buy-ticket_form .dcode_link{ margin-left: 15px; float: left; padding-top: 4px;  }
+	.buy-ticket_form .cc_image { margin-left: 10px; float: left; background: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/cc_image.png') no-repeat top left; width: 188px; height: 33px; }
+	.buy-ticket_form p { margin-left: 15px; color: #000000; font-size: 14px; margin-bottom: 10px; }
+	.buy-ticket_form .fb_check, .buy-ticket_form .fb_text  { float: left; color: #000000; font-size: 12px; margin-bottom: 10px; }
+	.buy-ticket_form .fb_check { width: 20px; }
+  .buy-ticket_form .fb_text { width: 350px }
+	
+.or_login_alt {
+  width: 100%;
+  float: left;
+  font:bold 16px Helvetica, sans-serif;
+  color:#000000;
+  margin-bottom:25px;
+}
+
+.or_login_alt span {
+  float: left;
+  width: 49%;
+}
+
+.film_alt_info {
+  height: 80px;
+  width: 516px;
+  padding: 22px 5px 5px 15px;
+  background:url("https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/film_info_bg.png") no-repeat left;
+  color: #000000;
+  font-size: 18px;
+}
+			
+.film_alt_name {
+  float: left;
+  width: 380px;
+}
+
+.film_alt_price {
+  float: left;
+  width: 105px;
+  text-align: center;
+}
+
+.current_screening_price {
+  color: #F26522;
+  font-size: 30px;
+}
+.tooltip {
+	display:none;
+	background:transparent url(https://s3.amazonaws.com/cdn.constellation.tv/dev/images/ttbg.png) no-repeat top left;
+	font-size:12px;
+	height:16px;
+	width:200px;
+	padding:4px;
+	padding-left: 20px;
+	color:#fff;	
+}
+.tooltip_large {
+	display:none;
+	background:transparent url(https://s3.amazonaws.com/cdn.constellation.tv/dev/images/ttbg_large.png) no-repeat top left;
+	font-size:12px;
+	height:60px;
+	width:187px;
+	padding:4px;
+	padding-left: 20px;
+	padding-right: 10px;
+	color:#fff;	
+}
+/********** END MAIN ALT CSS ***************/
+/********** START SCROLLPANE CSS ***************/
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #dde;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+/********** END SCROLLPANE CSS ***************/
+/********** START CAROUSEL CSS ***************/
+/* CSS Document */
+#carousel {
+	position: relative;
+	overflow: hidden;
+	height: 320px;
+}
+
+#carousel .jcarousel-container-horizontal {
+  height: 320px;
+} 
+
+#carousel .jcarousel-clip-horizontal {
+  height: 320px;
+  overflow: hidden !important;
+}
+
+#carousel ul {
+	padding-top: 33px !important;
+	list-style: none;
+	/*overflow: visible !important;*/
+	min-width: 880px;
+	height: 320px;
+}
+#carousel li {
+	float: left;
+	padding-right: 12px;
+	width: 163px;
+	height: 265px;
+	position: relative;
+	z-index: 2;
+}
+
+#carousel li .overlay {
+	width: 139px;
+	height: 207px;
+	z-index: 5;
+}
+#carousel .img-container {
+	position: absolute;
+	top: -27px;
+	left: -13px;
+	z-index: 4;
+	width: 153px;
+	height: 228px;
+	display: none;
+}
+
+#carousel .jcarousel-container img.reflected {
+	display: block;
+	margin-bottom: 8px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+	z-index: 4;
+}
+/*#carousel .jcarousel-container img:hover { z-index: 4; }*/
+#carousel .canvas {
+	position: absolute;
+	bottom: -25px;
+	left: 0px;
+}
+#carousel .jcarousel-prev {
+	background: url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_large.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 152px;
+	position: absolute;
+	top: 89px;
+	left: -24px;
+	cursor: pointer;
+	z-index: 50;
+}
+#carousel .jcarousel-next {
+	background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_large.png") no-repeat scroll 0 0 transparent;
+	width: 20px;
+	height: 152px;
+	position: absolute;
+	top: 89px;
+	right: -18px;
+	cursor: pointer;
+	z-index: 50;
+}
+/********** END CAROUSEL CSS ***************/
+/********** START JQUERY UI CSS ***************/
+/*
+* jQuery UI CSS Framework
+* Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+*/
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+
+/*
+* jQuery UI CSS Framework
+* Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=01_flat.png&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=02_glass.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+*/
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
+.ui-widget .ui-widget { font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+.ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
+.ui-widget-content a { color: #222222; }
+.ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.ui-widget-header a { color: #222222; }
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #212121; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fcefa1; background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x; color: #363636; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x; color: #cd0a0a; }
+.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #cd0a0a; }
+.ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary { font-weight: bold; }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { width: 16px; height: 16px; background-image: url(images/ui-icons_222222_256x240.png); }
+.ui-widget-content .ui-icon {background-image: url(images/ui-icons_222222_256x240.png); }
+.ui-widget-header .ui-icon {background-image: url(images/ui-icons_222222_256x240.png); }
+.ui-state-default .ui-icon { background-image: url(images/ui-icons_888888_256x240.png); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(images/ui-icons_454545_256x240.png); }
+.ui-state-active .ui-icon {background-image: url(images/ui-icons_454545_256x240.png); }
+.ui-state-highlight .ui-icon {background-image: url(images/ui-icons_2e83ff_256x240.png); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(images/ui-icons_cd0a0a_256x240.png); }
+
+/* positioning */
+.ui-icon-carat-1-n { background-position: 0 0; }
+.ui-icon-carat-1-ne { background-position: -16px 0; }
+.ui-icon-carat-1-e { background-position: -32px 0; }
+.ui-icon-carat-1-se { background-position: -48px 0; }
+.ui-icon-carat-1-s { background-position: -64px 0; }
+.ui-icon-carat-1-sw { background-position: -80px 0; }
+.ui-icon-carat-1-w { background-position: -96px 0; }
+.ui-icon-carat-1-nw { background-position: -112px 0; }
+.ui-icon-carat-2-n-s { background-position: -128px 0; }
+.ui-icon-carat-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 0 -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-off { background-position: -96px -144px; }
+.ui-icon-radio-on { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
+.ui-corner-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
+.ui-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.ui-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+.ui-corner-top { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
+.ui-corner-bottom { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+.ui-corner-right {  -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+.ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+
+/* Overlays */
+.ui-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/* Resizable
+----------------------------------*/
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}/* Accordion
+----------------------------------*/
+.ui-accordion .ui-accordion-header { cursor: pointer; position: relative; margin-top: 1px; zoom: 1; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+/* IE7-/Win - Fix extra vertical space in lists */
+.ui-accordion a { zoom: 1; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-content-active { display: block; }/* Autocomplete
+----------------------------------*/
+.ui-autocomplete { position: absolute; cursor: default; }	
+.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+/* Menu
+----------------------------------*/
+.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	zoom: 1;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	line-height:1.5;
+	zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+/* Button
+----------------------------------*/
+
+.ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; } /* the overflow property removes extra width in IE */
+.ui-button-icon-only { width: 2.2em; } /* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
+.ui-button-icons-only { width: 3.4em; } 
+button.ui-button-icons-only { width: 3.7em; } 
+
+/*button text element */
+.ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
+.ui-button-text-icon .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
+.ui-button-text-icons .ui-button-text { padding-left: 2.1em; padding-right: 2.1em; }
+/* no icon support for input elements, provide padding by default */
+input.ui-button { padding: .4em 1em; }
+
+/*button icon element(s) */
+.ui-button-icon-only .ui-icon, .ui-button-text-icon .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon { position: absolute; top: 50%; margin-top: -8px; }
+.ui-button-icon-only .ui-icon { left: 50%; margin-left: -8px; }
+.ui-button-text-icon .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary { left: .5em; }
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+
+/*button sets*/
+.ui-buttonset { margin-right: 7px; }
+.ui-buttonset .ui-button { margin-left: 0; margin-right: -.3em; }
+
+/* workarounds */
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+
+
+
+
+
+/* Dialog
+----------------------------------*/
+.ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
+.ui-dialog .ui-dialog-titlebar { padding: .5em 1em .3em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em .6em .3em .6em; line-height: 1.4em; width:auto; overflow:visible; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+/* Slider
+----------------------------------*/
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.ui-slider-vertical .ui-slider-range-max { top: 0; }/* Tabs
+----------------------------------*/
+.ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+/* Datepicker
+----------------------------------*/
+.ui-datepicker { width: 17em; padding: .2em .2em 0; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; }
+
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}/* Progressbar
+----------------------------------*/
+.ui-progressbar { height:2em; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }/********** END JQUERY UI CSS ***************/
+/********** START FANCYBOX CSS ***************/
+/*
+ * FancyBox - jQuery Plugin
+ * Simple and fancy lightbox alternative
+ *
+ * Examples and documentation at: http://fancybox.net
+ * 
+ * Copyright (c) 2008 - 2010 Janis Skarnelis
+ *
+ * Version: 1.3.1 (05/03/2010)
+ * Requires: jQuery v1.3+
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 40px;
+	width: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+
+* html #fancybox-loading {	/* IE6 */
+	position: absolute;
+	margin-top: 0;
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+}
+
+#fancybox-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+	z-index: 1100;
+	display: none;
+}
+
+* html #fancybox-overlay {	/* IE6 */
+	position: absolute;
+	width: 100%;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 20px;
+	z-index: 1101;
+	display: none;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+}
+
+#fancybox-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#fancybox_error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 7px;
+	margin: 0;
+}
+
+#fancybox-content {
+	height: auto;
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic;
+}
+
+#fancybox-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#fancybox-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-family: Arial;
+	font-size: 12px;
+	z-index: 1102;
+}
+
+.fancybox-title-inside {
+	padding: 10px 0;
+	text-align: center;
+	color: #333;
+}
+
+.fancybox-title-outside {
+	padding-top: 5px;
+	color: #FFF;
+	text-align: center;
+	font-weight: bold;
+}
+
+.fancybox-title-over {
+	color: #FFF;
+	text-align: left;
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_title_over.png');
+	display: block;
+}
+
+#fancybox-title-wrap {
+	display: inline-block;
+}
+
+#fancybox-title-wrap span {
+	height: 32px;
+	float: left;
+}
+
+#fancybox-title-left {
+	padding-left: 15px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -90px;
+	background-repeat: no-repeat;
+}
+
+#fancybox-title-main {
+	font-weight: bold;
+	line-height: 29px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox-x.png');
+	background-position: 0px -40px;
+	color: #FFF;
+}
+
+#fancybox-title-right {
+	padding-left: 15px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -55px -90px;
+	background-repeat: no-repeat;
+}
+
+#fancybox-left, #fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/blank.gif');
+	z-index: 1102;
+	display: none;
+}
+
+#fancybox-left {
+	left: 0px;
+}
+
+#fancybox-right {
+	right: 0px;
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+
+#fancybox-left-ico {
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -30px;
+}
+
+#fancybox-right-ico {
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -60px;
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+	visibility: visible;    /* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px;
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+
+.fancy-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001;
+}
+
+#fancy-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox-x.png');
+}
+
+#fancy-bg-ne {
+	top: -20px;
+	right: -20px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -162px;
+}
+
+#fancy-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox-y.png');
+	background-position: -20px 0px;
+}
+
+#fancy-bg-se {
+	bottom: -20px;
+	right: -20px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -182px; 
+}
+
+#fancy-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox-x.png');
+	background-position: 0px -20px;
+}
+
+#fancy-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -142px;
+}
+
+#fancy-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox-y.png');
+}
+
+#fancy-bg-nw {
+	top: -20px;
+	left: -20px;
+	background-image: url('/js/jquery/jquery.fancybox-1.3.1/fancybox/fancybox.png');
+	background-position: -40px -122px;
+}
+
+/* IE */
+
+#fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_loading.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_close.png', sizingMethod='scale'); }
+
+.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_title_right.png', sizingMethod='scale'); }
+
+.fancybox-ie #fancybox-left-ico		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-right-ico	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_nav_right.png', sizingMethod='scale'); }
+
+.fancybox-ie .fancy-bg { background: transparent !important; }
+
+.fancybox-ie #fancy-bg-n	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-ne	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-e	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-se	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-s	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-sw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-w	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancy-bg-nw	{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/js/jquery/jquery.fancybox-1.3.1/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
+/********** END FANCYBOX CSS ***************/
+/********** START TABS CSS ***************/
+#tabs {
+  float:left;
+  width:100%;
+  font-size:93%;
+  line-height:normal;
+  }
+#tabs ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  }
+#tabs li {
+  float:left;
+  margin:0;
+  padding:0 2px 0 0px;
+  }
+/********** END TABS CSS ***************/
+/********** START THEATER SIDE CSS ***************/
+/* CSS Document */
+.fdbk_tab_left {
+    background-image: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/FeedbackTab.png");
+    color: white;
+    cursor: pointer;
+    width: 30px;
+    height: 100px;
+    left: 0;
+    margin-left: -7px;
+    overflow: hidden;
+    position: fixed;
+    text-indent: -100000px;
+    top: 25%;
+    z-index: 100000;
+}
+
+.feedback_form .clearfix{margin-bottom:13px}
+		.feedback_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		#feedbody .description, .feedback_form .description{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; display:block; float:left; padding-top: 4px;}
+		.feedback_form .clearfix .input{width:315px; float:right}
+		.feedback_form .short{width:100px; position:relative; left:52px}
+    .feedback_form textarea{width:480px; height:80px; float:left}
+/********** END TABS CSS ***************/
+/********** START THEATER SIDE CSS ***************/
+.footer, .footer-hidden {
+  z-index: 100;
+}
+
+.landing #screening_invite {
+  left: 400px !important;
+  top: 50px !important;
+}
+
+.theater_panel {
+  position: absolute;
+  left: 360px;
+  top: 100px;
+  width: 530px;
+	text-align: left;
+	padding: 10px;
+	z-index: 50;
+}
+
+.theater_subpanel {
+  position: absolute;
+  left: 270px;
+  top: 10px;
+  width: 710px;
+  height: 230px;
+	text-align: left;
+	padding: 10px;
+	z-index: 10;
+	border: 1px solid #666;
+	background: #222;
+}
+
+.theater_subpanel h1 {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  width: 400px !important;
+}
+
+
+.theater_panel p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.theater_panel h1 {
+  text-align: left;
+  font-size: 16px;
+  color: #99ccff;
+}
+
+.panel a {
+  color: grey;
+}
+.panel p.share a {
+  float: left;
+  margin-right: 2px;
+}
+.panel .share_inset {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.panel h4 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+#qa_panel, #review_panel {
+  border: 1px solid #ddd;
+}
+
+/*Review Panel*/
+#after-screening-popup #screening-info a.button { 
+	width: 216px;
+	height: 26px;
+	margin-bottom: 5px;
+	line-height: 32px;
+}
+.panel a#btn-host { width: 200px; height: 20px; background: url(/dev/images/btn%5bscreening-host%5d.png) left top no-repeat; }
+.panel a#btn-send { width: 220px; height: 30px; background: url(/dev/images/btn%5bscreening-recommend%5d.png) left top no-repeat; }
+.panel a#btn-write { width: 220px; height: 30px; background: url(/dev/images/btn%5bscreening-write%5d.png) left top no-repeat; }
+
+#review_panel textarea, #answer_popup textarea { 
+	width: 100%;
+	height: 80px;
+	background: #d1d0ce; 
+	border: 0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+#screening-popup #invite_more_friends {
+	height:30px;
+}
+#screening-popup #invite_more_friends  a {
+	background: url(/dev/images/btn%5binvite-more%5d.png) no-repeat;
+	color: white;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 7px;
+	text-decoration: none;
+}
+
+#info {
+	display: block;
+	padding: 10px; margin-bottom: 20px;
+	border: 1px solid #333;
+	background-color: #efefef;
+}
+
+#video_panel {
+	position: absolute;
+	float: left;
+  padding: 0px;
+  margin-top: -30px;
+  left: 0px;
+  bottom: 122px;
+  width:100%;
+  z-index: 1;
+}
+
+#video_stream {
+  margin-right: 300px;
+  margin-bottom: 122px;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  z-index: 2;
+}
+
+#movie_stream {
+	width: 100%;
+	height: 100%;
+}
+
+/* Change from bg_1px.jpg to bg_1px.png for transparency */
+.qanda_box{
+	position:absolute; 
+	top:0px; 
+	margin-top:72px; 
+	right:0px; 
+	padding:0 4px 15px; 
+	z-index: 210;
+	height: 245px;
+	background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_inbox_bg.png') repeat-x top left;
+}
+
+/* Change from bg_1px.jpg to bg_1px.png for transparency */
+.chat_box{
+	width:300px; 
+	position:absolute; 
+	bottom:0px; 
+	right:0px; 
+	padding:0 4px 15px; 
+	z-index: 110;
+	background: #000000; 
+	/*background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_inbox_bg.png') repeat-x top left;*/
+}
+
+.chat_box h4 {
+  position: absolute;
+  top: 15px;
+  right: 26px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+.chat_box .title{
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	font-size:16px; 
+	padding:14px 0 3px; 
+	margin:0 0 6px; 
+	color:#fff; 
+	text-transform:uppercase; 
+	text-indent:4px; 
+	letter-spacing:1px;
+}
+
+.chat_box .history {
+  display: none;
+}
+
+.chat_box .inbox {
+  margin-bottom: 110px;
+  width: 300px !important;
+  top: 10px;
+  font-size: 12px;
+  text-align: left;
+  overflow: auto;
+}
+
+.chat_box #sending {
+	font-size: 10px;
+	color: #666;
+	padding-left: 10px;
+}
+
+.chat_box #messageform {
+	position: absolute;
+	bottom: 15px;
+}
+
+.chat_box #messageform #message {
+	margin-left: 10px;
+	width: 267px;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.chat_box #messageform .chat_post {
+	float: right;
+	margin-top: 10px;
+}
+
+.chat_box .chat_message {
+	float: left;
+	width: 259px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.chat_box .chat_message_1 {
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_item_bg.png') repeat-x bottom left;
+}
+
+.chat_box .chat_message .chat_icon {
+	float: left;
+	margin-right: 10px;
+	width: 44px;
+	padding: 3px;
+}
+.chat_box .chat_message .chat_text {
+	font-size: 11px;
+	float: left;
+	color: white;
+	text-transform: none;
+	width: 180px;
+}
+
+.chat_box .chat_message .chat_text h5 {
+	font-size: 14px;
+	border-bottom: none;
+	color: #D0D0D0;
+	margin-bottom: 4px !important;
+	text-transform: none;
+}
+
+.chat_box .chat_message .chat_text h5 .chat_host {
+	position: relative;
+	margin-left: 5px;
+	top: 2px;
+}
+
+.inbox div.message {
+  margin-left: 15px;
+  color: white;
+  width: 150px !important;
+  overflow: hidden;
+}
+
+.jspHorizontalBar {
+  display: none !important;
+}
+
+.inbox div.message b{
+  color: #99CCFF;
+}
+
+
+.footer div.exit a{ 
+	position: absolute;
+	float: right;
+ 	right: 365px; 
+	width:125px; 
+	height: 22px; 
+	color: #D0D0D0;
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top:80px; 
+	z-index: 100;
+}
+
+.footer div.volume_bar{ 
+	position: absolute;
+	float: right;
+ 	right: 317px; 
+	width:110px; 
+	height: 14px; 
+	margin-top:80px; 
+	background-image:url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/volumetoggle.png'); 
+	background-repeat: no-repeat; 
+	background-position: 0px 0px; 
+	z-index: 100;
+}
+.mutestyle {
+	position: absolute;
+	left: -25px;
+	margin-top: -4px;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/mutebutton.png') !important;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+.footer div.volume_bar #mute{ margin-left: 0px; position:relative; float: left; width:24px; height: 28px; border: 0px solid transparent;cursor: pointer; }
+.footer div.volume_bar #slider{ margin-left: 5px; position:relative; float: left; width:104px; height: 28px; background: none !important; border: 0px solid transparent; }
+.footer div.volume_bar #slider .ui-slider-handle {
+        margin-top: -16px;
+        height: 18px !important;
+        width: 5px !important;
+      }
+/********** END THEATER SIDE CSS ***************/
+/********** START REVIEWS CSS ***************/
+/* CSS Document */
+#slideshow #slidesContainer {
+  margin:0;
+  width:650px;
+  height:20px;
+  overflow:auto; /* allow scrollbar */
+}
+
+#slideshow #slidesContainer .slide {
+  margin:0;
+  width:650px; /* reduce by 20 pixels to avoid horizontal scroll */
+  height:20px;
+}
+/********** END REVIEWS CSS ***************/

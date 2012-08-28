@@ -1,0 +1,10 @@
+<groups>
+  <group name="div01" />
+  <group name="centerdiv">
+    <subgroup name="div02" />
+    <subgroup name="div03" />
+    <subgroup name="div04" />
+  </group>
+  <group name="div05" />
+  <group name="zzdiv" />
+</groups>

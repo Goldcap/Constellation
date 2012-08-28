@@ -1,0 +1,174 @@
+TypeError: Error #1080: Illegal value for namespace.
+	at org.osmf.smil.parser::SMILParser/parseHead()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\smil\parser\SMILParser.as:76]
+	at org.osmf.smil.parser::SMILParser/parse()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\smil\parser\SMILParser.as:61]
+	at org.osmf.smil.loader::SMILLoader/executeLoad()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\smil\loader\SMILLoader.as:160]
+	at org.osmf.traits::LoaderBase/load()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoaderBase.as:111]
+	at org.osmf.traits::LoadTrait/load()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoadTrait.as:170]
+	at org.osmf.media::MediaPlayer/load()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\MediaPlayer.as:1982]
+	at org.osmf.media::MediaPlayer/updateTraitListeners()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\MediaPlayer.as:1621]
+	at org.osmf.media::MediaPlayer/set media()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\MediaPlayer.as:313]
+	at com.constellation.view::videoView/loadMedia()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\view\videoView.as:584]
+	at com.constellation.view::videoView/onPluginLoaded()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\view\videoView.as:445]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at org.osmf.media::MediaFactory/onPluginLoad()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\MediaFactory.as:510]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at Function/org.osmf.media.pluginClasses:PluginManager/loadPlugin/org.osmf.media.pluginClasses:onLoadStateChange()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\pluginClasses\PluginManager.as:203]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at org.osmf.traits::LoadTrait/loadStateChangeEnd()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoadTrait.as:410]
+	at org.osmf.traits::LoadTrait/setLoadState()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoadTrait.as:266]
+	at org.osmf.traits::LoadTrait/onLoadStateChange()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoadTrait.as:417]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at org.osmf.traits::LoaderBase/updateLoadTrait()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoaderBase.as:208]
+	at PluginLoader/loadFromPluginInfo()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\pluginClasses\PluginLoader.as:142]
+	at StaticPluginLoader/executeLoad()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\pluginClasses\StaticPluginLoader.as:66]
+	at org.osmf.traits::LoaderBase/load()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoaderBase.as:111]
+	at org.osmf.traits::LoadTrait/load()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\traits\LoadTrait.as:170]
+	at org.osmf.media.pluginClasses::PluginManager/loadPlugin()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\pluginClasses\PluginManager.as:162]
+	at org.osmf.media::MediaFactory/loadPlugin()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\org\osmf\media\MediaFactory.as:310]
+	at com.constellation.view::videoView/loadPlugin()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\view\videoView.as:429]
+	at com.constellation.view::videoView/onSmilParsed()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\view\videoView.as:471]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at com.constellation.parsers::smilParser/parseXML()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\parsers\smilParser.as:164]
+	at com.constellation.parsers::smilParser/set smilData()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\parsers\smilParser.as:270]
+	at com.constellation.parsers::smilParser/onSMILLoaded()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\parsers\smilParser.as:55]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at com.constellation.services::tokenService/tokenUrlLoaderComplete()[E:\_projects\constellation\constellationSVN\Constellation_VideoPlayer_AS3\Constellation_Player_AS3\src\com\constellation\services\tokenService.as:170]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at flash.net::URLLoader/onComplete()
+
+
+
+
+
+
+
+
+
+
+
+
+[52139][heartbeatController]heart beat _heartbeatInProgress @ /heartbeat?i=10.240.247.113:16090            inProgress: false skips  0   _progressFailCount 0
+[252687][heartbeatController]heart beat _heartbeatInProgress @ /heartbeat?i=10.240.247.113:16090            inProgress: false skips  0   _progressFailCount 0
+[53688][externalInterfaceController]JS -showHostCam 
+[53689][hostCameraView]hostcam defaults: 113557 none 45907
+[53689][hostCameraView]hostcam params: cpCode: 113557 streamName: GZDKFyIRTHnm_stream hostcam_streamID: 45907
+[53690][FMSConnection]DEBUG Got to FMSConnection
+[53691][FMSConnection]DEBUG Got to FMSConnection.connect rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/ sessionKey encoder:1.2.3.4:113557
+[53691][hostCameraView] _hostcam_fmsConn.entryPoint  rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/
+[53692][hostCameraView]Triggering JS QA Window
+[53697][externalInterfaceController]Setting Volume 0
+[54031][FMSConnection]DEBUG FMSConnection.handleNetStatus NetConnection.Connect.Success
+[54031][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus data 
+[54032][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus level status
+[54032][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code NetConnection.Connect.Success
+[54032][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus objectEncoding 3
+[54032][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Connection succeeded.
+[54033][hostCameraView]connected to host cam 
+[54033][hostCameraView]hostcam_createWebcamStream
+[54034][FMSSTREAM]DEBUG FMSStream
+[54035][hostCameraView]in publishStream
+[54035][FMSSTREAM]DEBUG in publishStream
+[54036][hostCameraView]called Camera.getCamera
+[54036][FMSSTREAM]DEBUG called Camera.getCamera
+[54036][hostCameraView]Camera is successful[object Camera]
+[54036][FMSSTREAM]DEBUG Camera is successful[object Camera]
+[54039][hostCameraView]called Microphone.getMicrophone()
+[54039][FMSSTREAM]DEBUG called Microphone.getMicrophone()
+[54039][hostCameraView]Mic is successful [object Microphone]
+[54039][FMSSTREAM]DEBUG Mic is successful [object Microphone]
+[54040][hostCameraView]bandwidth: 300000
+[54040][FMSSTREAM]DEBUG bandwidth: 300000
+[54040][hostCameraView]quality: 0
+[54040][FMSSTREAM]DEBUG quality: 0
+[54041][hostCameraView]keyframeInterval: 30
+[54041][FMSSTREAM]DEBUG keyframeInterval: 30
+[54041][hostCameraView]currentFps: 0
+[54041][FMSSTREAM]DEBUG currentFps: 0
+[54041][hostCameraView]height: 240
+[54041][FMSSTREAM]DEBUG height: 240
+[54042][hostCameraView]width: 320
+[54042][FMSSTREAM]DEBUG width: 320
+[54042][hostCameraView]fps: 20
+[54042][FMSSTREAM]DEBUG fps: 20
+[54042][hostCameraView]favorArea: true
+[54042][FMSSTREAM]DEBUG favorArea: true
+[54043][hostCameraView]camLoopback: false
+[54043][FMSSTREAM]DEBUG camLoopback: false
+[54043][hostCameraView]bufferMin: 2
+[54043][FMSSTREAM]DEBUG bufferMin: 2
+[54043][hostCameraView]bufferMax: 15
+[54043][FMSSTREAM]DEBUG bufferMax: 15
+[54044][hostCameraView]useEchoSuppression: true
+[54044][FMSSTREAM]DEBUG useEchoSuppression: true
+[54044][hostCameraView]micLoopback: false
+[54044][FMSSTREAM]DEBUG micLoopback: false
+[54044][hostCameraView]micRate: 44
+[54044][FMSSTREAM]DEBUG micRate: 44
+[54045][hostCameraView]micGain: 90
+[54045][FMSSTREAM]DEBUG micGain: 90
+[54047][hostCameraView]published ns  GZDKFyIRTHnm_stream@45907
+[54047][FMSSTREAM]DEBUG published ns  GZDKFyIRTHnm_stream@45907
+[54048][hostCameraView]resize camera placement and size
+[54049][FMSConnection]DEBUG Got to FMSConnection.setChallenge
+[54049][FMSConnection]DEBUG 168259,e22955d2426f28af08a1c8a8cb72be48
+[54053][FMSConnection]DEBUG challenge-response: d23d6f042a13f9c988739909e6332678
+Warning: Reference to undeclared variable, 'out'
+Warning: Reference to undeclared variable, 'out'
+Warning: 'out' has no property 'text'
+Warning: Reference to undeclared variable, 'cameraSettings'
+Warning: 'System' has no property '_visible'
+Warning: Reference to undeclared variable, 'microphoneSettings'
+Warning: 'System' has no property '_visible'
+Warning: Reference to undeclared variable, 'privacy'
+Warning: Reference to undeclared variable, 'cameraSettings'
+Warning: 'System' has no property '_visible'
+Warning: Reference to undeclared variable, 'microphoneSettings'
+Warning: 'System' has no property '_visible'
+Warning: Reference to undeclared variable, 'privacy'
+[54112][FMSConnection]DEBUG *****************   FMSConnection.onClientLogin Akamai.Connect.Success
+[54112][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code Akamai.Connect.Success
+[54113][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Client Login Success
+[54188][hostCameraView]NetStream.Publish.Start
+[54188][FMSSTREAM]DEBUG NetStream.Publish.Start
+[62187][heartbeatController]heart beat _heartbeatInProgress @ /heartbeat?i=10.240.247.113:16090            inProgress: false skips  0   _progressFailCount 0
+[262719][heartbeatController]heart beat _heartbeatInProgress @ /heartbeat?i=10.240.247.113:16090            inProgress: false skips  0   _progressFailCount 0
+[65241][videoController]metaData
+[65241][videoView]resizing video 
+[65242][videoController]metaData
+[65242][videoView]resizing video 
+
+[23949][externalInterfaceController]JS - showLiveViewer 
+[23949][constellation_main]creating viewer camera object
+[23952][viewerCameraView]hostname 'cp113557.live.edgefcs.net/live'
+[23952][viewerCameraView]streamName 'GZDKFyIRTHnm_stream@45907'
+[23952][viewerCameraView]authToken 'auth=noauth&amp;aifp=v0006'
+[23952][viewerCameraView]autoStart 'true'
+[23953][viewerCameraView]creating camera viewer 
+[23954][FMSConnection]DEBUG Got to FMSConnection
+[23954][FMSConnection]DEBUG Got to FMSConnection
+[23954][viewerCameraView]creating AKAMAI connection for camera viewer rtmp://cp113557.live.edgefcs.net/live  FROM OBJECT rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/
+[23955][FMSConnection]DEBUG Got to FMSConnection.connect rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/ sessionKey encoder:1.2.3.4:113557
+[24259][FMSConnection]DEBUG FMSConnection.handleNetStatus NetConnection.Connect.Success
+[24259][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus data 
+[24260][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code NetConnection.Connect.Success
+[24260][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus level status
+[24260][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus objectEncoding 3
+[24260][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Connection succeeded.
+[24261][viewerCameraView]connectSuccess is reached [Event type="netConnectionSuccessful" bubbles=false cancelable=false eventPhase=2]
+[24261][viewerCameraView]VIEW CAMERA initNetStream  GZDKFyIRTHnm_stream@45907 this. NC [object NetConnection]  this._authToken auth=noauth&amp;aifp=v0006
+[24269][FMSConnection]DEBUG Got to FMSConnection.setChallenge
+[24270][FMSConnection]DEBUG 168271,3010d9584b3b69973ab72110236d119e
+[24273][FMSConnection]DEBUG challenge-response: 04dfe3d585e7fdb583046b0616e3f8d6
+[24342][FMSConnection]DEBUG *****************   FMSConnection.onClientLogin Akamai.Connect.Success   publish false
+[24342][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code Akamai.Connect.Success
+[24343][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Client Login Success
+[24426][viewerCameraView]ON NET STATUS NetStream.Play.Failed
+
+

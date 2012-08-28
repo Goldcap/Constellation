@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FlexUnit4UIRunner" basedir="." default="package">
+   <property environment="env" />
+
+   <!-- Version info -->
+   <property file="${basedir}/version.properties" />
+
+   <!-- Configuration -->
+   <property name="build.namespace" value="http://www.adobe.com/2009/flexUnitUIRunner" />
+   <property name="build.useFlex" value="true" />
+
+   <!-- Existing -->
+   <property name="src.loc" location="${basedir}/src" />
+   <property name="lib.loc" location="${basedir}/libs" />
+
+   <!-- Generated -->
+   <property name="dist.loc" location="${basedir}/target" />
+   <property name="bin.loc" location="${basedir}/target/bin" />
+   <property name="doc.loc" location="${basedir}/target/docs" />
+
+   <!-- Setup Flex Ant Resources -->
+   <property name="FLEX_HOME" location="${env.FLEX_HOME}" />
+   <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+   <target name="clean">
+      <delete dir="${dist.loc}" failonerror="false" />
+      <delete failonerror="false">
+         <fileset dir="${lib.loc}" />
+      </delete>
+   </target>
+
+   <target name="init">
+      <mkdir dir="${lib.loc}" />
+      <mkdir dir="${dist.loc}" />
+      <mkdir dir="${bin.loc}" />
+      <mkdir dir="${doc.loc}" />
+
+      <!-- Copy required dependencies -->
+      <copy todir="${lib.loc}" overwrite="true" failonerror="false">
+         <fileset dir="${basedir}/../FlexUnit4/target">
+            <include name="*core*.swc" />
+         </fileset>
+      </copy>
+
+      <!-- Create properties file from .flexLibProperties -->
+      <xslt in="${basedir}/.flexLibProperties" out="${bin.loc}/flexLib.properties" style="${basedir}/flexLibProperties.xsl" />
+   </target>
+
+   <target name="identify-sdk">
+      <java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true" outputproperty="build.sdk.version">
+         <arg line="-version" />
+      </java>
+
+      <echo message="Found: ${build.sdk.version}" />
+
+      <condition property="build.isFlex4">
+         <contains string="${build.sdk.version}" substring="Version 4." casesensitive="false" />
+      </condition>
+   </target>
+
+   <target name="compile" depends="init,identify-sdk,compile-flex3,compile-flex4" />
+
+   <target name="compile-flex3" unless="build.isFlex4">
+      <!-- Pull in class file list for compc -->
+      <property file="${bin.loc}/flexLib.properties" />
+
+      <!-- Compile swc -->
+      <compc output="${bin.loc}/${build.finalName}" include-classes="${src.class-list}">
+         <source-path path-element="${src.loc}" />
+         <namespace uri="${build.namespace}" manifest="${src.loc}/FlexUnit4UIRunner-manifest.xml" />
+         <include-namespaces>http://www.adobe.com/2009/flexUnitUIRunner</include-namespaces>
+         <compiler.external-library-path dir="${lib.loc}" append="true">
+            <include name="*.swc" />
+         </compiler.external-library-path>
+         <compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+            <include name="flex.swc" />
+            <include name="framework.swc" />
+            <include name="rpc.swc" />
+            <include name="utilities.swc" />
+         </compiler.external-library-path>
+         <compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
+         <compiler.headless-server>true</compiler.headless-server>
+         <define name="CONFIG::useFlexClasses" value="${build.useFlex}" />
+      </compc>
+   </target>
+
+   <target name="compile-flex4" if="build.isFlex4">
+      <!-- Pull in class file list for compc -->
+      <property file="${bin.loc}/flexLib.properties" />
+
+      <!-- Compile swc -->
+      <java jar="${FLEX_HOME}/lib/compc.jar" fork="true" failonerror="true">
+         <arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+         <arg line="-include-classes ${src.class-list}" />
+         <arg line="-source-path+='${src.loc}'" />
+         <arg line="-output '${bin.loc}/${build.finalName}'" />
+         <arg line="-external-library-path+='${lib.loc}'" />
+         <arg line="-external-library-path+='${FLEX_HOME}/frameworks/libs'" />
+         <arg line="-compatibility-version=3.0.0" />
+         <arg line="-theme '${FLEX_HOME}/frameworks/themes/Halo/halo.swc'" />
+         <arg line="-define=CONFIG::useFlexClasses,${build.useFlex}" />
+      </java>
+      <!-- <compc output="${bin.loc}/${build.finalName}" include-classes="${src.class-list}">
+         <source-path path-element="${src.loc}" />
+         <namespace uri="${build.namespace}" manifest="${src.loc}/FlexUnit4UIRunner-manifest.xml" />
+         <include-namespaces>http://www.adobe.com/2009/flexUnitUIRunner</include-namespaces>
+         <compiler.external-library-path dir="${lib.loc}" append="true">
+            <include name="*.swc" />
+         </compiler.external-library-path>
+         <compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+            <include name="flex.swc" />
+            <include name="framework.swc" />
+            <include name="rpc.swc" />
+            <include name="utilities.swc" />
+         </compiler.external-library-path>
+         <compiler.verbose-stacktraces>true</compiler.verbose-stacktraces>
+         <compiler.headless-server>true</compiler.headless-server>
+         <define name="CONFIG::useFlexClasses" value="${build.useFlex}" />
+      </compc> -->
+   </target>
+   
+   <target name="report" depends="compile,identify-sdk,report-flex3,report-flex4" />
+
+   <target name="report-flex3" unless="build.isFlex4">
+      <java jar="${FLEX_HOME}/lib/asdoc.jar" fork="true" failonerror="true">
+         <arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+         <arg line="-doc-sources '${src.loc}'" />
+         <arg line="-source-path+='${src.loc}'" />
+         <arg line="-output '${doc.loc}'" />
+         <arg line="-library-path+='${lib.loc}'" />
+         <arg line="-define=CONFIG::useFlexClasses,${build.useFlex}" />
+      </java>
+   </target>
+
+   <target name="report-flex4" if="build.isFlex4">
+      <java jar="${FLEX_HOME}/lib/asdoc.jar" fork="true" failonerror="true">
+         <arg line="+flexlib '${FLEX_HOME}/frameworks'" />
+         <arg line="-doc-sources '${src.loc}'" />
+         <arg line="-source-path+='${src.loc}'" />
+         <arg line="-output '${doc.loc}'" />
+         <arg line="-library-path+='${lib.loc}'" />
+         <arg line="-compatibility-version=3.0.0" />
+         <arg line="-theme '${FLEX_HOME}/frameworks/themes/Halo/halo.swc'" />
+         <arg line="-define=CONFIG::useFlexClasses,${build.useFlex}" />
+      </java>
+   </target>
+
+   <target name="package" depends="report">
+      <copy file="${bin.loc}/${build.finalName}" todir="${dist.loc}" />
+   </target>
+</project>

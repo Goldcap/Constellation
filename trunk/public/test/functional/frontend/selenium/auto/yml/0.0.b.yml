@@ -1,0 +1,16 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type: assertElementPresent,locator: link=Log In,value: Login Button Accessible}
+ - {type:click,locator: link=Log In}
+ - {type: assertElementPresent,locator: id=login_fb_link,value: Facebook Email Field Accessible}
+ - {type:clickAndWait,locator: id=login_fb_link}
+ - {type: assertElementPresent,locator: id=email,value: Facebook Email Field Accessible}
+ - {type:click,locator: id=email}
+ - {type:type,locator: id=email, value: $::FACEBOOK_LOGIN}
+ - {type: assertElementPresent,locator: id=pass,value: Facebook Password Field Accessible}
+ - {type:click,locator: id=pass}
+ - {type:type,locator: id=pass, value: $::FACEBOOK_PASSWORD}
+ - {type:clickAndWait,locator: name=login}
+ - {type:assertElementPresent,locator: id=loggedUser}

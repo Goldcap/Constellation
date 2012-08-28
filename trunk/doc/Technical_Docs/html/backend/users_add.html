@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/backend/userEdit.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+
+				<img alt="" class="logo" src="/images/logo.png"/>
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/users.html">List Users</a></div>
+					<div class="item"><a href="/backend/users_add.html">Add User</a></div>
+					<div class="item-no-border"><a href="#">User Relations</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+
+			Logout
+		</a>
+	</div>
+</div><div id="main">
+<div class="profile-basic-info" style="overflow: hidden;">
+	<div class="title">
+		<h2>Add/Edit a User</h2>
+	</div>
+		<form action="/backend/userManagement/update" method="POST" id="add-user-form" enctype="multipart/form-data"> 
+		<input type="hidden" name="user[id]" id="user_id" value="" />
+
+		<div class="formfield">
+			<label for="user[film]">Type:</label>
+						<select name="user[type]">
+																	<option value="0" >Admin</option>
+							
+																	<option value="2" >Host</option>
+							
+																	<option value="3" >Viewer</option>
+							
+							</select>
+
+		</div>
+		<div class="formfield">
+			<label for="user[username]">Username:</label>
+			<input type="text" name="user[username]" id="user_username" value="" />
+		</div>
+		<div class="formfield">
+			 
+			<label for="user[image]">Image:</label>
+			<input type="file" name="user[image]" id="user_image" /> 
+		</div>
+
+		<div class="formfield">
+			<label for="user[username]">Fullname:</label>
+			<input type="text" name="user[full_name]" id="user_username" value="" /> 
+		</div>
+		<div class="formfield">
+			<label for="user[email]">Email:</label>
+	        <input id="user_email" name="user[email]" class="text" type="text" value=""/>
+		</div>
+
+		<div class="formfield">
+			<label for="user[created_at]">Account Created At: </label>
+			<input type="text" value="" disabled="disabled"/>
+		</div>
+			<div class="formfield">
+				<label for="user[location]">Location:</label>
+				<input type="text" value="" disabled="disabled"/>
+			</div>
+
+		<div class="formfield">
+			<label for="user[location]">Networks:</label>
+			<input type="text" value="Locale" disabled="disabled"/>
+		</div>
+		<div class="formfield" id="host-holder" >
+			<label for="user[age]">Age:  N/A</label>
+		</div>
+		
+				<input type="submit" value="Save" />
+
+	</form>
+</div>	</div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>

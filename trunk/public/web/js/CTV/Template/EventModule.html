@@ -1,0 +1,80 @@
+<div class="event-module-hero">
+	<a href="/event/{{screening_unique_key}}">
+		{{#if screening_still_image}}
+		<img width="300" height="150" src="/uploads/screeningResources/{{screening_film_id}}/screenings/screening_event_{{screening_still_image}}" />
+		{{else}}
+		<img width="300" height="150" src="/uploads/screeningResources/{{screening_film_id}}/logo/wide_poster{{screening_film_homelogo}}" />
+		{{/if}}
+		{{# if is_inprogress }}
+		<span class="event-module-hero-in-progress">In Progress</span>
+		{{/if}}
+						<div class="event-module-hero-overlay">
+							<span class="button button-medium button-black">View Event</span>
+						</div>
+	</a>
+</div>
+<div class="section-container">
+	{{#if screening_user_full_name}}
+	<div class="event-section clearfix">
+		<a href="/event/{{screening_unique_key}}"><img src="/uploads/hosts/{{screening_user_id}}/icon_medium_{{screening_user_photo_url}}" height="50" width="50" class="event-module-avatar"/>
+		</a>
+		{{#if screening_name}}
+			<p class="event-module-title event-module-title-img"><a href="/event/{{screening_unique_key}}">{{screening_name}}</a></p>
+		{{else}}
+			<p class="event-module-title event-module-title-img"><a href="/event/{{screening_unique_key}}">{{screening_film_name}}</a></p>
+		{{/if}}
+	</div>
+	{{else}}
+		{{#if screening_name}}
+			<p class="event-module-title"><a href="/event/{{screening_unique_key}}">{{screening_name}}</a></p>
+		{{else}}
+			<p class="event-module-title"><a href="/event/{{screening_unique_key}}">{{screening_film_name}}</a></p>
+		{{/if}}
+	{{/if}}
+
+	<div class="event-section">
+		<p class="event-module-time"><span class="icon-calendar"></span>{{screening_date}}</p>
+	</div>
+	{{#unless screening_is_past }}
+	<div class="event-section">
+		{{#if is_free}}
+			<p class="event-module-price"><span class="icon-ticket"></span>This event is <strong>FREE</srrong></p>
+		{{else}}
+		{{#if uses_coupon}}
+			<p class="event-module-price"><span class="icon-ticket"></span>This event is only available via code</p>
+		{{else}}
+			<p class="event-module-price"><span class="icon-ticket"></span>Tickets to this event are ${{screening_film_ticket_price}}</p>
+		{{/if}}
+		{{/if}}
+	</div>
+	{{/unless}}
+
+	{{#if screening_qa}}
+	<div class="event-section">
+	<p class="event-module-qa-title">{{screening_qa.title}}</p>
+<iframe width="260" height="162" src="http://www.youtube.com/embed/{{screening_qa.youtubeId}}?wmode=opaque" frameborder="0" allowfullscreen></iframe>
+	<p class="event-module-more"><a href="/event/{{screening_unique_key}}">View more clips &rarr;</a></p>
+	</div>
+	{{/if}}
+	{{#if screening_is_past }}	
+	<div class="event-section event-module-description event-section-last">
+	{{else}}
+	<div class="event-section event-module-description">
+	{{/if}}
+	{{#if screening_description}}
+		<p>{{eventDecription screening_description}}</p>
+	{{else}}
+		<p>{{eventDecription screening_film_info}}</p>
+	{{/if}}
+	<p class="event-module-more"><a href="/event/{{screening_unique_key}}">Learn more about this event &rarr;</a></p>
+	</div>
+	{{#unless screening_is_past }}
+	<div class="event-section event-section-last">
+	{{#if is_attending}}
+		<a class="button button-green button-medium button-block center" href="/theater/{{screening_unique_key}}">Enter Event</a>
+	{{else}}
+		<a class="button button-blue button-medium button-block center" href="/boxoffice/screening/{{screening_unique_key}}">RSVP to Event</a>
+	{{/if}}
+	</div>
+	{{/unless}}
+</div>

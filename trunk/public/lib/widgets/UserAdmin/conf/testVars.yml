@@ -1,0 +1,33 @@
+get:
+post:
+  user_full_name: "Bob Dobbs"
+  user_fname: "Bob"
+  user_lname: "Dobbs"
+  user_email: "bob@dobbs.com"
+  user_password: "SomePassword"
+  user_username: bobdobbs
+  user_t_username: bobdobbs
+  user_default_timezone: "America/New-York"
+  user_birthday_date: '2001-01-01'
+  user_photo_url: "http://www.google.com"
+  user_ual_array:
+    1:
+    2:
+session:
+action:
+  styroaction: submit
+
+dbo:
+  user: 
+    key: user_id
+    vars:
+      getUserFullName: =post:user_full_name
+      getUserFname: =post:user_fname
+      getUserLname: =post:user_lname
+      getUserEmail: =post:user_email
+      =getUserPassword: =post:user_password
+      getUserUsername: =post:user_username
+      getUserTUsername: =post:user_t_username
+      getUserDefaultTimezone: =post:user_default_timezone
+      getUserBirthdayDate: =post:user_birthday_date
+      getUserPhotoUrl: =post:user_photo_url

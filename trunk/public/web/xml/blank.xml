@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE basedomain="wtvr" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<HEAD>
+		<TITLE>That's Not Fake</TITLE>
+		<JSCRIPT djConfig="TRUE" isdebug="false">/js/dojo/dojo/dojo_tnf.js</JSCRIPT>
+		<!--<JSCRIPT djConfig="FALSE" isdebug="false">/js/dojo/dojo/dojo.js</JSCRIPT>
+		<JSCRIPT>/js/wtvr_dojo.js</JSCRIPT>
+		<JSCRIPT>/js/swfobject.js</JSCRIPT>
+		<JSCRIPT>/js/swfembed.js</JSCRIPT>-->
+		<!--<CSSCRIPT>/js/dojo/dijit/themes/tundra/tundra.css</CSSCRIPT>
+		<CSSCRIPT>/css/wtvr.css</CSSCRIPT>
+    <CSSCRIPT>/css/image.css</CSSCRIPT>
+    <CSSCRIPT>/css/thumbnail_picker.css</CSSCRIPT>
+    <CSSCRIPT>/css/main.css</CSSCRIPT>-->
+		<!--<CSSCRIPT>/css/styroform.css</CSSCRIPT>-->
+	</HEAD>
+	<BODY>
+		<ONLOAD></ONLOAD>
+		
+	</BODY>
+</PAGE>

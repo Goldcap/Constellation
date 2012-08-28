@@ -1,0 +1,26 @@
+Metadata-Version: 1.0
+Name: oursql
+Version: 0.9.2
+Summary: MySQL bindings for python.
+Home-page: http://launchpad.net/oursql
+Author: Aaron Gallagher
+Author-email: habnabit@gmail.com
+License: UNKNOWN
+Description: 
+        oursql is a set of MySQL bindings for python 2.4+ with a focus on
+        wrapping the `MYSQL_STMT API`__ to provide real parameterization and
+        real server-side cursors. MySQL 4.1.2 or better is required.
+        
+        __ http://dev.mysql.com/doc/refman/5.0/en/c-api-prepared-statements.html
+        
+        There's extensive documentation available online at
+        http://packages.python.org/oursql/.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: Database :: Database Engines/Servers

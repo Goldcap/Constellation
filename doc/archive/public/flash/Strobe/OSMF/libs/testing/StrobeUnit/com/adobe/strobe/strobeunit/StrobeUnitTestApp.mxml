@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*****************************************************
+*  
+*  Copyright 2009 Adobe Systems Incorporated.  All Rights Reserved.
+*  
+*****************************************************
+*  The contents of this file are subject to the Mozilla Public License
+*  Version 1.1 (the "License"); you may not use this file except in
+*  compliance with the License. You may obtain a copy of the License at
+*  http://www.mozilla.org/MPL/
+*   
+*  Software distributed under the License is distributed on an "AS IS"
+*  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+*  License for the specific language governing rights and limitations
+*  under the License.
+*   
+*  
+*  The Initial Developer of the Original Code is Adobe Systems Incorporated.
+*  Portions created by Adobe Systems Incorporated are Copyright (C) 2009 Adobe Systems 
+*  Incorporated. All Rights Reserved. 
+*  
+*****************************************************/
+-->
+<mx:WindowedApplication
+	xmlns				="*"
+	xmlns:mx			="http://www.adobe.com/2006/mxml" 
+	xmlns:flexunit		="flexunit.flexui.*"
+	xmlns:ampunit		="com.adobe.strobe.strobeunit.*"
+	applicationComplete	="init()"
+	width				="1000"
+	height				="800">
+
+	<mx:Script>
+		<![CDATA[
+		
+			import flash.events.InvokeEvent;
+			
+			import flexunit.framework.TestSuite;
+			
+			private var _suite : TestSuite;
+			private var _logName:String;
+			
+			public function set suite( suite : TestSuite ) : void
+			{
+				_suite = suite;
+			}
+			
+			[Bindable]
+			public function get suite() : TestSuite
+			{
+				return _suite;
+			}
+			
+			public function set logName( name:String):void
+			{
+				_logName = name;
+			}
+			
+			[Bindable]
+			public function get logName():String
+			{
+				return _logName;
+			}
+				
+			protected function init() : void
+			{
+				NativeApplication.nativeApplication.addEventListener( InvokeEvent.INVOKE, onInvoke );
+			}
+	
+			protected function onInvoke( event : InvokeEvent ) : void
+			{
+				for ( var i : int = 0; i < event.arguments.length; i++ )
+				{	
+					testRunner.outputDir = event.currentDirectory.resolvePath( "build/report" );
+					
+					switch ( event.arguments[i] )
+					{
+						case "-autoexit":
+							testRunner.autoexit = true;
+							break;
+						default:
+							break;
+					}
+				}
+				
+				// TODO: This is a workaround for an Apollo M4 invocation bug.
+				// Remove this when the bug is fixed.
+				if (invokeCounter == 0)
+				{
+					testRunner.logName = _logName;
+					testRunner.startTest();
+				}
+				
+				invokeCounter++;
+			}
+			
+			private var invokeCounter:int = 0;
+		
+		]]>
+	</mx:Script>
+
+	<mx:TraceTarget
+		xmlns:mx			="http://www.adobe.com/2006/mxml"
+		level				="0"
+		includeDate			="true"
+		includeTime			="true"
+		includeCategory		="false"
+		includeLevel		="true">
+		<mx:filters>
+			<mx:Array>
+				<mx:String>*</mx:String>
+			</mx:Array>
+		</mx:filters>
+	</mx:TraceTarget>	
+	
+	<ampunit:StrobeTestRunner id="testRunner" test="{suite}" width="100%" height="100%"/>
+	
+</mx:WindowedApplication>

@@ -1,0 +1,19 @@
+<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
+  <head>
+    <meta name="title" content="Buck Bunny"/>
+    <meta name="httpBase" content="http://tceast-f.hdflash.edgesuite.net/"/>
+    <meta name="vod" content="true"/>
+  </head>
+  <body>
+    <switch id="Buck bunny">
+      <video src="will/big_buck_bunny_480x270_300.f4v" system-bitrate="300000"/>
+      <video src="will/big_buck_bunny_640x360_400.f4v" system-bitrate="400000"/>
+      <video src="will/big_buck_bunny_640x360_700.f4v" system-bitrate="700000"/>
+      <video src="will/big_buck_bunny_640x360_1000.f4v" system-bitrate="1000000"/>
+      <video src="will/big_buck_bunny_950x540_1500.f4v" system-bitrate="1500000"/>
+      <video src="will/big_buck_bunny_1280x720_2000.f4v" system-bitrate="2000000"/>
+      <video src="will/big_buck_bunny_1280x720_3000.f4v" system-bitrate="3000000"/>
+      <video src="will/big_buck_bunny_1920x1080_5000.f4v" system-bitrate="5000000"/>
+    </switch>
+  </body>
+</smil>

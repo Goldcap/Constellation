@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/phpunit/phpunit3
+END
+SummaryPHPUnit3ResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/phpunit/phpunit3/SummaryPHPUnit3ResultFormatter.php
+END
+PHPUnit3ResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/phpunit/phpunit3/PHPUnit3ResultFormatter.php
+END
+XMLPHPUnit3ResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/phpunit/phpunit3/XMLPHPUnit3ResultFormatter.php
+END
+PlainPHPUnit3ResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 179
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/phpunit/phpunit3/PlainPHPUnit3ResultFormatter.php
+END

@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend.php/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend.php/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend.php/screeningManagement/list">List Screenings</a></div>
+					<div class="item"><a href="/backend.php/screeningManagement/edit">Add Screening</a></div>
+					<div class="item-no-border"><a href="/backend.php/screeningManagement/edit/private/1">Add Test (private) Screening</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend.php/auth/logout">
+
+			Logout
+		</a>
+	</div>
+</div><div id="main">
+<div class="title">
+	<h2>Screening Details</h2>
+</div>
+
+<table class="table-list">
+	<tr class="type-1">
+		<td>
+
+			Screening:
+		</td>
+		<td>
+			<a href="/backend.php/screeningManagement/edit/id/1">
+				Living in Emergency - Friday Sep 17, 2010 7:00PM EDT			</a>
+		</td>
+	</tr>
+	<tr class="type-2">
+		<td>
+
+			Type: 
+		</td>
+		<td>
+			Public - Hosted		</td>
+	</tr>
+	<tr class="type-1">
+		<td>
+			Hosted by: 
+		</td>
+
+		<td>
+			markmalindi@earthlink.net		</td>
+	</tr>
+	<tr class="type-2">
+		<td>
+			Scheduled at:
+		</td>
+		<td>
+			Friday Sep 17, 2010 7:00PM EDT		</td>
+
+	</tr>
+</table>
+
+<div class="title">
+	<h3>Attendees</h3>
+</div>
+<div class="user-screening-details" id="audience-details" style="display: block;">
+	<div class="top">
+		<div class="top-detail-item">ID</div>
+		<div class="top-detail-item">NAME</div>
+
+		<div class="top-detail-item">ACTION</div>
+	</div>
+	</div>
+<script type="text/javascript">
+var bindEvents = function(){
+	$('a.invitees-link').unbind('click').bind('click', function(e){
+			var id = $(this).attr('id');
+			id = id.replace('invitees-', '');
+			$('#invitees-holder-'+id).slideToggle('slow');	
+
+			return false;
+	});
+
+	$('a.chat-link').unbind('click').bind('click', function(e){
+		var id = $(this).attr('id');
+		id = id.replace('chat-', '');
+		$('#chat-holder-'+id).slideToggle('slow');
+
+		return false;	
+	});
+
+	$('a.qanda-link').unbind('click').bind('click', function(e){
+		var id = $(this).attr('id');
+		id = id.replace('qanda-', '');
+		$('#qanda-holder-'+id).slideToggle('slow');
+
+		return false;	
+	});
+	$('a.screening-log-link').unbind('click').bind('click', function(e){
+		var id = $(this).attr('id');
+		id = id.replace('screening-log-', '');
+		$('#screening-log-holder-'+id).slideToggle('slow');
+
+		return false;	
+	});
+
+}
+$(document).ready(function(){
+	var extraDetailsUrl = "/backend.php/screeningManagement/extraDetails";
+	
+	$('a[name="expand"]').click(function(event){
+		var itemId = $(this).attr('id');
+		itemId = itemId.replace('detail-item-expand-', '');
+		if($('#extra-details-'+itemId).html() == '')
+		{
+			$.ajax({
+				   type: "GET",
+				   url: extraDetailsUrl + '?id=' + itemId,
+				   success: function(html){
+						$('#extra-details-'+itemId).html(html).slideDown('slow');
+						bindEvents();
+				   }
+				 });
+		}
+		else
+		{
+			$('#extra-details-'+itemId).slideToggle();
+		}
+
+		event.preventDefault();
+		return false;
+	});
+});
+	
+</script></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+
+</html>

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="OSMF" default="OSMF.all" basedir=".">
+
+	<property environment="env" />
+
+	<!-- load external values -->
+	<property file="${basedir}/build.properties" />
+
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+	<taskdef resource="flexUnitTasks.tasks" classpath="${FLEX_UNIT_HOME}/flexUnitTasks-4.1.0_RC2-4.jar" />
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpath="${buildtools.dir}/libs/ant-contrib-1.0b3.jar" />
+
+	<target name="OSMF.init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${reports.dir}" />
+	</target>
+
+	<!-- cleans the output directory -->
+	<target name="OSMF.clean.bin">
+		<sequential>
+			<delete includeemptydirs="true" quiet="true">
+				<fileset dir="${source.dir}" includes="**/bin/**/*" />
+			</delete>
+			<delete includeemptydirs="true" quiet="true">
+				<fileset dir="${source.dir}" includes="**/bin" />
+			</delete>
+		</sequential>
+	</target>
+
+	<target name="OSMF.clean">
+		<antcall target="OSMF.clean.bin" />
+		<sequential>
+			<delete includeemptydirs="true" quiet="true">
+				<fileset dir="${dist.dir}" />
+			</delete>
+			<delete includeemptydirs="true" quiet="true">
+				<fileset dir="${build.dir}" />
+			</delete>
+		</sequential>
+	</target>
+
+	<!-- main -->
+	<target name="OSMF.all">
+		<antcall target="OSMF.clean" />
+		<antcall target="OSMF.build" />
+		<antcall target="OSMF.dist" />
+		<antcall target="OSMF.source" />
+	</target>
+
+	<target name="OSMF.build">
+		<antcall target="OSMF.init" />
+		<antcall target="OSMF.clean.bin" />
+		<antcall target="OSMF.compile.osmf" />
+		<antcall target="OSMF.compile.libs" />
+		<antcall target="OSMF.compile.plugins" />
+		<antcall target="OSMF.compile.samples" />
+		<antcall target="OSMF.compile.zeri" />
+		<antcall target="OSMF.test" />
+	</target>
+
+	<target name="OSMF.test">
+		<antcall target="OSMF.compile.unittest" />
+		<antcall target="OSMF.run.unittest" />
+		<antcall target="OSMF.compile.integrationtest" />
+		<antcall target="OSMF.run.integrationtest" />
+	</target>
+
+	<target name="OSMF.dist">
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/framework/OSMF/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/samples/plugins/AkamaiPluginSample/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/samples/framework/DynamicStreamingSample/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/samples/framework/ExamplePlayer/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/samples/plugins/ControlBarPluginSample/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/samples/plugins/ControlBarPlugin/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/plugins/samples/MASTPlugin/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/plugins/samples/SMILPlugin/bin" />
+		</copy>
+		<copy todir="${dist.dir}" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/plugins/samples/AkamaiBasicStreamingPlugin/bin" />
+		</copy>
+		<copy todir="${dist.dir}/Zeri" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/certification/zeri/ZeriCertificationTest/bin" />
+		</copy>
+		<copy todir="${dist.dir}/Zeri" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/apps/certification/zeri/ZeriCertificationPlayer/bin" />
+		</copy>
+		<copy todir="${dist.dir}/Test" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/framework/OSMFTest/bin" />
+		</copy>
+		<copy todir="${dist.dir}/Test" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/framework/OSMFAirTest/bin" />
+		</copy>
+		<copy todir="${dist.dir}/Test" overwrite="true" failonerror="false">
+			<fileset dir="${source.dir}/framework/OSMFTestNew/bin" />
+		</copy>
+	</target>
+
+	<target name="OSMF.source">
+		<zip destfile="${build.dir}/OSMF_src.zip">
+			<zipfileset dir="${source.dir}" prefix="OSMF" excludes="dist/**, build/**, **/bin/**, **/bin-*/**, **/generated/**" />
+		</zip>
+		<copy file="${build.dir}/OSMF_src.zip" todir="${dist.dir}" overwrite="true" failonerror="false" />
+	</target>
+
+	<!-- compile OSMF -->
+	<target name="OSMF.compile.osmf">
+		<OSMF.component.compile project="OSMF" projectDir="${source.dir}/framework/OSMF" />
+	</target>
+
+	<target name="OSMF.compile.libs">
+		<OSMF.component.compile project="VAST" projectDir="${source.dir}/libs/samples/VAST" />
+		<OSMF.component.compile project="Syndication" projectDir="${source.dir}/libs/samples/Syndication" />
+		<OSMF.component.compile project="ChromeLibrary" projectDir="${source.dir}/libs/samples/ChromeLibrary" />
+		<OSMF.component.compile project="MediaContainerUIComponent" projectDir="${source.dir}/apps/samples/framework/MediaContainerUIComponent" />
+	</target>
+
+	<target name="OSMF.compile.plugins">
+		<OSMF.plugin.compile project="AkamaiBasicStreamingPlugin" projectDir="${source.dir}/plugins/samples/AkamaiBasicStreamingPlugin" srcDir="" />
+		<OSMF.plugin.compile project="SMILPlugin" projectDir="${source.dir}/plugins/samples/SMILPlugin" srcDir="" />
+		<OSMF.plugin.compile project="MASTPlugin" projectDir="${source.dir}/plugins/samples/MASTPlugin" srcDir="" />
+		<OSMF.plugin.compile project="ControlBarPlugin" projectDir="${source.dir}/apps/samples/plugins/ControlBarPlugin" />
+	</target>
+
+	<target name="OSMF.compile.samples">
+		<OSMF.application.compile project="ControlBarPluginSample" projectDir="${source.dir}/apps/samples/plugins/ControlBarPluginSample" />
+		<OSMF.mxml.compile project="DynamicStreamingSample" projectDir="${source.dir}/apps/samples/framework/DynamicStreamingSample" width="100%" height="100%" />
+		<OSMF.mxml.compile project="AkamaiPluginSample" projectDir="${source.dir}/apps/samples/plugins/AkamaiPluginSample" width="100%" height="100%" />
+		<OSMF.mxml.compile project="ExamplePlayer" projectDir="${source.dir}/apps/samples/framework/ExamplePlayer" width="100%" height="100%" srcDir="" />
+	</target>
+
+	<target name="OSMF.compile.zeri">
+		<OSMF.component.compile project="FlexUnit4" projectDir="${source.dir}/apps/certification/zeri/FlexUnit4" />
+		<OSMF.component.compile project="ZeriCertificationUtils" projectDir="${source.dir}/apps/certification/zeri/ZeriCertificationUtils" />
+		<OSMF.component.compile project="FlexUnit4UIListener" projectDir="${source.dir}/apps/certification/zeri/FlexUnit4UIListener" />
+		<OSMF.component.compile project="MediaContainerUIComponent" projectDir="${source.dir}/apps/samples/framework/MediaContainerUIComponent" />
+
+		<OSMF.mxml.compile project="ZeriCertificationPlayer" projectDir="${source.dir}/apps/certification/zeri/ZeriCertificationPlayer" width="100%" height="100%" />
+		<!-- <OSMF.mxml.compile project="ZeriCertificationTest" projectDir="${source.dir}/apps/certification/zeri/ZeriCertificationTest" width="100%" height="100%" /> -->
+	</target>
+
+	<target name="OSMF.doc.osmf">
+		<OSMF.component.doc project="OSMF" projectDir="${source.dir}/framework/OSMF" />
+	</target>
+
+	<!-- compile unit tests -->
+	<target name="OSMF.compile.unittest">
+		<OSMF.component.compile project="NetMocker" projectDir="${source.dir}/libs/testing/NetMocker" />
+		<!-- OSMF.unittest.compile project="OSMFTestHeadless" projectDir="${source.dir}/framework/OSMFTest" srcDir="" />
+		<OSMF.unittest.compile project="OSMFTest" projectDir="${source.dir}/framework/OSMFTest" srcDir="" />
+		<OSMF.airtest.compile project="OSMFAirTest" projectDir="${source.dir}/framework/OSMFAirTest" srcDir="" / -->
+		
+		<!-- This is the new project for unit testing (stub): -->
+		<!-- OSMF.unittestnew.compile project="OSMFTestNew" projectDir="${source.dir}/framework/OSMFTestNew" srcDir="/src" / -->
+	</target>
+	
+	<macrodef name="OSMF.airtest.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<sequential>
+			<mkdir dir="${build.dir}/@{project}" />
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.mxml" keep-generated-actionscript="false"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+				configname="air"
+			>
+
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="false" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+				<compiler.verbose-stacktraces>false</compiler.verbose-stacktraces>
+				<compiler.headless-server>true</compiler.headless-server>
+			</mxmlc>
+		</sequential>
+	</macrodef>
+
+	<!-- prepare and run unit tests -->
+	<target name="OSMF.run.unittest">
+		<!-- Run the new unit testing stub project - works well and generates reports. -->
+		<!-- OSMF.unittest.run project="OSMFTestNew" projectDir="${source.dir}/framework/OSMFTestNew" flexUnitPlayer="air" / -->
+		
+		<!-- The following line is commented out because it doesn't work automatically. It can be run manually though. -->
+		<!-- <OSMF.unittest.run project="OSMFAirTest" projectDir="${source.dir}/framework/OSMFAirTest" flexUnitPlayer="air" /> -->
+	</target>
+
+	<target name="OSMF.compile.integrationtest">
+	</target>
+
+	<target name="OSMF.run.integrationtest">
+	</target>
+
+	<!-- Define a task for generating the class list for compc from the appropriate .flexLibProperties file -->
+	<macrodef name="OSMF.generateClassList">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<sequential>
+			<xmlproperty
+				file="@{projectDir}/.flexLibProperties"
+				prefix="@{project}"
+				keepRoot="false"
+				collapseAttributes="true"
+			/>
+			<propertyregex
+				property="@{project}.classes"
+				input="${@{project}.includeClasses.classEntry.path}"
+				regexp=","
+				replace=" "
+			/>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for building a component project. -->
+	<macrodef name="OSMF.component.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<sequential>
+			<OSMF.generateClassList project="@{project}" projectDir="@{projectDir}" />
+			<compc
+				output="@{projectDir}/bin/@{project}.swc"
+				include-classes="${@{project}.classes}"
+				optimize="true"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+			>
+
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<define name="CONFIG::useFlexClasses" value="true" />
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="${logging}" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+				<warnings>true</warnings>
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+			</compc>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="OSMF.component.doc">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/org" />
+
+		<sequential>
+			<OSMF.generateClassList project="@{project}" projectDir="@{projectDir}" />
+			<asdoc output="${dist.dir}/@{project}" lenient="true" failonerror="true">
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+				<define name="CONFIG::useFlexClasses" value="true" />
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="${logging}" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+				<doc-sources path-element="@{projectDir}@{srcDir}" />
+			</asdoc>
+		</sequential>
+	</macrodef>
+
+
+	<!-- Define a task for compiling an application project. -->
+	<macrodef name="OSMF.application.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<attribute name="width" default="800" />
+		<attribute name="height" default="600" />
+		<sequential>
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.as"
+				optimize="true"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+				swf-version="${swfversion}"
+				static-link-runtime-shared-libraries="true"
+				static-rsls="false"
+			>
+
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="${logging}" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+			</mxmlc>
+
+			<copy todir="@{projectDir}/bin" overwrite="true" failonerror="false">
+				<fileset dir="@{projectDir}/html-template" />
+			</copy>
+
+			<move file="@{projectDir}/bin/index.template.html" tofile="@{projectDir}/bin/@{project}.html" overwrite="true" failonerror="false" />
+
+			<html-wrapper
+				title="@{project}"
+				file="@{project}.html"
+				swf="@{project}"
+				output="@{projectDir}/bin"
+				width="@{width}"
+				height="@{height}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for compiling a plugin project. -->
+	<macrodef name="OSMF.plugin.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<sequential>
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.as"
+				optimize="true"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+				swf-version="${swfversion}"
+				static-link-runtime-shared-libraries="true"
+			>
+			
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="${logging}" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+			</mxmlc>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for compiling a unit test project. -->
+	<macrodef name="OSMF.unittest.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<sequential>
+			<mkdir dir="${build.dir}/@{project}" />
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.mxml" keep-generated-actionscript="false"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+			>
+
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<!-- List of SWC files or directories that contain SWC files. -->
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="false" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+				<compiler.verbose-stacktraces>false</compiler.verbose-stacktraces>
+				<compiler.headless-server>true</compiler.headless-server>
+			</mxmlc>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for compiling a unit test project. -->
+	<macrodef name="OSMF.unittestnew.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<sequential>
+			<mkdir dir="${build.dir}/@{project}" />
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.mxml" keep-generated-actionscript="false"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+			>
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<!-- List of SWC files or directories that contain SWC files. -->
+				<compiler.library-path dir="${FLEX_HOME}/frameworks" append="true">
+					<include name="libs" />
+					<include name="libs/air" />
+					<include name="*.swc" />
+				</compiler.library-path>
+
+				<compiler.library-path dir="${FLEX_UNIT_HOME}" append="true">
+					<include name="*.swc" />
+				</compiler.library-path>
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/mx" append="true">
+					<include name="mx.swc" />
+				</compiler.external-library-path>
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="false" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+				<compiler.verbose-stacktraces>false</compiler.verbose-stacktraces>
+				<compiler.headless-server>true</compiler.headless-server>
+			</mxmlc>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for compiling a unit test project. -->
+	<macrodef name="OSMF.mxml.compile">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="srcDir" default="/src" />
+		<attribute name="width" default="800" />
+		<attribute name="height" default="600" />
+		<sequential>
+			<mkdir dir="${build.dir}/@{project}" />
+			<mxmlc
+				output="@{projectDir}/bin/@{project}.swf"
+				file="@{projectDir}@{srcDir}/@{project}.mxml" keep-generated-actionscript="false"
+				debug="${logging}"
+				fork="false"
+				target-player="${flash.target.player}"
+				swf-version="${swfversion}"
+				static-link-runtime-shared-libraries="true"
+				static-rsls="false"
+			>
+
+				<load-config filename="@{projectDir}/@{project}-build-config.xml" />
+
+				<compiler.external-library-path dir="${FLEX_HOME}/frameworks/libs/player/${flash.target.player.base}" append="true">
+					<include name="playerglobal.swc" />
+				</compiler.external-library-path>
+
+				<define name="CONFIG::FLASH_10_1" value="${flash.use.10.1}" />
+				<define name="CONFIG::LOGGING" value="false" />
+				<define name="CONFIG::PLATFORM" value="${platform}" />
+				<define name="CONFIG::MOCK" value="${mock}" />
+
+			</mxmlc>
+
+			<html-wrapper
+				title="@{project}"
+				file="@{project}.html"
+				swf="@{project}"
+				output="@{projectDir}/bin"
+				width="@{width}"
+				height="@{height}"
+			/>
+		</sequential>
+	</macrodef>
+
+	<!-- Define a task for running an unit test -->
+	<macrodef name="OSMF.unittest.run">
+		<attribute name="project" />
+		<attribute name="projectDir" />
+		<attribute name="flexUnitPlayer" default="air" />
+		<sequential>
+			<mkdir dir="${reports.dir}/@{project}" />
+			<!-- flexunit
+				player="@{flexUnitPlayer}" headless="false" localTrusted="true"
+				swf="@{projectDir}/bin/@{project}.swf"
+				toDir="${reports.dir}/@{project}"
+				haltonfailure="false"
+				verbose="true"
+				failureproperty="flexunit.failed"
+				timeout = "120000"
+			/ -->
+
+			<!--junitreport todir="${reports.dir}/@{project}">
+				<fileset dir="${reports.dir}/@{project}">
+					<include name="TEST-*.xml" />
+				</fileset>
+				<report format="frames" todir="${dist.dir}/test-reports/@{project}" />
+			</junitreport-->
+			<!-- antcall target="OSMF.unittest.reports">
+			</antcall -->
+			<junitreport todir="${reports.dir}/@{project}">
+				<fileset dir="${reports.dir}/@{project}">
+					<include name="TEST-*.xml" />
+				</fileset>
+				<report format="frames" todir="${dist.dir}/test-reports/@{project}" />
+			</junitreport>
+			<fail message="One or more flexunit tests failed. See test reports for details." if="flexunit.failed" />
+		</sequential>
+	</macrodef>
+
+	<target name="OSMF.unittest.reports" if="flexunit.failed">
+	</target>
+</project>

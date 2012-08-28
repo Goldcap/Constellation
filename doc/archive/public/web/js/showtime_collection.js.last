@@ -1,0 +1,241 @@
+var showtime_collection = {
+
+    url:'/services/Screenings/latest',
+    button:null,
+    isActive : true,
+    list:null,
+    showtimeBlockCount:0,
+    parseTag : '.movie_block',
+    blockHeight: 224,
+    predicate: null,
+    today: null,
+    nextshows: null,
+    pullType: null,
+    
+    templateString : '\
+        <div class="movie_block">\
+					<div class="movie_block_content">\
+            <ul class="featured_time" data-attach-point="dateholder"><li data-attach-point="time"></li><li data-attach-point="date"></li></ul>\
+            <span class="movie_block_in_progress"></span>\
+              <div class="movie_block_poster" data-attach-point="hostImageParent">\
+                  <span data-attach-point="screeningImageContainer">\
+										<img data-attach-point="screeningImage" />\
+									</span>\
+                  <div class="tooltip tooltip_large" style="display:none" data-attach-point="hostName"></div> \
+              </div>\
+              <div class="movie_block_details"> \
+                  <h6 class="movie_block_title" data-attach-point="title"></h6>\
+                	<p><span class="countdown_start">STARTS IN</span> <span data-attach-point="countdown" class="timekeeper">2HRS 15MIN 37S</span></p>\
+                	<div class="user_images"> \
+              			<span class="user_list" data-attach-point="userList"></span> \
+              			<span class="user_count" data-attach-point="attendingCount"></span> \
+                    <a data-attach-point="attendButton" class="button button_blue uppercase">Attend</a> \
+              		</div>\
+          		</div>\
+          </div>\
+      </div>\
+		',
+    
+		init: function() {
+		
+			var a = new Date();
+			showtime_collection.today = $.format.date(a, "MM/dd/yy");
+			
+			//console.log(showtime_collection.today);
+			showtime_collection.nextshows = new Array();
+			showtime_collection.getNextShows( 'upcoming' );
+			
+			$("#moreUpcoming").click(function(e) {
+				e.preventDefault();
+				showtime_collection.predicate = 'next';
+				showtime_collection.setDefaults("#moreUpcoming");
+        showtime_collection.getList( "upcoming" );
+			});
+	    $("#moreFeatured").click(function(e) {
+				e.preventDefault();
+				showtime_collection.predicate = 'featured';
+				showtime_collection.setDefaults("#moreFeatured");
+        showtime_collection.getList( "featured" );
+			});
+	    
+    },
+    
+    setDefaults: function( type ){
+				//console.log("Set Defaults for "+type);
+				showtime_collection.button = $(type);
+				showtime_collection.list = $(type).parent().prev();
+        var height = showtime_collection.list.height();
+        showtime_collection.list.css({height: height});
+        showtime_collection.showtimeBlockCount = showtime_collection.list.find(showtime_collection.parseTag).length;
+    },
+    
+    
+    getList: function( type ){
+    		showtime_collection.getNextShows( type );
+    		
+        showtime_collection.offset = showtime_collection.showtimeBlockCount;
+    		
+    		showtime_collection.pullType = type;
+    		
+      	var args = {"type": type,
+                  "page": showtime_collection.showtimeBlockCount,
+                  "viewed" : showtime_collection.nextshows.join(",")
+                	};
+        if ($("#film_id").length > 0) {
+					args.film = $("#film_id").html();
+				}
+        jQuery.ajax({
+            url: showtime_collection.url,
+            data: $.param(args),
+            dataType: 'json',
+            success:  showtime_collection.onGetListSuccess
+        })
+    },
+    
+    onGetListSuccess: function(response){
+        if ((response != undefined) && (response.ScreeningListResponse != null)) {
+        		if(showtime_collection.showtimeBlockCount >= response.meta.totalresults){
+            		showtime_collection.button.css({opacity: 0.5});
+                return;
+            }
+						jQuery.each(response.ScreeningListResponse, function(index, showtime){
+							if ($(".movie_block[identifier="+showtime.screening_id+"]").length == 0) {
+								 showtime_collection.button.parent().prev().append(showtime_collection.buildTemplate( showtime ));
+	               showtime_collection.showtimeBlockCount = showtime_collection.showtimeBlockCount+1;
+	               //Start the countdown
+								 countdown_alt.init(showtime.screening_unique_key+'_'+showtime_collection.predicate,showtime.screening_date);
+		      			 //Start the countdown
+								 remaining_alt.run(showtime.screening_unique_key,showtime.screening_date);
+		      			 //Add Attendees
+								 screening_attendees.init(showtime.screening_unique_key,showtime.screening_id);
+							 }
+						});
+            showtime_collection.slideDown();
+            if(showtime_collection.showtimeBlockCount >= response.meta.totalresults){
+                showtime_collection.button.css({opacity: 0.5});
+            }
+        }
+    },
+    
+    slideDown: function(){
+        var height = showtime_collection.list.height();
+        showtime_collection.list.animate({
+            height: showtime_collection.showtimeBlockCount * showtime_collection.blockHeight
+        })
+    },
+        
+    buildTemplate : function( showtime ){
+        
+				var domNode = $(showtime_collection.templateString);
+				var time = showtime.screening_date.split('|');
+        
+        var title = (showtime.screening_name != '') ? showtime.screening_name : showtime.screening_film_name;
+				var data = {
+            id: showtime.screening_id,
+            key: showtime.screening_unique_key,
+            film: showtime.screening_film_id,
+            hostimage: showtime.screening_user_photo_url,
+            title: title,
+            time: (parseInt(time[3]) > 12 ? parseInt(time[3]) - 12 : time[3]) + ':' + time[4] + (parseInt(time[3]) > 12 ? 'PM': 'AM'),
+            date: time[1] + '/' + time[2] + '/' + time[0].substr(2,4),
+            countdown_start: new Date(time[0], time[1]-1, time[2], time[3], time[4], time[5]),
+            host_name: showtime.screening_user_full_name
+            //attendingCount: showtime.attendees.length,
+            //attendees: showtime.attendees
+        };
+        
+        $(domNode).attr('class','movie_block movie_block_'+showtime_collection.pullType);
+        $(domNode).attr('identifier',data.id);
+        $(domNode).attr('alt','/film/'+data.film);
+        if (showtime.screening_still_image != '') {
+					var image = '/uploads/screeningResources/'+showtime.screening_film_id+'/screenings/film_screening_next_'+showtime.screening_still_image;
+					$("[data-attach-point=screeningImageContainer]",domNode).attr("class","screening_container");
+					$("[data-attach-point=screeningImage]",domNode).attr("width","150");
+				} else if (showtime.screening_film_still_image != '') {
+					var image = '/uploads/screeningResources/'+showtime.screening_film_id+'/still/film_next_'+showtime.screening_film_still_image;
+					$("[data-attach-point=screeningImageContainer]",domNode).attr("class","logo_container");
+					$("[data-attach-point=screeningImage]",domNode).attr("height","130");
+				} else {
+					var image = 'https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt/featured_still.jpg';
+					$("[data-attach-point=screeningImageContainer]",domNode).attr("class","logo_container");
+					$("[data-attach-point=screeningImage]",domNode).attr("width","140");
+				}
+				$("[data-attach-point=screeningImage]",domNode).attr('src',image);
+				$("[data-attach-point=screeningImage]",domNode).tooltip({ effect: 'slide', relative: true, position: 'center right' });
+         
+        if ((data.host_name != undefined) && (data.host_name != '')) {
+					$("[data-attach-point=title]",domNode).html(data.title + '- hosted by ' + data.host_name);$("[data-attach-point=hostName]",domNode).html(data.host_name); 
+       		$("[data-attach-point=hostName]",domNode).html(data.host_name);
+				} else {
+					$("[data-attach-point=title]",domNode).html(data.title);
+					$("[data-attach-point=hostName]",domNode).html(data.title);
+				}
+        $("[data-attach-point=date]",domNode).html(data.date);
+        $("[data-attach-point=time]",domNode).html(data.time + ' ' + showtime.screening_timezone);
+        
+				if (showtime_collection.today == data.date) {
+        	//Add the "IN PROGRESS" if need be...
+        	//<img border="0" class="in_progress" src="/images/alt1/in_progress.png">
+        	var time_now =  new Date();
+        	
+        	if ( time_now > data.countdown_start ) {
+        		$("[data-attach-point=time]",domNode).attr("id","time_remaining_"+data.key);
+        		$("[data-attach-point=time]",domNode).attr("class","time_remaining");
+        		var somehtml = data.time+ ' ' + showtime.screening_timezone + '<img border="0" class="in_progress" src="/images/alt1/in_progress.png">';
+        		$("[data-attach-point=date]",domNode).html(somehtml);
+					} else {
+						var somehtml = '<li>TODAY</li>';
+						$("[data-attach-point=dateholder]",domNode).prepend(somehtml);
+						$("[data-attach-point=time]",domNode).css("margin-right","10px");
+					}
+				}
+				if (showtime.screening_user_photo_url != '') {
+					if (showtime.screening_user_photo_url.substr(0,4) == 'http') {
+						var imhtml = '<img class="screening_host" src="'+showtime.screening_user_photo_url+'" />';
+					} else {
+						var imhtml = '<img class="screening_host" src="/uploads/hosts/'+showtime.screening_user_id+'/'+showtime.screening_user_photo_url+'" />';
+					}
+					$("[data-attach-point=hostImageParent]",domNode).append(imhtml);
+				} else if (showtime.screening_user_image != '') {
+					if (showtime.screening_user_image.substr(0,4) == 'http') {
+						var imhtml = '<img class="screening_host" src="'+showtime.screening_user_image+'" />';
+					} else {
+						var imhtml = '<img class="screening_host" src="/uploads/hosts/'+showtime.screening_user_id+'/'+showtime.screening_user_image+'" />';
+					}
+					$("[data-attach-point=hostImageParent]",domNode).append(imhtml);
+				} else if (showtime.screening_user_id > 0) {
+					var imhtml = '<img class="screening_host" src="https://s3.amazonaws.com/cdn.constellation.tv/prod/images/icon-custom.png" />';
+					$("[data-attach-point=hostImageParent]",domNode).append(imhtml);
+				}
+        $("[data-attach-point=attendButton]",domNode).attr('href','/theater/' + data.key );
+       	$("[data-attach-point=attendingCount]",domNode).attr('class','user_count user_count_' + data.key );
+        $("[data-attach-point=userList]",domNode).attr('class','user_list user_images_' + data.key );
+        $("[data-attach-point=countdown]",domNode).attr('id','timekeeper_' + data.key + '_' + showtime_collection.predicate );
+        
+        return domNode;
+    },
+    
+    getNextShows: function( type ) {
+    	console.log(type);
+    	if (type == 'upcoming') {
+				var filter = 'featured';
+			} else {
+				var filter = 'upcoming';
+			}
+    	showtime_collection.nextshows = new Array();
+    	console.log(type + " has " + $(".movie_block_"+filter).length);
+			$(".movie_block_"+filter).each(function(element){
+				showtime_collection.nextshows.push($(this).attr('identifier'));
+				//console.log($(this).attr('title'));
+			});
+		}
+
+};
+
+$(document).ready(function() {
+    if (!window.console) window.console = {};
+    if (!window.console.log) window.console.log = function() {};
+    
+    showtime_collection.init();
+    
+});

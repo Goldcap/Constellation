@@ -1,0 +1,8 @@
+template: blank
+layout: cst_home_alt
+title: Constellation | Social Movie Events | Help
+javascripts: [CTV.Test.js,swfobject.js]
+css: []
+widgets:
+  page:
+    Help:

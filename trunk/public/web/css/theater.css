@@ -1,0 +1,1586 @@
+
+body.landing #footer {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_bg.png") repeat-x scroll left top #000000;
+    float: left;
+    z-index: 1000;
+    width:100%;
+    position: fixed;
+    bottom:0;
+} 
+#content {
+	background: none!important;
+	position: static;
+}
+
+#zzdiv {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.pop_up {
+	float: left;
+	position: absolute;
+	margin-top: 0;
+  top: 160px;
+	left: 50%;
+	margin-left: -500px;
+}
+
+body.landing {background:#151515 url(../images/alt1/theater_bg.png) no-repeat top left}
+
+body.landing .masterhead {
+	height: 70px ;
+	margin: 0px !important;
+	background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/theater_header_bg.png') repeat-x top left;
+}
+
+.logo_alt a {
+  float: left;
+  width: 205px;
+  margin-left: 20px;
+  height: 72px;
+  background: url("../images/bg/logo-constellation.png") no-repeat scroll 0 -6px transparent;
+  text-indent:150px;
+  font-size: 20px;
+  color: #8C8C8C !important;
+}
+
+#timer_panel {
+  color: #9E9E9E;
+  font-size: 28px;
+  left: 50%;
+  position: absolute;
+  width: 354px;
+  z-index: 2;
+  margin-top: 26px;
+  margin-left: -270px;
+}
+
+#countdown {
+	float: left;
+	width: 288px;
+	text-transform: uppercase;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+}
+
+#countdown .shorty{
+	font-size: 18px;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+
+.until_showtime {
+	float: left;
+	font-size: 11px;
+	color: #D0D0D0;
+	font-weight: bold;
+	line-height: 14px;
+	position:relative;
+	top: -7px;
+}
+
+.share_panel {
+  color: white;
+  float: right;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 20px;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+}
+
+.share_panel .share_images {
+	float: left;
+	margin-right: 2px;
+}
+
+.share_panel .show_hostcam, .share_panel .hide_hostcam, .share_panel .show_chat, .share_panel .show_hud {
+	float: left;
+}
+
+.share_panel .share_text{
+	float: left;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	margin-top: 9px;
+	font-size: 12px;
+	color: #D0D0D0;
+	margin-right: 15px;
+} 
+
+.share_panel .share_text a {
+	color: #D0D0D0;
+}
+
+#prescreening_panel_main {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/prescreen_bg.png") repeat scroll left top transparent;
+    border-radius: 5px 5px 5px 5px;
+    height: 500px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    position: absolute;
+    width: 640px;
+    z-index: 1000;
+}
+
+#prescreening_panel_main.movietime {
+	height: 385px;
+}
+
+#prescreening_panel_main h5 {
+    border-bottom: 0 none !important;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px !important;
+    text-transform: none;
+}
+
+.screening_wrapper {
+	/*margin:155px 0px 0px 20px; */
+	margin: 0px auto;
+	padding-top: 50px;
+  width: 400px;  
+  text-align:center;
+}
+.screening_still {
+	/*margin:155px 0px 0px 20px; */
+	margin: 0px auto;
+	margin-top: 0px;
+  width: 400px; 
+  padding: 20px; 
+  background: #ffffff; 
+  text-align:center;
+}
+
+#screening_purchase {
+float: left;
+height: 550px;
+left: 240px;
+overflow: hidden;
+position: absolute;
+top: 0;
+width: 440px;
+}
+
+#screening_purchase table.step_one, #screening_purchase table.step_two  {
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	float: left;
+	width: 380px;
+	overflow: hidden;
+}
+
+#screening_purchase table.step_two {
+	left: 500px;
+}
+
+#in_progress {
+	position: absolute;
+	margin-left: 520px;
+	margin-top: -30px;	
+}
+
+.bandwidth_warning {
+	position: absolute;
+	left: 420px;
+	top: 45px;
+}
+
+.pre_image {
+	float: left;
+	width: 200px;
+}
+
+.pre_content {
+	float: left;
+	width: 400px;
+}
+
+.pre_by {
+	color: #D1CFD0;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.pre_host {
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	color: #72CCEE;
+	font-size: 24px;
+	margin-right: 20px
+}
+
+.pre_info {
+	float: left;
+	color: #D1CFD0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.pre_director {
+	float: left;
+	color: #D1CFD0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.pre_ticket {
+	color: #D0D0D0;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.pre_price  {
+	color: #27B206;
+}
+
+.pre_code {
+	margin-top: 10px;
+}
+
+.pre_enter {
+	color: #D0D0D0;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.pre_pfl {
+	color: #D0D0D0;
+	font-size: 11px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.pre_pfl label {
+	font-weight: bold;
+}
+
+.pre_pfl input {
+	padding: 3px;
+	margin-top: 4px;
+}
+
+.pre_pfl select {
+	padding: 2px;
+}
+
+.pre_pfl ul {
+	margin-top: 4px;
+}
+
+.pre_pfl input, .pre_pfl select {
+	margin-top: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.pre_fb {
+	font-size: 11px;
+	color: #99CCFF;
+	text-transform: uppercase;
+}
+
+.pre_fb label {
+	font-weight: bold;
+}
+
+#fld-cc_exp_month {
+	width: 50px;
+}
+
+#fld-cc_exp_year {
+	width: 80px;
+}
+
+.prescreen_notice {
+		clear: both;
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/prescreen_notice.png") no-repeat scroll left top transparent;
+    color: black;
+    float: left;
+    height: 69px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 430px;
+}
+
+.prescreen_purchase {
+	margin-top: 20px;
+	margin-left: 18px;
+	float: left;
+}
+
+.purchase_last {
+	margin-top: 2px;
+	float: left;
+
+}
+.purchase_next,.purchase_last {
+		border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+
+}
+#purchase_submit {padding:0; margin-left: 10px;}
+
+
+#purchase_offers {
+    background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/prescreen_bg.png") no-repeat scroll left top transparent;
+    border-radius: 5px 5px 5px 5px;
+    float: right;
+    left: 690px;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    width: 260px;
+
+}
+
+
+
+.bottomblock {
+	width: 100% important;
+	height: 122px;
+	margin-right: 340px;
+	padding-top: 5px;
+	padding-left: 13px;
+	padding-right: 13px;
+}
+
+/*
+body.landing .footer {
+	float: left;
+	height: 122px !important;
+}
+
+.bottomblock {
+	width: 100% important;
+	height: 122px !important;
+	margin-right: 300px;
+	background: url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_bg.png') repeat-x top left;
+	padding-top: 5px;
+	padding-left: 13px;
+	padding-right: 13px;
+}
+*/
+
+.countblock {
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 10px;
+	float: right;
+	color: white;
+	margin-right: 4px;
+	padding-top: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+.userblock {
+	position: absolute;
+	width: 550px;
+	height: 68px;
+	overflow: hidden;
+	margin-left: 20px;
+	margin-right: 40px;
+}
+
+#user_wrap_left {
+	position: absolute;
+	top: 21px;
+	width: 13px;
+	height: 30px;
+}
+
+.bottomblock #theater_icons {
+	position: absolute;
+	left: 0px;
+	width: 10000px;
+}
+
+.bottomblock .theater_icon {
+	/*float: left;*/
+	padding: 7px;
+	position: absolute;
+	/*float: left;*/
+}
+
+.colorme_user {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.small-icons .colorme_user {
+	width: 28px;
+}
+.large-icons .colorme_user {
+	width: 50px;
+}
+
+.small-icons .theater_icon {
+	width: 28px;
+	padding: 2px;
+}
+
+.large-icons .theater_icon {
+	width: 50px;
+	padding: 7px;
+}
+
+#user_wrap_right {
+	position: absolute;
+	top: 21px;
+	right: 390px;
+	width: 13px;
+	height: 30px;
+}
+
+.userblock .theater_icon .color_node {
+	position: absolute;
+	top: 18px;
+	margin-left: -40px;
+}
+
+.userblock .theater_icon .color_node_small {
+	position: absolute;
+	top: 18px;
+	margin-left: -29px;
+	margin-top: 10px;
+}
+
+.colorblock {
+	position: absolute;
+	float: left;
+	top: 70px;
+}
+
+.colorblock .colorme {
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 10px;
+	float: left;
+	margin-top: 17px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	margin-right: 20px;
+}
+
+.colorblock .color_icon {
+	float: left;
+	margin-top: 5px;
+	margin-right: 20px;
+	width: 39px;
+	height: 34px;
+}
+
+.colorblock a .happy {
+	background-image: url('../images/bg/colorme.png');
+	background-repeat: no-repeat;
+	background-position: -4px -6px;
+}
+
+.colorblock a:hover .happy {
+	background-image: url('../images/bg/colorme.png');
+	background-repeat: no-repeat;
+	background-position: -4px -54px;
+}
+
+#theater_icons div.happy {
+	background-image: url(../images/bg/colorme-shadow-64.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#inbox .happy_med {
+background-image: url(../images/bg/colorme-shadow-48.png);
+background-repeat: no-repeat;
+background-position: -1px -1px;
+}
+
+#theater_icons.small-icons div.happy {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/happy_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .sad {
+	background-image: url('../images/bg/colorme.png');
+	background-repeat: no-repeat;
+	background-position: -54px -6px;
+}
+
+.colorblock a:hover .sad {
+	background-position: -54px -54px;
+}
+
+#theater_icons div.sad {
+background-image: url(../images/bg/colorme-shadow-64.png);
+background-repeat: no-repeat;
+background-position: -64px 0;
+}
+
+#inbox .sad_med {
+    background-image: url(../images/bg/colorme-shadow-48.png);
+    background-repeat: no-repeat;
+    background-position: -51px -1px;
+}
+
+#theater_icons.small-icons div.sad {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/sad_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .wow {
+background-image: url('../images/bg/colorme.png');
+background-repeat: no-repeat;
+background-position: -104px -6px;
+}
+
+.colorblock a:hover .wow {
+	background-position: -104px -54px;
+}
+
+#theater_icons div.wow {
+background-image: url(../images/bg/colorme-shadow-64.png);
+background-repeat: no-repeat;
+background-position: -128px 0;
+
+}
+
+#inbox .wow_med {
+background-image: url(../images/bg/colorme-shadow-48.png);
+background-repeat: no-repeat;
+background-position: -101px -1px;
+}
+
+#theater_icons.small-icons div.wow {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/wow_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .none {
+    background-image: url('../images/bg/colorme.png');
+    background-repeat: no-repeat;
+    background-position: -154px -6px;
+}
+
+.colorblock a:hover .none {
+    background-position: -154px -54px;
+}
+
+#theater_icons div.none {
+    background-image: url(../images/bg/colorme-shadow-64.png);
+    background-repeat: no-repeat;
+    background-position: 0 -64px;
+
+}
+
+#inbox .none_med {
+background-image: url(../images/bg/colorme-shadow-48.png);
+background-repeat: no-repeat;
+background-position: -1px -51px;
+}
+
+#theater_icons.small-icons div.none {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/none_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .heart {
+    background-image: url('../images/bg/colorme.png');
+    background-repeat: no-repeat;
+    background-position: -212px -6px;
+}
+
+.colorblock a:hover .heart {
+    background-position: -212px -54px;
+}
+
+#theater_icons div.heart {
+    background-image: url(../images/bg/colorme-shadow-64.png);
+    background-repeat: no-repeat;
+    background-position: -64px -64px;
+
+}
+
+#inbox .heart_med {
+background-image: url(../images/bg/colorme-shadow-48.png);
+background-repeat: no-repeat;
+background-position: -51px -51px;
+}
+
+#theater_icons.small-icons div.heart {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/heart_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .quest {
+    background-image: url('../images/bg/colorme.png');
+    background-repeat: no-repeat;
+    background-position: -264px -6px;
+}
+
+.colorblock a:hover .quest {
+    background-image: url('../images/bg/colorme.png');
+    background-repeat: no-repeat;
+    background-position: -264px -54px;
+}
+
+#theater_icons div.quest {
+    background-image: url(../images/bg/colorme-shadow-64.png);
+    background-repeat: no-repeat;
+    background-position: -128px 128px;
+}
+
+#inbox .quest_med {
+background-image: url(../images/bg/colorme-shadow-48.png);
+background-repeat: no-repeat;
+background-position: -101px -51px;
+}
+
+#theater_icons.small-icons div.quest {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/quest_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.theater-user-tip {
+    background: url(../images/bg/tooltip-medium.png) 0 0 no-repeat;
+    width: 122px;
+    height: 20px;
+    line-height: 24px;
+    font-size: 12px;
+    padding: 6px 6px 27px;
+    margin-left: -20px;
+    text-align:center;
+    margin-top: 10px;
+}
+
+.theater-user-tip-footer {
+	position: absolute;
+	color: white!important;
+	/*margin-top: -50px;*/
+}
+
+.theater-user-tip .reply {
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 8px;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+    color: #000;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    line-height: 20px;
+    position: absolute;
+    display: inline-block;
+    right: 6px;
+    top: 6px;
+    background-color: #ededed;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#bbbbbb));   
+    background-image: -webkit-linear-gradient(top, #fff, #bbbbbb); 
+    background-image: -moz-linear-gradient(top, #fff, #bbbbbb);
+}
+
+
+.pops {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+       z-index: 1021;
+}
+
+.modal, #fancybox-overlay {
+    background: url(../images/bg/overlay.png) 0 0 repeat;
+    height: 100%;
+    left: 0;
+/*    opacity: 0.6;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1020;
+}
+
+
+#log-in {
+    
+}
+ 
+#log-in .sublabel {
+    margin: 20px 0;
+    color: #565656;
+    
+}
+#log-in  h4 {
+    margin-bottom: 6px;
+    font-family: "helveticaneuelight",verdana,helvetica,sans-serif;
+  font-size: 30px;
+  text-align: left;
+  text-transform: none;
+  }
+#log-in h4 + p {
+    margin: 20px 0;
+    color: #565656;
+    margin-top: 6px;
+}
+
+
+#log-in .label, #sign-up .label, #password-out .label {
+    display: block;
+    color: #565656;
+    font-size: 14px;
+    margin-bottom: 6px;
+/*    text-transform: uppercase;*/
+    font-family: "helveticaneuelight",verdana,helvetica,sans-serif;
+    font-weight: normal;
+    /*margin-top: 12px;*/
+}
+
+
+#log-in input[type=text] , #log-in input[type=password] , #sign-up input[type=text], #sign-up input[type=password], #password-out input[type=text]{
+    width: 350px;
+    padding: 12px;
+    font-size: 14px;
+    background: #fff;
+
+    -moz-box-shadow: inset 0 5px 5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 5px 5px rgba(0,0,0,0.1);
+    box-shadow:inset 0 5px 5px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: solid 1px #bfbfbf;
+    background: #ffffff!important;
+}
+
+/*.input_wm {
+    background: #fff;
+}*/
+#log-in input[type=text]:focus , #log-in input[type=password]:focus, #sign-up input[type=password]:focus, #sign-up input[type=text]:focus, #password-out input[type=text]:focus , .input_wm:focus{
+    background: #f0f0f0!important;
+}
+
+
+.form_theater td {
+    color: #D0D0D0;
+    font-size: 11px;
+}
+.form_theater {
+            text-transform: uppercase;
+    
+}
+.form_theater input[type="text"], .form_theater textarea, .form_theater select {
+    border: 1px solid #BFBFBF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;    
+    box-shadow:0 5px 5px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 5px 5px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow:0 5px 5px rgba(0, 0, 0, 0.1) inset;
+    font-size: 14px;
+    padding: 5px 5px;
+    font-family: Helvetica, Arial, sans-serif;
+     resize: none;
+}
+
+#screening_purchase table.step_two {
+    width: 380px;    
+}
+
+.purchase_form_invite {
+    float: left;
+    width: 220px;
+    margin-bottom: 0;
+}
+
+.purchase_form_coupon {
+    float: left;
+    width: 160px;
+    margin-bottom: 0;
+}
+.purchase_form_coupon input {
+    width: 70px;
+    margin-right: 10px;
+}
+
+.purchase_form_ticket_price {
+    padding: 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.mrt {
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+
+body.landing .column2 .purchase_form_invite p {
+    text-transform: none;
+    font-size: 12px;
+    font-family: "helveticaneuelight",verdana,helvetica,sans-serif;
+    margin-bottom: 10px;
+}
+
+.form_theater .button_invite_email, .form_theater .button_invite_facebook {
+    text-transform: none!important;
+}
+.form_theater .button_invite_email {
+    margin-left: 4px;
+}
+.form_theater td.purchase_form_ticket_price {
+        font-size: 14px;
+    
+}
+.form_theater td.purchase_form_ticket_price span.ticket_prices {
+    display: block;
+    margin-top: 6px;
+}
+
+.purchase_form_ticket_price .total {
+    font-size: 18px;
+}
+.purchase_form_ticket_price .price {
+    color: #40B325;
+    font-weight: bold;
+}
+.purchase_form_ticket_price .count_friends {
+    color: #3a5896;
+}
+#main-login-popup  #login_password {margin-bottom:10px;}
+
+.footer {
+	height: 122px;
+}
+
+.footer .exit {
+    background: url("../images/bg/exit-theater.png") no-repeat scroll 0 0 transparent;
+    bottom: 18px;
+    display: block;
+    height: 25px;
+    position: absolute;
+    right: 505px;
+    text-indent: -999999px;
+    width: 122px;
+}
+
+.bandwidth_warning {
+    display: block;
+    left: 410px;
+    position: absolute;
+    top: 58px;
+    width: 259px;
+}
+
+
+
+/*
+form
+*/
+
+
+.reqs {
+  display: none;
+}
+
+#film,
+#host,
+#port,
+#room,
+#instance,
+#seat,
+#userid,
+#pairid,
+#toid,
+#location,
+#adminmessage-pairid,
+#adminmessage-owner,
+#adminmessage-toid {
+  visibility: hidden;
+}
+
+#status_panel {
+  display: none;
+  /*
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 160px;
+  color: #eee;
+  font-size: 11px;
+  border: 1px solid #eee;
+  z-index: 100;
+  */
+}
+#movie_trailer_container {
+    width: 420px;
+    height: 242px;
+    margin: 1px auto 1em;
+}
+
+
+#import-contacts-container, #host-import-contacts-container, .subscription_buttons {
+  border-top: 4px solid #CC6600;
+  border-bottom: 4px solid #CC6600;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#import-contacts-container h4, #host-import-contacts-container h4 {
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.import_field {
+  font-size: 11px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.border_under {
+  border-bottom: 4px solid #6494C5;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.add_invite {
+  width: 170px !important;
+}
+
+#host_add_invite, #add_invite {
+  width: 200px !important;
+  height: 14px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-top: 1px;
+}
+
+#host_add_invite form textarea, #add_invite form textarea {
+  width: 140px;
+  height: 12px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#host_add_invite form button, #add_invite form button {
+  background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top;
+  height: 14px;
+  font-size: 10px;
+  color: white;
+  padding: 0px 2px 3px 2px;
+  margin-left: 4px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  border: 0px;
+}
+
+#accepted-invites-container, #host-accepted-invites-container, #fld-invites-container, #host-fld-invites-container {
+	width: 215px;
+	height: 215px;
+	padding: 6px 3px 0 0;
+	background: #fff;
+	overflow-y: auto;
+	float: left;
+}
+#fld-invites-container li, #host-fld-invites-container li, #accepted-invites-container li, #host-accepted-invites-container li {
+	background-color: #EFF2F7;
+	border: 1px solid #CCD5E4;
+	float: left;
+	padding: 2px 12px 2px 2px;
+	margin: 0 4px 2px 5px;
+	position: relative;
+	font-size: 10px;
+	width: 170px;
+	overflow: hidden;
+}
+#fld-invites-container li div, #host-fld-invites-container li div, #accepted-invites-container li div, #host-accepted-invites-container li div {
+	width: 160px;
+	overflow: hidden;
+	color: #383838;
+}
+
+#fld-invites-container li div, #host-fld-invites-container li div {
+  position: relative;
+  float: left;
+}
+
+#fld-invites-container li div img, #host-fld-invites-container li div img {
+  margin-right: 4px;
+}
+
+#fld-invites-container li a.add-btn, #host-fld-invites-container li a.add-btn{
+  /*position: absolute;*/
+  position: relative;
+  float: left;
+	background: none;
+	text-align: right;
+	top: -5px;
+	left: 4px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #339900;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+
+#accepted-invites-container li a.remove-btn, #host-accepted-invites-container li a.remove-btn {
+  position: absolute;
+	background: none;
+	top: 0px;
+	right: 1px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #ff0000;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+.soc_message {
+  float: left;
+  width: 480px;
+  margin-bottom: 20px;
+}
+.soc_message .btn_small {
+  margin-right: 10px;
+}
+.host-invite {
+  height: 50px !important;
+  width: 480px !important;
+}
+#preview-invite-popup { 
+	position: absolute;
+  width: auto;
+	height: 432px;;
+	left: 70px; /* temporary */
+	top: 200px;
+	padding: 10px;
+	z-index: 400;
+	padding: 10px;
+	background: white;
+}
+
+.popup .close-bar #close-preview-invite-popup {
+	/*margin-bottom: 10px;
+	text-align: right;
+	float: right;
+	right: 5px;*/
+	/*RIGHT: -405px; FLOAT: right; POSITION: relative*/
+	right: 12px! important;
+	position: absolute;
+	top: 11px! important;
+}
+
+#inviting-popup {
+  position: absolute;
+  margin: 0px auto;
+  width: 391px;
+	height: 150px;
+	top: 500px;
+	padding: 10px;
+	padding-top: 50px;
+	background: #000;
+	border: 3px solid white;
+	z-index: 200;
+}
+
+#already-invited-popup .popup-content { 
+	height: 165px;
+}
+#already-invited-popup .popup-content div{ 
+	overflow: auto;
+}
+#already-invited-popup .popup-content p {
+	color: #FFF;
+}
+#already-invited-popup .email-item {
+	font-weight: bold;
+	margin-top: 3px;
+}
+#already-invited-popup .email-items-list {
+	overflow: auto;
+	height: 85px;
+}
+#view-already-invited { cursor: pointer; }
+#after-screening-popup #recommendation h2{
+	font-size: 17px;
+	margin: 37px;
+}
+
+ul.cclist, ul.cclist li {
+  float: left;
+  list-style: none;
+  display: inline;
+  margin-right: 3px;
+}
+
+#contacts-loading-area, #host-contacts-loading-area {
+	display: none;
+	text-align: center;
+	clear: both;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+#grab-contacts, #host-grab-contacts {
+  margin-top: 10px;
+}
+
+div.growlUI { 
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/Neu/24x24/actions/dialog-cancel.png') no-repeat 10px 10px;
+}
+div.growlUI h1 {
+  padding: 10px 5px 0px 45px; 
+  text-align: left;
+  font-size: 20px;
+  color: red;
+}
+div.growlUI h2 {
+  font-size: 12px;
+  color: yellow;
+}
+
+.drop_genre {
+  display: none;
+  position: absolute;
+  margin-top: 1px;
+  width: 135px;
+  z-index: 200;
+  background: white;
+  padding: 10px 10px 10px 30px;
+  font-size: 11px;
+}
+
+.drop_genre li {
+  width: 125px;
+  height: 14px;
+  color: #000033;
+  background: white;
+  text-transform: uppercase;
+  padding: 1px 0px 1px 0px;
+}
+
+.drop_genre li:hover {
+  width: 125px;
+  height: 14px;
+  color: #cc6600;
+  background: white;
+  text-transform: uppercase;
+}
+
+.screening_list li {
+  padding-bottom: 34px;
+}
+
+.showtimes {
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  z-index: 50;
+}
+
+.screening_list {
+  height: 310px;
+  overflow: hidden;
+}
+
+.one_column .screening_list {
+  width: 380px;
+}
+
+.one_column .screening_list ul {
+  width: 360px;
+}
+
+.two_column .screening_list {
+  width: 380px;
+}
+
+.two_column .screening_list ul {
+  width: 360px;
+}
+
+.screening_list ul {
+  margin-left: 20px;
+}
+
+.jspPane {
+  margin-left: 0px !important;
+}
+.jspVerticalBar {
+  left: 0px !important;
+}
+.landing .jspPane {
+  margin-left: 10px !important;
+}
+.jspDrag {
+  background: #cc6600 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_arrow.gif') no-repeat top !important;
+}
+.two_column .jspTrack, .landing .jspTrack {
+  background: #303033  url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_1.png') repeat-y right top !important;
+  background-color: transparent !important;
+}
+.landing #chat_panel .jspTrack {
+  background-color: transparent !important;
+}
+.one_column .jspTrack {
+  background: #000033  url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back.png') repeat-y right top !important;
+}
+
+.jclock {
+  float: left;
+  width: 100px;
+}
+
+#growler {
+  margin-left: -100px;
+  float: left;
+}
+#growler_body {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.error_notice {
+  text-align: left !important;
+}
+
+.error_notice h2 {
+  font-weight: bold;
+}
+.friggin_squished {
+  padding-top: 0px !important;
+}
+.static_content {
+  float: left;
+  padding-bottom: 40px;
+}
+
+.static_content p {
+  font-weight: normal !important;
+  color: white !important;
+  padding-bottom: 15px !important;
+}
+
+.static_content a {
+  color: #99CCFF !important;
+}
+
+.static_content ol, .static_content ul {
+  font-weight: normal !important;
+  margin-left: 50px !important;
+  width: 80%;
+  padding-bottom: 15px !important;
+}
+
+#send_popup, #write_popup {
+  margin-top: 10px;
+}
+
+.scroll_film_info {
+  height: 200px;
+}
+.filminfowrap {
+  margin-left: 10px !important;
+  margin-bottom: 10px;
+}
+
+#prescreening_panel_main {
+  position: absolute;
+  left: 0px;
+  /*width: 100%;*/
+}
+#prescreening_panel_main .prescreening_left {
+  float:left;
+  width: 300px;
+  text-align: right;
+  padding-right: 30px
+}
+#prescreening_panel_main .prescreening_center{
+  padding: 20px 400px;
+}
+#prescreening_panel_main .prescreening_right {
+  float:right;
+  width:300px;
+  text-align: center;
+  padding-right: 80px;
+}
+#hometime {
+  position: absolute;
+  margin-top: -50px;
+  width: 500px;
+  left: 0;
+}
+
+#hometime .buzz h5 {
+  font-size: 12px;
+  border-bottom: 0px !important;
+  float: left;
+  position: relative;
+}
+#hometime .buzz #current-time {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+}
+#hometime .buzz #current-time-pick {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+  margin-top: -5px;
+}
+.one_column #timezone-select-popup {
+  clear: both;
+  position: absolute;
+  top: -300px;
+}
+.one_column #timezone-select-popup p {
+  font-size: 14px;
+}
+body.landing .column2 .screening_still p {
+	color: #000000 !important; 
+}
+body.landing .column2 .screening_still p a {
+	color: #330099 !important; 
+}
+.widget_video_still {
+	width:420px;
+	margin:0px auto;
+	text-align:left;
+	overflow: hidden;
+}
+.bandwidth_warning {
+	color: red;
+	text-transform: uppercase;
+}
+/********** END MAIN CSS ***************/
+/********** START SCROLLPANE CSS ***************/
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #dde;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+.show_log {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 200;
+  width: 230px;
+  height: 18px;
+  border: 1px solid grey;
+  background: #000000;
+  padding: 2px;
+}
+
+.show_log a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/* Theater */
+
+.theater-block {
+    margin: 10px 0 0 20px;
+    padding: 20px;
+    width: 640px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: rgba(0,0,0,0.3);
+	color: #fff;
+	text-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.theater-vow-ticket-holder-icon {
+	position: absolute;
+	left: 10px;
+	top: -6px;
+}
+.theater-block.theater-vow-ticket-holder {
+	font-size: 32px;
+	line-height: 34px;
+	padding: 10px 0 10px 100px;
+	position: relative;
+	width: 580px;
+	margin-bottom:-6px;
+	font-weight: bold;
+}
+
+.lobby-details {
+	margin-left: 220px;
+	color: #fff;
+	font-size: 14px;
+}
+.lobby-details .title {
+	font-size: 32px;
+	line-height: 34px;
+	margin-bottom: 20px;
+}
+.lobby-details .host {
+	color: #7bc7e6;
+	font-size: 24px;
+	line-height: 28px;
+	margin-bottom: 20px;
+	font-weight: lighter;
+}
+.lobby-details .host span {
+	display: block;
+	font-size: 14px;
+	line-height: 18px;
+	color: #999;
+	margin-bottom: 4px;
+}
+.lobby-details .description {
+	line-height: 18px;
+	margin-bottom: 20px;
+}
+
+/* temp */
+.button_orange { display: inline-block;}
+
+	#help {
+	    color: #C0C0C0;
+	    font-size: 14px;
+	    line-height: 24px;
+	    /*position: absolute;*/
+	    /*right: 298px;*/
+	    /*top: 5px;*/
+	    float:left;
+	    z-index: 999;
+	    margin: 5px 5px 0 0;
+	    width: 88px;
+	}

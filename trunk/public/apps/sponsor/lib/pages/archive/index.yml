@@ -1,0 +1,14 @@
+template: yui1
+layout: index
+title: Constellation.tv
+javascripts: [/js/upcoming.js,/js/login.js,/js/carousel.js]
+css: [/css/main_last.css,/js/jquery/ui/themes/smoothness/jquery-ui-1.8.1.custom.css]
+widgets:
+  hd:
+    Header:
+  col02:
+    LegacyBody:
+    Body:
+  ft:
+    Footer:
+  zzdiv:

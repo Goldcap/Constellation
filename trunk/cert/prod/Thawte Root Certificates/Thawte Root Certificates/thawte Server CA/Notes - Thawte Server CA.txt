@@ -1,0 +1,2 @@
+
+The Thawte Server CA issues Domain Validated SSL certs.

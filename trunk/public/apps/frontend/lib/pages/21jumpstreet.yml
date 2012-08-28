@@ -1,0 +1,14 @@
+template: cst1_home
+layout: cst_home_alt
+title: Constellation | Your Online Movie Theater
+javascripts: []
+css: [/css/pages/21jumpstreet.css]
+widgets:
+  masterhead:
+    HeaderAlt:
+  content:
+    TwentyOneJumpStreet:
+  footer:
+    FooterAlt:
+  zzdiv:
+    GoogleAnalytics:

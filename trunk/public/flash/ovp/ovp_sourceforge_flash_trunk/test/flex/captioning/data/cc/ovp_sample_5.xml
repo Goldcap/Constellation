@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+		<head>
+		<!-- 
+			This sample specifies style id's in the xml namespace.
+		-->
+			<styling>
+				<style xml:id="bgc_lb" tts:backgroundColor="#08089a"/> 
+				<style xml:id="bgc_named" tts:backgroundColor="magenta"/>
+		</styling>
+		</head>
+		<body>
+			<div xml:lang="en">
+				<p begin="00:00:00" dur="00:00:03">There is no style on this text showing at 0 secs for 3 secs.</p>
+				<p begin="00:00:05" dur="00:00:03" style="bgc_named">This caption changes the background color to magenta and lasts for 3 secs.</p>
+				<p begin="00:00:08" style="bgc_lb">This caption changes the background color to light blue.</p>
+			</div>
+		</body>
+</tt>

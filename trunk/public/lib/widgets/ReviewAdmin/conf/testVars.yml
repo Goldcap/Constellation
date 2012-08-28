@@ -1,0 +1,53 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+  
+dbc:
+  screening: 
+    vars:
+      setScreeningUniqueKey: "abcdef"
+      setScreeningDate: "2010-01-01"
+      setScreeningTime: "00:00:00"
+      setScreeningDefaultTimezoneId: "America/New_York"
+      setFkHostId: =user:getUserId
+      setFkFilmId: 4
+      setScreeningHasQanda: 0
+      setScreeningLiveWebcam: 0
+      setScreeningDescription: "Some Description"
+      setScreeningFeatured: 1
+      setScreeningPaidStatus: 2
+      setScreeningTotalSeats: 100
+      setScreeningType: 2
+      setScreeningIsPrivate: 0
+  audience:
+    vars:
+      setAudiencePaidStatus: 2
+      setFkUserId: =user:getUserId
+      setFkScreeningId: =dbc:getScreeningId:screening
+      setFkScreeningUniqueKey: =dbc:getScreeningUniqueKey:screening
+      setFkPaymentId: 0
+      setAudienceStatus: 1
+      setAudienceUsername: =user:getUserUsername
+  
+get:
+  op: detail
+  id: =dbc:getAudienceId:audience
+post:
+  audience_review: "Some Test Review"
+  audience_review_status: 1
+  audience_id: =dbc:getAudienceId:audience
+session:
+action:
+  styroaction: submit
+
+dbo:
+  audience: 
+    key: audience_id
+    vars:
+      getAudienceReview: =post:audience_review
+      getAudienceReviewStatus: =post:audience_review_status
+      getAudienceId: =post:audience_id

@@ -1,0 +1,6 @@
+template: blank
+layout: forward
+title: Constellation.tv Login
+widgets:
+  page:
+    forward:

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/sql/oracle
+END
+OracleDDLBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/sql/oracle/OracleDDLBuilder.php
+END
+OracleDataSQLBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/sql/oracle/OracleDataSQLBuilder.php
+END

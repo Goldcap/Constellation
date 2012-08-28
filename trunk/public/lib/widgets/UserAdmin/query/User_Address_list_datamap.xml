@@ -1,0 +1,27 @@
+<map table="user_address" result="Address">
+  <column column="user_phone" name="Phone" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_address" name="Address" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="user_address_2" name="Address2" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="user_city" name="City" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="user_state" name="State" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="user_zip" name="Zip" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="user_country" name="Country" type="VARCHAR" size="255" key="" order="8"></column>
+  <column column="fk_user_id" type="INTEGER" size="" key="" order="10" format="[edit]"></column>
+  <column column="user_address_id" type="INTEGER" size="" key="PRI" order="9" hidden="true"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="user_address_id"></ascorderby>
+    <criteria scope="GET" value="id" column="fk_user_id" />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="fk_user_id" base="/user/address/detail/">
+      <attribute name="user_address_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

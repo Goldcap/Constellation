@@ -1,0 +1,250 @@
+<widget name="UserAdmin" baseurl="/modules/UserAdmin/">
+  <content>
+    <AFORM>
+      <FORMNAME>LogSearch</FORMNAME>
+      <FORMACTION noenc="true" raw="true">/log/search</FORMACTION>
+      <FORMMETHOD>GET</FORMMETHOD>
+      <JSVALIDATE>TRUE</JSVALIDATE>
+      <FORMCLASS>orders</FORMCLASS>
+      <SERVERVALIDATE>TRUE</SERVERVALIDATE>
+      <PASSTHROUGHVALUES>TRUE</PASSTHROUGHVALUES>
+      <QUERYVALUES>TRUE</QUERYVALUES>
+      <SHOWERRORS>FALSE</SHOWERRORS>
+      <REQS>FALSE</REQS>
+      <FORMELEMENTGROUP class="row padded_top">
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Enter Ticket:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>log_term</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>text</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>notEmpty</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>search</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>submitimage</TYPE>
+          <DEFAULT>/images/submit.gif</DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS></DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>.</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1 white</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>errors</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT>Info and Higher</DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="-1">Debug and Higher</VALUE>
+          <VALUE value="0">Info and Higher</VALUE>
+          <VALUE value="1">Warning and Higher</VALUE>
+          <VALUE value="2">Error and Higher</VALUE>
+          <VALUE value="3">Fatal</VALUE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Start Date:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>log_start_date</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>jquery_anytime</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>TIMESTAMP</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>"%Y-%m-%d"</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>End Date:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>log_end_date</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>jquery_anytime</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>TIMESTAMP</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>"%Y-%m-%d"</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <!--<FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Film Status:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>user_order_status</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT value="[-10 TO 3]">All Orders</DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="3">Captured</VALUE>
+          <VALUE value="2">Approved</VALUE>
+          <VALUE value="1">Approved Review</VALUE>
+          <VALUE value="0">Declined Review</VALUE>
+          <VALUE value="-1">Declined</VALUE>
+          <VALUE value="-2">Bad CC/Bad Exp</VALUE>
+          <VALUE value="[ -10 TO -3 ]">Other Declined</VALUE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Order Process:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>user_order_process</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT value="[ 0 TO 2 ]">All Orders</DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="2">Shipped (Downloaded)</VALUE>
+          <VALUE value="1">To Be Shipped</VALUE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Order Type:</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>order_download</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT value="[ 0 TO 1 ]">All Orders</DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="1">Downloads</VALUE>
+          <VALUE value="0">Store</VALUE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>orders</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>html</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS>twocol</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>-->
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hr</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>linebreak_float</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>errornotice</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>errornotice</TYPE>
+          <DEFAULT>Please complete fields outlined in red.</DEFAULT>
+          <CLASS>errornotice</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+    </AFORM>
+  </content>
+</widget>

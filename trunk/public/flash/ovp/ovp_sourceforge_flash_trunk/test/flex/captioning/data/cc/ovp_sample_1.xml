@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+		<head>
+		<!-- 
+			This sample is very simple, it has a style tag for all styles we support and there is one style per caption. 
+		-->
+			<styling>
+				<style id="bgc_lb" tts:backgroundColor="#08089a"/> 
+				<style id="bgc_named" tts:backgroundColor="magenta"/>
+				<style id="bgc_default" tts:backgroundColor="0x000000"/>
+				<style id="red" tts:color="#ff0000"/>
+				<style id="ff_co" tts:fontFamily="Courier"/> <!-- todo: support generic family names -->
+				<style id="fsz_default" tts:fontSize="11px"/>
+				<style id="fsz_big" tts:fontSize="20px"/>
+				<style id="fsi" tts:fontStyle="italic"/>
+				<style id="fs_default" tts:forntStyle="normal"/>
+				<style id="fwb" tts:fontWeight="bold"/>
+				<style id="tal" tts:textAlign="left"/>
+				<style id="tac" tts:textAlign="center"/>
+				<style id="tar" tts:textAlign="right"/>
+				<style id="ww0" tts:wrapOption="noWrap"/>
+				<style id="ww1" tts:wrapOption="wrap"/>  
+			</styling>
+		</head>
+		<body>
+			<div xml:lang="en">
+				<p begin="00:00:00" dur="00:00:03">There is no style on this text showing at 0 secs for 3 secs.</p>
+				<p begin="00:00:05" dur="00:00:03" style="bgc_named">This caption changes the background color to magenta and lasts for 3 secs.</p>
+				<p begin="00:00:08" style="bgc_lb">This caption changes the background color to light blue.</p>
+				<p begin="00:00:11" end="00:00:16" style="red">This text is red and shows at 11 secs until 16 secs.</p>
+				<p begin="00:00:18" style="bgc_default">This caption changes the background color back and shows at 18 secs and lasts until the next caption.</p>
+				<p begin="00:00:23" style="ff_co">This caption changes the font to Courier and shows at 23 secs and lasts until the next caption.</p>
+				<p begin="00:00:30" style="fsz_big">Big caption</p>
+				<p begin="00:00:35" style="fsz_default">Putting the font back to default size.</p>
+				<p begin="00:00:40" style="fsi">Changing font style to italic.</p>				
+				<p begin="00:00:50" style="fs_default">Changing font style back to normal.</p>
+				<p begin="00:00:55" dur="00:00:10" style="fwb">This text is bold and shows at 55 secs until 65 secs.</p>
+				<p begin="00:01:15" style="tac">Centered text.</p>	
+				<p begin="00:01:25" style="tar">Right-aligned text.</p>
+				<p begin="00:01:30" style="tal">Left-aligned text.</p>	
+				<p begin="00:01:40" style="ww0">This text should not wrap, the sentence is very long and should not be wrapping under any circumstance should this text wrap, really, it should not be wrapping.</p>
+				<p begin="00:01:50" end="00:02:00" style="ww1">This text should wrap, the sentence is very long and should be wrapping. Yes this text should wrap, really, it should be wrapping.</p>
+
+			</div>
+		</body>
+</tt>

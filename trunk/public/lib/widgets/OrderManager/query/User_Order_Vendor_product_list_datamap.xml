@@ -1,0 +1,43 @@
+<map table="user_order_product" result="user_order_product_list_datamap" docount="false">
+  <column column="fk_user_order_id" type="INTEGER" size="" key="" order="1"></column>
+  <column column="fk_product_id" type="INTEGER" size="" key="" order="2"></column>
+  <column column="fk_product_name" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="fk_product_sku" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="fk_product_vendor_id" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="fk_artist_fname" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="fk_artist_lname" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="fk_product_image_path" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="fk_user_id" type="INTEGER" size="" key="" order="8"></column>
+  <column column="user_order_product_price" type="FLOAT" size="" key="" order="9"></column>
+  <column column="user_order_product_quantity" type="INTEGER" size="" key="" order="10"></column>
+  <column column="user_order_product_weight" type="FLOAT" size="" key="" order="10"></column>
+  <column column="user_order_product_total_price" type="FLOAT" size="" key="" order="11"></column>
+  <column column="user_order_product_ship_method" type="VARCHAR" size="" key="" order="11"></column>
+  <column column="user_order_product_ship_price" type="FLOAT" size="" key="" order="11"></column>
+  <column column="fk_vendor_shipment_id" type="INTEGER" size="" key="" order="12"></column>
+  <column column="user_order_product_download" type="TINYINT" size="" key="" order="13"></column>
+  <column column="user_order_product_id" type="INTEGER" size="" key="PRI" order="14"></column>
+  <join table="product" local="fk_product_id" foreign="product_id" left="true">
+    <foreigncolumn column="product_color" type="VARCHAR" size="255" key="" order="10" />
+  </join>
+  <join table="product_type" localtable="product" local="fk_product_type_id" foreign="product_type_id" left="true">
+    <foreigncolumn column="product_type_name" type="VARCHAR" size="255" key="" order="10" />
+  </join>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="user_order_product_id"></ascorderby>
+    <criteria scope="PROCESS" value="order_id" column="fk_user_order_id"/>
+    <criteria scope="PROCESS" value="vendor_id" column="fk_product_vendor_id"/>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="fk_user_order_id" base="/user_order_product/detail/">
+      <attribute name="user_order_product_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

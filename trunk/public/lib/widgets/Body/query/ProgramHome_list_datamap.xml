@@ -1,0 +1,53 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_uid" type="INTEGER" size="11" key="PRI" order="1"></column>
+  <column column="film_id" type="INTEGER" size="11" key="PRI" order="1" format="%0d"></column>
+  <column column="film_name" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="film_synopsis" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="film_info" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="film_trailer_file" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="film_allow_user_hosting" type="TINYINT" size="255" key="" order="6" format="%0d"></column>
+  <column column="logo_type" type="TINYINT" size="255" key="" order="6"></column>
+  <column column="screening_count" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <column column="program_short_name" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <sql connection="propel">
+    <sqlselect><![CDATA[
+              select 
+              concat('p',program_id),
+              program_id,
+              program_name,
+              program_logo,
+              program_synopsis,
+              program_info,
+              film_trailer_file,
+              program_allow_user_hosting,
+              'programResources',
+              (select count(screening_id)
+              from screening
+              where screening.fk_film_id = film.film_id
+              and screening.screening_status = 2
+              and screening_date > ?
+              and fk_program_id is not null) as screening_count,
+              program_short_name
+              from film
+              inner join program
+              on program.fk_film_id = film.film_id
+              where program.program_start_date <= ?
+              and program.program_end_date >=  ?
+              and program_status = 1]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <descorderby column="screening_count"></descorderby>
+    <criteria scope="SYSTEM" value="floor_now()" type="datetime" />
+    <criteria scope="SYSTEM" value="now()" type="datetime" />
+    <criteria scope="SYSTEM" value="now()" type="datetime" />
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

@@ -1,0 +1,65 @@
+0.0.b,click,link=Log In
+0.0.b,clickAndWait,"id=""login_fb_link"""
+0.0.b,click,"id=""email"""
+0.0.b,type,"id=""email""",testt3113@gmail.com
+0.0.b,click,"id=""pass"""
+0.0.b,type,"id=""pass""",testtesttest
+0.0.b,clickAndWait,"name=""login"""
+0.0.b,assertElementPresent,"id=""loggedUser"""
+0.0.c,click,link=Log In
+0.0.c,clickAndWait,css=#login_twitter_link &gt; img
+0.0.c,click,id=username_or_email
+0.0.c,type,id=username_or_email,zangee3
+0.0.c,click,id=password
+0.0.c,type,id=password,mohamahm
+0.0.c,clickAndWait,id=allow
+0.0.c,verifyTextPresent,ahmed01
+0.0.d,click,link=Log In
+0.0.d,click,id=main-choose-signup
+0.0.d,click,id=main-signup-name
+0.0.d,type,test tester
+0.0.d,click,id=main-signup-username
+0.0.d,type,id=main-signup-username,testingtest
+0.0.d,click,"name=""month"""
+0.0.d,select,"name=""month""",Dec
+0.0.d,click,"name=""day"""
+0.0.d,select,"name=""day""",12
+0.0.d,click,"name=""year"""
+0.0.d,select,"name=""year""",label=1978
+0.0.d,click,"id=""main-signup-email"""
+0.0.d,type,"id=""main-signup-email""",ahmed@uuuu.tv
+0.0.d,click,"id=""main-signup-password"""
+0.0.d,type,"id=""main-signup-password""",xxx123
+0.0.d,click,"id=""main-signup-password2"""
+0.0.d,type,"id=""main-signup-password2""",xxx123
+0.0.d,clickAndWait,"id=""login-button"""
+0.0.d,assertElementPresent,"id=""loggedUser"""
+0.0.e,click,link=Log In
+0.0.e,click,id=login_email
+0.0.e,type,id=login_email,ahmed@constellation.tv
+0.0.e,click,id=login_password
+0.0.e,type,id=login_password,mohamahm
+0.0.e,clickAndWait,id=login_button
+0.0.e,assertElementPresent,"id=""loggedUser"""
+0.0.e,click,"id=""timezone-select"""
+0.0.e,click,"id=""tzSelectorPop"""
+0.0.e,select,"label=""Sao Paulo"""
+0.0.e,clickAndWait,"id=""timezone-button"""
+0.0.e,assertTextPresent,CLST
+2.2,click,"id=""hbr_request_button"""
+2.2,click,"id=""fld-cc_first_name"""
+2.2,type,"id=""fld-cc_first_name""",Ahmed
+2.2,click,"id=""fld-cc_last_name"""
+2.2,type,"id=""fld-cc_last_name""",Shams
+2.2,click,"id=""fld-cc_email"""
+2.2,type,"id=""fld-cc_email""",ahmed@sconstellation.tv
+2.2,click,"id=""fld-cc_confirm_email"""
+2.2,type,"id=""fld-cc_confirm_email""",ahmed@sconstellation.tv
+2.2,click,"id=""fld-cc_city"""
+2.2,type,"id=""fld-cc_city""",Clifton
+2.2,click,"id=""fld-cc_state"""
+2.2,select,"id=""fld-cc_state""","label=""New Jersey"""
+2.2,click,"name=""b_country"""
+2.2,select,"name=""b_country""","label=""United States of America"""
+2.2,click,"id=""purchase_submit"""
+2.2,assertElementPresent,"id=""startdate"""

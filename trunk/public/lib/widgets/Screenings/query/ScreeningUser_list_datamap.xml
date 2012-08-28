@@ -1,0 +1,26 @@
+<map table="audience" result="audience_list_datamap">
+  <column column="audience_id" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="audience_short_url" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="audience_screening_date" type="LONGVARCHAR" size="monthtimezone" key="" order="2" format="dateformat"></column>
+  <column column="audience_film_name" type="LONGVARCHAR" size="" key="" order="3"></column>
+  <column column="audience_screening_user_full_name" type="LONGVARCHAR" size="" key="" order="4"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="screening_date" type="AND" />
+    <criteria scope="PROCESS" value="startdate" column="screening_date" constant="native" type="AND" />-->
+    <criteria scope="SESSION" constant="native" value="user_id" column="audience_user_id" type="AND !" />
+    <criteria scope="SESSION" constant="native" value="user_id" column="audience_screening_user_id" type="AND " />
+    <criteria scope="PROCESS" constant="native" value="startdate" column="audience_screening_end_time" type="AND" />
+    <criteria value="2" column="audience_paid_status"/>
+    <ascorderby column="audience_screening_date"></ascorderby>
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <!--<ascorderby column="screening_date"></ascorderby>-->
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

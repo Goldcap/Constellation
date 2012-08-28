@@ -1,0 +1,7 @@
+template: cst1_terms
+title: Constellation | Your Online Movie Theater | Upload
+javascripts: [/js/upload.js]
+css: []
+widgets:
+  inner-container:
+    FTPUpload:

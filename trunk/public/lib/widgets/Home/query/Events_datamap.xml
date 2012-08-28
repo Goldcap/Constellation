@@ -1,0 +1,62 @@
+<map table="film" result="film_list_datamap">
+  <column column="screening_film_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="screening_film_alt_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="screening_film_makers" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <column column="screening_film_production_company" type="LONGVARCHAR" size="" key="" order="3"></column>
+  <column column="screening_film_logo" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="screening_film_homelogo" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="screening_film_trailer_file" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="screening_film_movie_file" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="screening_film_maker_message" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <column column="screening_film_ticket_price" type="FLOAT" size="10" key="" order="8"></column>
+  <column column="screening_film_status" type="TINYINT" size="4" key="" order="9" format="%0d"></column>
+  <column column="screening_film_featured" type="TINYINT" size="4" key="" order="10" format="bool"></column>
+  <column column="screening_film_created_at" type="TIMESTAMP" size="" key="" order="11" format="dateW3XMLOUT"></column>
+  <column column="screening_film_updated_at" type="TIMESTAMP" size="" key="" order="12" format="dateW3XMLOUT"></column>
+  <column column="screening_film_setup_price" type="FLOAT" size="10" key="" order="13" format="%.02f"></column>
+  <column column="screening_film_info" type="LONGVARCHAR" size="" key="" order="14"></column>
+  <column column="screening_film_cast" type="LONGVARCHAR" size="" key="" order="15"></column>
+  <column column="screening_film_running_time" type="VARCHAR" size="255" key="" order="16"></column>
+  <column column="screening_film_total_seats" type="INTEGER" size="11" key="" order="17" format="%0d"></column>
+  <column column="screening_film_short_name" type="VARCHAR" size="255" key="" order="18"></column>
+  <column column="screening_film_synopsis" type="VARCHAR" size="255" key="" order="19"></column>
+  <column column="screening_film_still_image" type="VARCHAR" size="255" key="" order="20"></column>
+  <column column="screening_film_geoblocking_enabled" type="TINYINT" size="1" key="" order="21" util="item::getGeoBlocked"></column>
+  <column column="screening_film_geoblocking_type" type="TINYINT" size="1" key="" order="22"></column>
+  <column column="screening_film_short_url" type="VARCHAR" size="255" key="" order="23"></column>
+  <column column="screening_film_id" type="INTEGER" size="11" key="PRI" order="24" format="%0d"></column>
+  <column column="screening_user_id" type="VARCHAR" size="11" key="" order="25"></column>
+  <column column="screening_highlighted" type="VARCHAR" size="11" key="" order="25"></column>
+  <column column="screening_user_image" type="VARCHAR" size="11" key="" order="26"></column>
+  <column column="screening_user_photo_url" type="VARCHAR" size="11" key="" order="26"></column>
+  <column column="screening_user_full_name" type="VARCHAR" size="11" key="" order="27"></column>
+  <column column="screening_user_tagline" type="VARCHAR" size="11" key="" order="27"></column>
+  <column column="screening_user_bio" type="VARCHAR" size="11" key="" order="27"></column>
+  <column column="screening_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="screening_date" type="VARCHAR" size="" key="" order="28" format="dateW3XMLOUT"></column>
+  <column column="screening_end_time" type="VARCHAR" size="" key="" order="28" format="dateW3XMLOUT"></column>
+  <column column="screening_description" type="VARCHAR" size="" key="" order="29" ></column>
+  <column column="screening_unique_key" type="VARCHAR" size="" key="" order="29" ></column>
+  <column column="screening_total_seats" name="screening_total_seats" type="INTEGER" size="11" key="" order="17" format="%0d"></column>
+  <column column="screening_id" type="VARCHAR" size="" key="" order="30" ></column>
+  <column column="screening_guest_image" type="VARCHAR" size="" key="" order="29" ></column>
+  <column column="screening_still_image" type="VARCHAR" size="" key="" order="29" ></column>
+  <column column="screening_film_free_screening" type="INTEGER" size="" key="" order="29" ></column>
+  <solr></solr>
+  <criterion distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="upcoming_date" name="screening_date" type="AND" />-->
+    <!-- <criteria scope="PROCESS" value="sid" column="-screening_id" constant="native" type="AND" /> -->
+    <!--<criteria value="[ '' TO * ]" column="screening_still_image" name="screening_still_image" constant="native" type="AND" />-->
+    <criteria scope="PROCESS" value="end_date" column="screening_end_time" constant="native" type="AND" />
+    <criteria value="1" column="screening_featured" type="AND" />
+    <criteria value="1" column="screening_film_status" /> 
+    <ascorderby column="screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="9"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

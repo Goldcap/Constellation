@@ -1,0 +1,15 @@
+template: cst1_home
+layout: cst_home_alt
+title: Constellation | Your Online Movie Theater | Host Your Own Showtime
+javascripts: [/js/modal.js,/js/fb_invite.js,/js/invite.js,/js/bandwidth.js,/js/constellation_film_comp_v28.js,/js/host.js]
+css: [/css/facebook_share.css,/css/home.css,/css/host_show.css]
+widgets:
+  masterhead:
+    HeaderAlt:
+  content:
+    Hosting:
+  footer:
+    FooterAlt:
+  zzdiv:
+    BandwidthTester:
+    GoogleAnalytics:

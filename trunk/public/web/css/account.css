@@ -1,0 +1,176 @@
+.account-nav {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 2px solid #CCCCCC;
+    padding: 6px;
+}
+.account-nav li {float: left;}
+.account-nav li + li {margin-left: 10px;}
+
+#profile .link {
+  position: absolute;
+  left: 420px;
+}
+
+.history_inner_container {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd #ddd #aaa;
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 900px;
+}
+.history_inner_container h1 {
+  font-size: 28px;
+  border-bottom: solid 1px #e0e0e0;
+  padding-bottom: 20px;
+  text-align:center;
+}
+
+/* Film Block */
+.movie_block_history + .movie_block_history { 
+  border-top: solid 1px #e0e0e0;
+
+}
+.movie_block_history {padding: 20px 0;}
+.movie_block_content {
+    position: relative;
+}
+
+.movie_block_poster {
+    float: left;
+    margin: 10px 24px 10px 10px;
+    width: 160px;
+    text-align: center;
+}
+
+.movie_block_poster .logo_container {
+    float: left;
+    width: 126px;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: black;
+} 
+
+.movie_block_poster .screening_container, .movie_block_poster .screening_container a {
+    display:block;
+    width: 150px;
+    text-align:center;
+} 
+
+.movie_block_poster .screening_container a {
+/*    display:block;
+    min-height: 150px;*/
+}
+.movie_block_poster img {]
+    display:inline-block;
+}
+
+.showtime_history_details {
+    margin: 30px 0 0 ;
+    overflow: hidden;
+    zoom:1;
+}
+
+.showtime_history_details > div {
+    float: left;
+    margin-right: 50px;
+    font-family: "Helveticaneue",Helvetica,sans-serif;
+}
+
+.showtime_history_details p {
+    line-height: 22px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.showtime_history_details span {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    color: #9d978c;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+h6.movie_block_title {
+    color: #000000;
+    float: none;
+    font-size: 24px;
+    line-height: 26px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    text-transform: none !important;
+}
+.account-avatar {
+  float: left;
+  width: 200px;
+  margin-top: 20px;
+}
+.account-form {
+  float: right;
+  width: 680px;
+  margin-top: 20px;
+}
+
+
+.input-prefix {
+    color: #9DA2A8;
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    font-size: 12px;
+    font-size:14px;
+}
+.input-prefix-wrap {position:relative;}
+#user_facebook_url {
+    padding-left: 179px;
+    margin: 0;
+    width: 131px;
+}
+#user_twitter_url {
+    padding-left: 158px;
+    margin: 0;
+    width: 152px;
+}
+ #user_website_url {
+    padding-left: 47px;
+    margin: 0;
+    width: 263px;
+}
+
+.content_title .button { margin-top: -6px;}
+
+.swfuploader { width: 200px; }
+.progressContainer { overflow: hidden; display: none; float: left; width: 380px;}
+.messageContainer { overflow: hidden; display: none; float: left; width: 380px; height: 36px; padding-top: 4px; color: black; }
+.uploadmessage { float: left; overflow: hidden; width: 380px; height: 15px; }
+.cancelContainer { float: left; width: 380px; height: 20px; padding-left: 9px; padding-top: 6px; }
+.cancelButton { float: left;  width: 110px; height: 24px; }
+.progressbar { width: 360px; padding: 0; border: 1px solid #999; margin-right: 1em; height:7px; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
+.progressbar div { 
+  background-color: #e2089d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e1089c), to(#b80680));   
+    background-image: -webkit-linear-gradient(top, #e1089c, #b80680); 
+    background-image: -moz-linear-gradient(top, #e1089c, #b80680);
+    border: solid 1px #bc0783;
+  font-size: 1pt;
+  height:10px;
+  /*float:left;*/
+}
+.uploader-no-file {line-height: 32px; text-align:center; color: #666;}
+.uploder-wrap .button {width: 166px; text-align:center;}
+span.asyncUploader object { position: relative; top: 5px; left: 10px; }
+.imageupload { height: 80px !important; }
+.uploadText {font-size: 13px; font-family: arial, sans-serif;}
+
+#user_bio {
+	width: 300px;
+  height: 80px;
+}

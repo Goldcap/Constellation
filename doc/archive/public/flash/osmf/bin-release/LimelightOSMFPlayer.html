@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>OSMF Player</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  	<script type="text/javascript" src="scripts/swfobject.js"></script>
+  	<script type="text/javascript" src="scripts/ParsedQueryString.js"></script>
+    <script type="text/javascript">
+    		
+    		// Collect query parameters in an object that we can
+    		// forward to SWFObject:
+			
+			var url = new Array();
+			
+			//Limelight Samples
+			url[0] = "http://llnwqa.vo.llnwd.net/o18/content/lexsamplecontent/king_1500flv.flv";
+			url[1] = "http://llnwqa.vo.llnwd.net/o18/content/lexsamplecontent/king_1500h264.f4v";
+			url[2] = "http://llnwqa.vo.llnwd.net/o18/secure/lexsamplecontent/king_1200.f4v?" + escape("e=1310540400&h=08c9a475d1a2af2ebf3e414f030f6fd2");
+			url[3] = "rtmp://llnwqa.fcod.llnwd.net/a1218/o18/lexsamplecontent/llnwsplashflv.flv";
+			url[4] = "rtmp://llnwqa.fcod.llnwd.net/a1218/o18/lexsamplecontent/llnwsplashh264.f4v";
+			url[5] = "rtmp://llnwpm.fc.llnwd.net/llnwpm/_definst_/live24x7";
+			url[6] = "rtmp://llnwqa.fcod.llnwd.net/a1218/o18/lexsamplecontent/king_500.f4v,500|lexsamplecontent/king_800.f4v,800|lexsamplecontent/king_1200.f4v,1200|lexsamplecontent/king_1500.f4v,1500|lexsamplecontent/king_2400.f4v,2400";
+			url[7] = "http://llnwqa.vo.llnwd.net/o18/content/f4m/mbrKingLine.f4m";
+			
+		
+			
+			var streamType = new Array();
+			
+			//Limelight Samples
+			streamType[0] = "Progressive";
+			streamType[1] = "Progressive";
+			streamType[2] = "Progressive";
+			streamType[3] = "Streaming";
+			streamType[4] = "Streaming";
+			streamType[5] = "LiveStream";
+			streamType[6] = "MBR";
+			streamType[7] = "MBR";
+			
+			
+    		var pqs = new ParsedQueryString();
+    		var parameterNames = pqs.params(false);
+    		var parameters =
+    			{	id: "1"
+    			//,	configuration: "assets/configuration.xml"
+    			,	url: url[3]
+				,	llnwStreamType: streamType[3]
+				,	plugin: "http://plugins.osmf.llnw.com/StreamingPlugin/1.5.4/LimelightStreamingPlugin.swf"
+				//,	plugin: "file://C:/-LocationOfPlugin-/LimelightStreamingPlugin.swf" // For Local Testing
+    			};
+
+    		// Embed the player SWF:
+    		
+    		swfobject.embedSWF
+				( "LimelightOSMFPlayer.swf"
+				, "player"
+				, "800"
+				, "480"
+				, "10.0.0"
+				, {}
+				, parameters
+				, { allowFullScreen: "true" }
+				, { name: "OSMFPlayer" }
+				);
+			
+     </script>
+  	<style type="text/css">
+	<!--
+	.Verdana {
+		font-family: Verdana, Geneva, sans-serif;
+	}
+	-->
+	</style>
+ 	</head>
+	<body>
+	<table width="100%" border="0" cellspacing="5">
+  <tr>
+    <td width="43"><img src="images/adobe-lq.png" alt="" width="43" height="72" /></td>
+    <td width="320" class="Verdana">OSMF Player</td>
+    <td width="262"><img src="images/osmf_horizontal_red.png" width="262" height="57"/></td>
+    <td width="*"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="5">
+  <tr>
+    <td>
+     <div id="player">
+      <p>Alternative content</p>
+    </div>
+    </td>
+  </tr>
+  <tr>
+  	<td>
+    	<a href="javascript:playMedia();">Play Media</a> : 
+        <a href="javascript:pauseMedia();">Pause Media</a> : 
+        <a href="javascript:stopMedia();">Stop Media</a> : 
+        <a href="javascript:rewindMedia();">Rewind Media</a><br />
+        <a href="javascript:updatePlayerSize(360, 225);">Update Player Size (small)</a> : 
+        <a href="javascript:updatePlayerSize(720, 450);">Update Player Size (large)</a>
+        <script type="text/javascript">
+		
+			function thisMovie(movieName) {
+				if (navigator.appName.indexOf("Microsoft") != -1) {
+					return window[movieName];
+				} else {
+					return document[movieName];
+				}
+			}
+
+			function playMedia()
+			{
+				thisMovie("player").play();	
+			}
+			
+			function pauseMedia()
+			{
+				thisMovie("player").pause();	
+			}
+			
+			function stopMedia()
+			{
+				thisMovie("player").stop();	
+			}
+			
+			function rewindMedia()
+			{
+				thisMovie("player").rewind();	
+			}
+			
+			function updateMedia(id)
+			{
+				alert(url[id])
+				thisMovie("player").llnwStreamType(streamType[id]);
+				thisMovie("player").url(unescape(url[id]));	
+			}
+			
+			function updatePlayerSize(w,h)
+			{
+				thisMovie("player").size(w, h);	
+				thisMovie("player").width = w;
+				thisMovie("player").height = h;
+			}
+			
+		</script>
+    </td>
+  </tr>
+
+  <tr>
+    <td><p>Click on one of the links below to have it loaded, or use the eject button on the player to enter a URL by hand:</p>
+    <p>
+    <script type="text/javascript">
+    	
+    	// Construct the HTML required to reload with any of the listed media links:
+				
+		var linkingCode = "";
+				
+		for (var i=0; i<url.length; i++)
+		{
+			linkingCode = linkingCode + i + ': <a href="javascript:updateMedia(' + i + ')">' + url[i] + '</a><br/>';
+		}
+		
+		document.write(linkingCode);
+	</script>
+	</p>
+	</td>
+  </tr>
+</table>
+ 
+  </body>
+</html>

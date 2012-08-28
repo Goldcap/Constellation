@@ -1,0 +1,15 @@
+template: default
+layout: default
+title: Constellation | Social Movie Events | How it Works
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    html: {html: html/faq.html}
+    AboutNav: {sel: faq}
+  footer:
+    FooterAlt:
+  zzdiv:
+    GoogleAnalytics:

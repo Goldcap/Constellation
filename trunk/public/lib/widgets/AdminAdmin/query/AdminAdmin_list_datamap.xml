@@ -1,0 +1,24 @@
+<map table="admin_user" result="Administrator">
+  <column column="admin_user_fname" name="Firstname" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="admin_user_lname" name="Lastname" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="admin_user_email" name="Email" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="admin_user_password" name="Password" type="VARCHAR" size="255" key="" order="4" filter="decrypt"></column>
+  <column column="admin_user_phone" name="Phone" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="admin_user_ual" type="VARCHAR" size="255" key="" order="5" hidden="true"></column>
+  <column column="admin_user_id" type="INTEGER" size="" key="PRI" order="6" hidden="true"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="admin_user_id"></ascorderby>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Email" base="/administrator/detail/">
+      <attribute name="admin_user_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

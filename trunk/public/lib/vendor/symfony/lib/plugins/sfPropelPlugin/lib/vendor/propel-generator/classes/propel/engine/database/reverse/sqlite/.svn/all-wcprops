@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/database/reverse/sqlite
+END
+SqliteSchemaParser.php
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/database/reverse/sqlite/SqliteSchemaParser.php
+END

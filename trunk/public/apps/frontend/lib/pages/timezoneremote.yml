@@ -1,0 +1,8 @@
+template: blank
+layout: cst_home_alt
+title: Constellation | Your Online Movie Theater
+javascripts: []
+css: []
+widgets:
+  page:
+    TimezoneRemote:

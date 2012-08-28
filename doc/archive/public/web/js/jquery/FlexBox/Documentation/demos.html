@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>.: Fairway Technologies jQuery FlexBox :.</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link href="css/dp.syntaxhighlighter.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="../FlexBox/css/jquery.flexbox.css" />
+		<style type="text/css">
+			#ffb7 .col1 {
+				float:left;
+				width:36px;
+			}
+			#ffb7 .col2 {
+				float:left;
+				width:200px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../FlexBox/js/jquery.flexbox.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shCore.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushCSharp.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushJScript.js"></script>
+		<script type="text/javascript" src="js/dp.SyntaxHighlighter/shBrushXml.js"></script>
+		<script type="text/javascript" src="js/countries.js"></script>
+		<script type="text/javascript" src="js/largedataset.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				dp.SyntaxHighlighter.ClipboardSwf = 'js/dp.SyntaxHighlighter/clipboard.swf';
+				dp.SyntaxHighlighter.HighlightAll('code');
+			
+				// Give each example an anchor tag
+				var count = 1;
+				$.each($('.demo'), function() {
+					var $example = $(this);
+					$example.before('<a name="demo' + count++ + '" />');
+				});
+
+				// Set up our example table of contents
+				count = 1; // reset our counter
+				var $toc = $('#toc');
+				$.each($('.example > td'), function() {
+					var $td = $(this);
+					var anchor = $('<a></a>').attr('href', '#demo' + count++);
+
+					$(document.createElement('li'))
+						.html($td.html())
+						.wrapInner(anchor)
+						.appendTo($toc);
+
+					// Create link back to top (floated right)
+					$(document.createElement('div'))
+						.html('<a href="#toc">Top</a>')
+						.css('float', 'right')
+						.appendTo($td);
+				});
+				
+				// Default, when the number of results exceeds the paging threshold
+				$('#ffb1').flexbox(countries);
+
+				// Like Google Suggest (hide the arrow)
+				$('#ffb2').flexbox(countries, {
+					showArrow: false
+				});
+
+				// Straight type-ahead (hide the dropdown)
+				$('#ffb3').flexbox(countries, {
+					showResults: false,
+					autoCompleteFirstMatch: true
+				});
+
+				// Paging disabled (no scrolling), new width
+				$('#ffb4').flexbox(countries, {
+					width: 300,
+					paging: false
+				});
+
+				// Scrolling and watermark
+				$('#ffb5').flexbox(countries, {
+					watermark: 'Enter country name',
+					paging: false,
+					maxVisibleRows: 8
+				});
+
+				// Setting an initial value, and changing the page size
+				$('#ffb6').flexbox(countries, {
+					initialValue: 'Finland',
+					width: 350,
+					paging: {
+						pageSize: 5
+					}
+				});
+
+				// Creating a template for each matching result
+				$('#ffb7').flexbox(countries, {
+					resultTemplate: '<div class="col1"><img src="img/flags/{id}.gif"/></div><div class="col2">{name}</div>',
+					watermark: 'Enter country name',
+					width: 260,
+					onSelect: function() {
+						$('#ffb7-result').html('You selected "' + this.value + '", ' +
+											   'which has a hidden value of ' + $('input[name=ffb7]').val());
+					}
+				});
+
+				// Do not autocomplete initial value, and handle non-existent values
+				$('#ffb8').flexbox(countries, {
+					autoCompleteFirstMatch: false,
+					noResultsText: '',
+					onSelect: function() {
+						$('#ffb8-result').html('You selected "' + this.value + '", ' +
+											   'which has a hidden value of ' + $('input[name=ffb8]').val());
+					}
+				});
+				$('#ffb8_input').blur(function() {
+					$('#ffb8-result')
+						.html('The value passed when the form is ' +
+							  'submitted is "' + $('input[name=ffb8]').val() + '"');
+				});
+
+				$('#ffb9').flexbox(countries, {
+					allowInput: false,
+					paging: false,
+					maxVisibleRows: 8
+				});
+				
+				$('#ffb10').flexbox(largedataset);
+			});
+		</script>
+	</head>
+	<body>
+		<div style="padding:10px">
+			<a href="http://fairwaytech.com"><img style="float:left" src="img/fairwaylogo.jpg"/></a>
+			
+			<div style="float:right;border:solid 3px #1D9ED8;padding:16px;background-color:#f2f2f2">
+				<a target="_blank" class="big" href="http://fairwaytech.com/flexbox"><b>FlexBox</b> Home Page</a><br />
+				<a target="_blank" class="big" href="http://www.codeplex.com/flexbox"><b>FlexBox</b> CodePlex Project Page</a><br />
+				<a target="_blank" class="big" href="http://plugins.jquery.com/project/FlexBox"><b>FlexBox</b> jQuery Plugin Page</a><br />
+			</div>
+				
+			<h1 style="clear:both">FlexBox Demos</h1>
+			
+			<a href="index.html">Return to FlexBox Overview</a>
+			
+			<h2>Using FlexBox</h2>
+			
+			<ul>
+				<li>In all of the examples below, the data is a <a href="js/countries.js">JSON object</a> with an array of 243 countries and their country codes</li>
+				<li>Click in the input box, and type a single letter, such as "a"</li>
+				<li>Click the arrow on the right of the FlexBox, or click in the input box and tap the "Enter" or "Down Arrow" key on your keyboard</li>
+				<li>Try using up and down arrow to scroll through results, and tap the "Enter" key to select an option</li>
+				<li>If there are multiple pages of results, you can click the paging links, or use the page up/page down keys to navigate between pages</li>
+				<li>Tap the escape key to hide the dropdown when the input box has focus</li>
+			</ul>
+			
+			<a name="toc"></a>
+			<h2>Examples</h2>
+			<ul id="toc"><!-- Populated dynamically on page load --></ul>
+			
+			<!-- Example 1 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 1: ComboBox, with dynamic paged data</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb1').flexbox(countries);
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb1"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>Click the arrow, or click in the input box and type the letter "m" to see a list of matching countries</li>
+							<li>Or, click in the box and type some non-matching characters, such as 'xyz', to see the default behavior when there are no matching results</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 2 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 2: Like Google Suggest (hide the arrow)</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb2').flexbox(countries, {
+								showArrow: false
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb2"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>Set showArrow to false to hide it, and use FlexBox just like you use Google Search</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 3 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 3: Straight type-ahead (hide the dropdown)</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb3').flexbox(countries, {
+								showResults: false,
+								autoCompleteFirstMatch: true
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb3"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>
+								Hide the results entirely, but automatically complete the first matching element.
+								You can use this when you already know all of the items, and don't need to see the
+								whole list (e.g. selecting a U.S. state).  It keeps your forms nice and compact...
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 4 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 4: Disable paging (no scrolling), new width</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb4').flexbox(countries, {
+								width: 300,
+								paging: false
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb4"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>In this example, we override the default width, and turn off paging entirely.
+							Watch out though, this is most likely not what you want for long lists (like the
+							one in the example!).</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 5 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 5: Force Scrolling, Show Watermark</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb5').flexbox(countries, {
+								watermark: 'Enter country name',
+								paging: false,
+								maxVisibleRows: 8
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb5"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>The watermark is a nice touch, and helps your users without compromising screen real
+							estate.  In this example we are also limiting the number of visible rows, which is
+							usually a good idea if paging is turned off.  This is a much more practical example
+							than Example 4.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 6 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 6: Set an initial value, and change the page size</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb6').flexbox(countries, {
+								initialValue: 'Finland',
+								width: 350,
+								paging: {
+									pageSize: 5
+								}
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb6"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>
+								You can use the setValue() function instead of the initialValue configuration option,
+								if you need to set the initial value based on data that is not available when the FlexBox is loaded:
+								<textarea name="code" class="js:nocontrols:nogutter">
+									var ffb7 = $('#ffb7').flexbox(countries, {
+										width: 350,
+										paging: {
+											pageSize: 5
+										}
+									});
+									ffb7.setValue('Finland');
+								</textarea>
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 7 -->
+			<table class="demo">
+				<tr class="example"><td colspan="2"><span>Example 7: Create a template for each matching result, and call a JavaScript function when a result is selected</span></td></tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb7').flexbox(countries, {
+								resultTemplate: '<div class="col1">
+												     <img src="img/flags/{id}.gif"/>
+												 </div>
+												 <div class="col2">{name}</div>',
+								watermark: 'Enter country name',
+								width: 260,
+								onSelect: function() {
+									$('#ffb7-result')
+										.html('You selected "' + this.value + '", ' +
+										      'which has a hidden value of ' +
+											  $('input[name=ffb7]').val());
+								}
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb7"></div>
+						<div id="ffb7-result" style="clear:both"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>My favorite example... You can use your own html as a template for each row (result).
+							If you surround the name of a valid JSON property in curly braces, that value will be
+							merged in for each row.  In this case, we have a folder full of images that are named
+							based on the two-letter country code (represented by {id}).  We are also styling the
+							"col1" and "col2" divs by floating them left and giving them a width.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 8 -->
+			<table class="demo">
+				<tr class="example">
+					<td colspan="2">
+						<span>Example 8: Do not auto-complete the first match, and allow new values</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb8').flexbox(countries, {
+								autoCompleteFirstMatch: false,
+								noResultsText: '',
+								onSelect: function() {
+									$('#ffb8-result')
+										.html('You selected "' + this.value + '", ' +
+											  'which has a hidden value of ' +
+											  $('input[name=ffb8]').val());
+								}
+							});
+							$('#ffb8_input').blur(function() {
+								$('#ffb8-result').html(
+									'The value passed when the form is ' +
+									'submitted is ' + $('input[name=ffb8]').val());
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb8"></div>
+						<div id="ffb8-result" style="clear:both"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>If a new value is entered into the input box, and the form is submitted,
+							the "ffb8" form field will contain the typed-in value.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>  
+				   
+			<!-- Example 9 -->
+			<table class="demo">
+				<tr class="example">
+					<td colspan="2">
+						<span>Example 9: Simulate &lt;select&gt; tag by disallowing input</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb9').flexbox(countries, {
+								allowInput: false,
+								paging: false,
+								maxVisibleRows: 8
+							});
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb9"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>
+								Allows you to bind to local data, or chain multiple FlexBoxes.  The first FlexBox
+								can populate a "child" FlexBox based on a $.getJSON() call within the first FlexBox's
+								onSelect function:
+								<textarea name="code" class="js:nocontrols:nogutter">
+									$('#parent').flexbox('getparentdata.aspx', {
+										onSelect: function() {
+											$.getJSON('getchilddata.aspx', {id:this.getAttribute('hiddenValue')}, function(data) {
+												$('#child').flexbox(data);
+											});
+										}
+									});
+								</textarea>
+								In the future, I plan to make it much easier to handle chained, or dependant dropdowns.
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			
+			<!-- Example 10 -->
+			<table class="demo">
+				<tr class="example">
+					<td colspan="2">
+						<span>Example 10: Large data set</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="col">
+						<b>Code:</b>
+						<textarea name="code" class="js:nocontrols:nogutter">
+							$('#ffb10').flexbox(largedataset);
+						</textarea>
+					</td>
+					<td class="col">
+						<b>FlexBox:</b>
+						<div style="height:18px"></div>
+						<div id="ffb10"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Notes:</b>
+						<ul>
+							<li>
+								This data set is generated dynamically on every page load, and contains 10,000 items.
+								Notice that although the data set is quite large, performance is excellent.
+							</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="width:800px;height:150px"></div>
+	</body>
+</html>

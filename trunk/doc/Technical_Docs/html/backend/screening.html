@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/backend/screeningList.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+
+				<img alt="" class="logo" src="/images/logo.png"/>
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/screening.html">List Screenings</a></div>
+					<div class="item"><a href="/backend/screening_add.html">Add Screening</a></div>
+					<div class="item-no-border"><a href="#">Add Test (private) Screening</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+
+			Logout
+		</a>
+	</div>
+</div><div id="main"><div class="title">
+	<h2>Screening Management</h2>
+</div>
+	
+<form class="filter" action="/backend/screening.html" method="GET" >
+	<fieldset>
+		<div class="formfield">
+			<label>Movie title:</label>
+
+			<select name="filter[film_id]">
+				<option value=""></option>
+									<option value="3" >2012: Time for Change</option>
+							</select>
+		</div>
+		<div class="formfield">
+			<label>Date:</label>
+			<input id="filter-date" type="text" class="text" name="filter[date]" value="" />
+
+			<a id="filter-date-picker" class="calendar" href=""><img src="/images/icon-calendar.png" alt="calendar chooser" width="24" height="23" /></a>
+		</div>
+		<input type="submit" value="Filter" />
+	</fieldset>
+</form>
+
+<table class="table-list">
+	<tr class="header">
+		<td class="first-left">S.ID</td>
+		<td>Film Name</td>
+
+		<td>Date</td>
+		<td>Time</td>
+		<td>Type</td>
+		<td>Total Seats</td>
+		<td>Occupied Seats</td>
+		<td>Actions</td>
+
+		<td>Reviews</td>
+		<td>Timing</td>
+		<td class="first-right">Test (private) Screening</td>
+	</tr>
+	<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html">1</a></td>
+					<td><a href="/backend/film_edit.html">Living in Emergency</a></td>
+
+					<td>2010-09-17</td>
+					<td>20:00:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>101</td>
+					<td><a href="/backend/screening_edit.html"">Edit</a> | <a href="/backend/screening_details.html">Details</a> </td>
+
+					<td><a href="/backend/screening_reviews.html">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/2">2</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-28</td>
+					<td>16:15:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>3</td>
+					<td><a href="/backend/screening_edit.html/id/2">Edit</a> | <a href="/backend/screeningManagement/details/id/2">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/2">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/2">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/3">3</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-28</td>
+					<td>23:00:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/3">Edit</a> | <a href="/backend/screeningManagement/details/id/3">Details</a> | <a href="/backend/screeningManagement/delete/id/3/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/3">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/3">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/4">4</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-29</td>
+					<td>10:15:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>1</td>
+					<td><a href="/backend/screening_edit.html/id/4">Edit</a> | <a href="/backend/screeningManagement/details/id/4">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/4">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/4">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/5">5</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-08-29</td>
+					<td>13:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/5">Edit</a> | <a href="/backend/screeningManagement/details/id/5">Details</a> | <a href="/backend/screeningManagement/delete/id/5/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/5">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/5">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/6">6</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-30</td>
+					<td>16:00:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>1</td>
+					<td><a href="/backend/screening_edit.html/id/6">Edit</a> | <a href="/backend/screeningManagement/details/id/6">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/6">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/6">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/7">7</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-08-30</td>
+					<td>16:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/7">Edit</a> | <a href="/backend/screeningManagement/details/id/7">Details</a> | <a href="/backend/screeningManagement/delete/id/7/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/7">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/7">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/8">8</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-30</td>
+					<td>16:45:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/8">Edit</a> | <a href="/backend/screeningManagement/details/id/8">Details</a> | <a href="/backend/screeningManagement/delete/id/8/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/8">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/8">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/9">9</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-31</td>
+					<td>18:00:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>2</td>
+					<td><a href="/backend/screening_edit.html/id/9">Edit</a> | <a href="/backend/screeningManagement/details/id/9">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/9">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/9">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/10">10</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-30</td>
+					<td>18:15:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>1</td>
+					<td><a href="/backend/screening_edit.html/id/10">Edit</a> | <a href="/backend/screeningManagement/details/id/10">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/10">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/10">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/11">11</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-31</td>
+					<td>11:45:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>1</td>
+					<td><a href="/backend/screening_edit.html/id/11">Edit</a> | <a href="/backend/screeningManagement/details/id/11">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/11">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/11">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/12">12</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-31</td>
+					<td>14:15:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>4</td>
+					<td><a href="/backend/screening_edit.html/id/12">Edit</a> | <a href="/backend/screeningManagement/details/id/12">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/12">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/12">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/13">13</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/4>The Lottery</a></td>
+
+					<td>2010-08-31</td>
+					<td>15:45:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>5</td>
+					<td><a href="/backend/screening_edit.html/id/13">Edit</a> | <a href="/backend/screeningManagement/details/id/13">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/13">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/13">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/14">14</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-08-31</td>
+					<td>13:45:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td>3</td>
+					<td><a href="/backend/screening_edit.html/id/14">Edit</a> | <a href="/backend/screeningManagement/details/id/14">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/14">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/14">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/15">15</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-01</td>
+					<td>22:00:00</td>
+					<td>Public - Hosted</td>
+					<td>100</td>
+					<td>11</td>
+					<td><a href="/backend/screening_edit.html/id/15">Edit</a> | <a href="/backend/screeningManagement/details/id/15">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/15">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/15">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/16">16</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-02</td>
+					<td>00:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td>5</td>
+					<td><a href="/backend/screening_edit.html/id/16">Edit</a> | <a href="/backend/screeningManagement/details/id/16">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/16">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/16">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/17">17</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-03</td>
+					<td>00:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/17">Edit</a> | <a href="/backend/screeningManagement/details/id/17">Details</a> | <a href="/backend/screeningManagement/delete/id/17/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/17">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/17">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/18">18</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-04</td>
+					<td>00:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td>2</td>
+					<td><a href="/backend/screening_edit.html/id/18">Edit</a> | <a href="/backend/screeningManagement/details/id/18">Details</a> </td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/18">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/18">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-2 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/19">19</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-05</td>
+					<td>00:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/19">Edit</a> | <a href="/backend/screeningManagement/details/id/19">Details</a> | <a href="/backend/screeningManagement/delete/id/19/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/19">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/19">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+			<tr class="type-1 ">
+					<td class="left"><a href="/backend/screening_edit.html/id/20">20</a></td>
+					<td><a href=/backend/filmManagement/edit/filmId/14>Archangel</a></td>
+
+					<td>2010-09-06</td>
+					<td>00:00:00</td>
+					<td>Public</td>
+					<td>100</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html/id/20">Edit</a> | <a href="/backend/screeningManagement/details/id/20">Details</a> | <a href="/backend/screeningManagement/delete/id/20/page/1">Delete</a></td>
+
+					<td><a href="/backend/screeningManagement/reviews/id/20">List Reviews</a></td>
+					<td><a href="/backend/screening_timing.html/id/20">Timing Info</a></td>
+					<td>NO</td>
+				</tr>
+				<tr class="footer">
+		<td colspan="10">
+			<div class="left-bottom"></div>
+
+			<div class="middle-bottom">
+				<div class="pagination"><p class="left">[ Page : <b>1</b> <a href="/backend/screening.html?page=2">2</a> <a href="/backend/screening.html?page=3">3</a> <a href="/backend/screening.html?page=4">4</a> <a href="/backend/screening.html?page=5">5</a> <a href="/backend/screening.html?page=6">6</a> <a href="/backend/screening.html?page=7">7</a> <a href="/backend/screening.html?page=8">8</a> <a href="/backend/screening.html?page=9">9</a> <a href="/backend/screening.html?page=10">10</a>  ... <a href="/backend/screening.html?page=33">33</a> ]</p><p class="right">&laquo; <span class="disabled">Previous page</span> | <a href="/backend/screening.html?page=2">Next page</a> &raquo</p></div>			</div>
+
+			<div class="right-bottom"></div>
+		</td>
+	</tr>		
+</table></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>
+

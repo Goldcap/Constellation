@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vars>
+<var name="action" default="list" />
+<var name="id" default="0" />
+</vars>

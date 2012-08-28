@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="LayoutRendererBase,org.osmf.layout.LayoutRendererBase,container,measuredHeight,measuredWidth,parent,addTarget,hasTarget,invalidate,removeTarget,validateNow" name="keywords">
+<title>org.osmf.layout.LayoutRendererBase</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'LayoutRendererBase - OSMF';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">OSMF</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/osmf/layout/LayoutRendererBase.html&amp;org/osmf/layout/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;LayoutRendererBase</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class LayoutRendererBase"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.osmf.layout</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class LayoutRendererBase</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">LayoutRendererBase <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../layout/LayoutRenderer.html">LayoutRenderer</a></td>
+</tr>
+</table>
+<p></p>
+  Use LayoutRendererBase as the base class for custom layout renders. The class
+  provides a number of facilities:
+  
+   A base implementation for collecting and managing layout layoutTargets.
+   A base implementation for metadata watching: override usedMetadataFacets to
+     return the set of metadata facet namespaces thatyour renderer reads from its
+     target on rendering them. All specified facets will be watched for change, at
+     which the invalidate methods gets invoked.
+   A base invalidation scheme that postpones rendering until after all other frame
+     scripts have finished executing, by means of managing a dirty flag an a listener
+     to Flash's EXIT_FRAME event. The invokation of validateNow will always result
+     in the 'render' method being invoked right away.
+  
+  On doing a subclass, the render method must be overridden.
+  
+  Optionally, the following protected methods may be overridden:
+  
+   get usedMetadataFacets, used when layoutTargets get added or removed, to add
+     change watchers that will trigger invalidation of the renderer.
+   compareTargets, which is used to put the layoutTargets in a particular display
+     list index order.
+  
+   processContainerChange, invoked when the renderer's container changed.
+   processStagedTarget, invoked when a target is put on the stage of the
+     container's displayObjectContainer.
+   processUnstagedTarget, invoked when a target is removed from the stage
+     of the container's displayObjectContainer.  
+  
+   
+   <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#container">container</a> : <a href="../layout/ILayoutTarget.html">ILayoutTarget</a>
+<div class="summaryTableDescription">
+   Defines the container against which the renderer will calculate the size
+   and position values of its targets.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#measuredHeight">measuredHeight</a> : Number<div class="summaryTableDescription">[read-only]
+   Defines the height that the layout renderer measured on its last rendering pass.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#measuredWidth">measuredWidth</a> : Number<div class="summaryTableDescription">[read-only]
+   Defines the width that the layout renderer measured on its last rendering pass.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parent">parent</a> : <a href="../layout/LayoutRendererBase.html">LayoutRendererBase</a>
+<div class="summaryTableDescription">[read-only]
+   Defines the renderer that this renderer is a child of.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addTarget()">addTarget</a>(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):<a href="../layout/ILayoutTarget.html">ILayoutTarget</a>
+</div>
+<div class="summaryTableDescription">
+   Method for adding a target to the layout renderer's list of objects
+   that it calculates the size and position for.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hasTarget()">hasTarget</a>(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):Boolean</div>
+<div class="summaryTableDescription">
+   Method for querying if a layout target is currently a target of this
+   layout renderer.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#invalidate()">invalidate</a>():void</div>
+<div class="summaryTableDescription">
+   Method that will mark the renderer's last rendering pass invalid.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#removeTarget()">removeTarget</a>(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):<a href="../layout/ILayoutTarget.html">ILayoutTarget</a>
+</div>
+<div class="summaryTableDescription">
+   Method for removing a target from the layout render's list of objects
+   that it will render.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#validateNow()">validateNow</a>():void</div>
+<div class="summaryTableDescription">
+   Method ordering the direct recalculation of the position and size
+   of all of the renderer's assigned targets.</div>
+</td><td class="summaryTableOwnerCol">LayoutRendererBase</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="container"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">container</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>container:<a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code>&nbsp;&nbsp;[read-write]<p>
+   Defines the container against which the renderer will calculate the size
+   and position values of its targets. The renderer additionally manages
+   targets being added and removed as children of the set container's
+   display list.
+    
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get container():<a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set container(value:<a href="../layout/ILayoutTarget.html">ILayoutTarget</a>):void</code>
+<br>
+</div>
+<a name="measuredHeight"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">measuredHeight</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>measuredHeight:Number</code>&nbsp;&nbsp;[read-only]<p>
+   Defines the height that the layout renderer measured on its last rendering pass.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get measuredHeight():Number</code>
+<br>
+</div>
+<a name="measuredWidth"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">measuredWidth</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>measuredWidth:Number</code>&nbsp;&nbsp;[read-only]<p>
+   Defines the width that the layout renderer measured on its last rendering pass.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get measuredWidth():Number</code>
+<br>
+</div>
+<a name="parent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parent:<a href="../layout/LayoutRendererBase.html">LayoutRendererBase</a></code>&nbsp;&nbsp;[read-only]<p>
+   Defines the renderer that this renderer is a child of.
+    
+    </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parent():<a href="../layout/LayoutRendererBase.html">LayoutRendererBase</a></code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addTarget()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addTarget</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public final function addTarget(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):<a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code><p>
+   Method for adding a target to the layout renderer's list of objects
+   that it calculates the size and position for. Adding a target will
+   result the associated display object to be placed on the display
+   list of the renderer's container.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="ILayoutTarget.html">ILayoutTarget</a></code> &mdash; The target to add.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code></td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; when the specified target is null, or 
+   already a target of the renderer.
+   </td>
+</tr>
+</table>
+</div>
+<a name="hasTarget()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hasTarget</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public final function hasTarget(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):Boolean</code><p>
+   Method for querying if a layout target is currently a target of this
+   layout renderer.
+    
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="ILayoutTarget.html">ILayoutTarget</a></code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; True if the specified target is a target of this renderer.
+    
+    </td>
+</tr>
+</table>
+</div>
+<a name="invalidate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">invalidate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public final function invalidate():void</code><p>
+   Method that will mark the renderer's last rendering pass invalid. At
+   the descretion of the implementing instance, the renderer may either
+   directly re-render, or do so at a later time.
+    
+    </p></div>
+<a name="removeTarget()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeTarget</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public final function removeTarget(target:<a href="ILayoutTarget.html">ILayoutTarget</a>):<a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code><p>
+   Method for removing a target from the layout render's list of objects
+   that it will render. See addTarget for more information.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">target</span>:<a href="ILayoutTarget.html">ILayoutTarget</a></code> &mdash; The target to remove.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../layout/ILayoutTarget.html">ILayoutTarget</a></code></td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; when the specified target is null, or
+   not a target of the renderer.
+   </td>
+</tr>
+</table>
+</div>
+<a name="validateNow()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">validateNow</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public final function validateNow():void</code><p>
+   Method ordering the direct recalculation of the position and size
+   of all of the renderer's assigned targets. The implementing class
+   may still skip recalculation if the renderer has not been invalidated
+   since the last rendering pass. 
+    
+    </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

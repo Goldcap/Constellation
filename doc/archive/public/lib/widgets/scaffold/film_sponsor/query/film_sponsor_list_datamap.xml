@@ -1,0 +1,4 @@
+<map table="film_sponsor" result="film_sponsor_list_datamap"><column column="film_sponsor_name" type="VARCHAR" size="255" key="" order="1"></column><column column="film_sponsor_params" type="LONGVARCHAR" size="" key="" order="2"></column><column column="film_sponsor_id" type="INTEGER" size="11" key="PRI" order="3"></column><criterion limit="0" distinct="true"><ascorderby column="film_sponsor_id"></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="film_sponsor_name" base="/film_sponsor/detail/"><attribute name="film_sponsor_id"></attribute></maplink></maplinks></map>

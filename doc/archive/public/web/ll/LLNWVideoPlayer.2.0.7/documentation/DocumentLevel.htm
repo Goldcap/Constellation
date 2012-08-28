@@ -1,0 +1,637 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0037) -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<TITLE>DocumentLevel</TITLE>
+	<STYLE type="text/css">
+		/* This can be an external stylesheet */
+		
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif; 
+			font-size: .7em;
+			margin: 5px 5px 5px 5px;
+			background-color: #FFFFFF;
+		}
+		
+		a:link {
+			color: #006225;
+			text-decoration: none;
+		}
+		
+		a:visited {
+			color: #8CC63F;
+			text-decoration: none;
+		}
+		
+		a:hover, a:visited:hover  { 
+			background-color: #DDEEFF;
+		}
+		
+		h4 a, .index a {
+			color: #005FA9;
+		}
+		
+		h4 a:visited, .index a:visited {
+			color: #005FA9;
+		}
+		
+		h1 { 
+			font-size: 130%; 
+			margin-top: 0;
+			margin-bottom: .7em;
+		}
+		
+		h2 {   
+			font-size: 120%;
+			margin-top: 1.4em;
+			margin-bottom: .7em;
+		}
+		
+		h3 {  
+			font-size: 110%;
+			margin-top: 1.2em;
+			margin-bottom: .7em; 
+		}
+		
+		h4 { 
+			font-size: 100%; 
+			font-weight: bold;
+			margin-top: 1.2em;
+			margin-bottom: .6em; 
+		}
+		
+		hr { 
+			color: #000000;
+			height: 1px;
+			margin-top: 0em;
+			margin-bottom: 0em; 	
+		}
+		
+		p, table {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		table p, table pre {
+			margin: 0px;
+		}
+		
+		table ul, table ul ul, table li {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		
+		ol p, ul p {  
+			margin-top: .7em;
+			margin-bottom: .7em;
+		}
+		
+		ol, ul {
+			font-size: 100%; 
+			margin-top: .5em; 
+			margin-bottom: 0em; 
+			margin-left: .5em;	
+		}
+		
+		ol ul, ul ul {
+			list-style: square; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		ol ol {
+			list-style: lower-alpha; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		li {
+			margin-bottom: .7em; 
+			margin-left: -2em;
+		}
+		
+		pre {  
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		ol pre, ul pre {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		code {  
+			font-family: "Courier New", Courier, mono;
+			font-size: 100%;
+		}
+		
+		table {
+			font-size: 100%;
+			border-spacing: 0px 0px;
+			border-bottom: solid 1px #B6C0C3;
+			border-right: solid 1px #B6C0C3;
+		}
+		
+		th {
+			font-weight: bold;
+			color: #000000;
+			background-color: #D5E04D;
+			text-align: left;
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		td {
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		table th, table td {
+			padding: 0.4em 10px;
+			vertical-align: top;
+		}
+		
+		img {
+			margin: 0px 5px 0px 0px;
+			border: none;
+		}
+		
+		.code {  
+			white-space: nowrap;
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+		}
+		
+		div.procedure {
+			display:none;
+		}
+	</STYLE>
+</HEAD><BODY>
+<HR>
+
+
+<H1>DocumentLevel class</H1>
+
+
+<H4>Description</H4>
+<P>The DocumentLevel class is a generic class to show how to  communicate with LimeLight services and your display. The class can be renamed and incorporated  into your current project as is. You can pass in the full uri and stream name with  the stream type added to the end. See the <A href="#8">updateVideoSource</A> method for a full example.</P>
+<H2>Method summary for the DocumentLevel class</H2>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TBODY>
+	<TR>
+		<TH>Method</TH>
+		<TH>Description</TH>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD><A href="#3">handleStreamTypes()</A>
+	</TD>
+	<TD>
+		<P>Handles setting the proper values and method calls depending on what stream type the current stream is set to. </P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#4">
+		stripExtenstion()</A>
+	</TD>
+	<TD>
+		<P>Removes trailing extentions and adds to the front of
+the file name. Also checks url for a parent directory
+of the file name other than application and short name.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#5">
+		setSettings()</A>
+	</TD>
+	<TD>
+		<P>Sets the settings passed in from Flashvars. Required values for video to work.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#6">
+		setJSEnabled()</A>
+	</TD>
+	<TD>
+		<P>adds javascript callbacks for switching media and 
+resizing the video as well as controls.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#7">
+		updatePlayerSize()</A>
+	</TD>
+	<TD>
+		<P>handles the size of video and the controlbar. Used when changing the size via javascript.
+Height and Width of the video as type string:</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#8">
+		updateVideoSource()</A>
+	</TD>
+	<TD>
+		<P>handles changing/adding the video (update)</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#9">
+		closeConnections()</A>
+	</TD>
+	<TD>
+		<P>kills the currrent net connection.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#10">
+		handleMetaData()</A>
+	</TD>
+	<TD>
+		<P>Method handles the event return of the onMetaData of the video 
+requested. </P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#13">
+		handleProgressClick()</A>
+	</TD>
+	<TD>
+		<P>Handles progress bar click to update seek possitions.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#14">
+		changeVolume()</A>
+	</TD>
+	<TD>
+		<P>Method to change the volume of the sound object</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#15">
+		handleMuteClick()</A>
+	</TD>
+	<TD>
+		<P>Catches the event fired from the controlbar's mute button.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#16">
+		doRestart()</A>
+	</TD>
+	<TD>
+		<P>Method to handle restart of the video. Checks streamType to decipher 
+between MOOVSeek, FLVSeek or other to decide how to handle the restart 
+method.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#17">
+		setStatUpdate()</A>
+	</TD>
+	<TD>
+		<P>Method handles the update of the UI. Stream time, playhead possition and buffer amount.</P>
+	</TD>
+	</TR>
+	
+</TBODY></TABLE>
+
+
+
+
+
+
+
+<H2><A name="2"></A>Constructor for the DocumentLevel class</H2>
+	
+	
+	
+	<H4>Description</H4>
+	<P>DocumentLevel
+This contains the base level to instantiate a stream including controls</P>
+	
+	
+<HR>
+
+
+
+
+<H2><A name="3"></A>handleStreamTypes</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function handleStreamTypes():void</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method; Private method handleStreamTypes()
+Method handles the various stream types by accessing the 
+_streamType variable to make criticle decisions on how to handle
+each stream. This is <strong>required</strong> to handle your stream.</P>
+	<P>&nbsp;</P>
+	<P>_streamType set to:	  </P>
+	<P>- <em>FLVSeek</em>: Handles FLV seekable progressive videos. LLNW specific service </P>
+	<P>- <em>MOOVSeek</em>: Handles H264 moov formatted seekable videos. </P>
+	<P>- <em>VOD</em>: Video on demand for http streamed videos. </P>
+	<P>- <em>Streaming</em>: for streaming videos using the rtmp protocol </P>
+	<P>- <em>LiveStream</em>: for streaming live video </P>
+	<P>- <em>DVR</em>: for streaming DVR enabled videos from FMS </P>
+	<P>- <em>MBR</em>: Multibitrate video streams</P>
+	<P>- <em>LiveMBR</em>: Used for streaming a Live multi bit rate stream</P>
+<P>&nbsp;</P>
+<HR>
+
+<H2><A name="4"></A>stripExtenstion</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function stripExtenstion():String</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>formattedStream: A newly formatted stream name - <em>see description</em>.</P>
+	<H4>Description</H4>
+	<P>Method; Removes trailing extentions and adds to the front of
+the file name. Also checks url for a parent directory
+of the file name other than application and short name.</P>
+	
+    <p>stream name:<br/>
+    directory/mystream.mp4    <br/>
+    into:<br/>
+    mp4:directory/mystream.mp4    </p>
+<p>stream name: <br/>
+      directory/mystream.f4v<br/>
+      into:<br/>
+      mp4:directory/mystream.f4v
+<p>
+      stream name:<br/>
+      directory/mystream.flv<br/>
+      into:<br/>
+      directory/mystream.flv </p>
+<HR>
+
+<H2><A name="5"></A>setSettings</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function setSettings():void</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method; Sets the settings passed in from Flashvars. Required values for video to work. </P>
+	<P>To manualy set the values:<br/>
+    <code>
+    			//the path to connect to.<br/>
+   				 _uri = "rtmp://domain.com/username <br/>
+                 
+				//removing this//<br/>
+				_streamName = LoaderInfo(this.root.loaderInfo).parameters.streamName;<br/>
+			<br/>
+            	stream type:<br/>
+				_streamType = "Streaming";<br/>
+    </code></P>
+	<P><code>buffer duration:<br/>
+	  _buffer = 15<br/>
+	  <br/>
+	  path to image:<br/>
+	  _imageURL = "http://yourdomain.com/images/my.jpg<br/>
+	  <br/>
+	  autoplay - true/false:<br/>
+	  _autoPlay = true;<br/>
+	  <br/>
+	  auto repeat - true/false:<br/>
+	  _autoRepeat = false<br/>
+	  <br/>
+	  dimentions of the player:<br/>
+	  _playerWidth = 480;<br/>
+	  _playerHeight = 340;<br/>
+	  <br/>
+	  autohides the control bar on mouse idle:<br/>
+	  _autoHideControls = true<br/>
+	  <br/>
+	  amount of time you want to wait until the control bar hides:<br/>
+	  _autoHideTime = 5<br/>
+	  <br/>
+	  start volume:<br/>
+	  _initialVolume = 50;<br/>
+    </code></P>
+	
+	
+<HR>
+
+<H2><A name="6"></A>setJSEnabled</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function setJSEnabled()</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method adds javascript callbacks for switching media and 
+resizing the video as well as controls. 
+ - updateVideoSource: name of the JS call to swap the current video.
+ - updateDimentions: name of the JS call to change the dimentions of the video.</P>
+	
+	
+<HR>
+
+<H2><A name="7"></A>updatePlayerSize</H2>
+	
+<H4>Usage</H4>
+	<P>
+	<CODE>private function updateScale(w:String, h:String):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>w</I></CODE>
+		: desired width of the video.</P>
+	<P><CODE><I>h</I></CODE> : desired height of the video.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles the size of video and the controlbar. Used when changing the size via javascript.
+Height and Width of the video as type string:</P>
+	
+	
+<HR>
+
+<H2><A name="8"></A>updateVideoSource</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function updateVideoSource(value:String):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>value</I></CODE>
+		: The full uri with stream name.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles changing the video update from JS calls, swapping video and playing after instantiation.
+</P>
+	<P><BR>
+ 	example for streaming:		</P>
+	<P>rtmp://domainname.com/appname/streamname.flv?streamType=Streaming </P>
+	<P>example for live:		</P>
+	<P>rtmp://domainname.com/appname/streamname?streamType=LiveStream </P>
+	<P>example for FLVSeek:	</P>
+	<P>http://domainname.com/directory/flvseekname.flv?ri=300&amp;rs=250&amp;streamType=FLVSeek 	</P>
+	<P>example for H264Seek(aka MOOVSeek):	  </P>
+	<P>http://domainname.com/directory/seekname_mp4.h264?streamType=MOOVSeek	</P>
+	<P>example for Video on Demand:	  </P>
+	<P>http://domainname.com/directory/downloadstreamname.flv?streamType=VOD</P>
+    <P>example for MultiBitrate:	  </P>
+	<P>rtmp://domainname.com/directory/stream_150kbps.flv,150|stream_400kbps.flv,400|stream_700kbps.flv,700?streamType=MBR</P>
+	<P>example for Live MultiBitrate: </P>
+    <P>rtmp://domainname.com/directory/stream_150kbps.f4v,150|stream_400kbps.f4v,400|stream_700kbps.f4v,700?streamType=LiveMBR</P>
+<P>&nbsp;</P>
+<HR>
+
+<H2><A name="9"></A>closeConnections</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function closeConnections():void</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method kills the currrent net connection.</P>
+	
+	
+<HR>
+
+<H2><A name="10"></A>handleMetaData</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function handleMetaData(event:Event):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>event</I></CODE>
+		None.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles the event return of the onMetaData of the video 
+requested. The values used in the object are used for getting duration,
+keyframe offset for FLVSeek and time offsets for MOOVSeek.</P>
+	
+	
+<HR>
+
+<H2><A name="13"></A>handleProgressClick</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>function handleProgressClick(event:Event):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>event</I></CODE>
+</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method; Handles progress bar click to update seek possitions.</P>
+	
+	
+<HR>
+
+<H2><A name="14"></A>changeVolume</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function changeVolume(volumeLevel:int):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>volumeLevel</I></CODE>
+		Number value to set volume to - 11 is not acceptable.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method to change the volume of the sound object</P>
+	
+	
+<HR>
+
+<H2><A name="15"></A>handleMuteClick</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function handleMuteClick(event:Event):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>event</I></CODE>
+		None.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method; Catches the event fired from the controlbar's mute button. Notifies Sound Object to mute or unmute.</P>
+	
+	
+<HR>
+
+<H2><A name="16"></A>doRestart</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function doRestart():void</CODE></P>
+	<H4>Parameters</H4>
+	<H4>none.</H4>
+	
+<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method to handle restart of the video. Checks streamType to decipher 
+between MOOVSeek, FLVSeek or other to decide how to handle the restart 
+method.</P>
+	
+	
+<HR>
+
+<H2><A name="17"></A>setStatUpdate</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function setStatUpdate()</CODE></P>
+	<H4>Parameters:</H4> 
+	None.
+	
+<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles the update of the UI. Stream time, playhead possition and buffer amount.</P>
+	
+	
+<HR>
+
+
+
+
+<H2>&nbsp;</H2>
+</BODY></HTML>

@@ -1,0 +1,294 @@
+<widget name="admin" baseurl="/modules/administrator/">
+  <content>
+    <AFORM>
+      <FORMNAME>admin</FORMNAME>
+      <FORMACTION>$self</FORMACTION>
+      <JSVALIDATE>TRUE</JSVALIDATE>
+      <FORMCLASS></FORMCLASS>
+      <SERVERVALIDATE>TRUE</SERVERVALIDATE>
+      <PASSTHROUGHVALUES>TRUE</PASSTHROUGHVALUES>
+      <QUERYVALUES>TRUE</QUERYVALUES>
+      <SHOWERRORS>FALSE</SHOWERRORS>
+      <REQS>FALSE</REQS>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Manage Administrators</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>formsubhead</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>formhead</NAME>
+          <DISPLAY>Administrator Administration</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>headline</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>requirenotice</NAME>
+          <DISPLAY>* required fields</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>reqmessage</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>errornotice</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>errornotice</TYPE>
+          <DEFAULT>Please complete fields outlined in red.</DEFAULT>
+          <CLASS>errornotice</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hr</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>linebreak</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>First Name</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_fname</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Last Name</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_lname</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Email</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_email</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Password</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_password</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Administrator Ual</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_ual_array[]</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>displaycheckradio</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS wrapper="col2a"></CLASS>
+          <VTIP>INTEGER</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUES>
+          <VALUE value="1" class="col2a">Films</VALUE>
+          <VALUE value="2" class="col2a">Screenings</VALUE>
+          <VALUE value="14" class="col2a">Programs</VALUE>
+          <VALUE value="3" class="col2a">Users</VALUE>
+          <VALUE value="4" class="col2a">Administrators</VALUE>
+          <VALUE value="5" class="col2a">Payments</VALUE>
+          <VALUE value="6" class="col2a">Credits</VALUE>
+          <VALUE value="7" class="col2a">Timing</VALUE>
+          <VALUE value="8" class="col2a">Promotions</VALUE>
+          <VALUE value="9" class="col2a">Genres</VALUE>
+          <VALUE value="10" class="col2a">PreUser</VALUE>
+          <VALUE value="11" class="col2a">SponsorUser</VALUE>
+          <VALUE value="12" class="col2a">Reviews</VALUE>
+          <VALUE value="13" class="col2a">Reports</VALUE>
+          <VALUE value="15" class="col2a">Feedback</VALUE>
+          <VALUE value="16" class="col2a">Discount Codes</VALUE>
+          <VALUE value="17" class="col2a">Tests</VALUE>          
+          <VALUE value="18" class="col2a">Logs</VALUE>          
+          <VALUE value="19" class="col2a">Track</VALUE>       
+          <VALUE value="20" class="col2a">Metrics</VALUE>
+          </VALUES>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Phone</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_phone</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Cell Phone</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>admin_user_cell</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>255</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hr</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>linebreak_float</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>admin_user_id</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hidden</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP>oneChar</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+    </AFORM>
+  </content>
+</widget>

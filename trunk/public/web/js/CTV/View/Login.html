@@ -1,0 +1,32 @@
+  <div id="log-in" <?php echo !$defaultPanelSignup ? 'style="display: none"':''?>>
+    <h4>Log In</h4>
+    <p class=" change-state">Don't have an account yet? <span id="main-choose-signup" class="link">Sign up &raquo;</span></p>
+
+		<form id="login_form" name="login_form" action="/services/Login" method="POST" class="login_form">
+      <div class="label">E-Mail</div>
+      <input name="email" id="login_email" class="input login-element text-input" type="text" />
+      <div class="clearfix">
+        <div class="label left">Password</div>
+        <span id="main-choose-password" class="right link">Forgot password?</span>
+      </div>
+      <input name="password" id="login_password" class="input login-element text-input" type="password" />
+      <div class="clearfix">
+        <span  id="login-button" class="button button_orange uppercase right">Log In</span>
+      </div>
+      <input type="hidden" value="<?php echo preg_replace("/\?err=([^&].+)/","",$_SERVER["REQUEST_URI"]);?>" name="source" />
+      <input type="hidden" id="login_destination" value="<?php echo preg_replace("/\?err=([^&].+)/","",$_SERVER["REQUEST_URI"]);?>" name="destination" />
+      <input type="hidden" value="true" name="indirect" />
+      <input type="hidden" value="true" name="popup" />
+      <input type="hidden" value="login" name="type" />
+    </form>        
+    <div class="or"><span class="uppercase">Or</span></div>
+
+    <div class="center">
+      <a id="login_fb_link" style="overflow: hidden;" href="/services/Facebook/login?dest=<?php echo urlencode('http://' . sfConfig::get("app_domain") . $_SERVER["REQUEST_URI"]);?>"><img src="/images/alt1/fb_connect.png" alt="" /></a>
+    </div>
+    <div class="or"><span class="uppercase">Or</span></div>
+    <div class="center">
+      <a id="login_twitter_link" style="overflow: hidden;" href="/services/Twitter/login?dest=<?php echo urlencode('http://' . sfConfig::get("app_domain") . $_SERVER["REQUEST_URI"]);?>"><img src="/images/alt1/tw_connect.png" alt="" /></a> 
+    </div>
+
+  </div>

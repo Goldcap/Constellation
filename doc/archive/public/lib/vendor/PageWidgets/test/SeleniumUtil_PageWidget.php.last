@@ -1,0 +1,584 @@
+<?php
+/**
+*    Extend this class to get some default test methods such as logging in
+*
+*
+**/
+class SeleniumUtil_PageWidget extends PHPUnit_Extensions_SeleniumTestCase {
+	
+	public $logs = array('all'=>array());
+	public $test_class_name = null;
+  
+  public function func_0_0_a() {
+		$this->func_0_0_a_1();
+		/*
+		etc...
+		*/
+	}
+	
+  public function func_0_0_a_1() {
+		$this->clickAndWait("id=login-button");
+	}
+	
+	public function func_0_0_b() {
+		$this->func_0_0_b_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_0_0_c() {
+		$this->func_0_0_c_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_0_0_d() {
+		$this->func_0_0_d_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_0_0_e() {
+		$this->func_0_0_e_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_0_0_f() {
+		$this->func_0_0_f_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_a() {
+		$this->func_1_0_a_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_b() {
+		$this->func_1_0_b_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_c() {
+		$this->func_1_0_c_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_d() {
+		$this->func_1_0_d_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_e() {
+		$this->func_1_0_e_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_f() {
+		$this->func_1_0_f_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_0_g() {
+		$this->func_1_0_g_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_1() {
+		$this->func_1_1__1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_1_2() {
+		$this->func_1_2_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_a() {
+		$this->func_2_0_a_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_a() {
+		$this->func_2_0_a_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_b() {
+		$this->func_2_0_b_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_c() {
+		$this->func_2_0_c_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_d() {
+		$this->func_2_0_d_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_e() {
+		$this->func_2_0_e_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_f() {
+		$this->func_2_0_f_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_g() {
+		$this->func_2_0_g_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_0_h() {
+		$this->func_2_0_h_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_2_1() {
+		$this->func_2_1_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_2_2() {
+		$this->func_2_2_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_2_3() {
+		$this->func_2_3();
+		/*
+		etc...
+		*/
+	}
+	public function func_2_4() {
+		$this->func_2_4_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_3_1() {
+		$this->func_3_1_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_3_2() {
+		$this->func_3_2_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_3_3() {
+		$this->func_3_3_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_3_4() {
+		$this->func_3_4_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_3_5() {
+		$this->func_3_5_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_4_1() {
+		$this->func_4_1_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_4_2() {
+		$this->func_4_2_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_4_3() {
+		$this->func_4_3_1();
+		/*
+		etc...
+		*/
+	}
+	public function func_5_0_a() {
+		$this->func_5_0_a_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_5_0_b() {
+		$this->func_5_0_b_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_5_0_c() {
+		$this->func_5_0_c_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_5_0_d() {
+		$this->func_5_0_d_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_6_1() {
+		$this->func_6_1_1();
+		/*
+		etc...
+		*/
+	}
+	
+	public function func_6_2() {
+		$this->func_6_2_1();
+		/*
+		etc...
+		*/
+	}
+	
+	//Setup Method - Configure browser (Can also specify array $browsers method for multi browser support in one test)
+	protected function setUp(){
+        $this->setBrowser('*firefox');
+        //$this->setBrowser('*googlechrome');
+        //$this->setBrowser('*safari');
+        //$this->setBrowser('*iexplore');
+        $this->setBrowserUrl(SITE_URL);
+        $this->setSleep(1);
+				$this->test_class_name = get_class($this);
+		
+  }
+    
+	//Tear Down method upon test finish - output logs
+	function tearDown() {
+	   static $teared = false;
+	   if ($teared === false) {
+         $teared = true;	
+         $this->stop();
+	     $this->outputLogs('csv');
+	     exit;
+	  }
+  }	  
+	
+  //Pre-login Method
+  function preLogin($user, $pass) {
+
+      //PRE USER LOGIN
+      $this->open(SITE_URL);
+  		$this->customAssert('assertElementPresent', array('target'=>'id=login_email', 
+													'label'=>'Asserting Pre Login Input Accessible'));
+     
+      $this->type("id=login_email", $user);
+      $this->focus("id=login_password");
+      $this->type("id=login_password", $pass);
+      $this->clickAndWait("id=login-button");
+  		$this->customAssert('assertElementPresent', array('target'=>'id=masterhead', 
+													'label'=>'Asserting Pre-Login Successful'));
+
+  }
+    
+  //Main Login Method
+  function Login($user, $pass, $open_site = false) {
+      //Login
+      if ($open_site) {
+         $this->open(SITE_URL);
+      }
+      $this->click("css=div.login.main-login");
+			$this->customAssert('assertElementPresent', array('target'=>'id=login_email', 
+														'label'=>'Asserting Login Input Accessible'));
+    
+      $this->focus("id=login_email");
+      $this->type("id=login_email", $user);
+      $this->focus("id=login_password");
+      $this->type("id=login_password", $pass);
+      $this->clickAndWait("id=login-button");
+      $this->customAssert('assertElementPresent', array('target'=>'id=your-screenings', 
+													  'label'=>'Asserting Login Successful'));
+      
+  }
+    
+  //Get Theater Countdown Value (if present)
+  function getTheaterCountdownTime() {
+		return $this->getText("id=countdown");
+	}
+	
+	//Test countdown timer that it ticks 1 second at a time
+	function checkTheaterCountdown($num_iterations = 5) {
+	
+		if ($this->getFilmStartTime() > time()) {
+          $this->waitForElementPresent('id=countdown');
+		  $this->customAssert('assertElementPresent', array('target'=>'id=countdown', 
+														  'label'=>'Asserting Countdown Timer Exists'));
+		  $timer = $this->getTheaterCountdownTime();
+		  $days = substr($timer, 0, 2);
+		  $reached_start = false;
+		  $i = 0;
+		  while(1) {
+            sleep(1);
+            $time = substr($timer, 3);
+            if ($time == '00:00:00') {
+			  if ($days == '00') {
+                 $reached_start = true;
+                 break;
+              } else {
+                 $days = (int) $days - 1;  
+              }
+            }
+            $timer = $days.':'.date('H:i:s', strtotime('- 1 seconds', strtotime($time)));		   
+			$this->customAssert('assertElementContainsText', array('target'=>'id=countdown',
+																  'label'=>'Asserting Countdown Timer Ticked One Second',
+																  'value'=>$timer));
+		   
+	        $i++;
+		    if ($num_iterations !== 0 && $i > $num_iterations) {
+			   break;
+		    }
+          }
+		} else {
+		    $assertion = array('assertElementPresent', 'Asserting Countdown Timer Ticked One Second', 'Film Already Started - Ignoring Assert');
+			$this->addSuccessLog($assertion);
+		}
+	 }
+    
+    //Test that chat shows up with expected username and message
+    function checkTheaterChat($user, $chat = 'Test Chat') {
+        sleep(1);
+		//TODO: use nickname instead of expecting nickname to be the email domain split on @
+		if (strstr($user, '@')) {
+           $userdata = explode('@', $user);
+           $user = $userdata[0];
+        }
+		//append unique uid to chat for easy lookup
+		$chat .= $this->uid();
+		$this->customAssert('assertElementPresent', array('target'=>'id=message',
+													      'label'=>'Asserting Chat Input Accessible'));
+        $this->focus("id=message");
+        $this->type("id=message", $chat);
+        $this->click("id=chat-submit");
+				//todo - remove sleep and instead get a handle on the jquery process for 100% reliability
+				sleep(1);
+        $this->customAssert('assertTextPresent', array('target'=>'glob:*'.$user.'*:* '.$chat,
+													   'label'=>'Asserting Theater Chat Appears'));
+																
+			
+    }
+    
+    //Leave Theater
+    function leaveTheater() {
+        $this->click("css=a.seat_surrender");
+		 		$this->waitForElementPresent('id=lobby_panel');
+		 		$this->customAssert('assertElementPresent', array('target'=>'id=lobby_panel',
+													     'label'=>'Asserting Exiting To Lobby Worked'));
+    }
+    
+    //Enter Theater - handles entering if forced into lobby or if direct
+    function checkAndHandleLobby() {
+       if ($this->isTextPresent('YOU HAVE BEEN DIRECTED INTO THE LOBBY')) {
+           $this->click("css=div.errormessage button.btn_medium");
+           $this->waitForElementPresent("css=div.error_notice_message p a");
+           $this->click("css=div.error_notice_message p a");
+		   $this->checkEnteredTheater('Asserting Entering Theater From Lobby Worked');									     
+       } else {
+	       $this->checkEnteredTheater();
+	   	}
+    }
+	
+	//Check if user entered theater successfully
+	function checkEnteredTheater($message = 'Asserting Enering Theater Worked') {
+		$this->waitForElementPresent('css=a.seat_surrender', 5000);
+		$this->customAssert('assertElementPresent', array('target'=>'css=a.seat_surrender',
+														   'label'=>$message));
+														  	
+	}
+	
+	//Test the watching now count equals passed in string
+	function checkWatchingNowCountEquals($num = '1') {
+		//TODO: - FIGURE OUT HOW TO DETECT THE ACTUAL DYNAMIC JS UPDATER THAT HANDLES THE WATCHER INSTEAD OF RELYING ON ARTIFICIAL SLEEP
+	    //$this->waitForCondition('selenium.browserbot.getCurrentWindow()', 5000);
+		sleep(1);
+		$this->customAssert('assertElementContainsText', array('target'=>'id=userCount',
+														      'value'=>$num,
+															  'label'=>'Asserting Watching Now Count Equals '.$num));
+	}
+	
+	//Check if SWF loads 
+	function checkSWFLoads() {
+	   if ($this->checkFilmInProgress()) {
+	      $this->waitForElementPresent('id=myPlayer', 5000);
+	      $this->customAssert('assertElementPresent', array('target'=>'id=myPlayer',
+					                                       'label'=>'Asserting SWF Object Loads'));
+		} else {
+            $assertion = array('assertElementPresent', 'Asserting SWF Object Loads', 'Film Has Not Started Yet - Ignoring Assert');
+			$this->addSuccessLog($assertion);
+        }														     	
+	}
+	
+	//Checks if film is in progress in theater
+	function checkFilmInProgress() {
+		if (($start = $this->getFilmStartTime()) && ($end = $this->getFilmEndTime())) {
+			$now = time();
+			if ($now >= $start && $now <= $end) {
+				return true;
+			}
+		} 	
+	}
+	
+	//Get film start time
+	function getFilmStartTime() {
+		if ($this->isElementPresent('id=starttime')) {
+			return $this->getText('id=starttime');
+		}
+	}
+	
+	//Get film end time
+	function getFilmEndTime() {
+		if ($this->isElementPresent('id=endtime')) {
+			return $this->getText('id=endtime');
+		}
+	}
+	
+	//Get film run time
+	function getFilmRunTime() {
+		if ($this->isElementPresent('id=runtime')) {
+			return $this->getText('id=runtime');
+		}
+	}	
+	
+	//Utility function to create a unique ID
+	function uid() {
+      return md5(uniqid(getmypid(), 1));
+	}
+	
+	//Custom assert function to support our own custom logging 
+	function customAssert($method, $args = array()) {
+		 $target = $args['target'];
+		 $value = isset($args['value']) ? $args['value'] : null;
+		 $label = isset($args['label']) ? $args['label'] : $method;
+		 $continue_on_fail = isset($args['continue_on_fail']) ? $args['continue_on_fail'] : false;
+		 $assertion = array($method, $label);
+	     try {
+		   $this->$method($target, $value); 
+         } catch (Exception $e) {
+		    $assertion[] = $e->getMessage();
+			$this->addFailureLog($assertion);
+			
+			if ($continue_on_fail) {
+     		  return;
+			} else {
+			  return $this->tearDown();
+			}
+		 }
+		 $assertion[] = '';
+		 $this->addSuccessLog($assertion);
+	}	
+	function addSuccessLog($assertion) {
+		 $this->logs['success'][] = $assertion;
+         $assertion[] = 'Passed';
+		 $this->logs['all'][] = $assertion;
+	}
+	
+	function addFailureLog($assertion) {
+		$this->logs['fails'][] = $assertion;
+	    $assertion[] = 'Fail';
+	    $this->logs['all'][] = $assertion;
+    }
+	//Custom output of asserts
+    function outputLogs($format = 'csv') {
+       if (isset($this->logs['fails'])) {
+	       echo "Test Failed\n";
+	   } else {
+	       echo "Test Succeeded\n";
+		   echo "Count Success: ";
+	   }
+	   echo "Count Success: ".(isset($this->logs['success']) ? count($this->logs['success']) : 0)."\n";
+	   echo "Count Errors: ".(isset($this->logs['fails']) ? count($this->logs['fails']) : 0)."\n";	  
+	     switch($format) {
+		    case 'print':
+			  print_r($this->logs['all']);
+			  break;
+			default:
+         
+		    $output = '"Method","Label","Message","Status"'."\n";
+				foreach($this->logs['all'] as $log) {
+	                $output .= $this->formatQuoteRow($log);
+	      }
+				$output_dir = sfConfig::get("sf_log_dir").'/'.$this->test_class_name.'_'.time().'.csv';
+	            echo 'Log output saved to '.$output_dir."\n\n";
+				file_put_contents($output_dir, $output);			
+				echo $output;
+		    
+		}
+    }	
+	
+	//Utility function to format output in csv format
+	function formatQuoteRow($row){
+      $_formatted_row = null;
+      foreach($row as $r){
+       $cr = str_replace('"',"'",$r);
+       $_formatted_row[] = '"'.$cr.'"';
+      }
+     return implode(',', $_formatted_row)."\n";
+   }
+ 
+  
+}
+
+?>

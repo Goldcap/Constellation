@@ -1,0 +1,319 @@
+.footer, .footer-hidden {
+  z-index: 100;
+}
+
+.landing #screening_invite {
+  left: 400px !important;
+  top: 50px !important;
+}
+
+.theater_panel {
+  position: absolute;
+  left: 360px;
+  top: 100px;
+  width: 530px;
+	text-align: left;
+	padding: 10px;
+	z-index: 50;
+}
+
+.theater_subpanel {
+  position: absolute;
+  left: 270px;
+  top: 10px;
+  width: 710px;
+  height: 230px;
+	text-align: left;
+	padding: 10px;
+	z-index: 10;
+	border: 1px solid #666;
+	background: #222;
+}
+
+.theater_subpanel h1 {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  width: 400px !important;
+}
+
+
+.theater_panel p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.theater_panel h1 {
+  text-align: left;
+  font-size: 16px;
+  color: #99ccff;
+}
+
+.panel a {
+  color: grey;
+}
+.panel p.share a {
+  float: left;
+  margin-right: 2px;
+}
+.panel .share_inset {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.panel h4 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+#qa_panel, #review_panel {
+  border: 1px solid #ddd;
+}
+
+/*Review Panel*/
+#after-screening-popup #screening-info a.button { 
+	width: 216px;
+	height: 26px;
+	margin-bottom: 5px;
+	line-height: 32px;
+}
+.panel a#btn-host { width: 200px; height: 20px; background: url(/dev/images/btn%5bscreening-host%5d.png) left top no-repeat; }
+.panel a#btn-send { width: 220px; height: 30px; background: url(/dev/images/btn%5bscreening-recommend%5d.png) left top no-repeat; }
+.panel a#btn-write { width: 220px; height: 30px; background: url(/dev/images/btn%5bscreening-write%5d.png) left top no-repeat; }
+
+#review_panel textarea, #answer_popup textarea { 
+	width: 100%;
+	height: 80px;
+	background: #d1d0ce; 
+	border: 0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+#screening-popup #invite_more_friends {
+	height:30px;
+}
+#screening-popup #invite_more_friends  a {
+	background: url(/dev/images/btn%5binvite-more%5d.png) no-repeat;
+	color: white;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 7px;
+	text-decoration: none;
+}
+
+#info {
+	display: block;
+	padding: 10px; margin-bottom: 20px;
+	border: 1px solid #333;
+	background-color: #efefef;
+}
+
+#video_panel {
+	position: absolute;
+	float: left;
+  padding: 0px;
+  margin-top: -30px;
+  left: 0px;
+  bottom: 122px;
+  width:100%;
+  z-index: 1;
+}
+
+#video_stream {
+  margin-right: 300px;
+  margin-bottom: 122px;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  z-index: 2;
+}
+
+#movie_stream {
+	width: 100%;
+	height: 100%;
+}
+
+/* Change from bg_1px.jpg to bg_1px.png for transparency */
+.qanda_box{
+	position:absolute; 
+	top:0px; 
+	margin-top:72px; 
+	right:0px; 
+	padding:0 4px 15px; 
+	z-index: 210;
+	height: 245px;
+	background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_inbox_bg.png') repeat-x top left;
+}
+
+/* Change from bg_1px.jpg to bg_1px.png for transparency */
+.chat_box{
+	width:300px; 
+	position:absolute; 
+	bottom:0px; 
+	right:0px; 
+	padding:0 4px 15px; 
+	z-index: 110;
+	background: #000000; 
+	/*background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_inbox_bg.png') repeat-x top left;*/
+}
+
+.chat_box h4 {
+  position: absolute;
+  top: 15px;
+  right: 26px;
+  font-weight: bold;
+  font-size: 10px;
+  color: #bbb;
+}
+
+.chat_box .title{
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	font-size:16px; 
+	padding:14px 0 3px; 
+	margin:0 0 6px; 
+	color:#fff; 
+	text-transform:uppercase; 
+	text-indent:4px; 
+	letter-spacing:1px;
+}
+
+.chat_box .history {
+  display: none;
+}
+
+.chat_box .inbox {
+  margin-bottom: 110px;
+  width: 300px !important;
+  top: 10px;
+  font-size: 12px;
+  text-align: left;
+  overflow: auto;
+}
+
+.chat_box #sending {
+	font-size: 10px;
+	color: #666;
+	padding-left: 10px;
+}
+
+.chat_box #messageform {
+	position: absolute;
+	bottom: 15px;
+}
+
+.chat_box #messageform #message {
+	margin-left: 10px;
+	width: 267px;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.chat_box #messageform .chat_post {
+	float: right;
+	margin-top: 10px;
+}
+
+.chat_box .chat_message {
+	float: left;
+	width: 259px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.chat_box .chat_message_1 {
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_item_bg.png') repeat-x bottom left;
+}
+
+.chat_box .chat_message .chat_icon {
+	float: left;
+	margin-right: 10px;
+	width: 44px;
+	padding: 3px;
+}
+.chat_box .chat_message .chat_text {
+	font-size: 11px;
+	float: left;
+	color: white;
+	text-transform: none;
+	width: 180px;
+}
+
+.chat_box .chat_message .chat_text h5 {
+	font-size: 14px;
+	border-bottom: none;
+	color: #D0D0D0;
+	margin-bottom: 4px !important;
+	text-transform: none;
+}
+
+.chat_box .chat_message .chat_text h5 .chat_host {
+	position: relative;
+	margin-left: 5px;
+	top: 2px;
+}
+
+.inbox div.message {
+  margin-left: 15px;
+  color: white;
+  width: 150px !important;
+  overflow: hidden;
+}
+
+.jspHorizontalBar {
+  display: none !important;
+}
+
+.inbox div.message b{
+  color: #99CCFF;
+}
+
+
+.footer div.exit a{ 
+	position: absolute;
+	float: right;
+ 	right: 365px; 
+	width:125px; 
+	height: 22px; 
+	color: #D0D0D0;
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top:80px; 
+	z-index: 100;
+}
+
+.footer div.volume_bar{ 
+	position: absolute;
+	float: right;
+ 	right: 317px; 
+	width:110px; 
+	height: 14px; 
+	margin-top:80px; 
+	background-image:url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/volumetoggle.png'); 
+	background-repeat: no-repeat; 
+	background-position: 0px 0px; 
+	z-index: 100;
+}
+.mutestyle {
+	position: absolute;
+	left: -25px;
+	margin-top: -4px;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/mutebutton.png') !important;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+.footer div.volume_bar #mute{ margin-left: 0px; position:relative; float: left; width:24px; height: 28px; border: 0px solid transparent;cursor: pointer; }
+.footer div.volume_bar #slider{ margin-left: 5px; position:relative; float: left; width:104px; height: 28px; background: none !important; border: 0px solid transparent; }
+.footer div.volume_bar #slider .ui-slider-handle {
+        margin-top: -16px;
+        height: 18px !important;
+        width: 5px !important;
+      }

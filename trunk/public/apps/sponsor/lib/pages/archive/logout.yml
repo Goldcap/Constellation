@@ -1,0 +1,18 @@
+template: yui3
+layout: yui
+title: Constellation.tv Logout
+javascripts: []
+css: []
+cache: 5:MINUTE
+widgets:
+  hd:
+    test:
+  col03:
+    test:
+  col02:
+    Login: {template: Logout, Logout: true}
+  col04:
+    test:
+  ft:
+    test:
+    test:

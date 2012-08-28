@@ -1,0 +1,24 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      masterhead:
+        attributes: 'class="masterhead" role="banner"'
+      content:
+        attributes: 'class="content"'
+        divs:
+          marqee_moon:
+            attributes: 'class="marqee_moon"'	
+          info_block:
+            attributes: 'class="info"'
+          inner_container:
+            attributes: 'class="inner_container clearfix"'
+            divs:
+              showtime-wrap:
+                attributes: 'class="grid-2 clearfix"'
+              conversation-wrap:
+                attributes: 'class="grid-2 clearfix"'
+          featured_footer:
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  zzdiv:

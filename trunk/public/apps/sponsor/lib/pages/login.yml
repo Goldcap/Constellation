@@ -1,0 +1,12 @@
+template: cst1
+layout: cst_account
+title: Constellation.tv Login
+javascripts: [/js/formvalidate_v6.js]
+css: [/css/styroform_front.css,/css/account.css]
+widgets:
+  masterhead:
+    Header:
+  main:
+    Login: {template: LoginForm, Styroform: true}
+  footer:
+    Footer:

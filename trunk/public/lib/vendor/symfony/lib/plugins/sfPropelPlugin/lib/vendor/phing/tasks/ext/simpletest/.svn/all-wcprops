@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest
+END
+SimpleTestSummaryResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestSummaryResultFormatter.php
+END
+SimpleTestResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestResultFormatter.php
+END
+SimpleTestTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestTask.php
+END
+SimpleTestPlainResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestPlainResultFormatter.php
+END
+SimpleTestCountResultFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestCountResultFormatter.php
+END
+SimpleTestFormatterElement.php
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/simpletest/SimpleTestFormatterElement.php
+END

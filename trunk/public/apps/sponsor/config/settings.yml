@@ -1,0 +1,70 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/04-Settings
+
+prod:
+  .settings:
+    no_script_name:         true
+    logging_enabled:        true
+    web_debug:              false
+    cache:                  off
+    no_script_name:         on
+    etag:                   off
+    debug:                  false
+    use_flash:              off
+    use_process_cache:      on
+    compressed:             on
+test:
+  .settings:
+    no_script_name:         true
+    logging_enabled:        false
+    web_debug:              false
+    cache:                  off
+    no_script_name:         on
+    etag:                   off
+    debug:                  true
+    logging_enabled:        off
+    use_flash:              off
+    use_process_cache:      on
+    compressed:             on
+stage:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    web_debug:              false
+    cache:                  off
+    no_script_name:         on
+    etag:                   off
+    debug:                  true
+    logging_enabled:        off
+    use_flash:              off
+    use_process_cache:      on
+    compressed:             on
+
+dev:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    web_debug:              true
+    cache:                  false
+    no_script_name:         on
+    etag:                   off
+    debug:                  true
+    logging_enabled:        on
+    use_flash:              off
+    use_process_cache:      on
+    compressed:             on
+
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            298c154fb8e68db4e7f368f614147d3ecb634b5d
+    
+    private_key:            Ud2MoYvn535y6z
+    
+    #Allows Controller to pass through generic "index" method
+    generic_action:            true 
+    
+    # Output escaping settings
+    escaping_strategy:      false
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Enable the database manager
+    use_database:           true

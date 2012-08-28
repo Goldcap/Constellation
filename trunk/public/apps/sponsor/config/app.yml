@@ -1,0 +1,91 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+prod:
+  site_id:                       3
+  solr_ip:     test.db.constellation.tv
+  solr_port:     8080
+  solr_uri:     /constellation
+  enforce_ssl:             false
+  base_tz_offset:      'UTC'
+  aws_access_key:   AKIAIOS35Y3MRIKK6P3A
+  aws_bucket:       streams.constellation.tv
+  clean_output:         true
+  image_server:         s3.amazonaws.com/cdn.constellation.tv/prod
+  ppwpp:  "live,true,USD,jlawler_api1.constellation.tv,A8HrO9DSJADwMTj7o5hHiRXqO7kRAXf-BuElnEqO1u-pWcZ-fw0xW7-6,TZATR27EYCBQXST8"
+  paypal_url:     "https://www.paypal.com/webscr&cmd=_express-checkout&token=" 
+  maxmind_key:                   Q6qZkaBUSZWv
+  maxmind_threshold:             7
+  mail_transport:   SMTP
+  domain:                        www.constellation.tv
+  .array:
+    site_admin:  [root@constellation.tv]
+test:
+  site_id:                       3
+  solr_ip:     test.db.constellation.tv
+  solr_port:     8080
+  solr_uri:     /constellation_test
+  enforce_ssl:             false
+  base_tz_offset:      'UTC'
+  aws_access_key:   AKIAIOS35Y3MRIKK6P3A
+  aws_bucket:       streams.constellation.tv
+  clean_output:         true
+  image_server:         s3.amazonaws.com/cdn.constellation.tv/dev
+  ppwpp:  "test,true,USD,sell_1294515484_biz_api1.constellation.tv,AWhYimocr0tsEMGBLVqEj2mkkkGxA-OqHvGyRmSIfI.ycj1FeIL.qSMg,MKMQ8A6ANUEEKGCL"
+  paypal_url:       "https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token="
+  maxmind_key:                   Q6qZkaBUSZWv
+  maxmind_threshold:             7
+  mail_transport:   SMTP
+  domain:                        test.constellation.tv
+  .array:
+    site_admin:  [root@constellation.tv]  
+stage:
+  site_id:                       3
+  solr_ip:     localhost
+  solr_port:     8080
+  solr_uri:     /constellation
+  base_tz_offset:      'UTC'
+  enforce_ssl:             false
+  aws_access_key:   AKIAIOS35Y3MRIKK6P3A
+  aws_bucket:       streams.constellation.tv
+  clean_output:         false
+  image_server:         http://cdn.constellation.tv.s3-website-us-east-1.amazonaws.com/dev
+  ppwpp:  "test,true,USD,sell_1294515484_biz_api1.constellation.tv,AWhYimocr0tsEMGBLVqEj2mkkkGxA-OqHvGyRmSIfI.ycj1FeIL.qSMg,MKMQ8A6ANUEEKGCL"
+  paypal_url:       "https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token="
+  maxmind_key:                   Q6qZkaBUSZWv
+  maxmind_threshold:             7
+  mail_transport:   AWS
+  domain:                        stage.constellation.tv
+  .array:
+    site_admin:  [root@constellation.tv]  
+dev:
+  site_id:                       3
+  solr_ip:     localhost
+  solr_port:     8080
+  solr_uri:     /constellation
+  enforce_ssl:             false
+  base_tz_offset:      'America/New_York'
+  aws_access_key:   AKIAIOS35Y3MRIKK6P3A
+  aws_bucket:       streams.constellation.tv
+  clean_output:         false
+  image_server:         s3.amazonaws.com/cdn.constellation.tv/dev
+  ppwpp:  "test,true,USD,sell_1294515484_biz_api1.constellation.tv,AWhYimocr0tsEMGBLVqEj2mkkkGxA-OqHvGyRmSIfI.ycj1FeIL.qSMg,MKMQ8A6ANUEEKGCL"
+  paypal_url:       "https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token="
+  maxmind_key:                   Q6qZkaBUSZWv
+  maxmind_threshold:             7
+  mail_transport:   AWS
+  domain:                        dev.constellation.tv
+  .array:
+    site_admin:  [root@constellation.tv]  
+
+# default values
+all:
+  facebook_app_id:  185162594831374
+  facebook_secret: 33e3ffc6a1e366cc880ea97d8eb14f10
+  twitter_key:  IopNXMQcS1Xwe0TDwOKeMw
+  twitter_secret: Mj4ix947ICeeIikozj5BcNMyfHbPvkiKRfgSjD1rY8
+  site_name:                     Constellation
+  site_abbr:                     CONST
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  

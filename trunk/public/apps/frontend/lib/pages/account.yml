@@ -1,0 +1,15 @@
+template: default
+layout: default
+title: Constellation | Social Movie Events | My Account
+javascripts: []
+css: []
+ual: [1]
+ual_auth: /
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    AccountTabs:
+    Account:
+  footer:
+    FooterAlt:

@@ -1,0 +1,9 @@
+You'll need this to get a full build of the Selenium Webdriver Suite
+
+yum groupinstall "Development Tools" "Development Libraries" "Legacy Software Development"
+wget ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/updates/11/i386/glibc-devel-2.10.2-1.i586.rpm
+rpm -ivh glibc-devel-2.10.2-1.i586.rpm
+yum install libIDL-devel
+wget ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/releases/11/Everything/x86_64/os/Packages/libIDL-devel-0.8.13-1.fc11.i586.rpm
+wget ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/releases/11/Fedora/x86_64/os/Packages/libIDL-0.8.13-1.fc11.i586.rpm
+yum install xulrunner-devel

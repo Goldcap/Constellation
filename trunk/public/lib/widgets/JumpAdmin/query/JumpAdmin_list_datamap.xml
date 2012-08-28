@@ -1,0 +1,13 @@
+<map table="jump" result="jump_list_datamap" allow_add="false">
+	<column column="jump_email" name="Email" type="VARCHAR" size="255" key="" order="1"></column>
+	<criterion limit="0" distinct="true">
+		<ascorderby column="jump_id"></ascorderby>
+		<!-- <descorderby column="column_name" />
+		<criteria value="0" column="column_name"/>--></criterion>
+	<pagination>
+		<pagesperpage value="5"></pagesperpage>
+		<recordssperpage value="50"></recordssperpage>
+		<page value="1" var="page"></page>
+		<sort var="sort"></sort>
+	</pagination>
+</map>

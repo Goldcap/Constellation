@@ -1,0 +1,14 @@
+<VALUES>
+  <VALUE id="01" data="January" abbr="Jan" />
+  <VALUE id="02" data="February" abbr="Feb" />
+  <VALUE id="03" data="March" abbr="Mar" />
+  <VALUE id="04" data="April" abbr="Apr" />
+  <VALUE id="05" data="May" abbr="May" />
+  <VALUE id="06" data="June" abbr="Jun" />
+  <VALUE id="07" data="July" abbr="Jul" />
+  <VALUE id="08" data="August" abbr="Aug" />
+  <VALUE id="09" data="September" abbr="Sep" />
+  <VALUE id="10" data="October" abbr="Oct" />
+  <VALUE id="11" data="November" abbr="Nov" />
+  <VALUE id="12" data="December" abbr="Dec" />
+</VALUES>

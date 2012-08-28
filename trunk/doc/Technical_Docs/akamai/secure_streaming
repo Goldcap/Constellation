@@ -1,0 +1,65 @@
+0) Turn on secure streaming from the Akamai Portal for the stream:
+   a) Manage Streams
+   b) Check Per Play Secure Streaming 
+   (will take an hour for changes to propogate)
+
+
+1) Install the program gentoken. There are a few different versiosn available at 
+https://control.akamai.com/portal/content/akaServiceSupport/documentation/StreamingLiveDocumentation.jsp?sidebar=LIVE_docs
+
+We'll go ahead and assume you are using the perl version. 
+
+2) Generate a token using the program.
+The options/parameters are below:
+
+   -f path          path of file being requested
+   -i ip            ip address of requester
+   -r profile       profile
+   -p passwd        site specific password
+   -k key           key file name and path (for e type tokens in binary format, 32bytes long)
+   -x payload       payload
+   -w window        time window in seconds
+   -t time          anchor point of window
+   -s salt          pre-generated salt
+   -T type          type of token ('a', 'c', 'd' or 'e')
+
+We'll assume that the 
+profile:  co2010 
+password: co2010 
+time: 1292870880 
+window: 8640000 
+token-type: d 
+path: testStream@s43841
+
+
+bash# ./gentoken.pl -r co2010 -p co2010 -t 1292870880 -w 8640000 -T d -f testStream@s43841
+
+We get back the token: 
+
+token: "daEdeasbgcyd.cicobvdWc3aUdbabclaac5-bnd6tG-G9ya-pxjagb"
+
+3) Construct the new URL. It has three parts: 
+
+   a) base: 
+   It is the old URL (unsecure) with one difference. if the old stream 
+   is called <streamName>@<id>.  The new one is <streamName>@s<id>
+
+   b) a profile: 
+   We use the profile: auto.20101221
+
+   c) token
+
+
+The actual url is: 
+
+	base?auth=<token>&aifp=<profile>
+
+
+So the url is: 
+
+rtmp://cp113557.live.edgefcs.net/live/testStream@s43841?auth=daEdeasbgcyd.cicobvdWc3aUdbabclaac5-bnd6tG-G9ya-pxjagb&aifp=auto.20101221
+
+4) Just test out the new url in the Akamai test site and it should work:
+   support.akamai.com/flash/
+
+

@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#http://stackoverflow.com/questions/156683/what-is-the-best-xslt-engine-for-perl
+
+yum -y install perl
+yum install curl curl-devel
+yum install libxml2 libxml2-devel libxslt libxslt-devel gdbm gdbm-devel perl-DBD-MySQL
+
+cd /usr/src
+
+cpan
+install Bundle::CPAN
+o conf init
+
+install WWW::Curl
+
+cpan Module::Install
+cpan Test::Exception
+cpan Any::Moose
+cpan Class::Method::Modifiers
+cpan Tie::IxHash
+cpan boolean
+cpan Digest::MD5
+cpan CGI
+cpan FCGI
+cpan Digest::MD4
+cpan JSON::XS
+cpan XML::NamespaceSupport
+cpan XML::SAX
+cpan Cache::Memcached::Fast
+cpan DBD::mysql
+cpan Date::Calc
+((Install the Scalar::List::Utils in perlfuck if needed))
+cpan Class::Container
+cpan Data::Pageset::Render
+cpan HTML::Mason
+cpan Geo::Distance
+cpan WebService::YouTube
+cpan Crypt::TripleDES
+cpan MIME::Base64
+
+//Copy these from here:
+//173.1.121.210:/usr/src/libXML.tar.gz
+Commons
+XML
+XSL
+
+//Build from source
+perl Makefile.PL
+make
+make install
+
+
+mkdir /var/run/nginx
+chown apache:webusers /var/run/nginx -R
+chown apache:webusers /var/www/html/sites/www.tattoojohnny.com/public/cgi-bin -R
+chmod 775 /var/www/html/sites/www.tattoojohnny.com/public/cgi-bin -R
+
+cd /var/www/html/sites/www.tattoojohnny.com/public/cgi-bin/
+./fastcgi-wrapper.pl
+
+cd /usr/src
+git clone git://github.com/mongodb/mongo-perl-driver.git
+cd mongo-perl-driver
+perl Makefile.PL
+make
+make install
+
+exit 0

@@ -1,0 +1,17 @@
+<map table="program_film" result="film" allow_add="false" title="Related Films">
+  <column column="fk_film_child_id" name="film_id" type="INTEGER" size="11" key="" order="1" hidden="true"></column>
+  <join foreigntable="film" local="fk_film_child_id" foreign="film_id" left="false">
+    <foreigncolumn column="film_name" name="Name" type="INTEGER" size="" key="" order="2" />
+  </join>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="film_name"></ascorderby>
+    <criteria scope="GET" value="id" column="fk_film_id"></criteria>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="100"></recordssperpage>
+    <page value="1" var="pg"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

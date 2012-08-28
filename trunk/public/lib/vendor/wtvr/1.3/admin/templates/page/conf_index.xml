@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+	<xmltemplate>xml/xhtml.xml</xmltemplate>
+	<xsltemplate>xsl/xhtml.xsl</xsltemplate>
+	<title></title>
+	<parse>WTVR</parse>
+	<cache>NONE</cache>
+	<modules>
+	</modules>
+</page>

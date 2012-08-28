@@ -1,0 +1,12 @@
+<smil> 
+	<head> 
+		<meta base="rtmp://cp113558.edgefcs.net/ondemand" token="da.aBaPaJcNdhcAcOdcdsdsa4aLaqdDdmbp-bos1ml-vga-JnCC3CGrywt-kvldshstqJrGqTtKmtp6rfl5pStFr0" /> 
+	</head> 
+	<body> 
+		<switch> 
+			<video src="mp4:constellation/movies/4/movie-small.mp4?auth=da.aBaPaJcNdhcAcOdcdsdsa4aLaqdDdmbp-bos1ml-vga-JnCC3CGrywt-kvldshstqJrGqTtKmtp6rfl5pStFr0%26aifp=v0006%26slist=constellation%2Fmovies%2F4%2Fmovie-large%3Bconstellation%2Fmovies%2F4%2Fmovie-medium%3Bconstellation%2Fmovies%2F4%2Fmovie-small" system-bitrate="300000" />
+			<video src="mp4:constellation/movies/4/movie-medium.mp4?auth=da.aBaPaJcNdhcAcOdcdsdsa4aLaqdDdmbp-bos1ml-vga-JnCC3CGrywt-kvldshstqJrGqTtKmtp6rfl5pStFr0%26aifp=v0006%26slist=constellation%2Fmovies%2F4%2Fmovie-large%3Bconstellation%2Fmovies%2F4%2Fmovie-medium%3Bconstellation%2Fmovies%2F4%2Fmovie-small" system-bitrate="800000" />
+			<video src="mp4:constellation/movies/4/movie-large.mp4?auth=da.aBaPaJcNdhcAcOdcdsdsa4aLaqdDdmbp-bos1ml-vga-JnCC3CGrywt-kvldshstqJrGqTtKmtp6rfl5pStFr0%26aifp=v0006%26slist=constellation%2Fmovies%2F4%2Fmovie-large%3Bconstellation%2Fmovies%2F4%2Fmovie-medium%3Bconstellation%2Fmovies%2F4%2Fmovie-small" system-bitrate="2000000" /> 
+		</switch> 
+	</body> 
+</smil>

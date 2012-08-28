@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# mongo - this script starts and stops the nginx daemon
+#
+# chkconfig:   - 85 15
+# description:  Fast CGI Wrappers allowing NGINX to serve PERL Scripts
+# processname: perl
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "$NETWORKING" = "no" ] && exit 0
+
+perl="/usr/bin/perl"
+basedir="/var/www/html/sites/stage.constellation.tv/public/cgi-bin/"
+wrappers=( "fastcgi-wrapper.pl" )
+prog=$(basename $perl)
+
+lockfile=/var/lock/subsys/fastcgi
+
+start() {
+    for awrap in "${wrappers[@]}"
+    do
+      command=$basedir$awrap
+      echo -e $"Starting $command: \r"
+      if [ -f $command ]
+      then
+	  $perl $command&
+      else
+	echo "File $command Does Not Exist"
+      fi
+    done
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && touch $lockfile
+    return $retval
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    for apid in `pidof perl`
+    do
+      kill -15 $apid
+    done
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && rm -f $lockfile
+    return $retval
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+        $1
+        ;;
+    stop)
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 2
+esac

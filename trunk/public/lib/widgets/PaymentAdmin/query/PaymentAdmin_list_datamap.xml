@@ -1,0 +1,51 @@
+<map table="payment" result="payment_list_datamap" allow_add="false">
+  <column column="payment_type" name="Type" size="11" key="" order="2" filter="ucwords"></column>
+  <column column="payment_id" name="ID" size="11" key="" order="2" format="%0d"></column>
+  <column column="fk_film_id" type="INTEGER" size="11" key="" order="1" hidden="true"></column>
+  <column column="fk_screening_id" type="INTEGER" size="11" key="MUL" order="29" hidden="true"></column>
+  <column column="fk_audience_id" type="INTEGER" size="11" key="MUL" order="30" hidden="true"></column>
+  <column column="fk_subscription_id" type="INTEGER" size="11" key="" order="2" hidden="true"></column>
+  <column column="fk_user_id" type="INTEGER" size="11" key="" order="3" hidden="true"></column>
+  <column column="payment_unique_code" type="VARCHAR" size="20" key="" order="4" hidden="true"></column>
+  <column column="payment_first_name" name="First Name" type="VARCHAR" size="255" key="" order="5" format="null"></column>
+  <column column="payment_last_name" name="Last Name" type="VARCHAR" size="255" key="" order="6" format="null"></column>
+  <column column="payment_email" name="EmailAddr" type="VARCHAR" size="255" key="" order="7" format="null"></column>
+  <column column="payment_status" name="Payment" type="TINYINT" size="" key="" order="14" filter="formatPayment"></column>
+  <column column="payment_amount" name="Amount" type="FLOAT" size="10" key="" order="15" format="money_us"></column>
+  <!--<column column="payment_card_type" type="VARCHAR" size="20" key="" order="17"></column>
+  <column column="payment_last_four_CC_digits" type="VARCHAR" size="4" key="" order="18"></column>-->
+  <column column="payment_created_at" name="Date" type="TIMESTAMP" size="monthtimezone" key="" order="21" format="dateformat"></column>
+  <!--<column column="payment_order_processor" type="VARCHAR" size="50" key="" order="28"></column>-->
+  <column column="payment_id" type="INTEGER" size="11" key="PRI" order="31" hidden="true"></column>
+  <join foreigntable="film" local="fk_film_id" foreign="film_id" left="true">
+    <foreigncolumn column="film_name" name="Film" type="VARCHAR" size="255" key="" order="35" format="null"></foreigncolumn>
+  </join>
+  <join foreigntable="screening" local="fk_screening_id" foreign="screening_id" left="true">
+    <!--<foreigncolumn column="screening_date" type="VARCHAR" size="255" key="" order="35" format="null"></foreigncolumn>
+    <foreigncolumn column="screening_time" type="VARCHAR" size="255" key="" order="35" format="null"></foreigncolumn>-->
+    <foreigncolumn column="screening_unique_key" name="Screening" type="VARCHAR" size="255" key="" order="35" format="null"></foreigncolumn>
+    <foreigncolumn column="screening_id" type="VARCHAR" size="255" key="" order="35" format="null" hidden="true"></foreigncolumn>
+  </join>
+  <criterion limit="0" distinct="true">
+    <criteria column="payment_status" value="null" constant="ISNOTNULL" ></criteria>
+    <descorderby column="payment_created_at"></descorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Type" base="/payment/detail/">
+      <attribute name="payment_id"></attribute>
+    </maplink>
+    <maplink column="Screening" base="/screening/detail/">
+      <attribute name="screening_id"></attribute>
+    </maplink>
+    <maplink column="EmailAddr" base="/user/detail/">
+      <attribute name="fk_user_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

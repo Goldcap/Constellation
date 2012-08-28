@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+smil:
+  url:    /services/Tokenizer/:id/:map.smil
+  param: { module: default, action: services, op: Tokenizer }
+  
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:action/:op/:id/:rev/*
+  param: { module: default, action: index, op: list, id: 0, rev: 0 }
+
+default:
+  url:   /:module/:action/*

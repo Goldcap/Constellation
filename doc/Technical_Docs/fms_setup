@@ -1,0 +1,56 @@
+On regular machines, FMS works both on Fedora 14 and Windows (7, Professional)
+On AWS it only works on Windows Server 10, 64 bit architecture.
+The following AWS image (ami) works: ami-0535d66c 
+
+On Windows
+-----------
+1) Download the free trial version on Flash media Server
+and install it on the default location. When it asks for a
+serial-number, just hit return and it will install the 
+Development version of FMS. The FMS can be found here: 
+http://www.adobe.com/products/flashmediaserver/
+
+The <install_dir> will be c:\Program Files\Adobe\Flash Media Server4\
+
+2) Go to <install_dir> and create the folder akamaiTest there
+   Copy the files 
+   		Application.xml
+		main.asc
+		config.asc
+		md5.asc
+	to it. These files reside at the correct locations on the Win3
+	AWS instance. 
+
+	If need be modify config.asc to reflect the correct
+	a) source url and source stream
+		var SOURCE_URL = "rtmp://localhost/live";
+		var SOURCE_STREAM="stream";
+
+	b) Akamai ids for the stream which was given to us when we set up the
+	   stream at akamai https://control.akamai.com
+	   1) Akamai stream id (from their portal page when the stream is setup)
+	   	  var AKAMAI_STREAM_ID = 43841;
+	   2) The Akamai republish id (also form their portal page )
+	   var AKAMAI_STREAM="testStream@43841";
+
+3) Restart fms
+   All Programs -> Adobe -> Adobe Media Server 4 -> Stop Adobe Media Server 4
+   All Programs -> Adobe -> Adobe Media Server 4 -> Start Adobe Media Server 4
+
+4) Stream an rtmp stream to FMS (for ffmpeg installation) see ffmpef file
+   a) Open a dos console (All Programs->Accessories-Command Prompt)
+   b) Run the following command there
+     ffmpeg -i <video_file> -re -ar 22050 -vcodec libx264 -vpre default -f flv rtmp://localhost/live/test
+   (the <video_file> can be any video file
+
+5) Check if it is streaming in the FMS builtin Flash player
+   a) Open http://localhost/ in a browser
+   	  You should see the Adobe FMS Splash screen with two videos.
+   b) Clock on the tab that says "Interactive"
+   	  You will see another page with two videos 
+   c) On the video on the right enter
+   Server: http://localhost/live 
+   Stream: test
+   (these correspond to the last target parameter given to ffmpeg)
+   d) Hit the "Play stream" that appears in the middle of the right video screen
+   The video streamed from ffmpeg <video_file> should play

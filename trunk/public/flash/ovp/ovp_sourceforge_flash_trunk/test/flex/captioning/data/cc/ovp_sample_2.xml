@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+		<head>
+		<!-- 
+			This sample has style tags mixed in with the <p> tags using both tts namespace styles and style id's
+		-->
+			<styling>
+				<style id="bgc_lb" tts:backgroundColor="#08089a"/> 
+				<style id="bgc_named" tts:backgroundColor="magenta"/>
+				<style id="bgc_default" tts:backgroundColor="0x000000"/>
+				<style id="red" tts:color="#ff0000"/>
+				<style id="ff_co" tts:fontFamily="Courier"/> <!-- todo: support generic family names -->
+				<style id="fsz_default" tts:fontSize="11px"/>
+				<style id="fsz_big" tts:fontSize="20px"/>
+				<style id="fsi" tts:fontStyle="italic"/>
+				<style id="fs_default" tts:forntStyle="normal"/>
+				<style id="fwb" tts:fontWeight="bold"/>
+				<style id="tal" tts:textAlign="left"/>
+				<style id="tac" tts:textAlign="center"/>
+				<style id="tar" tts:textAlign="right"/>
+				<style id="ww0" tts:wrapOption="noWrap"/>
+				<style id="ww1" tts:wrapOption="wrap"/>  
+			</styling>
+		</head>
+		<body>
+			<div xml:lang="en">
+				<p begin="00:00:05">This caption has <span style="red">color</span> text mixed in.  The word 'color' in the previous sentence should red."</p>
+				<p begin="00:00:10" dur="00:00:10">This caption contains bold text. <span tts:fontWeight="bold">This text should be bold.</span> This text should not be bold.</p>
+			</div>
+		</body>
+</tt>

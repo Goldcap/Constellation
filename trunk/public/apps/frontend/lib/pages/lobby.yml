@@ -1,0 +1,18 @@
+template: cst0_1
+layout: cst_lobby
+title: Constellation.tv Lobby
+#/js/login.js,
+#/js/activity.js,/js/adminmessage.js
+javascripts: []
+css: []
+widgets:
+  masterhead:
+    Header:
+  main:
+    Lobby:
+  footer:
+    Footer:
+  chat_box:
+    LobbySidebar:
+  zzdiv:
+    GoogleAnalytics:

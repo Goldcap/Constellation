@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/film.html">List Films</a></div>
+					<div class="item-no-border"><a href="/backend/film_add.html">Add Film</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+			Logout
+		</a>
+
+	</div>
+</div><div id="main"><div class="title">
+	<h2>Film Management</h2>
+</div>
+
+<table class="table-list">
+	<tr class="header">
+		<td class="first-left">ID</td>
+		<td>Name</td>
+
+		<td>Production Company</td>
+		<td>Setup Price</td>
+		<td>Join Price</td>
+		<td>Status</td>
+		<td>Setup Screening Url:</td>
+		<td>Date Added</td>
+
+		<td>Report</td>
+		<td>GeoBlocking</td>
+		<td class="first-right">Actions</td>
+	</tr>
+	<tr class="type-2">
+					<td class="left"><a href="/backend/film_edit.html">2</a></td>
+					<td><a href="/backend/film_edit.html">Earth Made of Glass</a></td>
+
+					<td>Clover &amp; a Bee Films, 33&amp;Out</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href="/backend/screening_edit.html" target="_blank">http://www.constellation.tv/setupScreening/2/Earth Made of Glass</a></td>
+
+					<td></td>
+					<td><a href="/backend/film_report.html">View</a></td>
+					<td><a href="/backend/film_geo.html">Manage</a></td>
+					<td><a href="/backend/film_edit.html">Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/3>3</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/3>2012: Time for Change</a></td>
+					<td>Curious Pictures, Mangusta Productions, Postmodern Times</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/3/2012: Time for Change target="_blank">http://www.constellation.tv/setupScreening/3/2012: Time for Change</a></td>
+
+					<td></td>
+					<td><a href=/backend/filmManagement/report/filmId/3>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/3>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/3>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/4>4</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/4>The Lottery</a></td>
+					<td>Great Curve Films</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/4/The Lottery target="_blank">http://www.constellation.tv/setupScreening/4/The Lottery</a></td>
+
+					<td></td>
+					<td><a href=/backend/filmManagement/report/filmId/4>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/4>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/4>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/5>5</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/5>Racing Dreams</a></td>
+					<td>White Buffalo Entertainment</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/5/Racing Dreams target="_blank">http://www.constellation.tv/setupScreening/5/Racing Dreams</a></td>
+
+					<td></td>
+					<td><a href=/backend/filmManagement/report/filmId/5>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/5>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/5>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/6>6</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/6>In Her Shoes</a></td>
+					<td>Empire 8 Productions</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/6/In Her Shoes target="_blank">http://www.constellation.tv/setupScreening/6/In Her Shoes</a></td>
+
+					<td></td>
+					<td><a href=/backend/filmManagement/report/filmId/6>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/6>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/6>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/7>7</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/7>ANVIL</a></td>
+					<td>Sacha Gervasi</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/7/ANVIL target="_blank">http://www.constellation.tv/setupScreening/7/ANVIL</a></td>
+
+					<td>27, May 2010 09:52am</td>
+					<td><a href=/backend/filmManagement/report/filmId/7>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/7>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/7>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/8>8</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/8>JOAN RIVERS, A PIECE OF WORK</a></td>
+					<td>Production Company</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/8/JOAN RIVERS, A PIECE OF WORK target="_blank">http://www.constellation.tv/setupScreening/8/JOAN RIVERS, A PIECE OF WORK</a></td>
+
+					<td>27, May 2010 10:00am</td>
+					<td><a href=/backend/filmManagement/report/filmId/8>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/8>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/8>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/9>9</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/9>RESTREPO</a></td>
+					<td>Production Company</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/9/RESTREPO target="_blank">http://www.constellation.tv/setupScreening/9/RESTREPO</a></td>
+
+					<td>27, May 2010 10:06am</td>
+					<td><a href=/backend/filmManagement/report/filmId/9>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/9>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/9>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/10>10</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/10>WAITING FOR SUPERMAN</a></td>
+					<td>Production Company</td>
+					<td>$5</td>
+					<td>$2</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/10/WAITING FOR SUPERMAN target="_blank">http://www.constellation.tv/setupScreening/10/WAITING FOR SUPERMAN</a></td>
+
+					<td>27, May 2010 10:13am</td>
+					<td><a href=/backend/filmManagement/report/filmId/10>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/10>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/10>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/11>11</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/11>WE LIVE IN PUBLIC</a></td>
+					<td>Production Company</td>
+					<td>$5</td>
+					<td>$2.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/11/WE LIVE IN PUBLIC target="_blank">http://www.constellation.tv/setupScreening/11/WE LIVE IN PUBLIC</a></td>
+
+					<td>27, May 2010 10:21am</td>
+					<td><a href=/backend/filmManagement/report/filmId/11>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/11>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/11>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/14>14</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/14>Archangel</a></td>
+					<td>James Lawler Productions</td>
+					<td>$0</td>
+					<td>$0</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/14/Archangel target="_blank">http://www.constellation.tv/setupScreening/14/Archangel</a></td>
+
+					<td>27, Jul 2010 10:12am</td>
+					<td><a href=/backend/filmManagement/report/filmId/14>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/14>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/14>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/15>15</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/15>Living in Emergency</a></td>
+					<td>Red Floor Pictures</td>
+					<td>$5</td>
+					<td>$3.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/15/Living in Emergency target="_blank">http://www.constellation.tv/setupScreening/15/Living in Emergency</a></td>
+
+					<td>26, Aug 2010 11:40am</td>
+					<td><a href=/backend/filmManagement/report/filmId/15>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/15>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/15>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/16>16</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/16>Sin By Silence</a></td>
+					<td>Quiet Little Place Productions</td>
+					<td>$5</td>
+					<td>$3.99</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/16/Sin By Silence target="_blank">http://www.constellation.tv/setupScreening/16/Sin By Silence</a></td>
+
+					<td>26, Aug 2010 11:48am</td>
+					<td><a href=/backend/filmManagement/report/filmId/16>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/16>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/16>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/film_add.html/filmId/17>17</a></td>
+
+					<td><a href=/backend/film_add.html/filmId/17>In Her Shoes</a></td>
+					<td></td>
+					<td>$5</td>
+					<td>$5</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/17/In Her Shoes target="_blank">http://www.constellation.tv/setupScreening/17/In Her Shoes</a></td>
+					<td>04, Nov 2010 17:12pm</td>
+
+					<td><a href=/backend/filmManagement/report/filmId/17>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/17>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/17>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/film_add.html/filmId/18>18</a></td>
+					<td><a href=/backend/film_add.html/filmId/18>Test Movie</a></td>
+
+					<td>Whocares</td>
+					<td>$5</td>
+					<td>$5</td>
+					<td></td>
+					<td><a href=http://www.constellation.tv/setupScreening/18/Test Movie target="_blank">http://www.constellation.tv/setupScreening/18/Test Movie</a></td>
+					<td>05, Nov 2010 00:40am</td>
+
+					<td><a href=/backend/filmManagement/report/filmId/18>View</a></td>
+					<td><a href=/backend/filmManagement/geoBlocking/filmId/18>Manage</a></td>
+					<td><a href=/backend/film_add.html/filmId/18>Edit</a></td>
+				</tr>
+				<tr class="footer">
+		<td colspan="10">
+			<div class="left-bottom"></div>
+
+			<div class="middle-bottom">
+							</div>
+			<div class="right-bottom"></div>
+		</td>
+	</tr>		
+</table></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+
+  </body>
+</html>

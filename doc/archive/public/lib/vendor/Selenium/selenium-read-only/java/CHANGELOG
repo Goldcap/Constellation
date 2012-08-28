@@ -1,0 +1,223 @@
+v2.11.0
+======
+
+RC:
+  *  Safari proxy added back to the supported browser.
+
+
+v2.10.0
+======
+
+Grid:
+  * Stability and reliability fixes.
+  * A single node can now process both selenium 1.0 and selenium webdriver requests.  Old proxies deprecated.
+  * FIXED: 2617: Removing unnecessary logging.
+  * FIXED: 2650, 2400: Unregister dead nodes.
+
+WebDriver:
+  * FIXED: 2700: Don't throw MoveTargetOutOfBoundsError where we shouldn't.
+  * FIXED: 2301: Allow commas in CSS selectors.
+  * FIXED: 2099: Occasional XPath lookup errors.
+  * FIXED: 1771: Don't scroll unnecessarily.
+  * FIXED: 2674: Don't incorrectly decorate List<WebElement>s which don't have @FindBy annotations.
+
+Javascript:
+  * Added jsapi, including node integration.  More details to come.
+
+General:
+  * Updated version of guava used to 10.0.1.
+
+v2.9.0
+======
+
+Project:
+  * ThoughtWorks code grant to the Software Freedom Conservancy complete.
+
+WebDriver:
+  * Support for Ice Cream Sandwich in the AndroidDriver
+  * CSS Selector support enabled for Android
+  * Remote webdriver server log now contains '[HTML source]' instead of full
+    source.
+  * Better respect for preformatted text in WebElement.getText()
+  * Adding better error message when failing to connect to the FirefoxDriver.
+  * Reduced scrolling during tests for IE and Firefox.
+  * Preserve the state of modified keys when using native events on Linux.
+  * Support for experimental page load detection in firefox. Set the
+    "webdriver.load.strategy" to "fast" in the FirefoxProfile to enable less
+    conservative page loading detection at the risk of greater test
+    instability.
+  * FIXED: 2031: Shielding backslashes when writing preferences to a file.
+    There is an issue with Firefox: it drops \n and \r when it moves user
+    preferences to prefs.js. This patch is a workaround.
+  * FIXED: 2223: Clicks on labels are now propagated to the referenced element.
+  * FIXED: 2646: PortProber no longer attempts to divide by zero.
+  * FIXED: 2675: Better detection of where to click on links.
+
+RC:
+  * FIXED: 569: Making assert and verify methods NPE-safe.
+
+
+v2.8.0
+======
+
+WebDriver
+  * FIXED: 1967,1934: Temporary directories no longer fill up disk.
+  * FIXED: 2295,1899: Better handling of select/option tags in HtmlUnit
+  * Disabled elements won't be cleared any more
+  * FIXED: 2531: Allow setting frozen firefox profile preferences to their frozen values.
+  * FIXED: 2509: Fixing error=24 too many open files bug
+  * Added setFileDetector to RemoteWebDriver to allow files to be uploaded to the remote server
+  * Faster error reporting if chromedriver isn't executable
+  * FIXED: Occasional ClassCastExceptions
+  * FIXED: Proxy configuration NullPointerException problem
+  * FIXED: 1326: Allow parallel execution of FirefoxDriver on Linux with native events
+  * FIXED: 384: Fixed native FirefoxDriver crash on some 64-bit linux systems
+  * FIXED: 417: Allow @FindBy annotations to be put on List<WebElement> as well as just WebElement fields
+  * Added native event support for Firefox 7
+  * Added constructor to ChromeDriver that lets you specify the ChromeDriverService as well as the DesiredCapabilities
+  * FIXED: By.linkText now always trims leading and trailing whitespace
+  * FIXED: Issues with doubleClick in Firefox
+
+RC
+  * FIXED: 1934: -singleWindow works for *iexplore
+  * Selenium Server params work with RC Grid configuration
+  * Adding support for Firefox 8
+
+v2.7.0
+======
+
+WebDriver
+  * FIXED: 2487: FirefoxDriver no longer types in the URL bar.
+  * FIXED: Issues to do with not clicking on elements out of view when using
+    native events.
+  * FIXED: 2456: Double click and get no longer hangs Firefox.
+  * Improved emulation of Selenium RC when using Opera in the
+    WebDriverBackedSelenium.
+  * FIXED: 2421: Chrome returns doubles instead of ints because it supports
+    sub-pixel rendering.
+
+RC
+  * FIXED: #2413: "Missing space between browser name and custom path in error
+    message"
+  * FIXED: 2390, 2477: Make -h a synonym for -help
+
+Automation Atoms
+  * Allow bot.dom.getInViewLocation to scroll a specified location into view.
+
+
+v2.6.0
+======
+
+WebDriver
+  * Better handling of the case where emphemeral sockets are exhausted.
+  * More widespread use of the InvalidSelectorError in Chrome and Remote.
+  * When using native events, prevent firefox from scrolling if an element is
+    already in the view.
+  * Improvements in the mouse emulation (movement, click, double click, context
+    click)
+  * Bumped included version of OperaDriver to 0.7.1.
+  * Attempt to address issue #1443 (the infamous "getWindow() == null" problem)
+  * Added timing information to WebDriver exceptions resulting from command
+    invocations in the remote driver.
+  * Added an ExpectedConditions class with common ExpectedCondition
+    implementations.
+  * Better usage of sockets in the remote webdriver
+
+RC
+  * WebDriver-backed Seleniums will now clear text fields before typing.
+
+Grid
+  * Significantly improved thread safety.
+  * Improved information on the index page of the hub.
+
+Automation Atoms
+  * bot.inject.executeScript* handles function arguments better.
+  * Add atom to get the frame index of a frame element (bot.frame.getFrameIndex)
+  * Added emulation of touch devices and events
+  * Use DOM Events level 2 and 3 for events IE if available
+
+
+v2.5.0
+======
+
+WebDriver
+  * Firefox 7 support without Native Events
+  * Implementing scrolling past the viewport for Firefox
+  * FIXED: 1020: Clicking on a link over multiple lines in Firefox
+  * Minor cleanups of code
+
+Grid
+  * FIXED: Thread Safety Issues
+  
+
+
+v2.4.0
+======
+
+WebDriver:
+  * Firefox 6 support.
+  * Change in the wire protocol to bring alert checking inline with the
+    semantics of other commands.
+  * Improved text handling: non-breaking spaces are now returned as spaces, even
+    in the middle of an existing body of text.
+  * Minor fixes for detecting whether elements are visible.
+  * Added handling of lists and maps in EventFiringWebDriver.executeScript().
+  * FIXED: 2158: Fixing HtmlUnit select element getAttribute behaviour for
+    "multiple" attribute.
+  * Better handling of cookies in the remote webdriver (particularly Chrome)
+  * FIXED: Thread safety issues.
+  * Added clear app cache to the wire protocol.
+
+
+Selenium:
+  * Firefox 8 support.
+  
+
+v2.3.0
+======
+
+WebDriver:
+  * Better detection of clickable areas in Firefox.
+  * Alert handling works in Chrome.
+  * Merge of Google-contributed code into the underlying Atoms.
+  * FIXED: Internet Explorer crashes when an element has empty text and getText called.
+  * FIXED: IBM JDK throws different exception when unable to bind to a socket.
+
+
+v2.2.0
+======
+
+Selenium RC:
+  * Avoiding double quoting the "method" when captured network traffic is
+    returned via XML.
+
+WebDriver:
+  * relatedTarget now set on appropriate events (mouseover, mouseout)
+  * Multiply wrapped WebElements now unwrapped properly when using the remote
+    webdriver
+  * RemoteWebElement will reuse an ID if the element has been looked up before.
+  * Better warnings for emulated Selenium methods "allowNativeXpath" and
+    "useXpathLibrary"
+  * More consistent errors when an xpath expression returns something that is
+    not a WebElement (indicated via the InvalidSelectorException.
+
+Grid:
+  * Adding support for a "host" variable in the config files.
+  * Additional logging
+
+
+
+v2.1.0
+======
+
+WebDriver:
+  * Round to 0 if something looks like it's off the edge of the screen when
+    calculating distances. Fixes issue 1776.
+  * Deleting the deprecated TimeoutException inner class and replacing with the
+    top-level one
+
+Grid:
+  * Properly form the HTML output for console display.
+  * Track when a session has become orphaned.  I.e., when the client sends no
+    commands after the initial session creation.  This almost always indicates
+    the client is no longer connected and the session is unusable immediately.

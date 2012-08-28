@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<module name="header">
+	<parse>SERVER</parse>
+	<accessmethods>
+		<xml>TRUE</xml>
+		<xsl>TRUE</xsl>
+		<xhtml>TRUE</xhtml>
+		<html>FALSE</html>
+	</accessmethods>
+	<attributes>
+    <assets>
+      <!--
+      <CSSCRIPT>login.css</CSSCRIPT>
+  		<JSCRIPT>login.js</JSCRIPT>
+  		-->
+	  </assets>
+	</attributes>
+</module>

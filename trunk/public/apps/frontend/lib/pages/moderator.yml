@@ -1,0 +1,11 @@
+template: cst_theater
+layout: cst_theater_new
+title: Constellation | Your Online Movie Theater | Theater
+javascripts: [http://staging.tokbox.com/v0.91/js/TB.min.js]
+css: []
+widgets:
+  content:
+    BulkModeration:
+  zzdiv:
+    BandwidthTester:
+    GoogleAnalytics:

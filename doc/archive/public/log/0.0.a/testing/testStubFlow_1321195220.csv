@@ -1,0 +1,7 @@
+"Method"|"Label"|"Message"|"Status"
+"","http://dev.constellation.tv/","===========","Notice"
+"assertElementPresent","Login Link Accessible","===========","Success"
+"assertElementPresent","Login Email Accessible","===========","Success"
+"assertElementPresent","Login Password Accessible","===========","Success"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Login Successful","===========","Success"

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE smil PUBLIC "-//W3C//DTD SMIL 2.0//EN" "http://www.w3.org/2001/SMIL20/SMIL20.dtd">
+<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
+	<head>
+		<meta name="title" content="Earth Trailer" />
+		<meta name="httpBase" content="http://efvod-hdnetwork.akamai.com.edgesuite.net/" />
+		<meta name="rtmpAuthBase" content="" />
+	</head>
+	<body>
+
+		<switch id="Earth Trailer">
+			<video src="earth2_h264_3500@14411" system-bitrate="3500000"/>
+			<video src="earth2_h264_2500@14411" system-bitrate="2500000"/>
+			<video src="earth2_h264_1500@14411" system-bitrate="1500000"/>
+			<video src="earth2_h264_700@14411" system-bitrate="700000"/>
+			<video src="earth2_h264_300@14411" system-bitrate="300000"/>
+		</switch>
+	</body>
+</smil>
+
+

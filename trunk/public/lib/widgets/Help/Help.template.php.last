@@ -1,0 +1,79 @@
+<?php 
+if (isset ($form) ) {echo $form;}
+?>
+
+<style>
+.form-support {
+	padding: 20px;
+}
+h4 {
+	font-weight: lighter;
+}
+.form-support-text {
+	font-size: 13px;
+	margin: 20px 0;
+}
+.form-support-text.form-support-thanks {
+	font-size: 16px;
+	line-height: 18px;
+	padding: 20px;
+	background: #fff; 
+	border: solid 1px #c0c0c0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.form-support-text.form-support-thanks span {
+	color: #64a62a;
+}
+.button-wrap {
+	text-align:right;
+	margin-top: 10px;
+}
+textarea {
+    -webkit-transition: all 0.2s linear 0s;
+	-moz-transition: all 0.2s linear 0s;
+	-o-transition: all 0.2s linear 0s;
+	-ms-transition: all 0.2s linear 0s;
+	transition: all 0.2s linear 0s;
+	border: 1px solid #C0C0C0;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 2px 2px;
+	height: 80px;
+	line-height: 15px;
+	padding: 10px;
+	width: 340px;
+}
+textarea:focus {
+    background: none repeat scroll 0 0 #FFFEF5;
+	-webkit-box-shadow: 0 0 5px rgba(188, 222, 245, 0.8);
+	-moz-box-shadow: 0 0 5px rgba(188, 222, 245, 0.8); 
+	box-shadow: 0 0 5px rgba(188, 222, 245, 0.8);
+}
+</style>
+
+<?php if(!$isSuccess):?>
+<form method="post" action="/help">
+<div class="form-support">
+	<h4>Request Support</h4>
+	<div class"help-form">
+		<textarea name="text"></textarea>
+	    <input type="hidden" name="sid" value="<?php echo $sid;?>" />
+	    <input type="hidden" name="uid" value="<?php echo $uid;?>" /> 
+	    <input type="hidden" name="tid" value="<?php echo $tid;?>" />
+    
+		<p class="button-wrap"><button class="button_blue" type="submit">Submit</button></p>
+	</div>
+</div>
+</form>
+<?php else:?>
+<div class="form-support">
+	<h4>Request Support</h4>
+	<p class="form-support-text form-support-thanks"><span>You're message has been sent. </span><br/><br/> Someone is reviewing your email. We will get back to you as soon as we can. </p>
+
+	<p class="center">
+	<span class="button_small" onclick="self.close()">Close</span>
+	</p>
+<?php endif;?>
+

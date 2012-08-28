@@ -1,0 +1,2 @@
+
+The Thawte Premium Server CA issues Organization Validated SSL certs.  It also issues the Thawte Code Signing Subordinate CA.

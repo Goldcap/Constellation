@@ -1,0 +1,18 @@
+template: cst3
+layout: cst_film
+title: Constellation.tv
+#,/js/chat.js,/js/activity.js,/js/dispatch.js
+javascripts: [/js/login.js,/js/timezones.js,/js/subscription.js]
+css: [/js/jquery/ui/themes/smoothness/jquery-ui-1.8.1.custom.css,/js/jquery/jquery.fancybox-1.3.1/fancybox/jquery.fancybox-1.3.1.css]
+widgets:
+  masterhead:
+    Header:
+  left_column:
+    SubscriptionLeftCol:
+  column1:
+    Subscription:
+  column2:
+    SubscriptionRightCol:
+  footer:
+    Footer:
+  zzdiv:

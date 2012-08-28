@@ -1,0 +1,70 @@
+Linux
+(Tested on local Fedora F14 and on AWS Centos5.5)
+-------
+On a Linux machine we wish to do the following: 
+
+A) ffmpeg will read a video file and stream it to Wowza using udp. 
+B) Wowza will create and send out an rtmp stream which we should be able to
+   watch
+
+Instructions
+------------
+
+1) Install the latest version of java
+2) Ensure that FMS (Flash media server ) is not running. If need be, run
+   # /opt/local/fms/uninstallFMS
+
+3) Download Wowza and install it
+http://www.wowzamedia.com/forums/content.php?217#installWowza
+-------------------------------
+		a) Go to wowzamedia.com
+		b) Click "Download Free" for the free version
+		c) Click "Linux RPM Installation"->"Download now"
+
+		This will download a binary file WowzaMediaServer-2.2.2.rpm.bin
+
+		d) chmod 755 WowzaMediaServer-2.2.2.rpm.bin
+		e) ./WowzaMediaServer-2.2.2.rpm.bin 
+   		and follow instructions
+
+		It will ask for the serial number during the process. Enter
+		VC6A4-79YNF-WJGYR-GXUSU-99K9E
+
+		f) Startup Wowza 
+		cd /usr/local/WowzaMediaServer/bin
+		./startup.sh
+
+		g) Make sure it is working fine. Open the following url in a browser
+   		It should return the Version number of Wowza
+		http://localhost:1935
+
+4) Install ffmpeg (see instructions on separate document)
+
+5) Run ffmpeg 
+
+# ffmpeg -i <video-file> -re -vcodec libx264 -vpre default -vpre baseline -g 60 -vb 150000 -strict experimental -acodec aac -ab 96000 -ar 48000 -ac 2 -vbsf h264_mp4toannexb -f mpegts udp://localhost:10000?pkt_size=1316
+
+This will stream a udp stream to "udp://localhost:10000
+
+6) Set up wowza to read this and send out a live rtmp stream
+Follow the instructions here: http://www.wowzamedia.com/forums/content.php?37
+
+7) Watch it on wowza
+   a) Double-click /usr/local/WowzaMediaServer/examples/LiveVideoStreaming/client/live.html
+
+   This will bring up a web-page with two boxes to enter information. 
+   Enter the following and hit "Enter"
+   Server: rtmp://[wowza-address]/live
+   Stream: mpegts.stream
+
+   You should now bw able to see the file playing. 
+
+   What is happening is this:
+   A) ffmpeg read a file, streamed it to Wowza using udp. 
+   B) Wowza is creating and sending out an rtmp stream and we are watching that
+
+   If we wish to use rtmp instead of udp use the following command in 
+   Step 5 instead:
+
+#  ffmpeg -i /media/movies/sample.mp4 -re -ar 22050 -vcodec libx264 -vpre default -f flv rtmp://localhost/live/test
+

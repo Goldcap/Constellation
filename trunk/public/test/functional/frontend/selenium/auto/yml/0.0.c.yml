@@ -1,0 +1,17 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type: assertElementPresent,locator: link=Log In,value: Login Button Accessible}
+ - {type:click,locator: link=Log In}
+ - {type: assertElementPresent,locator: id=login_twitter_link,value: Twitter Link Accessible}
+ - {type:clickAndWait,locator: id=login_twitter_link}
+ - {type: assertElementPresent,locator: id=username_or_email,value: Twitter Username Field Accessible}
+ - {type:click,locator: id=username_or_email}
+ - {type:type,locator: id=username_or_email, value: $::TWITTER_LOGIN}
+ - {type: assertElementPresent,locator: id=password,value: Twitter Password Field Accessible}
+ - {type:click,locator: id=password}
+ - {type:type,locator: id=password, value: $::TWITTER_PASSWORD}
+ - {type: assertElementPresent,locator: id=allow,value: Authorize Button Accessible}
+ - {type:clickAndWait,locator: id=allow}
+ - {type: assertElementPresent,locator: id=loggedUser,value: User is Logged in}

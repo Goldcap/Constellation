@@ -1,0 +1,36 @@
+FFMpeg install instructions
+----------------------------
+
+Windows
+-------
+Follow the instructions here for windows
+http://www.wowzamedia.com/forums/content.php?213-FFmpeg-with-Wowza-Server-(MPEG-TS)
+
+Linux
+-----
+As root (This won't work for CentOS 5, so...)
+# yum install ffmpeg ffmpeg-devel
+
+cd /usr/src
+yum -y install yasm 
+git clone git://git.videolan.org/x264.git
+cd x264
+./configure --enable-static 
+make 
+make install
+
+cd ../faac 1.28
+./configure 
+make 
+make install
+
+cd ../
+svn checkout svn://svn.ffmpeg.org/ffmpeg/trunk ffmpeg
+cd ffmpeg
+./configure --enable-gpl --enable-version3 --enable-nonfree --enable-postproc --enable-libx264 --enable-x11grab
+make
+make install
+
+cp ffmpeg /usr/bin
+mkdir /usr/local/share/ffmpeg
+cp ffpresets /usr/local/share/ffmpeg -R

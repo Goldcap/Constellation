@@ -1,0 +1,14 @@
+get:
+  id: 0
+post:
+  genre_name: "Test Genre"
+  genre_description: "Genre Films"
+session:
+action:
+  styroaction: submit
+
+dbo:
+  genre: genre_id
+  vars:
+    getGenreName: =post:genre_name
+    getGenreDescription: =post:genre_description

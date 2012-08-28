@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/test/functional/fixtures/apps/frontend/modules/i18n/templates
+END
+productsSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/test/functional/fixtures/apps/frontend/modules/i18n/templates/productsSuccess.php
+END
+indexSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/test/functional/fixtures/apps/frontend/modules/i18n/templates/indexSuccess.php
+END
+movieSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/test/functional/fixtures/apps/frontend/modules/i18n/templates/movieSuccess.php
+END

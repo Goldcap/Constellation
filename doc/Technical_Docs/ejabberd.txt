@@ -1,0 +1,23 @@
+Install on CentOS
+https://forums.aws.amazon.com/thread.jspa?threadID=59700
+http://www.banym.de/linux/centos/install-ejabberd-on-centos
+
+Configure for AWS
+http://blog.kenweiner.com/2008/05/ejabberd-on-amazon-ec2-ubuntu-ami.html
+
+Websocket Plugin
+(Copy the source to the /usr/lib64/ejabberd directory...)
+https://github.com/superfeedr/ejabberd-websockets
+http://metajack.wordpress.com/2008/08/28/writing-ejabberd-modules-presence-storms/
+
+Chat Server
+http://candy-chat.github.com/candy/
+
+Clustering eJABBERd
+http://dev.esl.eu/blog/2009/12/11/ejabberd-cluster-database-configuration/
+
+Mysql with eJABBERd
+http://www.process-one.net/en/ejabberd/guide_en#compilemysql
+
+Modules
+http://www.ejabberd.im/contributions

@@ -1,0 +1,942 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  account:
+    _attributes: { phpName: Account }
+    account_id: { phpName: AccountId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    username: { phpName: Username, type: VARCHAR, size: '30', required: false }
+    pass: { phpName: Pass, type: VARCHAR, size: '50', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    account_active: { phpName: AccountActive, type: TINYINT, size: '4', required: false }
+    account_pw_raw: { phpName: AccountPwRaw, type: VARCHAR, size: '255', required: false }
+  action:
+    _attributes: { phpName: Action }
+    action_id: { phpName: ActionId, type: INTEGER, size: '11', primaryKey: true, required: true }
+    action_name: { phpName: ActionName, type: VARCHAR, size: '255', required: false }
+  activity_log:
+    _attributes: { phpName: ActivityLog }
+    activity_log_id: { phpName: ActivityLogId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    activity_log_message: { phpName: ActivityLogMessage, type: VARCHAR, size: '255', required: false }
+    activity_log_created_at: { phpName: ActivityLogCreatedAt, type: TIMESTAMP, required: false }
+    activity_log_updated_at: { phpName: ActivityLogUpdatedAt, type: TIMESTAMP, required: false }
+    activity_log_timestamp: { phpName: ActivityLogTimestamp, type: FLOAT, size: '12', scale: '2', required: false }
+    _indexes: { NewIndex1: [fk_screening_id] }
+  admin_user:
+    _attributes: { phpName: AdminUser }
+    admin_user_id: { phpName: AdminUserId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    admin_user_fname: { phpName: AdminUserFname, type: VARCHAR, size: '255', required: false }
+    admin_user_lname: { phpName: AdminUserLname, type: VARCHAR, size: '255', required: false }
+    admin_user_email: { phpName: AdminUserEmail, type: VARCHAR, size: '255', required: false }
+    admin_user_password: { phpName: AdminUserPassword, type: VARCHAR, size: '255', required: false }
+    admin_user_ual: { phpName: AdminUserUal, type: LONGVARCHAR, required: false }
+    admin_user_phone: { phpName: AdminUserPhone, type: VARCHAR, size: '255', required: false }
+    admin_user_cell: { phpName: AdminUserCell, type: VARCHAR, size: '255', required: false }
+  alias:
+    _attributes: { phpName: Alias }
+    alias_id: { phpName: AliasId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    alias_name: { phpName: AliasName, type: VARCHAR, size: '255', required: false }
+    alias_status: { phpName: AliasStatus, type: TINYINT, size: '4', required: false }
+  audience:
+    _attributes: { phpName: Audience }
+    audience_id: { phpName: AudienceId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    audience_paid_status: { phpName: AudiencePaidStatus, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_screening_unique_key: { phpName: FkScreeningUniqueKey, type: VARCHAR, size: '255', required: false }
+    fk_payment_id: { phpName: FkPaymentId, type: INTEGER, size: '11', required: false }
+    audience_invite_code: { phpName: AudienceInviteCode, type: VARCHAR, size: '255', required: false }
+    audience_ip_addr: { phpName: AudienceIpAddr, type: VARCHAR, size: '15', required: false }
+    audience_created_at: { phpName: AudienceCreatedAt, type: TIMESTAMP, required: false }
+    audience_updated_at: { phpName: AudienceUpdatedAt, type: TIMESTAMP, required: false }
+    audience_status: { phpName: AudienceStatus, type: TINYINT, size: '1', required: false }
+    audience_username: { phpName: AudienceUsername, type: VARCHAR, size: '255', required: false }
+    audience_review: { phpName: AudienceReview, type: LONGVARCHAR, required: false }
+    audience_review_status: { phpName: AudienceReviewStatus, type: TINYINT, size: '4', required: false, defaultValue: '0' }
+    audience_short_url: { phpName: AudienceShortUrl, type: VARCHAR, size: '255', required: false }
+    audience_ticket_price: { phpName: AudienceTicketPrice, type: FLOAT, required: false }
+    audience_hmac_key: { phpName: AudienceHmacKey, type: VARCHAR, size: '255', required: false }
+    _indexes: { user_id: [fk_user_id], FK_audience: [fk_screening_id] }
+  chat_instance:
+    _attributes: { phpName: ChatInstance }
+    chat_instance_id: { phpName: ChatInstanceId, type: INTEGER, size: '20', primaryKey: true, autoIncrement: true, required: true }
+    fk_screening_key: { phpName: FkScreeningKey, type: VARCHAR, size: '50', required: true }
+    chat_instance_key: { phpName: ChatInstanceKey, type: VARCHAR, size: '50', required: true }
+    chat_instance_host: { phpName: ChatInstanceHost, type: VARCHAR, size: '50', required: false }
+    chat_instance_port: { phpName: ChatInstancePort, type: INTEGER, size: '20', required: true }
+    chat_instance_count: { phpName: ChatInstanceCount, type: INTEGER, size: '11', required: false }
+    chat_instance_name: { phpName: ChatInstanceName, type: TINYINT, size: '4', required: false }
+  chat_usage:
+    _attributes: { phpName: ChatUsage }
+    chat_usage_id: { phpName: ChatUsageId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    chat_usage_date_added: { phpName: ChatUsageDateAdded, type: TIMESTAMP, required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_chat_instance_key: { phpName: FkChatInstanceKey, type: VARCHAR, size: '255', required: false }
+    fk_screening_unique_key: { phpName: FkScreeningUniqueKey, type: VARCHAR, size: '255', required: false }
+    chat_usage_browser: { phpName: ChatUsageBrowser, type: VARCHAR, size: '255', required: false }
+    chat_usage_referer: { phpName: ChatUsageReferer, type: VARCHAR, size: '255', required: false }
+    chat_usage_remote_addr: { phpName: ChatUsageRemoteAddr, type: VARCHAR, size: '255', required: false }
+    chat_usage_remote_addr_computed: { phpName: ChatUsageRemoteAddrComputed, type: VARCHAR, size: '255', required: false }
+    chat_usage_bandwidth: { phpName: ChatUsageBandwidth, type: INTEGER, size: '11', required: false }
+  click:
+    _attributes: { phpName: Click }
+    click_id: { phpName: ClickId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    click_referer: { phpName: ClickReferer, type: LONGVARCHAR, required: false }
+    click_ip: { phpName: ClickIp, type: VARCHAR, size: '255', required: false }
+    click_date: { phpName: ClickDate, type: TIMESTAMP, required: false }
+    click_guid: { phpName: ClickGuid, type: VARCHAR, size: '255', required: false }
+    fk_click_track_id: { phpName: FkClickTrackId, type: INTEGER, size: '11', required: false }
+    click_script: { phpName: ClickScript, type: VARCHAR, size: '255', required: false }
+    click_querystring: { phpName: ClickQuerystring, type: VARCHAR, size: '255', required: false }
+    click_incoming: { phpName: ClickIncoming, type: LONGVARCHAR, required: false }
+  click_action:
+    _attributes: { phpName: ClickAction }
+    click_action_id: { phpName: ClickActionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_payment_id: { phpName: FkPaymentId, type: INTEGER, size: '11', required: false }
+    fk_click_guid: { phpName: FkClickGuid, type: VARCHAR, size: '255', required: false }
+    fk_click_id: { phpName: FkClickId, type: INTEGER, size: '11', required: false }
+    click_action_date: { phpName: ClickActionDate, type: TIMESTAMP, required: false }
+    fk_click_action_type: { phpName: FkClickActionType, type: INTEGER, size: '11', required: false }
+  click_action_type:
+    _attributes: { phpName: ClickActionType }
+    click_action_type_id: { phpName: ClickActionTypeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    click_action_type_name: { phpName: ClickActionTypeName, type: VARCHAR, size: '255', required: false }
+  click_track:
+    _attributes: { phpName: ClickTrack }
+    click_track_id: { phpName: ClickTrackId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    click_track_guid: { phpName: ClickTrackGuid, type: VARCHAR, size: '255', required: false }
+    fk_click_type: { phpName: FkClickType, type: INTEGER, size: '11', required: false }
+    fk_click_owner_id: { phpName: FkClickOwnerId, type: INTEGER, size: '11', required: false }
+    click_track_count: { phpName: ClickTrackCount, type: INTEGER, size: '11', required: false }
+  click_type:
+    _attributes: { phpName: ClickType }
+    click_type_id: { phpName: ClickTypeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    click_type_name: { phpName: ClickTypeName, type: VARCHAR, size: '255', required: false }
+  conversation:
+    _attributes: { phpName: Conversation }
+    conversation_id: { phpName: ConversationId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    conversation_author: { phpName: ConversationAuthor, type: VARCHAR, size: '255', required: false }
+    conversation_author_image: { phpName: ConversationAuthorImage, type: VARCHAR, size: '255', required: false }
+    fk_author_id: { phpName: FkAuthorId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    conversation_date_created: { phpName: ConversationDateCreated, type: TIMESTAMP, required: false }
+    conversation_sequence: { phpName: ConversationSequence, type: INTEGER, size: '11', required: false }
+    conversation_thread: { phpName: ConversationThread, type: VARCHAR, size: '255', required: false }
+    conversation_body: { phpName: ConversationBody, type: LONGVARCHAR, required: false }
+    conversation_rating: { phpName: ConversationRating, type: INTEGER, size: '11', required: false }
+    conversation_status: { phpName: ConversationStatus, type: TINYINT, size: '4', required: false }
+    conversation_guid: { phpName: ConversationGuid, type: VARCHAR, size: '255', required: false }
+    fk_promoter_id: { phpName: FkPromoterId, type: INTEGER, size: '11', required: false }
+    conversation_asset_type: { phpName: ConversationAssetType, type: VARCHAR, size: '4', required: false }
+    conversation_asset_guid: { phpName: ConversationAssetGuid, type: VARCHAR, size: '255', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+  conversation_notification:
+    _attributes: { phpName: ConversationNotification }
+    conversation_notification_id: { phpName: ConversationNotificationId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_conversation_guid: { phpName: FkConversationGuid, type: VARCHAR, size: '255', required: false }
+    conversation_notification_type: { phpName: ConversationNotificationType, type: TINYINT, size: '4', required: false }
+    conversation_notification_date_created: { phpName: ConversationNotificationDateCreated, type: TIMESTAMP, required: false }
+    conversation_notification_date_sent: { phpName: ConversationNotificationDateSent, type: TIMESTAMP, required: false }
+  conversation_notification_type:
+    _attributes: { phpName: ConversationNotificationType }
+    conversation_notification_type_id: { phpName: ConversationNotificationTypeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    conversation_notification_type_name: { phpName: ConversationNotificationTypeName, type: VARCHAR, size: '255', required: false }
+  conversation_vote:
+    _attributes: { phpName: ConversationVote }
+    conversation_vote_id: { phpName: ConversationVoteId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_conversation_guid: { phpName: FkConversationGuid, type: VARCHAR, size: '255', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    conversation_vote_date_created: { phpName: ConversationVoteDateCreated, type: TIMESTAMP, required: false }
+    _indexes: { fk_conversation_guid: [fk_conversation_guid], fk_author: [fk_user_id] }
+  country:
+    _attributes: { phpName: Country }
+    iso: { phpName: Iso, type: VARCHAR, size: '2', primaryKey: true, required: true, defaultValue: '' }
+    name: { phpName: Name, type: VARCHAR, size: '80', required: false }
+    printable_name: { phpName: PrintableName, type: VARCHAR, size: '80', required: false }
+    iso3: { phpName: Iso3, type: VARCHAR, size: '3', required: false }
+    numcode: { phpName: Numcode, type: INTEGER, size: '11', required: false }
+    _indexes: { namr: [name], numcode: [numcode] }
+  credit:
+    _attributes: { phpName: Credit }
+    credit_id: { phpName: CreditId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_host_id: { phpName: FkHostId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    credit_audience_no: { phpName: CreditAudienceNo, type: INTEGER, size: '11', required: false }
+    credit_amount: { phpName: CreditAmount, type: FLOAT, size: '10', scale: '2', required: false }
+    credit_paid_status: { phpName: CreditPaidStatus, type: TINYINT, size: '1', required: false }
+    credit_created_at: { phpName: CreditCreatedAt, type: TIMESTAMP, required: false }
+    credit_updated_at: { phpName: CreditUpdatedAt, type: TIMESTAMP, required: false }
+    credit_to_cc: { phpName: CreditToCc, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    credit_to_paypal: { phpName: CreditToPaypal, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    _indexes: { FK_credit: [fk_host_id], screening_id: [fk_screening_id] }
+  dictionary:
+    _attributes: { phpName: Dictionary }
+    dictionary_id: { phpName: DictionaryId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    dictionary_word: { phpName: DictionaryWord, type: VARCHAR, size: '255', required: false }
+  feedback:
+    _attributes: { phpName: Feedback }
+    feedback_id: { phpName: FeedbackId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_question_id: { phpName: FkQuestionId, type: INTEGER, size: '11', required: false }
+    fk_user_hash: { phpName: FkUserHash, type: VARCHAR, size: '255', required: false }
+    response: { phpName: Response, type: LONGVARCHAR, required: false }
+  feedback_question:
+    _attributes: { phpName: FeedbackQuestion }
+    feedback_question_id: { phpName: FeedbackQuestionId, type: INTEGER, size: '11', primaryKey: true, required: true }
+    feedback_question_name: { phpName: FeedbackQuestionName, type: LONGVARCHAR, required: false }
+  file_encode:
+    _attributes: { phpName: FileEncode }
+    file_encode_id: { phpName: FileEncodeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: VARCHAR, size: '255', required: false }
+    file_encode_source: { phpName: FileEncodeSource, type: VARCHAR, size: '255', required: false }
+    file_encode_size: { phpName: FileEncodeSize, type: VARCHAR, size: '255', required: false }
+    file_encode_date: { phpName: FileEncodeDate, type: TIMESTAMP, required: false }
+    file_encode_status: { phpName: FileEncodeStatus, type: TINYINT, size: '4', required: false }
+  file_upload:
+    _attributes: { phpName: FileUpload }
+    file_upload_id: { phpName: FileUploadId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    file_upload_user: { phpName: FileUploadUser, type: VARCHAR, size: '255', required: false }
+    file_upload_filename: { phpName: FileUploadFilename, type: VARCHAR, size: '255', required: false }
+    file_upload_date_discovery: { phpName: FileUploadDateDiscovery, type: TIMESTAMP, required: false }
+    file_upload_date: { phpName: FileUploadDate, type: VARCHAR, size: '255', required: false }
+    file_upload_status: { phpName: FileUploadStatus, type: TINYINT, size: '4', required: false }
+    file_upload_film: { phpName: FileUploadFilm, type: INTEGER, size: '11', required: false }
+    file_upload_client: { phpName: FileUploadClient, type: VARCHAR, size: '255', required: false }
+    file_upload_size: { phpName: FileUploadSize, type: BIGINT, size: '11', required: false }
+  film:
+    _attributes: { phpName: Film }
+    film_id: { phpName: FilmId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    film_name: { phpName: FilmName, type: VARCHAR, size: '255', required: false }
+    film_alt_name: { phpName: FilmAltName, type: VARCHAR, size: '255', required: false }
+    film_makers: { phpName: FilmMakers, type: LONGVARCHAR, required: false }
+    film_production_company: { phpName: FilmProductionCompany, type: LONGVARCHAR, required: false }
+    film_logo: { phpName: FilmLogo, type: VARCHAR, size: '255', required: false }
+    film_homelogo: { phpName: FilmHomelogo, type: VARCHAR, size: '255', required: false }
+    film_trailer_file: { phpName: FilmTrailerFile, type: VARCHAR, size: '255', required: false }
+    film_movie_file: { phpName: FilmMovieFile, type: VARCHAR, size: '255', required: false }
+    film_maker_message: { phpName: FilmMakerMessage, type: LONGVARCHAR, required: false }
+    film_ticket_price: { phpName: FilmTicketPrice, type: FLOAT, size: '10', scale: '2', required: false }
+    film_hostbyrequest_price: { phpName: FilmHostbyrequestPrice, type: FLOAT, size: '10', scale: '2', required: false }
+    film_status: { phpName: FilmStatus, type: TINYINT, size: '4', required: false }
+    film_featured: { phpName: FilmFeatured, type: TINYINT, size: '4', required: false }
+    film_created_at: { phpName: FilmCreatedAt, type: TIMESTAMP, required: false }
+    film_updated_at: { phpName: FilmUpdatedAt, type: TIMESTAMP, required: false }
+    film_setup_price: { phpName: FilmSetupPrice, type: FLOAT, size: '10', scale: '2', required: false }
+    film_info: { phpName: FilmInfo, type: LONGVARCHAR, required: false }
+    film_cast: { phpName: FilmCast, type: LONGVARCHAR, required: false }
+    film_running_time: { phpName: FilmRunningTime, type: VARCHAR, size: '255', required: false }
+    film_total_seats: { phpName: FilmTotalSeats, type: INTEGER, size: '11', required: false }
+    film_short_name: { phpName: FilmShortName, type: VARCHAR, size: '255', required: false }
+    film_synopsis: { phpName: FilmSynopsis, type: VARCHAR, size: '255', required: false }
+    film_still_image: { phpName: FilmStillImage, type: VARCHAR, size: '255', required: false }
+    film_background_image: { phpName: FilmBackgroundImage, type: VARCHAR, size: '255', required: false }
+    film_splash_image: { phpName: FilmSplashImage, type: VARCHAR, size: '255', required: false }
+    film_geoblocking_enabled: { phpName: FilmGeoblockingEnabled, type: TINYINT, size: '1', required: false }
+    film_geoblocking_type: { phpName: FilmGeoblockingType, type: VARCHAR, size: '255', required: false }
+    film_short_url: { phpName: FilmShortUrl, type: VARCHAR, size: '255', required: false }
+    film_review: { phpName: FilmReview, type: LONGVARCHAR, required: false }
+    film_startdate: { phpName: FilmStartdate, type: TIMESTAMP, required: false }
+    film_enddate: { phpName: FilmEnddate, type: TIMESTAMP, required: false }
+    fk_film_sponsor_id: { phpName: FkFilmSponsorId, type: INTEGER, size: '11', required: false }
+    film_bitrate_minimum: { phpName: FilmBitrateMinimum, type: INTEGER, size: '11', required: false }
+    film_bitrate_low: { phpName: FilmBitrateLow, type: INTEGER, size: '11', required: false }
+    film_bitrate_small: { phpName: FilmBitrateSmall, type: INTEGER, size: '11', required: false }
+    film_bitrate_medium: { phpName: FilmBitrateMedium, type: INTEGER, size: '11', required: false }
+    film_bitrate_large: { phpName: FilmBitrateLarge, type: INTEGER, size: '11', required: false }
+    film_bitrate_largest: { phpName: FilmBitrateLargest, type: INTEGER, size: '11', required: false }
+    film_use_sponsor_codes: { phpName: FilmUseSponsorCodes, type: TINYINT, size: '4', required: false }
+    film_allow_hostbyrequest: { phpName: FilmAllowHostbyrequest, type: TINYINT, size: '4', required: false }
+    film_allow_user_hosting: { phpName: FilmAllowUserHosting, type: TINYINT, size: '4', required: false }
+    film_alternate_template: { phpName: FilmAlternateTemplate, type: TINYINT, size: '4', required: false }
+    film_alternate_opts: { phpName: FilmAlternateOpts, type: VARCHAR, size: '255', required: false }
+    film_cdn: { phpName: FilmCdn, type: TINYINT, size: '4', required: false }
+    film_share: { phpName: FilmShare, type: TINYINT, size: '4', required: false }
+    film_preuser: { phpName: FilmPreuser, type: TINYINT, size: '4', required: false }
+    film_freewithinvite: { phpName: FilmFreewithinvite, type: TINYINT, size: '4', required: false }
+    film_free_screening: { phpName: FilmFreeScreening, type: TINYINT, size: '4', required: false }
+    film_twitter_tags: { phpName: FilmTwitterTags, type: LONGVARCHAR, required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    film_website: { phpName: FilmWebsite, type: VARCHAR, size: '255', required: false }
+    film_facebook: { phpName: FilmFacebook, type: VARCHAR, size: '255', required: false }
+    film_twitter: { phpName: FilmTwitter, type: VARCHAR, size: '255', required: false }
+    film_youtube_trailer: { phpName: FilmYoutubeTrailer, type: VARCHAR, size: '255', required: false }
+    film_ooyala_embed: { phpName: FilmOoyalaEmbed, type: VARCHAR, size: '255', required: false }
+  film2country:
+    _attributes: { phpName: Film2country }
+    film2country_id: { phpName: Film2countryId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    film2country_country_iso: { phpName: Film2countryCountryIso, type: VARCHAR, size: '3', required: false }
+    _indexes: { film: [fk_film_id], country: [film2country_country_iso] }
+  film_film:
+    _attributes: { phpName: FilmFilm }
+    film_film_id: { phpName: FilmFilmId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_film_child_id: { phpName: FkFilmChildId, type: INTEGER, size: '11', required: false }
+    film_film_level: { phpName: FilmFilmLevel, type: INTEGER, size: '11', required: false }
+  film_genre:
+    _attributes: { phpName: FilmGenre }
+    film_genre_id: { phpName: FilmGenreId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_genre_id: { phpName: FkGenreId, type: INTEGER, size: '11', required: false }
+  film_geo_blocking:
+    _attributes: { phpName: FilmGeoBlocking }
+    film_geoblocking_id: { phpName: FilmGeoblockingId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    film_geoblocking_region: { phpName: FilmGeoblockingRegion, type: VARCHAR, size: '255', required: false }
+    _indexes: { FK_film_geo_blocking: [fk_film_id] }
+  film_info:
+    _attributes: { phpName: FilmInfo }
+    film_info_id: { phpName: FilmInfoId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    film_info_type: { phpName: FilmInfoType, type: TINYINT, size: '1', required: false }
+    film_info: { phpName: FilmInfo, type: VARCHAR, size: '255', required: false }
+    film_info_url: { phpName: FilmInfoUrl, type: VARCHAR, size: '255', required: false }
+    film_info_updated_at: { phpName: FilmInfoUpdatedAt, type: TIMESTAMP, required: false }
+    film_info_created_at: { phpName: FilmInfoCreatedAt, type: TIMESTAMP, required: false }
+    _indexes: { FK_film_info: [fk_film_id] }
+  film_info_type:
+    _attributes: { phpName: FilmInfoType }
+    film_info_type_id: { phpName: FilmInfoTypeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    film_info_type_name: { phpName: FilmInfoTypeName, type: VARCHAR, size: '255', required: false }
+  film_ip_blocking:
+    _attributes: { phpName: FilmIpBlocking }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    film_id: { phpName: FilmId, type: INTEGER, size: '11', required: false }
+    ip_match: { phpName: IpMatch, type: VARCHAR, size: '15', required: false }
+    _indexes: { FK_film_ip_blocking: [film_id] }
+  film_promotion:
+    _attributes: { phpName: FilmPromotion }
+    film_promotion_id: { phpName: FilmPromotionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_promotion_id: { phpName: FkPromotionId, type: INTEGER, size: '11', required: false }
+    film_promotion_priority: { phpName: FilmPromotionPriority, type: INTEGER, size: '11', required: false }
+  film_sales_template:
+    _attributes: { phpName: FilmSalesTemplate }
+    film_sales_template_id: { phpName: FilmSalesTemplateId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    film_sales_template_name: { phpName: FilmSalesTemplateName, type: VARCHAR, size: '255', required: false }
+  film_sponsor:
+    _attributes: { phpName: FilmSponsor }
+    film_sponsor_id: { phpName: FilmSponsorId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    film_sponsor_name: { phpName: FilmSponsorName, type: VARCHAR, size: '255', required: false }
+    film_sponsor_params: { phpName: FilmSponsorParams, type: LONGVARCHAR, required: false }
+  following:
+    _attributes: { phpName: Following }
+    following_id: { phpName: FollowingId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_follower_id: { phpName: FkFollowerId, type: INTEGER, size: '11', required: false }
+    fk_followed_id: { phpName: FkFollowedId, type: INTEGER, size: '11', required: false }
+    following_date_created: { phpName: FollowingDateCreated, type: TIMESTAMP, required: false }
+  genre:
+    _attributes: { phpName: Genre }
+    genre_id: { phpName: GenreId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    genre_name: { phpName: GenreName, type: VARCHAR, size: '100', required: false }
+    genre_description: { phpName: GenreDescription, type: LONGVARCHAR, required: false }
+  hud:
+    _attributes: { phpName: Hud }
+    hud_id: { phpName: HudId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_host_id: { phpName: FkHostId, type: INTEGER, size: '11', required: false }
+    hud_settings: { phpName: HudSettings, type: LONGVARCHAR, required: false }
+  ip2country:
+    _attributes: { phpName: Ip2country }
+    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    ip_from: { phpName: IpFrom, type: INTEGER, size: '20', required: true, defaultValue: '0' }
+    ip_to: { phpName: IpTo, type: INTEGER, size: '20', required: false }
+    country_code2: { phpName: CountryCode2, type: VARCHAR, size: '2', required: false }
+    country_code3: { phpName: CountryCode3, type: VARCHAR, size: '2', required: false }
+    country_name: { phpName: CountryName, type: VARCHAR, size: '50', required: false }
+  jump:
+    _attributes: { phpName: Jump }
+    jump_id: { phpName: JumpId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    jump_email: { phpName: JumpEmail, type: VARCHAR, size: '255', required: false }
+    jump_referer: { phpName: JumpReferer, type: VARCHAR, size: '255', required: false }
+  log_akamailog:
+    _attributes: { phpName: LogAkamailog }
+    log_akamailog_id: { phpName: LogAkamailogId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    log_akamailog_date: { phpName: LogAkamailogDate, type: DATE, required: false }
+    log_akamailog_time: { phpName: LogAkamailogTime, type: TIME, required: false }
+    log_akamailog_ip: { phpName: LogAkamailogIp, type: VARCHAR, size: '255', required: false }
+    log_akamailog_method: { phpName: LogAkamailogMethod, type: VARCHAR, size: '255', required: false }
+    log_akamailog_uri: { phpName: LogAkamailogUri, type: VARCHAR, size: '255', required: false }
+    log_akamailog_status: { phpName: LogAkamailogStatus, type: INTEGER, size: '11', required: false }
+    log_akamailog_bytes: { phpName: LogAkamailogBytes, type: INTEGER, size: '11', required: false }
+    log_akamailog_timetaken: { phpName: LogAkamailogTimetaken, type: BIGINT, size: '20', required: false }
+    log_akamailog_referer: { phpName: LogAkamailogReferer, type: VARCHAR, size: '255', required: false }
+    log_akamailog_user_agent: { phpName: LogAkamailogUserAgent, type: VARCHAR, size: '255', required: false }
+    log_akamailog_cookie: { phpName: LogAkamailogCookie, type: VARCHAR, size: '255', required: false }
+    _indexes: { id_thin: [log_akamailog_id], log_akamailog_uri: [log_akamailog_uri] }
+  log_flashlog:
+    _attributes: { phpName: LogFlashlog }
+    flashlog_id: { phpName: FlashlogId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    flashlog_ticket: { phpName: FlashlogTicket, type: VARCHAR, size: '255', required: false }
+    flashlog_message: { phpName: FlashlogMessage, type: VARCHAR, size: '255', required: false }
+    flashlog_date: { phpName: FlashlogDate, type: TIMESTAMP, required: false }
+    flashlog_port: { phpName: FlashlogPort, type: INTEGER, size: '11', required: false }
+    flashlog_error: { phpName: FlashlogError, type: TINYINT, size: '4', required: false }
+    _indexes: { main_index: [flashlog_id], log_id: [flashlog_id], log_date: [flashlog_date], log_generic: [flashlog_id, flashlog_ticket] }
+  log_wtvrlog:
+    _attributes: { phpName: LogWtvrlog }
+    wtvrlog_id: { phpName: WtvrlogId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    wtvrlog_message: { phpName: WtvrlogMessage, type: VARCHAR, size: '255', required: false }
+    wtvrlog_date: { phpName: WtvrlogDate, type: TIMESTAMP, required: false }
+    wtvrlog_server: { phpName: WtvrlogServer, type: VARCHAR, size: '255', required: false }
+  metric:
+    _attributes: { phpName: Metric }
+    metric_id: { phpName: MetricId, type: INTEGER, size: '11', required: false }
+    metric_date: { phpName: MetricDate, type: DATE, required: false }
+    metric_users: { phpName: MetricUsers, type: INTEGER, size: '11', required: false }
+    metric_fb_users: { phpName: MetricFbUsers, type: INTEGER, size: '11', required: false }
+    metric_t_users: { phpName: MetricTUsers, type: INTEGER, size: '11', required: false }
+    metric_o_users: { phpName: MetricOUsers, type: INTEGER, size: '11', required: false }
+    metric_tickets: { phpName: MetricTickets, type: INTEGER, size: '11', required: false }
+    metric_total_tickets: { phpName: MetricTotalTickets, type: INTEGER, size: '11', required: false }
+  movie:
+    _attributes: { phpName: Movie }
+    movie_id: { phpName: MovieId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    movie_name: { phpName: MovieName, type: VARCHAR, size: '255', required: false }
+    movie_rate_no: { phpName: MovieRateNo, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    movie_rate_count: { phpName: MovieRateCount, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    movie_created_at: { phpName: MovieCreatedAt, type: TIMESTAMP, required: false }
+    movie_updated_at: { phpName: MovieUpdatedAt, type: TIMESTAMP, required: false }
+  payment:
+    _attributes: { phpName: Payment }
+    payment_id: { phpName: PaymentId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_screening_name: { phpName: FkScreeningName, type: VARCHAR, size: '255', required: false }
+    fk_audience_id: { phpName: FkAudienceId, type: INTEGER, size: '11', required: false }
+    fk_subscription_id: { phpName: FkSubscriptionId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    payment_unique_code: { phpName: PaymentUniqueCode, type: VARCHAR, size: '20', required: false }
+    payment_type: { phpName: PaymentType, type: VARCHAR, size: '20', required: false }
+    payment_first_name: { phpName: PaymentFirstName, type: VARCHAR, size: '255', required: false }
+    payment_last_name: { phpName: PaymentLastName, type: VARCHAR, size: '255', required: false }
+    payment_email: { phpName: PaymentEmail, type: VARCHAR, size: '255', required: false }
+    payment_b_addr_1: { phpName: PaymentBAddr1, type: VARCHAR, size: '255', required: false }
+    payment_b_addr_2: { phpName: PaymentBAddr2, type: VARCHAR, size: '255', required: false }
+    payment_b_city: { phpName: PaymentBCity, type: VARCHAR, size: '255', required: false }
+    payment_b_state: { phpName: PaymentBState, type: VARCHAR, size: '255', required: false }
+    payment_b_zipcode: { phpName: PaymentBZipcode, type: VARCHAR, size: '20', required: false }
+    payment_b_country: { phpName: PaymentBCountry, type: VARCHAR, size: '5', required: false }
+    payment_status: { phpName: PaymentStatus, type: TINYINT, size: '4', required: false }
+    payment_amount: { phpName: PaymentAmount, type: FLOAT, size: '10', scale: '2', required: false }
+    payment_description: { phpName: PaymentDescription, type: VARCHAR, size: '255', required: false }
+    payment_card_type: { phpName: PaymentCardType, type: VARCHAR, size: '20', required: false }
+    payment_last_four_CC_digits: { phpName: PaymentLastFourCcDigits, type: VARCHAR, size: '4', required: false }
+    payment_cvv2: { phpName: PaymentCvv2, type: VARCHAR, size: '4', required: false }
+    payment_cc_exp: { phpName: PaymentCcExp, type: VARCHAR, size: '6', required: false }
+    payment_created_at: { phpName: PaymentCreatedAt, type: TIMESTAMP, required: false }
+    payment_updated_at: { phpName: PaymentUpdatedAt, type: TIMESTAMP, required: false }
+    payment_ip: { phpName: PaymentIp, type: VARCHAR, size: '16', required: false }
+    payment_site_id: { phpName: PaymentSiteId, type: VARCHAR, size: '10', required: false }
+    payment_transaction_id: { phpName: PaymentTransactionId, type: VARCHAR, size: '255', required: false }
+    payment_fraud_score: { phpName: PaymentFraudScore, type: INTEGER, size: '11', required: false }
+    payment_maxmind_object: { phpName: PaymentMaxmindObject, type: LONGVARCHAR, required: false }
+    payment_order_processor: { phpName: PaymentOrderProcessor, type: VARCHAR, size: '50', required: false }
+    payment_invites: { phpName: PaymentInvites, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_payment: [fk_screening_id], audience_id: [fk_audience_id] }
+  paypal_transaction:
+    _attributes: { phpName: PaypalTransaction }
+    paypal_transaction_id: { phpName: PaypalTransactionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    paypal_transaction_guid: { phpName: PaypalTransactionGuid, type: VARCHAR, size: '255', required: false }
+    paypal_transaction_amount: { phpName: PaypalTransactionAmount, type: FLOAT, size: '4', scale: '2', required: false }
+    paypal_transaction_fee: { phpName: PaypalTransactionFee, type: FLOAT, size: '4', scale: '2', required: false }
+    paypal_transaction_net: { phpName: PaypalTransactionNet, type: FLOAT, size: '4', scale: '2', required: false }
+    paypal_transaction_email: { phpName: PaypalTransactionEmail, type: VARCHAR, size: '255', required: false }
+    paypal_transaction_name: { phpName: PaypalTransactionName, type: VARCHAR, size: '255', required: false }
+    paypal_transaction_date: { phpName: PaypalTransactionDate, type: TIMESTAMP, required: false }
+    paypal_transaction_timestamp: { phpName: PaypalTransactionTimestamp, type: VARCHAR, size: '255', required: false }
+    paypal_transaction_type: { phpName: PaypalTransactionType, type: VARCHAR, size: '255', required: false }
+    paypal_transaction_status: { phpName: PaypalTransactionStatus, type: VARCHAR, size: '255', required: false }
+  pre_user:
+    _attributes: { phpName: PreUser }
+    pre_user_id: { phpName: PreUserId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    pre_user_email: { phpName: PreUserEmail, type: VARCHAR, size: '255', required: false }
+    pre_user_date_added: { phpName: PreUserDateAdded, type: TIMESTAMP, required: false }
+    pre_user_status: { phpName: PreUserStatus, type: TINYINT, size: '4', required: false }
+    pre_user_code: { phpName: PreUserCode, type: VARCHAR, size: '20', required: false }
+  program:
+    _attributes: { phpName: Program }
+    program_id: { phpName: ProgramId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    program_created_at: { phpName: ProgramCreatedAt, type: TIMESTAMP, required: false }
+    program_updated_at: { phpName: ProgramUpdatedAt, type: TIMESTAMP, required: false }
+    fk_program_sponsor_id: { phpName: FkProgramSponsorId, type: INTEGER, size: '11', required: false }
+    program_name: { phpName: ProgramName, type: VARCHAR, size: '255', required: false }
+    program_short_name: { phpName: ProgramShortName, type: VARCHAR, size: '255', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    program_logo: { phpName: ProgramLogo, type: VARCHAR, size: '255', required: false }
+    program_featured: { phpName: ProgramFeatured, type: TINYINT, size: '4', required: false }
+    program_production_company: { phpName: ProgramProductionCompany, type: VARCHAR, size: '255', required: false }
+    program_start_date: { phpName: ProgramStartDate, type: TIMESTAMP, required: false }
+    program_end_date: { phpName: ProgramEndDate, type: TIMESTAMP, required: false }
+    program_preuser: { phpName: ProgramPreuser, type: TINYINT, size: '4', required: false }
+    program_total_seats: { phpName: ProgramTotalSeats, type: INTEGER, size: '11', required: false }
+    program_ticket_price: { phpName: ProgramTicketPrice, type: FLOAT, required: false }
+    program_hostbyrequest_price: { phpName: ProgramHostbyrequestPrice, type: FLOAT, required: false }
+    program_setup_price: { phpName: ProgramSetupPrice, type: FLOAT, required: false }
+    program_info: { phpName: ProgramInfo, type: LONGVARCHAR, required: false }
+    program_status: { phpName: ProgramStatus, type: TINYINT, size: '4', required: false }
+    program_still_image: { phpName: ProgramStillImage, type: VARCHAR, size: '255', required: false }
+    program_background_image: { phpName: ProgramBackgroundImage, type: VARCHAR, size: '255', required: false }
+    program_geoblocking_enabled: { phpName: ProgramGeoblockingEnabled, type: TINYINT, size: '4', required: false }
+    program_geoblocking_type: { phpName: ProgramGeoblockingType, type: TINYINT, size: '4', required: false }
+    program_use_sponsor_codes: { phpName: ProgramUseSponsorCodes, type: TINYINT, size: '4', required: false }
+    program_allow_hostbyrequest: { phpName: ProgramAllowHostbyrequest, type: TINYINT, size: '4', required: false }
+    program_allow_user_hosting: { phpName: ProgramAllowUserHosting, type: TINYINT, size: '4', required: false }
+    program_alternate_template: { phpName: ProgramAlternateTemplate, type: TINYINT, size: '4', required: false }
+    program_alternate_opts: { phpName: ProgramAlternateOpts, type: VARCHAR, size: '255', required: false }
+    program_share: { phpName: ProgramShare, type: TINYINT, size: '4', required: false }
+    program_synopsis: { phpName: ProgramSynopsis, type: LONGVARCHAR, required: false }
+    program_url: { phpName: ProgramUrl, type: LONGVARCHAR, required: false }
+  program_film:
+    _attributes: { phpName: ProgramFilm }
+    program_film_id: { phpName: ProgramFilmId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_film_child_id: { phpName: FkFilmChildId, type: INTEGER, size: '11', required: false }
+    program_film_level: { phpName: ProgramFilmLevel, type: INTEGER, size: '11', required: false }
+  program_genre:
+    _attributes: { phpName: ProgramGenre }
+    program_genre_id: { phpName: ProgramGenreId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_program_id: { phpName: FkProgramId, type: INTEGER, size: '11', required: false }
+    fk_genre_id: { phpName: FkGenreId, type: INTEGER, size: '11', required: false }
+  promo_code:
+    _attributes: { phpName: PromoCode }
+    promo_code_id: { phpName: PromoCodeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    promo_code_type: { phpName: PromoCodeType, type: TINYINT, size: '4', required: false }
+    promo_code_value: { phpName: PromoCodeValue, type: FLOAT, required: false }
+    promo_code_code: { phpName: PromoCodeCode, type: VARCHAR, size: '255', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    promo_code_uses: { phpName: PromoCodeUses, type: INTEGER, size: '11', required: false }
+    promo_code_total_usage: { phpName: PromoCodeTotalUsage, type: INTEGER, size: '11', required: false }
+  promo_code_use:
+    _attributes: { phpName: PromoCodeUse }
+    promo_code_use_id: { phpName: PromoCodeUseId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    promo_code_use_code: { phpName: PromoCodeUseCode, type: VARCHAR, size: '255', required: false }
+    fk_promo_code_id: { phpName: FkPromoCodeId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_audience_id: { phpName: FkAudienceId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    promo_code_use_date: { phpName: PromoCodeUseDate, type: TIMESTAMP, required: false }
+  promotion:
+    _attributes: { phpName: Promotion }
+    promotion_id: { phpName: PromotionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    promotion_name: { phpName: PromotionName, type: VARCHAR, size: '255', required: false }
+    promotion_html: { phpName: PromotionHtml, type: LONGVARCHAR, required: false }
+    promotion_start_date: { phpName: PromotionStartDate, type: TIMESTAMP, required: false }
+    promotion_end_date: { phpName: PromotionEndDate, type: TIMESTAMP, required: false }
+    promotion_duration: { phpName: PromotionDuration, type: BIGINT, size: '20', required: false }
+    promotion_priority: { phpName: PromotionPriority, type: INTEGER, size: '11', required: false }
+  purchase_referer:
+    _attributes: { phpName: PurchaseReferer }
+    purchase_referer_id: { phpName: PurchaseRefererId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_audience_id: { phpName: FkAudienceId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    purchase_referer_referer: { phpName: PurchaseRefererReferer, type: VARCHAR, size: '255', required: false }
+    fk_audience_date: { phpName: FkAudienceDate, type: TIMESTAMP, required: false }
+  qanda:
+    _attributes: { phpName: Qanda }
+    qanda_id: { phpName: QandaId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    qanda_body: { phpName: QandaBody, type: LONGVARCHAR, required: false }
+    qanda_response: { phpName: QandaResponse, type: LONGVARCHAR, required: false }
+    qanda_answered: { phpName: QandaAnswered, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    qanda_sequence: { phpName: QandaSequence, type: TINYINT, size: '4', required: false }
+    qanda_current: { phpName: QandaCurrent, type: TINYINT, size: '1', required: false }
+    qanda_created_at: { phpName: QandaCreatedAt, type: TIMESTAMP, required: false }
+    qanda_updated_at: { phpName: QandaUpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { FK_qanda: [fk_user_id], FK_qanda2: [fk_screening_id] }
+  recommendation:
+    _attributes: { phpName: Recommendation }
+    recommendation_id: { phpName: RecommendationId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_audience_id: { phpName: FkAudienceId, type: INTEGER, size: '11', required: false }
+    _indexes: { FK_recommendation: [fk_screening_id], FK_recommendation2: [fk_audience_id] }
+  sales_stat:
+    _attributes: { phpName: SalesStat }
+    sales_stat_id: { phpName: SalesStatId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    sales_stat_date: { phpName: SalesStatDate, type: TIMESTAMP, required: false }
+    sales_stat_sales_paypal: { phpName: SalesStatSalesPaypal, type: FLOAT, size: '4', scale: '2', required: false }
+    sales_stat_sales_paypal_wpp: { phpName: SalesStatSalesPaypalWpp, type: FLOAT, size: '4', scale: '2', required: false }
+    sales_stat_visitors: { phpName: SalesStatVisitors, type: INTEGER, size: '11', required: false }
+    sales_stat_pageviews: { phpName: SalesStatPageviews, type: INTEGER, size: '11', required: false }
+    sales_stat_type: { phpName: SalesStatType, type: TINYINT, size: '4', required: false }
+  screening:
+    _attributes: { phpName: Screening }
+    screening_id: { phpName: ScreeningId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_host_id: { phpName: FkHostId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_payment_id: { phpName: FkPaymentId, type: INTEGER, size: '11', required: false }
+    fk_program_id: { phpName: FkProgramId, type: INTEGER, size: '11', required: false }
+    screening_name: { phpName: ScreeningName, type: VARCHAR, size: '255', required: false }
+    screening_date: { phpName: ScreeningDate, type: DATE, required: false }
+    screening_time: { phpName: ScreeningTime, type: TIME, required: false }
+    screening_end_time: { phpName: ScreeningEndTime, type: TIMESTAMP, required: false }
+    screening_prescreening_time: { phpName: ScreeningPrescreeningTime, type: TIME, required: false, defaultValue: '00:30:00' }
+    screening_post_message: { phpName: ScreeningPostMessage, type: LONGVARCHAR, required: false }
+    screening_paid_status: { phpName: ScreeningPaidStatus, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_seats_occupied: { phpName: ScreeningSeatsOccupied, type: INTEGER, size: '11', required: false }
+    screening_created_at: { phpName: ScreeningCreatedAt, type: TIMESTAMP, required: false }
+    screening_updated_at: { phpName: ScreeningUpdatedAt, type: TIMESTAMP, required: false }
+    screening_unique_key: { phpName: ScreeningUniqueKey, type: VARCHAR, size: '15', required: false }
+    screening_status: { phpName: ScreeningStatus, type: TINYINT, size: '1', required: false }
+    screening_type: { phpName: ScreeningType, type: TINYINT, size: '1', required: false }
+    screening_total_seats: { phpName: ScreeningTotalSeats, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    screening_constellation_image: { phpName: ScreeningConstellationImage, type: VARCHAR, size: '255', required: false }
+    screening_guest_name: { phpName: ScreeningGuestName, type: VARCHAR, size: '255', required: false }
+    screening_guest_image: { phpName: ScreeningGuestImage, type: VARCHAR, size: '255', required: false }
+    screening_description: { phpName: ScreeningDescription, type: LONGVARCHAR, required: false }
+    screening_live_webcam: { phpName: ScreeningLiveWebcam, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_is_admin: { phpName: ScreeningIsAdmin, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_featured: { phpName: ScreeningFeatured, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_highlighted: { phpName: ScreeningHighlighted, type: TINYINT, size: '4', required: false }
+    screening_credit_status: { phpName: ScreeningCreditStatus, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_default_timezone: { phpName: ScreeningDefaultTimezone, type: VARCHAR, size: '255', required: false }
+    screening_receipt_status: { phpName: ScreeningReceiptStatus, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_default_timezone_id: { phpName: ScreeningDefaultTimezoneId, type: VARCHAR, size: '255', required: false }
+    screening_video_server_hostname: { phpName: ScreeningVideoServerHostname, type: VARCHAR, size: '120', required: false }
+    screening_video_server_instance_id: { phpName: ScreeningVideoServerInstanceId, type: VARCHAR, size: '255', required: false }
+    screening_video_is_queued: { phpName: ScreeningVideoIsQueued, type: INTEGER, size: '11', required: false }
+    screening_is_private: { phpName: ScreeningIsPrivate, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    screening_has_qanda: { phpName: ScreeningHasQanda, type: TINYINT, size: '1', required: false }
+    screening_still_image: { phpName: ScreeningStillImage, type: VARCHAR, size: '255', required: false }
+    screening_chat_moderated: { phpName: ScreeningChatModerated, type: TINYINT, size: '4', required: false }
+    screening_chat_qanda_started: { phpName: ScreeningChatQandaStarted, type: TINYINT, size: '4', required: false }
+    screening_allow_latecomers: { phpName: ScreeningAllowLatecomers, type: TINYINT, size: '4', required: false }
+    screening_facebook_text: { phpName: ScreeningFacebookText, type: VARCHAR, size: '255', required: false }
+    screening_twitter_text: { phpName: ScreeningTwitterText, type: VARCHAR, size: '255', required: false }
+    screening_qa: { phpName: ScreeningQa, type: LONGVARCHAR, required: false }
+    screening_is_dohbr: { phpName: ScreeningIsDohbr, type: TINYINT, size: '1', required: false, defaultValue: '0' }
+    _indexes: { FK_screening2: [fk_film_id], FK_screening: [fk_host_id] }
+  screening_reminder:
+    _attributes: { phpName: ScreeningReminder }
+    screening_reminder_id: { phpName: ScreeningReminderId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_screening_unique_key: { phpName: FkScreeningUniqueKey, type: VARCHAR, size: '255', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_user_email: { phpName: FkUserEmail, type: VARCHAR, size: '255', required: false }
+    date_added: { phpName: DateAdded, type: TIMESTAMP, required: false }
+    screening_reminder_sent: { phpName: ScreeningReminderSent, type: TINYINT, size: '4', required: false }
+  selenium_test:
+    _attributes: { phpName: SeleniumTest }
+    selenium_test_id: { phpName: SeleniumTestId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    selenium_test_name: { phpName: SeleniumTestName, type: VARCHAR, size: '255', required: false }
+    selenium_test_scope: { phpName: SeleniumTestScope, type: VARCHAR, size: '255', required: false }
+    selenium_test_description: { phpName: SeleniumTestDescription, type: LONGVARCHAR, required: false }
+    selenium_test_group: { phpName: SeleniumTestGroup, type: VARCHAR, size: '255', required: false }
+    selenium_test_sleep: { phpName: SeleniumTestSleep, type: INTEGER, size: '11', required: false }
+    selenium_test_meta: { phpName: SeleniumTestMeta, type: LONGVARCHAR, required: false }
+    selenium_test_latest_result: { phpName: SeleniumTestLatestResult, type: VARCHAR, size: '255', required: false }
+    selenium_test_latest_result_date: { phpName: SeleniumTestLatestResultDate, type: TIMESTAMP, required: false }
+  selenium_test_result:
+    _attributes: { phpName: SeleniumTestResult }
+    selenium_test_result_id: { phpName: SeleniumTestResultId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_selenium_test_id: { phpName: FkSeleniumTestId, type: INTEGER, size: '11', required: false }
+    selenium_test_result_date: { phpName: SeleniumTestResultDate, type: TIMESTAMP, required: false }
+    selenium_test_result_result: { phpName: SeleniumTestResultResult, type: VARCHAR, size: '255', required: false }
+    selenium_test_result_failure: { phpName: SeleniumTestResultFailure, type: INTEGER, size: '11', required: false }
+    selenium_test_result_success: { phpName: SeleniumTestResultSuccess, type: INTEGER, size: '11', required: false }
+  selenium_test_step:
+    _attributes: { phpName: SeleniumTestStep }
+    selenium_test_step_id: { phpName: SeleniumTestStepId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_selenium_test_id: { phpName: FkSeleniumTestId, type: INTEGER, size: '11', required: false }
+    selenium_test_step_order: { phpName: SeleniumTestStepOrder, type: INTEGER, size: '11', required: false }
+    selenium_test_step_description: { phpName: SeleniumTestStepDescription, type: VARCHAR, size: '255', required: false }
+    selenium_test_step_type: { phpName: SeleniumTestStepType, type: VARCHAR, size: '255', required: false }
+    selenium_test_step_locator: { phpName: SeleniumTestStepLocator, type: VARCHAR, size: '255', required: false }
+    selenium_test_step_value: { phpName: SeleniumTestStepValue, type: VARCHAR, size: '255', required: false }
+  service_ports:
+    _attributes: { phpName: ServicePorts }
+    service_ports_id: { phpName: ServicePortsId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    service_ports_service_host: { phpName: ServicePortsServiceHost, type: VARCHAR, size: '15', required: false }
+    service_ports_service_port_base: { phpName: ServicePortsServicePortBase, type: INTEGER, size: '11', required: false }
+  sponsor_code:
+    _attributes: { phpName: SponsorCode }
+    sponsor_code_id: { phpName: SponsorCodeId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    sponsor_code: { phpName: SponsorCode, type: VARCHAR, size: '20', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    sponsor_code_start_date: { phpName: SponsorCodeStartDate, type: TIMESTAMP, required: false }
+    sponsor_code_end_date: { phpName: SponsorCodeEndDate, type: TIMESTAMP, required: false }
+    sponsor_code_use: { phpName: SponsorCodeUse, type: INTEGER, size: '11', required: false }
+    sponsor_code_use_count: { phpName: SponsorCodeUseCount, type: INTEGER, size: '11', required: false }
+    sponsor_code_user_fname: { phpName: SponsorCodeUserFname, type: VARCHAR, size: '20', required: false }
+    sponsor_code_user_lname: { phpName: SponsorCodeUserLname, type: VARCHAR, size: '20', required: false }
+    sponsor_code_user_email: { phpName: SponsorCodeUserEmail, type: VARCHAR, size: '255', required: false }
+    sponsor_code_user_username: { phpName: SponsorCodeUserUsername, type: VARCHAR, size: '40', required: false }
+    sponsor_code_user_notified: { phpName: SponsorCodeUserNotified, type: INTEGER, size: '11', required: false, defaultValue: '0' }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    fk_screening_unique_key: { phpName: FkScreeningUniqueKey, type: VARCHAR, size: '255', required: false }
+    sponsor_code_spawn_new_users: { phpName: SponsorCodeSpawnNewUsers, type: TINYINT, size: '4', required: false }
+  sponsor_code_usage:
+    _attributes: { phpName: SponsorCodeUsage }
+    sponsor_code_usage_id: { phpName: SponsorCodeUsageId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_sponsor_code_id: { phpName: FkSponsorCodeId, type: INTEGER, size: '11', required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    sponsor_code_usage_date: { phpName: SponsorCodeUsageDate, type: TIMESTAMP, required: false }
+  sponsor_domain:
+    _attributes: { phpName: SponsorDomain }
+    sponsor_domain_id: { phpName: SponsorDomainId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_sponsor_id: { phpName: FkSponsorId, type: INTEGER, size: '11', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    sponsor_domain_domain: { phpName: SponsorDomainDomain, type: VARCHAR, size: '255', required: false }
+    sponsor_domain_template: { phpName: SponsorDomainTemplate, type: INTEGER, size: '11', required: false }
+    sponsor_domain_css: { phpName: SponsorDomainCss, type: INTEGER, size: '11', required: false }
+    sponsor_domain_host_image: { phpName: SponsorDomainHostImage, type: INTEGER, size: '11', required: false }
+  static_page:
+    _attributes: { phpName: StaticPage }
+    static_page_id: { phpName: StaticPageId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    static_page_unique_name: { phpName: StaticPageUniqueName, type: VARCHAR, size: '255', required: false }
+    static_page_content: { phpName: StaticPageContent, type: LONGVARCHAR, required: false }
+    static_page_created_at: { phpName: StaticPageCreatedAt, type: TIMESTAMP, required: false }
+    static_page_updated_at: { phpName: StaticPageUpdatedAt, type: TIMESTAMP, required: false }
+  subscription:
+    _attributes: { phpName: Subscription }
+    subscription_id: { phpName: SubscriptionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_payment_id: { phpName: FkPaymentId, type: INTEGER, size: '11', required: false }
+    fk_payment_status: { phpName: FkPaymentStatus, type: INTEGER, size: '11', required: false }
+    subscription_unique_key: { phpName: SubscriptionUniqueKey, type: VARCHAR, size: '20', required: false }
+    subscription_date_added: { phpName: SubscriptionDateAdded, type: TIMESTAMP, required: false }
+    subscription_type: { phpName: SubscriptionType, type: VARCHAR, size: '20', required: false }
+    subscription_start_date: { phpName: SubscriptionStartDate, type: TIMESTAMP, required: false }
+    subscription_ticket_number: { phpName: SubscriptionTicketNumber, type: INTEGER, size: '11', required: false }
+    subscription_term: { phpName: SubscriptionTerm, type: VARCHAR, size: '20', required: false }
+    subscription_period: { phpName: SubscriptionPeriod, type: INTEGER, size: '11', required: false }
+    subscription_ticket_price: { phpName: SubscriptionTicketPrice, type: FLOAT, required: false }
+    subscription_total_price: { phpName: SubscriptionTotalPrice, type: FLOAT, required: false }
+    subscription_total_tickets: { phpName: SubscriptionTotalTickets, type: INTEGER, size: '11', required: false }
+  tokbox_video:
+    _attributes: { phpName: TokboxVideo }
+    tokbox_video_id: { phpName: TokboxVideoId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    tokbox_video_archive_id: { phpName: TokboxVideoArchiveId, type: VARCHAR, size: '255', required: false }
+    tokbox_video_date_created: { phpName: TokboxVideoDateCreated, type: TIMESTAMP, required: false }
+    fk_screening_unique_key: { phpName: FkScreeningUniqueKey, type: VARCHAR, size: '255', required: false }
+  transaction:
+    _attributes: { phpName: Transaction }
+    transaction_id: { phpName: TransactionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_payment_id: { phpName: FkPaymentId, type: INTEGER, size: '11', required: false }
+    transaction_number: { phpName: TransactionNumber, type: VARCHAR, size: '50', required: false }
+    transaction_response_object: { phpName: TransactionResponseObject, type: LONGVARCHAR, required: false }
+    transaction_gateway_environment: { phpName: TransactionGatewayEnvironment, type: VARCHAR, size: '50', required: false }
+    transaction_fraud_alert: { phpName: TransactionFraudAlert, type: VARCHAR, size: '255', required: false }
+    transaction_auth_code: { phpName: TransactionAuthCode, type: VARCHAR, size: '50', required: false }
+    transaction_status: { phpName: TransactionStatus, type: TINYINT, size: '4', required: false }
+    transaction_created_at: { phpName: TransactionCreatedAt, type: TIMESTAMP, required: false }
+    transaction_updated_at: { phpName: TransactionUpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { FK_transaction: [fk_payment_id] }
+  twitter_feed:
+    _attributes: { phpName: TwitterFeed }
+    twitter_feed_id: { phpName: TwitterFeedId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    twitter_feed_guid: { phpName: TwitterFeedGuid, type: VARCHAR, size: '255', required: false }
+    twitter_feed_author: { phpName: TwitterFeedAuthor, type: VARCHAR, size: '255', required: false }
+    twitter_feed_author_id: { phpName: TwitterFeedAuthorId, type: INTEGER, size: '11', required: false }
+    twitter_feed_date_created: { phpName: TwitterFeedDateCreated, type: TIMESTAMP, required: false }
+    twitter_feed_text: { phpName: TwitterFeedText, type: VARCHAR, size: '255', required: false }
+    twitter_feed_responded: { phpName: TwitterFeedResponded, type: TINYINT, size: '4', required: false }
+  user:
+    _attributes: { phpName: User }
+    user_id: { phpName: UserId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user_fb_uid: { phpName: UserFbUid, type: VARCHAR, size: '32', required: false }
+    user_t_uid: { phpName: UserTUid, type: VARCHAR, size: '32', required: false }
+    user_full_name: { phpName: UserFullName, type: VARCHAR, size: '255', required: false }
+    user_fname: { phpName: UserFname, type: VARCHAR, size: '255', required: false }
+    user_lname: { phpName: UserLname, type: VARCHAR, size: '255', required: false }
+    user_username: { phpName: UserUsername, type: VARCHAR, size: '255', required: false }
+    user_email: { phpName: UserEmail, type: VARCHAR, size: '255', required: false }
+    user_editable_email: { phpName: UserEditableEmail, type: VARCHAR, size: '255', required: false }
+    user_password: { phpName: UserPassword, type: VARCHAR, size: '79', required: false }
+    user_password_legacy: { phpName: UserPasswordLegacy, type: VARCHAR, size: '79', required: false }
+    user_bio: { phpName: UserBio, type: LONGVARCHAR, required: false }
+    user_facebook_url: { phpName: UserFacebookUrl, type: VARCHAR, size: '255', required: false }
+    user_twitter_url: { phpName: UserTwitterUrl, type: VARCHAR, size: '255', required: false }
+    user_website_url: { phpName: UserWebsiteUrl, type: VARCHAR, size: '255', required: false }
+    user_status: { phpName: UserStatus, type: TINYINT, size: '1', required: false }
+    user_created_at: { phpName: UserCreatedAt, type: TIMESTAMP, required: false }
+    user_updated_at: { phpName: UserUpdatedAt, type: TIMESTAMP, required: false }
+    user_type: { phpName: UserType, type: TINYINT, size: '1', required: false }
+    user_contact_email_id: { phpName: UserContactEmailId, type: INTEGER, size: '11', required: false }
+    user_t_username: { phpName: UserTUsername, type: VARCHAR, size: '255', required: false }
+    user_photo_url: { phpName: UserPhotoUrl, type: VARCHAR, size: '255', required: false }
+    user_image: { phpName: UserImage, type: VARCHAR, size: '255', required: false }
+    user_default_timezone: { phpName: UserDefaultTimezone, type: VARCHAR, size: '100', required: false }
+    user_birthday_date: { phpName: UserBirthdayDate, type: DATE, required: false }
+    user_broadcast_status: { phpName: UserBroadcastStatus, type: TINYINT, size: '2', required: false, defaultValue: '0' }
+    user_t_oauth_token: { phpName: UserTOauthToken, type: VARCHAR, size: '255', required: false }
+    user_t_oauth_token_secret: { phpName: UserTOauthTokenSecret, type: VARCHAR, size: '255', required: false }
+    user_ual: { phpName: UserUal, type: VARCHAR, size: '255', required: false }
+    user_optin: { phpName: UserOptin, type: TINYINT, size: '4', required: false }
+    user_optin_date: { phpName: UserOptinDate, type: TIMESTAMP, required: false }
+    user_tagline: { phpName: UserTagline, type: VARCHAR, size: '255', required: false }
+    _indexes: { contact_email_id: [user_contact_email_id] }
+  user_action:
+    _attributes: { phpName: UserAction }
+    user_action_id: { phpName: UserActionId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    fk_action_id: { phpName: FkActionId, type: INTEGER, size: '11', required: false }
+    user_action_ip_address: { phpName: UserActionIpAddress, type: VARCHAR, size: '255', required: false }
+    user_action_user_agent: { phpName: UserActionUserAgent, type: VARCHAR, size: '255', required: false }
+    user_action_date: { phpName: UserActionDate, type: TIMESTAMP, required: false }
+    user_action_data: { phpName: UserActionData, type: LONGVARCHAR, required: false }
+  user_invite:
+    _attributes: { phpName: UserInvite }
+    user_invite_id: { phpName: UserInviteId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    user_invite_type: { phpName: UserInviteType, type: VARCHAR, size: '255', required: false }
+    user_type: { phpName: UserType, type: VARCHAR, size: '255', required: false }
+    fk_film_id: { phpName: FkFilmId, type: INTEGER, size: '11', required: false }
+    fk_screening_id: { phpName: FkScreeningId, type: INTEGER, size: '11', required: false }
+    user_invite_count: { phpName: UserInviteCount, type: INTEGER, size: '11', required: false }
+    user_invite_date: { phpName: UserInviteDate, type: TIMESTAMP, required: false }
+    user_invite_source: { phpName: UserInviteSource, type: VARCHAR, size: '255', required: false }
+  user_payment_info:
+    _attributes: { phpName: UserPaymentInfo }
+    user_payment_info_id: { phpName: UserPaymentInfoId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    user_payment_info_first_name: { phpName: UserPaymentInfoFirstName, type: VARCHAR, size: '255', required: false }
+    user_payment_info_last_name: { phpName: UserPaymentInfoLastName, type: VARCHAR, size: '255', required: false }
+    user_payment_info_cc_type: { phpName: UserPaymentInfoCcType, type: TINYINT, size: '1', required: false }
+    user_payment_info_cc_number: { phpName: UserPaymentInfoCcNumber, type: VARCHAR, size: '16', required: false }
+    user_payment_info_security_code: { phpName: UserPaymentInfoSecurityCode, type: VARCHAR, size: '4', required: false }
+    user_payment_info_expiration_month: { phpName: UserPaymentInfoExpirationMonth, type: VARCHAR, size: '2', required: false }
+    user_payment_info_expiration_year: { phpName: UserPaymentInfoExpirationYear, type: VARCHAR, size: '4', required: false }
+    user_payment_info_b_address_1: { phpName: UserPaymentInfoBAddress1, type: VARCHAR, size: '255', required: false }
+    user_payment_info_b_address_2: { phpName: UserPaymentInfoBAddress2, type: VARCHAR, size: '255', required: false }
+    user_payment_info_b_city: { phpName: UserPaymentInfoBCity, type: VARCHAR, size: '255', required: false }
+    user_payment_info_b_state: { phpName: UserPaymentInfoBState, type: VARCHAR, size: '255', required: false }
+    user_payment_info_b_zip: { phpName: UserPaymentInfoBZip, type: VARCHAR, size: '10', required: false }
+    user_payment_info_paypal_email_address: { phpName: UserPaymentInfoPaypalEmailAddress, type: VARCHAR, size: '255', required: false }
+    user_payment_info_created_at: { phpName: UserPaymentInfoCreatedAt, type: TIMESTAMP, required: false }
+    user_payment_info_updated_at: { phpName: UserPaymentInfoUpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { FK_user_payment_info: [fk_user_id] }
+  user_payments:
+    _attributes: { phpName: UserPayments }
+    total: { phpName: Total, type: BIGINT, size: '21', required: true, defaultValue: '0' }
+    user_id: { phpName: UserId, type: INTEGER, size: '11', required: true, defaultValue: '0' }
+  user_screening:
+    _attributes: { phpName: UserScreening }
+    user_screening_id: { phpName: UserScreeningId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    user_screening_username: { phpName: UserScreeningUsername, type: VARCHAR, size: '255', required: false }
+    user_screening_created_at: { phpName: UserScreeningCreatedAt, type: TIMESTAMP, required: false }
+    user_screening_updated_at: { phpName: UserScreeningUpdatedAt, type: TIMESTAMP, required: false }
+  user_screening_pass:
+    _attributes: { phpName: UserScreeningPass }
+    user_screening_pass_id: { phpName: UserScreeningPassId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    user_screening_pass_password: { phpName: UserScreeningPassPassword, type: VARCHAR, size: '79', required: false }
+    user_screening_pass_salt: { phpName: UserScreeningPassSalt, type: VARCHAR, size: '15', required: false }
+    user_screening_pass_access_key: { phpName: UserScreeningPassAccessKey, type: VARCHAR, size: '255', required: false }
+    user_screening_pass_views: { phpName: UserScreeningPassViews, type: INTEGER, size: '11', required: false }
+    user_screening_pass_created_at: { phpName: UserScreeningPassCreatedAt, type: TIMESTAMP, required: false }
+    user_screening_pass_updated_at: { phpName: UserScreeningPassUpdatedAt, type: TIMESTAMP, required: false }
+    _indexes: { FK_user_screening_pass: [fk_user_id] }
+  user_session:
+    _attributes: { phpName: UserSession }
+    sess_id: { phpName: SessId, type: VARCHAR, size: '255', required: false }
+    sess_data: { phpName: SessData, type: LONGVARCHAR, required: false }
+    sess_time: { phpName: SessTime, type: BIGINT, size: '20', required: false }
+    id: { phpName: Id, type: INTEGER, size: '11', required: false }
+    _indexes: { NewIndex1: [sess_id] }
+  vow:
+    _attributes: { phpName: Vow }
+    vow_id: { phpName: VowId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    vow_date_created: { phpName: VowDateCreated, type: TIMESTAMP, required: false }
+    fk_user_id: { phpName: FkUserId, type: INTEGER, size: '11', required: false }
+    vow_description: { phpName: VowDescription, type: LONGVARCHAR, required: false }
+    vow_asset_guid: { phpName: VowAssetGuid, type: VARCHAR, size: '255', required: false }
+    vow_asset_filename: { phpName: VowAssetFilename, type: VARCHAR, size: '255', required: false }
+    vow_image_generated: { phpName: VowImageGenerated, type: TINYINT, size: '4', required: false }
+  wtvr_error:
+    _attributes: { phpName: WtvrError }
+    error_id: { phpName: ErrorId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    error_no: { phpName: ErrorNo, type: VARCHAR, size: '255', required: false }
+    error_code: { phpName: ErrorCode, type: VARCHAR, size: '128', required: true, defaultValue: '' }
+    error_line: { phpName: ErrorLine, type: VARCHAR, size: '255', required: false }
+    error_file: { phpName: ErrorFile, type: VARCHAR, size: '255', required: false }
+    error_context: { phpName: ErrorContext, type: LONGVARCHAR, required: false }
+    ip_address: { phpName: IpAddress, type: VARCHAR, size: '128', required: true, defaultValue: '' }
+    user_agent: { phpName: UserAgent, type: VARCHAR, size: '255', required: true }
+    referring_url: { phpName: ReferringUrl, type: VARCHAR, size: '128', required: true, defaultValue: '' }
+    error_date: { phpName: ErrorDate, type: TIMESTAMP, required: false }
+    is_php: { phpName: IsPhp, type: VARCHAR, size: '255', required: false }
+  wtvr_message:
+    _attributes: { phpName: WtvrMessage }
+    wtvr_message_id: { phpName: WtvrMessageId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wtvr_message_identifier: { phpName: WtvrMessageIdentifier, type: VARCHAR, size: '255', required: false }
+    wtvr_message_scope: { phpName: WtvrMessageScope, type: VARCHAR, size: '25', required: false, defaultValue: mails }
+    wtvr_message_send_user_id: { phpName: WtvrMessageSendUserId, type: INTEGER, size: '11', required: false }
+    wtvr_message_send_email: { phpName: WtvrMessageSendEmail, type: VARCHAR, size: '255', required: false }
+    wtvr_message_send_fname: { phpName: WtvrMessageSendFname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_send_lname: { phpName: WtvrMessageSendLname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_subject: { phpName: WtvrMessageSubject, type: VARCHAR, size: '255', required: false }
+    wtvr_message_body: { phpName: WtvrMessageBody, type: LONGVARCHAR, required: false }
+    wtvr_message_text: { phpName: WtvrMessageText, type: LONGVARCHAR, required: false }
+    wtvr_message_date: { phpName: WtvrMessageDate, type: TIMESTAMP, required: false }
+    wtvr_message_template: { phpName: WtvrMessageTemplate, type: VARCHAR, size: '50', required: false }
+    wtvr_message_key1: { phpName: WtvrMessageKey1, type: INTEGER, size: '11', required: false }
+    wtvr_message_key2: { phpName: WtvrMessageKey2, type: INTEGER, size: '11', required: false }
+    wtvr_message_key3: { phpName: WtvrMessageKey3, type: INTEGER, size: '11', required: false }
+    wtvr_message_key4: { phpName: WtvrMessageKey4, type: INTEGER, size: '11', required: false }
+  wtvr_message_address:
+    _attributes: { phpName: WtvrMessageAddress }
+    wtvr_message_address_id: { phpName: WtvrMessageAddressId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wtvr_message_emailaddress: { phpName: WtvrMessageEmailaddress, type: VARCHAR, size: '255', required: false }
+    wtvr_message_address_valid: { phpName: WtvrMessageAddressValid, type: INTEGER, size: '11', required: false, defaultValue: '1' }
+  wtvr_message_queue_global:
+    _attributes: { phpName: WtvrMessageQueueGlobal }
+    wtvr_message_queue_id: { phpName: WtvrMessageQueueId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    wtvr_message_recipient: { phpName: WtvrMessageRecipient, type: VARCHAR, size: '255', required: false }
+    wtvr_message_sender: { phpName: WtvrMessageSender, type: VARCHAR, size: '255', required: false }
+    wtvr_message_recipient_fname: { phpName: WtvrMessageRecipientFname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_recipient_lname: { phpName: WtvrMessageRecipientLname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_sender_fname: { phpName: WtvrMessageSenderFname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_sender_lname: { phpName: WtvrMessageSenderLname, type: VARCHAR, size: '255', required: false }
+    wtvr_message_subject: { phpName: WtvrMessageSubject, type: VARCHAR, size: '255', required: false }
+    wtvr_message_body: { phpName: WtvrMessageBody, type: LONGVARCHAR, required: false }
+    wtvr_message_text: { phpName: WtvrMessageText, type: LONGVARCHAR, required: false }
+    wtvr_message_created: { phpName: WtvrMessageCreated, type: TIMESTAMP, required: false }
+    wtvr_message_sent: { phpName: WtvrMessageSent, type: TIMESTAMP, required: false }
+    wtvr_message_type: { phpName: WtvrMessageType, type: VARCHAR, size: '20', required: false }
+    wtvr_message_response: { phpName: WtvrMessageResponse, type: VARCHAR, size: '255', required: false }
+  wtvr_message_queue_local:
+    _attributes: { phpName: WtvrMessageQueueLocal }
+    wtvr_message_queue_local_id: { phpName: WtvrMessageQueueLocalId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_wtvr_message_id: { phpName: FkWtvrMessageId, type: INTEGER, size: '11', required: false }
+    wtvr_message_queue_local_date_added: { phpName: WtvrMessageQueueLocalDateAdded, type: TIMESTAMP, required: false }
+    wtvr_message_queue_local_date_sent: { phpName: WtvrMessageQueueLocalDateSent, type: TIMESTAMP, required: false }
+    wtvr_message_queue_local_bad_recipients: { phpName: WtvrMessageQueueLocalBadRecipients, type: INTEGER, size: '11', required: false }
+    wtvr_message_queue_local_unsubscribed_recipients: { phpName: WtvrMessageQueueLocalUnsubscribedRecipients, type: INTEGER, size: '11', required: false }
+  wtvr_message_recipient:
+    _attributes: { phpName: WtvrMessageRecipient }
+    wtvr_message_recipient__id: { phpName: WtvrMessageRecipientId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_wtvr_message_id: { phpName: FkWtvrMessageId, type: INTEGER, size: '11', required: false }
+    wtvr_message_recipient_email: { phpName: WtvrMessageRecipientEmail, type: VARCHAR, size: '255', required: false }
+    wtvr_message_recipient_fname: { phpName: WtvrMessageRecipientFname, type: VARCHAR, size: '50', required: false }
+    wtvr_message_recipient_lname: { phpName: WtvrMessageRecipientLname, type: VARCHAR, size: '50', required: false }
+    wtvr_message_recipient_date_added: { phpName: WtvrMessageRecipientDateAdded, type: TIMESTAMP, required: false }
+    _indexes: { fk_circle_message_id: [fk_wtvr_message_id] }
+  wtvr_message_view:
+    _attributes: { phpName: WtvrMessageView }
+    wtvr_message_view_id: { phpName: WtvrMessageViewId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    fk_wtvr_message_id: { phpName: FkWtvrMessageId, type: INTEGER, size: '11', required: false }
+    fk_message_recipient_id: { phpName: FkMessageRecipientId, type: INTEGER, size: '11', required: false }
+    wtvr_message_view_date_viewed: { phpName: WtvrMessageViewDateViewed, type: TIMESTAMP, required: false }
+    wtvr_message_view_ip_address: { phpName: WtvrMessageViewIpAddress, type: VARCHAR, size: '20', required: false }
+    wtvr_message_view_browser: { phpName: WtvrMessageViewBrowser, type: VARCHAR, size: '255', required: false }
+    wtvr_message_view_data: { phpName: WtvrMessageViewData, type: LONGVARCHAR, required: false }
+  xhr_selenium_log:
+    _attributes: { phpName: XhrSeleniumLog }
+    xhr_selenium_log_id: { phpName: XhrSeleniumLogId, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    xhr_selenium_log_action: { phpName: XhrSeleniumLogAction, type: VARCHAR, size: '255', required: false }
+    xhr_selenium_log_result: { phpName: XhrSeleniumLogResult, type: VARCHAR, size: '255', required: false }
+    xhr_selenium_log_browser: { phpName: XhrSeleniumLogBrowser, type: VARCHAR, size: '255', required: false }
+    xhr_selenium_log_date: { phpName: XhrSeleniumLogDate, type: TIMESTAMP, required: false }
+    xhr_selenium_log_group: { phpName: XhrSeleniumLogGroup, type: VARCHAR, size: '255', required: false }

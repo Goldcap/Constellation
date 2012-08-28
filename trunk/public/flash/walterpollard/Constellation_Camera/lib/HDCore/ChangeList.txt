@@ -1,0 +1,340 @@
+Version 2.2 from version 2.1
+====================================
+All changes are now tracked internally with a Change Request number. 
+
+Change requests for this release:
+--------------------------------
+
+CR 974397  - Fallback to using Edge if NetSession doesn't succeed.
+If an http request to NetSession returns something other than a success
+response, then subsequent requests should not be made to NetSession and should
+instead go directly to an edge server.
+
+CR 982686  - Optimize size switching rules to take in to account existing dimension data. 
+If the current MBR object has width and height defined and the
+considerDimensionsWhenSwitching is set to true as well as renderWidth and renderHeight are defined,
+then it will look at the lower renditions to the current index in the SMIL file and see what index matches
+the render width and height. It will set the matching index instead of just stepping
+down one index at a time.
+
+CR 1001892 - HDS stream does not play on the Zoro player in case DVR is disabled.
+
+CR 1010334 - DVR window support for HDS live.
+When a stream is published with limited DVR window, there are couple of issues
+observed-
+1) A live stream starts from DVR start as opposed to live. (this is now fixed
+for unlimited DVR).
+2) Seek does not seek to the right position on the scrub bar and jumps around
+randomly.
+
+CR 1020864 - HDS SBR streams do not play through NetSession in an OSMF player using the AkamaiAdvancedStreamingPlugin.
+
+CR 1040682 - Improved handling of cacheable live HDS.
+
+CR 1049763 - Don't make live HDS bootstrap requests of NetSession.
+
+CR 1060959 - With Secure Media 2.0, client sometimes requests 2 session keys from ghost, resulting in decrypt error.
+
+CR 1071921 - In HDNetStream, remove filtering from the REBUFFER event.
+Currently the HDEvent.REBUFFER event filters notifications about rebuffers, in
+an effort to provide clean analytics data. This is really the province of the
+MA components. It is preferred going forward if the REBUFFER event is
+dispatched after every buffer.empty and the filtering removed.
+
+CR 1080111 - Investigate buffer target heuristics within 30s of EOS.
+Currently HDNetStream class shifts to a fixed 3s target buffer within 30s of
+EOS. This has been shown to result in buffer empties as the class throttles
+around the 3s mark.
+
+CR 1087473 - HDcore 2.1.19 HDN1 loop not returning to position 0 after new session established mid stream.
+In the HDN1 netstream with loop property true if you pause a vod playback at
+its mid point for > 2 minutes then re-establish playback and receive a new
+session from the server after seeking to a point near the end of the stream the
+looped playback will start at the time index where you lost your first session.
+
+CR 1090335 - HDN1 BasicLiveSample scrub-bar issue.
+An issue when the stream is live and user tries to drag the scrub bar.  
+You can click the track and it will seek to that point but 
+if you drag it returns to live (positioned fully to the right) regardless of where its dropped. 
+
+CR 1095528 - ZStream.duration returns -1 for OSMF players.
+Because of the way OSMF sends play args into NetStream instances ZStream always
+gets a play length of -1.
+
+CR 1104546 - Rebuffering within 2s of startup.
+Some clients can't support the default/initial bitrate. The small initial
+buffer runs out very quickly for them. Suggestions we discussed on the call:
+
+CR 1109037 - Add maxBitrateAllowed and startingindex properties to ZStream.
+Functionality should be equivalent to HDNetstream.
+
+CR 1121331 - Implement End User Mapping for HDN1 and HDN2.
+Add End User Mapping logic to HDCore for the v2.2 release per the spec
+
+CR 1125372 - Add a timeout event to AkamaiMediaResourceResolver.
+Player developers need to be able to distinguish between a timeout and a 404. 
+
+CR 1128547 - Add log string to each HDS fragment request.
+
+CR 1129420 - targetBufferTime increases too early making the start-up of a steam take longer.
+When a stream starts the bufferTime is set to .75 and once playback is detected
+then the bufferTime is increased to a a level that will sustain playback
+(12-15) seconds depending on the stream type.  Once in a while the
+the bufferTime is increased too early resulting in a long wait until playback
+begins.
+
+CR 1134343 - Expose server IP in ZStream.
+
+CR 1148824 - Remove all trace statments.
+
+CR 1150471 - Remove all client listeners in hdnetstream destory.
+If you were to call destroy after a play and before a buffer full you will get
+a null exception error.
+
+CR 1153603 - In ZStream, append a client-specific id to each bootstrap request.
+This will help create a stagger in NetSession-assisted live streams, increasing
+the offload ratio.
+
+CR 1179363 - In ZHTTPNetStream, limit bootstrap retries to MAX_FRAGMENT_RETRY_COUNT
+CR 1182685 - Add property to ZStream to disable als query args on fragments
+
+Known Issues:
+------------
+We are occasionally seeing HDS streams containing in-stream seek calls. This appears to be a Flash Player
+bug and we've filed this bug with Adobe:
+http://bugs.adobe.com/jira/browse/FP-7386
+
+CR 1031304 - akamai player seems not playing DRM zeri, as good as osmf player
+We have seen issues playing DRM streams that use Flash Access.
+
+CR 1180246 Memory leak when playing encrypted live HDS stream
+The memory leak may be evident after playing live, encrypted HDS video for 2 or 3 hours.
+
+Version 2.1 from version 2.0
+====================================
+1. HDNetStream
+1.1 Implemented Alternate Server Mapping 2.0, a new design and implementation of this feature to coincide with the new server-side implementation.
+1.2 Fixed CR 1045182 - Subclips do not stop playing. 
+1.3 Fixed CR 1047027 - remove sharedobject in HDNetstream
+
+2. ZStream
+2.1 Implemented Alternate Server Mapping 2.0, a new design and implementation of this feature to coincide with the new server-side implementation.
+2.2 Implemented Player Verification 2.0
+2.3 Implemented Secure HD 2.0.1
+2.4 Added flash.events.Event "encrypted" event, dispatched when the encryption state changes. 
+2.5. Added the encrypted property, which is true if the currently playing content is protected by Secure HD. 
+2.6 Added MediaErrorEvent.MEDIA_ERROR events to indicate fatal decryption errors. 
+2.7 Added pvChallenge property, which sets a challenge to use with player verification.
+2.8 Corrected CR 1065459  - Zeri streams falling behind and rebuffering when flash runtime enters sleep mode.
+
+3. Across HDCore
+3.1 Fixed CR 1076511 - Added "if" condition to make sure logger is not null.
+
+
+
+Version 2.0 from version 1.2
+====================================
+This release marks a major broadening in the scope of this library. Previously dedicated to playback of our HDN1 (FLV) product, this HDCore.swc has expanded to include and replace ALL our client side code, enabling playback of RTMP, HDN1(FLV) and HDN2(Adobe HTTP Dynamic Streaming). Code previously obtained from our OVPHD, AkamaiUtilities, OVP, AkamaiOSMFExtensions and AkamaiOSMFmedia libraries can now be found within HDCore.swc. Package names remain the same, so this library will be backwards compatible with any of your projects using Akamai client-side software.
+ 
+1. HDNetStream
+1.1 Added support for an escalating bufferTime setting after buffer empty, to damp rapid recycling on poorly connected systems.
+1.2 Fixed bug in calculation of maxSecondsWithoutData
+1.3 Corrected rounding of seconds in timeAsTimeCode() method. 
+1.4 Added Alternate Server mapping support per CR 840053. This is turned off by default but can be turned on using enableAlternateSeverMapping property.
+1.5 Fixed CR955047 - preserve audio transform if seeking while paused. 
+1.6 Fixed several problems when start and play length were specified. Specifically, on a buffer empty event, the sub-clip would end prematurely. Also, switching rules were not applied to sub-clips due to an invalid duration-time calculation.
+1.7 Fixed CR 864443 - Added disableAllArchivePlayback property, which can be used to prevent the archive portion if a live stream, or preivously live stream, to be played back. 
+1.8 Fixed CR 915310 - added a  maxBufferLength property to allow the maximum buffer length to be specified for SBR, and MBR at highest rendition index. 
+1.9 Added averagePlaybackBitsPerSecond property, giving a smoothed and average version of playbackKbps. 
+1.10 DownloadRatio now averaged over 20 samples at 250ms intervals. 
+1.11 Duration property is no longer updated while paused or buffering for live streams.  
+1.12 Raised the number of allowable failures against a bitrate from 3 to 5.
+1.13 Raised the downloadRatio threshold for switch downs in live streams from 0.5 to 0.8.
+1.14 Fixed CR 928018 - MediaAnalytics setData call now reports "hdcore" version. 
+1.15 Fixed CR 905824 - when sending player verification token on the control channel, class now appends the swf location as a query arg. 
+1.16 Addressed CR 967728 - the duration property does now not increase while the player is buffering or paused. 
+1.17 Reduced minimum buffer length for downLoadRatio switchdown by one second. 
+
+2. HDEvent
+2.1 Added HDEvent.ARCHIVE_PLAYBACK_DISABLED, dispatched whenever playback of a live stream is aborted due to violation of the disableAllArchivePlayback rule.
+2.2 Added HDEvent.HDEVENT.IDENT_REQUEST
+2.3 Added HDEVENT.ALT_SERVER_MAP_FAILOVER
+
+
+3. HDTHumbnailGenerator
+3.1 Disabled NetSession discovery by default. 
+
+4. HDVODFormatter
+4.1 Fixed CR 911863 - query args are now preserved on stream names run through HDVODFormatter.
+
+5. Logging
+5.1 The logging framework in this release is provisional and the API may change in future releases.
+5.2 The logging classes in HDCore will, by default, emit traces for debug builds. These traces can be turned off in two ways: 1) Set omit-trace-statements to true in flex-config.xml; or 2) Add the following to your player code:
+"Log.loggerFactory = new AkamaiConsoleLoggerFactory();"
+Please see the samples in the ./samples directory for a demonstration of the logging classes.
+
+ 
+Version 1.2 from version 1.1
+====================================
+1. In HDNetStream, fixed issue with token-protected streams, without SWFVerification, using IMHDMBRObject, failing during seek. 
+2. In HDEvent, add HDEVENT.DVR_WINDOW, dispatched whenever a change in the DVR window is detected.
+3. IN HDNetstream, added dvr window support for live streams. This allows the server to specify a trailing window behind live which is accessible to the client. 
+4. In HDNetStream, added support for logging of HDClient version in lvl1 query arg attached to each throttle request. 
+5. In HDNetStream, Loop behavior changed to not specify the start time, allowing live streams to resume at live if onComplete is falsely sent by ghost. 
+6. In HDNetStream, added support for alternate sever mapping, including first-play re-request, ident requests and liveness checks. Alt Server mapping is off by default and must be enabled by setting the enableAlternateSeverMapping property to true.
+7. In HDEvent, added HDEvent.ALT_SERVER_MAP_FAILOVER, dispatched whenever the class fails over to an alternate server map. 
+8. In HDEvent, added event HDEvent.DVR_WINDOW_CLOSED, issued when the player is paused on a dvrWindow-enabled live stream and the playhead slides out of that window. 
+9. In HDNEtstream, added sub-clip support for playStart and playDuration parameters in the play() method. See ASDocs for details. 
+10. Added new interface IMBRObject2, to add support for clipBegin, clipEnd and primaryToken properties. 
+11. In HDMBRObject, modified to implement IMBRObject2. This will not break existing code since IMBRObject2 extends IMBRObject.
+12. In HDSMILParser, added support for clipBegin and clipEnd properties in the <video> tag.
+13. In HDNetStream, fixed bug with paused-while-live. New behavior is that if a stream is playing at live is paused, it will start back at live if resume() is called. 
+14. In HDEvent, add HDEvent.STREAM_NOT_FOUND_WHILE_PLAYING.
+15. In HDNetStream, added support for HDEvent.STREAM_NOT_FOUND_WHILE_PLAYING, dispatched during live stream playback if all encoders disconnect due to an abrupt loss in connectivity. 
+16. In HDExamplePlayer, extended the example to support sub clips and integrated Media Analaytics. Refactored to use Sprite instead of MovieClip.
+
+Version 1.1 from version 1.0.9
+====================================
+1. In HDNetStream, established a new DOWNLOAD-RATIO threshold (0.5) for when a stream is playing at true live.
+2. In HDNetStream, time property is limited to never be greater than duration. 
+3. In HDNetstream, changed PLAYING_LIVE_DELTA to 10s from 5s. 
+4. In HDNetStream, fixed HDEvent.PLAY so that it is dispatched when tokenService is invoked.
+5. In HDNetstream, modified target buffer rules so that the server sends the last bytes of data as close as possible to the end of the stream. 
+6. In HDNetstream, lockout timer fixed at 300s instead of doubling with each successive lock.
+7. IN HDNetStream, averaging count for download ratio raised from 5 to 10. 
+8. in HDNetStream, added destroy() method, to be called before you wish to dispose of the class. 
+9. IN HDServerController, httpBase can now be supplied with or without a trailing "/". 
+10.In HDNetstream, fixed bug with considerDimensionsWhen Switching, where it would switch up to the lowest bitrate dimensions which are >= the rendered area.
+11.In HDNetstream, enabledNetSessionDiscovery set to default of true.
+12. In HDNeStream, set all listeners weak.
+13. IN HDVODFormatter, adjusted algorithm to handle single-item VOD SMIL files. 
+14. IN HDNetStream, raised bitrate test interval for SBR content and MBR playing at the top index, to 300s from 20s. 
+15. IN HDNetStream integrated Akamai Client Side Media Analytics in to the HDNeStream class and added the analyticsBeacon property.
+ 
+Version 1.0.9 from version 1.0.8
+====================================
+1. IN HDNetStream, added code to request a switch if the SWITCH_IN_PROGRESS error is received from the server. 
+2. In HDEvent, made event cancelable.
+3. In HDNetStream, added buffer empty End-Of-Stream detection mode for Flash player 10.1 support. 
+4. in HDNetStream, made server timeout detection onEdge independent. 
+5. In HDNetStream, improved video preview during seek while paused. 
+6. IN HDNetStream, raised max buffer time for SBR and top rendition content to 60s. 
+7. IN HDNetStream, TIMEOUT event is now dispatched after idle pause is resumed and before stream auto-recovers. 
+8. In HDNetStream, added reachedTargetBufferFull and MBRObject properties. 
+9. In HDNetStream, fixed bug with REBUFFER event falsely reporting at EOS. 
+10. In HDNetStream, fixed bug with seek() when initial play request contained a non-zero offset.
+11. In HDNetStream, added flag to disregard Buffer.Full events that are not preceded by a Buffer.Empty
+12. In HDNetStream, increased bandwidth estimation period to 250ms from 150ms and raised averaging sample size to 10.
+13. In HDNetStream, set minimum bufferLength of 5s before a stream may switch up.
+15. In HDNetStream and HDEvent, added DEAD_CONNECTION event, which fires 10s after the last buffer empty if no bytes have been received in the interim. This is an indication that the client has lost its connectivity.
+14. In HDNetStream, target buffer length after a buffer empty set to 1s. 
+15. In HDNetStream, added downloadRatio as a metric for switching down, replacing estimatedTimeToBufferFailure. 
+16. In HDNetStream, deprecated requiresEdgeAuth property and added primaryToken setter. Added support for primaryToken to be explicitly passed as part of a SMIL URL. 
+17. In HDNetStream, minimum target buffer raised to 10s for ondemand.
+18. In HDNetStream, added enableNetSessionDiscovery property. This property must be set true before play() is called,  for NetSession discovery to take place and HDEvent.NETSESSION_CLIENT to be dispatched.
+19. IN HDNetStream, if a rendition is missing in a SMIL file and the server reports TRACK NOT FOUND, the class will ignore that index for 5 minutes and switch around it. Requires ghost 5.9.4.
+20. In HDPlayer example, removed UI support for multi-content SMIL playback, since this is not used in production. SMIL files are now fed directly to the HDNeStream and are not parsed by the player.
+21. In HDNetStream, prevented RTT test from running if the remainder of the file is already in the forward buffer. 
+
+Version 1.0.8 from version 1.0.7
+====================================
+1. In HDnetStream, removed pre-throtttle to 10% at start of bitrate test while playing live.
+2. In HDNetStream, added timeBase, raw FLV time and timeAtLastOnEdge to lvl qos args. 
+3. in HDNetstream, modified duration property to be calculated off of the first onEdge for live streams. 
+4. In HDNetStream, changed client getter to return type object rather than ClientProxy. 
+5. IN HDNetstream, after tokenized URL is returned, update currentURL and controller host properties. 
+6. In HDNetstream, modified seek routine to not rely upon the stream name returned by ghost for seeks that occur in the middle of switches. 
+7. IN HDNetStream, added useFixedThrottleForSBR getter and setter. Default is false. The purpose of a fixed throttle is to reduce control requests, which are not really required for SBR content. Bandwidth and RTT tests will also be disabled.
+
+Version 1.0.7 from version 1.0.6
+====================================
+1. In HDNetStream, added edgeVersion, edgeIP and playerIP properties.
+2. In HDNetStream, removed useSecureOff property. 
+3. In HDServerController, removed useSecureOff property. 
+4. in HDNetStream, modified bandwidth detection routines to better operate against live streams. 
+5. In HDNetStream, added maxLiveDriftAllowed property.
+6. In HDNetStream, adjusted bandwidth safety ratios to 1.0 for live playback only. 
+7. In HDNetStream, updated EdgeAuth and SwfAuth behaviors. 
+8. In HDNetstream, removed primaryToken property
+9. In HDNetStream, took advantage of early server bursting to enable higher bandwidth estimates at start.
+10. In HDNetStream, removed useFastStart, startingBufferTimeLive and startingBufferTimeOndemand properties.
+11. In HDNetStream, added maximum session bytes limit of 1.9GB with auto-rollover to a new sesion. 
+12. In HDNetStream, added timeAsTimeCodee and durationAsTimeCode properties and secondsToTimeCode() method. 
+13. In HDNetSream, added currentIndex, maxIndexAvailable, maxIndexAvailableBitrate and currentIndexBitrate properties.
+14. In HDNetStream, modifed transferToken usage so that transferTokens are only used when EdgeAuth and SWfAuth are explcitly required. 
+15. In HDNetStream, added stream time and wallclock time to log trace.
+
+
+Version 1.0.6 from version 1.0.5
+====================================
+1. In HDServerController, added the getTAT and log commands.
+2. In HDEvent, added the new HDEVENT.SESSION_ID, HDEVENT.TAT and NETSESSION_CLIENT constants.
+3. In HDNEtstream, added liveDrift property
+4. In HDNetstream, added HDEVENT.SESSION_ID, HDEVENT.TAT and NETSESSION_CLIENT events.
+5. In HDNetStream, added maximumBitrateAllowed getter/setter and implemented that behavior. 
+6. In HDNetSream, modified heuristics around ramping up bufferTime.
+7. In HDNetstream, switched to client-side bandwidth estimation. The command "bitrate-test" is still supported but is no longer used to estimate bandwidth.
+8. In HDNetStream, modified starting behavior. It no longer remembers bandwidth estimates between sessions. New default behavior is to start at the highest index which is < 500kbps. 
+9. In HDNetstream, added netSessionClientAvailable read-only property.
+10. In HDNetStream, modified rules for framedrops so that a switch down occurs when dropped frame rate/nominal frame rate > 0.5
+11. In HDNetStream, modified buffer rules for switch down to use a single threshold and to use the estimated current bandwidth to pick a entry point.
+12. In HDNetStream, added estimatedCurrentBandwidth property and modified switch down rule to take advantage of this infomration. 
+13. HDPrimaryTokenService removed from com.akami.hd package
+14. ITokenService interface added to com.akamai.hd package
+15. In HDNetStream, added tokenService setter. 
+16. Added HDNetSessionInterface class for interaction with and discovery of the Akamai NetSession client.
+17. In HDServerController, added qosArgs property. This will add QoS query args to each control request.
+18. In HDNetStream, added netSessionCpCode setter property. 
+19. Added com.akamai.hd.HDBase64 class to package
+20. In HDNetStream, added support for Akamai SWF Authentication. 
+
+Version 1.0.5 from version 1.0.4
+====================================
+1. Deprecated HDFMSAuthenticator class and removed from the core framework.
+2. In HDNetstream, removed requiresSWFAuth public property and all references within class.
+3. In HDNetstream, changed private static const declarations to protected const, to allow these values to be modified in classes which extend HDNetstream
+4. In HDEvent, REDNITION_CHANGE event now carries a maxKbps value in the data property. This is the bitrate of the highest rendition available in that package.
+5. Removed HDFMSAuthenticator class since it has been deprecated.
+6. Added IMBRObject, an interface to define a MBR object
+7. Modified HDMBRObject to implement IMBRObject.
+8. In HDNetStream, replaced use of MBRObject with IMBRObject.
+9. In HDNetstream, made getStartingIndex() a protected funciton and added startingIndex getter/setter.
+10. In HDNetStream, added maximizeSingleBitrateBuffers property. Default is false. When true, if the class is playing a single-bitrate file, or the top index of a MBR file, it will attempt to build a 20s buffer. 
+
+
+Version 1.0.4 from version 1.0.3
+====================================
+1. In HDNetStream, fixed bug with bitrateTimeoutTimer not being stopped after a successfull bw result was received.
+2. In HDNetStream, increased default bw test settings to 3,3.
+3. IN HDNetStream, added check to prevent manual switches down from being tagged as failures. 
+4. IN HDNEtStream, added close() and buffertime setting to every play() request.
+5. IN HDNetStream, modified algorithms for setting target buffers. These are now set by inspection during updateMetrics, rather than by relyign on buffer.FULL and buffer.EMPTY, which are not dispatched reliably with progressive playback. Master buffer reduced from 100s to target buffer + 6s. 
+
+
+Version 1.0.3 from version 1.0.2
+====================================
+1. HDNetStream - added trap for rapid NetStream.Play.Stop events that are sometimes received near the end of a stream. The classes' reation will be to auto-reconnect.
+2. HDNetStream - modified calculation of secondsUntilBufferEmpties and droppedFrameRate, so that they cannot be estimated within 3s of a switch.
+3. HDNEtStream - now estimate bandwidth for SBR and MBR
+4. HDNEtStream - introduced BITRATE_TEST_MIN_DELAY_FOR_SBR property. Bandwidth tests will now be run at this interval if the content is single bitrate, or if mbr and you are already at the highest bitrate.
+5. HDNEtStream - RENDITION_CHANGE event is now dispatched for SBR content, so that HD Meters can be consistently displayed. 
+6. HDNetStream - added currentKbps property to data object returned by RENDITION_CHANGE event. 
+7. HDNetstream - Modified throttle rules for live to match ondemand rules. 
+8. HDNetStream - added filter to throttle and metrics functions to avoid using abnormally high buffer values in throttling and metrics calculations.
+
+
+Version 1.0.2 from version 1.0.1
+====================================
+1. Modified HDNetStream seek() method to clear buffer before seeking. This helps avoid some errors we were seeing on seek whereby the first onEdge event would not be received by the player.
+2. Added loop property to HDNetStream class, to allow for autolooping to start after complete. 
+3. Added "loop" constant to HDEvent.
+4. Added the playbackKbps property to HDNetStream. Returns the playback bitrate of the current stream, in kbps. This rate includes the sum of the audio and video bitrates for flash player 10.0.32.18+. For lower versions, due to a flash player bug, it only returns the audio component of the bitrate.
+5. In HDNetStream.as, modified calculation of _secondsUntilBufferEmpties to improve switching performance.
+6. In HDNetStream.as, raised bandwidth thresholds to 40% and 80% for low/high RTT. 
+7. In HDNetStream, modified data property of SEEK event so that it returns seekFrom and seekTo values. 
+8. in HDNetStream and HDEvent, added the HDEvent.PLAY event.
+
+Version 1.0.1 from version 1.0.0
+====================================
+1. Modified HDNetStream.play() method so that it would accept play() requests with arg[1] undefined, which survived Flex but caused a RTE in Flash CS4.
+2. Removed active trace() statements from HDNetstream.as.

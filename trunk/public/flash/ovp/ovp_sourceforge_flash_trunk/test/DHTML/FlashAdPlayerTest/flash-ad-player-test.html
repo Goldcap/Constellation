@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ovp Flash Ad Player Test</title>
+<script src="swfobject.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+
+var _flashReady = false;
+var _fp;
+var _flashvars = false;
+var _adContentWidth = 480;
+var _adContentHeight = 272;
+var _adPlaying = false;
+var _adMuted = false;
+
+var _params = {	allowFullScreen: "true",
+				width: _adContentWidth,
+				height: _adContentHeight,
+				align: "middle",
+				id: "FlashAdPlayer",
+				quality: "high",
+				bgcolor: "#333333",
+				allowScriptAccess:"always",
+				scale: "showAll",
+				wmode: "opaque" };
+var _attributes = {};
+			
+swfobject.embedSWF("../../../plugins/adplayer/bin-debug/AdPlayer.swf", "flashdiv", _adContentWidth, _adContentHeight , "10.0.0", "expressInstall.swf", _flashvars, _params, _attributes);
+			
+// Flash Ad Player calls this when it is loaded and ready to be called from JavaScript
+function flashReady() {
+	//alert("flashReady called!");
+	_flashReady = true;
+	_fp = document.getElementById("flashdiv");
+}
+
+function clearTraceText() {
+	var e = document.getElementById("output");
+	e.value = "";
+}
+
+function traceText(text) {
+	var e = document.getElementById("output");
+	e.value += text + "\n";
+}
+
+function togglePlayBtnText() {
+	var e = document.getElementById("btnPlay");
+	e.value = _adPlaying ? "pause" : "play";
+}
+
+function toggleMuteBtnText() {
+	var e = document.getElementById("btnMute");
+	e.value = _adMuted ? "un-mute" : "mute";
+}
+
+function showControls(show) {
+	var e = document.getElementById("controlsContainer");
+	e.style.visibility = (show ? "visible" : "hidden");
+}
+
+// ------------------------------------
+//
+// IVPAID implementation
+//
+// ------------------------------------
+
+function VPAIDAdLoaded() {
+	traceText("Received a VPAIDAdLoaded Event");
+	showControls(true);
+	_fp.startAd();
+}
+
+function VPAIDAdStarted() {
+	traceText("Received a VPAIDAdStarted Event");
+	_adPlaying = true;
+	togglePlayBtnText();
+}
+
+function VPAIDAdStopped() {
+	traceText("Received a VPAIDAdStopped Event");
+	showControls(false);
+}
+
+function VPAIDAdPlaying() {
+	traceText("Received a VPAIDAdPlaying Event");
+	_adPlaying = true;
+	togglePlayBtnText();
+}
+
+function VPAIDAdPaused() {
+	traceText("Received a VPAIDAdPaused Event");
+	_adPlaying = false;
+	togglePlayBtnText();
+}
+
+function VPAIDAdVideoStart() {
+	traceText("Received a VPAIDAdVideoStart Event");
+}
+
+function VPAIDAdVideoFirstQuartile() {
+	traceText("Received a VPAIDAdVideoFirstQuartile Event");
+}
+
+function VPAIDAdVideoMidpoint() {
+	traceText("Received a VPAIDAdVideoMidpoint Event");
+}
+
+function VPAIDAdVideoComplete() {
+	traceText("Received a VPAIDAdVideoComplete Event");
+	showControls(false);
+}
+
+function VPAIDAdError(data) {
+	traceText("Received a VPAIDAdError Event - " + data.message);
+}
+
+// ------------------------------------
+//
+// Button Click handlers
+//
+// ------------------------------------
+
+function loadAd() {
+	stopAd();
+	clearTraceText();
+	var vpaidVer = _fp.handshakeVersion("1.x");
+	traceText("handshakeVersion returned "+vpaidVer);
+
+	var _url = document.getElementById("urlInput");
+	_fp.initAd(_adContentWidth, _adContentHeight, 'normal', 0, _url.value, "");
+}
+
+function stopAd() {
+	_fp.stopAd();
+}
+
+function togglePlay() {
+	if (_adPlaying) {
+		_fp.pauseAd();
+	}
+	else {
+		_fp.resumeAd();
+	}
+}
+
+function toggleMute() {
+	if (_adMuted) {
+		_fp.setVPAIDProperty("adVolume", 1);
+	}
+	else {
+		_fp.setVPAIDProperty("adVolume", 0);
+	}
+	_adMuted = !_adMuted;
+	toggleMuteBtnText();
+}
+
+</script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="titleContainer">
+   	  		<span><h1>OVP Flash Ad Player - JavaScript Bridge Test</h1></span>
+    	</div>
+    	<div id="inputContainer">
+   	  		<input name="" type="text" id="urlInput" value="http://gcdn.2mdn.net/MotifFiles/html/1379578/PID_938961_1237818260000_women.flv"; size="112" maxlength="255" />
+			<button id="btnLoad" type="button" onclick="loadAd()">Load</button>
+    	</div>
+		<div id="adPlayerContainer">
+			<div id='flashdiv'>
+				<a href='http://www.adobe.com/go/getflashplayer'>
+				<img src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' />
+				</a>
+			</div>
+			<div id="controlsContainer"  style="visibility:hidden">
+   	  			<input type="button" id="btnPlay" onclick="togglePlay()" value="Play"/>
+				<input type="button" id="btnMute" onclick="toggleMute()" value="Mute"/>
+                <input type="button" id="btnStopAd" onclick="stopAd()" value="Stop Ad"/>
+		    </div>
+		</div>
+		<div id="propertiesContainer">
+       		<textarea id="output" name="" cols="50" rows="20"></textarea>
+    	</div>
+	</div>        
+</div>
+</body>
+</html>

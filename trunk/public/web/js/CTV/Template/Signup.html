@@ -1,0 +1,11 @@
+<div id="log-in">
+    <p class="change-state" onclick="$(window).trigger('auth:login'); return false">Already have an account yet? <span id="main-choose-signup" class="link">Login &raquo;</span></p>
+    <div class="center">
+        <a class="button button-facebook" href="/services/Facebook/login?dest={{pathname}}"><span class="icon-facebook"></span>Signup with Facebook</a>
+    </div>
+    <div class="or"><span class="uppercase">Or</span></div>
+    <div class="center">
+      <a class="button button-twitter" href="/services/Twitter/login?dest={{pathname}}"><span class="icon-twitter"></span>Signup with Twitter</a> 
+    </div>
+    <p class="auth-email" onclick="$(window).trigger('auth:signupEmail'); return false">Don't have a Facebook or a Twitter Account?</p>
+</div>

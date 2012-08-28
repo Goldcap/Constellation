@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/../js/jquery.autocomplete/jquery.autocomplete.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript" src="/js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/js/backend/filmEdit.js"></script>
+<script type="text/javascript" src="/js/jquery.autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="/js/jquery.autocomplete/jquery.bgiframe.min.js"></script>
+  	  </head>
+  <body>
+
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+		</div>
+		
+<ul id="navigation">
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/film.html">List Films</a></div>
+					<div class="item-no-border"><a href="/backend/filmManagement/edit">Add Film</a></div>
+						</div>
+
+	<div class="logout">
+		<a href="/backend/auth/logout">
+			Logout
+		</a>
+	</div>
+</div><div id="main"><script type="text/javascript">
+	var configFile = '/home/constellation/project/server/web/js/tinymce/jscripts/tiny_mce/plugins/Archiv/config.php';
+</script>
+
+<div class="profile-basic-info geoblocking" style="overflow: hidden;">
+	<div class="title">
+		<h2>"Earth Made of Glass" - GeoBlocking</h2>
+
+	</div>
+	<div class="formfield">
+		<input id="country-enable" type="checkbox" name="country-enable"  value="1" />
+		<label for="country-enable">Enable GeoBlocking</label>
+	</div>
+	<div id="holder">
+		<div id="overlay" style="display: block ;"></div>
+		<div class="formfield" id="autocomplete-holder">
+
+			<label for="country-autocomplete">Country</label>
+			<input type="text" name="country-autocomplete" id="country-autocomplete" value="" />
+			<input type="submit" value="Add" id="country-add" />
+		</div>
+		<input type="hidden" value="" id="current-country-iso" />
+		<input type="hidden" value="" id="current-country-name" />
+		<div class="block-type">
+			<label for="country-block-type">Rule:</label>
+
+			<select id="country-block-type" name="country-block-type">
+									<option value="0" selected>Allow</option>
+									<option value="1" >Disallow</option>
+							</select>
+		</div>
+		<div id="country-list">
+					</div>
+	</div>
+
+	<input type="submit" value="Save" id="country-form-submit" />
+</div>
+<form id="country-form" style="display: none;" action="/backend/filmManagement/updateGeoBlockedCountries" method="POST">
+	<input type="hidden" name="filmId" value="2" />
+	</form>
+<script type="text/javascript">
+	$(document).ready(function(e){
+   		$('#country-autocomplete').autocomplete("/backend/filmManagement/countryAutocomplete",             
+   			{
+   				selectFirst: false,
+	            autoFill: true,
+	            scroll: true,
+	            multiple: false,
+	            multipleSeparator: " ",
+	            matchContains: 1,
+	            matchSubset: 1,
+	            scrollHeight: 200,
+	            formatItem: function(row, i, max) {
+	                return row[0];
+	              },
+	            formatResult: function(row) {
+	                return row[0];
+	              }
+	         } 
+        );
+        $('#country-autocomplete').result(function(event, data, formatted) {
+		      if (data)
+		      {
+		        $('#current-country-iso').val(data[1]);
+		        $('#current-country-name').val(data[0]);
+		      }
+	   });
+	   $('#country-add').click(function(e){
+   			var currentCountryIso = $('#current-country-iso').val();
+   			var currentCountryName = $('#current-country-name').val(); 
+	   		if( currentCountryIso && currentCountryName)
+	   		{
+	   			$('#current-country-iso').val('');
+	   			$('#current-country-name').val('');
+	   			
+		   		$('#country-list').append('<p class="country-item"  id="country-item-'+currentCountryIso+'">'+currentCountryName+'<img class="country-remove" src="/images/delete.png"></p>');
+		   		$('#country-form').append('<input type="hidden" name="countries['+currentCountryIso+']" value="'+currentCountryIso+'" />');
+		   		
+		   		$('#country-autocomplete').val('');
+	   		}
+	   		
+	   		return false;
+	   });
+	   $('.country-remove').live('click', function(e){
+	   		var countryIso = $(this).parent('p:first').attr('id').replace('country-item-', '');
+	   		$(this).parent('p:first').remove();
+	   		$('#country-form input[value="'+countryIso+'"]').remove();
+	   });
+	   $('#country-form-submit').click(function(e){
+	   	$('#country-enable').appendTo('#country-form');
+	   	$('#country-block-type').appendTo('#country-form');
+	   	$('#country-form').submit();
+	   });
+	   
+	   $('#country-enable').click(function(e){
+	   	if($('#country-enable').is(':checked'))
+	   	{
+	   		$('#overlay').hide();
+	   	}
+	   	else
+	   	{
+	   		$('#overlay').show();
+	   	}
+	   });
+	});
+</script></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+
+  </body>
+</html>

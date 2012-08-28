@@ -1,0 +1,13 @@
+template: default
+layout: default
+title: Constellation | Your Online Movie Theater | Purchase Policy
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    html: {html: html/purchasePolicy.html}
+    AboutNav: {sel: purchase}
+  footer:
+    FooterAlt:

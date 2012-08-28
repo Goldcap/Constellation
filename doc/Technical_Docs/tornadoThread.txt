@@ -1,0 +1,29 @@
+http://groups.google.com/group/python-tornado/msg/abf55156e66b6980
+
+Note I think the post_thread and post_results "def" might be swapped in this example.
+
+threadLimit = 10 
+taskQueue = Queue.Queue(threadLimit*2) 
+
+@tornado.web.asynchronous 
+def post(self): 
+    self.user = self.get_argument('username') 
+    taskQueue.put(self.post_thread) 
+def post_results(self): 
+    if self.user == 'johnmudd': 
+        # Successful login, nothing else to do for now. 
+        pass 
+    else: 
+        time.sleep(4) 
+        self.user = None
+				 
+tornado.ioloop.IOLoop.instance().add_callback(self.async_callback(self.post_results)) 
+def post_thread(self): 
+    if self.user: 
+        self.set_secure_cookie('user', self.user) 
+        nextUrl = self.get_secure_cookie('nextUrl') 
+        self.clear_cookie('nextUrl') 
+        if nextUrl == None: nextUrl = '/' 
+        self.redirect(nextUrl)  # Calls finish(). 
+    else: 
+        raise tornado.web.HTTPError(401, "Auth failed") 

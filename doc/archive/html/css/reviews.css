@@ -1,0 +1,13 @@
+/* CSS Document */
+#slideshow #slidesContainer {
+  margin:0;
+  width:650px;
+  height:20px;
+  overflow:auto; /* allow scrollbar */
+}
+
+#slideshow #slidesContainer .slide {
+  margin:0;
+  width:650px; /* reduce by 20 pixels to avoid horizontal scroll */
+  height:20px;
+}

@@ -1,0 +1,124 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+dbc:
+  film:
+    key: film_id
+    vars:
+      setFilmName: Some Test Film
+      setFilmMakers: Some Test Maker
+      setFilmProductionCompany: Some Test Company
+      setFilmLogo: 4c344b074236c.jpg
+      setFilmTrailerFile: lottery-trailer.trailer.mp4
+      setFilmMovieFile: mp4
+      setFilmTicketPrice: 2.99
+      setFilmStatus: 2
+      setFilmFeatured: 1
+      setFilmCreatedAt: =date:TS
+      setFilmUpdatedAt: =date:TS
+      setFilmSetupPrice: 4.99
+      setFilmInfo: Some Test Info
+      setFilmRunningTime: 1:20:00
+      setFilmTotalSeats: 200
+      setFilmShortName: sometest
+      setFilmStillImage: 546b6806d9bf6f90b0523bb36169d698.jpg
+      setFilmBitrateSmall: 300
+      setFilmBitrateMedium: 800
+      setFilmBitrateLarge: 2000
+      setFilmUseSponsorCodes: 0
+      setFilmAllowUserHosting: 1
+      setFilmAlternateTemplate: 0
+  screening: 
+    key: screening_id
+    vars:
+      setScreeningUniqueKey: m15r2y7sskk
+      setScreeningDate: =date:MDY-
+      setScreeningTime: =date:time
+      setScreeningEndTime: =date:TS:+H1
+      setScreeningDefaultTimezoneId: "America/New_York"
+      setFkHostId: =user:getUserId
+      setFkFilmId: =dbc:getFilmId:film
+      setScreeningHasQanda: 0
+      setScreeningLiveWebcam: 0
+      setScreeningDescription: "Some Description"
+      setScreeningFeatured: 1
+      setScreeningPaidStatus: 2
+      setScreeningTotalSeats: 100
+      setScreeningType: 2
+      setScreeningIsPrivate: 0
+  audience:
+    key: audience_id
+    vars:
+      setAudiencePaidStatus: 2
+      setFkUserId: =user:getUserId
+      setFkScreeningId: 1
+      setFkScreeningUniqueKey: 543210
+      setFkPaymentId: 0
+      setAudienceInviteCode: "test123abc"
+      setAudienceIpAddr: "192.168.2.1"
+      setAudienceCreatedAt: =date:TS
+      setAudienceUpdatedAt: =date:TS
+      setAudienceStatus: 0
+      setAudienceUsername: =user:getUserUsername
+      setAudienceReview: ""
+      setAudienceReviewStatus: 0
+      setAudienceShortUrl: "/theater/oTUFEWGkKSJFf8/fwkTetku4L"
+      setAudienceTicketPrice: =dbc:getFilmTicketPrice:film
+      setAudienceHmacKey: ""
+  payment: 
+    key: payment_id
+    vars:
+      setFkFilmId: =dbc:getFilmId:film
+      setFkScreeningId: 1
+      setFkAudienceId: =dbc:getAudienceId:audience
+      setFkUserId: =user:getUserId
+      setPaymentUniqueCode: "123456a"
+      setPaymentType: "screening"
+      setPaymentFirstName: =user:getUserFname
+      setPaymentFirstName: =user:getUserLname
+      setPaymentEmail: =user:getUserEmail
+      setPaymentBAddr1: 1 Main Street
+      setPaymentBAddr2: Apt 2k
+      setPaymentBCity: Brooklyn 
+      setPaymentBState: NY
+      setPaymentBZipcode: 11222
+      setPaymentBCountry: US
+      setPaymentStatus: 2
+      setPaymentAmount: 4.99
+      setPaymentDescription: ""
+      setPaymentCardType: Visa
+      setPaymentLastFourCcDigits: 1234
+      setPaymentCvv2: 
+      setPaymentCcExp: 012011
+      setPaymentCreatedAt: =date:TS
+      setPaymentUpdatedAt: =date:TS
+      setPaymentIp: 192.168.2.107
+      setPaymentSiteId: 1
+      setPaymentTransactionId:  
+      setPaymentFraudScore:
+      setPaymentMaxmindObject:
+      setPaymentOrderProcessor:
+      setPaymentInvites:
+  
+get:
+post:
+  ticket: =dbc:getAudienceInviteCode:audience
+  screening: =dbc:getScreeningUniqueKey:screening
+session:
+action:
+  styroaction: submit
+
+dbo:
+  audience:
+    key: audience_id
+    vars:
+      getFkScreeningUniqueKey: =dbc:getScreeningUniqueKey:screening
+      getFkScreeningId: =dbc:getScreeningId:screening
+
+wvar:
+  =getResultSuccess: true

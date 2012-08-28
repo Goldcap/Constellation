@@ -1,0 +1,10 @@
+http://www.constellation.tv/screeningRoom.php/main/updater?screeningId=703&updatePanel=chat&lastUpdatedAt=1292421799 (GET)
+{"chat":[],"qanda":"","new_qanda":[],"private":[],"stars":{"light_up":["2145"],"light_down":[]},"constellation":"","webcam":0,"screening_started":false,"count_online_users":1,"streaming_server_url":"","screening_finished":false}
+
+http://www.constellation.tv/screeningRoom.php/main/updater?screeningId=703&updatePanel=chat&lastUpdatedAt=1292422207 (GET)
+CLIENT JAMES LAWLER
+{"chat":{"3907":{"chat":"Hello to You, too!","name":"Goldcap","time":"2:12PM","custom_header_class":2,"reply_to":"","is_reply":"1","id":"3907","owner_id":"","talker_id":"2581"}},"qanda":"","new_qanda":[],"private":[],"stars":{"light_up":["2145","2146"],"light_down":[]},"constellation":"","webcam":0,"screening_started":false,"count_online_users":2,"streaming_server_url":"","screening_finished":false}
+CLIENT Goldcap
+{"chat":{"3908":{"chat":"Did you see how awesome chat is?","name":"James Lawler[host]","time":"2:13PM","custom_header_class":3,"reply_to":"","is_reply":"1","id":"3908","owner_id":"","talker_id":"480"}},"qanda":"","new_qanda":[],"private":[],"stars":{"light_up":["2145","2146"],"light_down":[]},"constellation":"","webcam":0,"screening_started":false,"count_online_users":2,"streaming_server_url":"","screening_finished":false}
+CLIENT JAMES LAWLER
+{"chat":{"3911":{"chat":"aaaaaaaaa","name":"amadsen","time":"2:23PM","custom_header_class":3,"reply_to":"","is_reply":"1","id":"3911","owner_id":"","talker_id":"2582"},"3912":{"chat":"cccccccccccc","name":"Goldcap","time":"2:23PM","custom_header_class":2,"reply_to":"","is_reply":"1","id":"3912","owner_id":"","talker_id":"2581"}},"qanda":"","new_qanda":[],"private":[],"stars":{"light_up":["2145","2146","2147"],"light_down":[]},"constellation":"","webcam":0,"screening_started":false,"count_online_users":3,"streaming_server_url":"","screening_finished":false}

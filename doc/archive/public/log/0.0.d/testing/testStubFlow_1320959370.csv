@@ -1,0 +1,5 @@
+"Method"|"Label"|"Message"|"Status"
+"assertElementPresent","Signup Email Field Accessible","===========","Success"
+"assertElementPresent","Signup Password Field Accessible","===========","Success"
+"assertElementPresent","Signup Confirm Password Field Accessible","===========","Success"
+"assertElementPresent","Signup Submit Button Accessible","===========","Success"

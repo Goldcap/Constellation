@@ -1,0 +1,13 @@
+template: yui1
+layout: yui
+title: Constellation.tv Join
+javascripts: [/js/formvalidate_v6.js]
+css: [/css/main_last.css,/css/styroform_front.css]
+cache: 5:MINUTE
+widgets:
+  hd:
+    Header:
+  col02:
+    Join:
+  ft:
+    Footer:

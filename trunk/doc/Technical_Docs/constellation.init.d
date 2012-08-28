@@ -1,0 +1,84 @@
+#!/bin/sh
+#
+# mongo - this script starts and stops the nginx daemon
+#
+# chkconfig:   - 85 15
+# description:  Mongo is a NoSQL server
+# processname: mongod
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "$NETWORKING" = "no" ] && exit 0
+
+tornado="python /var/www/html/sites/dev.constellation.tv/bin/"
+script="chat.py"
+prog="TORNADO"
+lockfile=/var/lock/subsys/tornado
+theports=( 9090 9091 )
+trap onexit 1 2 3 15 ERR
+
+function onexit() {
+    local exit_status=${1:-$?}
+    #echo Exiting $0 with $exit_status
+    #exit $exit_status
+}
+
+getpid() {
+    pids=`ps ax | grep "$script" | grep -v grep | awk '{ print $1 }'`
+}
+
+start() {
+    echo $"Starting $prog: "
+    ELEMENTS=${#theports[@]}
+    for (( i=0;i<$ELEMENTS;i++));
+    do
+	echo ${theports[${i}]}
+    	nohup $tornado$script --port=${theports[${i}]} 2> /var/log/messages < /dev/null &
+    done
+    retval=$?
+    [ $retval -eq 0 ] && touch $lockfile
+    return $retval
+}
+
+stop() {
+    echo $"Stopping $prog: "
+    getpid
+    for apid in $pids
+    do
+	echo $apid
+	#if `ps ax | grep -E '$apid'`;
+	#then
+	#	echo "PID IS "$apid
+    	kill -15 $apid
+	#fi
+    done
+    #killall $prog
+    retval=$?
+    [ $retval -eq 0 ] && rm -f $lockfile
+    return $retval
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+        $1
+        ;;
+    stop)
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 2
+esac

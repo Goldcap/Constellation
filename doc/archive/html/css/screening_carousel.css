@@ -1,0 +1,347 @@
+/*=============================    
+barousel_demo.css
+v.0.1
+Julien Decaudin - 04/2010
+www.juliendecaudin.com
+=============================*/
+/*-------------> BAROUSEL */
+.barousel
+{
+    float: left;
+    position:absolute;
+    margin-bottom:0px;
+    width:553px;
+    height:266px;
+}
+
+.barousel_top
+{
+  float: left;
+  width:553px;
+  height:246px;
+  background: #cc6600;
+}
+
+.barousel_image
+{
+    position:absolute;
+    right: 0px;
+    z-index:10;
+    width:360px;
+    height:246px;
+}
+
+.barousel_image img
+{
+    position:absolute;
+    display:none;
+}
+
+.barousel_image img.default
+{    
+    display:block;
+}
+
+.barousel_image img.current
+{
+    z-index:10;
+}
+
+.barousel_image img.previous
+{
+    z-index:5;
+}
+
+.barousel_content
+{
+    position:absolute;   
+    z-index:50;
+    color:#fff;
+    width:152px;
+    left:10px;
+}
+
+.barousel_content div
+{
+    display:none;    
+}
+
+.barousel_content div.default
+{
+    display:block;    
+}
+
+.barousel_content p
+{
+    font-size:13px;
+    font-weight:normal; 
+    line-height:17px;   
+}
+
+.barousel_content p.header
+{
+    font-size:28px;
+    font-weight:normal;
+    line-height:28px;
+    color:#fff55b;
+}
+
+.barousel_content a,
+.barousel_content a:hover
+{
+    background-color:transparent !important;
+}
+
+.barousel_nav
+{
+    position:absolute;
+    padding:3px 3px 0px 0;
+    height:23px;    
+    background:#000;
+    bottom:0;
+    z-index:20;
+    width:497px;
+}
+
+.barousel_nav .counter
+{    
+    float:right;
+    font-size:0.75em;
+    color:#fff;
+    margin:3px 5px 0 0;
+}
+
+.barousel_nav ul
+{
+    float:right;
+    padding:0;
+    margin:0;
+}
+
+.barousel_nav li
+{
+    float:left;
+    padding-left:3px;
+    font-size:0;
+    line-height:0;
+    list-style:none;
+}
+
+.barousel_nav li a
+{
+    display:block;
+    width:25px;
+    height:20px;
+    background-color:#4d4d4d;
+    font-size:0;
+    line-height:0;
+    text-decoration:none;
+}
+
+.barousel_nav li a:hover
+{
+    background-color:#6e6e6e;
+}
+
+.barousel_nav li a.current
+{
+    background-color:#fff55b;
+}
+
+.barousel_nav li.prev a
+{
+    background-image:url(http://s3.amazonaws.com/cdn.constellation.tv/prod/images/barousel_link_previous.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel_nav li.next a
+{
+    background-image:url(http://s3.amazonaws.com/cdn.constellation.tv/prod/images/barousel_link_next.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel img.ajax_loader
+{
+    display:none;
+    position:absolute;
+    z-index:99;
+    top:70px;
+    left:135px;
+}
+
+/*-------------> THSLIDE */
+.thslide
+{    
+    background:#000;
+    width:553px;
+    height:47px;
+}
+
+.thslide_nav_previous
+{
+    position: absolute;
+    float:left;
+    left: -20px;
+    top: 0; 
+}
+
+.thslide_nav_next
+{
+    position: absolute;
+    float:right;
+    right: -20px; 
+    top: 0; 
+}
+
+.thslide_nav_previous a,
+.thslide_nav_next a
+{
+    display:block;
+    width:19px;
+    height:47px;  
+    text-decoration:none;
+    background-repeat:no-repeat;    
+}
+
+.thslide_nav_previous a
+{
+    background-image:url(http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left.png);    
+    background-position:0px 7px;
+}
+
+.thslide_nav_next a
+{
+    background-image:url(http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right.png);    
+    background-position:100% 7px;
+}
+
+.thslide_list, .thslide_hidden
+{
+    float:left;
+    overflow:hidden;   
+    position:relative; 
+    width:553px;
+    height:47px;    
+}
+
+.thslide_list ul, .thslide_hidden ul
+{
+    float:left;
+    width:9000px;
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+.thslide_list li
+{
+    float:left;
+    margin-right:5px;
+    width: 107px;
+}
+
+.thslide_list li a
+{
+    display:block;
+    position:relative;
+    width:107px;
+    height:47px;  
+    text-decoration:none;
+}
+
+.thslide_list li a img
+{
+    position:absolute;
+    border: 0px !important;
+    right: 0px;
+}
+
+.thslide_list li a span
+{
+    position:absolute;
+    display:block;
+    width:30px;
+    height:39px;
+    font-size: 7px;
+    background: #cc6600;
+    color: white;
+    padding: 4px;
+}
+
+/* Specific implementation */
+#barousel_thslide
+{
+    height:313px;
+}
+
+#thslide_barousel_nav
+{
+    position:absolute;
+    bottom:0;
+    left: 0;
+}
+
+.thslide_list ul li a img.other, .thslide_list ul li a span.other {
+  opacity: .3;
+}
+
+thslide_hidden, thslide_hidden ul, thslide_hidden li {
+  height: 1px;
+}
+
+.ogcar {
+  background: #cc6600;
+  padding: 20px 10px 10px 10px;
+  color: white;
+}
+.ogcar h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px !important;
+}
+
+.ogcar .screening_date {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ogcar h4 {
+  margin: 0px 0px 5px 0px !important;
+}
+
+.ogcar h4 a {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.ogcar .screening_host {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  height: 30px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.ogcar .screening_info {
+  display: block;
+  height: 55px;
+  overflow: hidden;
+}
+
+.ogcar .joinlink {
+ display:block; 
+ padding:6px 10px 5px; 
+ font:bold 12px Helvetica, sans-serif; 
+ color: white;
+ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button_bw.jpg") repeat-x top; 
+ float:left; 
+ text-transform:uppercase; 
+ letter-spacing:1px
+}

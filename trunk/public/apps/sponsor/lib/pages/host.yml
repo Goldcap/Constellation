@@ -1,0 +1,7 @@
+template: cst3
+layout: cst_film
+title: Constellation.tv
+#,/js/chat.js,/js/activity.js,/js/dispatch.js
+widgets:
+  column1:
+    Host:

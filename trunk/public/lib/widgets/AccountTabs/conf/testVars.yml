@@ -1,0 +1,16 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+get:
+  op: password
+post:
+session:
+action:
+
+wvar:
+  sel: =get:op

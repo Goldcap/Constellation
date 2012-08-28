@@ -1,0 +1,72 @@
+[102][externalInterfaceController]attempting to load external interface to JS false
+[102][externalInterfaceController]External Interface not available
+[103][hostCameraView]hostcam defaults: 113557 none 45907
+[104][hostCameraView]hostcam params: cpCode: 113557 streamName: none hostcam_streamID: 45907
+[105][FMSConnection]DEBUG Got to FMSConnection
+[105][FMSConnection]DEBUG Got to FMSConnection.connect rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/ sessionKey encoder:1.2.3.4:113557
+[111][hostCameraView] _hostcam_fmsConn.entryPoint  rtmp://p.ep45907.i.akamaientrypoint.net/EntryPoint/
+[113][hostCameraView]Error in invoke QA Window
+[480][FMSConnection]DEBUG FMSConnection.handleNetStatus NetConnection.Connect.Success
+[481][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Connection succeeded.
+[481][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code NetConnection.Connect.Success
+[481][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus data 
+[481][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus level status
+[482][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus objectEncoding 3
+[482][hostCameraView]connected to host cam 
+[482][FMSConnection]DEBUG Got to FMSConnection.setChallenge
+[482][FMSConnection]DEBUG 3554984,64a530516844ffac02de011e308a63f6
+[489][FMSConnection]DEBUG challenge-response: 6f47085d7b3c0ee1fb97e933aec17c19
+[548][FMSConnection]DEBUG *****************   FMSConnection.onClientLogin Akamai.Connect.Success   publish true
+[548][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus description Client Login Success
+[548][FMSConnection]DEBUG Got to FMSConnection.netConnectionStatus code Akamai.Connect.Success
+[608][FMSConnection]DEBUG onFCPublish: NetStream.Publish.Start, description: none@45907
+[609][hostCameraView]hostcam_createWebcamStream
+[609][FMSSTREAM]DEBUG FMSStream
+[610][hostCameraView]in publishStream
+[610][FMSSTREAM]DEBUG in publishStream
+[697][hostCameraView]called Camera.getCamera
+[698][FMSSTREAM]DEBUG called Camera.getCamera
+[698][hostCameraView]Camera is successful[object Camera]
+[698][FMSSTREAM]DEBUG Camera is successful[object Camera]
+[1005][hostCameraView]called Microphone.getMicrophone()
+[1005][FMSSTREAM]DEBUG called Microphone.getMicrophone()
+[1005][hostCameraView]Mic is successful [object Microphone]
+[1006][FMSSTREAM]DEBUG Mic is successful [object Microphone]
+[1006][hostCameraView]bandwidth: 300000
+[1007][FMSSTREAM]DEBUG bandwidth: 300000
+[1007][hostCameraView]quality: 0
+[1007][FMSSTREAM]DEBUG quality: 0
+[1007][hostCameraView]keyframeInterval: 30
+[1007][FMSSTREAM]DEBUG keyframeInterval: 30
+[1007][hostCameraView]currentFps: 0
+[1008][FMSSTREAM]DEBUG currentFps: 0
+[1008][hostCameraView]height: 240
+[1008][FMSSTREAM]DEBUG height: 240
+[1008][hostCameraView]width: 320
+[1008][FMSSTREAM]DEBUG width: 320
+[1008][hostCameraView]fps: 20
+[1009][FMSSTREAM]DEBUG fps: 20
+[1009][hostCameraView]favorArea: true
+[1009][FMSSTREAM]DEBUG favorArea: true
+[1009][hostCameraView]camLoopback: false
+[1009][FMSSTREAM]DEBUG camLoopback: false
+[1009][hostCameraView]bufferMin: 2
+[1010][FMSSTREAM]DEBUG bufferMin: 2
+[1010][hostCameraView]bufferMax: 15
+[1010][FMSSTREAM]DEBUG bufferMax: 15
+[1010][hostCameraView]useEchoSuppression: true
+[1010][FMSSTREAM]DEBUG useEchoSuppression: true
+[1011][hostCameraView]micLoopback: false
+[1011][FMSSTREAM]DEBUG micLoopback: false
+[1011][hostCameraView]micRate: 44
+[1011][FMSSTREAM]DEBUG micRate: 44
+[1011][hostCameraView]micGain: 90
+[1011][FMSSTREAM]DEBUG micGain: 90
+[1097][hostCameraView]published ns  none@45907
+[1097][FMSSTREAM]DEBUG published ns  none@45907
+[1098][hostCameraView]resize camera placement and size
+[1098][FMSConnection]DEBUG ********************************************************FMS CONNECTION : HANDLE Response = null
+[1152][hostCameraView]FMS handle net status NetStream.Publish.Start
+[1152][FMSSTREAM]DEBUG FMS handle net status NetStream.Publish.Start
+[4472][hostCameraView]Can't notify javascript about camera state
+[4472][FMSSTREAM]DEBUG Can't notify javascript about camera state

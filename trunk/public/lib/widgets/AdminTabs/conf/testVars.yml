@@ -1,0 +1,8 @@
+get:
+  action: film
+post:
+session:
+action:
+
+wvar:
+  active: =get:action

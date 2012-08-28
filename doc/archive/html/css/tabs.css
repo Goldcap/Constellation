@@ -1,0 +1,16 @@
+#tabs {
+  float:left;
+  width:100%;
+  font-size:93%;
+  line-height:normal;
+  }
+#tabs ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  }
+#tabs li {
+  float:left;
+  margin:0;
+  padding:0 2px 0 0px;
+  }

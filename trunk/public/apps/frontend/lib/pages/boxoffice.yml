@@ -1,0 +1,10 @@
+template: cst_boxoffice
+layout: cst_default
+title: Constellation | Social Movie Events
+javascripts: [/js/vendor/underscore.js,/js/CTV.Purchase.js]
+css: [/css/checkout.css]
+widgets:
+  wrapper:
+    Checkout:
+  zzdiv:
+    GoogleAnalytics:

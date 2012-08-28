@@ -1,0 +1,396 @@
+.condensed {
+	font-family: "helveticaneuecondensed", "helveticaneuelight", "helveticaneue", "Helvetica Neue", Arial, sans-serif!important;
+}
+sup {
+		height: 0;
+	line-height: 1;
+	vertical-align: top;
+	position: relative;
+	font-size: 50%;
+}
+#content, #canvas {
+	background: #000;
+	color: #fff;
+}
+#content  .inner_container {
+	width: 700px;
+	margin-bottom: 40px;
+}
+#content.full  .inner_container {
+	width: 960px;
+	margin-bottom: 40px;
+}
+.section-1 {border-bottom: 1px solid #333333;padding: 0 0px; height: 630px; background: url(../../images/pages/21jumpstreet/21jump-poster-aside-bg.jpg) 50% 0 no-repeat;}
+.section-1 .inner_container{position: relative;}
+.section-2 {background: #242424; padding: 40px 0px;}
+.section-3 {padding: 40px 0px;}
+#canvas {width: 500px;}
+#canvas #content  .inner_container {
+	width: 500px;
+	margin-bottom: 40px;
+}
+#content h2 {
+	color: #c00000;
+	text-align:center;
+	font: 36px/40px "helveticaneuecondensed", "helveticaneuelight", "helveticaneue", "Helvetica Neue", Arial, sans-serif;
+	margin-bottom: 30px;
+}
+#content p.p {
+	font: 200 24px/32px "helveticaneuelight", "helveticaneue", "Helvetica Neue", Arial, sans-serif;
+	color: #bebebe;
+	margin-bottom: 20px;
+}
+.hero-block {
+	padding: 30px 0;
+	border-bottom: solid 1px #333;
+}
+.tojs-pre-about {
+	border-bottom: solid 1px #333;
+	color: #bebebe;
+	padding: 30px 0;
+	margin-bottom: 30px;
+	font: 24px/30px "helveticaneuelight", "helveticaneue", "Helvetica Neue", Arial, sans-serif;
+}
+.tojs-pre-thanks {
+	color: #298ac8;
+	padding: 30px 0;
+	font: 24px/30px "helveticaneuelight", "helveticaneue", "Helvetica Neue", Arial, sans-serif;
+}
+.tojs-pre-form {
+	position: relative;
+}
+.tojs-pre-form input {
+	font-size: 24px;
+	width: 540px;
+	line-height: 30px;
+	height: 40px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+}
+#canvas .tojs-pre-form input {
+	width: 370px;
+}
+.tojs-pre-form .button {
+	float: right;
+}
+.tojs-pre-thanks {
+	display: none;
+}
+.error-message {left: 0;}
+.button-social-wrap {margin-top: 30px;}
+.button-social-wrap .button {margin: 0 10px;}
+
+
+.mini-canvas  .tojs-pre-about, .mini-canvas  .tojs-pre-thanks {
+	font-size: 13px;line-height: 15px;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	text-align:center;
+}
+.mini-canvas  .tojs-pre-thanks {
+	padding: 10px 2px;
+}
+.mini-canvas .powered-by-default {position: absolute; bottom: 2px; left: 15px;}
+
+.tojs-poster-aside {
+	background: url(../../images/pages/21jumpstreet/21jump-poster-aside.png) 0 0 no-repeat;
+	height: 630px;
+	width: 440px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.tojs-event-hero {
+	margin: 40px 0 0  420px;
+	position: relative;
+	z-index: 2;
+}
+.tojs-time {
+	text-align: center;
+	margin: 20px 0;
+	font: 800 24px/26px "helveticaneue", "Helvetica Neue", Arial, sans-serif;
+	text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+.tojs-video {
+	margin-top: 20px;
+}
+
+.grid-2 {
+    float: left;
+    width: 470px;
+}
+.tojs-login-wrap {
+	margin: 10px 0;
+	color: #bbb;
+	font-size: 18px;
+	line-height: 22px;
+}
+.tojs-login-wrap .link {
+	font-size: 18px;
+	line-height: 22px;
+}
+.button.button-login {font-size: 20px;}
+.section-3 #comment-box .comment-box-field {width: 600px;}
+
+
+.block h2, .block h5,  .block h4 {
+	color: #000;
+}
+
+.vow-question  {
+	margin-top: 30px;
+}
+.vow-question img {
+	/*float: left;*/
+	vertical-align: middle;
+}
+.vow-question span {
+ color: #666666;
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 50px;
+    padding-top: 9px;
+}
+.vow-question h5 {
+	margin-bottom: 12px;
+}
+
+.swfuploader { float: left;}
+
+.section-3 .comment-image {
+	float: left;
+	margin: 10px 0;
+	position: relative;
+	cursor: pointer;
+}
+.section-3 .comment-image:hover img{
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.section-3 .comment-magnify {
+	height: 56px;
+	width: 56px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -28px;
+	margin-left: -28px;
+	opacity: 0;
+	-moz-opacity: 0;
+	background: url(../../images/pages/21jumpstreet/magnify.png) 0 0 no-repeat;
+	filter:alpha(opacity=0);
+}
+.section-3 .comment-image:hover .comment-magnify {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=100);
+}
+.section-3 .comment-image + .comment-item { 
+	margin-left:  340px;
+}
+.section-3 .comment-image + .comment-item + ul {
+	margin-left:  340px;
+}
+
+.section-3 .comment-list > li {
+    border-top: none;
+    color: #fff;
+}
+.section-3 .comment-list > li + li {
+    border-top: 1px solid #666666;
+}
+.section-3 .comment-item-comment {
+    color: #e0e0e0;
+}
+.section-3 .comment-item-vote-icon {
+	background: url(../../images/pages/21jumpstreet/up.png) 0 0 no-repeat;
+	height: 32px;
+	width: 32px;
+}
+.section-3 #comment-box a {font-size: 24px;}
+.section-3 .comment-item-vote {
+/*    position: absolute;
+    right: 0;
+    top: 28px;*/
+    width: 80px;
+}
+.section-3 .comment-item-vote-count {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    /*margin-left: 4px;*/
+    /*vertical-align: top;*/
+}
+.section-3 .comment-item-content {
+    margin-left: 62px;
+    padding-right: 100px;
+}
+
+.section-3 .comment-item-share-fb, .section-3 .comment-item-share-twitter, .section-3 .comment-item-reply {background-color: #000; background-image:url(../../images/pages/21jumpstreet/comment-social.png);}
+
+.section-3 .comment-box {border-top: 0;}
+.section-3 #pagination {text-align:center; margin-top: 20px;}
+.section-3 .button_inset {
+	color: #000;
+	padding: 10px 30px;
+	width: auto;
+	font-size: 18px;
+	display: inline-block;
+	*display: inline;
+}
+.section-3 .comment-filter {
+	border-bottom: 1px solid #666666;
+	font-size: 18px;
+	line-height: 20px;
+	margin: 20px 0;
+}
+.section-3 .comment-filter ul, .comment-filter li {
+	display: inline-block;
+	 *display: inline;
+	 /**margin-bottom: 10px;*/
+	 zoom:1;
+}
+.section-3 .comment-filter span {padding: 8px; padding-left: 0; display: inline-block; *display: inline; zoom:1;}
+.section-3 .comment-filter li {
+	padding: 8px;
+	border: solid 1px transparent;
+	position: relative;
+	bottom: -1px;
+	z-index: 1;
+	cursor: pointer;
+}
+.section-3 .comment-filter li.active {cursor: default;border-bottom-color: #000;border-top-color: #666666;border-left-color: #666666;border-right-color: #666666;}
+.section-3 .button_inset.disabled {
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=50);
+	cursor: default;
+}
+
+/* CSS Document */
+
+
+.swfuploader { 
+	width: 200px;
+	/*height: 100px; */
+	/*width: 400px; */
+}
+#FORM_vow_element_original .swfupload {
+	display: block;
+}
+.progressContainer { 
+	overflow: hidden; 
+	display: none; 
+	/*float: left;*/
+	width: 380px; 
+	/*height: 40px;*/
+}
+#FORM_vow_element_original {
+	margin-bottom: 10px;
+}
+.messageContainer {
+	color: #666666;
+    display: none;
+    /*float: left;*/
+    /*height: 40px;*/
+    position: absolute;
+    left: 220px;
+    line-height: 15px;
+    overflow: hidden;
+    padding-top: 4px;
+    width: 308px;
+}
+.uploadmessage { 
+	float: left;
+	overflow: hidden;
+	width: 380px;
+	height: 15px;
+}
+.pops div p.completeMessageSuccess {
+	color: #3ba647;
+	font-weight: bold;
+	margin-bottom: 0!important;
+}
+.cancelContainer { 
+    float: left;
+    height: 20px;
+    left: -14px;
+    /*padding-left: 9px;*/
+    position: relative;
+    top: 4px;
+    width: 380px;
+}
+.cancelButton { 
+	float: left;  
+	width: 110px; 
+	height: 24px; 
+}
+.progressbar { 
+    display: inline-block;
+    height: 7px;
+    left: 30px;
+    margin-right: 1em;
+    padding: 0;
+    position: absolute;
+    width: 308px;
+	/*display:-moz-inline-stack; */
+	display:inline-block; 
+	zoom:1; 
+	*display:inline; 
+}
+#FILE_vow_element_original_uploading {
+	display: inline-block;
+    height: 7px;
+    left: 40px;
+    margin-right: 1em;
+    padding: 0;
+    position: absolute;
+    width: 280px;
+}
+.progressbar div { 
+	background-color: #e2089d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e1089c), to(#b80680));   
+    background-image: -webkit-linear-gradient(top, #e1089c, #b80680); 
+    background-image: -moz-linear-gradient(top, #e1089c, #b80680);
+    border: solid 1px #bc0783;
+	font-size: 1pt;
+	height:10px;
+	/*float:left;*/
+}
+span.asyncUploader object {
+	position: relative;
+	/*top: 5px;*/
+	/*left: 10px;*/
+}
+.imageupload { 
+	height: 80px !important; 
+}
+.uploadText { 
+	font-size: 13px; 
+	font-family: arial, sans-serif;
+}
+.vow_uploader {
+	font-size: 14px;
+	color: #686868;
+	margin-bottom: 20px;
+}
+.vow_upload_content {
+	font-size: 14px;
+	color: #686868;
+	margin-bottom: 50px;
+	
+}
+.uploader-no-file {
+	margin-bottom: 20px;
+	font-family: "helveticaneuelight", "helveticaneue", Arial, sans-serif;
+	font-size: 18px;
+}
+
+#comment-success h4 { font-size: 32px; text-transform: none;}
+#comment-success {display: none; text-align:center; margin-top: 40px;}

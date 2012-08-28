@@ -1,0 +1,16 @@
+template: yui2_left
+layout: yui
+title: Constellation.tv Admin
+javascripts: []
+css: [/css/docs.css]
+widgets:
+  hd:
+    AdminHeader:
+    AdminTabs:
+  col02:
+    Documentation:
+  col04:
+    AdminMenu:
+  ft:
+    AdminFooter:
+  zzdiv:

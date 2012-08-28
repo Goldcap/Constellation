@@ -1,0 +1,30 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_id" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="film_name" type="VARCHAR" size="255" key="" order="1"></column> 
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="conversation_count" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <sql connection="propel">
+  	<sqlselect><![CDATA[
+		  select film.film_id,
+			film.film_name,     
+			film.film_logo,
+			max(conversation_id)
+			from film
+			inner join conversation
+			on conversation.fk_film_id = film.film_id
+			group by film.film_id
+			order by max(conversation_id) desc
+		]]>
+		</sqlselect>
+	</sql>
+	<criterion distinct="true">
+    <ascorderby column="screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="3"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

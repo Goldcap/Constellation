@@ -1,0 +1,10 @@
+get:
+post:
+  email: amadsen@constellation.tv
+  password: 1hsvy5qb
+session:
+action:
+  styroaction: method
+
+wvar:
+  =getUserSession: true

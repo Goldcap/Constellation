@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="484f09c7-fb7b-490c-b69f-f753e2e96002" projectUUID="484f09c7-fb7b-490c-b69f-f753e2e96002" sdkVersion="4.1.0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7" version="4">
+  <projects/>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/libs" path="/libs" position="1" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+  </swc>
+  <misc>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.11" path="/bin-release10" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.12" path="/bin-release11" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.13" path="/bin-release12" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.14" path="/bin-release13" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/whatever" path="/bin-release3" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/contellation_player_v0.5" path="/bin-release4" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.6" path="/bin-release5" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.7" path="/bin-release6" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.8" path="/bin-release7" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.9" path="/bin-release8" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="/Users/vanevery/Desktop/Work/Constellation/constellation_player_v0.10" path="/bin-release9" position="0" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+  </misc>
+  <theme/>
+</fxpProperties>

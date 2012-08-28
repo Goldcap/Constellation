@@ -1,0 +1,55 @@
+  array
+      'follow_request_sent' => boolean false
+      'profile_link_color' => string '1D7E96' (length=6)
+      'statuses_count' => int 12
+      'following' => boolean false
+      'profile_sidebar_border_color' => string '6EA8A0' (length=6)
+      'id_str' => string '15364553' (length=8)
+      'status' => 
+        array
+          'in_reply_to_screen_name' => null
+          'in_reply_to_status_id_str' => null
+          'id_str' => string '7077059390078976' (length=16)
+          'contributors' => null
+          'retweet_count' => int 0
+          'created_at' => string 'Tue Nov 23 14:24:37 +0000 2010' (length=30)
+          'in_reply_to_user_id_str' => null
+          'place' => null
+          'retweeted' => boolean false
+          'source' => string 'web' (length=3)
+          'geo' => null
+          'in_reply_to_status_id' => null
+          'truncated' => boolean false
+          'text' => string 'Tell Congress: Don't cave to @sarahpalinusa. Stand up for #NPR and public media. http://bit.ly/dhyoyW' (length=101)
+          'coordinates' => null
+          'in_reply_to_user_id' => null
+          'favorited' => boolean false
+          'id' => int 7077059390078976
+      'created_at' => string 'Wed Jul 09 11:46:44 +0000 2008' (length=30)
+      'followers_count' => int 12
+      'profile_use_background_image' => boolean true
+      'is_translator' => boolean false
+      'listed_count' => int 0
+      'profile_background_color' => string 'FFFFFF' (length=6)
+      'profile_image_url' => string 'http://a3.twimg.com/profile_images/56393915/kimba_normal.jpg' (length=60)
+      'verified' => boolean false
+      'profile_background_image_url' => string 'http://a3.twimg.com/profile_background_images/2716637/operis.jpg' (length=64)
+      'location' => string 'Brooklyn' (length=8)
+      'notifications' => boolean false
+      'favourites_count' => int 0
+      'friends_count' => int 15
+      'screen_name' => string 'Goldcap' (length=7)
+      'show_all_inline_media' => boolean false
+      'geo_enabled' => boolean false
+      'profile_text_color' => string '000000' (length=6)
+      'protected' => boolean false
+      'url' => string 'http://www.operislabs.com' (length=25)
+      'profile_sidebar_fill_color' => string 'BEDCD4' (length=6)
+      'description' => string 'I am. Still.' (length=12)
+      'name' => string 'Goldcap' (length=7)
+      'lang' => string 'en' (length=2)
+      'profile_background_tile' => boolean false
+      'time_zone' => string 'Eastern Time (US & Canada)' (length=26)
+      'id' => int 15364553
+      'contributors_enabled' => boolean false
+      'utc_offset' => int -18000

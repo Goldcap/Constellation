@@ -1,0 +1,38 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+  
+dbc:
+  screening: 
+    key: screening_id
+    vars:
+      setScreeningUniqueKey: "abcdef"
+      setScreeningDate: =date:MDY-
+      setScreeningTime: =date:time
+      setScreeningEndTime: =date:TS:+H1
+      setScreeningDefaultTimezoneId: "America/New_York"
+      setFkHostId: =user:getUserId
+      setFkFilmId: 4
+      setScreeningHasQanda: 0
+      setScreeningLiveWebcam: 0
+      setScreeningDescription: "Some Description"
+      setScreeningFeatured: 1
+      setScreeningPaidStatus: 2
+      setScreeningTotalSeats: 100
+      setScreeningType: 2
+      setScreeningIsPrivate: 0
+  
+get:
+post:
+session:
+action:
+
+wvar:
+  =getGenres: true
+  =getCarousel: true
+  =getUpcomingFilms: true
+  =getFeaturedFilms: true

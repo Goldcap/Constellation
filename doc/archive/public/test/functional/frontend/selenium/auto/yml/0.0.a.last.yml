@@ -1,0 +1,41 @@
+test:
+ testitem:
+  type: assertElementPresent
+  locator: link=Log In
+  value: Login Button Accessible
+ testitem:
+  type: click
+  locator: link=Log In
+ testitem:
+  type: assertElementPresent
+  locator: id=login_email
+  value: Login Email Accessible
+ testitem:
+  type: focus
+  locator: id=login_email
+ testitem:
+  type: type
+  locator: id=login_email
+  value: $::VISITOR_EMAIL
+ testitem:
+  type: assertElementPresent
+  locator: id=login_email
+  value: Login Password Accessible
+ testitem:
+  type: focus
+  locator: id=login_password]
+ testitem:
+  type: type
+  locator: id=login_password
+  value: $::VISITOR_PASSWORD
+ testitem:
+  type: assertElementPresent
+  locator: id=login-button
+  value: Login Button Accessible
+ testitem:
+  type: clickAndWait
+  locator: id=login_button
+ testitem:
+  type: assertElementPresent
+  locator: id=loggedUser
+  value: Asserting Login Successful

@@ -1,0 +1,19 @@
+MailChimpSettings
+
+User: Nokiasource
+Pass: some123pass
+
+Question:
+What's the best phone ever?
+
+Answer:
+Nokia
+
+API Key: 3fa703c6bc9cb82aa45918357a378495-us2
+
+Operational Order:
+mcapi_interestGroupAdd.php
+mcapi_listBatchSubscribe.php
+mcapi_campaignCreate.php
+mcapi_campaignSendNow.php
+mcapi_interestGroupDel.php

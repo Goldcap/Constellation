@@ -1,0 +1,133 @@
+
+java_test(name = "test",
+  srcs = [
+    "InternalSelenseTestBase.java",
+    "WaitTest.java",
+    "WaitTestSuite.java",
+    "SeleniumServerProxyTest.java",
+    "SeleniumServerTestSuite.java",
+  ],
+  deps = [
+    "//java/client/src/org/openqa/selenium:webdriver-backed-selenium",
+    "//java/client/src/org/openqa/selenium/firefox",
+    "//java/client/src/org/openqa/selenium/ie",
+    "//java/server/src/org/openqa/selenium/server",
+    "//java/server/test/org/openqa/selenium:server-with-tests:uber",
+    "//java/client/test/com/thoughtworks/selenium/condition:test",
+    "//java/client/test/org/openqa/selenium/v1:environment",
+    "//third_party/java/guava-libraries",
+    "//third_party/java/junit",
+  ])
+
+java_library(name = "rc-tests",
+   srcs = [
+     "*.java",
+   ],
+   resources = [
+     { "testHelpers.js" : "com/thoughtworks/selenium/testHelpers.js" }
+   ],
+   deps = [
+     "//java/client/src/com/thoughtworks/selenium",
+     "//java/server/src/org/openqa/selenium/server:server-with-tests:uber",
+     "//java/client/test/com/thoughtworks/selenium/corebased",
+     "//third_party/java/easymock",
+   ])
+
+java_test(name = "firefox-emulation-test",
+  test_suite = "com.thoughtworks.selenium.WebDriverSeleniumTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "org.openqa.selenium.firefox.FirefoxDriver" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "chrome-emulation-test",
+  test_suite = "com.thoughtworks.selenium.WebDriverSeleniumTestSuite",
+  deps = [
+    ":rc-tests",
+  ],
+  sysproperties = [
+    { "selenium.browser" : "org.openqa.selenium.chrome.ChromeDriver" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "ie-emulation-test",
+  test_suite = "com.thoughtworks.selenium.WebDriverSeleniumTestSuite",
+  deps = [
+    ":rc-tests",
+  ],
+  sysproperties = [
+    { "selenium.browser" : "org.openqa.selenium.ie.InternetExplorerDriver" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "opera-emulation-test",
+  test_suite = "com.thoughtworks.selenium.WebDriverSeleniumTestSuite",
+  deps = [
+    ":rc-tests",
+  ],
+  sysproperties = [
+    { "selenium.browser" : "com.opera.core.systems.OperaDriver" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "chrome-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*googlechrome" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "firefox-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*firefox" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "firefox-singlewindow-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*firefox", "singlewindow": "true" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "ie-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*iexplore" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "ie-singlewindow-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*iexplore", "singlewindow": "true" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])
+
+java_test(name = "safari-rc-test",
+  test_suite = "com.thoughtworks.selenium.SeleniumRcTestSuite",
+  sysproperties = [
+    { "selenium.browser" : "*safari" },
+  ],
+  deps = [
+    ":rc-tests",
+  ])

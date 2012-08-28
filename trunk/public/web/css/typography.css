@@ -1,0 +1,18 @@
+a, .link {
+	color:#0F8BC2;
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover, .linkL:hover{
+	color:#0c719e;
+}
+
+
+h1{font:normal 24px Helvetica, sans-serif; margin-bottom:10px; letter-spacing:1px}
+h2{font:normal 22px Helvetica, sans-serif; margin-bottom:10px; letter-spacing:1px}
+h3{font:bold 20px Helvetica, sans-serif; margin:10px 0; }
+h4{font:bold 18px Helvetica, sans-serif; margin-bottom:18px; }
+h5{font:bold 16px Helvetica, sans-serif; margin-bottom:10px; }
+h6{font:normal 13px Helvetica, sans-serif; margin-bottom:10px; }
+em {font-style: italic;}

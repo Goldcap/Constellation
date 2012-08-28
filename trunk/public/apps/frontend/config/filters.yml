@@ -1,0 +1,21 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/12-Filters
+rendering: ~
+security: ~
+cleanup:
+  class: cleanupFilter
+timezone:
+  class: timezoneFilter
+ips:
+  class: securityPageWidgetFilter
+#preuser:
+#  class: preuserFilter
+ssl:
+  class: SSLFilter
+login:
+  class: loginFilter
+#cache:
+#  class: cacheFilter
+
+cache:     ~
+execution: ~

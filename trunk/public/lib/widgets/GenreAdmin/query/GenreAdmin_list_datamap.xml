@@ -1,0 +1,20 @@
+<map table="genre" result="Genre">
+  <column column="genre_name" name="Name" type="VARCHAR" size="100" key="" order="1"></column>
+  <column column="genre_description" name="Description" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <column column="genre_id" type="INTEGER" size="11" key="PRI" order="3" hidden="true"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="genre_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Name" base="/genres/detail/">
+      <attribute name="genre_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

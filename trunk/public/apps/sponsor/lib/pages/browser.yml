@@ -1,0 +1,8 @@
+template: cst_pre
+layout: cst_preuser
+title: Constellation.tv - The First Online Movie Theater
+javascripts: []
+css: []
+widgets:
+  first-splash:
+    Browser:

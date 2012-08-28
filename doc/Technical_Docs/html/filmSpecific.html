@@ -1,0 +1,856 @@
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+  <head> 
+  	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta name="title" content="Constellation - Your Online Movie Theater" /> 
+    <title>Constellation - Your Online Movie Theater</title> 
+    <link rel="shortcut icon" href="/favicon.ico" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="/css/skin.css" /> 
+    
+        <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script> 
+<script type="text/javascript" src="/js/frontend/filmSpecific.js"></script> 
+<script type="text/javascript" src="/js/frontend/setup.js"></script> 
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script> 
+<script type="text/javascript" src="/js/jScrollPane/jScrollPane-1.2.3.js"></script> 
+<script type="text/javascript" src="/js/jScrollPane/jquery.mousewheel.min.js"></script> 
+<script type="text/javascript" src="/js/jScrollPane/film_box.js"></script> 
+<script type="text/javascript" src="/js/videoplayer.js"></script> 
+<script type="text/javascript" src="/js/flowplayer-3.2.4.min.js"></script> 
+<script type="text/javascript" src="/js/frontend/activity_updater.js"></script> 
+<script type="text/javascript" src="/js/jquery.ajax_head.js"></script> 
+<script type="text/javascript" src="/js/jquery.countdown/jquery.countdown.js"></script> 
+<script type="text/javascript" src="/js/jquery.timeago.js"></script> 
+<script type="text/javascript" src="/js/timezones.js"></script> 
+<script type="text/javascript" src="/js/frontend/popup.js"></script> 
+<script type="text/javascript" src="/js/frontend/main.js"></script> 
+    	
+    	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script> 
+    	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="./css/ie6.css" /><![endif]--> 
+  </head> 
+  <body> 
+  	<div class="popup-overlay"></div>
+
+<div id="main-login-popup" class="popup-container">
+
+	<div class="popup-right">
+
+		<div class="popup-content">
+
+			<div class="x">
+
+				<a href="#" class="popup-close">close X</a>
+
+			</div>
+
+			<div class="popup-body">
+
+			
+
+<script>
+
+	var stepLoginFormUrl = '/setup/login';
+
+	var stepSignupFormUrl = '/setup/signup';
+
+	var stepLogoutUrl = '/setup/logout';
+
+
+
+	//var username = '';
+
+	var stepSetUsernameFormUrl = '/join/setUsername';
+
+	
+
+	var isFbUserLoggedIn = false
+
+	var urlCheckLoggedInStatus = '/auth/checkAuthStatus';
+
+	var urlSaveUsername = '/join/saveUsername';
+
+	var audienceId = null;
+
+</script>
+
+<!-- JOIN LOGIN -->
+
+
+
+	  <script type="text/javascript"> 
+	var secureStepLoginFormUrl = "https://www.constellation.tv/setup/login";
+	var secureStepSignupFormUrl = "https://www.constellation.tv/setup/signup";
+</script> 
+	<div id="join-step-login" class="pseudo-step">	
+	  <div id="main-join-logged-in" class="step_title" style="display:none;">	</div> 
+  <form id="main-login-form" action="#" method="post"> 
+  
+  		  	<input type="hidden" name="login[from]" value="setup" /> 
+	  	<input type="hidden" name="signup[from]" value="setup" /> 
+  	  		
+  	<input type="hidden" name="from" value="popup"> 
+  	<input type="hidden" name="set[s_unique_key]" class="unique_key" value="" /> 
+    
+    <fieldset class="data"> 
+    
+   		 
+   			<div id="main-auth-options"> 
+   		   		
+	      <!-- LOGIN OPTIONS --> 
+	      <div id="main-login-options" class="formfield">		      	
+	      	
+	      			      	<div id="main-logged-in" class="login-status" style="display:none;"> 
+			    	<h2>Logged in <a class="link logout" href="/setup/logout/refresh/true">(logout)</a></h2> 
+			        <h2 class="done"><img id="main-login-icon" src="/images/fb-connect.png" class="-connect-img" alt="custom connect" /><span class="full-name-area"></span> - connected.</h2> 
+			    </div> 
+				<div id="main-logged-out" class="login-status" > 
+			     	<h2>Login <i>(To identify yourself in the theater. We do not collect your private information).</i></h2> 
+						     	<span id="main-login-menu">Choose one: </span> 
+			     	<fb:login-button onlogin="window.location.reload(true);" size="xlarge" v="1" class="FB_login_button fb_login_not_logged_in FB_ElementReady"> 
+			        	 <a class="fbconnect_login_button FBConnectButton FBConnectButton_BigPun" id="RES_ID_fb_login"> 
+			        		<img src="/images/fb-connect.png" alt="fb connect" title="facebook connect"  /> 
+			        	</a> 
+			        </fb:login-button> 
+			     	<a style="overflow: hidden;" href="/auth/loginTwitter/back/other"> 
+						<img src="/images/tw-connect.png" alt="tw connect" title="twitter connect" /> 
+					</a> 
+					<div class="other-login-options" style=""> or create/login with a different username: </div><img id="main-custom-connect-icon" class="join" src="/images/c-connect.png" alt="custom connect" title="custom connect" /> 
+							</div> 
+		   	</div> 
+					</div> 
+ 
+      <div id="main-custom-login-container" class="login-signup-container"> 
+      	<input id="main-signup-connect-type" name="connect-type" type="hidden" value="login" /> 
+      	
+			      	<fieldset id="main-formlet-other" class="formlet"  style="display: none;" > 
+				<div class="formfield first-formfield"> 
+						<label id="main-formlet-other-label-full-name"></label> 
+						<img id="main-formlet-other-img-photo-url" src="" width="48" height="48" /> 
+			  	</div> 
+	      	</fieldset> 
+      		<div id="login-signup">       	
+      		
+		      	<!-- LOGIN --> 
+		      	<fieldset id="main-formlet-login" class="formlet"  style="display: block;" > 
+		      		<div class="head"> 
+	      				<span>Login</span> 
+						<p>or <a id="main-choose-signup" rel="login-field" href="javascript:;">Sign-up</a></p> 
+					</div> 
+								      		<div class="formfield first-formfield"> 
+							<label>Email: </label> 
+							<input id="main-login-email" value="" name="login[email]" type="text" class="text" /> 
+						</div> 
+						<div class="formfield"> 
+							<label>Password: </label> 
+							<input id="main-login-password" name="login[password]" type="password" class="text" /> 
+						</div> 
+						<fieldset class="buttons"> 
+					      <input id="main-btn-login" class="btn-submit btn-login-signup" type="image" src="/images/btn-text[login][2].png" alt="login" /> 
+					    </fieldset> 
+							      	</fieldset> 
+		      	
+		      	<!-- SIGN-UP --> 
+	      	<fieldset id="main-formlet-signup" class="formlet"> 
+				<div class="head"> 
+      				<span>Sign-up</span> 
+					<p>or <a id="main-choose-login" rel="login-field" href="javascript:;">Login</a></p> 
+				</div> 
+				<div class="formfield"> 
+					<label>Your Name: </label> 
+					<input id="main-signup-name" value="" name="signup[name]" type="text" class="text" /> 
+				</div> 
+				<div class="formfield"> 
+					<label>Username: </label> 
+					<input id="main-signup-username" value="" name="signup[username]" type="text" class="text" /> 
+				</div> 
+				<div class="formfield"> 
+					<label>Email: </label> 
+					<input id="main-signup-email" value="" name="signup[email]" type="text" class="text" /> 
+				</div> 
+				<div class="formfield"> 
+				 <fieldset class="birthday"> 
+					<label> Birthdate: </label> 
+					<div class="formfield-birthday"> 
+	          			<select id="main-fld_month" name="signup[month]"> 
+						           				<option value="01" >Jan</option> 
+						           				<option value="02" >Feb</option> 
+						           				<option value="03" >Mar</option> 
+						           				<option value="04" >Apr</option> 
+						           				<option value="05" >May</option> 
+						           				<option value="06" >Jun</option> 
+						           				<option value="07" >Jul</option> 
+						           				<option value="08" >Aug</option> 
+						           				<option value="09" >Sep</option> 
+						           				<option value="10" >Oct</option> 
+						           				<option value="11" >Nov</option> 
+						           				<option value="12" >Dec</option> 
+						          			</select> 
+	        		</div> 
+					<div class="formfield-birthday"> 
+	          			<select id="main-fld_day" name="signup[day]"> 
+						           				<option value="01" >01</option> 
+						           				<option value="02" >02</option> 
+						           				<option value="03" >03</option> 
+						           				<option value="04" >04</option> 
+						           				<option value="05" >05</option> 
+						           				<option value="06" >06</option> 
+						           				<option value="07" >07</option> 
+						           				<option value="08" >08</option> 
+						           				<option value="09" >09</option> 
+						           				<option value="10" >10</option> 
+						           				<option value="11" >11</option> 
+						           				<option value="12" >12</option> 
+						           				<option value="13" >13</option> 
+						           				<option value="14" >14</option> 
+						           				<option value="15" >15</option> 
+						           				<option value="16" >16</option> 
+						           				<option value="17" >17</option> 
+						           				<option value="18" >18</option> 
+						           				<option value="19" >19</option> 
+						           				<option value="20" >20</option> 
+						           				<option value="21" >21</option> 
+						           				<option value="22" >22</option> 
+						           				<option value="23" >23</option> 
+						           				<option value="24" >24</option> 
+						           				<option value="25" >25</option> 
+						           				<option value="26" >26</option> 
+						           				<option value="27" >27</option> 
+						           				<option value="28" >28</option> 
+						           				<option value="29" >29</option> 
+						           				<option value="30" >30</option> 
+						           				<option value="31" >31</option> 
+						          			</select> 
+	        		</div> 
+	        		<div class="formfield-birthday"> 
+	         			<select id="main-fld_year" name="signup[year]"> 
+				                                 <option  value="1920" >1920</option> 
+					                             <option  value="1921" >1921</option> 
+					                             <option  value="1922" >1922</option> 
+					                             <option  value="1923" >1923</option> 
+					                             <option  value="1924" >1924</option> 
+					                             <option  value="1925" >1925</option> 
+					                             <option  value="1926" >1926</option> 
+					                             <option  value="1927" >1927</option> 
+					                             <option  value="1928" >1928</option> 
+					                             <option  value="1929" >1929</option> 
+					                             <option  value="1930" >1930</option> 
+					                             <option  value="1931" >1931</option> 
+					                             <option  value="1932" >1932</option> 
+					                             <option  value="1933" >1933</option> 
+					                             <option  value="1934" >1934</option> 
+					                             <option  value="1935" >1935</option> 
+					                             <option  value="1936" >1936</option> 
+					                             <option  value="1937" >1937</option> 
+					                             <option  value="1938" >1938</option> 
+					                             <option  value="1939" >1939</option> 
+					                             <option  value="1940" >1940</option> 
+					                             <option  value="1941" >1941</option> 
+					                             <option  value="1942" >1942</option> 
+					                             <option  value="1943" >1943</option> 
+					                             <option  value="1944" >1944</option> 
+					                             <option  value="1945" >1945</option> 
+					                             <option  value="1946" >1946</option> 
+					                             <option  value="1947" >1947</option> 
+					                             <option  value="1948" >1948</option> 
+					                             <option  value="1949" >1949</option> 
+					                             <option  value="1950" >1950</option> 
+					                             <option  value="1951" >1951</option> 
+					                             <option  value="1952" >1952</option> 
+					                             <option  value="1953" >1953</option> 
+					                             <option  value="1954" >1954</option> 
+					                             <option  value="1955" >1955</option> 
+					                             <option  value="1956" >1956</option> 
+					                             <option  value="1957" >1957</option> 
+					                             <option  value="1958" >1958</option> 
+					                             <option  value="1959" >1959</option> 
+					                             <option  value="1960" >1960</option> 
+					                             <option  value="1961" >1961</option> 
+					                             <option  value="1962" >1962</option> 
+					                             <option  value="1963" >1963</option> 
+					                             <option  value="1964" >1964</option> 
+					                             <option  value="1965" >1965</option> 
+					                             <option  value="1966" >1966</option> 
+					                             <option  value="1967" >1967</option> 
+					                             <option  value="1968" >1968</option> 
+					                             <option  value="1969" >1969</option> 
+					                             <option selected value="1970" >1970</option> 
+					                             <option  value="1971" >1971</option> 
+					                             <option  value="1972" >1972</option> 
+					                             <option  value="1973" >1973</option> 
+					                             <option  value="1974" >1974</option> 
+					                             <option  value="1975" >1975</option> 
+					                             <option  value="1976" >1976</option> 
+					                             <option  value="1977" >1977</option> 
+					                             <option  value="1978" >1978</option> 
+					                             <option  value="1979" >1979</option> 
+					                             <option  value="1980" >1980</option> 
+					                             <option  value="1981" >1981</option> 
+					                             <option  value="1982" >1982</option> 
+					                             <option  value="1983" >1983</option> 
+					                             <option  value="1984" >1984</option> 
+					                             <option  value="1985" >1985</option> 
+					                             <option  value="1986" >1986</option> 
+					                             <option  value="1987" >1987</option> 
+					                             <option  value="1988" >1988</option> 
+					                             <option  value="1989" >1989</option> 
+					                             <option  value="1990" >1990</option> 
+					                             <option  value="1991" >1991</option> 
+					                             <option  value="1992" >1992</option> 
+					                             <option  value="1993" >1993</option> 
+					                             <option  value="1994" >1994</option> 
+					                             <option  value="1995" >1995</option> 
+					                             <option  value="1996" >1996</option> 
+					                             <option  value="1997" >1997</option> 
+					                             <option  value="1998" >1998</option> 
+					                             <option  value="1999" >1999</option> 
+					                             <option  value="2000" >2000</option> 
+					                             <option  value="2001" >2001</option> 
+					                             <option  value="2002" >2002</option> 
+					                             <option  value="2003" >2003</option> 
+					                             <option  value="2004" >2004</option> 
+					                             <option  value="2005" >2005</option> 
+					                             <option  value="2006" >2006</option> 
+					                             <option  value="2007" >2007</option> 
+					                             <option  value="2008" >2008</option> 
+					                             <option  value="2009" >2009</option> 
+					                             <option  value="2010" >2010</option> 
+						     			     </select> 
+	      		  </div> 
+	          	</fieldset> 
+	        	</div> 
+			
+				<div class="formfield"> 
+					<label>Password: </label> 
+					<input id="main-signup-password" name="signup[password]" type="password" class="text" /> 
+				</div> 
+				<div class="formfield"> 
+					<label>Confirm Password: </label> 
+					<input id="main-signup-password2" name="signup[password2]" type="password" class="text" /> 
+				</div> 
+				
+				<fieldset class="buttons"> 
+			      <input id="main-btn-signup" class="btn-submit btn-login-signup" type="image" src="/images/btn-text[sign-up][2].png" alt="signup" /> 
+			    </fieldset> 
+			</fieldset>	
+		</div> 
+      </div> 
+    </fieldset> 
+  </form> 
+ 
+<div class="error-panel"> 
+	<div class="errors"> 
+		
+	</div> 
+</div> 
+	</div> 
+</div> 
+	
+
+</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+  	<div class="popup-overlay"></div>
+
+<div id="your-screenings-popup" class="popup-container">
+
+	<div class="popup-right">
+
+		<div class="popup-content">
+
+			<div class="x">
+
+				<a href="#" class="popup-close">close X</a>
+
+			</div>
+
+			<div class="popup-body">
+
+			<script> 
+	var urlGetEditableScreenings = '/setup/getEditableScreenings';
+</script> 
+ 
+<div class="your-screenings-area"> 
+	<h2>Your upcoming screenings: </h2> 
+<!--<p>(You can edit a screening until 24 hours before the screening)</p> --> 
+	<div id="your-screenings-ajax-load"> 
+	</div> 
+</div>			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+  	<div class="popup-overlay"></div>
+
+<div id="joinScreening-popup" class="popup-container">
+
+	<div class="popup-right">
+
+		<div class="popup-content">
+
+			<div class="x">
+
+				<a href="#" class="popup-close">close X</a>
+
+			</div>
+
+			<div class="popup-body">
+
+			<div class="your-screenings-area">
+
+	<h2>This show is in progress: </h2>
+
+	<div id="buttons">
+
+		<a href="#" class="btn-buy-anyway"></a>
+
+		<a href="" class="btn-another-showtime"></a>
+
+	</div>
+
+</div>			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+  	  	<div id="page" class="index-page"> 
+  		<div class="page_decorator"> 
+  			<div id="main-overlay"></div> 
+       		<div class="page_wrap"> 
+               	<div id="banner"> 
+            		<div id="logo"> 
+            			<a href="/"><img src="/images/logo[3].png" alt="constellation" width="232" height="98" /></a> 
+            		</div> 
+            		<div id="login"> 
+						<div id="main-login" class="link"> 
+							
+							<div id="loggedin-area" > 
+								<div id="full-name-area"> 
+									<span id="full-name" class="main-login"> 
+																			</span> 
+									<a href="#" id="your-screenings">My Showtimes</a> 
+								</div> 
+								<span id="photo-url-area"> 
+									<img id="photo-url" width="48" height="48" src="" class="main-login" /> 
+								</span> 
+							</div> 
+							
+														<div id="login-area" > 
+								<img id="login_img" src="/images/title[login].png" width="47" height="11" alt="LOGIN" class="main-login" /> 
+							</div> 
+							
+						</div> 
+					</div> 
+				</div><!-- #banner --> 
+                  <div id="content"> 
+                  	<div class="content_wrap"> 
+		    		   
+
+<script>
+
+	var updateScreeningsUrl = '/filmSpecific/updateScreenings/isAjax/true';	
+
+	var filmId = '4';
+
+	var ipAllowedToJoin = true;
+
+</script>
+
+
+
+<div id="col-1">
+
+  <div class="col-1-decorator">
+
+    <div class="col-1-wrap">
+
+			
+
+	
+
+
+
+<script>
+
+    var length = 1;
+
+    var dates = ["Dec 09, 2010"];
+
+    var includedFrom = 'filmSpecific';
+
+</script>
+
+
+
+<div id="filmposter-lottery" class="filmposter_box">
+
+		       
+
+	<a class="poster" href="/filmSpecific?film_id=4&trailer=true">
+
+		<img class="poster" src="http://c2.cdn.constellation.tv/uploads/screeningResources/4/logo/small_poster4c344b45275b4.jpg" alt="poster for The Lottery" width="156" />
+
+	</a>
+
+	       
+
+		
+
+    
+
+					<h2>Showtimes</h2>
+
+				
+
+			
+
+									<ul id="showtimes-container" class="showtimes">
+
+											    	
+			<li  > 
+			<div class="container hover-title" id="trigger-697" > 
+				<div class="date"> 
+											<a class="host-info" id="trigger-697"  href="/filmSpecific?film_id=4&screening_id=697" > 
+							<p lang="mmm dd, yyyy h:MMTT" class="tzDate" name="1291942800">Thursday Dec 09, 2010 8:00PM EST</p>						</a>	
+									
+																		<img class="host-img" height="35" width="35"  src="/uploads/hosts/715/thumb_4c7dba941c839.jpg" /> 
+																			<a class="btn-join" href="/screeningRoom/ieTFNqei7Fu4hjV/self_invited/true"><img height="19" width="42" alt="+join" src="/images/btn[-join].png"/></a>		
+									</div> 
+				
+								
+				<div class="desc"> 
+					<div class="hosted">Hosted by Madeleine Sackler</div> 
+				</div> 
+				
+								
+							</div> 
+		</li> 
+		
+										</ul>
+
+							    
+
+<!-- ending container for screening results -->
+
+	
+
+
+
+    </div> <!-- container for screening results -->
+
+        
+
+	<!--  </div> --> 
+
+            
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="col-2">
+
+				<h1 class="filmTitle">The Lottery</h1>
+
+        				<h1 class="hover-title-date" id="hidden-date-697">The Lottery 
+
+					<p class="tzDate" lang="mmm dd, yyyy h:MMTT" name="1291942800">
+
+						The Thursday December 09 8:00PM EST showing of The Lottery										</h1>
+
+				
+
+		<div id="movie_trailer_container" class="nx_widget_video">
+
+			<script type="text/javascript"> 
+    var flowplayerPath = "/flash/flowplayer.commercial-3.2.4.swf";
+    var flowplayerControlsPath = "";
+    var movie = "http://c2.cdn.constellation.tv/uploads/screeningResources/4/trailerFile/lottery-trailer.trailer.mp4";
+    var containerId = "movie_trailer";
+    var movieDuration = 114;
+    var flowplayerCommercialCode = "#$99f8ac2b53358df32f3";
+</script> 
+	        <a id="movie_trailer" href="http://c2.cdn.constellation.tv/uploads/screeningResources/4/trailerFile/lottery-trailer.trailer.mp4" class="nx_widget_player"></a>
+
+		</div>
+
+		<div class="about-the-film">
+
+				<h2>About the Film</h2>
+
+				<p>In a country where 58% of African American 4th graders are functionally illiterate, The Lottery uncovers a ferocious debate surrounding public education.  Following four families who enter their children into a school lottery, The Lottery reveals a turf war that is being waged over the future of America’s public schools.</p>
+
+				<div id="cast">
+
+				
+
+					<div class=info_film>
+
+												 
+
+																																																																									
+
+							
+	<span>Director(s): </span> 
+			
+
+														<p><a href=http://www.imdb.com/name/nm2153450/ target='_blank'>Madeleine Sackler</a></p>
+
+						 
+
+																																																																																																																																																																																	
+
+							
+	<span>Producer(s): </span> 
+			
+
+														<p><a href=http://www.imdb.com/name/nm0039137/ target='_blank'>Blake Ashman-Kipervaser</a>, <a href=http://www.imdb.com/name/nm2498092/ target='_blank'>James Lawler</a>, <a href=http://www.imdb.com/name/nm2153450/ target='_blank'>Madeleine Sackler</a></p>
+
+											</div>
+
+					
+
+					<span>Production Company:</span>
+
+					<div class=info_film>
+
+						<p>Great Curve Films</p> 
+
+					</div> 
+
+				</div>
+
+			<p><span>Running Time : </span>  1:20 </p>
+
+		</div>
+
+		
+
+       	
+
+		<div class="screening-info" id='hidden-info-697'>
+
+			<span>
+
+			    <img src="/uploads/hosts/715/thumb_4c7dba941c839.jpg" alt="host image" width="79" height="70"  class="host-img"/>			</span>
+
+			
+
+						<h2>Madeleine Sackler presents </h2>
+
+						
+
+			<h2>The Lottery</h2>
+
+			
+
+			<div class="screening-time">
+
+				<h2 class="tzDate" name="1291942800" lang="mmm dd, yyyy h:MMTT">Thursday Dec 09, 2010 8:00PM EST</h2>
+
+				<img class="timezone-clock" src="/images/clock-icon.png" width="30" height="30" alt="timezone" />
+
+			</div>
+
+			
+
+			<div class="screening-description">
+
+				<p></p>
+
+			</div>
+
+			
+
+			<a href="/screeningRoom/ieTFNqei7Fu4hjV/self_invited/true" class="btn-join-this-screening">
+
+				<span><img src="../images/btn[join-this-screening].png" alt="Join this Screening" width="130" height="23" /></span>
+
+			</a>
+
+		</div>
+
+		
+
+			
+
+</div>
+
+<div id="col-3">
+
+			<script type="text/javascript"> 
+	var refreshInterval = '6000';
+	var staticUpdater = '/activityUpdater';
+	var screeningId = '';
+	var updaterUrl = '/filmSpecific/updater';
+	var startDate = '';
+	var changeTimezoneUrl = '/filmSpecific/changeTimezone';
+	var screeningType = '';
+</script> 
+<div class="popup-overlay"></div>
+
+<div id="timezone-select-popup" class="popup-container">
+
+	<div class="popup-right">
+
+		<div class="popup-content">
+
+			<div class="x">
+
+				<a href="#" class="popup-close">close X</a>
+
+			</div>
+
+			<div class="popup-body">
+
+			<p> Please select your timezone. </p> 
+<p>NOTE: If your are not logged in, this will save your timezone option only for this session.</p> 
+<select name="tzSelector" id="tzSelector"><optgroup label="America"><option id="tz-option-0" selected value="-18000_EST">USA/East </option><option id="tz-option-1" value="-14400_ast">USA/Atlantic </option><option id="tz-option-2" value="-21600_CST">USA/Central </option><option id="tz-option-3" value="-25200_MST">USA/Mountain </option><option id="tz-option-4" value="-28800_PST">USA/Pacific </option><option id="tz-option-5" value="-32400_AKST">USA/Alaska </option><option id="tz-option-6" value="-36000_hst">USA/Hawaii </option></optgroup><optgroup label="Africa"><option id="tz-option-7" value="0_gmt">Côte d`Ivoire </option><option id="tz-option-8" value="0_gmt">Ghana </option><option id="tz-option-9" value="3600_CET">Algeria </option><option id="tz-option-10" value="0_gmt">Mali </option><option id="tz-option-11" value="3600_wat">Central African Republic </option><option id="tz-option-12" value="0_gmt">Gambia </option><option id="tz-option-13" value="0_GMT">Guinea-Bissau </option><option id="tz-option-14" value="7200_cat">Malawi </option><option id="tz-option-15" value="3600_wat">Congo </option><option id="tz-option-16" value="7200_EET">Egypt/Cairo </option><option id="tz-option-17" value="0_WET">Morocco </option><option id="tz-option-18" value="3600_CET">Spain </option><option id="tz-option-19" value="0_gmt">Guinea </option><option id="tz-option-20" value="0_gmt">Senegal </option><option id="tz-option-21" value="3600_wat">Cameroon/Douala </option><option id="tz-option-22" value="0_WET">Western Sahara </option><option id="tz-option-23" value="7200_cat">Botswana </option><option id="tz-option-24" value="7200_cat">Zimbabwe </option><option id="tz-option-25" value="10800_EAT">Sudan </option><option id="tz-option-26" value="7200_cat">Rwanda </option><option id="tz-option-27" value="3600_wat">Nigeria </option><option id="tz-option-28" value="3600_wat">Gabon </option><option id="tz-option-29" value="3600_wat">Angola </option><option id="tz-option-30" value="7200_cat">Zambia </option><option id="tz-option-31" value="3600_wat">Equatorial Guinea </option><option id="tz-option-32" value="7200_cat">Mozambique </option><option id="tz-option-33" value="3600_WAT">Chad </option><option id="tz-option-34" value="3600_wat">Niger/Niamey </option><option id="tz-option-35" value="0_gmt">Mauritania </option><option id="tz-option-36" value="0_gmt">Burkina Faso </option><option id="tz-option-37" value="3600_wat">Benin </option><option id="tz-option-38" value="0_gmt">São Tomé and Príncipe </option><option id="tz-option-39" value="7200_EET">Libya </option><option id="tz-option-40" value="3600_CET">Tunisia </option><option id="tz-option-41" value="7200_WAST">Namibia </option></optgroup><optgroup label="America"><option id="tz-option-42" value="-14400_ast">Anguilla </option><option id="tz-option-43" value="-14400_ast">Antigua and Barbuda </option><option id="tz-option-44" value="-14400_ast">Aruba </option><option id="tz-option-45" value="-21600_cst">Canada/Atikokan </option><option id="tz-option-46" value="-14400_AST">Barbados </option><option id="tz-option-47" value="-21600_CST">Belize </option><option id="tz-option-48" value="-14400_ast">Canada/Blanc-Sablon </option><option id="tz-option-49" value="-25200_MST">Canada/Cambridge Bay </option><option id="tz-option-50" value="-21600_CST">Mexico/Cancun </option><option id="tz-option-51" value="-25200_MST">Mexico/Chihuahua </option><option id="tz-option-52" value="-21600_CST">Costa Rica </option><option id="tz-option-53" value="-14400_ast">Netherlands Antilles </option><option id="tz-option-54" value="-25200_MST">Canada/Dawson Creek </option><option id="tz-option-55" value="-14400_ast">Dominica </option><option id="tz-option-56" value="-21600_CST">El Salvador </option><option id="tz-option-57" value="-28800_PST">Mexico/Ensenada </option><option id="tz-option-58" value="-18000_EST">Turks and Caicos Islands </option><option id="tz-option-59" value="-14400_ast">Grenada </option><option id="tz-option-60" value="-14400_ast">Guadeloupe </option><option id="tz-option-61" value="-21600_CST">Guatemala </option><option id="tz-option-62" value="-14400_AST">UK/Halifax </option><option id="tz-option-63" value="-18000_CST">Cuba </option><option id="tz-option-64" value="-18000_EST">Jamaica </option><option id="tz-option-65" value="-21600_CST">Nicaragua </option><option id="tz-option-66" value="-14400_AST">Martinique </option><option id="tz-option-67" value="-14400_ast">Montserrat </option><option id="tz-option-68" value="-18000_EST">The Bahamas </option><option id="tz-option-69" value="-18000_est">Panama </option><option id="tz-option-70" value="-14400_ast">Trinidad & Tobago </option><option id="tz-option-71" value="-18000_EST">Haiti </option><option id="tz-option-72" value="-14400_ast">Puerto Rico </option><option id="tz-option-73" value="-14400_AST">Dominican Republic </option><option id="tz-option-74" value="-14400_ast">St Kitts and Nevis </option><option id="tz-option-75" value="-14400_ast">St Lucia </option><option id="tz-option-76" value="-14400_ast">US Virgin Islands </option><option id="tz-option-77" value="-14400_ast">St Vincent and the Grenadines </option><option id="tz-option-78" value="-21600_CST">Honduras/Tegucigalpa </option><option id="tz-option-79" value="-14400_AST">Australia/Thule </option><option id="tz-option-80" value="-14400_ast">British Virgin Islands </option><option id="tz-option-81" value="-28800_PST">Canada/Whitehorse </option></optgroup><optgroup label="Arctic"><option id="tz-option-82" value="3600_CET">Svalbard and Jan Mayen </option></optgroup><optgroup label="Asia"><option id="tz-option-83" value="10800_ast">Turkey/Aden </option><option id="tz-option-84" value="7200_EET">Jordan </option><option id="tz-option-85" value="10800_AST">Iraq </option><option id="tz-option-86" value="10800_AST">Bahrain </option><option id="tz-option-87" value="7200_EET">Lebanon </option><option id="tz-option-88" value="28800_CST">China </option><option id="tz-option-89" value="7200_EET">Syria </option><option id="tz-option-90" value="32400_TLT">Timor-Leste </option><option id="tz-option-91" value="14400_gst">United Arab Emirates </option><option id="tz-option-92" value="7200_EET">Egypt/Gaza </option><option id="tz-option-93" value="7200_EET">Turkey/Istanbul </option><option id="tz-option-94" value="32400_jst">Indonesia/Jakarta </option><option id="tz-option-95" value="34200_cst">Indonesia/Jayapura </option><option id="tz-option-96" value="28800_MYT">Malaysia </option><option id="tz-option-97" value="10800_ast">Kuwait </option><option id="tz-option-98" value="28800_CST">Macau </option><option id="tz-option-99" value="28800_PHT">Philippines </option><option id="tz-option-100" value="14400_gst">Oman </option><option id="tz-option-101" value="7200_EET">Cyprus </option><option id="tz-option-102" value="10800_AST">Qatar </option><option id="tz-option-103" value="32400_jst">Myanmar </option><option id="tz-option-104" value="10800_ast">Saudi Arabia </option><option id="tz-option-105" value="36000_SAKT">Russian Federation/Sakhalin </option><option id="tz-option-106" value="28800_SGT">Singapore </option><option id="tz-option-107" value="28800_CST">Taiwan </option><option id="tz-option-108" value="32400_jst">Japan </option></optgroup><optgroup label="Atlantic"><option id="tz-option-109" value="-3600_AZOT">Portugal/Azores </option><option id="tz-option-110" value="-14400_AST">Bermuda </option><option id="tz-option-111" value="0_WET">Denmark/Faeroe </option><option id="tz-option-112" value="0_gmt">Iceland </option><option id="tz-option-113" value="0_gmt">St Helena </option></optgroup><optgroup label="Australia"><option id="tz-option-114" value="39600_EST">Australia/ACT </option><option id="tz-option-115" value="37800_CST">Australia/Adelaide </option><option id="tz-option-116" value="36000_EST">Australia/Lindeman </option><option id="tz-option-117" value="39600_EST">Australia/Melbourne </option><option id="tz-option-118" value="39600_EST">Australia/Victoria </option></optgroup><optgroup label="Canada"><option id="tz-option-119" value="-21600_CST">Canada/Central </option><option id="tz-option-120" value="-18000_EST">Canada/Eastern </option></optgroup><optgroup label="Europe"><option id="tz-option-121" value="3600_CET">The Netherlands </option><option id="tz-option-122" value="3600_CET">Andorra </option><option id="tz-option-123" value="7200_EET">Greece </option><option id="tz-option-124" value="0_GMT">UK/Belfast </option><option id="tz-option-125" value="3600_CET">Serbia </option><option id="tz-option-126" value="3600_CET">Germany </option><option id="tz-option-127" value="3600_CET">Slovakia </option><option id="tz-option-128" value="3600_CET">Belgium </option><option id="tz-option-129" value="7200_EET">Romania </option><option id="tz-option-130" value="3600_CET">Hungary </option><option id="tz-option-131" value="7200_EET">Moldova </option><option id="tz-option-132" value="3600_CET">Denmark/Copenhagen </option><option id="tz-option-133" value="0_GMT">Ireland </option><option id="tz-option-134" value="3600_CET">Gibraltar </option><option id="tz-option-135" value="0_GMT">Guernsey </option><option id="tz-option-136" value="7200_EET">Finland </option><option id="tz-option-137" value="0_GMT">Isle of Man </option><option id="tz-option-138" value="0_GMT">Jersey </option><option id="tz-option-139" value="7200_EET">Russian Federation/Kaliningrad </option><option id="tz-option-140" value="7200_EET">Ukraine </option><option id="tz-option-141" value="3600_WET">Portugal/Lisbon </option><option id="tz-option-142" value="3600_CET">Slovenia </option><option id="tz-option-143" value="3600_CET">Luxembourg </option><option id="tz-option-144" value="3600_CET">Malta </option><option id="tz-option-145" value="7200_EET">Belarus </option><option id="tz-option-146" value="3600_CET">Monaco </option><option id="tz-option-147" value="10800_MSK">Russian Federation/Moscow </option><option id="tz-option-148" value="3600_CET">Norway </option><option id="tz-option-149" value="3600_CET">France/Paris </option><option id="tz-option-150" value="3600_CET">Montenegro </option><option id="tz-option-151" value="3600_CET">Czech Republic </option><option id="tz-option-152" value="7200_EET">Latvia </option><option id="tz-option-153" value="3600_CET">Italy </option><option id="tz-option-154" value="3600_CET">San Marino </option><option id="tz-option-155" value="3600_CET">Bosnia and Herzegovina </option><option id="tz-option-156" value="3600_CET">Macedonia </option><option id="tz-option-157" value="7200_EET">Bulgaria </option><option id="tz-option-158" value="3600_CET">Sweden </option><option id="tz-option-159" value="3600_CET">Albania </option><option id="tz-option-160" value="3600_CET">Liechtenstein </option><option id="tz-option-161" value="3600_CET">Vatican City </option><option id="tz-option-162" value="3600_CET">Austria </option><option id="tz-option-163" value="7200_EET">Lithuania </option><option id="tz-option-164" value="3600_CET">Poland </option><option id="tz-option-165" value="3600_CET">Croatia </option><option id="tz-option-166" value="3600_CET">Switzerland </option></optgroup><optgroup label="Mexico"><option id="tz-option-167" value="-25200_MST">Honduras/BajaSur </option></optgroup><optgroup label="Pacific"><option id="tz-option-168" value="46800_NZDT">New Zealand </option><option id="tz-option-169" value="43200_NRT">Nauru </option><option id="tz-option-170" value="-28800_PST">Pitcairn Islands </option></optgroup></select>			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+	
+		<div class="screening-activity-box" style="display: none;"> 
+			<div class="overlay"></div> 
+			<div class="title"> 
+				<h2><img class="blue-text" src="/images/title[screening-room-a][4].png" width="165" height="16" alt="Activity in the Theater" /></h2> 
+				<div class="info"> 
+					<p class="timezone-select tzDate"></p><img class="timezone-clock" src="/images/clock-icon.png" width="30" height="30" alt="timezone" /> 
+										<p>Available Seats: <span id="available_seats"></span></p> 
+					<p>Countdown: <span id="countdown"></span></p> 
+				</div> 
+			</div> 
+			<ul class="activity-log" id="activity-stream"> 
+			</ul> 
+		</div> 
+<div style="position: relative;"> 
+<ul class="activity-log" id="offlefted" style="position: absolute; left: 9999px;"> 
+</ul> 
+</div> 
+ 
+			<div class="reviews"> 
+				<h2><img class="blue-text" src="/images/title[review].png" width="58" height="16" alt="Reviews" /></h2> 
+				<div id="film-reviews"> 
+																								
+								<p class="review">"This is a movie that absolutely everyone in America should see ASAP! "</p> <p class="review-username"> -- Mark</p> 
+							     
+								
+															</div> 
+							</div> 
+			</div>
+
+                  	</div> 
+                  </div> 
+                  
+                  <div id="footer"> 
+                  	<ul class="links-1"> 
+                  		<li id="copyright"> 
+                  			<img src="/images/title[copyright][3].png" width="225" height="12" alt="copyright 2010 Constellation" /> 
+						</li> 
+						<li class="separator">|</li> 
+						<li class="contact"> 
+							<a href="/static/contactUs"> 
+								<img src="/images/title[contact].png" width="42" height="12" alt="contact us" /> 
+								<div class="bkg"></div> 
+							</a> 
+						</li> 
+						<li class="separator">|</li> 
+						<li class="terms-conditions"> 
+							<a href="/static/termsOfService"> 
+								<img src="/images/title[terms-of-service].png" width="86" height="12" alt="Terms of Service" /> 
+								<div class="bkg"></div> 
+							</a> 
+						</li> 
+						<li class="separator">|</li> 
+						<li class="privacy-policy"> 
+							<a href="/static/privacyPolicy"> 
+								<img src="/images/title[privacy-policy][2].png" width="73" height="12" alt="privacy policy" /> 
+								<div class="bkg"></div> 
+							</a> 
+						</li> 
+						<li class="separator">|</li> 
+						<li class="purchase-policy"> 
+							<a href="/static/purchasePolicy"> 
+								<img src="/images/title[purchase-policy].png" width="73" height="12" alt="purchase policy222" /> 
+								<div class="bkg"></div> 
+							</a> 
+						</li>						
+                  	</ul> 
+					<ul id="social-networks"> 
+                        <li> 
+                        	<a href="http://twitter.com/ConstellationTV" target="_blank"></a> 
+						</li> 
+						<li class="last"> 
+                        	<a href="http://www.facebook.com/ConstellationMedia" target="_blank"></a> 
+						</li> 
+                	</ul> 
+					<ul class="links-2"> 
+						<li class="how-it-works"> 
+							<a href="/static/howItWorks"> 
+                        		<img src="/images/title[how-it-works][2].png" width="65" height="12" alt="how it works" /> 
+                        		<div class="bkg"></div> 
+                        	</a> 
+                        </li> 
+						<li class="faqs"> 
+                        	<a href="/static/faq"> 
+								<img src="/images/title[faqs][2].png" width="25" height="12" alt="faqs" /> 
+								<div class="bkg"></div> 
+							</a> 
+						</li> 
+						<li class="about-us"> 
+                    		<a href="/static/aboutUs"> 
+                    			<img src="/images/title[about-us][2].png" width="46" height="12" alt="about us" /> 
+                    			<div class="bkg"></div> 
+                    		</a> 
+                    	</li> 
+					</ul> 
+				</div> 
+	    	</div> 
+			  		</div> 
+  	</div> 
+ 
+	<script type="text/javascript">  
+		FB.init("49d5060c07fb058ba43cb0f724602fc1", "/xd_receiver.htm"); 
+	</script> 
+	
+	<script type="text/javascript"> 
+		facebookOnLoginReady = function() {
+		  refreshPage();
+		}
+		refreshPage = function() {
+		  window.location.reload(true);
+		}
+	</script> 
+	
+	<script type="text/javascript"> 
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+try {
+    var pageTracker = _gat._getTracker("UA-6599789-16");
+    pageTracker._trackPageview();    
+} catch(err) {}
+</script> </body> 
+</html> 

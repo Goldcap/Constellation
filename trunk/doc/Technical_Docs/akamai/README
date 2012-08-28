@@ -1,0 +1,12 @@
+The instructions for setting up ffmpeg, fms and streaming to Akamai are below
+in the files:
+   ffmpeg_installation
+   fms_setup
+
+The file uploading_to_akamai tells how videos can be uploaded to Akamai for 
+VOD  streaming.
+	 uploading_to_akamai
+
+Additionally we can setup Wowza for hhtp streaming. Details are in:
+	wowza_setup
+

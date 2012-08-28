@@ -1,0 +1,605 @@
+
+@font-face {  
+  font-family: "helveticaneue";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.eot ); /* IE */  
+  src: local("HelveticaNeue-Regular"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.ttf ) format("truetype"); /* non-IE */  
+}
+
+@font-face {  
+  font-family: "helveticaneuelight";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.eot ); /* IE */  
+  src: local("HelveticaNeue-Light"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.ttf ) format("truetype"); /* non-IE */  
+}
+   
+body{font-family: "helveticaneue", Helvetica, sans-serif;}
+
+#zzdiv {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.pop_up {
+	float: left;
+	position: absolute;
+	margin-top: 0;
+  top: 160px;
+	left: 50%;
+	margin-left: -500px;
+}
+
+body.landing{background:#000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/theater_bg.png') no-repeat top left}
+
+.masterhead {
+	height: 70px !important;
+	margin: 0px !important;
+	background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/theater_header_bg.png') repeat-x top left;
+}
+
+.logo_alt a {
+  float: left;
+  width: 205px;
+  margin-left: 20px;
+  height: 72px;
+  background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/theater_logo.png') top left no-repeat;
+  text-indent:150px;
+  font-size: 20px;
+  color: #8C8C8C !important;
+}
+
+#timer_panel {
+	position: absolute;
+	margin-top: 0px !important;
+	height: 65px !important;
+	margin-left: 50%;
+	padding-top: 5px;
+	font-size: 38px;
+	color: #9E9E9E;
+	width: 500px;
+	z-index: 2;
+}
+
+#countdown {
+	margin-left: -250px;
+	float: left;
+	height: 70px !important;
+	width: 330px;
+	text-transform: uppercase;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+}
+
+#countdown .shorty{
+	font-size: 18px;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+
+.until_showtime {
+	float: left;
+	font-size: 14px;
+	color: #D0D0D0;
+	font-weight: bold;
+	padding-top: 8px;
+	line-height: 16px;
+}
+
+.share_panel {
+	position: absolute;
+	right: 0px;
+	float: right;
+	color: white;
+	font-weight: bold;
+	margin-top: 20px;
+	z-index: 1000;
+}
+
+.share_panel .share_images {
+	float: left;
+	margin-right: 2px;
+}
+
+.share_panel .show_hostcam, .share_panel .hide_hostcam, .share_panel .show_chat {
+	float: left;
+}
+
+.share_panel .share_text{
+	float: left;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	margin-top: 9px;
+	font-size: 12px;
+	color: #D0D0D0;
+	margin-right: 15px;
+} 
+
+.share_panel .share_text a {
+	color: #D0D0D0;
+}
+
+#prescreening_panel_main {
+	position: absolute;
+	z-index: 1000;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 650px;
+	height: 550px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/prescreen_bg.png') no-repeat top left;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#prescreening_panel_main.movietime {
+	height: 385px;
+}
+
+#prescreening_panel_main h5 {
+	color: white;
+	font-size: 32px;
+	border-bottom: 0px !important;
+	margin-bottom: 20px !important;
+}
+
+.screening_wrapper {
+	/*margin:155px 0px 0px 20px; */
+	margin: 0px auto;
+	padding-top: 50px;
+  width: 400px;  
+  text-align:center;
+}
+.screening_still {
+	/*margin:155px 0px 0px 20px; */
+	margin: 0px auto;
+	margin-top: 0px;
+  width: 400px; 
+  padding: 20px; 
+  background: #ffffff; 
+  text-align:center;
+}
+
+#screening_purchase {
+	position: absolute;
+	top: 0px;
+	left: 210px;
+	float: left;
+	width: 380px;
+	height: 550px;
+	overflow: hidden;
+}
+
+#screening_purchase table.step_one, #screening_purchase table.step_two  {
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	float: left;
+	width: 320px;
+	overflow: hidden;
+}
+
+#screening_purchase table.step_two {
+	left: 420px;
+}
+
+#in_progress {
+	position: absolute;
+	margin-left: 530px;
+	margin-top: -30px;	
+}
+
+.bandwidth_warning {
+	position: absolute;
+	left: 420px;
+	top: 45px;
+}
+
+.pre_image {
+	float: left;
+	width: 200px;
+}
+
+.pre_content {
+	float: left;
+	width: 400px;
+}
+
+.pre_by {
+	color: #D1CFD0;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.pre_host {
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	color: #72CCEE;
+	font-size: 24px;
+}
+
+.pre_info {
+	float: left;
+	color: #D1CFD0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.pre_director {
+	float: left;
+	color: #D1CFD0;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.pre_ticket {
+	color: #D0D0D0;
+	font-family: "helveticaneuelight", Helvetica, sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.pre_price  {
+	color: #27B206;
+}
+
+.pre_code {
+	margin-top: 10px;
+}
+
+.pre_pfl {
+	color: #D0D0D0;
+	font-size: 11px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.pre_pfl label {
+	font-weight: bold;
+}
+
+.pre_pfl input {
+	padding: 3px;
+	margin-top: 4px;
+}
+
+.pre_pfl select {
+	padding: 2px;
+}
+
+.pre_pfl ul {
+	margin-top: 4px;
+}
+
+.pre_pfl input, .pre_pfl select {
+	margin-top: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#fld-cc_exp_month {
+	width: 50px;
+}
+
+#fld-cc_exp_year {
+	width: 80px;
+}
+
+.prescreen_notice {
+	float: left;
+	margin-top: 20px;
+	width: 438px;
+	height: 69px;
+	background: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/prescreen_notice.png') no-repeat top left;
+	padding: 10px;
+	color: black;
+}
+
+.prescreen_purchase {
+	margin-top: 20px;
+	margin-left: 18px;
+	float: left;
+}
+
+.purchase_last {
+	margin-top: 2px;
+	float: left;
+}
+
+body.landing .footer {
+	float: left;
+	background: #000000 url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_bg.png') repeat-x top left;
+	
+}
+
+.bottomblock {
+	width: 100% important;
+	margin-right: 300px;
+	padding-top: 5px;
+	padding-left: 13px;
+	padding-right: 13px;
+}
+
+/*
+body.landing .footer {
+	float: left;
+	height: 122px !important;
+}
+
+.bottomblock {
+	width: 100% important;
+	height: 122px !important;
+	margin-right: 300px;
+	background: url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/chat_bg.png') repeat-x top left;
+	padding-top: 5px;
+	padding-left: 13px;
+	padding-right: 13px;
+}
+*/
+
+.countblock {
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 10px;
+	float: right;
+	color: white;
+	margin-right: 4px;
+	padding-top: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+.userblock {
+	position: absolute;
+	width: 550px;
+	height: 62px;
+	overflow: hidden;
+	margin-left: 20px;
+	margin-right: 40px;
+}
+
+#user_wrap_left {
+	position: absolute;
+	top: 21px;
+	width: 13px;
+	height: 30px;
+}
+
+.bottomblock #theater_icons {
+	position: absolute;
+	left: 0px;
+	width: 10000px;
+}
+
+.bottomblock .theater_icon {
+	float: left;
+	padding: 7px;
+	float: left;
+}
+
+#user_wrap_right {
+	position: absolute;
+	top: 21px;
+	right: 390px;
+	width: 13px;
+	height: 30px;
+}
+
+.userblock .theater_icon .color_node {
+	position: absolute;
+	top: 18px;
+	margin-left: -40px;
+}
+
+.userblock .theater_icon .color_node_small {
+	position: absolute;
+	top: 18px;
+	margin-left: -29px;
+	margin-top: 10px;
+}
+
+.colorblock {
+	position: absolute;
+	float: left;
+	top: 70px;
+}
+
+.colorblock .colorme {
+	font-family: "helveticaneue", Helvetica, sans-serif;
+	font-size: 10px;
+	float: left;
+	margin-top: 17px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	margin-right: 20px;
+}
+
+.colorblock .color_icon {
+	float: left;
+	margin-top: 5px;
+	margin-right: 20px;
+	width: 39px;
+	height: 34px;
+}
+
+.colorblock a .happy {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_happy.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .happy {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_happy.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.happy {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/happy_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .happy_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/happy_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.happy_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/happy_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .sad {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_sad.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .sad {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_sad.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.sad {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/sad_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .sad_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/sad_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.sad_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/sad_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .wow {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_wow.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .wow {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_wow.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.wow {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/wow_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .wow_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/wow_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.wow_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/wow_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .none {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_none.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .none {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_none.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.none {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/none_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .none_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/none_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.none_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/none_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .heart {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_heart.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .heart {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_heart.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.heart {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/heart_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .heart_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/heart_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.heart_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/heart_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}
+
+.colorblock a .quest {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_quest.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.colorblock a:hover .quest {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/icon_quest.png');
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+}
+
+#theater_icons div.quest {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/quest_bg.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#inbox .quest_med {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/quest_bg_med.png');
+	background-repeat: no-repeat;
+	background-position: -8px -8px;
+}
+
+#theater_icons div.quest_small {
+	background-image: url('https://s3.amazonaws.com/cdn.constellation.tv/dev/images/alt1/quest_bg_small.png');
+	background-repeat: no-repeat;
+	background-position: -7px -7px;
+}

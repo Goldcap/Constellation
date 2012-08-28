@@ -1,0 +1,171 @@
+visualc_library(name = "firefox_dll",
+  platform = "Win32",
+  project = "webdriver-firefox/webdriver-firefox.vcxproj",
+  file_deps = "third_party/gecko-2/win32",
+  out = "Win32/Release/webdriver-firefox.dll"
+)
+
+visualc_library(name = "firefox5_dll",
+  platform = "Win32",
+  project = "webdriver-firefox/webdriver-firefox-5.vcxproj",
+  file_deps = "third_party/gecko-5/win32",
+  out = "Win32/Release/webdriver-firefox-5.dll"
+)
+
+visualc_library(name = "firefox6_dll",
+  platform = "Win32",
+  project = "webdriver-firefox/webdriver-firefox-6.vcxproj",
+  file_deps = "third_party/gecko-6/win32",
+  out = "Win32/Release/webdriver-firefox-6.dll"
+)
+
+visualc_library(name = "firefox7_dll",
+  platform = "Win32",
+  project = "webdriver-firefox/webdriver-firefox-7.vcxproj",
+  file_deps = "third_party/gecko-7/win32",
+  out = "Win32/Release/webdriver-firefox-7.dll"
+)
+
+
+mozilla_xpt(name = "native_events_xpt",
+  srcs = [ "webdriver-firefox/nsINativeEvents.idl" ])
+
+mozilla_lib(name = "webdriver_firefox_ff3",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "i386",
+  args = "-DGECKO_19_COMPATIBILITY",
+  xpcom_lib = "xpcomglue_s",
+  geckoversion="1.9.2")
+
+mozilla_lib(name = "webdriver_firefox_ff4",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "i386",
+  geckoversion="2")
+
+mozilla_lib(name = "webdriver_firefox_ff4_64",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "amd64",
+  geckoversion="2")
+
+mozilla_lib(name = "webdriver_firefox_ff5",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "i386",
+  geckoversion="5")
+
+mozilla_lib(name = "webdriver_firefox_ff5_64",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "amd64",
+  geckoversion="5")
+
+mozilla_lib(name = "webdriver_firefox_ff6",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "i386",
+  geckoversion="6")
+
+mozilla_lib(name = "webdriver_firefox_ff6_64",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "amd64",
+  geckoversion="6")
+
+mozilla_lib(name = "webdriver_firefox_ff7",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "i386",
+  geckoversion="7")
+
+mozilla_lib(name = "webdriver_firefox_ff7_64",
+  srcs = [ "webdriver-interactions/*_linux*.cpp",
+    "webdriver-interactions/interactions_common.*",
+    "webdriver-firefox/*.cpp"],
+  arch = "amd64",
+  geckoversion="7")
+
+gcc_library(name = "noblur",
+  srcs = [ "linux-specific/*.c" ],
+  arch = "i386")
+
+gcc_library(name = "noblur64",
+  srcs = [ "linux-specific/*.c" ],
+  arch = "amd64")
+
+gcc_library(name = "imehandler",
+  srcs = [ "imehandler/linux/src/*.cpp" ],
+  args = "-rdynamic -I cpp/imehandler/common `pkg-config gtk+-2.0 ibus-1.0 --cflags`",
+  link_args = "`pkg-config gtk+-2.0 ibus-1.0 --libs`",
+  arch = "i386")
+
+gcc_library(name = "imehandler64",
+  srcs = [ "imehandler/linux/src/*.cpp" ],
+  args = "-rdynamic -I cpp/imehandler/common `pkg-config gtk+-2.0 ibus-1.0 --cflags`",
+  link_args = "`pkg-config gtk+-2.0 ibus-1.0 --libs`",
+  arch = "amd64")
+
+visualc_library(name = "imehandler_dll",
+  platform = "Win32",
+  project = "imehandler/imehandler.vcxproj",
+  out = "Win32/Release/imehandler.dll"
+)
+
+visualc_library(name = "ie_win32_dll",
+  deps = [
+    ":atoms",
+    ":ie_result_type_cpp",
+    ":sizzle"
+  ],
+  platform = "Win32",
+  project = "IEDriver/IEDriver.vcxproj",
+  out = "Win32/Release/IEDriver.dll"
+)
+
+visualc_library(name = "ie_x64_dll",
+  deps = [
+    ":atoms",
+    ":ie_result_type_cpp",
+    ":sizzle"
+  ],
+  platform = "x64",
+  project = "IEDriver/IEDriver.vcxproj",
+  out = "x64/Release/IEDriver.dll"
+)
+
+js_fragment_header(name = "atoms",
+  deps = [
+    "//javascript/webdriver-atoms:click:ie",
+    "//javascript/webdriver-atoms:clear:ie",
+    "//javascript/webdriver-atoms:find_element:ie",
+    "//javascript/webdriver-atoms:find_elements:ie",
+    "//javascript/webdriver-atoms:get_attribute:ie",
+    "//javascript/webdriver-atoms:get_effective_style:ie",
+    "//javascript/webdriver-atoms:get_location:ie",
+    "//javascript/webdriver-atoms:get_size:ie",
+    "//javascript/webdriver-atoms:get_text:ie",
+    "//javascript/webdriver-atoms:is_displayed:ie",
+    "//javascript/webdriver-atoms:is_enabled:ie",
+    "//javascript/webdriver-atoms:is_selected:ie",
+    "//javascript/webdriver-atoms:submit:ie"
+  ],
+  out = "cpp/IEDriver/Generated/atoms.h"
+)
+
+rake_task(name = "sizzle",
+  task_name = "sizzle_header",
+  out = "cpp/IEDriver/Generated/sizzle.h")
+
+rake_task(name = "ie_result_type_cpp",
+  task_name = "ie_result_type_cpp",
+  out = "cpp/IEDriver/Generated/IEReturnTypes.h")

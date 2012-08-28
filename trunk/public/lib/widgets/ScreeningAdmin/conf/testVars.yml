@@ -1,0 +1,52 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+  
+get:
+post:
+  screening_unique_key: textxyz123
+  screening_date: '2011-01-01'
+  screening_time: '00:00:00'
+  screening_default_timezone_id: "America/New_York"
+  screening_repeats: "No"
+  screening_repeat_count: 0
+  screening_repeat_start: ""
+  screening_repeat_interval: "" 
+  hostname: ""
+  fk_host_id: =user:getUserId
+  fk_film_id: 4
+  screening_has_qanda: 1
+  screening_live_webcam: 1
+  screening_description: "Test Screening Description"
+  screening_featured: 1
+  #screening_still_image:
+  screening_paid_status: 2
+  screening_total_seats: 200
+  screening_type: 2
+  screening_is_private: 1
+session:
+action:
+  styroaction: submit
+
+dbo:
+  screening: 
+    key: screening_id
+    vars:
+        getScreeningUniqueKey: =post:screening_unique_key
+        getScreeningDate: =post:screening_date
+        getScreeningTime: =post:screening_time
+        getScreeningDefaultTimezoneId: =post:screening_default_timezone_id
+        getFkHostId: =post:fk_host_id
+        getScreeningHasQanda: =post:screening_has_qanda
+        getScreeningLiveWebcam: =post:screening_live_webcam
+        getScreeningDescription: =post:screening_description
+        getScreeningFeatured: =post:screening_featured
+        #screening_still_image:
+        getScreeningPaidStatus: =post:screening_paid_status
+        getScreeningTotalSeats: =post:screening_total_seats
+        getScreeningType: =post:screening_type
+        getScreeningIsPrivate: =post:screening_is_private

@@ -1,0 +1,12 @@
+template: default
+layout: default
+title: Constellation | Social Movie Events | All Films
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    Event:
+  footer:
+    FooterAlt:

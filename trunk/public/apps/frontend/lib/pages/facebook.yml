@@ -1,0 +1,12 @@
+template: cst1
+layout: cst_facebook_alt
+title: Constellation | Your Online Movie Theater | Facebook Share
+css: [styroform_front.css, /css/buttons.css]
+javascripts: [purchase_alt.js]
+widgets:
+  masterhead:
+  main:
+    FacebookShare:
+  footer:
+  zzdiv:
+    GoogleAnalytics:

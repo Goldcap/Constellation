@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" version="3">
+  <includeClasses>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.BufferingBar"/>
+    <classEntry path="org.openvideoplayer.components.ui.posterframe.PosterFramePlayButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.spinner.SpinnerView"/>
+    <classEntry path="org.openvideoplayer.components.ui.spinner.Spinner"/>
+    <classEntry path="org.openvideoplayer.components.ui.captioning.CaptioningView"/>
+    <classEntry path="org.openvideoplayer.components.ui.ComponentType"/>
+    <classEntry path="org.openvideoplayer.components.ui.shared.view.LabelButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.shared.view.ScrollDownButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.shared.view.ScrollUpButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.MBRSwitchingToggleButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.playlist.event.PlayListEvent"/>
+    <classEntry path="org.openvideoplayer.components.ui.playlist.view.Thumbnail"/>
+    <classEntry path="org.openvideoplayer.components.ui.forms.view.InputForm"/>
+    <classEntry path="org.openvideoplayer.components.ui.forms.event.FormEvent"/>
+    <classEntry path="org.openvideoplayer.components.ui.forms.event.FormEventVO"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.FlexibleSpacer"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.icons.BaseIcon"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.SlowMotionForwardButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.FastForwardButton"/>
+    <classEntry path="org.openvideoplayer.components.ui.controlbar.view.icons.VerticalLineIcon"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

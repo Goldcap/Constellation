@@ -1,0 +1,23 @@
+/* CSS Document */
+body{font:12px helveticaneue, Helvetica, sans-serif; background:#000000 url("http://cdn.constellation.tv.s3-website-us-east-1.amazonaws.com/prod/images/sponsor/2/background_3.jpg") no-repeat center top !important; color:#9cf}
+
+.logo, .login  {
+  display: none;
+}
+
+#timer_panel {
+  margin-top: 10px !important; 
+}
+
+body.landing .column1 .timer {
+    font-size: 90px !important;
+}
+body.landing .column2 {
+  width: 500px !important;
+}
+
+body.landing .column2 .right {
+  width: 335px !important;
+}
+
+div.nosponsor {left:-9000px}

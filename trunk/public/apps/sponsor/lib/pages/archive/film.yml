@@ -1,0 +1,18 @@
+template: yui3
+layout: screening
+title: Constellation.tv
+javascripts: [/js/login.js,/js/videoplayer.js,/js/countdown.js,/js/history.js,/js/timezones.js]
+css: [/css/yui/reset-fonts-grids.css,/js/jquery/ui/themes/smoothness/jquery-ui-1.8.1.custom.css,/js/jquery/jquery.fancybox-1.3.1/fancybox/jquery.fancybox-1.3.1.css,/css/main.css]
+widgets:
+  hd:
+    Header:
+    LegacyBody:
+  col03:
+    FilmRightCol:
+  col02:
+    FilmView:
+  col04:
+    FilmLeftCol:
+  ft:
+    Footer:
+  zzdiv:

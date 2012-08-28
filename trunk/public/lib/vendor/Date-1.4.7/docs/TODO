@@ -1,0 +1,12 @@
+$Id: TODO,v 1.1 2006/11/21 05:40:20 firman Exp $
+
+TODO
+
+- Fix once the timezone problem
+- Once TZ works nicely, update the testunit_date and use
+  the real timezone and dct to check the expected time offset
+- Clean the test cases and atomic display instead of a global ok or failed
+- Write the docs....
+- More strict complaint againts ISO 8601
+- Complaint againts RFC 822 Date and Time Specification
+- Complaint againts ISO 3339

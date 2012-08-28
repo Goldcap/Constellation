@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/database/reverse/mssql
+END
+MssqlSchemaParser.php
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/database/reverse/mssql/MssqlSchemaParser.php
+END

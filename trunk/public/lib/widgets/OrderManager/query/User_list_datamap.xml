@@ -1,0 +1,29 @@
+<map table="user" result="User" allow_add="false">
+  <column column="user_nickname" name="Nickname" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_fname" name="Firstname" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="user_lname" name="Lastname" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="user_email" name="Email" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="user_id" name="ID" type="INTEGER" size="" key="PRI" order="1"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="user_id"></ascorderby>
+    <criteria column="object_type" value="user" type="AND" />
+    <criteria column="user_fname" scope="PROCESS" value="cart_search" type="OR" constant="pregroup_native" />
+    <criteria column="user_lname" scope="PROCESS" value="cart_search" type="OR" constant="native" />
+    <criteria column="user_name" scope="PROCESS" value="cart_search" type="OR" constant="native" />
+    <criteria column="user_email" scope="PROCESS" value="cart_search" constant="postgroup_native" />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>-->
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="15"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="ID" base="/cart/setuser/">
+      <attribute name="ID"></attribute>
+    </maplink>
+  </maplinks>
+</map>

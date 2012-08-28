@@ -1,0 +1,21 @@
+#! /bin/sh
+# /etc/init.d/activemq
+#
+
+# Some things that run always
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Mounting Elastic Block Store Volumes."
+    /root/mount_ebs_volume.py mount vol-3026c359 /dev/sdh ext2 /mnt/ebsvol0
+    ;;
+
+  stop)
+    echo "Unmounting Elastic Block Store Volumes."
+    /root/mount_ebs_volume.py unmount vol-3026c359 /dev/sdh ext2 /mnt/ebsvol0
+    ;;
+esac
+
+exit 0
+

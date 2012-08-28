@@ -1,0 +1,190 @@
+/* browser reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; font:inherit; vertical-align:baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+ol, ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+:focus { outline:none; } 
+ins { text-decoration:none; }
+del { text-decoration:line-through; }
+table { border-collapse:collapse; border-spacing:0; }
+
+body
+{
+	background:url(../i/bg.jpg) top no-repeat fixed;
+    font-family:Arial, sans-serif;
+}
+
+#container
+{
+	width:910px;
+	margin:0 auto;
+}
+
+#header
+{
+	margin:0 auto;
+	width:910px;
+	height:179px;
+}
+
+img{border:none;}
+
+/* ------------------- manufacturers -------------------- */
+
+#mfrList
+{
+	width:200px;
+	/*border:1px solid black;*/
+	float:left;
+}
+
+#mfrs li
+{
+	font-size:14px;
+	list-style-type:none;
+	padding-bottom:10px;
+}
+
+#aepContent
+{
+	width:650px;
+	height:400px;
+	float:right;
+	/*border:1px solid black;*/
+}
+
+#aepLogo{
+	margin-left:272px;
+	border:none;
+}
+
+#aepContent a{text-decoration:none;}
+
+#aepContent p{padding-left:10px;}
+
+.mfrNav li{
+	display:inline;
+	margin-left:60px;
+}
+
+.sectionTitles{
+	color:#000;
+	text-transform:uppercase;
+	font-size:16px;
+	font-weight:bold;
+	padding-left:10px;
+}
+
+#aepVid{
+	width:400px;
+	height:300px;
+	border:2px solid #000;
+	margin-left:85px;
+	margin-bottom:20px;
+	opacity:1;
+}
+
+#accordion li {list-style-type:none;}
+
+#accordion a 
+{
+	padding:0 10px;
+	font:bold 15px/30px 'Arial', 'sans-serif';
+	color:#036;
+	text-decoration:none;
+}
+
+.faqAnswers
+{
+	background:#036;
+	padding:10px;
+	color:#eee;
+	font:15px Arial;
+}
+
+/* --------------------- boxes ------------------- */
+
+.littleBoxes{
+    width:910px;
+    height:560px;
+    margin:0 auto;
+    position:relative;
+	/*border:1px solid black;*/
+}
+.littleBoxes > div{
+    position:absolute;
+    width:130px;
+    height:80px;
+    text-align:center;
+    /*border:2px solid white;*/
+    overflow:hidden;
+    /*background-color:#f7f7f7;*/
+    /*-moz-box-shadow:0px 0px 3px #555;
+    -webkit-box-shadow:0px 0px 3px #555;
+    box-shadow:0px 0px 3px #555;*/
+    background-position:center center;
+    z-index:999;
+}
+
+.nav{
+    text-transform:uppercase;
+    font-size: 15px;
+    letter-spacing:-1px;
+    display:block;
+    line-height:90px;
+    text-decoration:none;
+    color:#000;
+	/*background:#91EF4A url(../bgItem.png) repeat-x top left;*/
+    text-indent:-9999px;
+    outline:none;
+    text-shadow:1px 1px 1px #888;
+    -moz-box-shadow:1px 1px 3px #777;
+    -webkit-box-shadow:1px 1px 3px #777;
+    box-shadow:1px 1px 3px #777;
+}
+
+.littleBoxes div.boxcontent{
+    width:866px;
+    height:1300px;
+    text-align:left;
+    padding:10px;
+    font-size:16px;
+    background-color:#f0f0f0;
+    border:2px solid #fff;
+    margin:10px 0px 0px 10px;
+    /*text-shadow:1px 1px 1px #fff;*/
+    -moz-box-shadow:1px 1px 3px #777;
+    -webkit-box-shadow:1px 1px 3px #777;
+    box-shadow:1px 1px 3px #777;
+    /*opacity:0.9;*/
+    display:none;
+}
+
+/* --------------- puzzle piece backgrounds ----------------- */
+
+.bg5, .mfrBg, .mediaBg, .aboutBg, .toolsBg, .contactBg {background-repeat:no-repeat;}
+
+.bg5 {background-image:url(../i/pfm-bg.jpg);}
+
+.mfrBg {background-image:url(../i/mfr-on.jpg);}
+
+.mediaBg {background-image:url(../i/media-on.jpg);}
+
+.aboutBg {background-image:url(../i/about-on.jpg);}
+
+.toolsBg {background-image:url(../i/tools-on.jpg);}
+
+.contactBg {background-image:url(../i/contact-on.jpg);}

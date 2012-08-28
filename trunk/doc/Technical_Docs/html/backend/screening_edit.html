@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/backend/screeningEdit.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript" src="/js/backend/jquery.inputlimiter.1.2.1.min.js"></script>
+<script type="text/javascript" src="/js/frontend/setup.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+
+    	<div id="header">
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+		</div>
+		
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li  class="active" >
+				<b class="rtop">
+
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/screening.html">List Screenings</a></div>
+					<div class="item"><a href="/backend/screening_add.html">Add Screening</a></div>
+					<div class="item-no-border"><a href="#">Add Test (private) Screening</a></div>
+
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+			Logout
+		</a>
+	</div>
+</div><div id="main">
+<div class="profile-basic-info" style="overflow: hidden;">
+	<div class="title">
+		<h2>Add/Edit a Screening</h2>
+
+	</div>
+		<form action="/backend/screeningManagement/update" method="POST" id="add-user-form" enctype="multipart/form-data"> 
+						<div class="formfield">
+					<label for="host_url">Host Access URL:</label>
+			        <input id="host_url" readonly value="http://www.constellation.tv/screening-room.php/join/brNPITYXe0z8hmI/yRV8JM" />
+				</div>
+				<input type="hidden" name="screening[id]" id="screening_id" value="1" />
+		
+		<div class="formfield" id="generate-seats" style="display: none;">
+			<a href="/backend/screeningManagement/addSeats" id="screening-add-seats">Add 10 seat URL's</a>
+
+					</div>
+		<div class="formfield">
+			<label for="screening[film]">Film:</label>
+			<select name="screening[film]">
+										<option value="3" >2012: Time for Change</option>
+										<option value="7" >ANVIL</option>
+										<option value="14" >Archangel</option>
+
+										<option value="2" >Earth Made of Glass</option>
+										<option value="6" >In Her Shoes</option>
+										<option value="17" >In Her Shoes</option>
+										<option value="8" >JOAN RIVERS, A PIECE OF WORK</option>
+										<option value="15" selected>Living in Emergency</option>
+										<option value="5" >Racing Dreams</option>
+
+										<option value="9" >RESTREPO</option>
+										<option value="16" >Sin By Silence</option>
+										<option value="18" >Test Movie</option>
+										<option value="4" >The Lottery</option>
+										<option value="10" >WAITING FOR SUPERMAN</option>
+										<option value="11" >WE LIVE IN PUBLIC</option>
+
+							</select>
+		</div>
+		<div class="formfield">
+			<label for="screening[type]">Type:</label>
+			<select name="screening[type]" id="screening_type">
+										<option value="0" >Public</option>
+										<option value="1" selected>Public - Hosted</option>
+
+										<option value="2" >Private (self hosted & invite only)</option>
+							</select>
+		</div>
+		
+		<div class="formfield">
+			<label for="screening[date]">Date:</label>
+	        <input id="screening-date" name="screening[date]" class="text" type="text" value="2010-09-17"/>
+	        <a id="screening-date-picker" class="calendar" href=""><img src="/images/icon-calendar.png" alt="calendar chooser" width="24" height="23" /></a>		
+		</div>
+
+		<div class="formfield">
+			<label for="screening[time]">Time:</label>
+			<select id="screening-time" name="screening[time]">
+	        	 
+						<option value="12:00" >12:00</option>
+				 
+						<option value="12:15" >12:15</option>
+				 
+						<option value="12:30" >12:30</option>
+				 
+						<option value="12:45" >12:45</option>
+
+				 
+						<option value="01:00" >01:00</option>
+				 
+						<option value="01:15" >01:15</option>
+				 
+						<option value="01:30" >01:30</option>
+				 
+						<option value="01:45" >01:45</option>
+				 
+						<option value="02:00" >02:00</option>
+				 
+						<option value="02:15" >02:15</option>
+
+				 
+						<option value="02:30" >02:30</option>
+				 
+						<option value="02:45" >02:45</option>
+				 
+						<option value="03:00" >03:00</option>
+				 
+						<option value="03:15" >03:15</option>
+				 
+						<option value="03:30" >03:30</option>
+				 
+						<option value="03:45" >03:45</option>
+
+				 
+						<option value="04:00" >04:00</option>
+				 
+						<option value="04:15" >04:15</option>
+				 
+						<option value="04:30" >04:30</option>
+				 
+						<option value="04:45" >04:45</option>
+				 
+						<option value="05:00" >05:00</option>
+				 
+						<option value="05:15" >05:15</option>
+
+				 
+						<option value="05:30" >05:30</option>
+				 
+						<option value="05:45" >05:45</option>
+				 
+						<option value="06:00" >06:00</option>
+				 
+						<option value="06:15" >06:15</option>
+				 
+						<option value="06:30" >06:30</option>
+				 
+						<option value="06:45" >06:45</option>
+
+				 
+						<option value="07:00" >07:00</option>
+				 
+						<option value="07:15" >07:15</option>
+				 
+						<option value="07:30" >07:30</option>
+				 
+						<option value="07:45" >07:45</option>
+				 
+						<option value="08:00" selected>08:00</option>
+				 
+						<option value="08:15" >08:15</option>
+
+				 
+						<option value="08:30" >08:30</option>
+				 
+						<option value="08:45" >08:45</option>
+				 
+						<option value="09:00" >09:00</option>
+				 
+						<option value="09:15" >09:15</option>
+				 
+						<option value="09:30" >09:30</option>
+				 
+						<option value="09:45" >09:45</option>
+
+				 
+						<option value="10:00" >10:00</option>
+				 
+						<option value="10:15" >10:15</option>
+				 
+						<option value="10:30" >10:30</option>
+				 
+						<option value="10:45" >10:45</option>
+				 
+						<option value="11:00" >11:00</option>
+				 
+						<option value="11:15" >11:15</option>
+
+				 
+						<option value="11:30" >11:30</option>
+				 
+						<option value="11:45" >11:45</option>
+					        </select>
+	        <p class="timezone-abbreviation">EDT</p>
+			<div class="meridian-first">
+				<label>AM</label><input type="radio" name="screening[time_ampm]" value="AM"  />
+	        </div>
+
+	        <div class="meridian">
+	        	<label>PM</label><input type="radio" name="screening[time_ampm]" value="PM" checked />
+			</div>
+				        	
+		</div>		
+				<div class="formfield" name="public-hosted-field">
+			<label for="screening[host]">Host:</label>
+	        <select id="screening-host" name="screening[host]">
+	        						<option value="1" > </option>
+
+										<option value="480" >James Lawler</option>
+										<option value="525" >Reid Carolin</option>
+										<option value="703" selected>Mark Hopkins</option>
+										<option value="714" >Karolina Babczynska</option>
+										<option value="715" >Madeleine Sackler</option>
+										<option value="716" >Olivia Klaus</option>
+
+										<option value="754" >LaQuishe Wright</option>
+										<option value="761" >Michael Wille</option>
+										<option value="1012" >Nick Lawson</option>
+										<option value="1026" >kimberlee Adams</option>
+										<option value="1031" >Raphael</option>
+										<option value="1034" >Jonathan</option>
+
+										<option value="1039" >jonathan</option>
+										<option value="1040" >Lucille Adler</option>
+										<option value="1057" >Irene</option>
+										<option value="1064" >JPEOPLES</option>
+										<option value="1066" >Sarah Leeper</option>
+										<option value="1074" >Melissa</option>
+
+										<option value="1075" >Matt</option>
+										<option value="1077" >Anna</option>
+										<option value="1096" >Jean</option>
+										<option value="1120" >kerry</option>
+										<option value="1122" >Jen</option>
+										<option value="1135" >Jessica Antonel</option>
+
+										<option value="1144" >Julianne Brauer</option>
+										<option value="1149" >susan stickels</option>
+										<option value="1160" >Dr joe bice-jones</option>
+										<option value="1171" >NOBERT</option>
+										<option value="1174" >Mar</option>
+										<option value="1188" >James Thompson</option>
+
+										<option value="1203" >nwelch4389</option>
+										<option value="1221" >Florenda</option>
+										<option value="1228" >James</option>
+										<option value="1239" >Nicholas</option>
+										<option value="1270" >liz</option>
+										<option value="1289" >Jane Watts</option>
+
+										<option value="1290" >Eric</option>
+										<option value="1332" >abed</option>
+										<option value="1336" >Petra  Hahn</option>
+										<option value="1343" >Fernando Pena</option>
+										<option value="1349" >Jan</option>
+										<option value="1350" >Noreen</option>
+
+										<option value="1365" >Paula Francom</option>
+										<option value="1371" >Constellation Support</option>
+										<option value="1377" >Constellation</option>
+										<option value="1379" >Samar Mehta</option>
+										<option value="1416" >laura</option>
+										<option value="1435" >Sima</option>
+
+										<option value="1436" >bill buttrick</option>
+										<option value="1446" >Brenda Clubine</option>
+										<option value="1447" >CPEDV</option>
+										<option value="1451" >Robin Lange</option>
+										<option value="1454" >Kstan</option>
+										<option value="1458" >Annie</option>
+
+										<option value="1495" >Yanne</option>
+										<option value="1496" >Lyn Twyman</option>
+										<option value="1503" >Anna</option>
+										<option value="1516" >Kelly Conrad</option>
+										<option value="1519" >Jessi</option>
+										<option value="1538" >Ann-Caryn Cleveland</option>
+
+										<option value="1542" >Deborah King</option>
+										<option value="1558" >arthur</option>
+										<option value="1575" >SHAKEERAH ABDUL AL SABUUR</option>
+										<option value="1586" >Marc Levin</option>
+										<option value="1588" >Taneisha Anglin</option>
+										<option value="1611" >Diana Yu</option>
+
+										<option value="1635" >John Cantrell</option>
+										<option value="1639" >eliz</option>
+										<option value="1640" >Kaija Jones</option>
+										<option value="1712" >Matt Stone</option>
+										<option value="1713" >Fletcher Munksgard</option>
+										<option value="1714" >Tricia</option>
+
+										<option value="1718" >Omar</option>
+										<option value="1725" >calyx</option>
+										<option value="1728" >KANDE</option>
+										<option value="1745" >Christy</option>
+										<option value="1748" >Kim</option>
+										<option value="1767" >Kathleen Krenek</option>
+
+										<option value="1849" >Micah</option>
+										<option value="1850" >James Eowan</option>
+										<option value="1851" >Andrew</option>
+										<option value="1855" >Cynthia Pasquale</option>
+										<option value="1860" >Larissa Tabin</option>
+										<option value="1869" >Antonina Che</option>
+
+										<option value="1884" >Marissa</option>
+										<option value="1907" >Maria Turner</option>
+										<option value="1915" >Eliza</option>
+										<option value="1935" >cat</option>
+										<option value="1987" >Kami</option>
+										<option value="2022" >Vanessa</option>
+
+										<option value="2024" >Katherine Montler</option>
+										<option value="2028" >Chris</option>
+										<option value="2032" >Jeff Kinyon</option>
+										<option value="2040" >Mathieu</option>
+										<option value="2057" >August Natalie</option>
+										<option value="2080" >Karen Stine</option>
+
+										<option value="2083" >shannon wong</option>
+										<option value="2121" >Callie </option>
+										<option value="2137" >Anne marie Dolan</option>
+										<option value="2139" >Helen</option>
+										<option value="2157" >Vibin Parakkattu</option>
+										<option value="2176" >petra</option>
+
+										<option value="2183" >Peter</option>
+										<option value="2189" >Robert Cortegiano</option>
+										<option value="2202" >B Klimkova</option>
+										<option value="2203" >Aaron Markiewitz</option>
+										<option value="2214" >anne</option>
+										<option value="2262" >gillian</option>
+
+										<option value="2263" >Wendy Lee</option>
+										<option value="2266" >Rod Evans</option>
+										<option value="2267" >Shaun Larson</option>
+										<option value="2268" >Vitaliy</option>
+										<option value="2273" >Amy Bakari</option>
+										<option value="2305" >Rachel Field</option>
+
+										<option value="2315" >Ruth</option>
+										<option value="2326" >emma</option>
+										<option value="2332" >Sidney</option>
+										<option value="2337" >J.D. Barnes </option>
+										<option value="2339" >Andrew</option>
+										<option value="2340" >rri</option>
+
+										<option value="2341" >jana</option>
+										<option value="2395" >Donna Jokinen</option>
+										<option value="2402" >Lauren  Pluchino</option>
+										<option value="2405" >Virgil Nilson</option>
+										<option value="2413" >Becca Taylor</option>
+										<option value="2425" >Felipe</option>
+
+										<option value="2426" >Grant</option>
+										<option value="2427" >CHRISTINA PSARRA</option>
+										<option value="2435" >Unni</option>
+										<option value="2442" >Edan</option>
+										<option value="2450" >Eleanor</option>
+										<option value="2453" >Henry Kao</option>
+
+										<option value="2477" >Amanda</option>
+										<option value="2480" >Tony</option>
+										<option value="2482" >Lesley</option>
+										<option value="2483" >Lauren Young</option>
+										<option value="2484" >dana</option>
+										<option value="2485" >Joy Wagner</option>
+
+										<option value="2486" >Hillary</option>
+										<option value="2487" >Jeffrey Stearns</option>
+										<option value="2488" >Nishank Bhalla</option>
+										<option value="2489" >simon</option>
+										<option value="2496" >pussyfingers</option>
+										<option value="2497" >Alexandra Chevalier</option>
+
+										<option value="2514" >Michael Steng</option>
+										<option value="2526" >Hong Nguyen</option>
+										<option value="2527" >Zack</option>
+										<option value="2529" >philip cohen</option>
+										<option value="2530" >Arturo Cardounel</option>
+										<option value="2532" >Jacob Jackson</option>
+
+										<option value="2533" >Ibrahim</option>
+										<option value="2534" >Kevin Fryatt</option>
+										<option value="2535" >Natalia</option>
+										<option value="2536" >Trey McMenamin</option>
+										<option value="2537" >Yap El Fuon</option>
+										<option value="2538" >julie</option>
+
+										<option value="2539" >Alex</option>
+										<option value="2562" >Kari</option>
+										<option value="2563" >Natascha Schiel</option>
+					        </select>
+		</div>
+		<div class="formfield" name="public-hosted-field">
+			<label for="screening[description]">Host Description:</label>
+
+			<textarea name="screening[description]" id="screening-description">Join director Mark Hopkins at a screening of Living in Emergency.</textarea>
+		</div>
+		<div class="formfield" name="public-hosted-field">
+			<label>Featured: </label>
+			<div class="featured-no">
+				<label>No</label><input type="radio" name="screening[featured]" value="0"  />
+			</div>
+
+			<div class="featured-yes">
+				<label>Yes</label><input type="radio" name="screening[featured]" value="1" checked />
+			</div>
+		</div>	
+		<div class="formfield">
+			<label for="screening[total_seats]">Max Number of Attendees :</label>
+			<input type="text" name="screening[total_seats]" id="screening-total-seats" value="100" />
+		</div>
+
+		 
+
+		<input type="submit" value="Save" />
+	</form>
+</div>	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#screening-add-seats').click(function(e) {
+			window.location = $(this).attr('href') + '?screeningId=' + $('#screening_id').val();
+			
+			return false;
+		});
+	});
+</script></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>
+

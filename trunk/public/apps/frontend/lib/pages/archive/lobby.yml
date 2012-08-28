@@ -1,0 +1,13 @@
+template: yui2
+layout: theater
+title: Constellation.tv Theater
+javascripts: [/js/activity.js,/js/adminmessage.js]
+css: [/css/main.css,/css/theater.css,/css/theater_side.css]
+widgets:
+  col02:
+    Lobby:
+  col04:
+    LobbySidebar:
+  ft:
+    LobbyToolbar:
+  zzdiv:

@@ -1,0 +1,2053 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Styroform Form Generator » \XMLForm</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Styroform Form Generator</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#ErrorElementMod" title="ErrorElementMod :: Mark a specific form element as having an error."><span class="description">Mark a specific form element as having an error.</span><pre>ErrorElementMod()</pre></a></li>
+<li class="method public "><a href="#ErrorMod" title='ErrorMod :: Add the global "errors" element group to the Form XML Object
+and place any session "errors" into the group as separate elements.'><span class="description">Add the global "errors" element group to the Form XML Object
+and place any session "errors" into the group as separate elements.</span><pre>ErrorMod()</pre></a></li>
+<li class="method public "><a href="#ErrorNoticeMod" title='ErrorNoticeMod :: Set the "errornotice" form element to visible.'><span class="description">Set the "errornotice" form element to visible.</span><pre>ErrorNoticeMod()</pre></a></li>
+<li class="method public "><a href="#SessionMod" title="SessionMod :: Add appropriate session variables to the Form Object"><span class="description">Add appropriate session variables to the Form Object</span><pre>SessionMod()</pre></a></li>
+<li class="method public "><a href="#__construct" title="__construct :: Form Constructor, determines the Formset and other globals using the $formsettings or from the formconf.php file,
+which is discovered using the conf as it's location."><span class="description">Form Constructor, determines the Formset and other globals using the $formsettings or from the formconf.php file,
+which is discovered using the conf as it's location.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#_debug" title="_debug :: Dumps the current document into an XML Output"><span class="description">Dumps the current document into an XML Output</span><pre>_debug()</pre></a></li>
+<li class="method public "><a href="#addContainer" title='addContainer :: Adds form elements to the "container" form element group. Elements come from
+the "container" array.'><span class="description">Adds form elements to the "container" form element group. Elements come from
+the "container" array.</span><pre>addContainer()</pre></a></li>
+<li class="method public "><a href="#addError" title="addError :: Adds an element to the error array stored in Session"><span class="description">Adds an element to the error array stored in Session</span><pre>addError()</pre></a></li>
+<li class="method public "><a href="#addItem" title="addItem :: Adds a multidemensional array of values to the form."><span class="description">Adds a multidemensional array of values to the form.</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#addList" title="addList :: Styroform can display a list of data, for CRUD type operations."><span class="description">Styroform can display a list of data, for CRUD type operations.</span><pre>addList()</pre></a></li>
+<li class="method public "><a href="#addOther" title='addOther :: Add an "Other" item to an auto-generated select list, and append to a specific
+point in that option list.'><span class="description">Add an "Other" item to an auto-generated select list, and append to a specific
+point in that option list.</span><pre>addOther()</pre></a></li>
+<li class="method public "><a href="#addSig" title='addSig :: Adds an HMAC Signature to the form if the "signature" form element group exists.'><span class="description">Adds an HMAC Signature to the form if the "signature" form element group exists.</span><pre>addSig()</pre></a></li>
+<li class="method public "><a href="#addStyroformAttribute" title="addStyroformAttribute :: As the name suggests, adds an attribute to a specific form element."><span class="description">As the name suggests, adds an attribute to a specific form element.</span><pre>addStyroformAttribute()</pre></a></li>
+<li class="method public "><a href="#addStyroformDefault" title="addStyroformDefault :: Put a specific value in a form element, called most often from the addItem()
+method, but could be called independently."><span class="description">Put a specific value in a form element, called most often from the addItem()
+method, but could be called independently.</span><pre>addStyroformDefault()</pre></a></li>
+<li class="method public "><a href="#addStyroformElementGroup" title="addStyroformElementGroup :: Add an Element Group Form Element Container"><span class="description">Add an Element Group Form Element Container</span><pre>addStyroformElementGroup()</pre></a></li>
+<li class="method public "><a href="#addStyroformElements" title="addStyroformElements :: Adds a standard Form Element Group, with a child Form Element"><span class="description">Adds a standard Form Element Group, with a child Form Element</span><pre>addStyroformElements()</pre></a></li>
+<li class="method public "><a href="#addStyroformError" title="addStyroformError :: Forces an error into the Form, using the Form Validator"><span class="description">Forces an error into the Form, using the Form Validator</span><pre>addStyroformError()</pre></a></li>
+<li class="method public "><a href="#addStyroformValues" title="addStyroformValues :: Adds a set of Values to a form element, specifically select, radio, or checkbox"><span class="description">Adds a set of Values to a form element, specifically select, radio, or checkbox</span><pre>addStyroformValues()</pre></a></li>
+<li class="method public inherited"><a href="#array_insert" title="array_insert :: Adds an element to an array"><span class="description">Adds an element to an array</span><pre>array_insert()</pre></a></li>
+<li class="method public inherited"><a href="#checkCompound" title="checkCompound :: Determine if a form element is a compound element"><span class="description">Determine if a form element is a compound element</span><pre>checkCompound()</pre></a></li>
+<li class="method public "><a href="#createStyroformElement" title='createStyroformElement :: Adds a standard Form Element Group to a Form "Snippet", with a child Form Element'><span class="description">Adds a standard Form Element Group to a Form "Snippet", with a child Form Element</span><pre>createStyroformElement()</pre></a></li>
+<li class="method public "><a href="#drawForm" title="drawForm :: Main controller method, used to render a form into either XML or a string."><span class="description">Main controller method, used to render a form into either XML or a string.</span><pre>drawForm()</pre></a></li>
+<li class="method public "><a href="#generateOptions" title="generateOptions :: Builds server-side dynamic select lists from MySQL Tables or Arrays"><span class="description">Builds server-side dynamic select lists from MySQL Tables or Arrays</span><pre>generateOptions()</pre></a></li>
+<li class="method public "><a href="#getAction" title="getAction :: Get the action, which is equivalent to the user's click. Buttons and image clicks
+are transformed using this method. Reads through all post data looking for a submit."><span class="description">Get the action, which is equivalent to the user's click. Buttons and image clicks
+are transformed using this method. Reads through all post data looking for a submit.</span><pre>getAction()</pre></a></li>
+<li class="method public inherited"><a href="#getCompound" title="getCompound :: Return an array containing the parts for a compound element"><span class="description">Return an array containing the parts for a compound element</span><pre>getCompound()</pre></a></li>
+<li class="method public "><a href="#getFormMethod" title="getFormMethod :: Similar to getAction(), but only looks for specific keys, which is equivalent to the user's click."><span class="description">Similar to getAction(), but only looks for specific keys, which is equivalent to the user's click.</span><pre>getFormMethod()</pre></a></li>
+<li class="method public "><a href="#getMod" title="getMod :: Adds QueryString Variables to the form, appending if the form doesn't contain
+an appropriate formelement container."><span class="description">Adds QueryString Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.</span><pre>getMod()</pre></a></li>
+<li class="method public "><a href="#isListPosted" title="isListPosted :: Tests whether the form was posted or not from the CRUD List view. If a list
+has a form wrapper, elements in the list can contain checkboxes for multi-item deletion."><span class="description">Tests whether the form was posted or not from the CRUD List view. If a list
+has a form wrapper, elements in the list can contain checkboxes for multi-item deletion.</span><pre>isListPosted()</pre></a></li>
+<li class="method public "><a href="#isPage" title="isPage :: Boolean to test which page is currently active"><span class="description">Boolean to test which page is currently active</span><pre>isPage()</pre></a></li>
+<li class="method public "><a href="#isPosted" title="isPosted :: Tests whether the form was posted or not from a normal form view."><span class="description">Tests whether the form was posted or not from a normal form view.</span><pre>isPosted()</pre></a></li>
+<li class="method public "><a href="#loadFormXML" title="loadFormXML :: Creates the objXMLDoc from an XML Form, looking in the following order for,
+Widget Name/Doc, ROOTNODE (from another XML File)"><span class="description">Creates the objXMLDoc from an XML Form, looking in the following order for,
+Widget Name/Doc, ROOTNODE (from another XML File)</span><pre>loadFormXML()</pre></a></li>
+<li class="method public "><a href="#moveForm" title="moveForm :: Increments the current form, with an optional param to skip form validation."><span class="description">Increments the current form, with an optional param to skip form validation.</span><pre>moveForm()</pre></a></li>
+<li class="method public "><a href="#navMod" title="navMod :: Updates the form with the current page, and name"><span class="description">Updates the form with the current page, and name</span><pre>navMod()</pre></a></li>
+<li class="method public "><a href="#nullCheckRadio" title="nullCheckRadio :: Clears the preselected values of a CheckRadio Element"><span class="description">Clears the preselected values of a CheckRadio Element</span><pre>nullCheckRadio()</pre></a></li>
+<li class="method public "><a href="#postMod" title="postMod :: Adds POST Variables to the form, appending if the form doesn't contain
+an appropriate formelement container."><span class="description">Adds POST Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.</span><pre>postMod()</pre></a></li>
+<li class="method public "><a href="#registerArray" title="registerArray :: Adds an array to the form, for use in Select and CheckRadio elements"><span class="description">Adds an array to the form, for use in Select and CheckRadio elements</span><pre>registerArray()</pre></a></li>
+<li class="method public "><a href="#removeItem" title="removeItem :: Adds an element to the removal queue, using the name element from the form element"><span class="description">Adds an element to the removal queue, using the name element from the form element</span><pre>removeItem()</pre></a></li>
+<li class="method public "><a href="#removeStyroformElements" title="removeStyroformElements :: Deletes and element from the Form XML Object"><span class="description">Deletes and element from the Form XML Object</span><pre>removeStyroformElements()</pre></a></li>
+<li class="method public "><a href="#runMod" title="runMod :: Applies items in the mod array to the Form XML Object."><span class="description">Applies items in the mod array to the Form XML Object.</span><pre>runMod()</pre></a></li>
+<li class="method public "><a href="#setDefaultDates" title="setDefaultDates :: Sets the default value of datetime elements if no default data already exists."><span class="description">Sets the default value of datetime elements if no default data already exists.</span><pre>setDefaultDates()</pre></a></li>
+<li class="method public "><a href="#setErrorNotice" title="setErrorNotice :: Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"><span class="description">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</span><pre>setErrorNotice()</pre></a></li>
+<li class="method public "><a href="#setMod" title='setMod :: Pops a form element modification on the "mods" array, for later inclusion in the
+Form XML Object.'><span class="description">Pops a form element modification on the "mods" array, for later inclusion in the
+Form XML Object.</span><pre>setMod()</pre></a></li>
+<li class="method public "><a href="#setSessionVars" title="setSessionVars :: Serialize the Session Variable Configuration Document"><span class="description">Serialize the Session Variable Configuration Document</span><pre>setSessionVars()</pre></a></li>
+<li class="method public "><a href="#setVars" title='setVars :: Reads the Session Variable Configuration Document, and assigns them to an array
+The format of this file is below, and it should be located in a secure location along the php include path ("xml/StyroformSessionVars.xml").'><span class="description">Reads the Session Variable Configuration Document, and assigns them to an array
+The format of this file is below, and it should be located in a secure location along the php include path ("xml/StyroformSessionVars.xml").</span><pre>setVars()</pre></a></li>
+<li class="method public inherited"><a href="#sfDateTime" title="sfDateTime :: Create a datetime value from a compound form element."><span class="description">Create a datetime value from a compound form element.</span><pre>sfDateTime()</pre></a></li>
+<li class="method public inherited"><a href="#showXML" title="showXML :: Dumps the current document into an XML Output"><span class="description">Dumps the current document into an XML Output</span><pre>showXML()</pre></a></li>
+<li class="method public inherited"><a href="#stripQSPage" title='stripQSPage :: Remove the querystring variables "page" and "sort" from the URL'><span class="description">Remove the querystring variables "page" and "sort" from the URL</span><pre>stripQSPage()</pre></a></li>
+<li class="method public "><a href="#transformDocument" title="transformDocument :: Processes all the items in the process queue, in the order of ERROR, SELECT OPTS,
+POST, GET, SESSION, LIST, MODS, ITEM, HMAC, CONTAINER, DATES, then removes any items,
+and finally does an XSL Transformation if needed, and then returns either a string, or an XML Object"><span class="description">Processes all the items in the process queue, in the order of ERROR, SELECT OPTS,
+POST, GET, SESSION, LIST, MODS, ITEM, HMAC, CONTAINER, DATES, then removes any items,
+and finally does an XSL Transformation if needed, and then returns either a string, or an XML Object</span><pre>transformDocument()</pre></a></li>
+<li class="method public "><a href="#validateForm" title="validateForm :: Creates an XMLFormValidator, tests the form against the available Validators,
+and returns the results of the Validation."><span class="description">Creates an XMLFormValidator, tests the form against the available Validators,
+and returns the results of the Validation.</span><pre>validateForm()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24ROOTNODE" title="$ROOTNODE :: Optional XML Root Node Variable, for forms inside of existing xml schemas"><span class="description">Optional XML Root Node Variable, for forms inside of existing xml schemas</span><pre>$ROOTNODE</pre></a></li>
+<li class="property public "><a href="#%24addget_values" title="$addget_values :: Configuration variable read from current form, declaring whether to add HTTP GET variables to form as hidden variables"><span class="description">Configuration variable read from current form, declaring whether to add HTTP GET variables to form as hidden variables</span><pre>$addget_values</pre></a></li>
+<li class="property public "><a href="#%24addpost_values" title="$addpost_values :: Configuration variable read from current form, declaring whether to add HTTP POST variables to form as hidden variables"><span class="description">Configuration variable read from current form, declaring whether to add HTTP POST variables to form as hidden variables</span><pre>$addpost_values</pre></a></li>
+<li class="property public "><a href="#%24appenditem_values" title="$appenditem_values :: Configuration variable read from current form, declaring whether to force population of hidden values from an &quot;Item&quot;, even if the form element isn't already in the form"><span class="description">Configuration variable read from current form, declaring whether to force population of hidden values from an "Item", even if the form element isn't already in the form</span><pre>$appenditem_values</pre></a></li>
+<li class="property public "><a href="#%24assetlocation" title="$assetlocation :: Configuration variable declaring the base location of XML Assets"><span class="description">Configuration variable declaring the base location of XML Assets</span><pre>$assetlocation</pre></a></li>
+<li class="property public "><a href="#%24container" title="$container :: A generic array in which to place other form elements."><span class="description">A generic array in which to place other form elements.</span><pre>$container</pre></a></li>
+<li class="property public "><a href="#%24cookiename" title="$cookiename :: Status of the current XML Form Validation"><span class="description">Status of the current XML Form Validation</span><pre>$cookiename</pre></a></li>
+<li class="property public "><a href="#%24debug" title="$debug :: Puts execution in debug mode"><span class="description">Puts execution in debug mode</span><pre>$debug</pre></a></li>
+<li class="property public "><a href="#%24docArray" title="$docArray :: Array of XML Forms in an ordered FormSet"><span class="description">Array of XML Forms in an ordered FormSet</span><pre>$docArray</pre></a></li>
+<li class="property public "><a href="#%24dynarray" title='$dynarray :: An Array of "lookup" arrays for Select Lists to pull from, if not in XML or Database Lookup'><span class="description">An Array of "lookup" arrays for Select Lists to pull from, if not in XML or Database Lookup</span><pre>$dynarray</pre></a></li>
+<li class="property public "><a href="#%24formsettings" title="$formsettings :: Optional Array containing the name and XMLDocument List for the Formset, read generally from either $GLOBALS or from within the WTVR Module, if WTVR"><span class="description">Optional Array containing the name and XMLDocument List for the Formset, read generally from either $GLOBALS or from within the WTVR Module, if WTVR</span><pre>$formsettings</pre></a></li>
+<li class="property public "><a href="#%24isloaded" title="$isloaded :: Status of the current XML Form Document"><span class="description">Status of the current XML Form Document</span><pre>$isloaded</pre></a></li>
+<li class="property public "><a href="#%24isprocess_step" title="$isprocess_step :: Indicator for FormSet status, true means form is not at position 0 or end position"><span class="description">Indicator for FormSet status, true means form is not at position 0 or end position</span><pre>$isprocess_step</pre></a></li>
+<li class="property public "><a href="#%24isvalidated" title="$isvalidated :: Status of the current XML Form Validation"><span class="description">Status of the current XML Form Validation</span><pre>$isvalidated</pre></a></li>
+<li class="property public "><a href="#%24isxml" title="$isxml :: Configuration variable for XML Return Object"><span class="description">Configuration variable for XML Return Object</span><pre>$isxml</pre></a></li>
+<li class="property public "><a href="#%24item" title="$item :: 2-Dimensional Array for adding values to the Form
+The first element being the item name,
+the second being the value"><span class="description">2-Dimensional Array for adding values to the Form
+The first element being the item name,
+the second being the value</span><pre>$item</pre></a></li>
+<li class="property public "><a href="#%24item_forcehidden" title="$item_forcehidden :: Hidden Values that match form element names aren't added by default, this boolean will force that"><span class="description">Hidden Values that match form element names aren't added by default, this boolean will force that</span><pre>$item_forcehidden</pre></a></li>
+<li class="property public "><a href="#%24itemlist" title="$itemlist :: N-Dimensional Array for adding Lists to the XML Tree,
+used in CRUD operations."><span class="description">N-Dimensional Array for adding Lists to the XML Tree,
+used in CRUD operations.</span><pre>$itemlist</pre></a></li>
+<li class="property public "><a href="#%24items_to_remove" title="$items_to_remove :: An array of elements that should be removed from the XML Form Object"><span class="description">An array of elements that should be removed from the XML Form Object</span><pre>$items_to_remove</pre></a></li>
+<li class="property public "><a href="#%24mods" title="$mods :: Modifications to specific elements that are performed after the dom has been procesed."><span class="description">Modifications to specific elements that are performed after the dom has been procesed.</span><pre>$mods</pre></a></li>
+<li class="property public "><a href="#%24module" title="$module :: Configuration variable declaring the parent module name from within parent Framework"><span class="description">Configuration variable declaring the parent module name from within parent Framework</span><pre>$module</pre></a></li>
+<li class="property public "><a href="#%24name" title="$name :: Retains the name of the current form controlled by this object
+Allows for multiple form controllers on a specific page."><span class="description">Retains the name of the current form controlled by this object
+Allows for multiple form controllers on a specific page.</span><pre>$name</pre></a></li>
+<li class="property public "><a href="#%24objSessionDoc" title="$objSessionDoc :: Object container for the XML Session configuration"><span class="description">Object container for the XML Session configuration</span><pre>$objSessionDoc</pre></a></li>
+<li class="property public "><a href="#%24objValidateDoc" title="$objValidateDoc :: Object container for the XML Validators configuration"><span class="description">Object container for the XML Validators configuration</span><pre>$objValidateDoc</pre></a></li>
+<li class="property public "><a href="#%24objXMLDoc" title="$objXMLDoc :: Object container for the current Form, as an XML Object"><span class="description">Object container for the current Form, as an XML Object</span><pre>$objXMLDoc</pre></a></li>
+<li class="property public "><a href="#%24objXSLDoc" title="$objXSLDoc :: Object container for the current Form XSL Transformation Document"><span class="description">Object container for the current Form XSL Transformation Document</span><pre>$objXSLDoc</pre></a></li>
+<li class="property public "><a href="#%24omit_doctype" title="$omit_doctype :: Removes the doctype declaration from a returned XML Object"><span class="description">Removes the doctype declaration from a returned XML Object</span><pre>$omit_doctype</pre></a></li>
+<li class="property public "><a href="#%24page" title="$page :: Retains the number of the currently displayed form in the Formset
+Starts at zero"><span class="description">Retains the number of the currently displayed form in the Formset
+Starts at zero</span><pre>$page</pre></a></li>
+<li class="property public "><a href="#%24returnxml" title="$returnxml :: Flag to return transformed forms as XML Objects"><span class="description">Flag to return transformed forms as XML Objects</span><pre>$returnxml</pre></a></li>
+<li class="property public "><a href="#%24session_vars" title="$session_vars :: Array of Session variables that are allowed to translate
+to form variables, parsed from @link $objSessionDoc"><span class="description">Array of Session variables that are allowed to translate
+to form variables, parsed from @link $objSessionDoc</span><pre>$session_vars</pre></a></li>
+<li class="property public "><a href="#%24settimestamp" title="$settimestamp :: Append Timestamp to XML Form Objext"><span class="description">Append Timestamp to XML Form Objext</span><pre>$settimestamp</pre></a></li>
+<li class="property public "><a href="#%24showform" title="$showform :: Configuration variable read from current form, declaring whether to output the form as formelements or formvariables
+Not currently supported"><span class="description">Configuration variable read from current form, declaring whether to output the form as formelements or formvariables
+Not currently supported</span><pre>$showform</pre></a></li>
+<li class="property public "><a href="#%24skip_missing_post" title="$skip_missing_post :: List of elements to skip in validation from the Post Vars"><span class="description">List of elements to skip in validation from the Post Vars</span><pre>$skip_missing_post</pre></a></li>
+<li class="property public "><a href="#%24step" title="$step :: Determines the form page increment"><span class="description">Determines the form page increment</span><pre>$step</pre></a></li>
+<li class="property public "><a href="#%24styroform_result" title="$styroform_result :: Unclear what this is, deprecated"><span class="description">Unclear what this is, deprecated</span><pre>$styroform_result</pre></a></li>
+<li class="property public "><a href="#%24theCompounds" title="$theCompounds :: Object List of element types that require more than one form element, i.e. day/month/year (3)"><span class="description">Object List of element types that require more than one form element, i.e. day/month/year (3)</span><pre>$theCompounds</pre></a></li>
+<li class="property public "><a href="#%24theSessionDoc" title="$theSessionDoc :: File location of the XML Session configuration"><span class="description">File location of the XML Session configuration</span><pre>$theSessionDoc</pre></a></li>
+<li class="property public "><a href="#%24theXMLDoc" title="$theXMLDoc :: File location of the current XML Form"><span class="description">File location of the current XML Form</span><pre>$theXMLDoc</pre></a></li>
+<li class="property public "><a href="#%24theXSLDoc" title="$theXSLDoc :: File location of the current XSL Transformation Document"><span class="description">File location of the current XSL Transformation Document</span><pre>$theXSLDoc</pre></a></li>
+<li class="property public "><a href="#%24types_array" title="$types_array :: A list of element types that will have array options generated for them"><span class="description">A list of element types that will have array options generated for them</span><pre>$types_array</pre></a></li>
+<li class="property public "><a href="#%24validate_debug" title="$validate_debug :: Puts the validator in Debug mode"><span class="description">Puts the validator in Debug mode</span><pre>$validate_debug</pre></a></li>
+<li class="property public "><a href="#%24validated" title="$validated :: Control Variable
+allowing form controllers to explicitly state that the form
+is not validated. used for error generation"><span class="description">Control Variable
+allowing form controllers to explicitly state that the form
+is not validated. used for error generation</span><pre>$validated</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CXMLForm" id="\XMLForm"></a><div href="../classes/db_%5CXMLForm.html" class="element class">
+<p class="short_description">Responsible for controlling the form, drawing, calling the validator, adding "Items" and "ItemLists", and navigating through formsets.</p>
+<div class="details">
+<p class="long_description"></p>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="ErrorElementMod" id="ErrorElementMod"></a><div class="element clickable method public ErrorElementMod" data-toggle="collapse" data-target=".ErrorElementMod .collapse">
+<h2>Mark a specific form element as having an error.</h2>
+<pre>ErrorElementMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>ErrorElementMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="ErrorMod" id="ErrorMod"></a><div class="element clickable method public ErrorMod" data-toggle="collapse" data-target=".ErrorMod .collapse">
+<h2>Add the global "errors" element group to the Form XML Object
+and place any session "errors" into the group as separate elements.</h2>
+<pre>ErrorMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Also, rewinds the form to the previous page,
+as these errors stop the form from being successfully processed</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>ErrorMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="ErrorNoticeMod" id="ErrorNoticeMod"></a><div class="element clickable method public ErrorNoticeMod" data-toggle="collapse" data-target=".ErrorNoticeMod .collapse">
+<h2>Set the "errornotice" form element to visible.</h2>
+<pre>ErrorNoticeMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>ErrorNoticeMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="SessionMod" id="SessionMod"></a><div class="element clickable method public SessionMod" data-toggle="collapse" data-target=".SessionMod .collapse">
+<h2>Add appropriate session variables to the Form Object</h2>
+<pre>SessionMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>SessionMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Form Constructor, determines the Formset and other globals using the $formsettings or from the formconf.php file,
+which is discovered using the conf as it's location.</h2>
+<pre>__construct(array $formsettings, string $conf) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>constructor</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$formsettings</h4>
+<code>array</code><ul>
+<li>Array with both Formset, and XSL Doc</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Name of the WTVR Module, defaults to null</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="_debug" id="_debug"></a><div class="element clickable method public _debug" data-toggle="collapse" data-target="._debug .collapse">
+<h2>Dumps the current document into an XML Output</h2>
+<pre>_debug() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>_debug</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::_debug()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="addContainer" id="addContainer"></a><div class="element clickable method public addContainer" data-toggle="collapse" data-target=".addContainer .collapse">
+<h2>Adds form elements to the "container" form element group. Elements come from
+the "container" array.</h2>
+<pre>addContainer() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addContainer</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addError" id="addError"></a><div class="element clickable method public addError" data-toggle="collapse" data-target=".addError .collapse">
+<h2>Adds an element to the error array stored in Session</h2>
+<pre>addError(string $name, string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If the business process rules need to flag a specific field, use this
+to set the tuple, and it will be reflected in the XML.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addError</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Form Element Name</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><ul>
+<li>Display Message for Error</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addItem" id="addItem"></a><div class="element clickable method public addItem" data-toggle="collapse" data-target=".addItem .collapse">
+<h2>Adds a multidemensional array of values to the form.</h2>
+<pre>addItem() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Use this to populate the form values with data, viz:</p>
+
+<pre><code> XMLForm -> item["someformelement"] = "somevalue";
+
+vals["a"] = 1;
+vals["b"] = 2;
+XMLForm -> item = vals;
+</code></pre>
+
+<p>This will then run prior to XSL Transformation, and insert appropriate
+values to the appropriate form element.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addItem</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addList" id="addList"></a><div class="element clickable method public addList" data-toggle="collapse" data-target=".addList .collapse">
+<h2>Styroform can display a list of data, for CRUD type operations.</h2>
+<pre>addList() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Use this to add a list to the form, vis:</p>
+
+<pre><code>llistarray["attribs"] = array("attribname1"=>"attribvalue1","attribname2"=>"attribvalue2");
+listarray["items"][0] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][1] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][2] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][3] = array("name1"=>"value2","name2"=>"value2");
+XMLForm -> list = listarray;
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addList</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addOther" id="addOther"></a><div class="element clickable method public addOther" data-toggle="collapse" data-target=".addOther .collapse">
+<h2>Add an "Other" item to an auto-generated select list, and append to a specific
+point in that option list.</h2>
+<pre>addOther(string $nodevalue, array $values) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code> addOther("last|other",array("first"=>1,"second"=>2,"third"=>3));
+</code></pre>
+
+<p>This will result in a select list, [first, second, third, other]</p>
+
+<pre><code> addOther("0|other",array("first"=>1,"second"=>2,"third"=>3));
+</code></pre>
+
+<p>This will result in a select list, [other, first, second, third]</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addOther</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$nodevalue</h4>
+<code>string</code><ul>
+<li>The Value to be Added, (pos, value)</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><ul>
+<li>The Initial Select List</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addSig" id="addSig"></a><div class="element clickable method public addSig" data-toggle="collapse" data-target=".addSig .collapse">
+<h2>Adds an HMAC Signature to the form if the "signature" form element group exists.</h2>
+<pre>addSig() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>The HMAC Key uses MCRYPT TripleDES, and contains the form name, and a timestamp.</p></p></div></div>
+</div>
+<a name="addStyroformAttribute" id="addStyroformAttribute"></a><div class="element clickable method public addStyroformAttribute" data-toggle="collapse" data-target=".addStyroformAttribute .collapse">
+<h2>As the name suggests, adds an attribute to a specific form element.</h2>
+<pre>addStyroformAttribute(string $elementname, string $attribute, string $value, string $item) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Some form elements need "default", or "selected" attributes. Useful also for
+custom XSL Transformations.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformAttribute</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elementname</h4>
+<code>string</code><ul>
+<li>Name of Form Element</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$attribute</h4>
+<code>string</code><ul>
+<li>Name of Attribute</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Attribute</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$item</h4>
+<code>string</code><ul>
+<li>Subnode within the Element Group</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addStyroformDefault" id="addStyroformDefault"></a><div class="element clickable method public addStyroformDefault" data-toggle="collapse" data-target=".addStyroformDefault .collapse">
+<h2>Put a specific value in a form element, called most often from the addItem()
+method, but could be called independently.</h2>
+<pre>addStyroformDefault(string $elementname, mixed $value, string $atype) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Specific element types need specific types of defaults, i.e. a text element
+needs a string, a multi-select needs an array, a date needs a valid date.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformDefault</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elementname</h4>
+<code>string</code><ul>
+<li>Name for Form Element</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><ul>
+<li>Value of Element</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$atype</h4>
+<code>string</code><ul>
+<li>Deprecated</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addStyroformElementGroup" id="addStyroformElementGroup"></a><div class="element clickable method public addStyroformElementGroup" data-toggle="collapse" data-target=".addStyroformElementGroup .collapse">
+<h2>Add an Element Group Form Element Container</h2>
+<pre>addStyroformElementGroup(string $path, string $name, string $array, string $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformElementGroup</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>XPath for Element Group Placement</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name to put in "name" attrubute</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>string</code><ul>
+<li>Array of attributes for Group</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><ul>
+<li>ID to put in "id" attribute, optional</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addStyroformElements" id="addStyroformElements"></a><div class="element clickable method public addStyroformElements" data-toggle="collapse" data-target=".addStyroformElements .collapse">
+<h2>Adds a standard Form Element Group, with a child Form Element</h2>
+<pre>addStyroformElements(string $name, string $display, string $atype, string $default, string $aclass, string $vtip, string $required, string $displayclass, string $size, string $pos, string $attribs) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code>&ltFORMELEMENTGROUP&gt
+   &ltFORMELEMENT&gt
+     &ltNAME&gt&lt/NAME&gt
+     &ltDISPLAY&gt&lt/DISPLAY&gt
+     &ltTYPE&gt&lt/TYPE&gt
+     &ltDEFAULT&gt&lt/DEFAULT&gt
+     &ltCLASS&gt&lt/CLASS&gt
+     &ltVTIP&gt&lt/VTIP&gt
+     &ltREQUIRED&gt&lt/REQUIRED&gt
+     &ltDISPLAYCLASS&gt&lt/DISPLAYCLASS&gt
+     &ltSIZE&gt&lt/SIZE&gt
+  &lt/FORMELEMENT&gt
+&lt/FORMELEMENTGROUP&gt
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformElements</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$display</h4>
+<code>string</code><ul>
+<li>Display Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$atype</h4>
+<code>string</code><ul>
+<li>Type Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>string</code><ul>
+<li>Default Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$aclass</h4>
+<code>string</code><ul>
+<li>Class Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$vtip</h4>
+<code>string</code><ul>
+<li>Validation Type Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$required</h4>
+<code>string</code><ul>
+<li>Required Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$displayclass</h4>
+<code>string</code><ul>
+<li>Display Class Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>string</code><ul>
+<li>Size Subnode</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$pos</h4>
+<code>string</code><ul>
+<li>Name of the Element Group</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$attribs</h4>
+<code>string</code><ul>
+<li>Array of Attributes for the Element Group</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addStyroformError" id="addStyroformError"></a><div class="element clickable method public addStyroformError" data-toggle="collapse" data-target=".addStyroformError .collapse">
+<h2>Forces an error into the Form, using the Form Validator</h2>
+<pre>addStyroformError(string $elementname) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This passes the current Dynarray to the Validator</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformError</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elementname</h4>
+<code>string</code><ul>
+<li>Name of the Form Element</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="addStyroformValues" id="addStyroformValues"></a><div class="element clickable method public addStyroformValues" data-toggle="collapse" data-target=".addStyroformValues .collapse">
+<h2>Adds a set of Values to a form element, specifically select, radio, or checkbox</h2>
+<pre>addStyroformValues(string $name, array $values, boolean $group) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If group is specified, a VALUEGROUP element will be appended</p>
+
+<pre><code> values[0]["sel_key"] = "first";
+ values[0]["sel_value"] = "1";
+ values[1]["sel_key"] = "second";
+ values[1]["sel_value"] = "2";
+ XMLForm -> addStyroformValue("someelement",values,true);
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>addStyroformValues</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Element</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><ul>
+<li>Array of values, array("sel_key"=>"sel_value");</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>boolean</code><ul>
+<li>Add optional VALUEGROUP</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="array_insert" id="array_insert"></a><div class="element clickable method public array_insert" data-toggle="collapse" data-target=".array_insert .collapse">
+<h2>Adds an element to an array</h2>
+<pre>array_insert(array $array, int $position, array $elements) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>array_insert</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::array_insert()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$position</h4>
+<code>int</code>
+</div>
+<div class="subelement argument">
+<h4>$elements</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a name="checkCompound" id="checkCompound"></a><div class="element clickable method public checkCompound" data-toggle="collapse" data-target=".checkCompound .collapse">
+<h2>Determine if a form element is a compound element</h2>
+<pre>checkCompound(string $item) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>checkCompound</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::checkCompound()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$item</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="createStyroformElement" id="createStyroformElement"></a><div class="element clickable method public createStyroformElement" data-toggle="collapse" data-target=".createStyroformElement .collapse">
+<h2>Adds a standard Form Element Group to a Form "Snippet", with a child Form Element</h2>
+<pre>createStyroformElement(\xmlObj $source, array $array) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code>&ltFORMELEMENTGROUP&gt
+   &ltFORMELEMENT&gt
+     &ltNAME&gt&lt/NAME&gt
+     &ltDISPLAY&gt&lt/DISPLAY&gt
+     &ltTYPE&gt&lt/TYPE&gt
+     &ltDEFAULT&gt&lt/DEFAULT&gt
+     &ltCLASS&gt&lt/CLASS&gt
+     &ltVTIP&gt&lt/VTIP&gt
+     &ltREQUIRED&gt&lt/REQUIRED&gt
+     &ltDISPLAYCLASS&gt&lt/DISPLAYCLASS&gt
+     &ltSIZE&gt&lt/SIZE&gt
+  &lt/FORMELEMENT&gt
+&lt/FORMELEMENTGROUP&gt
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>createStyroformElement</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>\xmlObj</code><ul>
+<li>XML Document</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code><ul>
+<li>array(name,display,atype,default,aclass,vtip,required,displayclass,size)</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="drawForm" id="drawForm"></a><div class="element clickable method public drawForm" data-toggle="collapse" data-target=".drawForm .collapse">
+<h2>Main controller method, used to render a form into either XML or a string.</h2>
+<pre>drawForm() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>drawForm</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>(text/XML)</div>
+</div></div>
+</div>
+<a name="generateOptions" id="generateOptions"></a><div class="element clickable method public generateOptions" data-toggle="collapse" data-target=".generateOptions .collapse">
+<h2>Builds server-side dynamic select lists from MySQL Tables or Arrays</h2>
+<pre>generateOptions(string $type) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>GenerateOptions</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="getAction" id="getAction"></a><div class="element clickable method public getAction" data-toggle="collapse" data-target=".getAction .collapse">
+<h2>Get the action, which is equivalent to the user's click. Buttons and image clicks
+are transformed using this method. Reads through all post data looking for a submit.</h2>
+<pre>getAction() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method has been replaced by getFormMethod()</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>getAction</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getCompound" id="getCompound"></a><div class="element clickable method public getCompound" data-toggle="collapse" data-target=".getCompound .collapse">
+<h2>Return an array containing the parts for a compound element</h2>
+<pre>getCompound(string $item) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Parts are Name and Type</p></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getCompound</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::getCompound()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$item</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="getFormMethod" id="getFormMethod"></a><div class="element clickable method public getFormMethod" data-toggle="collapse" data-target=".getFormMethod .collapse">
+<h2>Similar to getAction(), but only looks for specific keys, which is equivalent to the user's click.</h2>
+<pre>getFormMethod() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Buttons and image clicks, are deduced using this method.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>getFormMethod</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getMod" id="getMod"></a><div class="element clickable method public getMod" data-toggle="collapse" data-target=".getMod .collapse">
+<h2>Adds QueryString Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.</h2>
+<pre>getMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>getMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isListPosted" id="isListPosted"></a><div class="element clickable method public isListPosted" data-toggle="collapse" data-target=".isListPosted .collapse">
+<h2>Tests whether the form was posted or not from the CRUD List view. If a list
+has a form wrapper, elements in the list can contain checkboxes for multi-item deletion.</h2>
+<pre>isListPosted(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>isListPosted</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>The Name of the For</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="isPage" id="isPage"></a><div class="element clickable method public isPage" data-toggle="collapse" data-target=".isPage .collapse">
+<h2>Boolean to test which page is currently active</h2>
+<pre>isPage(int $index) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>isPage</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>int</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="isPosted" id="isPosted"></a><div class="element clickable method public isPosted" data-toggle="collapse" data-target=".isPosted .collapse">
+<h2>Tests whether the form was posted or not from a normal form view.</h2>
+<pre>isPosted() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>isPosted</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="loadFormXML" id="loadFormXML"></a><div class="element clickable method public loadFormXML" data-toggle="collapse" data-target=".loadFormXML .collapse">
+<h2>Creates the objXMLDoc from an XML Form, looking in the following order for,
+Widget Name/Doc, ROOTNODE (from another XML File)</h2>
+<pre>loadFormXML() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>loadFormXML</td>
+</tr></table>
+</div></div>
+</div>
+<a name="moveForm" id="moveForm"></a><div class="element clickable method public moveForm" data-toggle="collapse" data-target=".moveForm .collapse">
+<h2>Increments the current form, with an optional param to skip form validation.</h2>
+<pre>moveForm(string $validate) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>moveForm</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$validate</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="navMod" id="navMod"></a><div class="element clickable method public navMod" data-toggle="collapse" data-target=".navMod .collapse">
+<h2>Updates the form with the current page, and name</h2>
+<pre>navMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="nullCheckRadio" id="nullCheckRadio"></a><div class="element clickable method public nullCheckRadio" data-toggle="collapse" data-target=".nullCheckRadio .collapse">
+<h2>Clears the preselected values of a CheckRadio Element</h2>
+<pre>nullCheckRadio() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>nullCheckRadio</td>
+</tr></table>
+</div></div>
+</div>
+<a name="postMod" id="postMod"></a><div class="element clickable method public postMod" data-toggle="collapse" data-target=".postMod .collapse">
+<h2>Adds POST Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.</h2>
+<pre>postMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>postMod</td>
+</tr></table>
+</div></div>
+</div>
+<a name="registerArray" id="registerArray"></a><div class="element clickable method public registerArray" data-toggle="collapse" data-target=".registerArray .collapse">
+<h2>Adds an array to the form, for use in Select and CheckRadio elements</h2>
+<pre>registerArray(string $name, array $array) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The array isn't a normal two-d array, make sure you use the following format:</p>
+
+<pre><code>$item[0]["sel_key"]="stinky";
+$item[0]["sel_value"]="stinky";
+$item[1]["sel_key"]="fish";
+$item[1]["sel_value"]="fish";
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>registerArray</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of the form element</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code><ul>
+<li>Array of names/values</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="removeItem" id="removeItem"></a><div class="element clickable method public removeItem" data-toggle="collapse" data-target=".removeItem .collapse">
+<h2>Adds an element to the removal queue, using the name element from the form element</h2>
+<pre>removeItem(string $name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>removeItem</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="removeStyroformElements" id="removeStyroformElements"></a><div class="element clickable method public removeStyroformElements" data-toggle="collapse" data-target=".removeStyroformElements .collapse">
+<h2>Deletes and element from the Form XML Object</h2>
+<pre>removeStyroformElements() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Uses the "items_to_remove" array to pull specific items from the Form.</p>
+
+<pre><code> XMLForm -> removeItem("someelementname");
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>removeStyroformElements</td>
+</tr></table>
+</div></div>
+</div>
+<a name="runMod" id="runMod"></a><div class="element clickable method public runMod" data-toggle="collapse" data-target=".runMod .collapse">
+<h2>Applies items in the mod array to the Form XML Object.</h2>
+<pre>runMod() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>Mods are of type "mod, del, hidegroup", but can be extended to have other functions</p></p></div></div>
+</div>
+<a name="setDefaultDates" id="setDefaultDates"></a><div class="element clickable method public setDefaultDates" data-toggle="collapse" data-target=".setDefaultDates .collapse">
+<h2>Sets the default value of datetime elements if no default data already exists.</h2>
+<pre>setDefaultDates() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>setDefaultDates</td>
+</tr></table>
+</div></div>
+</div>
+<a name="setErrorNotice" id="setErrorNotice"></a><div class="element clickable method public setErrorNotice" data-toggle="collapse" data-target=".setErrorNotice .collapse">
+<h2>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</h2>
+<pre>setErrorNotice(string $message) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+
+<pre><code> $fpo = something();
+ $fpo = something();
+ $fpo = something();
+ $fpo = something();
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>setErrorNotice</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setMod" id="setMod"></a><div class="element clickable method public setMod" data-toggle="collapse" data-target=".setMod .collapse">
+<h2>Pops a form element modification on the "mods" array, for later inclusion in the
+Form XML Object.</h2>
+<pre>setMod(string $nodename, string $modtype, string $modvalue, string $position, string $op) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$nodename</h4>
+<code>string</code><p>Name of FormElement (or Group)</p>
+</div>
+<div class="subelement argument">
+<h4>$modtype</h4>
+<code>string</code><p>string Type of FormElement</p></div>
+<div class="subelement argument">
+<h4>$modvalue</h4>
+<code>string</code><p>string New Node Value</p></div>
+<div class="subelement argument">
+<h4>$position</h4>
+<code>string</code><p>int Position relative to Base FOrm</p></div>
+<div class="subelement argument">
+<h4>$op</h4>
+<code>string</code><p>string Type of operation [mod|del|hidegroup]</p>
+</div>
+</div></div>
+</div>
+<a name="setSessionVars" id="setSessionVars"></a><div class="element clickable method public setSessionVars" data-toggle="collapse" data-target=".setSessionVars .collapse">
+<h2>Serialize the Session Variable Configuration Document</h2>
+<pre>setSessionVars() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>setSessionVars</td>
+</tr></table>
+</div></div>
+</div>
+<a name="setVars" id="setVars"></a><div class="element clickable method public setVars" data-toggle="collapse" data-target=".setVars .collapse">
+<h2>Reads the Session Variable Configuration Document, and assigns them to an array
+The format of this file is below, and it should be located in a secure location along the php include path ("xml/StyroformSessionVars.xml").</h2>
+<pre>setVars() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Any session variables named in this document will be added to the form by default.</p></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>setVars</td>
+</tr></table>
+</div></div>
+</div>
+<a name="sfDateTime" id="sfDateTime"></a><div class="element clickable method public sfDateTime" data-toggle="collapse" data-target=".sfDateTime .collapse">
+<h2>Create a datetime value from a compound form element.</h2>
+<pre>sfDateTime(string $elementname) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>sfDateTime</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::sfDateTime()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elementname</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="showXML" id="showXML"></a><div class="element clickable method public showXML" data-toggle="collapse" data-target=".showXML .collapse">
+<h2>Dumps the current document into an XML Output</h2>
+<pre>showXML() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>showXML</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::showXML()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="stripQSPage" id="stripQSPage"></a><div class="element clickable method public stripQSPage" data-toggle="collapse" data-target=".stripQSPage .collapse">
+<h2>Remove the querystring variables "page" and "sort" from the URL</h2>
+<pre>stripQSPage() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>stripQSPage</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\XMLFormUtils::stripQSPage()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="transformDocument" id="transformDocument"></a><div class="element clickable method public transformDocument" data-toggle="collapse" data-target=".transformDocument .collapse">
+<h2>Processes all the items in the process queue, in the order of ERROR, SELECT OPTS,
+POST, GET, SESSION, LIST, MODS, ITEM, HMAC, CONTAINER, DATES, then removes any items,
+and finally does an XSL Transformation if needed, and then returns either a string, or an XML Object</h2>
+<pre>transformDocument() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>transformDocument</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>(text/XML)</div>
+</div></div>
+</div>
+<a name="validateForm" id="validateForm"></a><div class="element clickable method public validateForm" data-toggle="collapse" data-target=".validateForm .collapse">
+<h2>Creates an XMLFormValidator, tests the form against the available Validators,
+and returns the results of the Validation.</h2>
+<pre>validateForm() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>validateForm</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24ROOTNODE" id="$ROOTNODE"> </a><div class="element clickable property public $ROOTNODE" data-toggle="collapse" data-target=".$ROOTNODE .collapse">
+<h2>Optional XML Root Node Variable, for forms inside of existing xml schemas</h2>
+<pre>$ROOTNODE : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$ROOTNODE</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24addget_values" id="$addget_values"> </a><div class="element clickable property public $addget_values" data-toggle="collapse" data-target=".$addget_values .collapse">
+<h2>Configuration variable read from current form, declaring whether to add HTTP GET variables to form as hidden variables</h2>
+<pre>$addget_values : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$addget_values</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24addpost_values" id="$addpost_values"> </a><div class="element clickable property public $addpost_values" data-toggle="collapse" data-target=".$addpost_values .collapse">
+<h2>Configuration variable read from current form, declaring whether to add HTTP POST variables to form as hidden variables</h2>
+<pre>$addpost_values : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$addpost_values</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24appenditem_values" id="$appenditem_values"> </a><div class="element clickable property public $appenditem_values" data-toggle="collapse" data-target=".$appenditem_values .collapse">
+<h2>Configuration variable read from current form, declaring whether to force population of hidden values from an "Item", even if the form element isn't already in the form</h2>
+<pre>$appenditem_values : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$appenditem_values</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24assetlocation" id="$assetlocation"> </a><div class="element clickable property public $assetlocation" data-toggle="collapse" data-target=".$assetlocation .collapse">
+<h2>Configuration variable declaring the base location of XML Assets</h2>
+<pre>$assetlocation : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$assetlocation</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24container" id="$container"> </a><div class="element clickable property public $container" data-toggle="collapse" data-target=".$container .collapse">
+<h2>A generic array in which to place other form elements.</h2>
+<pre>$container : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$container</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24cookiename" id="$cookiename"> </a><div class="element clickable property public $cookiename" data-toggle="collapse" data-target=".$cookiename .collapse">
+<h2>Status of the current XML Form Validation</h2>
+<pre>$cookiename : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td>Since v.8</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$cookiename</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24debug" id="$debug"> </a><div class="element clickable property public $debug" data-toggle="collapse" data-target=".$debug .collapse">
+<h2>Puts execution in debug mode</h2>
+<pre>$debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$debug</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24docArray" id="$docArray"> </a><div class="element clickable property public $docArray" data-toggle="collapse" data-target=".$docArray .collapse">
+<h2>Array of XML Forms in an ordered FormSet</h2>
+<pre>$docArray : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$docArray</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24dynarray" id="$dynarray"> </a><div class="element clickable property public $dynarray" data-toggle="collapse" data-target=".$dynarray .collapse">
+<h2>An Array of "lookup" arrays for Select Lists to pull from, if not in XML or Database Lookup</h2>
+<pre>$dynarray : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$dynarray</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24formsettings" id="$formsettings"> </a><div class="element clickable property public $formsettings" data-toggle="collapse" data-target=".$formsettings .collapse">
+<h2>Optional Array containing the name and XMLDocument List for the Formset, read generally from either $GLOBALS or from within the WTVR Module, if WTVR</h2>
+<pre>$formsettings : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$formsettings</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24isloaded" id="$isloaded"> </a><div class="element clickable property public $isloaded" data-toggle="collapse" data-target=".$isloaded .collapse">
+<h2>Status of the current XML Form Document</h2>
+<pre>$isloaded : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$isloaded</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24isprocess_step" id="$isprocess_step"> </a><div class="element clickable property public $isprocess_step" data-toggle="collapse" data-target=".$isprocess_step .collapse">
+<h2>Indicator for FormSet status, true means form is not at position 0 or end position</h2>
+<pre>$isprocess_step : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$isprocess_step</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24isvalidated" id="$isvalidated"> </a><div class="element clickable property public $isvalidated" data-toggle="collapse" data-target=".$isvalidated .collapse">
+<h2>Status of the current XML Form Validation</h2>
+<pre>$isvalidated : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$isvalidated</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24isxml" id="$isxml"> </a><div class="element clickable property public $isxml" data-toggle="collapse" data-target=".$isxml .collapse">
+<h2>Configuration variable for XML Return Object</h2>
+<pre>$isxml : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$isxml</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24item" id="$item"> </a><div class="element clickable property public $item" data-toggle="collapse" data-target=".$item .collapse">
+<h2>2-Dimensional Array for adding values to the Form
+The first element being the item name,
+the second being the value</h2>
+<pre>$item : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$item</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24item_forcehidden" id="$item_forcehidden"> </a><div class="element clickable property public $item_forcehidden" data-toggle="collapse" data-target=".$item_forcehidden .collapse">
+<h2>Hidden Values that match form element names aren't added by default, this boolean will force that</h2>
+<pre>$item_forcehidden : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$item_forcehidden</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24itemlist" id="$itemlist"> </a><div class="element clickable property public $itemlist" data-toggle="collapse" data-target=".$itemlist .collapse">
+<h2>N-Dimensional Array for adding Lists to the XML Tree,
+used in CRUD operations.</h2>
+<pre>$itemlist : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$itemlist</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24items_to_remove" id="$items_to_remove"> </a><div class="element clickable property public $items_to_remove" data-toggle="collapse" data-target=".$items_to_remove .collapse">
+<h2>An array of elements that should be removed from the XML Form Object</h2>
+<pre>$items_to_remove : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$items_to_remove</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24mods" id="$mods"> </a><div class="element clickable property public $mods" data-toggle="collapse" data-target=".$mods .collapse">
+<h2>Modifications to specific elements that are performed after the dom has been procesed.</h2>
+<pre>$mods : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>For instance, if you need to remove an element, or add an attribute, rather than adding it to the Object
+Queue that in the "Mods" and it'll be processed after the various other args are applied</p></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$mods</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24module" id="$module"> </a><div class="element clickable property public $module" data-toggle="collapse" data-target=".$module .collapse">
+<h2>Configuration variable declaring the parent module name from within parent Framework</h2>
+<pre>$module : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$module</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24name" id="$name"> </a><div class="element clickable property public $name" data-toggle="collapse" data-target=".$name .collapse">
+<h2>Retains the name of the current form controlled by this object
+Allows for multiple form controllers on a specific page.</h2>
+<pre>$name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>All forms within a formset should have the same name</p></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$name</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24objSessionDoc" id="$objSessionDoc"> </a><div class="element clickable property public $objSessionDoc" data-toggle="collapse" data-target=".$objSessionDoc .collapse">
+<h2>Object container for the XML Session configuration</h2>
+<pre>$objSessionDoc : \XMLAbstract</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$objSessionDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24objValidateDoc" id="$objValidateDoc"> </a><div class="element clickable property public $objValidateDoc" data-toggle="collapse" data-target=".$objValidateDoc .collapse">
+<h2>Object container for the XML Validators configuration</h2>
+<pre>$objValidateDoc : \XMLAbstract</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$objValidateDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24objXMLDoc" id="$objXMLDoc"> </a><div class="element clickable property public $objXMLDoc" data-toggle="collapse" data-target=".$objXMLDoc .collapse">
+<h2>Object container for the current Form, as an XML Object</h2>
+<pre>$objXMLDoc : \XMLAbstract</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$objXMLDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24objXSLDoc" id="$objXSLDoc"> </a><div class="element clickable property public $objXSLDoc" data-toggle="collapse" data-target=".$objXSLDoc .collapse">
+<h2>Object container for the current Form XSL Transformation Document</h2>
+<pre>$objXSLDoc : \XSLAbstract</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$objXMLDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24omit_doctype" id="$omit_doctype"> </a><div class="element clickable property public $omit_doctype" data-toggle="collapse" data-target=".$omit_doctype .collapse">
+<h2>Removes the doctype declaration from a returned XML Object</h2>
+<pre>$omit_doctype : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$omit_doctype</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24page" id="$page"> </a><div class="element clickable property public $page" data-toggle="collapse" data-target=".$page .collapse">
+<h2>Retains the number of the currently displayed form in the Formset
+Starts at zero</h2>
+<pre>$page : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$page</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24returnxml" id="$returnxml"> </a><div class="element clickable property public $returnxml" data-toggle="collapse" data-target=".$returnxml .collapse">
+<h2>Flag to return transformed forms as XML Objects</h2>
+<pre>$returnxml : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$returnxml</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24session_vars" id="$session_vars"> </a><div class="element clickable property public $session_vars" data-toggle="collapse" data-target=".$session_vars .collapse">
+<h2>Array of Session variables that are allowed to translate
+to form variables, parsed from @link $objSessionDoc</h2>
+<pre>$session_vars : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$session_vars</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24settimestamp" id="$settimestamp"> </a><div class="element clickable property public $settimestamp" data-toggle="collapse" data-target=".$settimestamp .collapse">
+<h2>Append Timestamp to XML Form Objext</h2>
+<pre>$settimestamp : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td>Timestamps are appended now by default</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$settimestamp</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24showform" id="$showform"> </a><div class="element clickable property public $showform" data-toggle="collapse" data-target=".$showform .collapse">
+<h2>Configuration variable read from current form, declaring whether to output the form as formelements or formvariables
+Not currently supported</h2>
+<pre>$showform : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$showform</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24skip_missing_post" id="$skip_missing_post"> </a><div class="element clickable property public $skip_missing_post" data-toggle="collapse" data-target=".$skip_missing_post .collapse">
+<h2>List of elements to skip in validation from the Post Vars</h2>
+<pre>$skip_missing_post : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$skip_missing_post</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24step" id="$step"> </a><div class="element clickable property public $step" data-toggle="collapse" data-target=".$step .collapse">
+<h2>Determines the form page increment</h2>
+<pre>$step : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$step</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24styroform_result" id="$styroform_result"> </a><div class="element clickable property public $styroform_result" data-toggle="collapse" data-target=".$styroform_result .collapse">
+<h2>Unclear what this is, deprecated</h2>
+<pre>$styroform_result : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$styroform_result</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24theCompounds" id="$theCompounds"> </a><div class="element clickable property public $theCompounds" data-toggle="collapse" data-target=".$theCompounds .collapse">
+<h2>Object List of element types that require more than one form element, i.e. day/month/year (3)</h2>
+<pre>$theCompounds : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td>Compounded form elements are defined in StyroformTypes</td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$theCompounds</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24theSessionDoc" id="$theSessionDoc"> </a><div class="element clickable property public $theSessionDoc" data-toggle="collapse" data-target=".$theSessionDoc .collapse">
+<h2>File location of the XML Session configuration</h2>
+<pre>$theSessionDoc : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$theSessionDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24theXMLDoc" id="$theXMLDoc"> </a><div class="element clickable property public $theXMLDoc" data-toggle="collapse" data-target=".$theXMLDoc .collapse">
+<h2>File location of the current XML Form</h2>
+<pre>$theXMLDoc : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$theXMLDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24theXSLDoc" id="$theXSLDoc"> </a><div class="element clickable property public $theXSLDoc" data-toggle="collapse" data-target=".$theXSLDoc .collapse">
+<h2>File location of the current XSL Transformation Document</h2>
+<pre>$theXSLDoc : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$theXSLDoc</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24types_array" id="$types_array"> </a><div class="element clickable property public $types_array" data-toggle="collapse" data-target=".$types_array .collapse">
+<h2>A list of element types that will have array options generated for them</h2>
+<pre>$types_array : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$types_array</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24validate_debug" id="$validate_debug"> </a><div class="element clickable property public $validate_debug" data-toggle="collapse" data-target=".$validate_debug .collapse">
+<h2>Puts the validator in Debug mode</h2>
+<pre>$validate_debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$validate_debug</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24validated" id="$validated"> </a><div class="element clickable property public $validated" data-toggle="collapse" data-target=".$validated .collapse">
+<h2>Control Variable
+allowing form controllers to explicitly state that the form
+is not validated. used for error generation</h2>
+<pre>$validated : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$isvalidated</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2012-03-24T16:59:28-04:00.<br></footer></div>
+</div>
+</body>
+</html>

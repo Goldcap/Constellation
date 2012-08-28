@@ -1,0 +1,496 @@
+/* CSS Document */
+#bd {
+    width: 100%;
+    min-width: 1250px;
+}
+
+a {
+  color: #006699;
+}
+
+a:visited {
+  color: #999;
+}
+
+.limiterBox{border:1px solid #000;border-top:none;background-color:#ffc;padding:3px 6px;font-size:10px;}
+
+.swfuploader { height: 80px; width: 400px; }
+.progressContainer { overflow: hidden; display: none; float: left; width: 380px; height: 40px; }
+.messageContainer { overflow: hidden; display: none; float: left; width: 380px; height: 36px; padding-top: 4px; color: black; }
+.uploadmessage { float: left; overflow: hidden; width: 380px; height: 15px; }
+.cancelContainer { float: left; width: 380px; height: 20px; padding-left: 9px; padding-top: 6px; }
+.cancelButton { float: left;  width: 110px; height: 24px; }
+.progressbar { width: 390px; padding: 0; border: 1px solid #999; margin-right: 1em; height:7px; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
+.progressbar div { background-color: #ccffff; font-size: 1pt; height:100%; float:left; }
+span.asyncUploader object { position: relative; top: 5px; left: 10px; }
+.imageupload { height: 80px !important; }
+.uploadText {font-size: 13px; font-family: arial, sans-serif;}
+
+.styroform {
+  width: 900px !important;
+}
+
+#Login_wrapper {
+  width: 100% !important;
+}
+
+.column_Ticket {
+  float: left;
+  width: 100%;
+}
+
+.column_Message {
+  float: left;
+  clear: both;
+}
+
+.column_Signups, .column_Tickets, .column_Screenings {
+  float: left;
+  clear: both;
+  width: 50px;
+}
+
+.breakitem {
+  clear: both;
+  float: left;
+  width: 99%;
+  padding: 5px 0px;
+  text-align: left;
+}
+
+.bracketitem {
+  clear: both;
+  float: left;
+  width: 99%;
+  padding: 3px;
+  text-align: left; 
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+.listitem {
+  clear: both;
+  float: left;
+  width: 99%;
+  padding: 3px;
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+
+.listitem_1 {
+  background: #ddd;
+}
+
+.column_ID {
+  float: left;
+  width: 30px;
+
+}
+
+.column_Film_Name, .column_Production_Company {
+  float: left;
+  width: 150px;
+  overflow: hidden;
+}
+
+.column_Amount, .column_Running_Time, .column_Export {
+  float: left;
+  width: 100px;
+}
+
+.column_Card {
+  float: left;
+  width: 150px;
+}
+
+.column_Processor {
+  float: left;
+  width: 250px;
+  overflow: hidden;
+}
+
+.column_Date {
+  float: left;
+  width: 130px;
+
+}
+
+.column_User_Id {
+  float: left;
+  width: 50px;
+}
+
+.column_User_Name {
+  float: left;
+  width: 150px;
+}
+
+.column_Screening_Date, .column_Payment_Date{
+  float: left;
+  width: 280px;
+
+}
+
+.column_Screening_URL {
+  float: left;
+  width: 240px;
+
+}
+.column_checkbox {
+  float: left;
+  color: white;
+  width: 50px;
+}
+
+.column_Users {
+  float: left;
+  width: 50px;
+
+}
+
+.column_Review {
+  float: left;
+  width: 150px;
+}
+
+.column_Review_Status {
+  float: left;
+  width: 150px;
+}
+
+.column_Setup, .column_Ticket {
+  float: left;
+  width: 50px;
+}
+
+.column_Display, .column_Status, .column_Seats, .column_Featured {
+  float: left;
+  width: 50px;
+}
+
+.column_Screen_Date, .column_Time {
+  float: left;
+  width: 60px;
+}
+
+.column_TZ {
+  float: left;
+  width: 100px;
+}
+
+.column_Screening, .column_Created {
+  float: left;
+  width: 120px;
+  overflow: hidden;
+}
+
+.column_Screen_Type {
+  float: left;
+  width: 70px;
+  overflow: hidden;
+}
+
+.column_Status, .column_Seats {
+  float: left;
+  width: 30px;
+  overflow: hidden;
+}
+
+.column_Payment, .column_Payment_Amount, .column_Amount {
+  float: left;
+  width: 60px;
+}
+
+.column_Type {
+  float: left;
+  width: 110px;
+}
+
+.column_First_Name, .column_Last_Name {
+  float: left;
+  width: 80px; 
+}
+
+.column_Film {
+  float: left;
+  width: 90px; 
+}
+
+.column_EmailAddr {
+  float: left;
+  width: 150px;
+  overflow: hidden;
+}
+
+.column_HTML {
+  float: left;
+  width: 560px; 
+}
+
+.column_Start_Date, .column_End_Date {
+  float: left;
+  width: 120px; 
+}
+
+.column_Screening_Key, .column_Host_Name, .column_Promotion_Name {
+  float: left;
+  width: 160px; 
+}
+.column_Code
+{
+  float: left;
+  width: 100px;
+}
+
+.column_Uses
+{
+  float: left;
+  width: 40px;
+}
+
+.column_UUID, .column_Host {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+.column_Chat {
+  float: left;
+  width: 300px;
+}
+.column_Reset {
+  float: left;
+  width: 100px;
+}
+.column_Author, .column_Time, .column_Room {
+  float: left;
+  width: 100px;
+}
+
+.column_Code_Username
+{
+  float: left;
+  width: 80px;
+}
+
+.column_Code_Type, .column_Code_Value {
+  float: left;
+  width: 120px;
+}
+
+.column_order {
+  float: left;
+  width: 120px;
+  overflow: hidden;
+}
+
+.column_order_date, .column_Description {
+  float: left;
+  width: 150px;
+  overflow: hidden;
+}
+
+.column_download {
+  float: left;
+  width: 100px;
+  overflow: hidden;
+}
+
+.column_Question, .column_User, .column_Test_Name, .column_Section {
+  float: left;
+  width: 100px;
+}
+
+.column_Test_Description {
+  float: left;
+  width: 300px;
+  overflow: hidden;
+}
+
+.column_Result, .column_Failures, .column_Success {
+  float: left;
+  width: 100px;
+  overflow: hidden;
+}
+
+.column_Selenium_Action {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+
+.column_Locator {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+
+.column_Sleep_Time {
+  float: left;
+  width: 80px;
+  overflow: hidden;
+}
+
+.column_Beacon {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+
+#results, #Code_wrapper, #Film_wrapper, #FilmSearch_wrapper, #UserSearch_wrapper, #ScreeningSearch_wrapper, #PromoSearch_wrapper {
+  width: 900px !important;
+} 
+
+#Log_wrapper {
+  width: 800px !important;
+  float: left;
+} 
+#AkamaiLog_wrapper {
+  width: 800px !important;
+  float: left;
+  margin-top: 40px;
+}
+
+#screening_wrapper, #screening_wrapper #results, #payment_list_datamap_wrapper, #payment_list_datamap_wrapper #results {
+  width: 1000px !important;
+}
+.ui-autocomplete .ui-menu-item {
+  float: left;
+  text-align: left;
+}
+
+#Code_wrapper, #Film_wrapper, #screening_wrapper, #payment_wrapper, #subscription_wrapper, #Password_wrapper, #Account_wrapper, #User_wrapper, #promotion_wrapper, #Film_wrapper {
+  clear: both;
+  min-height: 350px;
+}
+
+.row .linebreak {
+		color: #000;
+		height: 1px;
+		width: 100%;
+		padding-top: 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid grey; 
+}
+
+.row .linebreak_float {
+    float: left;
+		color: #000;
+		height: 1px;
+		width: 100%;
+		padding-top: 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid grey; 
+}
+
+#TabContainer {
+  border: 0px !important;
+}
+
+#TabContainer .ui-tabs-nav {
+  margin-bottom: 20px;
+}
+
+#TabContainer .row {
+  padding: 0px !important;
+}
+
+.pagenav {
+  clear: both;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.navbar {
+  margin-bottom: 15px;
+}
+.count {
+  position: relative;
+  text-align: left;
+  float: left;
+  width: 50%;
+}
+.pagination {
+  position: relative;
+  text-align: right;
+  float: right;
+  color: #004091;
+  width: 50%;
+}
+.pagenum_selected {
+  font-weight: bold;
+}
+.pagenum_next {
+  margin-left: 5px;
+}
+.sort {
+  position: absolute;
+  right: 0px;
+  margin-top: -20px;
+}
+.sortselect {
+  font-size: 10px;
+  height: 16px;
+}
+.error {
+  color: red;
+}
+.gbfilter {
+  float: left;
+  width: 100px;
+  border: 1px solid grey;
+}
+
+#growler {
+  background: #000000;
+  padding: 30px;
+  border: 1px solid grey;
+}
+
+#growler .error-close{
+  position: relative;
+  float: right;
+  margin-top: -20px;
+}
+
+#growler .layout-error {
+  text-align: left;
+}
+
+#growler .layout-error .title{
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 100%;
+}
+
+#growler .layout-error p {
+  font-size: 12px;
+  color: #dddddd;
+  width: 100%;
+}
+
+div.growlUI h1, div.growlUI h2 {
+	color: white; padding: 5px 5px 5px 75px; text-align: left
+}
+
+.halfrow {
+	width: 50%;
+	float: left;
+}
+
+#film_wrapper {
+	width: 90%;
+	float: left;
+}
+
+#film_wrapper .navbar {
+	height: 20px;
+	float: left;
+} 
+
+#film_wrapper .film_results, #film_wrapper .results {
+	width: 100% !important;
+	float: left;
+}

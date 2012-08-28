@@ -1,0 +1,21 @@
+template: cst3
+layout: cst_film
+title: Constellation.tv
+#/js/login.js,/js/upcoming.js,/js/videoplayer.js,/js/countdown.js,/js/trailer.js,
+#/js/screenings_carousel.js,/js/screening_list.js,/js/history.js,/js/timezones.js,/js/purchase.js,/js/host.js
+javascripts: []
+css: [/css/film_carousel.css]
+widgets:
+  masterhead:
+    Header:
+  left_column:
+    FilmLeftCol:
+  headline:
+    FilmReview:
+  column1:
+    FilmView:
+  column2:
+    FilmRightCol:
+  footer:
+    Footer:
+  zzdiv:

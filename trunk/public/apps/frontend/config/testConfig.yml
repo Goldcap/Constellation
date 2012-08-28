@@ -1,0 +1,100 @@
+widgets:
+  
+  #Account:
+  #AccountTabs:
+  #AdminAdmin:
+  #AdminFooter:
+  #AdminHeader:
+  #AdminHome:
+  #AdminLogin:
+  #AdminMenu:
+  #AdminTabs:
+  #Body:
+  #BodyLeftColumn:
+  #BodyRightColumn:
+  #Browser:
+  #CarouselSearch:
+  #Code:
+  
+  #ContactGrabber:
+  
+  #ContactValidator:
+  
+  Exchange:
+  
+  #Facebook:
+  #FeaturedSearch:
+  
+  #FilmAdmin:
+  
+  #FilmLeftCol:
+  #FilmReview:
+  #FilmRightCol:
+  #FilmView:
+  
+  #Footer:
+  
+  #forward:
+  
+  #GenreAdmin:
+  #GenreSearch:
+  #Header:
+  
+  #Host:
+  #HostLeftCol:
+  #HostRightCol:
+  #iCal:
+  #ImageManager:
+  #Invite:
+  
+  #Join:
+  
+  #Lobby:
+  #LobbySidebar:
+  #LobbyToolbar:
+  
+  #Login:
+  
+  #MessageManager:
+  #OrderManager:
+  #PasswordReminder:
+  
+  #PaymentAdmin:
+  
+  #Paypal:
+  #PreUser:
+  
+  #PreUserAdmin:
+  #PromoAdmin:
+  
+  #Purchase:
+  #PurchaseLeftCol:
+  #PurchaseRightCol:
+  #QA:
+  #Redeem:
+  #Review:
+  
+  #ReviewAdmin:
+  #ScreeningAdmin:
+  
+  #ScreeningJs:
+  #ScreeningReports:
+  #Screenings:
+  #SolrManager:
+  
+  #SponsorUserAdmin:
+  
+  #Subscription:
+  #SubscriptionLeftCol:
+  #SubscriptionRightCol:
+  #Theater:
+  #TheaterConstellation:
+  #TheaterSidebar:
+  #TheaterTimer:
+  #TheaterToolbar:
+  #Timezone:
+  #TimingAdmin:
+  #Tokenizer:
+  #Twitter:
+  
+  #UserAdmin:

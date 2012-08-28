@@ -1,0 +1,17 @@
+template: yui2_left
+layout: yui
+title: Constellation.tv Admin
+javascripts: [/js/tiny_mce/tiny_mce.js,/js/tinymce_init.js]
+css: [/js/jquery/ui/themes/smoothness/jquery-ui-1.8.1.custom.css,/js/jquery/jquery.fancybox-1.3.1/fancybox/jquery.fancybox-1.3.1.css]
+ual: [4]
+widgets:
+  hd:
+    AdminHeader:
+    AdminTabs:
+  col02:
+    AdminAdmin:
+  col04:
+    AdminMenu:
+  ft:
+    AdminFooter:
+  zzdiv:

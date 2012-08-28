@@ -1,0 +1,47 @@
+rray
+  'id' => string '705509795' (length=9)
+  'name' => string 'Andy Madsen' (length=11)
+  'first_name' => string 'Andy' (length=4)
+  'last_name' => string 'Madsen' (length=6)
+  'link' => string 'http://www.facebook.com/profile.php?id=705509795' (length=48)
+  'hometown' => 
+    array
+      'id' => string '108483599175593' (length=15)
+      'name' => string 'Golden, Colorado' (length=16)
+  'location' => 
+    array
+      'id' => string '112111905481230' (length=15)
+      'name' => string 'Brooklyn, New York' (length=18)
+  'work' => 
+    array
+      0 => 
+        array
+          'employer' => 
+            array
+              ...
+          'position' => 
+            array
+              ...
+          'description' => string 'Program computers.' (length=18)
+          'start_date' => string '1995-01' (length=7)
+  'education' => 
+    array
+      0 => 
+        array
+          'school' => 
+            array
+              ...
+          'type' => string 'College' (length=7)
+      1 => 
+        array
+          'school' => 
+            array
+              ...
+          'year' => 
+            array
+              ...
+          'type' => string 'High School' (length=11)
+  'timezone' => int -5
+  'locale' => string 'en_US' (length=5)
+  'verified' => boolean true
+  'updated_time' => string '2010-01-25T13:45:50+0000' (length=24)

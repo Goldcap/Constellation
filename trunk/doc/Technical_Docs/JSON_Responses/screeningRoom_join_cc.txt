@@ -1,0 +1,13 @@
+https://www.constellation.tv/setup/signup (POST)
+{"errors":[],"status":"success","full_name":"Big Earl","user_type_s":"c","profile_pic":"https:\/\/dij523prppjaa.cloudfront.net\/images\/icon-custom.png","hide_email_fields":"false"}
+
+https://www.constellation.tv/payment (POST)
+{"status":"fail","errors":["Credit Card Type is not valid",""],"s_unique_key":"KjVuGoMJ7yGoh5S","twitter_share_link":"http:\/\/twitter.com\/home?status=Join my screening of The Lottery on Wednesday December 15, 2010 at 12:00PM  EST using ","facebook_share_link":"http:\/\/www.facebook.com\/sharer.php?u=http%3A%2F%2Fwww.constellation.tv%2FscreeningRoom%2FKjVuGoMJ7yGoh5S%2Ft%2FJoin+my+screening+of+The+Lottery+on+Wednesday+December+15%2C+2010+at+12%3A00PM++EST"}
+
+{"status":"success","audience_id":1442,"screening_seat_url":"http:\/\/www.constellation.tv\/screening-room.php\/join\/KjVuGoMJ7yGoh5S\/tfQKAZ","sharing_url":"http:\/\/www.constellation.tv\/screeningRoom\/KjVuGoMJ7yGoh5S","s_unique_key":"KjVuGoMJ7yGoh5S","twitter_share_link":"http:\/\/twitter.com\/home?status=Join a screening of The Lottery using http:\/\/bit.ly\/fgTy2M","facebook_share_link":"http:\/\/www.facebook.com\/sharer.php?u=http%3A%2F%2Fwww.constellation.tv%2FscreeningRoom%2FKjVuGoMJ7yGoh5S%2F5YCzaCoEI6%2Ft%2FJoin+a+screening+of+The+Lottery"}
+
+https://www.constellation.tv/filmSpecific/updater?screeningId=703&lastUpdatedAt=1292421817 (GET)
+{"0":"<li name=\"not-processed\">\n\t\t\t\t\t\t\t<p>Goldcap joined the screening.<\/p>\n\t\t\t\t\t\t\t<p class=\"period\" title=\"2010-12-15 14:10:08\"><\/p>\n\t\t\t\t\t\t<\/li>","available_seats":"9 \/ 10","start_date":"2010-12-15 12:00:00","formatted_start_date":"Wednesday December 15, 12:00pm EST","js_formatted_start_date":"+10188","edt_timestamp":1292432400,"current_offset":" -18000","current_abbreviation":" EST","host_name":"James Lawler","host_image":"https:\/\/www.constellation.tv\/uploads\/hosts\/480\/thumb_4c7e8a52a4947.jpg","host_description":""}
+
+https://www.constellation.tv/setup/invite
+{"status":"success"}

@@ -1,0 +1,4 @@
+<map table="click_type" result="click_type_list_datamap"><column column="click_type_name" type="VARCHAR" size="255" key="" order="1"></column><column column="click_type_id" type="INTEGER" size="11" key="PRI" order="2"></column><criterion limit="0" distinct="true"><ascorderby column="click_type_id"></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="click_type_name" base="/click_type/detail/"><attribute name="click_type_id"></attribute></maplink></maplinks></map>

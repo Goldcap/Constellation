@@ -1,0 +1,10 @@
+template: cst0
+layout: cst_qanda
+title: Constellation.tv Theater
+#/js/countdown.js,/js/videoplayer.js,
+#/js/toolbar.js,/js/timekeeper.js,/js/invite.js,/js/activity.js,/js/chat.js,/js/adminmessage.js,/js/private.js,/js/recommend.js,/js/promotions.js,/js/qanda.js,/js/qanda_videoplayer.js
+javascripts: []
+css: []
+widgets:
+  column1:
+    QandA:

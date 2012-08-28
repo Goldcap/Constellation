@@ -1,0 +1,91 @@
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>Constellation TV - Lottery Test</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script type="text/javascript" src="swfobject.js"></script>
+
+<script type="text/javascript">
+
+	var chatMute = false;
+
+	function PrivateChatMute() {
+		chatMute = !chatMute;
+		alert ("Reached JS PrivateChatMute function and value is " + chatMute);
+		/* pseudo-code
+		if (chatMute) {
+			privateChat.mute();
+		} else {
+			privateChat.unmute();
+		}
+		*/
+	}
+
+	function ForwardNotificationToFlash () {
+		//alert ("Reached ForwardNotificationToFlash in JS, will forward to Flash");
+		//document.getElementById('flash').displayMessage("notice", "sample title", "sample body text");
+		document.getElementById('flash').displayMessage("notice", "sample title", document.getElementById('htmlText').value);
+		//document.getElementById('htmlText').value = '';
+	}
+
+	function ResizeEvent () {
+		//alert ("Reached ResizeEvent in JS. Now tell Flash.");
+		document.getElementById('flash').resizeNotification();
+	}
+
+
+	var flashvars = 
+		{src:'./data/lottery.smil',
+		autostart: 'true',
+		themeColor: '0395d3',
+		mode: 'sidebyside',
+		scaleMode: 'fit',
+		frameColor: '333333',
+		fontColor: 'cccccc',
+		link: '',
+		embed: '',
+		loadMode: '1',
+		showVideo: 'true',
+		showMuteButton: 'true',
+		ticketParams:'OnUZAI6Ojo7QCMv3VWr0adaiqIjiUJO9Ss0XCjnI14qIGW6egg6bf/LSOuU='
+		};
+
+		var params = {allowFullScreen: 'true'};
+		var attributes = {id: 'flash', name: 'flash', movie: 'flash'};
+		var swfName = 'AkamaiMultiPlayerExample.swf'; 
+		//swfName = 'http://www.zeusprod.com/flash/fruitslices.swf';
+		swfobject.embedSWF(swfName, 'myPlayerGoesHere',
+						'100%', '100%', '10.0.0', 'expressInstall.swf', 
+						flashvars, params, attributes);
+</script><style media="screen" type="text/css">#myPlayerGoesHere {visibility:visible}</style>
+</head><body>
+
+
+     <form id="form1" name="form1" method="post" action="">
+
+      <textarea name="htmlText" id="htmlText" cols="50" rows="3"> </textarea>
+	<br>
+       <input name="sendToFlash" id="sendToFlash" value="Send Text To Flash" onclick="ForwardNotificationToFlash()" type="button">
+
+ 	<input name="resizeArrow" id="resizeArrow" value="Simulate Resize Event" onclick="ResizeEvent()" type="button">
+
+
+    </form>
+<br>
+	<div id="flashwrapper">
+<div id='myPlayerGoesHere' align="center">
+		<a href='http://www.adobe.com/go/getflashplayer'>
+			<img src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif' 
+					alt='Get Adobe Flash player' />
+		</a>
+
+
+  
+	</div>
+
+
+	</div>
+
+</body><html>

@@ -1,0 +1,48 @@
+.host_container.about_container {
+    margin:20px 20px 40px 0 ;
+    float: left;
+}
+
+.about_container h4 {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.about_container p {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 16px;
+}
+.about_container ol {
+    list-style-position: outside;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.about_nav {
+    margin:20px 20px;
+    float: left;
+}
+
+.about_nav {
+    font-size: 18px;
+}
+.about_nav li {
+    margin-bottom: 10px;
+    color: #838383;
+}
+
+.about_nav a {
+    color: #2185C5;
+    font-family: "Helveticaneuelight",Helvetica,sans-serif;
+}
+
+.about_title {
+    font-family: "Helveticaneuelight",Helvetica,sans-serif;
+    margin: 40px 0 0;    
+}
+.about_title + p {
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: #666;
+}

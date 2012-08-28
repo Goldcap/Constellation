@@ -1,0 +1,16 @@
+template: yui2
+layout: theater
+title: Constellation.tv Theater
+#
+javascripts: [/js/videoplayer.js,/js/toolbar.js,/js/chat.js,/js/adminmessage.js,/js/timekeeper.js,/js/private.js,/js/countdown.js,/js/recommend.js,/js/promotions.js,/js/qanda.js,/js/activity.js]
+css: [/css/main.css,/css/theater.css,/css/theater_side.css]
+#ual: [1]
+#ual_auth: /screening/:op/
+widgets:
+  col02:
+    Theater:
+  col04:
+  ft:
+    TheaterToolbar:
+  zzdiv:
+    TheaterSidebar:

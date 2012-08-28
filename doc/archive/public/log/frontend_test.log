@@ -1,0 +1,2 @@
+Oct 25 13:36:07 symfony [info] {sfPatternRouting} Match route "default_index" (/:action/:op/:id/:rev/*) for /film/63 with parameters array (  'module' => 'default',  'action' => 'film',  'op' => '63',  'id' => '0',  'rev' => '0',)
+Oct 25 13:36:30 symfony [err] {MongoConnectionException} test.db.constellation.tv

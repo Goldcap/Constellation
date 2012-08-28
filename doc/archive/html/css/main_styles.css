@@ -1,0 +1,1044 @@
+/* Style Sheets for [] website
+created by bkkwebdesign.com
+TOC
+	1. Defaults
+	2. Structure
+	3. Links and Navigation 
+	4. Fonts
+	5. Added By Andy
+
+Notes
+*/
+ 
+/* -------------- 1. Defaults --------------------------- */
+
+/*@font-face{
+font-family: 'helveticaneue'; 
+src: url('helveticaneue-webfont.ttf') format('truetype');
+}*/
+
+@font-face {  
+  font-family: "helveticaneue";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.eot ); /* IE */  
+  src: local("HelveticaNeue-Regular"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue.ttf ) format("truetype"); /* non-IE */  
+}
+
+@font-face {  
+  font-family: "helveticaneuelight";  
+  src: url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.eot ); /* IE */  
+  src: local("HelveticaNeue-Light"), url( https://s3.amazonaws.com/cdn.constellation.tv/prod/fonts/HelveticaNeue-Light.ttf ) format("truetype"); /* non-IE */  
+}
+   
+*{margin:0; padding:0;}
+body{font-size: 12px; font-family: "helveticaneue", Helvetica, sans-serif; background:#000000 url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/tbg.png") no-repeat center top; color:#9cf}
+
+a img{border:0;}
+ul{list-style-type:none; }
+
+.clear{clear:both}
+.left{float:left;}
+.right{float:right;}
+fieldset{border:none;}
+
+.ui-sortable-helper {
+  border: 1px solid transparent;
+}
+
+/* -------------- 2. Structure -------------------------- */
+.wrapper { margin:0 auto; width:912px; position:relative}
+
+/* -------------- 2.b Master Head ----------------------------- */
+	.masterhead{ height:117px; margin:5px 0 10px;}
+		.masterhead .logo a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/logo_beta.png") no-repeat; height:117px; width:210px; display:block; float:left; text-indent:-10000px}
+		.masterhead .login {text-transform:uppercase; color:#9cf; font:bold 13px Helvetica, sans-serif; float:right; position:relative; top:60px;}
+    .masterhead .username{ color:#9cf; font:bold 13px Helvetica, sans-serif; float:right; position:relative; top:60px;}
+    .masterhead .username #full-name { font-style: italic; }
+    .masterhead .main-login{cursor:pointer}
+    .masterhead .photo-container { width: 45px; height: 32px; overflow: hidden;}
+    .masterhead .photo-container img { position: relative; top: -5px; }
+/* -------------- 2.c Content ----------------------------- */
+	.content{}
+	.one_column .wrapper .content {float: left; margin-bottom: 20px;}
+  .one_column .left_column {}
+	.one_column .right_column{ display:none;}
+  
+	.two_column .left_column { float:left; padding-left:40px; padding-bottom: 20px; width:165px;}
+	.two_column .right_column{ float:right; width:660px; padding-bottom: 60px;}
+		.two_column .right_column .column1{ width:425px; float:left}
+		.two_column .right_column .column2{ width:218px; float:right; text-align:left; padding-bottom: 20px; }
+			.image_holder{margin-bottom:45px; width: 205px; height: 141px;}
+			.image_holder .host_inset_image {float: right; margin-top: 89px !important; border: 1px solid #cc6600; }
+			#detail-form #host_submit {margin-top: 24px; margin-left: 5px;}
+			
+	.one_column .left_column .column1{float:left; width:580px;margin-bottom: 80px;}
+	.one_column .left_column .column2{float:right; width:285px; }
+		
+
+/* -------------- 2.d Footer ----------------------------- */
+	.footer{ border-top:2px solid #527aad; clear:both; }
+	.footer .logo a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/logo_small.png") no-repeat; 
+                height:59px; 
+                width:105px; 
+                display:block; 
+                float:right;
+                position: relative;
+                top: -60px;
+                right: -50px;
+                text-indent: -10000px; 
+                }
+  .footer, .footer a{color:#369; font:10px Helvetica, sans-serif}
+	.footer li, .footer li a{float:left; padding-right:5px; }
+	.footer li {margin-top:15px}
+	.footer li.copy{padding-left:10px;}
+	.footer li img{position: relative; top:-10px;}
+	.footer .face{padding-left:70px; margin-right:2px}
+	.footer .face a, .footer .twit a, .footer li.face, .footer li.twit{padding-right:0px; }
+	.footer .seat_surrender { padding-right: 10px; }
+	.footer li.face, .footer li.twit{position:relative; top:4px}
+	
+/* -------------- 3. Links and Navigation --------------- */
+a {color:#fff; outline:none;  text-decoration:none;}
+a:hover{}
+span.arrow { display:block; padding-top:5px}
+span.arrow a{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/go_arrow.gif") right  center no-repeat; padding:1px 12px 0 0; color:#9cf; text-transform:uppercase; font-size:10px;}
+.pop_up span.arrow a{font-size:15px;}
+
+.buttons {position:absolute; left:-2px; top:-18px; width:800px}
+.buttons li{padding-right:14px; float:left;}
+.buttons li a{display:block;  text-transform:uppercase; background-color:#369; padding:2px 40px 1px}
+
+/* -------------- 4. Fonts ------------------------------ */
+h1{}
+h2{font:normal 22px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px}
+h3{font:bold 10px Helvetica, sans-serif; margin:10px 0; text-transform:uppercase;}
+h4{font:bold 18px Helvetica, sans-serif; margin-bottom:18px; text-transform:uppercase;}
+h5{font:bold 16px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; border-bottom:#c60 2px solid; color:#fff;}
+h6{font:normal 13px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; padding-left:20px; float:left}
+
+h4.future{float: left; position: relative; font-size: 14px;left: 85px; top: 0px; margin:0px !important; width: 160px !important;display: inline;}
+
+h4.future_showtimes {
+  float: left;
+  bottom: 0px;
+  width: 160px;
+  font-size: 14px;
+  margin: 0px !important;
+  display: inline;
+}
+
+.ui-datepicker {
+  z-index: 1200 !important;
+}
+
+.ui-datepicker-trigger {background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/calendar.png") no-repeat right top; 
+          border: 0px transparent; 
+          height:34px; 
+          width:33px; 
+          float:right; 
+          text-align:center; 
+          position:relative; 
+          margin-left:10px; 
+          top:-5px;
+          padding-top: 1px;
+          font:bold 10px/9px "helveticaneue", Arial, sans-serif;  
+          color:#003; 
+          text-transform:uppercase}
+.two_column .ui-datepicker-trigger {
+  float:left; 
+}
+
+.two_column .left_column p{font:11px/14px Helvetica, sans-serif; padding-top:13px}
+.two_column .left_column p strong{text-transform:uppercase; display:block}
+.two_column .left_column a{color: #99CCFF}
+
+/* -------------- 5. Buzz ----------------------------- */
+.buzz {
+  margin-bottom: 20px;
+}
+.buzz li{margin-bottom:14px}
+
+.color1 a, .color2 a, .color3 {color:#99ccff}
+
+.color4 {color:#5f7eb1}
+.color5 {color:#405689}
+.color6 {color:#394c7f}
+.color7 {color:#2c3b6e}
+
+/* -------------- 6. Show Times ----------------------------- */
+.showtimes{padding-left:10px; margin-bottom:15px;}
+.showtimes div{padding-bottom:0px}
+.showtimes a{display:block; padding:6px 10px 5px; margin-bottom: 10px ;font:bold 16px Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; float:left; text-transform:uppercase; letter-spacing:1px}
+.showtimes span{ color:#fff; text-transform:uppercase; font-size:11px; position:relative; left:16px; display:block; margin-left: 55px;}
+.showtimes span strong{font-size:16px; display:block; font-weight:normal; font-size:16px}
+.main-showtimes { cursor: pointer; text-transform: uppercase; }
+#today_screenings .screening_list {
+  position: absolute;
+  float: left;
+  margin-left: -20px;
+}
+
+.subscreen_title { font-size: 18px !important; font-weight: bold !important; text-align: left !important; }
+.subscreen { font-size: 12px !important; text-align: left !important; }
+
+/* -------------- 7. Image Gallery ----------------------------- */
+.image_gallery {margin-bottom:20px;}
+.one_column .image_gallery { width: 910px; overflow: hidden; padding: 0px 25px 0px 24px;}
+.large, .large .navigation, .large div.scroll{ width:534px; }
+.small, .small .navigation, .small div.scroll {width:384px; }
+
+.large div.scroll { overflow: hidden; }
+.small div.scroll { overflow: hidden; }
+
+.image_gallery .navigation{position:absolute;}
+	.image_gallery .navigation a{display:block; width:14px; text-indent:-10000px; float:left;  position:absolute;}
+	.image_gallery .navigation .previous{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left.png") no-repeat;  height:32px;  left:-20px;}
+	.image_gallery .navigation .next{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right.png") no-repeat; height:33px; right:-20px}
+	.large .navigation .next, .large .navigation .previous{top:7px}
+	.navigation .next, .navigation .previous{top:1px}
+	
+	.image_gallery .main_image{margin-bottom:7px}
+	.image_gallery ul{width:4000px;}
+	.image_gallery ul li{float:left; padding-right:5px}
+	.one_column .image_gallery ul li{float:left; padding-right:0px}
+	.one_column .large ul li{float:left;}
+	
+.main { padding:30px 20px 0px; margin-bottom:20px; position:relative}	
+	.main .navigation, .main div.scroll{width:868px}
+	.main{border:2px solid #369;}
+	.main .navigation .previous{ background:url("..http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_blue.png") no-repeat;  height:152px; width:21px;  left:-20px; top:60px}
+	.main .navigation .next{ background:url("..http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_blue.png") no-repeat;  height:152px; width:21px; right:-20px; top:60px}
+	.main .image_gallery ul li{ padding-right:12px}
+
+.one_column .main { padding:0px 0px 0px; width: 910px; height: 340px; margin-bottom:20px; position:relative; }	
+	.one_column .main .navigation, .main div.scroll{width:868px}
+	.one_column .main{border:2px solid #369;}
+	.one_column .main .navigation .previous{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_left_blue.png") no-repeat;  height:152px; width:21px;  left:-20px; top:60px}
+	.one_column .main .navigation .next{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow_right_blue.png") no-repeat;  height:152px; width:21px; right:-20px; top:60px}
+  .main .image_gallery ul li{ padding-right:0px}
+
+.lobby .main { border: 0px transparent !important; 
+  width: 900px; 
+  margin:0px 0px 100px; 
+  padding:0px;
+	text-align:center;}	
+	
+.lobby #left_column {
+  min-height: 500px;
+}
+#lobby_panel {
+  width:500px;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+}
+
+#lobby_panel h1 {
+  font-size: 36px;
+}
+
+#lobby_panel .filminfo {
+  color: #cc6600;
+  border-top: 2px solid #cc6600;
+  padding-top: 10px;
+  border-bottom: 2px solid #cc6600;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#lobby_panel .filminfo p {
+  color: #cc6600;
+  padding-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+#lobby_panel .errormessage p {
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.blank .main{border:0px solid transparent;}
+	  
+.featured_datepicker {margin-left: 10px;}
+.one_column .large{padding-left:25px}
+	
+/* -------------- 8. Search ----------------------------- */
+.search{position:absolute; right:-2px; top:-24px; width:200px;}
+.search form{display:block; height:24px; overflow:hidden; padding: 0px; margin: 0px;}
+.search form input{color:#fff; background-color:#003; border:none; width:22px; padding:2px; height:18px; text-align: right;}
+.search form input.field{border:2px solid #369; width:170px; }
+.search .btn_search{ background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/mag_glass.png") 0 0 no-repeat; cursor:pointer; }
+#gv { padding-top: 0px !important; font-size: 10px; }
+
+/* -------------- 9. ERROR-up --------------------------------- */
+.error{ text-align: left !important; top:140px; height:1px; width:1px; left:190px; float:left; z-index: 100; }
+	.error_top{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_top.png") no-repeat left; height:20px; top:-20px;}
+	.error_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.error_mid{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_mid.png") repeat-y left; min-height: 100px; }
+	.error_bot{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/error_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+	.error_top, .error_bot, .error_mid{ position:relative; width:657px; }
+	
+	.error .title strong{font:bold 32px/28px Arial, Helvetica, sans-serif; color:white;}
+	.error .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+
+  /* -------------- 9. QANDA-up --------------------------------- */
+  .qa_pop_up{position:absolute; top:140px; height:1px; width:1px; left:300px; float:left; z-index: 100; }
+	.qa_pop_up.hidden{left:-9000px}
+	.qa_pop_top{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_top.png") no-repeat left; height:20px; top:-20px;}
+	.qa_pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.qa_pop_mid{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_mid.png") repeat-y left; min-height: 150px; }
+	.qa_pop_bot{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/qa_pop_up_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+  .qa_pop_top, .qa_pop_bot, .qa_pop_mid{ position:relative; width:700px; }
+	.qa_pop_up .layout-1 .chalkboard { height: 140px; }
+	.qa_pop_up .layout-1 .chalkboard .status { font-size: 10px; color: #00CE32; margin-bottom: 15px; }
+	.qa_pop_up .layout-1 .chalkboard .title { font-size: 16px; color: white; }
+	.qa_pop_up .layout-1 .chalkboard .title_blue { font-size: 16px; color: #97CCFF; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .title_white { font-size: 18px; color: white; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question_author { font-size: 14px; color: white; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question_question { font-size: 14px; color: #97CCFF; margin-bottom: 10px; }
+	.qa_pop_up .layout-1 .chalkboard .question { font-size: 12px; color: white; }
+	.qa_pop_up .layout-1 .chalkboard .top_control { float: right; bottom: 0px; }
+  .qa_pop_up .layout-1 .myquestions { border-top: 3px solid #6799CC; border-bottom: 3px solid #6799CC; height: 150px; padding-top: 20px; }
+  .qa_pop_up .layout-1 .myquestions .title_blue { padding-top: 5px; }
+  .qa_pop_up .layout-1 .inputs { border-top: 3px solid #6799CC; border-bottom: 3px solid #6799CC; height: 150px; }
+  .qa_pop_up .layout-1 .inputs .left { border-right: 3px solid #6799CC; width: 330px; height: 150px; }
+  .qa_pop_up .layout-1 .inputs .right { width: 310px; height: 150px; }
+  .qa_pop_up .layout-1 .inputs div p {padding-top: 5px; font-size: 14px;}
+  .qa_pop_up .layout-1 .push_buttons { padding-top: 20px; }
+  .qa_pop_up .layout-1 input { padding-top: 5px; padding-bottom: 5px; margin-right: 5px; }
+  .qa_pop_up .layout-1 #qa_showing_list {}
+  .qa_pop_up .layout-1 #qa_showing_questions ul li { color: white; font-size: 14px; }
+  .qa_pop_up .layout-1 #qa_showing_question ul li { color: white; font-size: 14px;  }
+  .vscroller { margin-top: 5px; height: 120px !important; width: 650px !important; }
+  
+/* -------------- 9. POP-up --------------------------------- */
+.pop_up{position:absolute; top:140px; height:1px; width:1px; left:190px; float:left; z-index: 1000; }
+	
+  .pop_up p{color:#fff; margin-bottom:6px}
+  .pop_up p.pad_bot, .pop_up div.pad_bot{margin-bottom:20px}
+  .pop_up p.p_l{padding-left:173px; margin-bottom:2px}
+  .pop_up p strong{text-transform:uppercase}
+
+  .pop_top{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_top.png") no-repeat left; height:20px; top:-20px;}
+	.pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.pop_mid{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_mid.png") repeat-y left; min-height: 150px; }
+	.pop_bot{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/pop_up_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+	.pop_top, .pop_bot, .pop_mid{ position:relative; width:524px; }
+	
+	.pop_up .title strong{font:bold 32px/26px Arial, Helvetica, sans-serif; color:#9cf;}
+	.pop_up .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+	#carousel-popup .title { height: 217px; }
+	#carousel_film_description { text-transform: none; height: 48px; width: 200px; overflow: hidden;}
+	#carousel_film_info { text-transform: none; height: 130px; overflow: hidden; font-size: 11px;}
+
+  
+	a.btn_large{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top; height:38px; padding-top:12px; margin-bottom:10px; text-transform:uppercase; font:bold 22px Helvetica, sans-serif; display:block; text-align:center}
+	.btn_tiny{border:none; color:#fff; padding:4px 10px 5px; font:bold 11px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; cursor:pointer}
+	.btn_tiny_og{border:none; color:#fff; padding:4px 10px 5px; font:bold 11px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; text-transform:uppercase; cursor:pointer}
+	.btn_medium{border:none; color:#fff; padding:2px 6px 3px; font:bold 13px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_medium_og{border:none; color:#fff; padding:2px 6px 3px; font:bold 13px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_small{float:right; border:none; color:#fff; padding:4px 10px 5px; font:bold 16px helveticaneue, Helvetica, sans-serif; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_og{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-org.jpg") repeat-x top; padding:6px 8px 0; height:24px; text-transform:uppercase; font-weight:bold; font-size:16px; display:block; float:left; margin-right:4px; letter-spacing:1px}
+	input.btn_og{float:right; border:none; color:#fff; padding: 4px 8px; height:auto; margin:5px 0 0 0; position:relative; left:-13px; font-size:10px}
+	.btn_med{height:31px; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top;  padding:2px 20px 0; text-transform:uppercase; font:bold 16px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left; margin-bottom: 20px }
+	.btn_med-og{height:31px; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-med-org.png") repeat-x top;  padding:2px 20px 0; text-transform:uppercase; font:bold 16px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left; margin-bottom: 20px }
+	.btn_large-blue{height:51px; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg.png") repeat-x top;  padding:2px 30px 0; text-transform:uppercase; font:bold 22px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left }
+	.btn_large-og{height:51px; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-lg-org.png") repeat-x top;  padding:2px 30px 0; text-transform:uppercase; font:bold 22px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left }
+	
+   #log-in { width: 100%; float: left; }
+   #sign-up { width: 100%; float: left; }	
+   #password-out { width: 100%; float: left; }	
+	.login_form{width: 100%;margin-bottom:10px}
+		.login_form div{float:left; padding-right:4px;}
+		.login_form .btn_small{float:left; width:88px; padding:7px 0 5px; text-align:center}
+		.login_form .input{width:180px; height:28px; float:left; border:none; margin-right: 5px; padding-left: 5px; font-size: 12px; font-weight: bold;}
+		*:first-child+html .input { height: 23px; padding-top: 5px; }
+    .login_form label{font: 14px Helvetica,sans-serif; color:#fff; float:left; text-transform:capitalize; padding:4px 0 0; display:block}
+			.or_login_w{width: 100%;float: left; font:bold 16px  Helvetica, sans-serif;  text-transform:uppercase; color:#fff; margin-bottom:25px}
+			.or_login_w a{position:relative; top:13px}
+			.forgot_sign-up{width: 100%;float: left;font:10px  Helvetica, sans-serif; text-transform:uppercase}
+	
+  .password_form{ width: 100%; border-top:4px solid #6494c5; margin-top:17px; padding-top:27px;}
+		.password_form.clearfix{margin-bottom:13px}
+		.password_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.password_form .button input{float:left; margin-left:164px}
+		.password_form .input{width:185px; height:28px; float:left; border:none; margin-right: 5px; padding-left: 5px; font-size: 12px; font-weight: bold;}
+		
+	.sign-up_form{ width: 100%; border-top:4px solid #6494c5; margin-top:17px; padding-top:27px;}
+		.sign-up_form .clearfix{margin-bottom:13px}
+		.sign-up_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.sign-up_form .button input{float:left; margin-left:164px}
+		.sign-up_form .input{width:314px;}
+
+	.email_enter-form div.left{width:258px}
+		.email_enter-form div.right {width:215px !important; }
+	.email_enter-form textarea{height:214px; float:left}
+	.email_enter-form .right input{width:106px; float:left; margin-top:4px}
+	.email_enter-form a{float:right	; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+	
+	.landing #preview-invite-popup { margin-left: 200px; }
+	
+  .current_screening_host, .current_screening_time, .current_host_screening_time { display: inline !important; padding: 0px !important; margin: 0px !important; }
+	.host-form span{ float: left; margin-bottom: 5px;}
+	    .host-form .col1{ float: left; font-weight: bold; width: 125px; font: 12px Helvetica,sans-serif; color:#fff; text-transform:capitalize; padding:4px 0 0; display:block}
+			.host-form .col2{ float: left; width: 45px; display:block}
+			.host-form .col3{ float: left; display:block}
+			.host-form .fullcol{ width: 480px; float: left; display:block}
+      .host-form span input{width:109px}
+			.host-form span label{ text-transform:uppercase}
+		.info_box{}
+			.info_box .textarea{ width:310px; float:right; color:#fff}
+			.info_box textarea{ width:310px; height:114px; margin-bottom:4px}
+			.upload_box{float:left; width:167px; margin-bottom:20px}
+			.upload_box input{width:160px}
+			.upload_box img{float:left; margin-bottom:5px; height:76px}
+			.upload_box span{display:block; float:right; width:80px; color:#fff }
+			
+			
+	.host-form .btn_small{ float:none}
+	.host-form p.clearfix{height:34px}
+	
+	.your-screening-area, .your-hosting-area {
+    clear: both;
+    float: left;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  
+  .your-screening-area .title, .your-hosting-area .title {
+    color: #99ccff !important;
+  }
+  
+  .your-screening-area {
+    border-bottom: 2px solid #cc6600;
+  }
+  
+	.logout-area {
+    float: right;
+    font-style: italic;
+  }
+  
+  .screening-payload .screening, .screening-payload .screening a {
+    clear: both;
+    float: left;
+    text-transform: uppercase;
+    color: #99ccff !important;
+  }
+  
+  .logout-area, .logout-area a {
+    text-transform: uppercase;
+    color: #99ccff !important;
+    font-size: 11px;
+  }
+  
+	.mr_3{margin-right:5px}
+	.ml_3{ position:relative; left:7px}
+	
+	.layout-error{padding:0px 40px 0px 50px;}
+		
+	.layout-1{padding:0 20px}
+		.layout-1 div.right{width:254px}
+		.layout-1 .email_enter-form div.right{width:219px; margin-bottom:20px}
+		
+		.layout-1 .spacer{ height:138px}
+		.layout-1 .right a.btn_large{font: bold 16px Helvetica,sans-serif; height:30px}
+		
+	.layout-2{padding:0 30px 0 80px}
+	
+	.layout-3{padding:0 20px 0 5px}
+		.layout-3 .title{margin-bottom:20px}
+		
+	.soc-app {width:377px; margin-bottom:10px;}
+	 	.soc-app input{ width:116px; margin:0 8px 5px 0; float:left}
+	
+	
+	.soc-note {width:377px; margin-bottom:10px;}
+	
+/* -------------- 9. landing page --------------------------------- */
+		body.landing{background:#000000 url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/tbg.png") no-repeat center top}
+		body.landing .wrapper{ width:auto; position:static}
+		body.landing .masterhead{ height:140px}
+		body.landing .left_column{margin:0 auto; position:relative; height:1px; width:1px}
+			body.landing .column1{ font-size:22px; text-align:center; text-transform:uppercase; letter-spacing:2px}
+			body.landing .column1 strong{font-size:40px}
+			body.landing .column1 .timer{font-size:110px; margin-bottom:20px}
+			
+			body.landing .column2{width:500px; margin:auto;}
+			body.landing .column2 .left{ padding-bottom:5px;}
+			body.landing .column2 .right{ width:259px; }
+			body.landing .column2 .right strong{display:block; text-transform:uppercase; font-size:19px; letter-spacing:1px}
+			body.landing .column2 p{color:#fff; font: normal 15px/18px  Helvetica, sans-serif; margin-bottom:10px}
+			
+			body.landing .footer{
+        background-color:#333; 
+        border-top:none; 
+        height:50px; 
+        width:100%; 
+        position: fixed;
+        bottom:0px;
+        clear: both;
+        float: left;
+      }
+			
+      body.landing #countdown {height: 128px;}
+			body.landing #timer_panel{ margin-top: -70px; }
+      body.landing .filmhost { text-transform: uppercase;}
+			body.landing .filminfo { height: 100px; overflow: hidden; }
+			
+			body.landing .crash_file .username{
+				color:#fff; 
+				text-transform:uppercase; 
+				font-size:10px; 
+				letter-spacing:1px; 
+				margin:0 auto; 
+				position:absolute; 
+				left:130px; 
+				top:-35px}
+			
+			.invite_more{width:405px; padding:20px 30px;  position:absolute; left:-225px; background-color:#333333; opacity:0.90; top: -40px;}
+			*:first-child+html .invite_more{filter:alpha(opacity=90);} 
+			* html .invite_more{filter:alpha(opacity=90);}
+
+				.invite_more span{font:bold 44px/50px helveticaneue, Helvetica, sans-serif; text-transform:uppercase; letter-spacing:1px; position:relative; left:40px; display:block}
+				.invite_more a{display:block; float:left; margin:7px 4px 0 0}
+				.invite_more p{color:#fff; margin-bottom:6px}
+				.invite_more p strong{text-transform:uppercase; font-face: Helvetica, sans-serif}
+				.invite_more div.left{width:224px}
+				.invite_more div.right, .invite_more textarea{width:170px; }
+				.invite_more textarea{height:214px; float:left}
+				.invite_more .right input{width:82px; float:left; margin-top:4px; font-size:14px; letter-spacing: 0;}
+				.invite_more .left a{float:right; background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+			   
+			   
+/* -------------- Notes --------------------------------- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+*:first-child+html .date_icon span{left: 4px; }
+*:first-child+html .title strong{ font:bold 32px/30px Arial,Helvetica,sans-serif}
+
+/* ANDY ADDED THIS */
+.code_break {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 2px solid #CC6600;
+  border-bottom: 2px solid #CC6600;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+
+.swfuploader { height: 80px; width: 400px; }
+.progressContainer { overflow: hidden; display: none; float: left; width: 380px; height: 40px; }
+.messageContainer { overflow: hidden; display: none; float: left; width: 380px; height: 36px; padding-top: 4px; color: black; }
+.uploadmessage { float: left; overflow: hidden; width: 380px; height: 15px; }
+.cancelContainer { float: left; width: 380px; height: 20px; padding-left: 9px; padding-top: 6px; }
+.cancelButton { float: left;  width: 110px; height: 24px; }
+.progressbar { width: 390px; padding: 0; border: 1px solid #999; margin-right: 1em; height:7px; display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; }
+.progressbar div { background-color: #ccffff; font-size: 1pt; height:100%; float:left; }
+span.asyncUploader object { position: relative; top: 5px; left: 10px; }
+.imageupload { height: 80px !important; }
+.uploadText {font-size: 13px; font-family: arial, sans-serif;}
+
+.reqs {
+  display: none;
+}
+
+#film,
+#host,
+#port,
+#room,
+#instance,
+#seat,
+#userid,
+#pairid,
+#toid,
+#location,
+#adminmessage-pairid,
+#adminmessage-owner,
+#adminmessage-toid {
+  visibility: hidden;
+}
+
+#status_panel {
+  display: none;
+  /*
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 160px;
+  color: #eee;
+  font-size: 11px;
+  border: 1px solid #eee;
+  z-index: 100;
+  */
+}
+#movie_trailer_container {
+    width: 420px;
+    height: 242px;
+    margin: 1px auto 1em;
+}
+
+
+#import-contacts-container, #host-import-contacts-container, .subscription_buttons {
+  border-top: 4px solid #CC6600;
+  border-bottom: 4px solid #CC6600;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#import-contacts-container h4, #host-import-contacts-container h4 {
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.import_field {
+  font-size: 11px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.border_under {
+  border-bottom: 4px solid #6494C5;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.add_invite {
+  width: 170px !important;
+}
+
+#host_add_invite, #add_invite {
+  width: 200px !important;
+  height: 14px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-top: 1px;
+}
+
+#host_add_invite form textarea, #add_invite form textarea {
+  width: 140px;
+  height: 12px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#host_add_invite form button, #add_invite form button {
+  background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button.jpg") repeat-x top;
+  height: 14px;
+  font-size: 10px;
+  color: white;
+  padding: 0px 2px 3px 2px;
+  margin-left: 4px;
+  font-family: helveticaneue, Helvetica, sans-serif;
+  border: 0px;
+}
+
+#accepted-invites-container, #host-accepted-invites-container, #fld-invites-container, #host-fld-invites-container {
+	width: 215px;
+	height: 215px;
+	padding: 6px 3px 0 0;
+	background: #fff;
+	overflow-y: auto;
+	float: left;
+}
+#fld-invites-container li, #host-fld-invites-container li, #accepted-invites-container li, #host-accepted-invites-container li {
+	background-color: #EFF2F7;
+	border: 1px solid #CCD5E4;
+	float: left;
+	padding: 2px 12px 2px 2px;
+	margin: 0 4px 2px 5px;
+	position: relative;
+	font-size: 10px;
+	width: 170px;
+	overflow: hidden;
+}
+#fld-invites-container li div, #host-fld-invites-container li div, #accepted-invites-container li div, #host-accepted-invites-container li div {
+	width: 160px;
+	overflow: hidden;
+	color: #383838;
+}
+
+#fld-invites-container li div, #host-fld-invites-container li div {
+  position: relative;
+  float: left;
+}
+
+#fld-invites-container li div img, #host-fld-invites-container li div img {
+  margin-right: 4px;
+}
+
+#fld-invites-container li a.add-btn, #host-fld-invites-container li a.add-btn{
+  /*position: absolute;*/
+  position: relative;
+  float: left;
+	background: none;
+	text-align: right;
+	top: -5px;
+	left: 4px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #339900;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+
+#accepted-invites-container li a.remove-btn, #host-accepted-invites-container li a.remove-btn {
+  position: absolute;
+	background: none;
+	top: 0px;
+	right: 1px;
+	margin: 0px !important;
+	padding: 0px !important;
+	color: #ff0000;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 12px;
+	width: 10px;
+}
+.soc_message {
+  float: left;
+  width: 480px;
+  margin-bottom: 20px;
+}
+.soc_message .btn_small {
+  margin-right: 10px;
+}
+.host-invite {
+  height: 50px !important;
+  width: 480px !important;
+}
+#preview-invite-popup { 
+	position: absolute;
+  width: auto;
+	height: 432px;;
+	left: 70px; /* temporary */
+	top: 200px;
+	padding: 10px;
+	z-index: 400;
+	padding: 10px;
+	background: white;
+}
+
+.popup .close-bar #close-preview-invite-popup {
+	/*margin-bottom: 10px;
+	text-align: right;
+	float: right;
+	right: 5px;*/
+	/*RIGHT: -405px; FLOAT: right; POSITION: relative*/
+	right: 12px! important;
+	position: absolute;
+	top: 11px! important;
+}
+
+#inviting-popup {
+  position: absolute;
+  margin: 0px auto;
+  width: 391px;
+	height: 150px;
+	top: 500px;
+	padding: 10px;
+	padding-top: 50px;
+	background: #000;
+	border: 3px solid white;
+	z-index: 200;
+}
+
+#already-invited-popup .popup-content { 
+	height: 165px;
+}
+#already-invited-popup .popup-content div{ 
+	overflow: auto;
+}
+#already-invited-popup .popup-content p {
+	color: #FFF;
+}
+#already-invited-popup .email-item {
+	font-weight: bold;
+	margin-top: 3px;
+}
+#already-invited-popup .email-items-list {
+	overflow: auto;
+	height: 85px;
+}
+#view-already-invited { cursor: pointer; }
+#after-screening-popup #recommendation h2{
+	font-size: 17px;
+	margin: 37px;
+}
+
+ul.cclist, ul.cclist li {
+  float: left;
+  list-style: none;
+  display: inline;
+  margin-right: 3px;
+}
+
+#contacts-loading-area, #host-contacts-loading-area {
+	display: none;
+	text-align: center;
+	clear: both;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+#grab-contacts, #host-grab-contacts {
+  margin-top: 10px;
+}
+
+div.growlUI { 
+  background: url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/Neu/24x24/actions/dialog-cancel.png') no-repeat 10px 10px;
+}
+div.growlUI h1 {
+  padding: 10px 5px 0px 45px; 
+  text-align: left;
+  font-size: 20px;
+  color: red;
+}
+div.growlUI h2 {
+  font-size: 12px;
+  color: yellow;
+}
+
+.drop_genre {
+  display: none;
+  position: absolute;
+  margin-top: 1px;
+  width: 135px;
+  z-index: 200;
+  background: white;
+  padding: 10px 10px 10px 30px;
+  font-size: 11px;
+}
+
+.drop_genre li {
+  width: 125px;
+  height: 14px;
+  color: #000033;
+  background: white;
+  text-transform: uppercase;
+  padding: 1px 0px 1px 0px;
+}
+
+.drop_genre li:hover {
+  width: 125px;
+  height: 14px;
+  color: #cc6600;
+  background: white;
+  text-transform: uppercase;
+}
+
+.screening_list li {
+  padding-bottom: 34px;
+}
+
+.showtimes {
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  z-index: 50;
+}
+
+.screening_list {
+  height: 310px;
+  overflow: hidden;
+}
+
+.one_column .screening_list {
+  width: 380px;
+}
+
+.one_column .screening_list ul {
+  width: 360px;
+}
+
+.two_column .screening_list {
+  width: 380px;
+}
+
+.two_column .screening_list ul {
+  width: 360px;
+}
+
+.screening_list ul {
+  margin-left: 20px;
+}
+
+.jspPane {
+  margin-left: 0px !important;
+}
+.jspVerticalBar {
+  left: 0px !important;
+}
+.landing .jspPane {
+  margin-left: 10px !important;
+}
+.jspDrag {
+  background: #cc6600 url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_arrow.gif') no-repeat top !important;
+}
+.two_column .jspTrack, .landing .jspTrack {
+  background: #303033  url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back_1.png') repeat-y right top !important;
+  background-color: transparent !important;
+}
+.landing #chat_panel .jspTrack {
+  background-color: transparent !important;
+}
+.one_column .jspTrack {
+  background: #000033  url('http://s3.amazonaws.com/cdn.constellation.tv/prod/images/scroll_back.png') repeat-y right top !important;
+}
+
+.jclock {
+  float: left;
+  width: 100px;
+}
+
+#growler {
+  margin-left: -100px;
+  float: left;
+}
+#growler_body {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.error_notice {
+  text-align: left !important;
+}
+
+.error_notice h2 {
+  font-weight: bold;
+}
+.friggin_squished {
+  padding-top: 0px !important;
+}
+.static_content {
+  float: left;
+  padding-bottom: 40px;
+}
+
+.static_content p {
+  font-weight: normal !important;
+  color: white !important;
+  padding-bottom: 15px !important;
+}
+
+.static_content a {
+  color: #99CCFF !important;
+}
+
+.static_content ol, .static_content ul {
+  font-weight: normal !important;
+  margin-left: 50px !important;
+  width: 80%;
+  padding-bottom: 15px !important;
+}
+
+#send_popup, #write_popup {
+  margin-top: 10px;
+}
+
+.scroll_film_info {
+  height: 200px;
+}
+.filminfowrap {
+  margin-left: 10px !important;
+  margin-bottom: 10px;
+}
+
+#prescreening_panel_main {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+}
+#prescreening_panel_main .prescreening_left {
+  float:left;
+  width: 300px;
+  text-align: right;
+  padding-right: 30px
+}
+#prescreening_panel_main .prescreening_center{
+  padding: 20px 400px;
+}
+#prescreening_panel_main .prescreening_right {
+  float:right;
+  width:300px;
+  text-align: center;
+  padding-right: 80px;
+}
+#hometime {
+  position: absolute;
+  margin-top: -50px;
+  width: 500px;
+  left: 0;
+}
+
+#hometime .buzz h5 {
+  font-size: 12px;
+  border-bottom: 0px !important;
+  float: left;
+  position: relative;
+}
+#hometime .buzz #current-time {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+}
+#hometime .buzz #current-time-pick {
+  float: left;
+  padding-left: 10px !important;
+  padding-bottom: 0px !important;
+  margin-top: -5px;
+}
+.one_column #timezone-select-popup {
+  clear: both;
+  position: absolute;
+  top: -300px;
+}
+.one_column #timezone-select-popup p {
+  font-size: 14px;
+}
+body.landing .column2 .screening_still p {
+	color: #000000 !important; 
+}
+body.landing .column2 .screening_still p a {
+	color: #330099 !important; 
+}
+.widget_video_still {
+	width:420px;
+	margin:0px auto;
+	text-align:left;
+	overflow: hidden;
+}
+.bandwidth_warning {
+	color: red;
+	text-transform: uppercase;
+}

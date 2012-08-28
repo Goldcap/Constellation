@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title> Floating Three-column CSS example</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<style type="text/css">
+
+ #prescreening_panel {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  }
+
+ #prescreening_panel .prescreening_left {
+  float:left;
+  width: 30%;
+  border: 1px solid blue;
+  }
+
+ #prescreening_panel .prescreening_right {
+  float:right;
+  width:30%;
+  border: 1px solid red;
+  }
+
+ #prescreening_panel .prescreening_center {
+  border: 1px solid green;
+  }
+
+ #clear {
+  clear:both;
+  }
+</style>
+  </head>
+
+  <body>
+
+    <div id="prescreening_panel">
+
+      <div class="prescreening_left">
+        <p>Left</p>
+      </div>
+
+      <div class="prescreening_right">
+        <p>Right</p>
+      </div>
+
+      <div class="prescreening_center">
+        <p>Center</p>
+      </div>
+
+      <div id="clear"></div>
+
+    </div>
+    
+  </body>
+</html>

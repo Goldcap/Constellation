@@ -1,0 +1,39 @@
+<map table="film" result="payment" allow_add="false">
+  <column column="payment_unique_code" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="payment_amount" name="Amount" type="LONGVARCHAR" size="" key="" order="2" format="money_us"></column>
+  <column column="payment_last_four" name="Card" type="LONGVARCHAR" size="" key="" order="3" format="*********%04d"></column>
+  <column column="payment_processor" name="Processor" type="LONGVARCHAR" size="" key="" order="3" format=""></column>
+  <column column="payment_date" name="Payment_Date" type="LONGVARCHAR" size="pretty" key="" order="3" format="dateformat"></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[select payment_unique_code,
+        payment_amount,
+        payment_last_four_CC_digits,
+        payment_order_processor,
+        payment_created_at
+        payment_status
+        from payment 
+        where payment.fk_user_id = ?
+      ]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="screening_date" type="AND" />
+    <criteria scope="PROCESS" value="startdate" column="screening_date" constant="native" type="AND" />-->
+    <criteria scope="GET" value="id" />
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <descorderby column="payment_created_at"></descorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <!--<maplinks>
+    <maplink column="Amount">
+      <attribute name="payment_unique_code"></attribute>
+    </maplink>
+  </maplinks>-->
+</map>

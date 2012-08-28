@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="" >
+<testsuite  name="Default Test Suite" project="MediaTests">
+<testsuite name="flexUnitTests:MediaTest1" type="testsuiteclass"/>
+<testsuite name="flexUnitTests:MediaTest2" type="testsuiteclass"/>
+</testsuite>
+</testrun>

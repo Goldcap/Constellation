@@ -1,0 +1,14 @@
+template: cst1_home
+layout: cst_home_alt
+title: Constellation | Your Online Movie Theater
+javascripts: []
+css: [/css/pages/thevow.css,/css/pages/thevow_share.css]
+widgets:
+  masterhead:
+    HeaderAlt:
+  content:
+    Vow:
+  footer:
+    FooterAlt:
+  zzdiv:
+    GoogleAnalytics:

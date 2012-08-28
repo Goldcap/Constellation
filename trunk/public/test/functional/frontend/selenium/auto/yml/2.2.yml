@@ -1,0 +1,21 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type:click,locator: id="hbr_request_button"}
+ - {type:click,locator: id="fld-cc_first_name"}
+ - {type:type,locator: id="fld-cc_first_name", value: Ahmed}
+ - {type:click,locator: id="fld-cc_last_name"}
+ - {type:type,locator: id="fld-cc_last_name", value: Shams}
+ - {type:click,locator: id="fld-cc_email"}
+ - {type:type,locator: id="fld-cc_email", value: ahmed@sconstellation.tv}
+ - {type:click,locator: id="fld-cc_confirm_email"}
+ - {type:type,locator: id="fld-cc_confirm_email", value: ahmed@sconstellation.tv}
+ - {type:click,locator: id="fld-cc_city"}
+ - {type:type,locator: id="fld-cc_city", value: Clifton}
+ - {type:click,locator: id="fld-cc_state"}
+ - {type:select,locator: id="fld-cc_state", value: label="New Jersey"}
+ - {type:click,locator: name="b_country"}
+ - {type:select,locator: name="b_country", value: label="United States of America"}
+ - {type:click,locator: id="purchase_submit"}
+ - {type:assertElementPresent,locator: id="startdate"}

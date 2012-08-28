@@ -1,0 +1,19 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      masterhead:
+        attributes: 'class="masterhead" role="banner"'
+      content:
+        attributes: 'class="content"'
+        divs:
+          left_column:
+            attributes: 'class="left_column"'
+            divs:
+              main:
+                attributes: 'class="main"'
+          right_column:
+            attributes: 'class="right_column"'
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  chat_box:

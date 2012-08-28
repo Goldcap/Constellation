@@ -1,0 +1,24 @@
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+logout:
+  url:   /logout
+  param: { module: default, action: logout }
+  
+login:
+  url:   /login
+  param: { module: login, action: login }
+
+cart_search:
+  url:   /cart/search/:id.:format
+  param: { module: default, action: cart, op: search }
+
+default_index:
+  url:   /:action/:op/:id/:rev/*
+  param: { module: default, action: index, op: list, id: 0, rev: 0 }
+  
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }

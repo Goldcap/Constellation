@@ -1,0 +1,3 @@
+http://code.google.com/p/multi-mechanize/
+http://wwwsearch.sourceforge.net/mechanize/#examples
+http://stockrt.github.com/p/emulating-a-browser-in-python-with-mechanize/

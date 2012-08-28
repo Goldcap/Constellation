@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+Copyright 2010 WebDriver committers
+Copyright 2010 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+<head>
+  <title>event_test.html</title>
+  <script src="test_bootstrap.js"></script>
+  <script type="text/javascript">
+  goog.require('bot.events');
+  goog.require('bot.locators');
+  goog.require('goog.array');
+  goog.require('goog.events');
+  goog.require('goog.events.EventType');
+  goog.require('goog.testing.jsunit');
+  goog.require('goog.userAgent');
+  </script>
+
+  <script type="text/javascript">
+    MESSAGES = [];
+
+    function log(message) {
+      MESSAGES.push(message);
+    }
+  </script>
+
+  <script type="text/javascript">
+  function testCanFireMoveEvent() {
+    var e = bot.locators.findElement({id: 'move'});
+
+    bot.events.fire(e, goog.events.EventType.MOUSEMOVE);
+
+    assertTrue(goog.array.indexOf(MESSAGES, 'move') != -1);
+  }
+
+  function testCanFireFocusEvent() {
+    var e = bot.locators.findElement({id: 'focus'});
+
+    bot.events.fire(e, goog.events.EventType.FOCUS);
+
+    assertTrue(goog.array.indexOf(MESSAGES, 'focus') != -1);
+  }
+
+  function testCanFireBlurEvent() {
+    var e = bot.locators.findElement({id: 'blur'});
+
+    bot.events.fire(e, goog.events.EventType.BLUR);
+
+    assertTrue(goog.array.indexOf(MESSAGES, 'blur') != -1);
+  }
+
+  function testCanAccessEventProperties_NonIE() {
+    if (goog.userAgent.IE) {
+      return;
+    }
+
+    var type, target;
+    var elem = bot.locators.findElement({id: 'props'});
+    elem.onfocus = function(e) {
+      type = e.type;
+      target = e.target;
+    };
+    bot.events.fire(elem, goog.events.EventType.FOCUS);
+
+    assertEquals('focus', type);
+    assertEquals(elem, target);
+  }
+
+  function testCanAccessEventProperties_IE() {
+    if (!goog.userAgent.IE) {
+      return;
+    }
+
+    var type, target;
+    var elem = bot.locators.findElement({id: 'props'});
+    elem.onfocus = function() {
+      type = window.event.type;
+      target = window.event.srcElement;
+    };
+    bot.events.fire(elem, goog.events.EventType.FOCUS);
+
+    assertEquals('focus', type);
+    assertEquals(elem, target);
+  }
+
+  function testIsSythentic() {
+    var propertyListenerCalled = false;
+    var closureListenerCalled = false;
+    var elem = bot.locators.findElement({id: 'move'});
+    elem.onmousemove = function(event) {
+      propertyListenerCalled = true;
+      assertTrue(bot.events.isSynthetic(event));
+    };
+    goog.events.listen(elem, 'mousemove', function(event) {
+      closureListenerCalled = true;
+      assertTrue(bot.events.isSynthetic(event));
+    });
+    bot.events.fire(elem, 'mousemove');
+
+    // Make sure the assertions were actually checked.
+    assertTrue(propertyListenerCalled);
+    assertTrue(closureListenerCalled);
+  }
+  </script>
+
+</head>
+<body>
+  <p id="move" onmousemove="log('move');">Move</p>
+  <p id="focus" onfocus="log('focus');">Focus</p>
+  <p id="blur" onblur="log('blur');">Blur</p>
+  <p id="props">Properties</p>
+</body>
+</html>

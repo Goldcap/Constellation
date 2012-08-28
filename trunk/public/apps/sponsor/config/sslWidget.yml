@@ -1,0 +1,5 @@
+direct_skips: []
+pattern_skips: []
+direct: []
+#pattern: [^_film(.*),^_host(.*),^_screening(.*),^_purchase(.*)]
+pattern: []

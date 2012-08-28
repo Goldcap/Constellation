@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/util
+END
+Pluralizer.php
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/util/Pluralizer.php
+END
+DefaultEnglishPluralizer.php
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/util/DefaultEnglishPluralizer.php
+END

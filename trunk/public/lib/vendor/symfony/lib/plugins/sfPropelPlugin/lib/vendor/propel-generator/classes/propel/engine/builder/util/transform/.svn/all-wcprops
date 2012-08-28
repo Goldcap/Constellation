@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/util/transform
+END
+XmlToDataSQL.php
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/propel-generator/classes/propel/engine/builder/util/transform/XmlToDataSQL.php
+END

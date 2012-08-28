@@ -1,0 +1,353 @@
+<widget name="promotion" baseurl="/modules/promotion/">
+  <content>
+    <AFORM>
+      <FORMNAME>promotion</FORMNAME>
+      <FORMACTION>$self</FORMACTION>
+      <JSVALIDATE>TRUE</JSVALIDATE>
+      <FORMCLASS></FORMCLASS>
+      <SERVERVALIDATE>TRUE</SERVERVALIDATE>
+      <PASSTHROUGHVALUES>TRUE</PASSTHROUGHVALUES>
+      <QUERYVALUES>TRUE</QUERYVALUES>
+      <SHOWERRORS>FALSE</SHOWERRORS>
+      <REQS>FALSE</REQS>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotinos</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>formsubhead</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>formhead</NAME>
+          <DISPLAY>Promotions</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>headline</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>requirenotice</NAME>
+          <DISPLAY>* required fields</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>reqmessage</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>errornotice</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>errornotice</TYPE>
+          <DEFAULT>Please complete fields outlined in red.</DEFAULT>
+          <CLASS>errornotice</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hr</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>linebreak</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion Name</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_name</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>text</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>LONGVARCHAR</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_name_help</NAME>
+          <DISPLAY>Enter a description .</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion Html</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_html</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>textarea</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>LONGVARCHAR</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_html_help</NAME>
+          <DISPLAY>Enter any HTML here, this is what is displayed to the users.</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion StartDate</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_start_date</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>jquery_anytime</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>DateTime</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>"%Y-%m-%d %T"</SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_start_date_help</NAME>
+          <DISPLAY>Promotions will not be used prior to this date.</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion EndDate</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_end_date</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>jquery_anytime</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>DateTime</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>"%Y-%m-%d %T"</SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_end_date_help</NAME>
+          <DISPLAY>Promotions will not be used after this date.</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion Duration</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_duration</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT>Select One</DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="30">30 Seconds</VALUE>
+          <VALUE value="45">45 Seconds</VALUE>
+          <VALUE value="60">60 Seconds</VALUE>
+          <VALUE value="90">90 Seconds</VALUE>
+          <VALUE value="120">120 Seconds</VALUE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_duration_help</NAME>
+          <DISPLAY>Promotions will display for this many seconds.</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY>Promotion Priority</DISPLAY>
+          <TYPE>display</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col1</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_priority</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>select</TYPE>
+          <DEFAULT>Select One</DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>0</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE></SIZE>
+          <VALUE value="1">(1) Most Important</VALUE>
+          <VALUE value="2">(2)</VALUE>
+          <VALUE value="3">(3)</VALUE>
+          <VALUE value="4">(4)</VALUE>
+          <VALUE value="5">(5)</VALUE>
+          <VALUE value="6">(6)</VALUE>
+          <VALUE value="7">(7)</VALUE>
+          <VALUE value="8">(8)</VALUE>
+          <VALUE value="9">(9)</VALUE>
+          <VALUE value="10">(10) Least Important</VALUE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>promotion_priority_help</NAME>
+          <DISPLAY>A lower number will make this promotion display earlier than others.</DISPLAY>
+          <TYPE species="toolTip">jquery_tooltip</TYPE>
+          <DEFAULT>/images/Neu/16x16/status/dialog-question.png</DEFAULT>
+          <CLASS>icon16</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>col2c</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME></NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hr</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS></CLASS>
+          <VTIP></VTIP>
+          <REQUIRED></REQUIRED>
+          <DISPLAYCLASS>linebreak_float</DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>promotion_id</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>hidden</TYPE>
+          <DEFAULT></DEFAULT>
+          <CLASS>input</CLASS>
+          <VTIP>INTEGER</VTIP>
+          <REQUIRED>TRUE</REQUIRED>
+          <DISPLAYCLASS>col2</DISPLAYCLASS>
+          <SIZE>11</SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+      <FORMELEMENTGROUP>
+        <FORMELEMENT>
+          <NAME>submit</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>submitimage</TYPE>
+          <DEFAULT>/images/submit.gif</DEFAULT>
+          <CLASS>submitter</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS></DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+        <FORMELEMENT>
+          <NAME>delete</NAME>
+          <DISPLAY></DISPLAY>
+          <TYPE>submitimage</TYPE>
+          <DEFAULT>/images/delete.gif</DEFAULT>
+          <CLASS>submitter</CLASS>
+          <VTIP></VTIP>
+          <REQUIRED>FALSE</REQUIRED>
+          <DISPLAYCLASS></DISPLAYCLASS>
+          <SIZE></SIZE>
+        </FORMELEMENT>
+      </FORMELEMENTGROUP>
+    </AFORM>
+  </content>
+</widget>

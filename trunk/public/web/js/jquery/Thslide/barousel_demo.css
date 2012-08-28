@@ -1,0 +1,285 @@
+/*=============================    
+barousel_demo.css
+v.0.1
+Julien Decaudin - 04/2010
+www.juliendecaudin.com
+=============================*/
+#container {
+  margin: 0px auto;
+  width: 900px;
+}
+
+/*-------------> BAROUSEL */
+.barousel
+{
+    position:relative;
+    margin-bottom:0px;
+    background: #cc6600;
+    width:533px;
+    height:246px;
+}
+
+.barousel_image
+{
+    position:absolute;
+    right: 0px;
+    z-index:10;
+    width:360px;
+    height:246px;
+}
+
+.barousel_image img
+{
+    position:absolute;
+    display:none;
+}
+
+.barousel_image img.default
+{    
+    display:block;
+}
+
+.barousel_image img.current
+{
+    z-index:10;
+}
+
+.barousel_image img.previous
+{
+    z-index:5;
+}
+
+.barousel_content
+{
+    position:absolute;   
+    z-index:50;
+    color:#fff;
+    width:152px;
+    left:10px;
+}
+
+.barousel_content div
+{
+    display:none;    
+}
+
+.barousel_content div.default
+{
+    display:block;    
+}
+
+.barousel_content p
+{
+    font-size:13px;
+    font-weight:normal; 
+    line-height:17px;   
+}
+
+.barousel_content p.header
+{
+    font-size:28px;
+    font-weight:normal;
+    line-height:28px;
+    color:#fff55b;
+}
+
+.barousel_content a,
+.barousel_content a:hover
+{
+    color:#fff55b;
+    background-color:transparent !important;
+}
+
+.barousel_nav
+{
+    position:absolute;
+    padding:3px 3px 0px 0;
+    height:23px;    
+    background:#000;
+    bottom:0;
+    z-index:20;
+    width:497px;
+}
+
+.barousel_nav .counter
+{    
+    float:right;
+    font-size:0.75em;
+    color:#fff;
+    margin:3px 5px 0 0;
+}
+
+.barousel_nav ul
+{
+    float:right;
+    padding:0;
+    margin:0;
+}
+
+.barousel_nav li
+{
+    float:left;
+    padding-left:3px;
+    font-size:0;
+    line-height:0;
+    list-style:none;
+}
+
+.barousel_nav li a
+{
+    display:block;
+    width:25px;
+    height:20px;
+    background-color:#4d4d4d;
+    font-size:0;
+    line-height:0;
+    text-decoration:none;
+}
+
+.barousel_nav li a:hover
+{
+    background-color:#6e6e6e;
+}
+
+.barousel_nav li a.current
+{
+    background-color:#fff55b;
+}
+
+.barousel_nav li.prev a
+{
+    background-image:url(../images/barousel_link_previous.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel_nav li.next a
+{
+    background-image:url(../images/barousel_link_next.gif);
+    background-repeat:no-repeat;
+    background-position:0 0;
+}
+
+.barousel img.ajax_loader
+{
+    display:none;
+    position:absolute;
+    z-index:99;
+    top:70px;
+    left:135px;
+}
+
+/*-------------> THSLIDE */
+.thslide
+{    
+    background:#000;
+    width:533px;
+    height:47px;
+}
+
+.thslide_nav_previous
+{
+    position: absolute;
+    float:left;
+    left: -20px;    
+}
+
+.thslide_nav_next
+{
+    position: absolute;
+    float:right;
+    right: -20px; 
+}
+
+.thslide_nav_previous a,
+.thslide_nav_next a
+{
+    display:block;
+    width:19px;
+    height:47px;     
+    text-decoration:none;  
+    background-color:#4d4d4d;
+    background-repeat:no-repeat;    
+}
+
+.thslide_nav_previous a
+{
+    background-image:url(../images/thslide_link_previous.gif);    
+    background-position:0 0;
+}
+
+.thslide_nav_next a
+{
+    background-image:url(../images/thslide_link_next.gif);    
+    background-position:100% 0;
+}
+
+.thslide_nav_previous a:hover,
+.thslide_nav_next a:hover
+{
+    background-color:#6e6e6e;
+}
+
+.thslide_list
+{
+    float:left;
+    overflow:hidden;   
+    position:relative; 
+    width:533px;
+    height:47px;    
+}
+
+.thslide_list ul
+{
+    float:left;
+    width:9000px;
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+
+.thslide_list li
+{
+    float:left;
+    margin-right:0px;
+    width: 107px;
+}
+
+.thslide_list li a
+{
+    display:block;
+    position:relative;
+    width:107px;
+    height:47px;  
+    text-decoration:none;
+}
+
+.thslide_list li a img
+{
+    position:absolute;
+    border: 0px !important;
+}
+
+.thslide_list li a span
+{
+    position:absolute;
+    display:block;
+    width:30px;
+    height:39px;
+    font-size: 8px;
+    background: #cc6600;
+    color: white;
+    padding: 4px;
+}
+
+/* Specific implementation */
+#barousel_thslide
+{
+    height:293px;
+}
+
+#thslide_barousel_nav
+{
+    position:absolute;
+    bottom:0;
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Styroform Form Generator » \XMLSelect</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Styroform Form Generator</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#XMLSelect" title="XMLSelect :: Class Constructor"><span class="description">Class Constructor</span><pre>XMLSelect()</pre></a></li>
+<li class="method public "><a href="#addItem" title='addItem :: Inserts an item with a "name" value'><span class="description">Inserts an item with a "name" value</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#arrayReturn" title='arrayReturn :: Returns and array of results in "sel_key", "sel_value" format'><span class="description">Returns and array of results in "sel_key", "sel_value" format</span><pre>arrayReturn()</pre></a></li>
+<li class="method public "><a href="#deleteItem" title="deleteItem :: Deletes an item with a specific ID"><span class="description">Deletes an item with a specific ID</span><pre>deleteItem()</pre></a></li>
+<li class="method public "><a href="#drawXMLHeader" title="drawXMLHeader :: Output standard XML Headers for XML Dump"><span class="description">Output standard XML Headers for XML Dump</span><pre>drawXMLHeader()</pre></a></li>
+<li class="method public "><a href="#echoXML" title="echoXML :: Output xml format data for AJAX Queries"><span class="description">Output xml format data for AJAX Queries</span><pre>echoXML()</pre></a></li>
+<li class="method public "><a href="#findAndUpdateItem" title="findAndUpdateItem :: Returns results from a Dadoo SQL Query, using standardized columnar names"><span class="description">Returns results from a Dadoo SQL Query, using standardized columnar names</span><pre>findAndUpdateItem()</pre></a></li>
+<li class="method public "><a href="#itemReturn" title='itemReturn :: Returns and array of results in "sel_key", "sel_value" format'><span class="description">Returns and array of results in "sel_key", "sel_value" format</span><pre>itemReturn()</pre></a></li>
+<li class="method public "><a href="#outputXML" title="outputXML :: Dumps DB Select Results to an XML Formatted Outpu"><span class="description">Dumps DB Select Results to an XML Formatted Outpu</span><pre>outputXML()</pre></a></li>
+<li class="method public "><a href="#queryReturn" title="queryReturn :: Returns results from a WTVR XML Query"><span class="description">Returns results from a WTVR XML Query</span><pre>queryReturn()</pre></a></li>
+<li class="method public "><a href="#runDadooSQL" title="runDadooSQL :: Returns results from a Dadoo SQL Query, using standardized columnar names"><span class="description">Returns results from a Dadoo SQL Query, using standardized columnar names</span><pre>runDadooSQL()</pre></a></li>
+<li class="method public "><a href="#runItem" title="runItem :: Returns results from a SQL Query, using standardized columnar names"><span class="description">Returns results from a SQL Query, using standardized columnar names</span><pre>runItem()</pre></a></li>
+<li class="method public "><a href="#runSQL" title="runSQL :: Returns results from a SQL Query, using standardized columnar names"><span class="description">Returns results from a SQL Query, using standardized columnar names</span><pre>runSQL()</pre></a></li>
+<li class="method public "><a href="#runSQLAlpha" title="runSQLAlpha :: Returns string-match results from a SQL Query, using standardized columnar names,
+and a letter"><span class="description">Returns string-match results from a SQL Query, using standardized columnar names,
+and a letter</span><pre>runSQLAlpha()</pre></a></li>
+<li class="method public "><a href="#updateItem" title='updateItem :: Updates an item with a new "name" value'><span class="description">Updates an item with a new "name" value</span><pre>updateItem()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24dbresults" title="$dbresults :: Buffer of Results from Query"><span class="description">Buffer of Results from Query</span><pre>$dbresults</pre></a></li>
+<li class="property public "><a href="#%24id" title="$id :: Integer of Primary Key for Deletion"><span class="description">Integer of Primary Key for Deletion</span><pre>$id</pre></a></li>
+<li class="property public "><a href="#%24table" title="$table :: Base Table for the Select Query"><span class="description">Base Table for the Select Query</span><pre>$table</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CXMLSelect" id="\XMLSelect"></a><div href="../classes/db_%5CXMLSelect.html" class="element class">
+<p class="short_description">Responsible for formatting db data into select list elements.</p>
+<div class="details">
+<p class="long_description"></p>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="XMLSelect" id="XMLSelect"></a><div class="element clickable method public XMLSelect" data-toggle="collapse" data-target=".XMLSelect .collapse">
+<h2>Class Constructor</h2>
+<pre>XMLSelect() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>XMLSelect</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addItem" id="addItem"></a><div class="element clickable method public addItem" data-toggle="collapse" data-target=".addItem .collapse">
+<h2>Inserts an item with a "name" value</h2>
+<pre>addItem(string $name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>updateItem</td>
+</tr>
+<tr>
+<th>name</th>
+<td>addItem</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of item</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="arrayReturn" id="arrayReturn"></a><div class="element clickable method public arrayReturn" data-toggle="collapse" data-target=".arrayReturn .collapse">
+<h2>Returns and array of results in "sel_key", "sel_value" format</h2>
+<pre>arrayReturn(boolean $count, boolean $alpha) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>arrayReturn</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$count</h4>
+<code>boolean</code><ul>
+<li>Returns either count or results</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$alpha</h4>
+<code>boolean</code><ul>
+<li>Order Alphabetically</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a name="deleteItem" id="deleteItem"></a><div class="element clickable method public deleteItem" data-toggle="collapse" data-target=".deleteItem .collapse">
+<h2>Deletes an item with a specific ID</h2>
+<pre>deleteItem(string $id) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>updateItem</td>
+</tr>
+<tr>
+<th>name</th>
+<td>addItem</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><ul>
+<li>ID of item</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="drawXMLHeader" id="drawXMLHeader"></a><div class="element clickable method public drawXMLHeader" data-toggle="collapse" data-target=".drawXMLHeader .collapse">
+<h2>Output standard XML Headers for XML Dump</h2>
+<pre>drawXMLHeader() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>drawXMLHeader</td>
+</tr></table>
+</div></div>
+</div>
+<a name="echoXML" id="echoXML"></a><div class="element clickable method public echoXML" data-toggle="collapse" data-target=".echoXML .collapse">
+<h2>Output xml format data for AJAX Queries</h2>
+<pre>echoXML() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>echoXML</td>
+</tr></table>
+</div></div>
+</div>
+<a name="findAndUpdateItem" id="findAndUpdateItem"></a><div class="element clickable method public findAndUpdateItem" data-toggle="collapse" data-target=".findAndUpdateItem .collapse">
+<h2>Returns results from a Dadoo SQL Query, using standardized columnar names</h2>
+<pre>findAndUpdateItem(string $name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td></td>
+</tr>
+<tr>
+<th>name</th>
+<td>findAndUpdateItem</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="itemReturn" id="itemReturn"></a><div class="element clickable method public itemReturn" data-toggle="collapse" data-target=".itemReturn .collapse">
+<h2>Returns and array of results in "sel_key", "sel_value" format</h2>
+<pre>itemReturn(string $count) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>itemReturn</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$count</h4>
+<code>string</code><ul>
+<li>Returns either count or results</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a name="outputXML" id="outputXML"></a><div class="element clickable method public outputXML" data-toggle="collapse" data-target=".outputXML .collapse">
+<h2>Dumps DB Select Results to an XML Formatted Outpu</h2>
+<pre>outputXML() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>outputXML</td>
+</tr></table>
+</div></div>
+</div>
+<a name="queryReturn" id="queryReturn"></a><div class="element clickable method public queryReturn" data-toggle="collapse" data-target=".queryReturn .collapse">
+<h2>Returns results from a WTVR XML Query</h2>
+<pre>queryReturn(string $count) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>arrayReturn</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$count</h4>
+<code>string</code><ul>
+<li>Returns either count or results</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="runDadooSQL" id="runDadooSQL"></a><div class="element clickable method public runDadooSQL" data-toggle="collapse" data-target=".runDadooSQL .collapse">
+<h2>Returns results from a Dadoo SQL Query, using standardized columnar names</h2>
+<pre>runDadooSQL() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>runDadooSQL</td>
+</tr></table>
+</div></div>
+</div>
+<a name="runItem" id="runItem"></a><div class="element clickable method public runItem" data-toggle="collapse" data-target=".runItem .collapse">
+<h2>Returns results from a SQL Query, using standardized columnar names</h2>
+<pre>runItem() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>runItem</td>
+</tr></table>
+</div></div>
+</div>
+<a name="runSQL" id="runSQL"></a><div class="element clickable method public runSQL" data-toggle="collapse" data-target=".runSQL .collapse">
+<h2>Returns results from a SQL Query, using standardized columnar names</h2>
+<pre>runSQL(string $other) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>runSQL</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="runSQLAlpha" id="runSQLAlpha"></a><div class="element clickable method public runSQLAlpha" data-toggle="collapse" data-target=".runSQLAlpha .collapse">
+<h2>Returns string-match results from a SQL Query, using standardized columnar names,
+and a letter</h2>
+<pre>runSQLAlpha(string $alpha) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+    and LOWER(SUBSTRING({$table}_name FROM 1 FOR 1)) = LOWER('A')
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>runSQLAlpha</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$alpha</h4>
+<code>string</code><ul>
+<li>String of item to search</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="updateItem" id="updateItem"></a><div class="element clickable method public updateItem" data-toggle="collapse" data-target=".updateItem .collapse">
+<h2>Updates an item with a new "name" value</h2>
+<pre>updateItem(string $name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>name</th>
+<td>updateItem</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>New Name of item</li>
+</ul>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24dbresults" id="$dbresults"> </a><div class="element clickable property public $dbresults" data-toggle="collapse" data-target=".$dbresults .collapse">
+<h2>Buffer of Results from Query</h2>
+<pre>$dbresults : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$dbresults</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24id" id="$id"> </a><div class="element clickable property public $id" data-toggle="collapse" data-target=".$id .collapse">
+<h2>Integer of Primary Key for Deletion</h2>
+<pre>$id : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$id</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24table" id="$table"> </a><div class="element clickable property public $table" data-toggle="collapse" data-target=".$table .collapse">
+<h2>Base Table for the Select Query</h2>
+<pre>$table : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$table</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2012-03-24T16:59:28-04:00.<br></footer></div>
+</div>
+</body>
+</html>

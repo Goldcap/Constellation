@@ -1,0 +1,2833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a1" title="Styroform Form Generator">
+  <file path="clsXMLFormUtils.php" hash="7fb404ae764cf68da12c1d2b91237898" package="com\Operis\Styroform">
+    <docblock line="3">
+      <description><![CDATA[clsXMLFormUtils.php, Styroform XML Form Controller
+XML Form Generator and Validator.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Andy Madsen &lt;amadsen@operislabs.com&gt;"/>
+      <tag line="3" name="version" description="1.2"/>
+      <tag line="3" name="package" description="com.Operis.Styroform"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="default" line="14" package="Default">
+      <name>XMLFormUtils</name>
+      <full_name>\XMLFormUtils</full_name>
+      <extends/>
+      <docblock line="11">
+        <description><![CDATA[Convenience methods for XML Form.]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="21" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="16">
+          <description><![CDATA[Constructor creates a new XML Document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="name" description="constructor"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="31" package="">
+        <name>sfDateTime</name>
+        <type>function</type>
+        <docblock line="25">
+          <description><![CDATA[Create a datetime value from a compound form element.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="name" description="sfDateTime"/>
+          <tag line="25" name="param" description="- FPO copy here" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="52" package="">
+        <name>stripQSPage</name>
+        <type>function</type>
+        <docblock line="47">
+          <description><![CDATA[Remove the querystring variables "page" and "sort" from the URL]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="name" description="stripQSPage"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="63" package="">
+        <name>checkCompound</name>
+        <type>function</type>
+        <docblock line="56">
+          <description><![CDATA[Determine if a form element is a compound element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="56" name="name" description="checkCompound"/>
+          <tag line="56" name="param" description="" type="string" variable="$item">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="56" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$item</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="80" package="">
+        <name>getCompound</name>
+        <type>function</type>
+        <docblock line="71">
+          <description><![CDATA[Return an array containing the parts for a compound element]]></description>
+          <long-description><![CDATA[<p>Parts are Name and Type</p>]]></long-description>
+          <tag line="71" name="name" description="getCompound"/>
+          <tag line="71" name="param" description="" type="string" variable="$item">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="71" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="80">
+          <name>$item</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="94" package="">
+        <name>array_insert</name>
+        <type>function</type>
+        <docblock line="86">
+          <description><![CDATA[Adds an element to an array]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="86" name="name" description="array_insert"/>
+          <tag line="86" name="param" description="" type="array" variable="$array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="86" name="param" description="" type="int" variable="$position">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="86" name="param" description="" type="array" variable="$elements">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="94">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$position</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$elements</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="120" package="">
+        <name>showXML</name>
+        <type>function</type>
+        <docblock line="115">
+          <description><![CDATA[Dumps the current document into an XML Output]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="115" name="name" description="showXML"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="129" package="">
+        <name>_debug</name>
+        <type>function</type>
+        <docblock line="124">
+          <description><![CDATA[Dumps the current document into an XML Output]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="124" name="name" description="_debug"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="clsXMLSelect.php" hash="12b7636485fcdb209df77a1bf69d1cbf" package="com\Operis\Styroform">
+    <docblock line="2">
+      <description><![CDATA[XMLSelect.php, Styroform XML Form Controller
+XML Form Generator and Validator
+Retrieves lists for select elements, either from a database via ORM, or directly from SQL/Query files.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Andy Madsen &lt;amadsen@operislabs.com&gt;"/>
+      <tag line="2" name="version" description="1.2"/>
+      <tag line="2" name="package" description="com.Operis.Styroform"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="default" line="14" package="Default">
+      <name>XMLSelect</name>
+      <full_name>\XMLSelect</full_name>
+      <extends>\Utils_PageWidget</extends>
+      <docblock line="11">
+        <description><![CDATA[Responsible for formatting db data into select list elements.]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="23" package="Default">
+        <name>$table</name>
+        <default><![CDATA[]]></default>
+        <docblock line="16">
+          <description><![CDATA[Base Table for the Select Query]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="access" description="public"/>
+          <tag line="16" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="16" name="name" description="$table"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="32" package="Default">
+        <name>$id</name>
+        <default><![CDATA[]]></default>
+        <docblock line="25">
+          <description><![CDATA[Integer of Primary Key for Deletion]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="access" description="public"/>
+          <tag line="25" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="25" name="name" description="$id"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="41" package="Default">
+        <name>$dbresults</name>
+        <default><![CDATA[]]></default>
+        <docblock line="34">
+          <description><![CDATA[Buffer of Results from Query]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="access" description="public"/>
+          <tag line="34" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="34" name="name" description="$dbresults"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="48" package="">
+        <name>XMLSelect</name>
+        <type>function</type>
+        <docblock line="43">
+          <description><![CDATA[Class Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="name" description="XMLSelect"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="60" package="">
+        <name>outputXML</name>
+        <type>function</type>
+        <docblock line="55">
+          <description><![CDATA[Dumps DB Select Results to an XML Formatted Outpu]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="55" name="name" description="outputXML"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="73" package="">
+        <name>arrayReturn</name>
+        <type>function</type>
+        <docblock line="65">
+          <description><![CDATA[Returns and array of results in "sel_key", "sel_value" format]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="name" description="arrayReturn"/>
+          <tag line="65" name="param" description="- Returns either count or results" type="boolean" variable="$count">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="65" name="param" description="- Order Alphabetically" type="boolean" variable="$alpha">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="65" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$count</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$alpha</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="94" package="">
+        <name>itemReturn</name>
+        <type>function</type>
+        <docblock line="87">
+          <description><![CDATA[Returns and array of results in "sel_key", "sel_value" format]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="87" name="name" description="itemReturn"/>
+          <tag line="87" name="param" description="- Returns either count or results" type="string" variable="$count">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="87" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="94">
+          <name>$count</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="109" package="">
+        <name>queryReturn</name>
+        <type>function</type>
+        <docblock line="103">
+          <description><![CDATA[Returns results from a WTVR XML Query]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="name" description="arrayReturn"/>
+          <tag line="103" name="param" description="- Returns either count or results" type="string" variable="$count">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$count</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="130" package="">
+        <name>runItem</name>
+        <type>function</type>
+        <docblock line="121">
+          <description><![CDATA[Returns results from a SQL Query, using standardized columnar names]]></description>
+          <long-description><![CDATA[<pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+</code></pre>]]></long-description>
+          <tag line="121" name="name" description="runItem"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="149" package="">
+        <name>runDadooSQL</name>
+        <type>function</type>
+        <docblock line="143">
+          <description><![CDATA[Returns results from a Dadoo SQL Query, using standardized columnar names]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="name" description="runDadooSQL"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="170" package="">
+        <name>findAndUpdateItem</name>
+        <type>function</type>
+        <docblock line="162">
+          <description><![CDATA[Returns results from a Dadoo SQL Query, using standardized columnar names]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="162" name="deprecated" description=""/>
+          <tag line="162" name="name" description="findAndUpdateItem"/>
+          <tag line="162" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="170">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="185" package="">
+        <name>updateItem</name>
+        <type>function</type>
+        <docblock line="179">
+          <description><![CDATA[Updates an item with a new "name" value]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="179" name="name" description="updateItem"/>
+          <tag line="179" name="param" description="- New Name of item" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="185">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="196" package="">
+        <name>addItem</name>
+        <type>function</type>
+        <docblock line="189">
+          <description><![CDATA[Inserts an item with a "name" value]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="189" name="name" description="updateItem"/>
+          <tag line="189" name="name" description="addItem"/>
+          <tag line="189" name="param" description="- Name of item" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="196">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="207" package="">
+        <name>deleteItem</name>
+        <type>function</type>
+        <docblock line="200">
+          <description><![CDATA[Deletes an item with a specific ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="200" name="name" description="updateItem"/>
+          <tag line="200" name="name" description="addItem"/>
+          <tag line="200" name="param" description="- ID of item" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="207">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="221" package="">
+        <name>runSQL</name>
+        <type>function</type>
+        <docblock line="211">
+          <description><![CDATA[Returns results from a SQL Query, using standardized columnar names]]></description>
+          <long-description><![CDATA[<pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+</code></pre>]]></long-description>
+          <tag line="211" name="name" description="runSQL"/>
+          <tag line="211" name="param" description="- FPO copy here" type="string" variable="$other">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="221">
+          <name>$other</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="246" package="">
+        <name>runSQLAlpha</name>
+        <type>function</type>
+        <docblock line="234">
+          <description><![CDATA[Returns string-match results from a SQL Query, using standardized columnar names,
+and a letter]]></description>
+          <long-description><![CDATA[<pre><code> select {$table}_id as sel_key, {$table}_name as sel_value from {$table}
+    and LOWER(SUBSTRING({$table}_name FROM 1 FOR 1)) = LOWER('A')
+</code></pre>]]></long-description>
+          <tag line="234" name="name" description="runSQLAlpha"/>
+          <tag line="234" name="param" description="- String of item to search" type="string" variable="$alpha">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="246">
+          <name>$alpha</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="264" package="">
+        <name>drawXMLHeader</name>
+        <type>function</type>
+        <docblock line="259">
+          <description><![CDATA[Output standard XML Headers for XML Dump]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="259" name="name" description="drawXMLHeader"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="273" package="">
+        <name>echoXML</name>
+        <type>function</type>
+        <docblock line="268">
+          <description><![CDATA[Output xml format data for AJAX Queries]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="268" name="name" description="echoXML"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="clsFormValidator.php" hash="ed09b34dc44ca487130ee226121afc87" package="com\Operis\Styroform">
+    <docblock line="2">
+      <description><![CDATA[clsFormValidator.php, Styroform XML Form Controller
+XML Form Generator and Validator.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Andy Madsen &lt;amadsen@operislabs.com&gt;"/>
+      <tag line="2" name="version" description="1.2"/>
+      <tag line="2" name="package" description="com.Operis.Styroform"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="default" line="13" package="Default">
+      <name>XMLFormValidator</name>
+      <full_name>\XMLFormValidator</full_name>
+      <extends/>
+      <docblock line="10">
+        <description><![CDATA[The Form Validator class, responsible for reading and validating form elements. This class is replicated in JS for client-side validation.]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="22" package="Default">
+        <name>$err</name>
+        <default><![CDATA[]]></default>
+        <docblock line="15">
+          <description><![CDATA[Count of errors discovered during validation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="access" description="public"/>
+          <tag line="15" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="15" name="name" description="$err"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="30" package="Default">
+        <name>$objXMLDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="24">
+          <description><![CDATA[Parent form, passed as an XML Doc]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="access" description="public"/>
+          <tag line="24" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="24" name="name" description="$objXMLDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="39" package="Default">
+        <name>$objElements</name>
+        <default><![CDATA[]]></default>
+        <docblock line="32">
+          <description><![CDATA[Array of XML Form Elements in the form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="access" description="public"/>
+          <tag line="32" name="var" description="" type="\nodelist">
+            <type by_reference="false">\nodelist</type>
+          </tag>
+          <tag line="32" name="name" description="$objElements"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="48" package="Default">
+        <name>$objXMLValidDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="41">
+          <description><![CDATA[XML Object Containing Validation Types]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="41" name="access" description="public"/>
+          <tag line="41" name="var" description="Obj" type="\XML">
+            <type by_reference="false">\XML</type>
+          </tag>
+          <tag line="41" name="name" description="$objXMLValidDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="57" package="Default">
+        <name>$theXMLValidDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Path to XML File for XML Validators]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="access" description="public"/>
+          <tag line="50" name="var" description="Obj" type="\XML">
+            <type by_reference="false">\XML</type>
+          </tag>
+          <tag line="50" name="name" description="$objXMLValidDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="69" package="Default">
+        <name>$objXMLCompDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="59">
+          <description><![CDATA[XML Object Containing "Compound" Form Elements]]></description>
+          <long-description><![CDATA[<p>These elements are normally dates, with multiple formelements,
+i.e. Day, Month, Year   as separate select lists</p>]]></long-description>
+          <tag line="59" name="access" description="public"/>
+          <tag line="59" name="var" description="Obj" type="\XML">
+            <type by_reference="false">\XML</type>
+          </tag>
+          <tag line="59" name="name" description="$objXMLCompDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="78" package="Default">
+        <name>$theXMLCompDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="71">
+          <description><![CDATA[Path to XML File for XML Compound Element Types]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="access" description="public"/>
+          <tag line="71" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="71" name="name" description="$theXMLCompDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="87" package="Default">
+        <name>$currentElement</name>
+        <default><![CDATA[]]></default>
+        <docblock line="80">
+          <description><![CDATA[The current form element being validated]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="access" description="public"/>
+          <tag line="80" name="var" description="element" type="\node">
+            <type by_reference="false">\node</type>
+          </tag>
+          <tag line="80" name="name" description="$currentElement"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="96" package="Default">
+        <name>$vtip</name>
+        <default><![CDATA[]]></default>
+        <docblock line="89">
+          <description><![CDATA[Validation Type of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="89" name="access" description="public"/>
+          <tag line="89" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="89" name="name" description="$vtip"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="105" package="Default">
+        <name>$vreq</name>
+        <default><![CDATA[]]></default>
+        <docblock line="98">
+          <description><![CDATA[Required param of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="98" name="access" description="public"/>
+          <tag line="98" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="98" name="name" description="$vreq"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="114" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="107">
+          <description><![CDATA[The name of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="107" name="access" description="public"/>
+          <tag line="107" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="107" name="name" description="$name"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="123" package="Default">
+        <name>$value</name>
+        <default><![CDATA[]]></default>
+        <docblock line="116">
+          <description><![CDATA[The value of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="116" name="access" description="public"/>
+          <tag line="116" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="116" name="name" description="$value"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="132" package="Default">
+        <name>$size</name>
+        <default><![CDATA[]]></default>
+        <docblock line="125">
+          <description><![CDATA[The size attribute of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="125" name="access" description="public"/>
+          <tag line="125" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="125" name="name" description="$size"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="141" package="Default">
+        <name>$atype</name>
+        <default><![CDATA[]]></default>
+        <docblock line="134">
+          <description><![CDATA[The type attribute of the current form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="134" name="access" description="public"/>
+          <tag line="134" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="134" name="name" description="$atype"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="150" package="Default">
+        <name>$values</name>
+        <default><![CDATA[]]></default>
+        <docblock line="143">
+          <description><![CDATA[Potential values for a Select/Checkradio element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="access" description="public"/>
+          <tag line="143" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="143" name="name" description="$values"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="159" package="Default">
+        <name>$tagname</name>
+        <default><![CDATA[]]></default>
+        <docblock line="152">
+          <description><![CDATA[Name marker for compound elements, is split from compound name using a pipe delimiter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="152" name="access" description="public"/>
+          <tag line="152" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="152" name="name" description="$tagname"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="168" package="Default">
+        <name>$tagatype</name>
+        <default><![CDATA[]]></default>
+        <docblock line="161">
+          <description><![CDATA[Type marker for compound elements, is split from compound type using a pipe delimiter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="161" name="access" description="public"/>
+          <tag line="161" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="161" name="name" description="$tagatype"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="177" package="Default">
+        <name>$tagattr</name>
+        <default><![CDATA[]]></default>
+        <docblock line="170">
+          <description><![CDATA[Attribute marker for compound elements, is split from compound type using a pipe delimiter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="170" name="access" description="public"/>
+          <tag line="170" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="170" name="name" description="$tagattr"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="186" package="Default">
+        <name>$thePat</name>
+        <default><![CDATA[]]></default>
+        <docblock line="179">
+          <description><![CDATA[The validation pattern for a specific form element, taken from ObjXMLValidDoc]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="179" name="access" description="public"/>
+          <tag line="179" name="var" description="" type="\regex">
+            <type by_reference="false">\regex</type>
+          </tag>
+          <tag line="179" name="name" description="$thePat"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="195" package="Default">
+        <name>$gotIt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="188">
+          <description><![CDATA[Result of regex validation on a specific form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="188" name="access" description="public"/>
+          <tag line="188" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="188" name="name" description="$gotIt"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="204" package="Default">
+        <name>$doval</name>
+        <default><![CDATA[]]></default>
+        <docblock line="197">
+          <description><![CDATA[If a form element is to be validated, this is set to true]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="197" name="access" description="public"/>
+          <tag line="197" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="197" name="name" description="$doval"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="214" package="Default">
+        <name>$showerrors</name>
+        <default><![CDATA[]]></default>
+        <docblock line="206">
+          <description><![CDATA[Should validation errors be displayed to the end user]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="206" name="deprecated" description=""/>
+          <tag line="206" name="access" description="public"/>
+          <tag line="206" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="206" name="name" description="$showerrors"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="223" package="Default">
+        <name>$validated</name>
+        <default><![CDATA[]]></default>
+        <docblock line="216">
+          <description><![CDATA[Result of all form validation, skipping elements with VNN or FALSE requirement]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="216" name="access" description="public"/>
+          <tag line="216" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="216" name="name" description="$validated"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="232" package="Default">
+        <name>$debug</name>
+        <default><![CDATA[]]></default>
+        <docblock line="225">
+          <description><![CDATA[Should the Validator be run in debug mode. Debug STOPS ALL OUTPUT.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="225" name="access" description="public"/>
+          <tag line="225" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="225" name="name" description="$debug"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="242" package="Default">
+        <name>$terminal_debug</name>
+        <default><![CDATA[]]></default>
+        <docblock line="234">
+          <description><![CDATA[Should the debug output be send in CLI Color Mode]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="234" name="deprecated" description=""/>
+          <tag line="234" name="access" description="public"/>
+          <tag line="234" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="234" name="name" description="$debug"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="251" package="Default">
+        <name>$assetlocation</name>
+        <default><![CDATA[]]></default>
+        <docblock line="244">
+          <description><![CDATA[Configuration variable declaring the base location of XML Assets]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="244" name="access" description="public"/>
+          <tag line="244" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="244" name="name" description="$assetlocation"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="259" package="Default">
+        <name>$select_types</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="253">
+          <description><![CDATA[Array of form element types to be used in "select", selectdb, state, country, etc...]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="253" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="253" name="name" description="$select_types"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="268" package="Default">
+        <name>$compound_types</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="261">
+          <description><![CDATA[Array of form element types to be used in "compounds", monthday, monthyear, etc...]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="261" name="access" description="public"/>
+          <tag line="261" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="261" name="name" description="$compound_types"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="277" package="Default">
+        <name>$dynarray</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="270">
+          <description><![CDATA[Array of Dynamic Selects for select and checkradio values]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="270" name="access" description="public"/>
+          <tag line="270" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="270" name="name" description="$dynarray"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="286" package="Default">
+        <name>$module</name>
+        <default><![CDATA[]]></default>
+        <docblock line="279">
+          <description><![CDATA[Specific location used in framework integrations]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="279" name="access" description="public"/>
+          <tag line="279" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="279" name="name" description="$module"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="296" package="Default">
+        <name>$errors</name>
+        <default><![CDATA[]]></default>
+        <docblock line="289">
+          <description><![CDATA[Array of fields that encountered an error, name only]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="289" name="access" description="public"/>
+          <tag line="289" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="289" name="name" description="$step"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="304" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="298">
+          <description><![CDATA[Form Constructor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="298" name="name" description="Constructor"/>
+          <tag line="298" name="param" description="- Framework location of module or widget" type="string" variable="$module">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="304">
+          <name>$module</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="325" package="">
+        <name>setValidators</name>
+        <type>function</type>
+        <docblock line="320">
+          <description><![CDATA[Loads the validator regex patterns from an external XML File]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="320" name="name" description="setValidators"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="336" package="">
+        <name>setTypes</name>
+        <type>function</type>
+        <docblock line="331">
+          <description><![CDATA[Loads the compound and select types from an external XML File]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="331" name="name" description="setTypes"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="349" package="">
+        <name>setSelectors</name>
+        <type>function</type>
+        <docblock line="344">
+          <description><![CDATA[Assigns the select types to an array from the Parsed XML Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="344" name="name" description="setSelectors"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="362" package="">
+        <name>setCompounds</name>
+        <type>function</type>
+        <docblock line="357">
+          <description><![CDATA[Assigns the compound types to an array from the Parsed XML Object]]></description>
+          <long-description><![CDATA[<p>@name setCompounds</p>]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="388" package="">
+        <name>initValidation</name>
+        <type>function</type>
+        <docblock line="382">
+          <description><![CDATA[Assigns the Parent XML Form and pulls all form elements onto the local nodelist]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="382" name="name" description="initValidation"/>
+          <tag line="382" name="param" description="" type="string" variable="$objXML">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="388">
+          <name>$objXML</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="400" package="">
+        <name>checkForm</name>
+        <type>function</type>
+        <docblock line="394">
+          <description><![CDATA[Iterate through the form elements and validate each using the regex patterns]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="394" name="name" description="checkForm"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="447" package="">
+        <name>readSig</name>
+        <type>function</type>
+        <docblock line="442">
+          <description><![CDATA[Decode the HMAC Signature and see if we're posting from the right place]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="442" name="name" description="readSig"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="476" package="">
+        <name>createSingleError</name>
+        <type>function</type>
+        <docblock line="469">
+          <description><![CDATA[Create an Error Element in the Form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="469" name="name" description="createSingleError"/>
+          <tag line="469" name="param" description="- Name of the Form element" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="469" name="param" description="- Form Object (Optional)" type="string" variable="$objXML">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="476">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="476">
+          <name>$objXML</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="504" package="">
+        <name>initCurrentItem</name>
+        <type>function</type>
+        <docblock line="490">
+          <description><![CDATA[Parse the Current Element Node and assign attributes locally]]></description>
+          <long-description><![CDATA[<p>Attributes are:</p>
+
+<pre><code> VTIP - Validation Type
+    REQUIRED - TRUE|FALSE|VNN (Value Not Null)
+    NAME - Name of Current Element
+    SIZE - Used for Text Element Validation
+    TYPE - Type of Element
+</code></pre>]]></long-description>
+          <tag line="490" name="name" description="initCurrentItem"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="525" package="">
+        <name>setValues</name>
+        <type>function</type>
+        <docblock line="520">
+          <description><![CDATA[Reads the values of the current item, if a select, or compound element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="520" name="name" description="setValues"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="557" package="">
+        <name>validateItem</name>
+        <type>function</type>
+        <docblock line="551">
+          <description><![CDATA[Validates a form element's value against the regex pattern, or optionally a
+function if available.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="551" name="name" description="validateItem"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="612" package="">
+        <name>validType</name>
+        <type>function</type>
+        <docblock line="606">
+          <description><![CDATA[Determines which function to call to perform validation, using the element VTIP
+attribute. Note, js validation returns an identical function name for PHP.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="606" name="name" description="validType"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="637" package="">
+        <name>regExFetch</name>
+        <type>function</type>
+        <docblock line="632">
+          <description><![CDATA[Pulls the actual regular expression from the Validation Types]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="632" name="name" description="regExFetch"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="656" package="">
+        <name>validate_</name>
+        <type>function</type>
+        <docblock line="651">
+          <description><![CDATA[Generic validation function for non-compliant form element validation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="651" name="namevalidate_" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="665" package="">
+        <name>validate_file</name>
+        <type>function</type>
+        <docblock line="660">
+          <description><![CDATA[Validates File Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="660" name="name" description="validate_file"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="676" package="">
+        <name>validate_text</name>
+        <type>function</type>
+        <docblock line="671">
+          <description><![CDATA[Validates Text Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="671" name="name" description="validate_text"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="730" package="">
+        <name>validate_textarea</name>
+        <type>function</type>
+        <docblock line="725">
+          <description><![CDATA[Validates Textarea Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="725" name="name" description="validate_textarea"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="744" package="">
+        <name>validate_checkbox</name>
+        <type>function</type>
+        <docblock line="739">
+          <description><![CDATA[Validates Checkbox Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="739" name="name" description="validate_checkbox"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="760" package="">
+        <name>validate_radio</name>
+        <type>function</type>
+        <docblock line="755">
+          <description><![CDATA[Validates Radio Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="755" name="name" description="validate_radio"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="775" package="">
+        <name>validate_selectone</name>
+        <type>function</type>
+        <docblock line="770">
+          <description><![CDATA[Validates Select Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="770" name="name" description="validate_selectone"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="807" package="">
+        <name>validate_selectmultiple</name>
+        <type>function</type>
+        <docblock line="802">
+          <description><![CDATA[Validates Multiple Select Input Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="802" name="name" description="validate_selectmultiple"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="861" package="">
+        <name>validate_submit</name>
+        <type>function</type>
+        <docblock line="856">
+          <description><![CDATA[Validates Submit Elements]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="856" name="name" description="validate_submit"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="874" package="">
+        <name>shift</name>
+        <type>function</type>
+        <docblock line="866">
+          <description><![CDATA[Used to assign array values from select arrays into a more managable format]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="866" name="name" description="shift"/>
+          <tag line="866" name="param" description="" type="array" variable="$source">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="866" name="param" description="" type="array" variable="$array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="866" name="param" description="" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="874">
+          <name>$source</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="874">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="874">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="889" package="">
+        <name>fieldCheckCount</name>
+        <type>function</type>
+        <docblock line="884">
+          <description><![CDATA[Counts the number of checked elements were submitted in a form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="884" name="name" description="fieldCheckCount"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="903" package="">
+        <name>fieldChecked</name>
+        <type>function</type>
+        <docblock line="898">
+          <description><![CDATA[Determines with field index is selected in a checkradio form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="898" name="name" description="fieldChecked"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="917" package="">
+        <name>createError</name>
+        <type>function</type>
+        <docblock line="912">
+          <description><![CDATA[Pushes an error onto the error array, and increments the error count]]></description>
+          <long-description><![CDATA[<p>@name createError</p>]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="934" package="">
+        <name>resetField</name>
+        <type>function</type>
+        <docblock line="929">
+          <description><![CDATA[Deprecated, pulled from the JS Validator Prototype]]></description>
+          <long-description><![CDATA[<p>@name  resetField</p>]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="944" package="">
+        <name>setGlobalErrorNotice</name>
+        <type>function</type>
+        <docblock line="938">
+          <description><![CDATA[Sets the state of the form validator for this form. If any errors are found,
+this is set to false]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="938" name="name" description="setGlobalErrorNotice"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="960" package="">
+        <name>setError</name>
+        <type>function</type>
+        <docblock line="954">
+          <description><![CDATA[Applies and error attribute to the "CLASS" subnode of the XML Form Element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="954" name="name" description="setError"/>
+          <tag line="954" name="param" description="- FPO copy here" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="960">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="974" package="">
+        <name>setDisplayError</name>
+        <type>function</type>
+        <docblock line="968">
+          <description><![CDATA[Applies and error attribute to the "DISPLAYCLASS" subnode of the XML Form Element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="968" name="name" description="setDisplayError"/>
+          <tag line="968" name="param" description="- FPO copy here" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="974">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="985" package="">
+        <name>setValue</name>
+        <type>function</type>
+        <docblock line="978">
+          <description><![CDATA[Sets the default value of a form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="978" name="name" description="setValue"/>
+          <tag line="978" name="param" description="" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="978" name="param" description="" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="985">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="985">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="994" package="">
+        <name>isSelect</name>
+        <type>function</type>
+        <docblock line="989">
+          <description><![CDATA[Convenience method to determine if an element is a select element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="989" name="name" description="isSelect"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1006" package="">
+        <name>isMultiple</name>
+        <type>function</type>
+        <docblock line="1001">
+          <description><![CDATA[Convenience method to determine if an element is a multiple select element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1001" name="name" description="isMultiple"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1018" package="">
+        <name>isCompound</name>
+        <type>function</type>
+        <docblock line="1013">
+          <description><![CDATA[Convenience method to determine if an element is a compound element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1013" name="name" description="isCompound"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1033" package="">
+        <name>whichCompound</name>
+        <type>function</type>
+        <docblock line="1028">
+          <description><![CDATA[Returns the compound subtype of a specific compound type]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1028" name="name" description="whichCompound"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1044" package="">
+        <name>regExTest</name>
+        <type>function</type>
+        <docblock line="1037">
+          <description><![CDATA[Performs a regular expression match]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1037" name="name" description="regExTest"/>
+          <tag line="1037" name="param" description="- String Value" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1037" name="param" description="- Regex Pattern" type="string" variable="$expr">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1044">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1044">
+          <name>$expr</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1064" package="">
+        <name>regExEval</name>
+        <type>function</type>
+        <docblock line="1057">
+          <description><![CDATA[Performs a regex replace on a string]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1057" name="name" description="regExEval"/>
+          <tag line="1057" name="param" description="- String" type="string" variable="$str">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1057" name="param" description="- Pattern" type="string" variable="$expr">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1064">
+          <name>$str</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1064">
+          <name>$expr</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1075" package="">
+        <name>doDebug</name>
+        <type>function</type>
+        <docblock line="1068">
+          <description><![CDATA[Prints debug messages either in Color CLI format, or as text]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1068" name="name" description="regExEval"/>
+          <tag line="1068" name="param" description="- FPO copy here" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1068" name="param" description="- FPO copy here" type="string" variable="$result">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1075">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1075">
+          <name>$result</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="xml/xmlSelect.php" hash="51094b38063af7b94ca6bb1e0969b028" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file xml/xmlSelect.php</error>
+    </parse_markers>
+    <include line="2" type="Include Once" package="Default">
+      <name>globals/globals.php</name>
+    </include>
+    <include line="3" type="Include Once" package="Default">
+      <name>wtvr/1.0/clsGlobalBase.php</name>
+    </include>
+    <include line="4" type="Include Once" package="Default">
+      <name>styroform/trunk/clsXMLSelect.php</name>
+    </include>
+  </file>
+  <file path="clsXMLForm.php" hash="1fd218cadfa31d0af0d287309b170b40" package="com\Operis\Styroform">
+    <docblock line="3">
+      <description><![CDATA[clsXMLForm.php, Styroform XML Form Controller
+XML Form Generator and Validator.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Andy Madsen &lt;amadsen@operislabs.com&gt;"/>
+      <tag line="3" name="version" description="1.2"/>
+      <tag line="3" name="package" description="com.Operis.Styroform"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="default" line="14" package="Default">
+      <name>XMLForm</name>
+      <full_name>\XMLForm</full_name>
+      <extends>\XMLFormUtils</extends>
+      <docblock line="11">
+        <description><![CDATA[Responsible for controlling the form, drawing, calling the validator, adding "Items" and "ItemLists", and navigating through formsets.]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="23" package="Default">
+        <name>$returnxml</name>
+        <default><![CDATA[]]></default>
+        <docblock line="16">
+          <description><![CDATA[Flag to return transformed forms as XML Objects]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="property" description="" type="" variable=""/>
+          <tag line="16" name="access" description="public"/>
+          <tag line="16" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="16" name="name" description="$returnxml"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="32" package="Default">
+        <name>$docArray</name>
+        <default><![CDATA[]]></default>
+        <docblock line="25">
+          <description><![CDATA[Array of XML Forms in an ordered FormSet]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="property" description="" type="" variable=""/>
+          <tag line="25" name="access" description="public"/>
+          <tag line="25" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="25" name="name" description="$docArray"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="41" package="Default">
+        <name>$page</name>
+        <default><![CDATA[]]></default>
+        <docblock line="34">
+          <description><![CDATA[Retains the number of the currently displayed form in the Formset
+Starts at zero]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="access" description="public"/>
+          <tag line="34" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="34" name="name" description="$page"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="51" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Retains the name of the current form controlled by this object
+Allows for multiple form controllers on a specific page.]]></description>
+          <long-description><![CDATA[<p>All forms within a formset should have the same name</p>]]></long-description>
+          <tag line="43" name="access" description="public"/>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="name" description="$name"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="59" package="Default">
+        <name>$objSessionDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="53">
+          <description><![CDATA[Object container for the XML Session configuration]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="access" description="public"/>
+          <tag line="53" name="var" description="Object" type="\XMLAbstract">
+            <type by_reference="false">\XMLAbstract</type>
+          </tag>
+          <tag line="53" name="name" description="$objSessionDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="67" package="Default">
+        <name>$theSessionDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="61">
+          <description><![CDATA[File location of the XML Session configuration]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="access" description="public"/>
+          <tag line="61" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="61" name="name" description="$theSessionDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="76" package="Default">
+        <name>$session_vars</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="69">
+          <description><![CDATA[Array of Session variables that are allowed to translate
+to form variables, parsed from @link $objSessionDoc]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="69" name="access" description="public"/>
+          <tag line="69" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="69" name="name" description="$session_vars"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="84" package="Default">
+        <name>$objXMLDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="78">
+          <description><![CDATA[Object container for the current Form, as an XML Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="access" description="public"/>
+          <tag line="78" name="var" description="Object" type="\XMLAbstract">
+            <type by_reference="false">\XMLAbstract</type>
+          </tag>
+          <tag line="78" name="name" description="$objXMLDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="92" package="Default">
+        <name>$objXSLDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="86">
+          <description><![CDATA[Object container for the current Form XSL Transformation Document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="86" name="access" description="public"/>
+          <tag line="86" name="var" description="Object" type="\XSLAbstract">
+            <type by_reference="false">\XSLAbstract</type>
+          </tag>
+          <tag line="86" name="name" description="$objXMLDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="100" package="Default">
+        <name>$objValidateDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="94">
+          <description><![CDATA[Object container for the XML Validators configuration]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="94" name="access" description="public"/>
+          <tag line="94" name="var" description="Object" type="\XMLAbstract">
+            <type by_reference="false">\XMLAbstract</type>
+          </tag>
+          <tag line="94" name="name" description="$objValidateDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="108" package="Default">
+        <name>$theXMLDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="102">
+          <description><![CDATA[File location of the current XML Form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="access" description="public"/>
+          <tag line="102" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="102" name="name" description="$theXMLDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="116" package="Default">
+        <name>$theXSLDoc</name>
+        <default><![CDATA[]]></default>
+        <docblock line="110">
+          <description><![CDATA[File location of the current XSL Transformation Document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="110" name="access" description="public"/>
+          <tag line="110" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="110" name="name" description="$theXSLDoc"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="124" package="Default">
+        <name>$isloaded</name>
+        <default><![CDATA[]]></default>
+        <docblock line="118">
+          <description><![CDATA[Status of the current XML Form Document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="access" description="public"/>
+          <tag line="118" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="118" name="name" description="$isloaded"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="133" package="Default">
+        <name>$cookiename</name>
+        <default><![CDATA[]]></default>
+        <docblock line="126">
+          <description><![CDATA[Status of the current XML Form Validation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="126" name="deprecated" description="Since v.8"/>
+          <tag line="126" name="access" description="public"/>
+          <tag line="126" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="126" name="name" description="$cookiename"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="141" package="Default">
+        <name>$isvalidated</name>
+        <default><![CDATA[]]></default>
+        <docblock line="135">
+          <description><![CDATA[Status of the current XML Form Validation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="135" name="access" description="public"/>
+          <tag line="135" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="135" name="name" description="$isvalidated"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="151" package="Default">
+        <name>$validated</name>
+        <default><![CDATA[]]></default>
+        <docblock line="143">
+          <description><![CDATA[Control Variable
+allowing form controllers to explicitly state that the form
+is not validated. used for error generation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="access" description="public"/>
+          <tag line="143" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="143" name="name" description="$isvalidated"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="159" package="Default">
+        <name>$isprocess_step</name>
+        <default><![CDATA[]]></default>
+        <docblock line="153">
+          <description><![CDATA[Indicator for FormSet status, true means form is not at position 0 or end position]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="153" name="access" description="public"/>
+          <tag line="153" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="153" name="name" description="$isprocess_step"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="167" package="Default">
+        <name>$addget_values</name>
+        <default><![CDATA[]]></default>
+        <docblock line="161">
+          <description><![CDATA[Configuration variable read from current form, declaring whether to add HTTP GET variables to form as hidden variables]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="161" name="access" description="public"/>
+          <tag line="161" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="161" name="name" description="$addget_values"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="175" package="Default">
+        <name>$addpost_values</name>
+        <default><![CDATA[]]></default>
+        <docblock line="169">
+          <description><![CDATA[Configuration variable read from current form, declaring whether to add HTTP POST variables to form as hidden variables]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="169" name="access" description="public"/>
+          <tag line="169" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="169" name="name" description="$addpost_values"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="183" package="Default">
+        <name>$appenditem_values</name>
+        <default><![CDATA[]]></default>
+        <docblock line="177">
+          <description><![CDATA[Configuration variable read from current form, declaring whether to force population of hidden values from an "Item", even if the form element isn't already in the form]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="177" name="access" description="public"/>
+          <tag line="177" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="177" name="name" description="$appenditem_values"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="192" package="Default">
+        <name>$settimestamp</name>
+        <default><![CDATA[]]></default>
+        <docblock line="185">
+          <description><![CDATA[Append Timestamp to XML Form Objext]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="185" name="deprecated" description="Timestamps are appended now by default"/>
+          <tag line="185" name="access" description="public"/>
+          <tag line="185" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="185" name="name" description="$settimestamp"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="201" package="Default">
+        <name>$theCompounds</name>
+        <default><![CDATA[]]></default>
+        <docblock line="194">
+          <description><![CDATA[Object List of element types that require more than one form element, i.e. day/month/year (3)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="194" name="deprecated" description="Compounded form elements are defined in StyroformTypes"/>
+          <tag line="194" name="access" description="public"/>
+          <tag line="194" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="194" name="name" description="$theCompounds"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="210" package="Default">
+        <name>$showform</name>
+        <default><![CDATA[]]></default>
+        <docblock line="203">
+          <description><![CDATA[Configuration variable read from current form, declaring whether to output the form as formelements or formvariables
+Not currently supported]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="203" name="access" description="public"/>
+          <tag line="203" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="203" name="name" description="$showform"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="218" package="Default">
+        <name>$formsettings</name>
+        <default><![CDATA[]]></default>
+        <docblock line="212">
+          <description><![CDATA[Optional Array containing the name and XMLDocument List for the Formset, read generally from either $GLOBALS or from within the WTVR Module, if WTVR]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="212" name="access" description="public"/>
+          <tag line="212" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="212" name="name" description="$formsettings"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="226" package="Default">
+        <name>$ROOTNODE</name>
+        <default><![CDATA[]]></default>
+        <docblock line="220">
+          <description><![CDATA[Optional XML Root Node Variable, for forms inside of existing xml schemas]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="220" name="access" description="public"/>
+          <tag line="220" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="220" name="name" description="$ROOTNODE"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="234" package="Default">
+        <name>$omit_doctype</name>
+        <default><![CDATA[]]></default>
+        <docblock line="228">
+          <description><![CDATA[Removes the doctype declaration from a returned XML Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="228" name="access" description="public"/>
+          <tag line="228" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="228" name="name" description="$omit_doctype"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="242" package="Default">
+        <name>$debug</name>
+        <default><![CDATA[]]></default>
+        <docblock line="236">
+          <description><![CDATA[Puts execution in debug mode]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="236" name="access" description="public"/>
+          <tag line="236" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="236" name="name" description="$debug"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="250" package="Default">
+        <name>$validate_debug</name>
+        <default><![CDATA[]]></default>
+        <docblock line="244">
+          <description><![CDATA[Puts the validator in Debug mode]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="244" name="access" description="public"/>
+          <tag line="244" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="244" name="name" description="$validate_debug"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="260" package="Default">
+        <name>$itemlist</name>
+        <default><![CDATA[]]></default>
+        <docblock line="252">
+          <description><![CDATA[N-Dimensional Array for adding Lists to the XML Tree,
+used in CRUD operations.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="252" name="access" description="public"/>
+          <tag line="252" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="252" name="name" description="$itemlist"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="271" package="Default">
+        <name>$item</name>
+        <default><![CDATA[]]></default>
+        <docblock line="262">
+          <description><![CDATA[2-Dimensional Array for adding values to the Form
+The first element being the item name,
+the second being the value]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="262" name="access" description="public"/>
+          <tag line="262" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="262" name="name" description="$item"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="282" package="Default">
+        <name>$mods</name>
+        <default><![CDATA[]]></default>
+        <docblock line="273">
+          <description><![CDATA[Modifications to specific elements that are performed after the dom has been procesed.]]></description>
+          <long-description><![CDATA[<p>For instance, if you need to remove an element, or add an attribute, rather than adding it to the Object
+Queue that in the "Mods" and it'll be processed after the various other args are applied</p>]]></long-description>
+          <tag line="273" name="access" description="public"/>
+          <tag line="273" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="273" name="name" description="$mods"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="291" package="Default">
+        <name>$container</name>
+        <default><![CDATA[]]></default>
+        <docblock line="284">
+          <description><![CDATA[A generic array in which to place other form elements.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="284" name="deprecated" description=""/>
+          <tag line="284" name="access" description="public"/>
+          <tag line="284" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="284" name="name" description="$container"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="299" package="Default">
+        <name>$item_forcehidden</name>
+        <default><![CDATA[]]></default>
+        <docblock line="293">
+          <description><![CDATA[Hidden Values that match form element names aren't added by default, this boolean will force that]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="293" name="access" description="public"/>
+          <tag line="293" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="293" name="name" description="$item_forcehidden"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="308" package="Default">
+        <name>$skip_missing_post</name>
+        <default><![CDATA[]]></default>
+        <docblock line="301">
+          <description><![CDATA[List of elements to skip in validation from the Post Vars]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="301" name="deprecated" description=""/>
+          <tag line="301" name="access" description="public"/>
+          <tag line="301" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="301" name="name" description="$skip_missing_post"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="316" package="Default">
+        <name>$items_to_remove</name>
+        <default><![CDATA[]]></default>
+        <docblock line="310">
+          <description><![CDATA[An array of elements that should be removed from the XML Form Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="310" name="access" description="public"/>
+          <tag line="310" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="310" name="name" description="$items_to_remove"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="324" package="Default">
+        <name>$dynarray</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="318">
+          <description><![CDATA[An Array of "lookup" arrays for Select Lists to pull from, if not in XML or Database Lookup]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="318" name="access" description="public"/>
+          <tag line="318" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="318" name="name" description="$dynarray"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="332" package="Default">
+        <name>$types_array</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="326">
+          <description><![CDATA[A list of element types that will have array options generated for them]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="326" name="access" description="public"/>
+          <tag line="326" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="326" name="name" description="$types_array"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="340" package="Default">
+        <name>$isxml</name>
+        <default><![CDATA[]]></default>
+        <docblock line="334">
+          <description><![CDATA[Configuration variable for XML Return Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="334" name="access" description="public"/>
+          <tag line="334" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="334" name="name" description="$isxml"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="347" package="Default">
+        <name>$module</name>
+        <default><![CDATA[]]></default>
+        <docblock line="341">
+          <description><![CDATA[Configuration variable declaring the parent module name from within parent Framework]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="341" name="access" description="public"/>
+          <tag line="341" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="341" name="name" description="$module"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="355" package="Default">
+        <name>$assetlocation</name>
+        <default><![CDATA[]]></default>
+        <docblock line="349">
+          <description><![CDATA[Configuration variable declaring the base location of XML Assets]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="349" name="access" description="public"/>
+          <tag line="349" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="349" name="name" description="$assetlocation"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="364" package="Default">
+        <name>$styroform_result</name>
+        <default><![CDATA[]]></default>
+        <docblock line="357">
+          <description><![CDATA[Unclear what this is, deprecated]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="357" name="deprecated" description=""/>
+          <tag line="357" name="access" description="public"/>
+          <tag line="357" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="357" name="name" description="$styroform_result"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="373" package="Default">
+        <name>$step</name>
+        <default><![CDATA[]]></default>
+        <docblock line="366">
+          <description><![CDATA[Determines the form page increment]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="366" name="deprecated" description=""/>
+          <tag line="366" name="access" description="public"/>
+          <tag line="366" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="366" name="name" description="$step"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="384" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="376">
+          <description><![CDATA[Form Constructor, determines the Formset and other globals using the $formsettings or from the formconf.php file,
+which is discovered using the conf as it's location.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="376" name="name" description="constructor"/>
+          <tag line="376" name="param" description="- Array with both Formset, and XSL Doc" type="array" variable="$formsettings">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="376" name="param" description="- Name of the WTVR Module, defaults to null" type="string" variable="$conf">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="384">
+          <name>$formsettings</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="384">
+          <name>$conf</name>
+          <default><![CDATA["formconf.php"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="442" package="">
+        <name>setVars</name>
+        <type>function</type>
+        <docblock line="436">
+          <description><![CDATA[Reads the Session Variable Configuration Document, and assigns them to an array
+The format of this file is below, and it should be located in a secure location along the php include path ("xml/StyroformSessionVars.xml").]]></description>
+          <long-description><![CDATA[<p>Any session variables named in this document will be added to the form by default.</p>]]></long-description>
+          <tag line="436" name="name" description="setVars"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="453" package="">
+        <name>setSessionVars</name>
+        <type>function</type>
+        <docblock line="449">
+          <description><![CDATA[Serialize the Session Variable Configuration Document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="449" name="name" description="setSessionVars"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="469" package="">
+        <name>getAction</name>
+        <type>function</type>
+        <docblock line="461">
+          <description><![CDATA[Get the action, which is equivalent to the user's click. Buttons and image clicks
+are transformed using this method. Reads through all post data looking for a submit.]]></description>
+          <long-description><![CDATA[<p>This method has been replaced by getFormMethod()</p>]]></long-description>
+          <tag line="461" name="name" description="getAction"/>
+          <tag line="461" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="491" package="">
+        <name>drawForm</name>
+        <type>function</type>
+        <docblock line="486">
+          <description><![CDATA[Main controller method, used to render a form into either XML or a string.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="486" name="name" description="drawForm"/>
+          <tag line="486" name="return" description="(text/XML)" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="505" package="">
+        <name>moveForm</name>
+        <type>function</type>
+        <docblock line="499">
+          <description><![CDATA[Increments the current form, with an optional param to skip form validation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="499" name="name" description="moveForm"/>
+          <tag line="499" name="param" description="- FPO copy here" type="string" variable="$validate">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="499" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="505">
+          <name>$validate</name>
+          <default><![CDATA[true]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="553" package="">
+        <name>isPosted</name>
+        <type>function</type>
+        <docblock line="548">
+          <description><![CDATA[Tests whether the form was posted or not from a normal form view.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="548" name="name" description="isPosted"/>
+          <tag line="548" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="569" package="">
+        <name>isListPosted</name>
+        <type>function</type>
+        <docblock line="562">
+          <description><![CDATA[Tests whether the form was posted or not from the CRUD List view. If a list
+has a form wrapper, elements in the list can contain checkboxes for multi-item deletion.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="562" name="name" description="isListPosted"/>
+          <tag line="562" name="param" description="- The Name of the For" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="562" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="569">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="585" package="">
+        <name>getFormMethod</name>
+        <type>function</type>
+        <docblock line="578">
+          <description><![CDATA[Similar to getAction(), but only looks for specific keys, which is equivalent to the user's click.]]></description>
+          <long-description><![CDATA[<p>Buttons and image clicks, are deduced using this method.</p>]]></long-description>
+          <tag line="578" name="name" description="getFormMethod"/>
+          <tag line="578" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="602" package="">
+        <name>isPage</name>
+        <type>function</type>
+        <docblock line="596">
+          <description><![CDATA[Boolean to test which page is currently active]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="596" name="name" description="isPage"/>
+          <tag line="596" name="param" description="" type="int" variable="$index">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="596" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="602">
+          <name>$index</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="615" package="">
+        <name>loadFormXML</name>
+        <type>function</type>
+        <docblock line="610">
+          <description><![CDATA[Creates the objXMLDoc from an XML Form, looking in the following order for,
+Widget Name/Doc, ROOTNODE (from another XML File)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="610" name="name" description="loadFormXML"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="688" package="">
+        <name>transformDocument</name>
+        <type>function</type>
+        <docblock line="680">
+          <description><![CDATA[Processes all the items in the process queue, in the order of ERROR, SELECT OPTS,
+POST, GET, SESSION, LIST, MODS, ITEM, HMAC, CONTAINER, DATES, then removes any items,
+and finally does an XSL Transformation if needed, and then returns either a string, or an XML Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="680" name="name" description="transformDocument"/>
+          <tag line="680" name="return" description="(text/XML)" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="761" package="">
+        <name>validateForm</name>
+        <type>function</type>
+        <docblock line="755">
+          <description><![CDATA[Creates an XMLFormValidator, tests the form against the available Validators,
+and returns the results of the Validation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="755" name="name" description="validateForm"/>
+          <tag line="755" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="786" package="">
+        <name>navMod</name>
+        <type>function</type>
+        <docblock line="782">
+          <description><![CDATA[Updates the form with the current page, and name]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="804" package="">
+        <name>postMod</name>
+        <type>function</type>
+        <docblock line="799">
+          <description><![CDATA[Adds POST Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="799" name="name" description="postMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="892" package="">
+        <name>removeItem</name>
+        <type>function</type>
+        <docblock line="886">
+          <description><![CDATA[Adds an element to the removal queue, using the name element from the form element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="886" name="name" description="removeItem"/>
+          <tag line="886" name="param" description="" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="892">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="909" package="">
+        <name>setErrorNotice</name>
+        <type>function</type>
+        <docblock line="896">
+          <description><![CDATA[Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum]]></description>
+          <long-description><![CDATA[<p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+
+<pre><code> $fpo = something();
+ $fpo = something();
+ $fpo = something();
+ $fpo = something();
+</code></pre>]]></long-description>
+          <tag line="896" name="name" description="setErrorNotice"/>
+          <tag line="896" name="param" description="" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="909">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="924" package="">
+        <name>addError</name>
+        <type>function</type>
+        <docblock line="915">
+          <description><![CDATA[Adds an element to the error array stored in Session]]></description>
+          <long-description><![CDATA[<p>If the business process rules need to flag a specific field, use this
+to set the tuple, and it will be reflected in the XML.</p>]]></long-description>
+          <tag line="915" name="name" description="addError"/>
+          <tag line="915" name="param" description="- Form Element Name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="915" name="param" description="- Display Message for Error" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="924">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="924">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="936" package="">
+        <name>getMod</name>
+        <type>function</type>
+        <docblock line="931">
+          <description><![CDATA[Adds QueryString Variables to the form, appending if the form doesn't contain
+an appropriate formelement container.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="931" name="name" description="getMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="959" package="">
+        <name>ErrorNoticeMod</name>
+        <type>function</type>
+        <docblock line="955">
+          <description><![CDATA[Set the "errornotice" form element to visible.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="955" name="name" description="ErrorNoticeMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="976" package="">
+        <name>ErrorMod</name>
+        <type>function</type>
+        <docblock line="969">
+          <description><![CDATA[Add the global "errors" element group to the Form XML Object
+and place any session "errors" into the group as separate elements.]]></description>
+          <long-description><![CDATA[<p>Also, rewinds the form to the previous page,
+as these errors stop the form from being successfully processed</p>]]></long-description>
+          <tag line="969" name="name" description="ErrorMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1007" package="">
+        <name>ErrorElementMod</name>
+        <type>function</type>
+        <docblock line="1003">
+          <description><![CDATA[Mark a specific form element as having an error.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1003" name="name" description="ErrorElementMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1015" package="">
+        <name>SessionMod</name>
+        <type>function</type>
+        <docblock line="1011">
+          <description><![CDATA[Add appropriate session variables to the Form Object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1011" name="name" description="SessionMod"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1041" package="">
+        <name>addStyroformElementGroup</name>
+        <type>function</type>
+        <docblock line="1033">
+          <description><![CDATA[Add an Element Group Form Element Container]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1033" name="name" description="addStyroformElementGroup"/>
+          <tag line="1033" name="param" description="- XPath for Element Group Placement" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1033" name="param" description="- Name to put in &quot;name&quot; attrubute" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1033" name="param" description="- Array of attributes for Group" type="string" variable="$array">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1033" name="param" description="- ID to put in &quot;id&quot; attribute, optional" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1041">
+          <name>$path</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1041">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1041">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1041">
+          <name>$id</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1070" package="">
+        <name>addStyroformError</name>
+        <type>function</type>
+        <docblock line="1063">
+          <description><![CDATA[Forces an error into the Form, using the Form Validator]]></description>
+          <long-description><![CDATA[<p>This passes the current Dynarray to the Validator</p>]]></long-description>
+          <tag line="1063" name="name" description="addStyroformError"/>
+          <tag line="1063" name="param" description="- Name of the Form Element" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1070">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1091" package="">
+        <name>removeStyroformElements</name>
+        <type>function</type>
+        <docblock line="1082">
+          <description><![CDATA[Deletes and element from the Form XML Object]]></description>
+          <long-description><![CDATA[<p>Uses the "items_to_remove" array to pull specific items from the Form.</p>
+
+<pre><code> XMLForm -> removeItem("someelementname");
+</code></pre>]]></long-description>
+          <tag line="1082" name="name" description="removeStyroformElements"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1134" package="">
+        <name>addStyroformElements</name>
+        <type>function</type>
+        <docblock line="1103">
+          <description><![CDATA[Adds a standard Form Element Group, with a child Form Element]]></description>
+          <long-description><![CDATA[<pre><code>&ltFORMELEMENTGROUP&gt
+   &ltFORMELEMENT&gt
+     &ltNAME&gt&lt/NAME&gt
+     &ltDISPLAY&gt&lt/DISPLAY&gt
+     &ltTYPE&gt&lt/TYPE&gt
+     &ltDEFAULT&gt&lt/DEFAULT&gt
+     &ltCLASS&gt&lt/CLASS&gt
+     &ltVTIP&gt&lt/VTIP&gt
+     &ltREQUIRED&gt&lt/REQUIRED&gt
+     &ltDISPLAYCLASS&gt&lt/DISPLAYCLASS&gt
+     &ltSIZE&gt&lt/SIZE&gt
+  &lt/FORMELEMENT&gt
+&lt/FORMELEMENTGROUP&gt
+</code></pre>]]></long-description>
+          <tag line="1103" name="name" description="addStyroformElements"/>
+          <tag line="1103" name="param" description="- Name Subnode" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Display Subnode" type="string" variable="$display">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Type Subnode" type="string" variable="$atype">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Default Subnode" type="string" variable="$default">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Class Subnode" type="string" variable="$aclass">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Validation Type Subnode" type="string" variable="$vtip">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Required Subnode" type="string" variable="$required">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Display Class Subnode" type="string" variable="$displayclass">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Size Subnode" type="string" variable="$size">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Name of the Element Group" type="string" variable="$pos">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1103" name="param" description="- Array of Attributes for the Element Group" type="string" variable="$attribs">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1134">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$display</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$atype</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$default</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$aclass</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$vtip</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$required</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$displayclass</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$size</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$pos</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$attribs</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1191" package="">
+        <name>createStyroformElement</name>
+        <type>function</type>
+        <docblock line="1169">
+          <description><![CDATA[Adds a standard Form Element Group to a Form "Snippet", with a child Form Element]]></description>
+          <long-description><![CDATA[<pre><code>&ltFORMELEMENTGROUP&gt
+   &ltFORMELEMENT&gt
+     &ltNAME&gt&lt/NAME&gt
+     &ltDISPLAY&gt&lt/DISPLAY&gt
+     &ltTYPE&gt&lt/TYPE&gt
+     &ltDEFAULT&gt&lt/DEFAULT&gt
+     &ltCLASS&gt&lt/CLASS&gt
+     &ltVTIP&gt&lt/VTIP&gt
+     &ltREQUIRED&gt&lt/REQUIRED&gt
+     &ltDISPLAYCLASS&gt&lt/DISPLAYCLASS&gt
+     &ltSIZE&gt&lt/SIZE&gt
+  &lt/FORMELEMENT&gt
+&lt/FORMELEMENTGROUP&gt
+</code></pre>]]></long-description>
+          <tag line="1169" name="name" description="createStyroformElement"/>
+          <tag line="1169" name="param" description="- XML Document" type="\xmlObj" variable="$source">
+            <type by_reference="false">\xmlObj</type>
+          </tag>
+          <tag line="1169" name="param" description="- array(name,display,atype,default,aclass,vtip,required,displayclass,size)" type="array" variable="$array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="1191">
+          <name>$source</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1191">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1245" package="">
+        <name>addStyroformValues</name>
+        <type>function</type>
+        <docblock line="1229">
+          <description><![CDATA[Adds a set of Values to a form element, specifically select, radio, or checkbox]]></description>
+          <long-description><![CDATA[<p>If group is specified, a VALUEGROUP element will be appended</p>
+
+<pre><code> values[0]["sel_key"] = "first";
+ values[0]["sel_value"] = "1";
+ values[1]["sel_key"] = "second";
+ values[1]["sel_value"] = "2";
+ XMLForm -> addStyroformValue("someelement",values,true);
+</code></pre>]]></long-description>
+          <tag line="1229" name="name" description="addStyroformValues"/>
+          <tag line="1229" name="param" description="- Name of Element" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1229" name="param" description="- Array of values, array(&quot;sel_key&quot;=&gt;&quot;sel_value&quot;);" type="array" variable="$values">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="1229" name="param" description="- Add optional VALUEGROUP" type="boolean" variable="$group">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="1245">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1245">
+          <name>$values</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1245">
+          <name>$group</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1279" package="">
+        <name>addStyroformDefault</name>
+        <type>function</type>
+        <docblock line="1268">
+          <description><![CDATA[Put a specific value in a form element, called most often from the addItem()
+method, but could be called independently.]]></description>
+          <long-description><![CDATA[<p>Specific element types need specific types of defaults, i.e. a text element
+needs a string, a multi-select needs an array, a date needs a valid date.</p>]]></long-description>
+          <tag line="1268" name="name" description="addStyroformDefault"/>
+          <tag line="1268" name="param" description="- Name for Form Element" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1268" name="param" description="- Value of Element" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="1268" name="param" description="- Deprecated" type="string" variable="$atype">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1279">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1279">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1279">
+          <name>$atype</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1449" package="">
+        <name>addStyroformAttribute</name>
+        <type>function</type>
+        <docblock line="1438">
+          <description><![CDATA[As the name suggests, adds an attribute to a specific form element.]]></description>
+          <long-description><![CDATA[<p>Some form elements need "default", or "selected" attributes. Useful also for
+custom XSL Transformations.</p>]]></long-description>
+          <tag line="1438" name="name" description="addStyroformAttribute"/>
+          <tag line="1438" name="param" description="- Name of Form Element" type="string" variable="$elementname">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1438" name="param" description="- Name of Attribute" type="string" variable="$attribute">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1438" name="param" description="- Value of Attribute" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1438" name="param" description="- Subnode within the Element Group" type="string" variable="$item">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1449">
+          <name>$elementname</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1449">
+          <name>$attribute</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1449">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1449">
+          <name>$item</name>
+          <default><![CDATA["DEFAULT"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1467" package="">
+        <name>addList</name>
+        <type>function</type>
+        <docblock line="1453">
+          <description><![CDATA[Styroform can display a list of data, for CRUD type operations.]]></description>
+          <long-description><![CDATA[<p>Use this to add a list to the form, vis:</p>
+
+<pre><code>llistarray["attribs"] = array("attribname1"=>"attribvalue1","attribname2"=>"attribvalue2");
+listarray["items"][0] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][1] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][2] = array("name1"=>"value2","name2"=>"value2");
+listarray["items"][3] = array("name1"=>"value2","name2"=>"value2");
+XMLForm -> list = listarray;
+</code></pre>]]></long-description>
+          <tag line="1453" name="name" description="addList"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1492" package="">
+        <name>addContainer</name>
+        <type>function</type>
+        <docblock line="1487">
+          <description><![CDATA[Adds form elements to the "container" form element group. Elements come from
+the "container" array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1487" name="name" description="addContainer"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1505" package="">
+        <name>addSig</name>
+        <type>function</type>
+        <docblock line="1500">
+          <description><![CDATA[Adds an HMAC Signature to the form if the "signature" form element group exists.]]></description>
+          <long-description><![CDATA[<p>The HMAC Key uses MCRYPT TripleDES, and contains the form name, and a timestamp.</p>]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1539" package="">
+        <name>addItem</name>
+        <type>function</type>
+        <docblock line="1524">
+          <description><![CDATA[Adds a multidemensional array of values to the form.]]></description>
+          <long-description><![CDATA[<p>Use this to populate the form values with data, viz:</p>
+
+<pre><code> XMLForm -> item["someformelement"] = "somevalue";
+
+vals["a"] = 1;
+vals["b"] = 2;
+XMLForm -> item = vals;
+</code></pre>
+
+<p>This will then run prior to XSL Transformation, and insert appropriate
+values to the appropriate form element.</p>]]></long-description>
+          <tag line="1524" name="name" description="addItem"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1578" package="">
+        <name>setDefaultDates</name>
+        <type>function</type>
+        <docblock line="1573">
+          <description><![CDATA[Sets the default value of datetime elements if no default data already exists.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1573" name="name" description="setDefaultDates"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1609" package="">
+        <name>nullCheckRadio</name>
+        <type>function</type>
+        <docblock line="1604">
+          <description><![CDATA[Clears the preselected values of a CheckRadio Element]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1604" name="name" description="nullCheckRadio"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1637" package="">
+        <name>registerArray</name>
+        <type>function</type>
+        <docblock line="1623">
+          <description><![CDATA[Adds an array to the form, for use in Select and CheckRadio elements]]></description>
+          <long-description><![CDATA[<p>The array isn't a normal two-d array, make sure you use the following format:</p>
+
+<pre><code>$item[0]["sel_key"]="stinky";
+$item[0]["sel_value"]="stinky";
+$item[1]["sel_key"]="fish";
+$item[1]["sel_value"]="fish";
+</code></pre>]]></long-description>
+          <tag line="1623" name="name" description="registerArray"/>
+          <tag line="1623" name="param" description="- Name of the form element" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1623" name="param" description="- Array of names/values" type="array" variable="$array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="1637">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1637">
+          <name>$array</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1647" package="">
+        <name>generateOptions</name>
+        <type>function</type>
+        <docblock line="1641">
+          <description><![CDATA[Builds server-side dynamic select lists from MySQL Tables or Arrays]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1641" name="name" description="GenerateOptions"/>
+          <tag line="1641" name="param" description="" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1647">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1731" package="">
+        <name>addOther</name>
+        <type>function</type>
+        <docblock line="1714">
+          <description><![CDATA[Add an "Other" item to an auto-generated select list, and append to a specific
+point in that option list.]]></description>
+          <long-description><![CDATA[<pre><code> addOther("last|other",array("first"=>1,"second"=>2,"third"=>3));
+</code></pre>
+
+<p>This will result in a select list, [first, second, third, other]</p>
+
+<pre><code> addOther("0|other",array("first"=>1,"second"=>2,"third"=>3));
+</code></pre>
+
+<p>This will result in a select list, [other, first, second, third]</p>]]></long-description>
+          <tag line="1714" name="name" description="addOther"/>
+          <tag line="1714" name="param" description="- The Value to be Added, (pos, value)" type="string" variable="$nodevalue">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1714" name="param" description="- The Initial Select List" type="array" variable="$values">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="1731">
+          <name>$nodevalue</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1731">
+          <name>$values</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1764" package="">
+        <name>setMod</name>
+        <type>function</type>
+        <docblock line="1754">
+          <description><![CDATA[Pops a form element modification on the "mods" array, for later inclusion in the
+Form XML Object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="1754" name="param" description="Name of FormElement (or Group)" type="string" variable="$nodename">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1754" name="param" description="string Type of FormElement" type="string" variable="$modtype">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1754" name="param" description="string New Node Value" type="string" variable="$modvalue">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1754" name="param" description="int Position relative to Base FOrm" type="string" variable="$position">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="1754" name="param" description="string Type of operation [mod|del|hidegroup]" type="string" variable="$op">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="1764">
+          <name>$nodename</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1764">
+          <name>$modtype</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1764">
+          <name>$modvalue</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="1764">
+          <name>$position</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="1764">
+          <name>$op</name>
+          <default><![CDATA["mod"]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="1778" package="">
+        <name>runMod</name>
+        <type>function</type>
+        <docblock line="1773">
+          <description><![CDATA[Applies items in the mod array to the Form XML Object.]]></description>
+          <long-description><![CDATA[<p>Mods are of type "mod, del, hidegroup", but can be extended to have other functions</p>]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <package name="com" full_name="com">
+    <package name="Operis" full_name="com\Operis">
+      <package name="Styroform" full_name="com\Operis\Styroform"/>
+    </package>
+  </package>
+  <namespace name="default" full_name="default"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="10"/>
+</project>

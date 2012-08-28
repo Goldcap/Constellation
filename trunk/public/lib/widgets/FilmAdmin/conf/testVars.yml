@@ -1,0 +1,27 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+get:
+  id: 0
+post:
+  film_name: "Test Film"
+  film_makers: "Sunnyside Films"
+  film_production_company: "Sunnyside Films"
+  film_total_seats: 100
+session:
+action:
+  styroaction: submit
+
+dbo:
+  film:
+    key: film_id
+    vars:
+      getFilmName: =post:film_name
+      getFilmMakers: =post:film_makers
+      getFilmProductionCompany: =post:film_production_company
+      getFilmTotalSeats: =post:film_total_seats

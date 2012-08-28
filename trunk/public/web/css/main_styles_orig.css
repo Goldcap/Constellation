@@ -1,0 +1,297 @@
+/* Style Sheets for [] website
+created by bkkwebdesign.com
+TOC
+	1. Defaults
+	2. Structure
+	3. Links and Navigation 
+	4. Fonts
+
+Notes
+*/
+ 
+/* -------------- 1. Defaults --------------------------- */
+
+@font-face{
+font-family: 'helveticaneue'; 
+src: url('helveticaneue-webfont.ttf') format('truetype');
+}
+
+
+*{margin:0; padding:0;}
+body{ font:12px helveticaneue, Helvetica, sans-serif; background-color:#003; color:#9cf}
+
+
+
+
+a img{border:0;}
+ul{list-style-type:none; }
+
+.clear{clear:both}
+.left{float:left;}
+.right{float:right;}
+fieldset{border:none;}
+
+/* -------------- 2. Structure -------------------------- */
+.wrapper { margin:0 auto; width:912px; position:relative}
+
+/* -------------- 2.b Master Head ----------------------------- */
+	.masterhead{ height:117px; margin:5px 0 10px;}
+		.masterhead .logo a{background:url("../images/logo.png") no-repeat; height:117px; width:210px; display:block; float:left; text-indent:-10000px}
+		.masterhead .login a{text-transform:uppercase; color:#9cf; font:bold 15px Helvetica, sans-serif; float:right; position:relative; top:12px; right:-20px;}
+
+/* -------------- 2.c Content ----------------------------- */
+	.content{}
+	.one_column .left_column {}
+	.one_column .right_column{ display:none;}
+	
+	.two_column .left_column { float:left; padding-left:40px; width:165px;}
+	.two_column .right_column{ float:right; width:660px;}
+		.two_column .right_column .column1{ width:425px; float:left}
+		.two_column .right_column .column2{ width:218px; float:right; text-align:left}
+			.image_holder{margin-bottom:45px}
+			
+	.one_column .left_column .column1{float:left; width:580px}
+	.one_column .left_column .column2{float:right; width:285px}
+		
+
+/* -------------- 2.d Footer ----------------------------- */
+	.footer{ border-top:2px solid #527aad; clear:both;}
+	.footer, .footer a{color:#369; font:10px Helvetica, sans-serif}
+	.footer li, .footer li a{float:left; padding-right:5px; }
+	.footer li {margin-top:15px}
+	.footer li.copy{padding-left:50px;}
+	.footer .face{padding-left:70px; margin-right:2px}
+	.footer .face a, .footer .twit a, .footer li.face, .footer li.twit{padding-right:0px; }
+	.footer li.face, .footer li.twit{position:relative; top:-8px}
+
+/* -------------- 3. Links and Navigation --------------- */
+a {color:#fff; outline:none;  text-decoration:none;}
+a:hover{}
+span.arrow { display:block; padding-top:5px}
+span.arrow a{background:url("../images/go_arrow.gif") right  center no-repeat; padding:1px 12px 0 0; color:#9cf; text-transform:uppercase; font-size:10px;}
+.pop_up span.arrow a{font-size:15px;}
+
+.buttons {position:absolute; left:-2px; top:-18px; width:800px}
+.buttons li{padding-right:14px; float:left;}
+.buttons li a{display:block;  text-transform:uppercase; background-color:#369; padding:2px 40px 1px}
+
+/* -------------- 4. Fonts ------------------------------ */
+h1{}
+h2{font:normal 22px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px}
+h3{font:bold 10px Helvetica, sans-serif; margin:10px 0; text-transform:uppercase;}
+h4{font:bold 18px Helvetica, sans-serif; margin-bottom:18px; text-transform:uppercase;}
+h5{font:bold 16px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; border-bottom:#c60 2px solid; color:#fff;}
+h6{font:normal 13px Helvetica, sans-serif; margin-bottom:10px; text-transform:uppercase; padding-left:20px; float:left}
+
+.date_icon{background:url("../images/calendar.png") no-repeat right top; height:39px; width:39px; float:left; text-align:center; position:relative; margin-left:10px; top:-12px}
+.date_icon span{ position:absolute; left:3px; top:10px; font:bold 14px/12px Georgia, "Times New Roman", Times, serif;  color:#003; text-transform:uppercase}
+
+.two_column .left_column p{font:11px/14px Helvetica, sans-serif; padding-top:13px}
+.two_column .left_column p strong{text-transform:uppercase; display:block}
+
+.pop_up p{color:#fff; margin-bottom:6px}
+.pop_up p.pad_bot{margin-bottom:20px}
+.pop_up p.p_l{padding-left:173px; margin-bottom:2px}
+.pop_up p strong{text-transform:uppercase}
+
+/* -------------- 5. Buzz ----------------------------- */
+.buzz li{margin-bottom:14px}
+
+.color1 a, .color2 a, .color3 a{color:#99ccff}
+
+.color4 a{color:#5f7eb1}
+.color5 a{color:#405689}
+.color6 a{color:#394c7f}
+.color7 a{color:#2c3b6e}
+
+/* -------------- 6. Show Times ----------------------------- */
+.showtimes{border-left:#69c 2px solid; padding-left:10px; margin-bottom:15px;}
+.showtimes div{padding-bottom:34px}
+.showtimes a{display:block; padding:9px 10px 5px; font:bold 16px Helvetica, sans-serif; background:url("../images/bg_button.jpg") repeat-x top; float:left; text-transform:uppercase; letter-spacing:1px}
+.showtimes span{ color:#fff; text-transform:uppercase; font-size:11px; position:relative; left:16px; display:block}
+.showtimes span strong{font-size:16px; display:block; font-weight:normal; font-size:16px}
+
+/* -------------- 7. Image Gallery ----------------------------- */
+.image_gallery {margin-bottom:20px;}
+.large, .large .navigation, .large div.scroll{ width:534px}
+
+.small, .small .navigation, .small div.scroll {width:384px; }
+
+div.scroll{ overflow:hidden; }
+.image_gallery .navigation{position:absolute;}
+	.image_gallery .navigation a{display:block; width:14px; text-indent:-10000px; float:left;  position:absolute;}
+	.image_gallery .navigation .previous{ background:url("../images/arrow_left.png") no-repeat;  height:32px;  left:-20px;}
+	.image_gallery .navigation .next{ background:url("../images/arrow_right.png") no-repeat; height:33px; right:-20px}
+	.large .navigation .next, .large .navigation .previous{top:7px}
+	.navigation .next, .navigation .previous{top:1px}
+	
+	
+	.image_gallery .main_image{margin-bottom:7px}
+	.image_gallery ul{width:4000px;}
+	.image_gallery ul li{float:left; padding-right:5px}
+	
+.main { padding:30px 20px 0px; margin-bottom:20px; position:relative}	
+	.main .navigation, .main div.scroll{width:868px}
+	.main{border:2px solid #369;}
+	.main .navigation .previous{ background:url("../images/arrow_left_blue.png") no-repeat;  height:152px; width:21px;  left:-20px; top:60px}
+	.main .navigation .next{ background:url("../images/arrow_right_blue.png") no-repeat;  height:152px; width:21px; right:-20px; top:60px}
+	.main .image_gallery ul li{ padding-right:12px}
+	
+.one_column .large{padding-left:25px}
+	
+/* -------------- 8. Search ----------------------------- */
+.search{position:absolute; right:-2px; top:-23px; width:200px;}
+.search form{border:2px solid #369; display:block; height:19px; overflow:hidden}
+.search form input{color:#fff; background-color:#003; border:none; text-transform:uppercase; width:35px; padding-top:2px; height:19px}
+.search form input.field{width:150px}
+.search .btn_search{background:url("../images/mag_glass.png") center right no-repeat; cursor:pointer}
+
+/* -------------- 9. POP-up --------------------------------- */
+.pop_up{position:absolute; top:140px; height:1px; width:1px; left:190px; float:left; }
+	.pop_top{background:url("../images/pop_up_top.png") no-repeat left; height:20px; top:-20px;}
+		.pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.pop_mid{background:url("../images/pop_up_mid.png") repeat-y left;}
+	.pop_bot{background:url("../images/pop_up_btm.png") no-repeat left; height:20px; bottom:-20px; position:absolute!important}
+	
+	.pop_top, .pop_bot, .pop_mid{ position:relative; width:524px; }
+	
+	.pop_up .title strong{font:bold 32px/24px Arial, Helvetica, sans-serif; color:#9cf;}
+	.pop_up .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase;}
+	
+	a.btn_large{background:url("../images/bg_button-lg.png") repeat-x top; height:38px; padding-top:18px; margin-bottom:10px; text-transform:uppercase; font:bold 22px Helvetica, sans-serif; display:block; text-align:center}
+	.btn_small{float:right; border:none; color:#fff; padding:7px 10px 5px; font:bold 16px Helvetica, sans-serif; background:url("../images/bg_button.jpg") repeat-x top; text-transform:uppercase; letter-spacing:1px; cursor:pointer}
+	.btn_og{background:url("../images/bg_button-org.jpg") repeat-x top; padding:6px 8px 0; height:24px; text-transform:uppercase; font-weight:bold; font-size:16px; display:block; float:left; margin-right:4px; letter-spacing:1px}
+	input.btn_og{float:right; border:none; color:#fff; padding: 4px 8px; height:auto; margin:5px 0 0 0; position:relative; left:-13px; font-size:10px}
+	.btn_large-og{height:51px; background:url("../images/bg_button-lg-org.png") repeat-x top;  padding:6px 30px 0; text-transform:uppercase; font:bold 22px Helvetica, sans-serif;  border:none; color:#fff; text-align:center; cursor:pointer; float:left }
+	.buy-ticket_form .btn_large-og{ width:208px}
+	.buy-ticket_form span{font:13px Helvetica, sans-serif; padding:10px 0 0 220px; display:block}
+	
+	.login_form{margin-bottom:10px}
+		.login_form div{float:left; padding-right:4px;}
+		.login_form .btn_small{float:left; width:88px; padding:7px 0 5px; text-align:center}
+		.login_form .input, .login_form div{width:194px;}
+		.login_form .input{width:194px; height:28px; float:left; border:none}
+		.login_form label{font: 14px Helvetica,sans-serif; color:#fff; float:left; text-transform:capitalize; padding:4px 0 0; display:block}
+			.or_login_w{font:bold 16px  Helvetica, sans-serif;  text-transform:uppercase; color:#fff; margin-bottom:25px}
+			.or_login_w a{position:relative; top:13px}
+			.forgot_sign-up{font:10px  Helvetica, sans-serif; text-transform:uppercase}
+			
+	.sign-up_form{ border-top:4px solid #6494c5; margin-top:17px; padding-top:27px;}
+		.sign-up_form .clearfix{margin-bottom:13px}
+		.sign-up_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.sign-up_form .button input{float:left; margin-left:164px}
+		.sign-up_form .input{width:314px;}
+
+	.buy-ticket_form .clearfix{margin-bottom:13px}
+		.buy-ticket_form label{color:#fff; text-transform:capitalize; font:14px Helvetica, sans-serif; width:163px; display:block; float:left; padding-top: 4px;}
+		.buy-ticket_form .clearfix .input{width:315px; float:right}
+		.buy-ticket_form .short{width:100px; position:relative; left:135px}
+		
+	.email_enter-form div.left{width:258px}
+		.email_enter-form div.right, .email_enter-form textarea{width:215px; }
+	.email_enter-form textarea{height:214px; float:left}
+	.email_enter-form .right input{width:106px; float:left; margin-top:4px}
+	.email_enter-form a{float:right	; background:url("../images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+	
+	.host-form span{}
+			.host-form span input{width:109px}
+			.host-form span label{text-transform:uppercase}
+		.info_box{}
+			.info_box .textarea{ width:310px; float:right; color:#fff}
+			.info_box textarea{ width:310px; height:92px; margin-bottom:4px}
+			.upload_box{float:left; width:167px; margin-bottom:20px}
+			.upload_box input{width:160px}
+			.upload_box img{float:left; margin-bottom:5px; height:76px}
+			.upload_box span{display:block; float:right; width:80px; color:#fff }
+			
+			
+	.host-form .btn_small{ float:none}
+	.host-form p.clearfix{height:34px}
+	
+	.mr_3{margin-right:5px}
+	.ml_3{ position:relative; left:7px}
+		
+	.layout-1{padding:0 20px}
+		.layout-1 div.right{width:254px}
+		.layout-1 .email_enter-form div.right{width:219px; margin-bottom:20px}
+		
+		.layout-1 .spacer{ height:138px}
+		.layout-1 .right a.btn_large{font: bold 16px Helvetica,sans-serif; height:30px}
+		
+	.layout-2{padding:0 30px 0 80px}
+	
+	.layout-3{padding:0 20px 0 5px}
+		.layout-3 .title{margin-bottom:20px}
+		
+	.soc-app {width:377px; margin-bottom:25px;}
+	 	.soc-app input{ width:116px; margin:0 8px 5px 0; float:left}
+		
+/* -------------- 9. landing page --------------------------------- */
+		body.landing{background:#003 url("../images/landing.gif") no-repeat center top}
+		body.landing .wrapper{ width:auto; position:static}
+		body.landing .masterhead{ height:140px}
+		body.landing .left_column{margin:0 auto; position:relative; height:1px; width:1px}
+			body.landing .column1{ font-size:22px; text-align:center; text-transform:uppercase; letter-spacing:2px}
+			body.landing .column1 strong{font-size:40px}
+			body.landing .column1 .timer{font-size:130px; margin-bottom:20px}
+			
+			body.landing .column2{width:355px; margin:auto;}
+			body.landing .column2 .left{ padding-bottom:5px;}
+			body.landing .column2 .right{ width:259px; }
+			body.landing .column2 .right strong{display:block; text-transform:uppercase; font-size:19px; letter-spacing:1px}
+			body.landing .column2 p{color:#fff; font: normal 15px/18px  Helvetica, sans-serif; margin-bottom:10px}
+			
+			body.landing .footer{background-color:#333; border-top:none; height:50px; width:100%; position:absolute; bottom:0}
+			body.landing .footer p{color:#9cf; text-transform:uppercase; font:normal 12px helveticaneue, Helvetica, sans-serif; letter-spacing:1px; padding:4px 0 0 14px}
+			body.landing .footer div{margin:0 auto; width:237px; position:relative; top:9px;}
+			body.landing .footer a.right{display:block; background:url("../images/arrow-down.gif") no-repeat; height:13px; width:27px; text-indent:-100000px; margin:10px 13px 0 0}
+			
+			body.landing .crash_file{ width:100%; background:url("../images/crash-file.gif") repeat-x center; height:217px; display:none; position:absolute; bottom:50px;}
+			body.landing .crash_file .you{ color:#fff; text-transform:uppercase; font:bold 20px Helvetica, sans-serif; margin:0 auto; position:relative; width:53px; padding-top:50px; background:url("../images/star.png") no-repeat center top; text-align:center; top:84px; margin:0 auto;}
+			
+			body.landing .crash_file .username{
+				color:#fff; 
+				text-transform:uppercase; 
+				font-size:10px; 
+				letter-spacing:1px; 
+				margin:0 auto; 
+				position:absolute; 
+				left:130px; 
+				top:-35px}
+			
+			.invite_more{width:405px; padding:20px 30px;  position:absolute; left:-225px; background-color:#333333; opacity:0.90; top: -40px;}
+			*:first-child+html .invite_more{filter:alpha(opacity=90);} 
+			* html .invite_more{filter:alpha(opacity=90);}
+
+				.invite_more span{font:bold 44px/50px helveticaneue, Helvetica, sans-serif; text-transform:uppercase; letter-spacing:1px; position:relative; left:40px; display:block}
+				.invite_more a{display:block; float:left; margin:7px 4px 0 0}
+				.invite_more p{color:#fff; margin-bottom:6px}
+				.invite_more p strong{text-transform:uppercase; font-face: Helvetica, sans-serif}
+				.invite_more div.left{width:224px}
+				.invite_more div.right, .invite_more textarea{width:170px; }
+				.invite_more textarea{height:214px; float:left}
+				.invite_more .right input{width:82px; float:left; margin-top:4px; font-size:14px; letter-spacing: 0;}
+				.invite_more .left a{float:right; background:url("../images/arrow.png") no-repeat; width:28px; height:57px; display:block; margin-top:80px}
+			
+			.chat_box{background:url("../images/bg_1px.png") repeat; width:197px; position:absolute; bottom:55px; right:14px; padding:0 4px 15px}
+				.chat_box .title{ font:16px Helvetica, sans-serif; padding:14px 0 3px; border-bottom:2px solid #c60; margin:0 0 6px; color:#fff; text-transform:uppercase; text-indent:4px; letter-spacing:1px;}
+				.chat_box p{font:11px/14px Helvetica, sans-serif; padding:0 11px 10px; color:#fff}
+				.chat_box p.clear{padding:0 11px; }
+				.grey{background-color:#636363; height:44px; width:172px; position:relative; left:12px; border:none; margin-top:8px}
+				.white{background-color:#fff; height:180px; width:172px; position:relative; left:12px; border:none; clear:both; margin-bottom:2px;}
+				p.right{text-transform:uppercase;}
+				p.right a.on{color:#9cf}
+				
+/* -------------- Notes --------------------------------- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+*:first-child+html .date_icon span{left: 4px; }
+*:first-child+html .title strong{ font:bold 32px/30px Arial,Helvetica,sans-serif}

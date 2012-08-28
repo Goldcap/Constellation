@@ -1,0 +1,41 @@
+<map table="users" result="Ticket Purchase" allow_add="false"  title="Ticket Purchase Levels">
+  <column column="total" name="Ticket Purchase Amount" type="VARCHAR" size="" key="" order="1"></column>
+  <column column="total" name="ID" type="VARCHAR" size="" key="" order="2" format="%0d"></column> 
+  <column column="total" name="Username" type="VARCHAR" size="" key="" order="3" format="null"></column>
+  <column column="total" name="Email" type="VARCHAR" size="" key="" order="4" format="null"></column>
+  <column column="total" name="Payments" type="VARCHAR" size="" key="" order="5" format="$%01.2f"></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[
+      select count(payment_id),
+			payment.fk_user_id,
+			`user`.user_username,
+			user.user_email,
+			sum(payment_amount)
+			from payment
+			left join user
+			on payment.fk_user_id = user.user_id
+			where user.user_ual != 'a:2:{i:0;s:1:\"1\";i:1;s:1:\"2\";}'
+			and payment.payment_amount > 0 
+			and payment.payment_status = 2
+			group by fk_user_id
+			having count(payment_id) = ?
+			order by count(payment_id) desc;
+      ]]>
+    </sqlselect>
+   </sql>    
+  <criterion limit="0" distinct="true">
+  	<criteria scope="PROCESS" value="thecount" type="int" />
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Email" base="/user/detail/">
+      <attribute name="ID"></attribute>
+    </maplink>
+  </maplinks>
+</map>

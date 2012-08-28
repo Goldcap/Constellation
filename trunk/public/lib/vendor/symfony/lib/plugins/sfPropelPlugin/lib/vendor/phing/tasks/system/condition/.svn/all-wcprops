@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition
+END
+AndCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/AndCondition.php
+END
+IsFalseCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/IsFalseCondition.php
+END
+IsSetCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/IsSetCondition.php
+END
+ConditionBase.php
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/ConditionBase.php
+END
+EqualsCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/EqualsCondition.php
+END
+IsTrueCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/IsTrueCondition.php
+END
+ContainsCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/ContainsCondition.php
+END
+ReferenceExistsCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/ReferenceExistsCondition.php
+END
+Condition.php
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/Condition.php
+END
+NotCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/NotCondition.php
+END
+OrCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/OrCondition.php
+END
+OsCondition.php
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/system/condition/OsCondition.php
+END

@@ -1,0 +1,127 @@
+/* CSS Document */
+#tabs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #eee;
+}
+
+a:visited {
+  color: #ccc;
+}
+
+.listitem {
+  clear: both;
+  float: left;
+  width: 99%;
+  padding: 3px;
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+
+.listitem_1 {
+  background: #333;
+}
+
+.column_Film_Name {
+  float: left;
+  width: 200px;
+  overflow: hidden;
+}
+
+.column_Amount {
+  float: left;
+  width: 100px;
+}
+
+.column_Card {
+  float: left;
+  width: 100px;
+}
+
+.column_Processor {
+  float: left;
+  width: 170px;
+  overflow: hidden;
+}
+
+.column_Date {
+  float: left;
+  width: 300px;
+}
+
+.column_Screening_Date, .column_Payment_Date {
+  float: left;
+  width: 100px;
+}
+
+.column_Status {
+  float: left;
+  width: 70px;
+  overflow: hidden;
+}
+
+.column_Host {
+  float: left;
+  width: 100px;
+}
+
+
+#screening_wrapper, #purchase_wrapper, #subscription_wrapper {
+  min-height: 350px;
+  width: 900px;
+}
+
+#Password_wrapper, #Account_wrapper {
+  min-height: 350px;
+  width: 500px;
+}
+
+.row {
+  padding: 6px 0px 4px;
+}
+
+.row .headline {
+  color: #99ccff !important;
+}
+
+.row .formsubhead {
+  text-transform: uppercase;
+}
+
+.row .col1, .row .col2  {
+  text-transform: uppercase;
+}
+
+.linebreak, .linebreak_float {
+  color: #CC6600 !important;
+  background-color: #CC6600 !important;
+  border: none;
+  height: 2px !important;
+}
+
+#user_email a {
+  color: #99CCff !important;
+}
+
+.submitter {
+  border:none; 
+  color:#fff; 
+  padding:2px 6px 3px; 
+  font:bold 13px helveticaneue, Helvetica, sans-serif; 
+  background:url("/dev/images/bg_button.jpg") repeat-x top; 
+  text-transform:uppercase; 
+  letter-spacing:1px; 
+  cursor:pointer
+}
+
+.error {
+  float: left;
+  position: relative;
+  left: 0px !important;
+  top: 70px !important;
+  width: 700px !important;
+  color: red;
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/users.html">List Users</a></div>
+					<div class="item"><a href="/backend/users_add.html">Add User</a></div>
+					<div class="item-no-border"><a href="#">User Relations</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+
+			Logout
+		</a>
+	</div>
+</div><div id="main"><div class="title">
+	<h2>User Management</h2>
+</div>
+<form class="filter" action="/backend/users.html" method="GET" >
+	<fieldset>
+		<div class="formfield">
+			<label>User Type:</label>
+
+			<select name="filter[type]">
+				<option value=""></option>
+									<option value="0" >Admin</option>
+									<option value="2" >Host</option>
+									<option value="3" >Viewer</option>
+							</select>
+		</div>
+
+		<div class="formfield">
+			<label>Full Name:</label>
+			<input id="filter-fullname" type="text" class="text" name="filter[fullname]" value="" />
+		</div>
+		<div class="formfield">
+			<label>Username:</label>
+			<input id="filter-username" type="text" class="text" name="filter[username]" value="" />
+		</div>
+
+		<div class="formfield">
+			<label>Email:</label>
+			<input id="filter-email" type="text" class="text" name="filter[email]" value="" />
+		</div>
+		<input type="submit" value="Filter" />
+	</fieldset>
+</form>
+<table class="table-list">
+	<tr class="header">
+
+		<td class="first-left">U.ID</td>
+		<td>Name</td>
+		<td>Username</td>
+		<td>Email</td>
+		<td>Type</td>
+		<td>Created At</td>
+
+		<td class="first-right">Actions</td>
+	</tr>
+	<tr class="type-2">
+					<td class="left"><a href="/backend/users_edit.html">2563</a></td>
+					<td>Natascha Schiel</td>
+					<td>taschana</td>
+					<td><a href="#">natascha.schiel@t-online.de</a></td>
+
+					<td>Host</td>
+					<td>2010-12-09 17:24:20</td>
+					<td><a href="/backend/users_edit.html">Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2562>2562</a></td>
+					<td>Kari</td>
+
+					<td>Kari</td>
+					<td><a href=#/email/Kari5656%40aol.com>Kari5656@aol.com</a></td>
+					<td>Host</td>
+					<td>2010-12-09 00:54:19</td>
+					<td><a href=/backend/users_add.html/id/2562>Edit</a></td>
+				</tr>
+
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2560>2560</a></td>
+					<td>Username-4891</td>
+					<td></td>
+					<td><a href=#/email/testuser2560%40mailinator.com>testuser2560@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+
+					<td><a href=/backend/users_add.html/id/2560>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2561>2561</a></td>
+					<td>Username-4892</td>
+					<td></td>
+					<td><a href=#/email/testuser2561%40mailinator.com>testuser2561@mailinator.com</a></td>
+
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2561>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2551>2551</a></td>
+					<td>Username-4882</td>
+
+					<td></td>
+					<td><a href=#/email/testuser2551%40mailinator.com>testuser2551@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2551>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+
+					<td class="left"><a href=/backend/users_add.html/id/2552>2552</a></td>
+					<td>Username-4883</td>
+					<td></td>
+					<td><a href=#/email/testuser2552%40mailinator.com>testuser2552@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2552>Edit</a></td>
+
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2553>2553</a></td>
+					<td>Username-4884</td>
+					<td></td>
+					<td><a href=#/email/testuser2553%40mailinator.com>testuser2553@mailinator.com</a></td>
+					<td></td>
+
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2553>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2554>2554</a></td>
+					<td>Username-4885</td>
+					<td></td>
+
+					<td><a href=#/email/testuser2554%40mailinator.com>testuser2554@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2554>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2555>2555</a></td>
+
+					<td>Username-4886</td>
+					<td></td>
+					<td><a href=#/email/testuser2555%40mailinator.com>testuser2555@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2555>Edit</a></td>
+				</tr>
+
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2556>2556</a></td>
+					<td>Username-4887</td>
+					<td></td>
+					<td><a href=#/email/testuser2556%40mailinator.com>testuser2556@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+
+					<td><a href=/backend/users_add.html/id/2556>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2557>2557</a></td>
+					<td>Username-4888</td>
+					<td></td>
+					<td><a href=#/email/testuser2557%40mailinator.com>testuser2557@mailinator.com</a></td>
+
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2557>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2558>2558</a></td>
+					<td>Username-4889</td>
+
+					<td></td>
+					<td><a href=#/email/testuser2558%40mailinator.com>testuser2558@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2558>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+
+					<td class="left"><a href=/backend/users_add.html/id/2559>2559</a></td>
+					<td>Username-4890</td>
+					<td></td>
+					<td><a href=#/email/testuser2559%40mailinator.com>testuser2559@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:17:02</td>
+					<td><a href=/backend/users_add.html/id/2559>Edit</a></td>
+
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2540>2540</a></td>
+					<td>Username-4871</td>
+					<td></td>
+					<td><a href=#/email/testuser2540%40mailinator.com>testuser2540@mailinator.com</a></td>
+					<td></td>
+
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2540>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2541>2541</a></td>
+					<td>Username-4872</td>
+					<td></td>
+
+					<td><a href=#/email/testuser2541%40mailinator.com>testuser2541@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2541>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2542>2542</a></td>
+
+					<td>Username-4873</td>
+					<td></td>
+					<td><a href=#/email/testuser2542%40mailinator.com>testuser2542@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2542>Edit</a></td>
+				</tr>
+
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2543>2543</a></td>
+					<td>Username-4874</td>
+					<td></td>
+					<td><a href=#/email/testuser2543%40mailinator.com>testuser2543@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+
+					<td><a href=/backend/users_add.html/id/2543>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+					<td class="left"><a href=/backend/users_add.html/id/2544>2544</a></td>
+					<td>Username-4875</td>
+					<td></td>
+					<td><a href=#/email/testuser2544%40mailinator.com>testuser2544@mailinator.com</a></td>
+
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2544>Edit</a></td>
+				</tr>
+			<tr class="type-2">
+					<td class="left"><a href=/backend/users_add.html/id/2545>2545</a></td>
+					<td>Username-4876</td>
+
+					<td></td>
+					<td><a href=#/email/testuser2545%40mailinator.com>testuser2545@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2545>Edit</a></td>
+				</tr>
+			<tr class="type-1">
+
+					<td class="left"><a href=/backend/users_add.html/id/2546>2546</a></td>
+					<td>Username-4877</td>
+					<td></td>
+					<td><a href=#/email/testuser2546%40mailinator.com>testuser2546@mailinator.com</a></td>
+					<td></td>
+					<td>2010-12-07 21:16:55</td>
+					<td><a href=/backend/users_add.html/id/2546>Edit</a></td>
+
+				</tr>
+				<tr class="footer">
+		<td colspan="10">
+			<div class="left-bottom"></div>
+			<div class="middle-bottom">
+				<div class="pagination"><p class="left">[ Page : <b>1</b> <a href="/backend/users.html?page=2">2</a> <a href="/backend/users.html?page=3">3</a> <a href="/backend/users.html?page=4">4</a> <a href="/backend/users.html?page=5">5</a> <a href="/backend/users.html?page=6">6</a> <a href="/backend/users.html?page=7">7</a> <a href="/backend/users.html?page=8">8</a> <a href="/backend/users.html?page=9">9</a> <a href="/backend/users.html?page=10">10</a>  ... <a href="/backend/users.html?page=94">94</a> ]</p><p class="right">&laquo; <span class="disabled">Previous page</span> | <a href="/backend/users.html?page=2">Next page</a> &raquo</p></div>			</div>
+
+			<div class="right-bottom"></div>
+		</td>
+	</tr>		
+</table></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>
+

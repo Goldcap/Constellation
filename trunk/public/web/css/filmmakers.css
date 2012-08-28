@@ -1,0 +1,146 @@
+h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+h4 {
+	color: #666;
+}
+.hero-header {
+	height: 400px;
+	width: 100%;
+	background: #094266 url('../images/pages/filmmakers/hero.png');
+	position: fixed;
+	top: 75px;
+	z-index: 1;
+}
+.hero-header > div {
+	background: url('../images/pages/filmmakers/hero-inner.png');
+}
+.hero-header-image {
+	width: 460px;
+	height: 400px;
+	float: left;
+}
+.hero-header-text {
+	width: 430px;
+	margin-left: 30px;
+	height: 400px;
+	float: left;
+}
+.hero-header-text h1 {
+	font-size: 40px;
+	line-height: 42px;
+	color: #fff;
+	text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	margin: 100px 0 20px;
+}
+.hero-header-text p {
+	color: #bbb;
+	font-size: 28px;
+	line-height: 32px;
+	text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+
+.main-wrapper {
+	position: relative;
+	/*top: 460px;*/
+	z-index: 3;
+	background: url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/whitey.png") repeat scroll 0 0 #EEEEEE;
+}
+
+#masterhead {    
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+}
+.main-wrapper {
+	position: absolute;
+	top: 475px;
+	z-index: 10;
+	width: 100%;
+}
+#footer {display: none;}
+
+
+.fm-f-n {
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2) inset;
+	background: #f4f4f4;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.fm-f-n-list{
+	display: inline-block;
+}
+.fm-f-n-list li {
+	font-size: 18px;
+	line-height: 20px;
+	display: inline-block;
+	color: #2B8ECC;
+	margin: 0 10px;
+	padding: 8px 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0);
+	border-radius: 60px;
+	-moz-transition: linear all 0.2s;
+	cursor: pointer;
+}
+.fm-f-n-list li.active {
+	background: #e0e0e0;
+	color: #000;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	cursor: default;
+
+}
+.section {
+	margin: 100px 60px;
+	font-size: 15px;
+	line-height:18px;
+}
+.section p + h4 { margin-top: 20px}
+.col-2 {
+	width: 380px;
+	float: left;
+}
+.col-2 + .col-2{ margin-left: 30px;}
+
+.feature-text {
+	width:720px;
+	margin: 40px auto 0;
+}
+
+.grid_3 {
+	width: 320px;
+	float: left;
+	padding: 0 10px;
+	border-right: solid 1px #c0c0c0;
+}
+.grid_3 + .grid_3  {
+	border-right: none;
+}
+
+.slides {
+	position: relative;
+	height: 600px;
+}
+.slide {
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	-moz-transition: linear all 0.2s;
+	font-size: 14px; line-height: 16px;
+	text-align: center;
+	width: 100%;
+}
+.slide img {
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	border: 1px solid #CCCCCC;
+}
+.slide.active {
+	opacity: 1;
+	z-index: 2;
+}

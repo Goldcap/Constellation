@@ -1,0 +1,29 @@
+.buttons{left:-22px}
+.search{top:-21px; right:0px}
+
+.email_enter-form .right input{ width:105px}
+.buy-ticket_form .input{width:310px}
+.pop_mid{left:0}
+.date_icon span{left: 4px; }
+.title strong{ font:bold 32px/30px Arial,Helvetica,sans-serif}
+body.landing .crash_file .you, {left:38px}
+body.landing .crash_file .username{left:180px;}
+
+/* image bg fixes */
+.masterhead .logo a{background:url("../images/logo.gif") no-repeat}
+.image_gallery .navigation .previous{ background:url("../images/arrow_left.gif") no-repeat;}
+.image_gallery .navigation .next{ background:url"(../images/arrow_right.gif") no-repeat;}
+.main .navigation .previous{ background:url("../images/arrow_left_blue.gif") no-repeat; }
+.date_icon {background: url("../images/calendar.gif") no-repeat}
+.main .navigation .next{ background:url("../images/arrow_right_blue.gif") no-repeat; }
+.search .btn_search{background:url("../images/mag_glass.gif") no-repeat right;}
+
+.pop_bot{background: url("../images/pop_up_btm.gif") no-repeat left center transparent;}
+.pop_top{background: url("../images/pop_up_top.gif") no-repeat left center transparent;}
+.pop_mid{ left:16px; background: url("../images/pop_up_mid.gif") repeat-y left center transparent;}
+
+.chat_box { background: url("../images/bg_1px.gif") repeat 0 0 transparent;}
+body.landing .crash_file .you{background:url("../images/star.gif") no-repeat center top;}
+
+/* clear fix */
+.clearfix {height: 1%;}

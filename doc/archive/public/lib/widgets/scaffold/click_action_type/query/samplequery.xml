@@ -1,0 +1,35 @@
+<map table="fakie" result="video">
+  <column column="fakie_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="fakie_title" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="fakie_description" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <column column="fakie_file_thumb_one" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="fakie_file_vthumb_one" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="fakie_file_watch_one" type="TINYINT" size="" key="" order="5" ></column>
+  <column column="fakie_file_preview_one" type="TINYINT" size="" key="" order="6" ></column>
+  <column column="fakie_file_full_one" type="TINYINT" size="" key="" order="6" ></column>
+  <column column="fakie_featured" type="TINYINT" size="" key="" order="9"></column>
+  <column column="fakie_force_remote" type="TINYINT" size="" key="" order="9"></column>
+  <column column="fakie_current_step" name="Current Tab" type="TINYINT" size="" key="" order="10"></column>
+  <column column="fakie_live" type="TINYINT" size="" key="" order="11" ></column>
+  <column column="fakie_order" type="TINYINT" size="" key="" order="12"></column>
+  <column column="fakie_duration" type="TIMESTAMP" size="" key="" order="13"></column>
+  <column column="fakie_type" type="INTEGER" size="" key="" order="14"></column>
+  <column column="fakie_guid" type="INTEGER" size="" key="PRI" order="15" hidden="true"></column>
+  <column column="fakie_date_added" type="INTEGER" size="" key="PRI" order="15" hidden="true"></column>
+  <column column="fakie_id" type="INTEGER" size="" key="PRI" order="15" hidden="true"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="fakie_id"></ascorderby>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="1"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <!--<maplinks>
+    <maplink column="Title" base="/video/detail/">
+      <attribute name="tnf_video_id"></attribute>
+    </maplink>
+  </maplinks>-->
+</map>

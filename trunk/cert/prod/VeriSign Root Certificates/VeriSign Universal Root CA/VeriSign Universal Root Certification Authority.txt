@@ -1,0 +1,93 @@
+
+
+Version 3 Certificate
+
+Issuer Name:
+Country = US
+Organization = VeriSign, Inc.
+Organizational Unit = VeriSign Trust Network
+Organizational Unit = (c) 2008 VeriSign, Inc. - For authorized use only
+Common Name = VeriSign Universal Root Certification Authority
+
+Subject Name:
+Country = US
+Organization = VeriSign, Inc.
+Organizational Unit = VeriSign Trust Network
+Organizational Unit = (c) 2008 VeriSign, Inc. - For authorized use only
+Common Name = VeriSign Universal Root Certification Authority
+
+Validity Start: 04/02/2008 00:00:00 GMT
+Validity End: 12/01/2037 23:59:59 GMT
+
+Algorithm: SHA256 With RSA
+
+Cert Hash:
+36 79 ca 35 66 87 72 30 4d 30 a5 fb 87 3b 0f a7 
+7b b7 0d 54 
+
+Cert Info Hash:
+19 84 72 ee 6e 6e 13 35 e5 b0 ce 0b 92 0c bc fa 
+df 2d 04 27 
+
+Issuer Name and Serial Number Hash:
+a2 ec d2 75 0b fe 66 0f de 16 12 b5 ad c3 0c 99 
+e8 55 5c f2 
+
+Public Key Hash:
+bb c2 3e 29 0b b3 28 77 1d ad 3e a2 4d bd f4 23 
+bd 06 b0 3d 
+
+Serial Number:
+40 1a c4 64 21 b3 13 21 03 0e bb e4 12 1a c5 1d 
+
+
+Public Key:
+30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 
+01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 
+00 c7 61 37 5e b1 01 34 db 62 d7 15 9b ff 58 5a 
+8c 23 23 d6 60 8e 91 d7 90 98 83 7a e6 58 19 38 
+8c c5 f6 e5 64 85 b4 a2 71 fb ed bd b9 da cd 4d 
+00 b4 c8 2d 73 a5 c7 69 71 95 1f 39 3c b2 44 07 
+9c e8 0e fa 4d 4a c4 21 df 29 61 8f 32 22 61 82 
+c5 87 1f 6e 8c 7c 5f 16 20 51 44 d1 70 4f 57 ea 
+e3 1c e3 cc 79 ee 58 d8 0e c2 b3 45 93 c0 2c e7 
+9a 17 2b 7b 00 37 7a 41 33 78 e1 33 e2 f3 10 1a 
+7f 87 2c be f6 f5 f7 42 e2 e5 bf 87 62 89 5f 00 
+4b df c5 dd e4 75 44 32 41 3a 1e 71 6e 69 cb 0b 
+75 46 08 d1 ca d2 2b 95 d0 cf fb b9 40 6b 64 8c 
+57 4d fc 13 11 79 84 ed 5e 54 f6 34 9f 08 01 f3 
+10 25 06 17 4a da f1 1d 7a 66 6b 98 60 66 a4 d9 
+ef d2 2e 82 f1 f0 ef 09 ea 44 c9 15 6a e2 03 6e 
+33 d3 ac 9f 55 00 c7 f6 08 6a 94 b9 5f dc e0 33 
+f1 84 60 f9 5b 27 11 b4 fc 16 f2 bb 56 6a 80 25 
+8d 02 03 01 00 01 
+
+Extensions List (4):
+
+1) Basic Constraint Extension - Critical
+   Extension Value:
+   Is CA: TRUE
+   Max Path Len: N/A
+
+
+2) Key Usage Extension - Critical
+   Extension Value:
+   Key Cert Sign
+   Key CRL Sign
+
+
+3) Unknown Extension Type (1.3.6.1.5.5.7.1.12) - Non-Critical
+   Extension Value:
+   30 5f a1 5d a0 5b 30 59 30 57 30 55 16 09 69 6d     0_°]†[0Y0W0U..im
+   61 67 65 2f 67 69 66 30 21 30 1f 30 07 06 05 2b     age/gif0!0.0...+
+   0e 03 02 1a 04 14 8f e5 d3 1a 86 ac 8d 8e 6b c3     ............çék.
+   cf 80 6a d4 48 18 2c 7b 19 2e 30 25 16 23 68 74     ..j.H.,{..0%.#ht
+   74 70 3a 2f 2f 6c 6f 67 6f 2e 76 65 72 69 73 69     tp://logo.verisi
+   67 6e 2e 63 6f 6d 2f 76 73 6c 6f 67 6f 2e 67 69     gn.com/vslogo.gi
+   66                                                  f
+
+4) Subject Key Identifier Extension - Non-Critical
+   Extension Value:
+   Key Identifier:
+   b6 77 fa 69 48 47 9f 53 12 d5 c2 ea 07 32 76 07 
+   d1 97 07 19 

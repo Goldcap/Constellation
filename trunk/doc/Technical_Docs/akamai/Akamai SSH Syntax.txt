@@ -1,0 +1,2 @@
+Akamai SSH Syntax
+scp images/constellation.png sshacs@constell.upload.akamai.com:/113554

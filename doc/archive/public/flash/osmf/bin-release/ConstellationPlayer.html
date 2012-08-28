@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+    <!-- 
+    Smart developers always View Source. 
+    
+    This application was built using Adobe Flex, an open source framework
+    for building rich Internet applications that get delivered via the
+    Flash Player or to desktops via Adobe AIR. 
+    
+    Learn more about Flex at http://flex.org 
+    // -->
+    <head>
+        <title>Constellation Player</title>
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Include CSS to eliminate any default margins/padding and set the height of the html element and 
+             the body element to 100%, because Firefox, or any Gecko based browser, interprets percentage as 
+             the percentage of the height of its parent container, which has to be set explicitly.  Fix for
+             Firefox 3.6 focus border issues.  Initially, don't display flashContent div so it won't show 
+             if JavaScript disabled.
+        -->
+        <style type="text/css" media="screen"> 
+            html, body  { height:100%; }
+            body { margin:0; padding:0; overflow:auto; text-align:center; 
+                   background-color: ${bgcolor}; }   
+            object:focus { outline:none; }
+            #flashContent { display:none; }
+        </style>
+        <script type="text/javascript" src="scripts/swfobject.js"></script> 
+        <script type="text/javascript" src="scripts/ParsedQueryString.js"></script> 
+        <script type="text/javascript"> 
+          var pqs = new ParsedQueryString(); 
+          var parameterNames = pqs.params(false); 
+          var parameters = 
+          {id: "1", 
+          url: "rtmp://llnwqa.fcod.llnwd.net/a1218/o18/lexsamplecontent/llnwsplashh264.f4v",
+          llnwStreamType: "Progressive",
+          plugin: "http://plugins.osmf.llnw.com/StreamingPlugin/1.5/LimelightStreamingPlugin.swf",
+          volume: 50 
+          }; 
+          swfobject.embedSWF 
+          ( "LLNWPlayer.swf", 
+          "player", "480", 
+          "360", 
+          "10.0.0", 
+          {}, 
+          parameters, 
+          { allowFullScreen: "true" }, 
+          { name: "OSMFPlayer" }); 
+        </script> 
+    </head>
+    <body>
+        
+        <div id="player">
+         <p>Alternative content</p>
+        </div>   
+   </body>
+</html>

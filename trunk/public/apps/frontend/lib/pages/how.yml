@@ -1,0 +1,13 @@
+template: cst1
+layout: cst_account
+title: Constellation | Social Movie Events | How It Works
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    html: {html: html/howItWorks.html}
+  footer:
+    Footer:
+

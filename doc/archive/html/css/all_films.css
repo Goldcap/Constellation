@@ -1,0 +1,149 @@
+.sort_head {
+    float: right;
+    height: 30px;
+    margin: 25px 0 0;
+    color: #000;
+    font-size: 16px;
+}
+
+.sort_head + .sort_head {
+    margin-right: 40px;
+}
+
+.sort_head_genre {
+    position: relative;
+    z-index: 2;
+}
+.sort_head_genre .button_toggle {
+    width: 120px;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+    background: #ffffff url("/images/bg/header_arrow.png") no-repeat scroll 116px 14px;
+}
+
+.sort_head_genre .toggle_options {
+    top: 30px;
+    right: 0;
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    display: inline-block;
+    color: #757575;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    text-shadow: 0 0 1px rgba(255,255,255,1);
+    font-size: 14px;
+    display: inline-block;
+    *display:inline;
+    position: absolute;
+    
+}
+.toggle_options span.wrap > span {
+    display: block;
+    width: 120px;
+    padding:  10px;
+    
+}
+.toggle_options span.wrap {
+    display: block;
+    width: 120px;
+    padding:  10px;
+}
+
+.sort_head > #toggleTime {
+    margin: 0 10px 0 30px ;
+}
+
+.film_collection {
+
+}
+.film_collection_container {
+    margin: 45px 0 0;
+    opacity: 0;
+    min-height: 1170px;
+}
+
+.film_collection_container.loading {
+    background: url(../images/bg/ajax-loader.gif) 50% 100px no-repeat;;
+}
+
+
+.film_collection li {
+    width: 210px;
+    height: 370px;
+    margin-bottom: 20px;
+    background: #cc0c0c0;
+    float: left;
+    margin-left: 33px;
+    position: relative;
+}
+.film_collection li.first_of_row {
+    margin-left: 0;
+}
+
+.film_collection li img {
+    display: block;
+}
+.film_collection li span.poster_shadow {
+    background: url(../images/bg/poster_shadow.png);
+    display: inline-block;
+    height: 284px;
+    padding: 8px 10px;
+    width: 190px;
+}
+.film_collection li p.title {
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+    margin: 20px 0 0;
+}
+
+.poster_tip {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    width:  300px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: none;
+    z-index: 10;
+}
+.poster_tip .tip_synopsis {
+    line-height: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+.poster_tip .tip_maker {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.poster_tip.show {
+    display: block;
+}
+
+.poster_tip .tip_showtimes {
+    text-transform: uppercase;
+    display: block;
+}
+.poster_tip .tip_schedule {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    display: block;
+} 
+.poster_tip .tip_sub_header {
+    font-size: 13px;
+    margin-bottom: 4px;
+    display: block;
+}

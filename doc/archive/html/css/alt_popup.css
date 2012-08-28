@@ -1,0 +1,159 @@
+
+/* -------------- 9. POP-up --------------------------------- */
+.pop_up{position:absolute; top:140px; height:1px; width:1px; left:150px; float:left; z-index: 1000; }
+	
+  .pop_up p{color:#fff; margin-bottom:6px}
+  .pop_up p.pad_bot, .pop_up div.pad_bot{margin-bottom:20px}
+  .pop_up p.p_l{padding-left:173px; margin-bottom:2px}
+  .pop_up p strong{text-transform:uppercase}
+
+  .pop_top{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/notice_top.png") no-repeat left; height:7px; top:-7px;}
+	.pop_top a{color:#fff; font:12px Helvetica, sans-serif; float:right; padding:9px 33px 0 0; display:block; text-transform:uppercase;}
+	.pop_mid{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/notice_mid.png") repeat-y left; min-height: 150px; }
+	.pop_bot{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/notice_bottom.png") no-repeat left; height:7px; bottom:-7px; position:absolute!important}
+	
+	.pop_top, .pop_bot, .pop_mid{ position:relative; width:606px; }
+	
+	.pop_up .title strong{font:bold 32px/26px Arial, Helvetica, sans-serif; color:#fff;}
+	.pop_up .title{font:normal 18px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+
+/* -------------- 9. ERROR-up --------------------------------- */
+.growler_error {
+	position: absolute;
+	font-family:"helveticaneue", verdana, helvetica, sans-serif;
+	float: left;
+	width: 550px;
+	background: #FF0000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 1000;
+	margin-left: 50%;
+	margin-top: 100px;
+	left: -320px;
+	text-align: center;
+	padding: 15px;
+	color: black !important;
+}
+
+/* -------------- 9. ERROR-up --------------------------------- */
+.growler_alert {
+	position: absolute;
+	font-family:"helveticaneue", verdana, helvetica, sans-serif;
+	float: left;
+	width: 550px;
+	background: #5CB6DC;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 1000;
+	margin-left: 50%;
+	margin-top: 100px;
+	left: -320px;
+	text-align: center;
+	padding: 15px;
+	color: black !important;
+}
+
+.growler_error a, .growler_alert a {
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	color:#fff; 
+	font-size:11px; 
+	font-family: "helveticaneue" Helvetica, sans-serif; 
+	float:right; 
+	text-transform:uppercase;
+}
+	
+.growler_error h5, .growler_alert h5 {
+	font:bold 26px "helveticaneue", Arial, Helvetica, sans-serif;
+	color:white;  
+	margin-top: 10px;
+	text-transform: none;
+	border-bottom: none;
+}
+
+.error{ text-align: center !important; top:140px; height:1px; width:1px; left:190px; float:left; z-index: 100; }
+	.error_top{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/error_top.png") no-repeat left; height:7px; top:-7px;}
+	.error_top a{color:#fff; font-size:12px; font-family: "helveticaneue" Helvetica, sans-serif; float:right; padding:0px 33px 0 0 !important; display:block; text-transform:uppercase;}
+	.error_mid{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/error_mid.png") repeat-y left; min-height: 50px; padding-top: 20px; padding-bottom: 10px; }
+	.error_bot{background:url("http://s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/error_bottom.png") no-repeat left; height:7px; bottom:-7px; position:absolute!important}
+	
+	.error_top, .error_bot, .error_mid{ position:relative; width:606px; }
+	
+	.error .title strong{font:bold 24px "helveticaneue", Arial, Helvetica, sans-serif; color:white; margin-top: 40px; text-transform: none;}
+	.error .title{font:normal 16px Arial, Helvetica, sans-serif; color:#fff; text-transform:uppercase; overflow: hidden;}
+
+
+.pops {
+	position: absolute;
+	font-family:"helveticaneue", verdana, helvetica, sans-serif;
+	float: left;
+	width: 370px;
+	background: white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 1000;
+	margin-left: 50%;
+	left: -210px;
+	text-align: left;
+	padding: 25px;
+	color: black !important;
+}
+
+.pops_wide {
+	width: 515px;
+	left: -307px;
+}
+
+.pops h4 {
+	font-family:"helveticaneuelight", verdana, helvetica, sans-serif;
+	text-align: left;
+	font-size: 30px;
+	text-transform: none;
+}
+.pops div p {
+	margin-bottom: 10px !important;
+}
+
+.pops div p a {
+	color: #2E9BE0;
+}
+
+.pops div form .label {
+	float: left;
+	width: 100%;
+	color: #9B9B9B;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.pops .input{	
+color: black;
+width:355px !important;
+border: 1px solid #A7A7A7;
+background: #ffffff;
+}
+
+.pops .short{	
+width:90px !important;
+}
+
+.input_wm{
+color: #9B9B9B !important;
+background: #F1F1F1 !important; 
+}
+
+.modal { 
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: black;
+  opacity:0.6;
+	z-index: 600;
+}

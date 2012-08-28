@@ -1,0 +1,34 @@
+<map table="audience" result="audience_list_datamap">
+  <column column="audience_ip_addr" type="VARCHAR" size="15" key="" order="4"></column>
+  <column column="audience_username" type="VARCHAR" size="255" key="" order="3"></column>          
+  <column column="audience_created_at" type="VARCHAR" size="255" key="" order="5"></column>          
+  <column column="fk_user_id" name="join_type" type="INTEGER" size="11" key="MUL" order="6" util="item::userSource"></column>
+  <column column="fk_screening_unique_key" name="screening_key" type="INTEGER" size="11" order="7"></column>
+  <column column="fk_screening_id" name="screening_id" type="INTEGER" size="11" order="8"></column>
+  <column column="fk_screening_id" name="purchase_beacon" type="INTEGER" size="11" order="9" util="item::userBeacon"></column>
+  <column column="audience_created_at" name="Date Enter Theater" type="INTEGER" size="11" order="10" util="item::timeIn"></column>
+  <column column="audience_id" name="Facebook Share" type="INTEGER" size="11" order="11" util="item::fbShare"></column>
+  <column column="audience_id" name="Twitter Share" type="INTEGER" size="11" order="12" util="item::twShare"></column>
+  <column column="audience_id" name="Email Share" type="INTEGER" size="11" order="13" util="item::emShare"></column>
+  <column column="audience_id" name="Past Screenings" type="INTEGER" size="11" order="14" util="item::pastScreenings"></column>
+  <column column="audience_id" name="Past Screening Count" type="INTEGER" size="11" order="15" util="item::pastScreeningCount"></column>
+  <column column="audience_status" name="attend_event" type="INTEGER" size="11" order="16"></column>
+  <column column="fk_user_id" type="INTEGER" size="11" key="MUL" order="17" hidden="true"></column>
+  <join localtable="audience" local="fk_user_id" foreigntable="user" foreign="user_id" left="true">
+    <foreigncolumn column="user_default_timezone" type="INTEGER" size="" key="" order="5" format="null" />
+    <foreigncolumn column="user_email" type="VARCHAR" size="" key="" order="2" />
+    <foreigncolumn column="user_full_name" type="VARCHAR" size="" key="" order="1" /> 
+    <foreigncolumn column="user_created_at" type="VARCHAR" size="" key="" order="1" />
+  </join>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="audience_id"></ascorderby>
+    <criteria scope="GET" value="id" column="fk_screening_unique_key"></criteria>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

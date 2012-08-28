@@ -1,0 +1,851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="title" content="Constellation.tv" />
+<meta name="og:title" content="Constellation.tv - The First Global Movie Theater" />
+  <title>Constellation.tv</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <script type="text/javascript" src="/js/jquery/jquery-1.6.4.min.js"></script> 
+  
+  <link href="/css/main_styles.css" rel="stylesheet" type="text/css" />
+  <link href="/css/main_styles_alt.css" rel="stylesheet" type="text/css" />
+
+  <link href="/css/alt_popup.css" rel="stylesheet" type="text/css" />
+	<link href="/js/jquery/vitch-jScrollPane-76f0071/style/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+  <link href="/css/carousel.css" rel="stylesheet" type="text/css" />
+	<link href="/js/jquery/ui/themes/smoothness/jquery-ui-1.8.1.custom.css" rel="stylesheet" type="text/css" />
+	<link href="/js/jquery/jquery.fancybox-1.3.1/fancybox/jquery.fancybox-1.3.1.css" rel="stylesheet" type="text/css" />
+	<link href="/css/tabs.css" rel="stylesheet" type="text/css" />
+	<link href="/css/feedback.css" rel="stylesheet" type="text/css" />
+	<link href="/css/theater_side.css" rel="stylesheet" type="text/css" />
+	<link href="/css/reviews.css" rel="stylesheet" type="text/css" />
+
+	<link href="/css/styles.css" rel="stylesheet" type="text/css" />
+	
+	  
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" href="/css/ie6.css" type="text/css">
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="/css/ie7.css" type="text/css">
+  <![endif]-->
+  <style type="text/css">#sfWebDebug {   padding: 0;   margin: 0;   font-family: Arial, sans-serif;   font-size: 12px;   color: #333;   text-align: left;   line-height: 12px; }  #sfWebDebug a, #sfWebDebug a:hover {   text-decoration: none;   border: none;   background-color: transparent;   color: #000; }  #sfWebDebug img {   float: none;   margin: 0;   border: 0;   display: inline; }  #sfWebDebugBar {   position: absolute;   margin: 0;   padding: 1px 0;   right: 0px;   top: 0px;   opacity: 0.80;   filter: alpha(opacity:80);   z-index: 10000;   white-space: nowrap;   background-color: #ddd; }  #sfWebDebugBar[id] {   position: fixed; }  #sfWebDebugBar img {   vertical-align: middle; }  #sfWebDebugBar .sfWebDebugMenu {   padding: 5px;   padding-left: 0;   display: inline;   margin: 0; }  #sfWebDebugBar .sfWebDebugMenu li {   display: inline;   list-style: none;   margin: 0;   padding: 0 6px; }  #sfWebDebugBar .sfWebDebugMenu li.last {   margin: 0;   padding: 0;   border: 0; }  #sfWebDebugDatabaseDetails li {   margin: 0;   margin-left: 30px;   padding: 5px 0; }  #sfWebDebugShortMessages li {   margin-bottom: 10px;   padding: 5px;   background-color: #ddd; }  #sfWebDebugShortMessages li {   list-style: none; }  #sfWebDebugDetails {   margin-right: 7px; }  #sfWebDebug pre {   line-height: 1.3;   margin-bottom: 10px; }  #sfWebDebug h1 {   font-size: 16px;   font-weight: bold;   margin: 20px 0;   padding: 0;   border: 0px;   background-color: #eee; }  #sfWebDebug h2 {   font-size: 14px;   font-weight: bold;   margin: 10px 0;   padding: 0;   border: 0px;   background: none; }  #sfWebDebug h3 {   font-size: 12px;   font-weight: bold;   margin: 10px 0;   padding: 0;   border: 0px;   background: none; }  #sfWebDebug .sfWebDebugTop {   position: absolute;   left: 0px;   top: 0px;   width: 98%;   padding: 0 1%;   margin: 0;   z-index: 9999;   background-color: #efefef;   border-bottom: 1px solid #aaa; }  #sfWebDebugLog {   margin: 0;   padding: 3px;   font-size: 11px; }  #sfWebDebugLogMenu {   margin-bottom: 5px; }  #sfWebDebugLogMenu li {   display: inline;   list-style: none;   margin: 0;   padding: 0 5px;   border-right: 1px solid #aaa; }  #sfWebDebugConfigSummary {   display: inline;   padding: 5px;   background-color: #ddd;   border: 1px solid #aaa;   margin: 20px 0; }  #sfWebDebugConfigSummary li {   list-style: none;   display: inline;   margin: 0;   padding: 0 5px; }  #sfWebDebugConfigSummary li.last {   border: 0; }  .sfWebDebugInfo, .sfWebDebugInfo td {   background-color: #ddd; }  .sfWebDebugWarning, .sfWebDebugWarning td {   background-color: orange !important; }  .sfWebDebugError, .sfWebDebugError td {   background-color: #f99 !important; }  .sfWebDebugLogNumber {   width: 1%; }  .sfWebDebugLogType {   width: 1%;   white-space: nowrap; }  .sfWebDebugLogType, #sfWebDebug .sfWebDebugLogType a {   color: darkgreen; }  #sfWebDebug .sfWebDebugLogType a:hover {   text-decoration: underline; }  .sfWebDebugLogInfo {   color: blue; }  .ison {   color: #3f3;   margin-right: 5px; }  .isoff {   color: #f33;   margin-right: 5px;   text-decoration: line-through; }  .sfWebDebugLogs {   padding: 0;   margin: 0;   border: 1px solid #999;   font-family: Arial;   font-size: 11px; }  .sfWebDebugLogs tr {   padding: 0;   margin: 0;   border: 0; }  .sfWebDebugLogs td {   margin: 0;   border: 0;   padding: 1px 3px;   vertical-align: top; }  .sfWebDebugLogs th {   margin: 0;   border: 0;   padding: 3px 5px;   vertical-align: top;   background-color: #999;   color: #eee;   white-space: nowrap; }  .sfWebDebugDebugInfo {   color: #999;   font-size: 11px;   margin: 5px 0 5px 10px;   padding: 2px 0 2px 5px;   border-left: 1px solid #aaa;   line-height: 1.25em; }  .sfWebDebugDebugInfo .sfWebDebugLogInfo, .sfWebDebugDebugInfo a.sfWebDebugFileLink {   color: #333 !important; }  .sfWebDebugCache {   padding: 0;   margin: 0;   font-family: Arial;   position: absolute;   overflow: hidden;   z-index: 995;   font-size: 9px;   padding: 2px;   filter:alpha(opacity=85);   -moz-opacity:0.85;   opacity: 0.85; }  #sfWebDebugSymfonyVersion {   margin-left: 0;   padding: 1px 4px;   background-color: #666;   color: #fff; }  #sfWebDebugviewDetails ul {   padding-left: 2em;   margin: .5em 0;   list-style: none; }  #sfWebDebugviewDetails li {   margin-bottom: .5em; }  #sfWebDebug .sfWebDebugDataType, #sfWebDebug .sfWebDebugDataType a {   color: #666;   font-style: italic; }  #sfWebDebug .sfWebDebugDataType a:hover {   text-decoration: underline; }  #sfWebDebugDatabaseLogs {   margin-bottom: 10px; }  #sfWebDebugDatabaseLogs ol {   margin: 0;   padding: 0;   margin-left: 20px;   list-style: number; }  #sfWebDebugDatabaseLogs li {   padding: 6px; }  #sfWebDebugDatabaseLogs li:nth-child(odd) {   background-color: #CCC; }  .sfWebDebugDatabaseQuery {   margin-bottom: .5em;   margin-top: 0; }  .sfWebDebugDatabaseLogInfo {   color: #666;   font-size: 11px; }  .sfWebDebugDatabaseQuery .sfWebDebugLogInfo {   color: #909;   font-weight: bold; }  .sfWebDebugHighlight {   background: #FFC; }</style></head>
+
+  <body class="one_column_alt">
+  
+  <div id="wrapper" class="wrapper"><div id="masterhead" class="masterhead" role="banner"><div id="thistime" class="reqs">1317923718</div>
+    
+<div class="headline">
+
+    <div class="logo_alt"><a title="Return to the home page" href="/"></a></div>
+    <ul class="header_nav">
+        <!--<li><a href="/">Home</a></li>-->
+        <li><a href="/films">Browse All Movies</a></li>
+        				<li><a href="/account/showtimes">My Showtimes</a></li>
+				    </ul>
+    
+    <div class="searchbar_alt"><!--<input type="text" class="search_alt" />--></div>
+    
+    <ul class="logo_alt_set">
+
+              <li class="header_timezone acc_timezone">
+            <p><span class="uppercase">Timezone</span> <span id="timezone-select">(change)</span></p>
+            <p class="acc_timezone_link">11:10:55 AM MDT</p>
+        </li>
+        <li class="header_user">
+            <div class="header_user_block" id="loggedUser">
+                <span class="header_user_icon"><img id="photo-url" src="/images/icon-custom.png" class="main-login" height="22" /></span>
+
+                <span class="header_user_name">Andy</span>
+            </div>
+            <ul class="user_info">
+                <li><a href="/account">Account Settings</a></li>
+                <li><a href="/logout?dest=/hosting">Log Out</a></li>
+            </ul>
+        </li>
+
+        </ul>
+    
+</div>
+    
+<!-- START LOGIN POPUP -->
+<div class="pops" id="main-login-popup" style="display: none;">
+  <h4>Logged In</h4>
+	<div class="your-screening-area">       
+    	<div class="title">My Tickets</div> 
+    	<div id="your-screening-ajax-load" class="screening-payload"><center></center></div>
+  </div>
+
+  <div class="your-hosting-area">       
+    	<div class="title">I Am Hosting</div> 
+    	<div id="your-hosting-ajax-load" class="screening-payload"><center></center></div>
+  </div>
+  <div class="logout-area">
+    <!--<img alt="custom connect" class="c-connect-img" src="/images/c-connect.png" id="main-login-icon" />
+    <img alt="custom connect"  class="-connect-img" src="/images/fb-connect.png" id="main-login-icon" />
+    <img alt="custom connect" class="t-connect-img" src="/images/tw-connect.png" id="main-login-icon">-->
+    Andy - <a href="/account">My Account</a> &nbsp;&nbsp;&nbsp; <a class="link logout" href="/logout?dest=">Logout</a>
+
+  </div>
+</div>
+<div id="auth" style="display:none;"></div>
+<!-- END LOGIN POPUP -->
+
+<!-- GROWLER -->
+<div class="growler_error" id="growlerAlt" style="display:none">
+  <a id="error_close" href="#"><strong>close</strong></a>
+  <h5 id="growler_title"></h5>  			        
+  <p><span id="growler_body"></span></p>    
+</div>
+
+<div class="growler_alert" id="alertAlt" style="display:none">
+
+  <a id="error_close" href="#"><strong>close</strong></a>
+  <h5 id="alert_title"></h5>  			        
+  <p><span id="alert_body"></span></p>    
+</div>
+<!-- GROWLER -->
+
+
+<!-- FEEDBACK -->
+<!-- FEEDBACK POPUP -->
+<div class="pop_up" id="feedback_popup" style="display: none">
+  <div class="pop_mid">
+  <div class="pop_top popup-close"><a href="#">close</a></div>
+
+  	<div class="layout-1 clearfix">
+      	<div class="title"><strong><span id="feedback_result">Thanks for your feedback!</span></strong></div>
+      	<span id="feedbody">
+        <form id="feedback_form" name="feedback_form" action="/services/UserFeedback" method="POST" class="feedback_form" onSubmit="return false">
+      	<br />
+          <fieldset>
+              <!--<div class="clearfix description">Constellation.tv is currently in beta.  We appreciate any and all feedback!</div>
+              <div class="clearfix description">Have you had any problems using the site?  Please be as specific as possible, and please include your browser name and version number.</div>
+              <div class="clearfix"><textarea id="feedback_problems" name="feedback_problems"></textarea></div>
+              <div class="clearfix description">How did you hear about Constellation.tv?  </div>
+              <div class="clearfix"><textarea id="feedback_heard" name="feedback_heard"></textarea></div>
+              <div class="clearfix description">What brought you to the site today?</div>
+              <div class="clearfix"><textarea id="feedback_brought" name="feedback_brought"></textarea></div>
+              <div class="clearfix description">Any suggestions?</div>-->
+              <div class="clearfix"><textarea id="feedback_suggestions" name="feedback_suggestions"></textarea></div>
+
+              <input id="feedback" type="button" value="submit" class="btn_med-og" name="" /> 
+          </fieldset>
+        </form>
+        </span>
+    </div>
+  <div class="pop_bot"></div>
+  </div>    
+</div>
+<!-- END FEEDBACK POPUP -->
+<!-- GROWLER -->	 		
+
+
+<!-- FEEDBACK -->
+
+<div id="timezone-select-popup" class="pops" style="display: none">
+  	<p><strong>Please select your timezone.</strong></p>  
+    <p>NOTE: If your are not logged in, this will save your timezone option only for this session.</p>  
+    <form id="timezone_form" name="timezone_form" action="/services/Timezone" method="POST" class="timezone_form">
+    <div>
+    <select name="tzSelectorPop" id="tzSelectorPop">
+            <optgroup label="AMERICA">
+                  <option value="America/Adak" >&nbsp;&nbsp;&nbsp;Adak</option>
+
+                  <option value="America/Anchorage" >&nbsp;&nbsp;&nbsp;Anchorage</option>
+                  <option value="America/Anguilla" >&nbsp;&nbsp;&nbsp;Anguilla</option>
+                  <option value="America/Antigua" >&nbsp;&nbsp;&nbsp;Antigua</option>
+                  <option value="America/Araguaina" >&nbsp;&nbsp;&nbsp;Araguaina</option>
+                  <option value="America/Argentina" >&nbsp;&nbsp;&nbsp;Argentina</option>
+                  <option value="America/Aruba" >&nbsp;&nbsp;&nbsp;Aruba</option>
+
+                  <option value="America/Asuncion" >&nbsp;&nbsp;&nbsp;Asuncion</option>
+                  <option value="America/Atikokan" >&nbsp;&nbsp;&nbsp;Atikokan</option>
+                  <option value="America/Bahia" >&nbsp;&nbsp;&nbsp;Bahia</option>
+                  <option value="America/Bahia_Banderas" >&nbsp;&nbsp;&nbsp;Bahia Banderas</option>
+                  <option value="America/Barbados" >&nbsp;&nbsp;&nbsp;Barbados</option>
+                  <option value="America/Belem" >&nbsp;&nbsp;&nbsp;Belem</option>
+
+                  <option value="America/Belize" >&nbsp;&nbsp;&nbsp;Belize</option>
+                  <option value="America/Blanc-Sablon" >&nbsp;&nbsp;&nbsp;Blanc-Sablon</option>
+                  <option value="America/Boa_Vista" >&nbsp;&nbsp;&nbsp;Boa Vista</option>
+                  <option value="America/Bogota" >&nbsp;&nbsp;&nbsp;Bogota</option>
+                  <option value="America/Boise" >&nbsp;&nbsp;&nbsp;Boise</option>
+                  <option value="America/Cambridge_Bay" >&nbsp;&nbsp;&nbsp;Cambridge Bay</option>
+
+                  <option value="America/Campo_Grande" >&nbsp;&nbsp;&nbsp;Campo Grande</option>
+                  <option value="America/Cancun" >&nbsp;&nbsp;&nbsp;Cancun</option>
+                  <option value="America/Caracas" >&nbsp;&nbsp;&nbsp;Caracas</option>
+                  <option value="America/Cayenne" >&nbsp;&nbsp;&nbsp;Cayenne</option>
+                  <option value="America/Cayman" >&nbsp;&nbsp;&nbsp;Cayman</option>
+                  <option value="America/Chicago" >&nbsp;&nbsp;&nbsp;Chicago</option>
+
+                  <option value="America/Chihuahua" >&nbsp;&nbsp;&nbsp;Chihuahua</option>
+                  <option value="America/Costa_Rica" >&nbsp;&nbsp;&nbsp;Costa Rica</option>
+                  <option value="America/Cuiaba" >&nbsp;&nbsp;&nbsp;Cuiaba</option>
+                  <option value="America/Curacao" >&nbsp;&nbsp;&nbsp;Curacao</option>
+                  <option value="America/Danmarkshavn" >&nbsp;&nbsp;&nbsp;Danmarkshavn</option>
+                  <option value="America/Dawson" >&nbsp;&nbsp;&nbsp;Dawson</option>
+
+                  <option value="America/Dawson_Creek" >&nbsp;&nbsp;&nbsp;Dawson Creek</option>
+                  <option value="America/Denver" selected="selected">&nbsp;&nbsp;&nbsp;Denver</option>
+                  <option value="America/Detroit" >&nbsp;&nbsp;&nbsp;Detroit</option>
+                  <option value="America/Dominica" >&nbsp;&nbsp;&nbsp;Dominica</option>
+                  <option value="America/Edmonton" >&nbsp;&nbsp;&nbsp;Edmonton</option>
+                  <option value="America/Eirunepe" >&nbsp;&nbsp;&nbsp;Eirunepe</option>
+
+                  <option value="America/El_Salvador" >&nbsp;&nbsp;&nbsp;El Salvador</option>
+                  <option value="America/Fortaleza" >&nbsp;&nbsp;&nbsp;Fortaleza</option>
+                  <option value="America/Glace_Bay" >&nbsp;&nbsp;&nbsp;Glace Bay</option>
+                  <option value="America/Godthab" >&nbsp;&nbsp;&nbsp;Godthab</option>
+                  <option value="America/Goose_Bay" >&nbsp;&nbsp;&nbsp;Goose Bay</option>
+                  <option value="America/Grand_Turk" >&nbsp;&nbsp;&nbsp;Grand Turk</option>
+
+                  <option value="America/Grenada" >&nbsp;&nbsp;&nbsp;Grenada</option>
+                  <option value="America/Guadeloupe" >&nbsp;&nbsp;&nbsp;Guadeloupe</option>
+                  <option value="America/Guatemala" >&nbsp;&nbsp;&nbsp;Guatemala</option>
+                  <option value="America/Guayaquil" >&nbsp;&nbsp;&nbsp;Guayaquil</option>
+                  <option value="America/Guyana" >&nbsp;&nbsp;&nbsp;Guyana</option>
+                  <option value="America/Halifax" >&nbsp;&nbsp;&nbsp;Halifax</option>
+
+                  <option value="America/Havana" >&nbsp;&nbsp;&nbsp;Havana</option>
+                  <option value="America/Hermosillo" >&nbsp;&nbsp;&nbsp;Hermosillo</option>
+                  <option value="America/Indiana" >&nbsp;&nbsp;&nbsp;Indiana</option>
+                  <option value="America/Inuvik" >&nbsp;&nbsp;&nbsp;Inuvik</option>
+                  <option value="America/Iqaluit" >&nbsp;&nbsp;&nbsp;Iqaluit</option>
+                  <option value="America/Jamaica" >&nbsp;&nbsp;&nbsp;Jamaica</option>
+
+                  <option value="America/Juneau" >&nbsp;&nbsp;&nbsp;Juneau</option>
+                  <option value="America/Kentucky" >&nbsp;&nbsp;&nbsp;Kentucky</option>
+                  <option value="America/La_Paz" >&nbsp;&nbsp;&nbsp;La Paz</option>
+                  <option value="America/Lima" >&nbsp;&nbsp;&nbsp;Lima</option>
+                  <option value="America/Los_Angeles" >&nbsp;&nbsp;&nbsp;Los Angeles</option>
+                  <option value="America/Maceio" >&nbsp;&nbsp;&nbsp;Maceio</option>
+
+                  <option value="America/Managua" >&nbsp;&nbsp;&nbsp;Managua</option>
+                  <option value="America/Manaus" >&nbsp;&nbsp;&nbsp;Manaus</option>
+                  <option value="America/Marigot" >&nbsp;&nbsp;&nbsp;Marigot</option>
+                  <option value="America/Martinique" >&nbsp;&nbsp;&nbsp;Martinique</option>
+                  <option value="America/Matamoros" >&nbsp;&nbsp;&nbsp;Matamoros</option>
+                  <option value="America/Mazatlan" >&nbsp;&nbsp;&nbsp;Mazatlan</option>
+
+                  <option value="America/Menominee" >&nbsp;&nbsp;&nbsp;Menominee</option>
+                  <option value="America/Merida" >&nbsp;&nbsp;&nbsp;Merida</option>
+                  <option value="America/Mexico_City" >&nbsp;&nbsp;&nbsp;Mexico City</option>
+                  <option value="America/Miquelon" >&nbsp;&nbsp;&nbsp;Miquelon</option>
+                  <option value="America/Moncton" >&nbsp;&nbsp;&nbsp;Moncton</option>
+                  <option value="America/Monterrey" >&nbsp;&nbsp;&nbsp;Monterrey</option>
+
+                  <option value="America/Montevideo" >&nbsp;&nbsp;&nbsp;Montevideo</option>
+                  <option value="America/Montreal" >&nbsp;&nbsp;&nbsp;Montreal</option>
+                  <option value="America/Montserrat" >&nbsp;&nbsp;&nbsp;Montserrat</option>
+                  <option value="America/Nassau" >&nbsp;&nbsp;&nbsp;Nassau</option>
+                  <option value="America/New_York" >&nbsp;&nbsp;&nbsp;New York</option>
+                  <option value="America/Nipigon" >&nbsp;&nbsp;&nbsp;Nipigon</option>
+
+                  <option value="America/Nome" >&nbsp;&nbsp;&nbsp;Nome</option>
+                  <option value="America/Noronha" >&nbsp;&nbsp;&nbsp;Noronha</option>
+                  <option value="America/North_Dakota" >&nbsp;&nbsp;&nbsp;North Dakota</option>
+                  <option value="America/Ojinaga" >&nbsp;&nbsp;&nbsp;Ojinaga</option>
+                  <option value="America/Panama" >&nbsp;&nbsp;&nbsp;Panama</option>
+                  <option value="America/Pangnirtung" >&nbsp;&nbsp;&nbsp;Pangnirtung</option>
+
+                  <option value="America/Paramaribo" >&nbsp;&nbsp;&nbsp;Paramaribo</option>
+                  <option value="America/Phoenix" >&nbsp;&nbsp;&nbsp;Phoenix</option>
+                  <option value="America/Port-au-Prince" >&nbsp;&nbsp;&nbsp;Port-au-Prince</option>
+                  <option value="America/Port_of_Spain" >&nbsp;&nbsp;&nbsp;Port of Spain</option>
+                  <option value="America/Porto_Velho" >&nbsp;&nbsp;&nbsp;Porto Velho</option>
+                  <option value="America/Puerto_Rico" >&nbsp;&nbsp;&nbsp;Puerto Rico</option>
+
+                  <option value="America/Rainy_River" >&nbsp;&nbsp;&nbsp;Rainy River</option>
+                  <option value="America/Rankin_Inlet" >&nbsp;&nbsp;&nbsp;Rankin Inlet</option>
+                  <option value="America/Recife" >&nbsp;&nbsp;&nbsp;Recife</option>
+                  <option value="America/Regina" >&nbsp;&nbsp;&nbsp;Regina</option>
+                  <option value="America/Resolute" >&nbsp;&nbsp;&nbsp;Resolute</option>
+                  <option value="America/Rio_Branco" >&nbsp;&nbsp;&nbsp;Rio Branco</option>
+
+                  <option value="America/Santa_Isabel" >&nbsp;&nbsp;&nbsp;Santa Isabel</option>
+                  <option value="America/Santarem" >&nbsp;&nbsp;&nbsp;Santarem</option>
+                  <option value="America/Santiago" >&nbsp;&nbsp;&nbsp;Santiago</option>
+                  <option value="America/Santo_Domingo" >&nbsp;&nbsp;&nbsp;Santo Domingo</option>
+                  <option value="America/Sao_Paulo" >&nbsp;&nbsp;&nbsp;Sao Paulo</option>
+                  <option value="America/Scoresbysund" >&nbsp;&nbsp;&nbsp;Scoresbysund</option>
+
+                  <option value="America/Shiprock" >&nbsp;&nbsp;&nbsp;Shiprock</option>
+                  <option value="America/St_Barthelemy" >&nbsp;&nbsp;&nbsp;St Barthelemy</option>
+                  <option value="America/St_Johns" >&nbsp;&nbsp;&nbsp;St Johns</option>
+                  <option value="America/St_Kitts" >&nbsp;&nbsp;&nbsp;St Kitts</option>
+                  <option value="America/St_Lucia" >&nbsp;&nbsp;&nbsp;St Lucia</option>
+                  <option value="America/St_Thomas" >&nbsp;&nbsp;&nbsp;St Thomas</option>
+
+                  <option value="America/St_Vincent" >&nbsp;&nbsp;&nbsp;St Vincent</option>
+                  <option value="America/Swift_Current" >&nbsp;&nbsp;&nbsp;Swift Current</option>
+                  <option value="America/Tegucigalpa" >&nbsp;&nbsp;&nbsp;Tegucigalpa</option>
+                  <option value="America/Thule" >&nbsp;&nbsp;&nbsp;Thule</option>
+                  <option value="America/Thunder_Bay" >&nbsp;&nbsp;&nbsp;Thunder Bay</option>
+                  <option value="America/Tijuana" >&nbsp;&nbsp;&nbsp;Tijuana</option>
+
+                  <option value="America/Toronto" >&nbsp;&nbsp;&nbsp;Toronto</option>
+                  <option value="America/Tortola" >&nbsp;&nbsp;&nbsp;Tortola</option>
+                  <option value="America/Vancouver" >&nbsp;&nbsp;&nbsp;Vancouver</option>
+                  <option value="America/Whitehorse" >&nbsp;&nbsp;&nbsp;Whitehorse</option>
+                  <option value="America/Winnipeg" >&nbsp;&nbsp;&nbsp;Winnipeg</option>
+                  <option value="America/Yakutat" >&nbsp;&nbsp;&nbsp;Yakutat</option>
+
+                  <option value="America/Yellowknife" >&nbsp;&nbsp;&nbsp;Yellowknife</option>
+              </optgroup>
+            <optgroup label="ATLANTIC">
+                  <option value="Atlantic/Azores" >&nbsp;&nbsp;&nbsp;Azores</option>
+                  <option value="Atlantic/Bermuda" >&nbsp;&nbsp;&nbsp;Bermuda</option>
+                  <option value="Atlantic/Canary" >&nbsp;&nbsp;&nbsp;Canary</option>
+                  <option value="Atlantic/Cape_Verde" >&nbsp;&nbsp;&nbsp;Cape Verde</option>
+
+                  <option value="Atlantic/Faroe" >&nbsp;&nbsp;&nbsp;Faroe</option>
+                  <option value="Atlantic/Madeira" >&nbsp;&nbsp;&nbsp;Madeira</option>
+                  <option value="Atlantic/Reykjavik" >&nbsp;&nbsp;&nbsp;Reykjavik</option>
+                  <option value="Atlantic/South_Georgia" >&nbsp;&nbsp;&nbsp;South Georgia</option>
+                  <option value="Atlantic/St_Helena" >&nbsp;&nbsp;&nbsp;St Helena</option>
+                  <option value="Atlantic/Stanley" >&nbsp;&nbsp;&nbsp;Stanley</option>
+
+              </optgroup>
+            <optgroup label="EUROPE">
+                  <option value="Europe/Amsterdam" >&nbsp;&nbsp;&nbsp;Amsterdam</option>
+                  <option value="Europe/Andorra" >&nbsp;&nbsp;&nbsp;Andorra</option>
+                  <option value="Europe/Athens" >&nbsp;&nbsp;&nbsp;Athens</option>
+                  <option value="Europe/Belgrade" >&nbsp;&nbsp;&nbsp;Belgrade</option>
+                  <option value="Europe/Berlin" >&nbsp;&nbsp;&nbsp;Berlin</option>
+
+                  <option value="Europe/Bratislava" >&nbsp;&nbsp;&nbsp;Bratislava</option>
+                  <option value="Europe/Brussels" >&nbsp;&nbsp;&nbsp;Brussels</option>
+                  <option value="Europe/Bucharest" >&nbsp;&nbsp;&nbsp;Bucharest</option>
+                  <option value="Europe/Budapest" >&nbsp;&nbsp;&nbsp;Budapest</option>
+                  <option value="Europe/Chisinau" >&nbsp;&nbsp;&nbsp;Chisinau</option>
+                  <option value="Europe/Copenhagen" >&nbsp;&nbsp;&nbsp;Copenhagen</option>
+
+                  <option value="Europe/Dublin" >&nbsp;&nbsp;&nbsp;Dublin</option>
+                  <option value="Europe/Gibraltar" >&nbsp;&nbsp;&nbsp;Gibraltar</option>
+                  <option value="Europe/Guernsey" >&nbsp;&nbsp;&nbsp;Guernsey</option>
+                  <option value="Europe/Helsinki" >&nbsp;&nbsp;&nbsp;Helsinki</option>
+                  <option value="Europe/Isle_of_Man" >&nbsp;&nbsp;&nbsp;Isle of Man</option>
+                  <option value="Europe/Istanbul" >&nbsp;&nbsp;&nbsp;Istanbul</option>
+
+                  <option value="Europe/Jersey" >&nbsp;&nbsp;&nbsp;Jersey</option>
+                  <option value="Europe/Kaliningrad" >&nbsp;&nbsp;&nbsp;Kaliningrad</option>
+                  <option value="Europe/Kiev" >&nbsp;&nbsp;&nbsp;Kiev</option>
+                  <option value="Europe/Lisbon" >&nbsp;&nbsp;&nbsp;Lisbon</option>
+                  <option value="Europe/Ljubljana" >&nbsp;&nbsp;&nbsp;Ljubljana</option>
+                  <option value="Europe/London" >&nbsp;&nbsp;&nbsp;London</option>
+
+                  <option value="Europe/Luxembourg" >&nbsp;&nbsp;&nbsp;Luxembourg</option>
+                  <option value="Europe/Madrid" >&nbsp;&nbsp;&nbsp;Madrid</option>
+                  <option value="Europe/Malta" >&nbsp;&nbsp;&nbsp;Malta</option>
+                  <option value="Europe/Mariehamn" >&nbsp;&nbsp;&nbsp;Mariehamn</option>
+                  <option value="Europe/Minsk" >&nbsp;&nbsp;&nbsp;Minsk</option>
+                  <option value="Europe/Monaco" >&nbsp;&nbsp;&nbsp;Monaco</option>
+
+                  <option value="Europe/Moscow" >&nbsp;&nbsp;&nbsp;Moscow</option>
+                  <option value="Europe/Oslo" >&nbsp;&nbsp;&nbsp;Oslo</option>
+                  <option value="Europe/Paris" >&nbsp;&nbsp;&nbsp;Paris</option>
+                  <option value="Europe/Podgorica" >&nbsp;&nbsp;&nbsp;Podgorica</option>
+                  <option value="Europe/Prague" >&nbsp;&nbsp;&nbsp;Prague</option>
+                  <option value="Europe/Riga" >&nbsp;&nbsp;&nbsp;Riga</option>
+
+                  <option value="Europe/Rome" >&nbsp;&nbsp;&nbsp;Rome</option>
+                  <option value="Europe/Samara" >&nbsp;&nbsp;&nbsp;Samara</option>
+                  <option value="Europe/San_Marino" >&nbsp;&nbsp;&nbsp;San Marino</option>
+                  <option value="Europe/Sarajevo" >&nbsp;&nbsp;&nbsp;Sarajevo</option>
+                  <option value="Europe/Simferopol" >&nbsp;&nbsp;&nbsp;Simferopol</option>
+                  <option value="Europe/Skopje" >&nbsp;&nbsp;&nbsp;Skopje</option>
+
+                  <option value="Europe/Sofia" >&nbsp;&nbsp;&nbsp;Sofia</option>
+                  <option value="Europe/Stockholm" >&nbsp;&nbsp;&nbsp;Stockholm</option>
+                  <option value="Europe/Tallinn" >&nbsp;&nbsp;&nbsp;Tallinn</option>
+                  <option value="Europe/Tirane" >&nbsp;&nbsp;&nbsp;Tirane</option>
+                  <option value="Europe/Uzhgorod" >&nbsp;&nbsp;&nbsp;Uzhgorod</option>
+                  <option value="Europe/Vaduz" >&nbsp;&nbsp;&nbsp;Vaduz</option>
+
+                  <option value="Europe/Vatican" >&nbsp;&nbsp;&nbsp;Vatican</option>
+                  <option value="Europe/Vienna" >&nbsp;&nbsp;&nbsp;Vienna</option>
+                  <option value="Europe/Vilnius" >&nbsp;&nbsp;&nbsp;Vilnius</option>
+                  <option value="Europe/Volgograd" >&nbsp;&nbsp;&nbsp;Volgograd</option>
+                  <option value="Europe/Warsaw" >&nbsp;&nbsp;&nbsp;Warsaw</option>
+                  <option value="Europe/Zagreb" >&nbsp;&nbsp;&nbsp;Zagreb</option>
+
+                  <option value="Europe/Zaporozhye" >&nbsp;&nbsp;&nbsp;Zaporozhye</option>
+                  <option value="Europe/Zurich" >&nbsp;&nbsp;&nbsp;Zurich</option>
+              </optgroup>
+            <optgroup label="AFRICA">
+                  <option value="Africa/Abidjan" >&nbsp;&nbsp;&nbsp;Abidjan</option>
+                  <option value="Africa/Accra" >&nbsp;&nbsp;&nbsp;Accra</option>
+                  <option value="Africa/Addis_Ababa" >&nbsp;&nbsp;&nbsp;Addis Ababa</option>
+
+                  <option value="Africa/Algiers" >&nbsp;&nbsp;&nbsp;Algiers</option>
+                  <option value="Africa/Asmara" >&nbsp;&nbsp;&nbsp;Asmara</option>
+                  <option value="Africa/Bamako" >&nbsp;&nbsp;&nbsp;Bamako</option>
+                  <option value="Africa/Bangui" >&nbsp;&nbsp;&nbsp;Bangui</option>
+                  <option value="Africa/Banjul" >&nbsp;&nbsp;&nbsp;Banjul</option>
+                  <option value="Africa/Bissau" >&nbsp;&nbsp;&nbsp;Bissau</option>
+
+                  <option value="Africa/Blantyre" >&nbsp;&nbsp;&nbsp;Blantyre</option>
+                  <option value="Africa/Brazzaville" >&nbsp;&nbsp;&nbsp;Brazzaville</option>
+                  <option value="Africa/Bujumbura" >&nbsp;&nbsp;&nbsp;Bujumbura</option>
+                  <option value="Africa/Cairo" >&nbsp;&nbsp;&nbsp;Cairo</option>
+                  <option value="Africa/Casablanca" >&nbsp;&nbsp;&nbsp;Casablanca</option>
+                  <option value="Africa/Ceuta" >&nbsp;&nbsp;&nbsp;Ceuta</option>
+
+                  <option value="Africa/Conakry" >&nbsp;&nbsp;&nbsp;Conakry</option>
+                  <option value="Africa/Dakar" >&nbsp;&nbsp;&nbsp;Dakar</option>
+                  <option value="Africa/Dar_es_Salaam" >&nbsp;&nbsp;&nbsp;Dar es Salaam</option>
+                  <option value="Africa/Djibouti" >&nbsp;&nbsp;&nbsp;Djibouti</option>
+                  <option value="Africa/Douala" >&nbsp;&nbsp;&nbsp;Douala</option>
+                  <option value="Africa/El_Aaiun" >&nbsp;&nbsp;&nbsp;El Aaiun</option>
+
+                  <option value="Africa/Freetown" >&nbsp;&nbsp;&nbsp;Freetown</option>
+                  <option value="Africa/Gaborone" >&nbsp;&nbsp;&nbsp;Gaborone</option>
+                  <option value="Africa/Harare" >&nbsp;&nbsp;&nbsp;Harare</option>
+                  <option value="Africa/Johannesburg" >&nbsp;&nbsp;&nbsp;Johannesburg</option>
+                  <option value="Africa/Kampala" >&nbsp;&nbsp;&nbsp;Kampala</option>
+                  <option value="Africa/Khartoum" >&nbsp;&nbsp;&nbsp;Khartoum</option>
+
+                  <option value="Africa/Kigali" >&nbsp;&nbsp;&nbsp;Kigali</option>
+                  <option value="Africa/Kinshasa" >&nbsp;&nbsp;&nbsp;Kinshasa</option>
+                  <option value="Africa/Lagos" >&nbsp;&nbsp;&nbsp;Lagos</option>
+                  <option value="Africa/Libreville" >&nbsp;&nbsp;&nbsp;Libreville</option>
+                  <option value="Africa/Lome" >&nbsp;&nbsp;&nbsp;Lome</option>
+                  <option value="Africa/Luanda" >&nbsp;&nbsp;&nbsp;Luanda</option>
+
+                  <option value="Africa/Lubumbashi" >&nbsp;&nbsp;&nbsp;Lubumbashi</option>
+                  <option value="Africa/Lusaka" >&nbsp;&nbsp;&nbsp;Lusaka</option>
+                  <option value="Africa/Malabo" >&nbsp;&nbsp;&nbsp;Malabo</option>
+                  <option value="Africa/Maputo" >&nbsp;&nbsp;&nbsp;Maputo</option>
+                  <option value="Africa/Maseru" >&nbsp;&nbsp;&nbsp;Maseru</option>
+                  <option value="Africa/Mbabane" >&nbsp;&nbsp;&nbsp;Mbabane</option>
+
+                  <option value="Africa/Mogadishu" >&nbsp;&nbsp;&nbsp;Mogadishu</option>
+                  <option value="Africa/Monrovia" >&nbsp;&nbsp;&nbsp;Monrovia</option>
+                  <option value="Africa/Nairobi" >&nbsp;&nbsp;&nbsp;Nairobi</option>
+                  <option value="Africa/Ndjamena" >&nbsp;&nbsp;&nbsp;Ndjamena</option>
+                  <option value="Africa/Niamey" >&nbsp;&nbsp;&nbsp;Niamey</option>
+                  <option value="Africa/Nouakchott" >&nbsp;&nbsp;&nbsp;Nouakchott</option>
+
+                  <option value="Africa/Ouagadougou" >&nbsp;&nbsp;&nbsp;Ouagadougou</option>
+                  <option value="Africa/Porto-Novo" >&nbsp;&nbsp;&nbsp;Porto-Novo</option>
+                  <option value="Africa/Sao_Tome" >&nbsp;&nbsp;&nbsp;Sao Tome</option>
+                  <option value="Africa/Tripoli" >&nbsp;&nbsp;&nbsp;Tripoli</option>
+                  <option value="Africa/Tunis" >&nbsp;&nbsp;&nbsp;Tunis</option>
+                  <option value="Africa/Windhoek" >&nbsp;&nbsp;&nbsp;Windhoek</option>
+
+              </optgroup>
+            <optgroup label="INDIAN">
+                  <option value="Indian/Antananarivo" >&nbsp;&nbsp;&nbsp;Antananarivo</option>
+                  <option value="Indian/Chagos" >&nbsp;&nbsp;&nbsp;Chagos</option>
+                  <option value="Indian/Christmas" >&nbsp;&nbsp;&nbsp;Christmas</option>
+                  <option value="Indian/Cocos" >&nbsp;&nbsp;&nbsp;Cocos</option>
+                  <option value="Indian/Comoro" >&nbsp;&nbsp;&nbsp;Comoro</option>
+
+                  <option value="Indian/Kerguelen" >&nbsp;&nbsp;&nbsp;Kerguelen</option>
+                  <option value="Indian/Mahe" >&nbsp;&nbsp;&nbsp;Mahe</option>
+                  <option value="Indian/Maldives" >&nbsp;&nbsp;&nbsp;Maldives</option>
+                  <option value="Indian/Mauritius" >&nbsp;&nbsp;&nbsp;Mauritius</option>
+                  <option value="Indian/Mayotte" >&nbsp;&nbsp;&nbsp;Mayotte</option>
+                  <option value="Indian/Reunion" >&nbsp;&nbsp;&nbsp;Reunion</option>
+
+              </optgroup>
+            <optgroup label="ASIA">
+                  <option value="Asia/Aden" >&nbsp;&nbsp;&nbsp;Aden</option>
+                  <option value="Asia/Almaty" >&nbsp;&nbsp;&nbsp;Almaty</option>
+                  <option value="Asia/Amman" >&nbsp;&nbsp;&nbsp;Amman</option>
+                  <option value="Asia/Anadyr" >&nbsp;&nbsp;&nbsp;Anadyr</option>
+                  <option value="Asia/Aqtau" >&nbsp;&nbsp;&nbsp;Aqtau</option>
+
+                  <option value="Asia/Aqtobe" >&nbsp;&nbsp;&nbsp;Aqtobe</option>
+                  <option value="Asia/Ashgabat" >&nbsp;&nbsp;&nbsp;Ashgabat</option>
+                  <option value="Asia/Baghdad" >&nbsp;&nbsp;&nbsp;Baghdad</option>
+                  <option value="Asia/Bahrain" >&nbsp;&nbsp;&nbsp;Bahrain</option>
+                  <option value="Asia/Baku" >&nbsp;&nbsp;&nbsp;Baku</option>
+                  <option value="Asia/Bangkok" >&nbsp;&nbsp;&nbsp;Bangkok</option>
+
+                  <option value="Asia/Beirut" >&nbsp;&nbsp;&nbsp;Beirut</option>
+                  <option value="Asia/Bishkek" >&nbsp;&nbsp;&nbsp;Bishkek</option>
+                  <option value="Asia/Brunei" >&nbsp;&nbsp;&nbsp;Brunei</option>
+                  <option value="Asia/Choibalsan" >&nbsp;&nbsp;&nbsp;Choibalsan</option>
+                  <option value="Asia/Chongqing" >&nbsp;&nbsp;&nbsp;Chongqing</option>
+                  <option value="Asia/Colombo" >&nbsp;&nbsp;&nbsp;Colombo</option>
+
+                  <option value="Asia/Damascus" >&nbsp;&nbsp;&nbsp;Damascus</option>
+                  <option value="Asia/Dhaka" >&nbsp;&nbsp;&nbsp;Dhaka</option>
+                  <option value="Asia/Dili" >&nbsp;&nbsp;&nbsp;Dili</option>
+                  <option value="Asia/Dubai" >&nbsp;&nbsp;&nbsp;Dubai</option>
+                  <option value="Asia/Dushanbe" >&nbsp;&nbsp;&nbsp;Dushanbe</option>
+                  <option value="Asia/Gaza" >&nbsp;&nbsp;&nbsp;Gaza</option>
+
+                  <option value="Asia/Harbin" >&nbsp;&nbsp;&nbsp;Harbin</option>
+                  <option value="Asia/Ho_Chi_Minh" >&nbsp;&nbsp;&nbsp;Ho Chi Minh</option>
+                  <option value="Asia/Hong_Kong" >&nbsp;&nbsp;&nbsp;Hong Kong</option>
+                  <option value="Asia/Hovd" >&nbsp;&nbsp;&nbsp;Hovd</option>
+                  <option value="Asia/Irkutsk" >&nbsp;&nbsp;&nbsp;Irkutsk</option>
+                  <option value="Asia/Jakarta" >&nbsp;&nbsp;&nbsp;Jakarta</option>
+
+                  <option value="Asia/Jayapura" >&nbsp;&nbsp;&nbsp;Jayapura</option>
+                  <option value="Asia/Jerusalem" >&nbsp;&nbsp;&nbsp;Jerusalem</option>
+                  <option value="Asia/Kabul" >&nbsp;&nbsp;&nbsp;Kabul</option>
+                  <option value="Asia/Kamchatka" >&nbsp;&nbsp;&nbsp;Kamchatka</option>
+                  <option value="Asia/Karachi" >&nbsp;&nbsp;&nbsp;Karachi</option>
+                  <option value="Asia/Kashgar" >&nbsp;&nbsp;&nbsp;Kashgar</option>
+
+                  <option value="Asia/Kathmandu" >&nbsp;&nbsp;&nbsp;Kathmandu</option>
+                  <option value="Asia/Kolkata" >&nbsp;&nbsp;&nbsp;Kolkata</option>
+                  <option value="Asia/Krasnoyarsk" >&nbsp;&nbsp;&nbsp;Krasnoyarsk</option>
+                  <option value="Asia/Kuala_Lumpur" >&nbsp;&nbsp;&nbsp;Kuala Lumpur</option>
+                  <option value="Asia/Kuching" >&nbsp;&nbsp;&nbsp;Kuching</option>
+                  <option value="Asia/Kuwait" >&nbsp;&nbsp;&nbsp;Kuwait</option>
+
+                  <option value="Asia/Macau" >&nbsp;&nbsp;&nbsp;Macau</option>
+                  <option value="Asia/Magadan" >&nbsp;&nbsp;&nbsp;Magadan</option>
+                  <option value="Asia/Makassar" >&nbsp;&nbsp;&nbsp;Makassar</option>
+                  <option value="Asia/Manila" >&nbsp;&nbsp;&nbsp;Manila</option>
+                  <option value="Asia/Muscat" >&nbsp;&nbsp;&nbsp;Muscat</option>
+                  <option value="Asia/Nicosia" >&nbsp;&nbsp;&nbsp;Nicosia</option>
+
+                  <option value="Asia/Novokuznetsk" >&nbsp;&nbsp;&nbsp;Novokuznetsk</option>
+                  <option value="Asia/Novosibirsk" >&nbsp;&nbsp;&nbsp;Novosibirsk</option>
+                  <option value="Asia/Omsk" >&nbsp;&nbsp;&nbsp;Omsk</option>
+                  <option value="Asia/Oral" >&nbsp;&nbsp;&nbsp;Oral</option>
+                  <option value="Asia/Phnom_Penh" >&nbsp;&nbsp;&nbsp;Phnom Penh</option>
+                  <option value="Asia/Pontianak" >&nbsp;&nbsp;&nbsp;Pontianak</option>
+
+                  <option value="Asia/Pyongyang" >&nbsp;&nbsp;&nbsp;Pyongyang</option>
+                  <option value="Asia/Qatar" >&nbsp;&nbsp;&nbsp;Qatar</option>
+                  <option value="Asia/Qyzylorda" >&nbsp;&nbsp;&nbsp;Qyzylorda</option>
+                  <option value="Asia/Rangoon" >&nbsp;&nbsp;&nbsp;Rangoon</option>
+                  <option value="Asia/Riyadh" >&nbsp;&nbsp;&nbsp;Riyadh</option>
+                  <option value="Asia/Sakhalin" >&nbsp;&nbsp;&nbsp;Sakhalin</option>
+
+                  <option value="Asia/Samarkand" >&nbsp;&nbsp;&nbsp;Samarkand</option>
+                  <option value="Asia/Seoul" >&nbsp;&nbsp;&nbsp;Seoul</option>
+                  <option value="Asia/Shanghai" >&nbsp;&nbsp;&nbsp;Shanghai</option>
+                  <option value="Asia/Singapore" >&nbsp;&nbsp;&nbsp;Singapore</option>
+                  <option value="Asia/Taipei" >&nbsp;&nbsp;&nbsp;Taipei</option>
+                  <option value="Asia/Tashkent" >&nbsp;&nbsp;&nbsp;Tashkent</option>
+
+                  <option value="Asia/Tbilisi" >&nbsp;&nbsp;&nbsp;Tbilisi</option>
+                  <option value="Asia/Tehran" >&nbsp;&nbsp;&nbsp;Tehran</option>
+                  <option value="Asia/Thimphu" >&nbsp;&nbsp;&nbsp;Thimphu</option>
+                  <option value="Asia/Tokyo" >&nbsp;&nbsp;&nbsp;Tokyo</option>
+                  <option value="Asia/Ulaanbaatar" >&nbsp;&nbsp;&nbsp;Ulaanbaatar</option>
+                  <option value="Asia/Urumqi" >&nbsp;&nbsp;&nbsp;Urumqi</option>
+
+                  <option value="Asia/Vientiane" >&nbsp;&nbsp;&nbsp;Vientiane</option>
+                  <option value="Asia/Vladivostok" >&nbsp;&nbsp;&nbsp;Vladivostok</option>
+                  <option value="Asia/Yakutsk" >&nbsp;&nbsp;&nbsp;Yakutsk</option>
+                  <option value="Asia/Yekaterinburg" >&nbsp;&nbsp;&nbsp;Yekaterinburg</option>
+                  <option value="Asia/Yerevan" >&nbsp;&nbsp;&nbsp;Yerevan</option>
+              </optgroup>
+
+            <optgroup label="AUSTRALIA">
+                  <option value="Australia/Adelaide" >&nbsp;&nbsp;&nbsp;Adelaide</option>
+                  <option value="Australia/Brisbane" >&nbsp;&nbsp;&nbsp;Brisbane</option>
+                  <option value="Australia/Broken_Hill" >&nbsp;&nbsp;&nbsp;Broken Hill</option>
+                  <option value="Australia/Currie" >&nbsp;&nbsp;&nbsp;Currie</option>
+                  <option value="Australia/Darwin" >&nbsp;&nbsp;&nbsp;Darwin</option>
+
+                  <option value="Australia/Eucla" >&nbsp;&nbsp;&nbsp;Eucla</option>
+                  <option value="Australia/Hobart" >&nbsp;&nbsp;&nbsp;Hobart</option>
+                  <option value="Australia/Lindeman" >&nbsp;&nbsp;&nbsp;Lindeman</option>
+                  <option value="Australia/Lord_Howe" >&nbsp;&nbsp;&nbsp;Lord Howe</option>
+                  <option value="Australia/Melbourne" >&nbsp;&nbsp;&nbsp;Melbourne</option>
+                  <option value="Australia/Perth" >&nbsp;&nbsp;&nbsp;Perth</option>
+
+                  <option value="Australia/Sydney" >&nbsp;&nbsp;&nbsp;Sydney</option>
+              </optgroup>
+            <optgroup label="PACIFIC">
+                  <option value="Pacific/Apia" >&nbsp;&nbsp;&nbsp;Apia</option>
+                  <option value="Pacific/Auckland" >&nbsp;&nbsp;&nbsp;Auckland</option>
+                  <option value="Pacific/Chatham" >&nbsp;&nbsp;&nbsp;Chatham</option>
+                  <option value="Pacific/Chuuk" >&nbsp;&nbsp;&nbsp;Chuuk</option>
+
+                  <option value="Pacific/Easter" >&nbsp;&nbsp;&nbsp;Easter</option>
+                  <option value="Pacific/Efate" >&nbsp;&nbsp;&nbsp;Efate</option>
+                  <option value="Pacific/Enderbury" >&nbsp;&nbsp;&nbsp;Enderbury</option>
+                  <option value="Pacific/Fakaofo" >&nbsp;&nbsp;&nbsp;Fakaofo</option>
+                  <option value="Pacific/Fiji" >&nbsp;&nbsp;&nbsp;Fiji</option>
+                  <option value="Pacific/Funafuti" >&nbsp;&nbsp;&nbsp;Funafuti</option>
+
+                  <option value="Pacific/Galapagos" >&nbsp;&nbsp;&nbsp;Galapagos</option>
+                  <option value="Pacific/Gambier" >&nbsp;&nbsp;&nbsp;Gambier</option>
+                  <option value="Pacific/Guadalcanal" >&nbsp;&nbsp;&nbsp;Guadalcanal</option>
+                  <option value="Pacific/Guam" >&nbsp;&nbsp;&nbsp;Guam</option>
+                  <option value="Pacific/Honolulu" >&nbsp;&nbsp;&nbsp;Honolulu</option>
+                  <option value="Pacific/Johnston" >&nbsp;&nbsp;&nbsp;Johnston</option>
+
+                  <option value="Pacific/Kiritimati" >&nbsp;&nbsp;&nbsp;Kiritimati</option>
+                  <option value="Pacific/Kosrae" >&nbsp;&nbsp;&nbsp;Kosrae</option>
+                  <option value="Pacific/Kwajalein" >&nbsp;&nbsp;&nbsp;Kwajalein</option>
+                  <option value="Pacific/Majuro" >&nbsp;&nbsp;&nbsp;Majuro</option>
+                  <option value="Pacific/Marquesas" >&nbsp;&nbsp;&nbsp;Marquesas</option>
+                  <option value="Pacific/Midway" >&nbsp;&nbsp;&nbsp;Midway</option>
+
+                  <option value="Pacific/Nauru" >&nbsp;&nbsp;&nbsp;Nauru</option>
+                  <option value="Pacific/Niue" >&nbsp;&nbsp;&nbsp;Niue</option>
+                  <option value="Pacific/Norfolk" >&nbsp;&nbsp;&nbsp;Norfolk</option>
+                  <option value="Pacific/Noumea" >&nbsp;&nbsp;&nbsp;Noumea</option>
+                  <option value="Pacific/Pago_Pago" >&nbsp;&nbsp;&nbsp;Pago Pago</option>
+                  <option value="Pacific/Palau" >&nbsp;&nbsp;&nbsp;Palau</option>
+
+                  <option value="Pacific/Pitcairn" >&nbsp;&nbsp;&nbsp;Pitcairn</option>
+                  <option value="Pacific/Pohnpei" >&nbsp;&nbsp;&nbsp;Pohnpei</option>
+                  <option value="Pacific/Port_Moresby" >&nbsp;&nbsp;&nbsp;Port Moresby</option>
+                  <option value="Pacific/Rarotonga" >&nbsp;&nbsp;&nbsp;Rarotonga</option>
+                  <option value="Pacific/Saipan" >&nbsp;&nbsp;&nbsp;Saipan</option>
+                  <option value="Pacific/Tahiti" >&nbsp;&nbsp;&nbsp;Tahiti</option>
+
+                  <option value="Pacific/Tarawa" >&nbsp;&nbsp;&nbsp;Tarawa</option>
+                  <option value="Pacific/Tongatapu" >&nbsp;&nbsp;&nbsp;Tongatapu</option>
+                  <option value="Pacific/Wake" >&nbsp;&nbsp;&nbsp;Wake</option>
+                  <option value="Pacific/Wallis" >&nbsp;&nbsp;&nbsp;Wallis</option>
+              </optgroup>
+            <optgroup label="ANTARCTICA">
+                  <option value="Antarctica/Casey" >&nbsp;&nbsp;&nbsp;Casey</option>
+
+                  <option value="Antarctica/Davis" >&nbsp;&nbsp;&nbsp;Davis</option>
+                  <option value="Antarctica/DumontDUrville" >&nbsp;&nbsp;&nbsp;DumontDUrville</option>
+                  <option value="Antarctica/Macquarie" >&nbsp;&nbsp;&nbsp;Macquarie</option>
+                  <option value="Antarctica/Mawson" >&nbsp;&nbsp;&nbsp;Mawson</option>
+                  <option value="Antarctica/McMurdo" >&nbsp;&nbsp;&nbsp;McMurdo</option>
+                  <option value="Antarctica/Palmer" >&nbsp;&nbsp;&nbsp;Palmer</option>
+
+                  <option value="Antarctica/Rothera" >&nbsp;&nbsp;&nbsp;Rothera</option>
+                  <option value="Antarctica/South_Pole" >&nbsp;&nbsp;&nbsp;South Pole</option>
+                  <option value="Antarctica/Syowa" >&nbsp;&nbsp;&nbsp;Syowa</option>
+                  <option value="Antarctica/Vostok" >&nbsp;&nbsp;&nbsp;Vostok</option>
+              </optgroup>
+            <optgroup label="ARCTIC">
+                  <option value="Arctic/Longyearbyen" >&nbsp;&nbsp;&nbsp;Longyearbyen</option>
+
+              </optgroup>
+          </select>
+    </div>
+    <br />
+    <div>
+    <input type="hidden" id="timezone_source" value="/hosting?fid=9" name="timezone_source" />
+    <input type="hidden" id="timezone_destination" value="/hosting?fid=9" name="timezone_destination" />
+    <input type="image" src="/images/alt/set_zone.png" name="timezone" id="timezone-button" value="set zone" />
+    </div>
+
+    <br />
+    </form>
+</div>
+<!-- GROWLER -->	 		
+
+</div><div id="wrapper" class="content"><div id="marquee" ></div><div id="content" >
+
+<script type="text/javascript">
+	var fdata = {"f20":{"id":"20","name":"Truth Be Told","short_name":"Truth Be Told","logo":"217c242b9ee076fa0eab31430e19a17f.jpg","synopsis":"<p>Family Movie Night<\/p>","info":"<p>What&#8217;s the secret to a successful marriage? According to Colorado&#8217;s leading marriage counselor, Annie Morgan (played by Candace Cameron Bure from \"Full House\" and \"Make It Or Break It\"), honesty is the key to successful long-term relationships. Ironically, Annie has never been married and doesn&#8217;t always follow her own advice...<\/p>","logo_src":"\/uploads\/screeningResources\/20\/logo\/small_poster217c242b9ee076fa0eab31430e19a17f.jpg","small_logo_src":"\/uploads\/screeningResources\/20\/logo\/small_poster217c242b9ee076fa0eab31430e19a17f.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/20\/trailerFile\/TBTTrailer.mov?auth=da.aQb3a9dLbEbtbDbZdFc0cRbQancicFdA-boJEUg-uP4-EoGCZDEprvw-t6lalWmdnZmUnesQlGq7mbp9l0qQkmtVsQlGl6m3nU%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F20%2FtrailerFile%2FTBTTrailer"},"f2":{"id":"2","name":"Earth Made of Glass","short_name":"Earth Made of Glass","logo":"4c344b074236c.jpg","synopsis":"<p>A story of two fathers.<\/p>","info":"<p>Earth Made of Glass tells the parallel stories of a father and nation's president as they trace a path to peace out of the destruction wrought by war and genocide. A lesson and blueprint for areas of the world trapped in cycles of violence and retribution like Kosovo, Gaza, Iraq, Earth Made of Glass is a stirring wake-up call to all corners of the earth stricken by violence and hatred.<\/p>","logo_src":"\/uploads\/screeningResources\/2\/logo\/small_poster4c344b074236c.jpg","small_logo_src":"\/uploads\/screeningResources\/2\/logo\/small_poster4c344b074236c.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/2\/trailerFile\/EMOG.mp4?auth=da.aPbeaicrdgacbiaPcRaLa4aSd1dMdhbd-boJEUg-uP4-DoFC6CErxup-s5l9nUrbqYoXnfsRrpnQl8o9sZqSqwmRsTlWmPr4qVnSnts4rRn8l9%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F2%2FtrailerFile%2FEMOG"},"f3":{"id":"3","name":"2012: Time for Change","short_name":"2012: Time for Change","logo":"4c344b301b25e.jpg","synopsis":"Evolve to Solve!","info":"\"2012: Time for Change\" projects a radical alternative to apocalyptic doom and gloom. Directed by Emmy Award nominee Joao Amorim, the film follows journalist Daniel Pinchbeck, author of the bestselling 2012: The Return of Quetzalcoatl, on a quest for a new paradigm that integrates the archaic wisdom of tribal cultures with the scientific method. ","logo_src":"\/uploads\/screeningResources\/3\/logo\/small_poster4c344b301b25e.jpg","small_logo_src":"\/uploads\/screeningResources\/3\/logo\/small_poster4c344b301b25e.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/3\/trailerFile\/2012b.trailer.mp4?auth=da.a_bucra6aLdAbmdpb6cPaec5ctbnaSd9-boJEUg-uP4-FoBE5AFoyxt-m8p8sWlbo0rWtdnOnak5m7j9qfrPrGqZm5pVrRlVo6r9sQnmo0lQn4kYrU%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F3%2FtrailerFile%2F2012b.trailer"},"f4":{"id":"4","name":"The Lottery","short_name":"The Lottery","logo":"4c344b45275b4.jpg","synopsis":"<p>You could win an education.<\/p>","info":"<p>In a country where 58% of African American 4th graders are functionally illiterate, The Lottery uncovers a ferocious debate surrounding public education.  Following four families who enter their children into a school lottery, The Lottery reveals a turf war that is being waged over the future of America's public schools.<\/p>","logo_src":"\/uploads\/screeningResources\/4\/logo\/small_poster4c344b45275b4.jpg","small_logo_src":"\/uploads\/screeningResources\/4\/logo\/small_poster4c344b45275b4.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/4\/trailerFile\/lottery-trailer.trailer.mp4?auth=da.b7blcHdiaUc_cnaUambmbHbfd8aYatcb-boJEUg-uP4-LoCE1DFoxwq-n5q7mVmcnZpXkckOtFlYtVkRnys4qbnbnUq7mf%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F4%2FtrailerFile%2Flottery-trailer.trailer"},"f5":{"id":"5","name":"Racing Dreams","short_name":"Racing Dreams","logo":"4c344b56c87a2.jpg","synopsis":"RACING DREAMS is the award winning coming-of-age story about three kids who dream of one day racing in NASCAR.","info":"RACING DREAMS is the award winning coming-of-age story about three kids who dream of one day racing in NASCAR. Academy Award nominated documentary filmmaker, Marshall Curry, takes us into the lives of Annabeth (11 years old), Josh (12), and Brandon (13) as they compete for the championship in the World Karting Association&#8364;&#8482;s National Series -- widely considered the Little League for professional racing. ","logo_src":"\/uploads\/screeningResources\/5\/logo\/small_poster4c344b56c87a2.jpg","small_logo_src":"\/uploads\/screeningResources\/5\/logo\/small_poster4c344b56c87a2.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/5\/trailerFile\/racing-dreams.trailer.mp4?auth=da.cGcsdgbrdvb7dXawb7aJdSblcXcuaHbU-boJEUg-uP4-EpJF4BErsvw-t5m8tUpeoZlWtekOnCqSmUs1q4rZkQtqt7mVtQp5o9%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F5%2FtrailerFile%2Fracing-dreams.trailer"},"f6":{"id":"6","name":"In Her Shoes","short_name":"In Her Shoes","logo":"4cd2eae6ac2b2.jpg","synopsis":"Wave that magic wand.","info":"AMERICAN MYSTIC is a documentary about three twenty-somethings, each a member of a fringe religious community, who have separated themselves from mainstream America in order to live immersed in their faiths. The film takes a personal, visually lush approach, immersing the viewer in the subjects' experience of their controversial faiths through their own words and worship. AMERICAN MYSTIC is a documentary about three twenty-somethings, each a memb","logo_src":"\/uploads\/screeningResources\/6\/logo\/small_poster4cd2eae6ac2b2.jpg","small_logo_src":"\/uploads\/screeningResources\/6\/logo\/small_poster4cd2eae6ac2b2.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/6\/trailerFile\/?auth=da.d5bFdCbmaKbjcLcta4asdoaAcZcud7cT-boJEUg-uP4-JoCF6Bzoxvw-r7t7qUseoYqWlekRtup6qQlusVm7pQtErZt4qUsb%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F6%2FtrailerFile%2F"},"f7":{"id":"7","name":"ANVIL","short_name":"ANVIL","logo":"4c344ba82f2c9.jpg","synopsis":"At fourteen, they made a pact to rock together forever. They meant it.","info":"At 14, best friends Robb Reiner and Lips made a pact to rock together forever. Their band, Anvil, hailed as the \"demi-gods of Canadian metal, \" influenced a musical generation that includes Metallica, Slayer, and Anthrax, despite never hitting the big time. Following a calamitous European tour, Lips and Robb, now in their fifties, set off to record their 13th album in one last attempt to fulfill their boyhood dreams.","logo_src":"\/uploads\/screeningResources\/7\/logo\/small_poster4c344ba82f2c9.jpg","small_logo_src":"\/uploads\/screeningResources\/7\/logo\/small_poster4c344ba82f2c9.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/7\/trailerFile\/anvil.mp4?auth=da.bLa7dUbedzdddfascadfdodMawduaVae-boJEUg-uP4-JnKF4BBrwxq-p5s9kXpeo1sUmfkOrkoyrFtvqw%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F7%2FtrailerFile%2Fanvil"},"f8":{"id":"8","name":"JOAN RIVERS, A PIECE OF WORK","short_name":"JOAN RIVERS, A PIECE OF WORK","logo":"4c344bb9ef8d3.jpg","synopsis":"Synopsis Synopsis Synopsis Synopsis","info":"A documentary on the life and career of Joan Rivers, made as the comedienne turns 75 years old.","logo_src":"\/uploads\/screeningResources\/8\/logo\/small_poster4c344bb9ef8d3.jpg","small_logo_src":"\/uploads\/screeningResources\/8\/logo\/small_poster4c344bb9ef8d3.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/8\/trailerFile\/joan_rivers_a_piece_of_work.flv?auth=da.cacec5aGbgbGc7a6cYdidxbxb5bUdac4-boJEUg-uP4-CpFE5Azpxvp-t5s9kXsenZnVrdqRkvqAkmozqPmCqtmHtosDkFr4mQnlqQqCkuqqkooqqPmzqqlRtGsAkEsx%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F8%2FtrailerFile%2Fjoan_rivers_a_piece_of_work.flv"},"f9":{"id":"9","name":"RESTREPO","short_name":"RESTREPO","logo":"4c344bcf1d997.jpg","synopsis":"Synopsis Synopsis Synopsis Synopsis","info":"Sebastian Junger and Tim Hetherington's year dug in with the Second Platoon in one of Afghanistan's most strategically crucial valleys reveals extraordinary insight into the surreal combination of back breaking labor, deadly firefights, and camaraderie as the soldiers painfully push back the Taliban.<br \/>\r","logo_src":"\/uploads\/screeningResources\/9\/logo\/small_poster4c344bcf1d997.jpg","small_logo_src":"\/uploads\/screeningResources\/9\/logo\/small_poster4c344bcf1d997.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/9\/trailerFile\/restrepo.flv?auth=da.c0bxbYbJcvavcBdDaPdbbSa7bYbXawcH-boJEUg-uP4-EoEDYBCqsuo-r8t7lXlcoYtVkdtOmDnqmDnEkCpqlzlA%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F9%2FtrailerFile%2Frestrepo.flv"},"f10":{"id":"10","name":"WAITING FOR SUPERMAN","short_name":"WAITING FOR SUPERMAN","logo":"4c344bde36021.jpg","synopsis":"Synopsis Synopsis Synopsis Synopsis","info":"Filmmaker Davis Guggenheim reminds us that education \"statistics\" have names: Anthony, Francisco, Bianca, Daisy, and Emily, whose stories make up the engrossing foundation of WAITING FOR SUPERMAN. As he follows a handful of promising kids through a system that inhibits, rather than encourages, academic growth, Guggenheim undertakes an exhaustive review of public education, surveying \"drop-out factories\" and \"academic sinkholes,\" methodically diss","logo_src":"\/uploads\/screeningResources\/10\/logo\/small_poster4c344bde36021.jpg","small_logo_src":"\/uploads\/screeningResources\/10\/logo\/small_poster4c344bde36021.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/10\/trailerFile\/WAITING FOR SUPERMAN.flv?auth=da.bnaqa.aKdRbpc3dEdwcebvbtd.aZctdh-boJEUg-uP4-FnHC0ADruvs-p8kamWoclZtXmclQtJrlnsqDmsqAnroRpskBmDnQlDtHmzlqtErxnkqx%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F10%2FtrailerFile%2FWAITING+FOR+SUPERMAN.flv"},"f11":{"id":"11","name":"WE LIVE IN PUBLIC","short_name":"WE LIVE IN PUBLIC","logo":"4c344c1ae06f8.jpg","synopsis":"Synopsis Synopsis Synopsis Synopsis","info":"On the 40th anniversary of the Internet, WE LIVE IN PUBLIC tells the story of the effect the web is having on our society as seen through the eyes of \"the greatest Internet pioneer you've never heard of\", visionary Josh Harris. Award-winning director, Ondi Timoner (\"DIG!\"), documented his tumultuous life for more than a decade, to create a riveting, cautionary tale of what to expect as the virtual world inevitably takes control of our lives. Josh","logo_src":"\/uploads\/screeningResources\/11\/logo\/small_poster4c344c1ae06f8.jpg","small_logo_src":"\/uploads\/screeningResources\/11\/logo\/small_poster4c344c1ae06f8.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/11\/trailerFile\/WE LIVE IN PUBLIC.flv?auth=da.bldmcJbScPcUd4dBb5a1bnbhbIcCcmbH-boJEUg-uP4-DqDE3BBqswt-q8r8rUncnZrVoesQmHnpkSmxptoHlqpSqvryqPnAnFrmoxsumn%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F11%2FtrailerFile%2FWE+LIVE+IN+PUBLIC.flv"},"f14":{"id":"14","name":"Archangel","short_name":"Archangel","logo":"4c4ee932da121.jpg","synopsis":"<p>A short film.<\/p>","info":"<p>There is a memory shared by thousands, of a shadow that wrapped around the earth as the sun went dark.<\/p>","logo_src":"\/uploads\/screeningResources\/14\/logo\/small_poster4c4ee932da121.jpg","small_logo_src":"\/uploads\/screeningResources\/14\/logo\/small_poster4c4ee932da121.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/14\/trailerFile\/trailer.mp4?auth=da.anaCdNbhdXd0bicUd7cYa5dpdxdCaydt-boJEUg-uP4-FnJF7BErAxp-s7qatWkbr1pXnfsOont7nSs0tRr6tZmVs3%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F14%2FtrailerFile%2Ftrailer"},"f15":{"id":"15","name":"Living in Emergency","short_name":"Living in Emergency","logo":"4c768ad02b33e.jpg","synopsis":"<p>Stories of Doctors Without Borders.<\/p>","info":"<p>In war-ravaged Congo and Liberia, four volunteers with Doctors Without Borders's struggle to provide emergency medical care in extreme conditions.<\/p>","logo_src":"\/uploads\/screeningResources\/15\/logo\/small_poster4c768ad02b33e.jpg","small_logo_src":"\/uploads\/screeningResources\/15\/logo\/small_poster4c768ad02b33e.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/15\/trailerFile\/living-in-emergency.trailer.mp4?auth=da.b_dLcJbBb_a1cWb8aZb2cbaacObjaGaj-boJEUg-uP4-FqIE3BEpuuq-s6k7lVodlYkWkdtOmvtZner0p4rXmPn0s4jPlpo4lUk9kXtUm3tTnh%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F15%2FtrailerFile%2Fliving-in-emergency.trailer"},"f16":{"id":"16","name":"Sin By Silence","short_name":"Sin By Silence","logo":"4c768cd2bc1c5.jpg","synopsis":"From behind prison walls, SIN BY SILENCE reveals the lives of extraordinary women who advocate for a future free from domestic violence.","info":"From behind prison walls, SIN BY SILENCE reveals the lives of extraordinary women who advocate for a future free from domestic violence.<br \/>\r<br \/>\rInside California's oldest women's prisons, the first inmate-initiated and led group in the U.S. prison system was created by inmate Brenda Clubine to help abused women speak out and realize they are not alone. Over the past two decades, the women of CWAA, Convicted Women Against Abuse, have changed laws for ba","logo_src":"\/uploads\/screeningResources\/16\/logo\/small_poster4c768cd2bc1c5.jpg","small_logo_src":"\/uploads\/screeningResources\/16\/logo\/small_poster4c768cd2bc1c5.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/16\/trailerFile\/sin-by-silence.trailer.mp4?auth=da.b2d_c4cHdBb3b5dSdtcecYc9avcTdccb-boJEUg-uP4-GqEE4CAryvs-r8oatWodk0lUlepRmElZo6mRqnnhqQpDr1o4tWo5kUlU%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F16%2FtrailerFile%2Fsin-by-silence.trailer"},"f17":{"id":"17","name":"In Her Shoes","short_name":"In Her Shoes","logo":"4cd2eaac9ff66.jpg","synopsis":"","info":"","logo_src":"\/uploads\/screeningResources\/17\/logo\/small_poster4cd2eaac9ff66.jpg","small_logo_src":"\/uploads\/screeningResources\/17\/logo\/small_poster4cd2eaac9ff66.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/17\/trailerFile\/?auth=da.aBcdaiaddDcdbraSacdkc6aOdnbEdBdG-boJEUg-uP4-JpEC6AArAwq-r5o7mXkdsYkXndkRrvm3qRnrsUnasRnDrXo4mXka%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F17%2FtrailerFile%2F"},"f18":{"id":"18","name":"My Happy Holiday","short_name":"My Happy Holiday","logo":"2caa4e8055876c78751c0ff9b4f96815.jpg","synopsis":"<p>Um...<\/p>","info":"<p>Happy Holidays<span style=\"white-space: pre;\"> <\/span><\/p>","logo_src":"\/uploads\/screeningResources\/18\/logo\/small_poster2caa4e8055876c78751c0ff9b4f96815.jpg","small_logo_src":"\/uploads\/screeningResources\/18\/logo\/small_poster2caa4e8055876c78751c0ff9b4f96815.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/18\/trailerFile\/?auth=da.cgaJcrclcWbub3aaa1bWaqcccccJbdb.-boJEUg-uP4-InGE5Cyqzvn-p5k7nVsbq0mWmepPnxmgpPptrSl7s6kfoPkrn5s1q0mVmSpf%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F18%2FtrailerFile%2F"},"f21":{"id":"21","name":"My Avatar and Me","short_name":"My Avatar and Me","logo":"d23170987fd5e0dac0910a603262197a.jpg","synopsis":"This might expand your sense of reality.","info":"My Avatar and Me is a creative documentary-fiction film about a man who enters the virtual world of Second Life to pursue his personal dreams and ambitions. His journey into cyberspace becomes a magic learning experience, which gradually opens the gates to a much larger reality.","logo_src":"\/uploads\/screeningResources\/21\/logo\/small_posterd23170987fd5e0dac0910a603262197a.jpg","small_logo_src":"\/uploads\/screeningResources\/21\/logo\/small_posterd23170987fd5e0dac0910a603262197a.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/21\/trailerFile\/Avatar_trailer.mp4?auth=da.bFbNbIcgbVbmapc6dTagclcxbwd2aHdm-boJEUg-uP4-DoKD2CDpyvp-p7sapUqdl0nVmfoOnzmfkQtlodqRramQp9rSpQq5lVmQmzoU%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F21%2FtrailerFile%2FAvatar_trailer"},"f22":{"id":"22","name":"Get Real! Wise Women Speak","short_name":"Get Real! Wise Women Speak","logo":"30ba0d77abca17bdf080f2e0a239cf54.jpg","synopsis":"Coming soon","info":"Features extraordinary women who speak about their journey to the wise woman years and the inner fire that propels them to make the most of their wisdom and experience.  Women showcased include: Jane Fonda, Della Reese, and Nobel Laureate Jody Williams. ","logo_src":"\/uploads\/screeningResources\/22\/logo\/small_poster30ba0d77abca17bdf080f2e0a239cf54.jpg","small_logo_src":"\/uploads\/screeningResources\/22\/logo\/small_poster30ba0d77abca17bdf080f2e0a239cf54.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/22\/trailerFile\/?auth=da.aEchc4adbDbIaQdJd6a3bPbwaEb0cTd8-boJEUg-uP4-CpIE4AApAvr-m8pasUpclZmUkdmQptkUkbqRqBnVtRo1lToSsGpZl9mUjQmIp7k2kWr5pPnDt6oUmTp3%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F22%2FtrailerFile%2F"},"f23":{"id":"23","name":"American Meth","short_name":"American Meth","logo":"9603766030b6f45e5c3aa7978093eadb.jpg","synopsis":"Coming soon...","info":"A cross-country journey that focuses on several facets of the methamphetamine epidemic. From the oil fields of Wyoming and New Mexico to the homeless in Portland and the teens of Montana, filmmaker Justin Hunt spins a blue-collar tale of tragedy and triumph. Narrated by Val Kilmer.","logo_src":"\/uploads\/screeningResources\/23\/logo\/small_poster9603766030b6f45e5c3aa7978093eadb.jpg","small_logo_src":"\/uploads\/screeningResources\/23\/logo\/small_poster9603766030b6f45e5c3aa7978093eadb.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/23\/trailerFile\/?auth=da.cOccdQa2aPddaQcZbFcfa0cHdicKb3bw-boJEUg-uP4-CpDF0ABosxq-m7l8lWpbm0nXseqPplm4kWmamYoSlTn3lRlxlWp9mZ%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F23%2FtrailerFile%2F"},"f24":{"id":"24","name":"Brooklyn Rules","short_name":"Brooklyn Rules","logo":"3594a06b3c72e17039fb270ff98750eb.jpg","synopsis":"Coming soon...","info":"Michael Corrente's \"Brooklyn Rules\" takes him to the mean streets of Gotti country, circa 1985.  Written by Terence Winter, a three-time Emmy winner for \"The Sopranos,\" the film follows the lives of three friends growing up in a mob neighborhood of Brooklyn. With Freddie Prinze Jr., Scott Caan, Jerry Ferrara, and Alec Baldwin. <br \/>\r","logo_src":"\/uploads\/screeningResources\/24\/logo\/small_poster3594a06b3c72e17039fb270ff98750eb.jpg","small_logo_src":"\/uploads\/screeningResources\/24\/logo\/small_poster3594a06b3c72e17039fb270ff98750eb.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/24\/trailerFile\/?auth=da.dxbqcPdod_aybNa1b6aPbwc6c3cOaodi-boJEUg-uP4-FoHEZDBruur-t5n8sUlcm0sWpekOoosan5q6l3o4neo4sPnCsal2mWsa%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F24%2FtrailerFile%2F"},"f25":{"id":"25","name":"High: The True Tale of American Marijuana","short_name":"High: The True Tale of American Marijuana","logo":"6e7ca7b0ba10a78444225e891420bddc.jpg","synopsis":"Coming soon...","info":"One nation, under the influence. Beyond the hysteria of Reefer Madness and past the deceptive lessons of \"Just Say No\", John Holowach's \"High\" exposes the true story of America's war on drugs.","logo_src":"\/uploads\/screeningResources\/25\/logo\/small_poster6e7ca7b0ba10a78444225e891420bddc.jpg","small_logo_src":"\/uploads\/screeningResources\/25\/logo\/small_poster6e7ca7b0ba10a78444225e891420bddc.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/25\/trailerFile\/?auth=da.afdVaWbCdLdudFcXasbJaWaadSaxb2af-boJEUg-uP4-HqIC6BFryxn-l7t7sVpbsYkXocnPorpYpZrXrgrSrGk0lWsPsEp7sakXnPnEoQp1pXqPs5sYqSknl4tUs8pYsSkTo3mQowpQparYs0sdrTk6lS%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F25%2FtrailerFile%2F"},"f26":{"id":"26","name":"Strip Club King","short_name":"Strip Club King","logo":"0e123c685caf2cc5ba6e8d19259e11a4.jpg","synopsis":"Coming soon...","info":"Loved, admired, hated, charismatic to some and revolting to others. Joe Redner owns one of the most famous nude clubs in America, the Mons Venus in Tampa, Florida. This documentary explores the life of a man who has been arrested over 140 times, earned his GED in jail at the age of 40, became an avid student of the law, got clean and sober, and has run for local public office 7 times.","logo_src":"\/uploads\/screeningResources\/26\/logo\/small_poster0e123c685caf2cc5ba6e8d19259e11a4.jpg","small_logo_src":"\/uploads\/screeningResources\/26\/logo\/small_poster0e123c685caf2cc5ba6e8d19259e11a4.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/26\/trailerFile\/?auth=da.cucbcmdVdxaMdibsbGchbSdedwcncAa9-boJEUg-uP4-CpCE0DEruuv-s6s8mWrco1oXmenQqClbk9l0m8qSnms4sbsSlRrvo1o6mY%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F26%2FtrailerFile%2F"},"f27":{"id":"27","name":"The Nature of Existence","short_name":"The Nature of Existence","logo":"0a7d2adebfe9efe6a7735c5cf427348a.jpg","synopsis":"Coming soon...","info":"After exploring the phenomenon of TREKKIES, filmmaker Roger Nygard takes on The Nature of Existence. As he roams the globe to the source of each of the world's philosophies, religions, and belief systems, Nygard interviews spiritual leaders, scholars, scientists, artists, pizza chefs, and others who have influenced, inspired, or freaked out humanity.","logo_src":"\/uploads\/screeningResources\/27\/logo\/small_poster0a7d2adebfe9efe6a7735c5cf427348a.jpg","small_logo_src":"\/uploads\/screeningResources\/27\/logo\/small_poster0a7d2adebfe9efe6a7735c5cf427348a.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/27\/trailerFile\/?auth=da.aQcEbwaocnbBaYbxcraKbscfd2aucodz-boJEUg-uP4-EpBD0ABquvu-k6n9rUqcs0pXockQoGpXmWjQmxoSnarak8nWqPq5sXoSookfo1p8mbkVm3oUnV%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F27%2FtrailerFile%2F"},"f28":{"id":"28","name":"Crazed Fruit","short_name":"Crazed Fruit","logo":"9372eb288ecb5464ece2ae5edbec4b1a.jpg","synopsis":"Coming soon...","info":"Spending their summer on an exotic beach, two brothers fall for the same beautiful girl, whose charm and looks may hide more than they they bargained for.","logo_src":"\/uploads\/screeningResources\/28\/logo\/small_poster9372eb288ecb5464ece2ae5edbec4b1a.jpg","small_logo_src":"\/uploads\/screeningResources\/28\/logo\/small_poster9372eb288ecb5464ece2ae5edbec4b1a.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/28\/trailerFile\/?auth=da.dFbGbJbWbtbhc.bWchbmaCbacKbeagdn-boJEUg-uP4-DoDD3BFpAvu-m6s9rVmbsZkWqdoOqpnalRmgpVsUsQrrm8scrZm9%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F28%2FtrailerFile%2F"},"f29":{"id":"29","name":"Knife in the Water","short_name":"Knife in the Water","logo":"b6e5308579a265bc9408b883548b840a.jpg","synopsis":"Coming soon...","info":"Roman Polanski's first feature-length film.   A couple invites a hitchhiker to join them on their boat for an outing. As the threesome heads out to open water, the husband and the student get in a fight that has the student falling overboard and the husband swimming to shore for help. But appearances can be deceiving, as the husband soon discovers...","logo_src":"\/uploads\/screeningResources\/29\/logo\/small_posterb6e5308579a265bc9408b883548b840a.jpg","small_logo_src":"\/uploads\/screeningResources\/29\/logo\/small_posterb6e5308579a265bc9408b883548b840a.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/29\/trailerFile\/?auth=da.b7dHbQbvdad8dCbGbvbJbDapaDa0c_aB-boJEUg-uP4-LqED0Byrrxn-s6m8lVpctYpUtcmQnur4t1nWmVkSk1k6rQmalYpVsPpGtQmbnUr8%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F29%2FtrailerFile%2F"},"f30":{"id":"30","name":"Divorce Italian Style","short_name":"Divorce Italian Style","logo":"ef09244da9985fafbb31125558969b5c.jpg","synopsis":"Coming soon...","info":"A married Sicilian baron falls in love with his cousin and vows to wed her, but with divorce illegal he must concoct a crime of passion to do away with his wife.","logo_src":"\/uploads\/screeningResources\/30\/logo\/small_posteref09244da9985fafbb31125558969b5c.jpg","small_logo_src":"\/uploads\/screeningResources\/30\/logo\/small_posteref09244da9985fafbb31125558969b5c.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/30\/trailerFile\/?auth=da.crb1cgbzdDbtaYcvdlcwbDbUcNcGcpdT-boJEUg-uP4-JoEE4BCrAvw-k7lalWmctZqWtemQpqp0rcn6q8pVtVsPkulclSm2tZqSt5lRpFpbrfn3qV%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F30%2FtrailerFile%2F"},"f31":{"id":"31","name":"L'Eclisse","short_name":"L'Eclisse","logo":"f871cb209e411c7526a61f5036f80719.jpg","synopsis":"Coming soon...","info":"Capping off Antonioni's previous two films (L'Avventura and La Notte) in much the same style, this tale involves a woman, Vittoria (Monica Vitti), who has just suffered the break-up with a staunch intellectual (Francisco Rabal). Piero (Alain Delon), a stockbroker, casts his romantic gaze in Vittoria's direction and the woman gradually relents and they begin an affair. ","logo_src":"\/uploads\/screeningResources\/31\/logo\/small_posterf871cb209e411c7526a61f5036f80719.jpg","small_logo_src":"\/uploads\/screeningResources\/31\/logo\/small_posterf871cb209e411c7526a61f5036f80719.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/31\/trailerFile\/?auth=da.c_b2cQdbaadPbdducbdKalcZdIaXdnbW-boJEUg-uP4-FoFE0Dyorxo-n8k9lXqbl0lXoctRnwrYnpoUm4lYkbl9nX%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F31%2FtrailerFile%2F"},"f32":{"id":"32","name":"Rashomon","short_name":"Rashomon","logo":"6f6ae03bad1537c3b1ac732dbd3ecc27.jpg","synopsis":"Coming soon...","info":" A heinous crime and its aftermath are recalled from differing points of view.","logo_src":"\/uploads\/screeningResources\/32\/logo\/small_poster6f6ae03bad1537c3b1ac732dbd3ecc27.jpg","small_logo_src":"\/uploads\/screeningResources\/32\/logo\/small_poster6f6ae03bad1537c3b1ac732dbd3ecc27.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/32\/trailerFile\/?auth=da.aiazdEbvdLbldtdbddbgaEbOcqc0cKau-boJEUg-uP4-KnGFYByryvo-t8lanVqbkZkWqemQqBkQs8p0k5l5r5l6%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F32%2FtrailerFile%2F"},"f33":{"id":"33","name":"Sweatshop","short_name":"Sweatshop","logo":"9ae401f116257cb10446aca6db723dd8.jpg","synopsis":"One Hammer. No Prisoners.","info":"Charlie (Ashley Kay) and her friends have broken into an old steel mill to set up an impromptu rave. Preoccupied with sex and alcohol, they fail to notice an enormous, hulking beast who lurks in the shadows - filled with rage and brandishing a pulverizing foundry hammer. ","logo_src":"\/uploads\/screeningResources\/33\/logo\/small_poster9ae401f116257cb10446aca6db723dd8.jpg","small_logo_src":"\/uploads\/screeningResources\/33\/logo\/small_poster9ae401f116257cb10446aca6db723dd8.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/33\/trailerFile\/Sweatshop_trailer.mp4?auth=da.d7dudaa6cwb5acbwcvahcJbOaJdGcYbn-boJEUg-uP4-LqBFYAFqtvu-m6m9lUrdpZkUpfmQkDnftXkTk9samYr4m6%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F33%2FtrailerFile%2FSweatshop_trailer"},"f34":{"id":"34","name":"Field of Vision","short_name":"Field of Vision","logo":"c75d9ed92e22587805719bb1230992e0.jpg","synopsis":"A Walmart\/P&G Presentation","info":"Mysterious footage captured on an old video camera shows star quarterback Tyler McFarland that some of his teammates have been bullying the new transfer student, Cory Walker. Aware that standing up for Cory might get his friends kicked off the team and cost the school the state championship, Tyler must choose between winning and doing what&#8217;s right. ","logo_src":"\/uploads\/screeningResources\/34\/logo\/small_posterc75d9ed92e22587805719bb1230992e0.jpg","small_logo_src":"\/uploads\/screeningResources\/34\/logo\/small_posterc75d9ed92e22587805719bb1230992e0.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/34\/trailerFile\/PGZM00014_FOV_Trailer_30_H264.mov?auth=da.c4dQa0b8cdaPcTbJbWazdoagbvczcUcP-boJEUg-uP4-IqDC0Bxquuo-p6p8sUpeoYqVlepQqrl0qXm1mUjRn4lXoQpGsYpboYq5l5%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F34%2FtrailerFile%2FPGZM00014_FOV_Trailer_30_H264"},"f35":{"id":"35","name":"MZUNGU","short_name":"MZUNGU","logo":"21e6f462d5f0feef69dab09ef847a836.jpg","synopsis":"Is love the answer?","info":"This feature length documentary is our story about personal change, sacrifice, adventure, and ultimately the power of love and community. You will embark on a journey into the great joys and perils of Africa through the eyes of four-young-naive and unassuming Americans.","logo_src":"\/uploads\/screeningResources\/35\/logo\/small_poster21e6f462d5f0feef69dab09ef847a836.jpg","small_logo_src":"\/uploads\/screeningResources\/35\/logo\/small_poster21e6f462d5f0feef69dab09ef847a836.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/35\/trailerFile\/mzungutrailer.mp4?auth=da.cnabasaRcxaYcic5dvcKdvbrbddPaHcR-boJEUg-uP4-FnCC6AAquun-s7ralWqelZrVnflOnynLnElxsqnG%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F35%2FtrailerFile%2Fmzungutrailer"},"f37":{"id":"37","name":"Katie's Prayer","short_name":"Katie's Prayer","logo":"71789a48d25591ccb61c0ff2b237896b.jpg","synopsis":"Many lives are changed by one prayer.","info":"This is a true story about a remarkable young woman from Alpine, California, who prayed to God to use her in a mighty way, and He did, positively changing the lives of many forever.","logo_src":"\/uploads\/screeningResources\/37\/logo\/small_poster71789a48d25591ccb61c0ff2b237896b.jpg","small_logo_src":"\/uploads\/screeningResources\/37\/logo\/small_poster71789a48d25591ccb61c0ff2b237896b.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/37\/trailerFile\/katiesprayer.mp4?auth=da.cMb8aJdjb_bTa8c_bEdYded_cAcJbUaF-boJEUg-uP4-KoBC3DGpuvs-k7n8kXkeo1nWqepPqulSsakYpXsXn9oPkBn8kTkhoXn9%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F37%2FtrailerFile%2Fkatiesprayer"},"f38":{"id":"38","name":"Fubar: Balls to the Wall","short_name":"Fubar: Balls to the Wall","logo":"4c16c121696a9ce99d209eee5bcc8638.jpg","synopsis":"Give'r again.","info":"Terry and Dean head North to make sweet cash in the oil patch.","logo_src":"\/uploads\/screeningResources\/38\/logo\/small_poster4c16c121696a9ce99d209eee5bcc8638.jpg","small_logo_src":"\/uploads\/screeningResources\/38\/logo\/small_poster4c16c121696a9ce99d209eee5bcc8638.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/38\/trailerFile\/Fubar_trailer.mp4?auth=da.adcfa6cLdqaocIaTc1aTcGdqdfc9a2d3-boJEUg-uP4-FpGC6CErxur-o5p9nUpdm1qXpelOospanTpQs9qipPonoQp3n1palSqcp6kPocpXnWoPsIrTq1o3%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F38%2FtrailerFile%2FFubar_trailer"},"f39":{"id":"39","name":"Ghost Player","short_name":"Ghost Player","logo":"16ccbe869c072d23d0159afc62435999.jpg","synopsis":"Relive the Magic.","info":"In 1989, Hollywood shot the movie Field of Dreams in Iowa. Did anyone know this blockbuster would spawn a comedic baseball show that would have an 18-year run and travel the world? Watch as we follow a group of aging Iowa locals who have come together for the love of baseball and dreams.","logo_src":"\/uploads\/screeningResources\/39\/logo\/small_poster16ccbe869c072d23d0159afc62435999.jpg","small_logo_src":"\/uploads\/screeningResources\/39\/logo\/small_poster16ccbe869c072d23d0159afc62435999.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/39\/trailerFile\/ghostplayertrailer.mov?auth=da.bEaedHaCcmcYdJaJaVaedAc8cqdHdeaB-boJEUg-uP4-CnFF1AFqtwn-p5p7rUoeq0kWqfnRoqrYk4obn9rRmBk4pQperUoa%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F39%2FtrailerFile%2Fghostplayertrailer"},"f40":{"id":"40","name":"Out Late","short_name":"Out Late","logo":"873d3c0d168a1caa4b40aeb6d7768a91.jpg","synopsis":"It's never too late to be yourself.","info":"Looks at five individuals who made a decisive change later in life-to come out as lesbian, gay, or trans gender, after the age of 55. Why did they wait until their 50's, 60's, or 70's to come out? And what was the turning point that caused each of these people finally to openly declare their sexuality?","logo_src":"\/uploads\/screeningResources\/40\/logo\/small_poster873d3c0d168a1caa4b40aeb6d7768a91.jpg","small_logo_src":"\/uploads\/screeningResources\/40\/logo\/small_poster873d3c0d168a1caa4b40aeb6d7768a91.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/40\/trailerFile\/?auth=da.b3bJdXcPaXavbEavaPb7b_aYaHcAa4av-boJEUg-uP4-HoGF7CyoAuo-k5l7lVtcnYkUneqOqylbpaoStxlQt9lV%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F40%2FtrailerFile%2F"},"f41":{"id":"41","name":"The Exterminating Angel","short_name":"The Exterminating Angel","logo":"6e45ab4c1a3e82c249dc68c121b7fe0c.jpg","synopsis":"A takedown of rituals and dependencies.","info":"A group of people in formal dress arrives at an elegantly appointed home for a dinner party. However, once dinner is over and the guests retire to the drawing room, they discover that the servants have gone away, and for some reason they cannot leave. There is no explanation why -- there are no locked doors or barred windows preventing them from going home -- but the guests are convinced that they're stranded.","logo_src":"\/uploads\/screeningResources\/41\/logo\/small_poster6e45ab4c1a3e82c249dc68c121b7fe0c.jpg","small_logo_src":"\/uploads\/screeningResources\/41\/logo\/small_poster6e45ab4c1a3e82c249dc68c121b7fe0c.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/41\/trailerFile\/?auth=da.buaXc.bcbRc5azdccSbiayawbyaZbQd1-boJEUg-uP4-CnKE0Bzpuwu-p8m9oVsboYmVoclPmGnYkUsRmpmenbrUpam4oZs3oQmaoYl4mZmQkkt5mXmVn3%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F41%2FtrailerFile%2F"},"f42":{"id":"42","name":"Cleo From 5 To 7","short_name":"Cleo From 5 To 7","logo":"8a36d7fe32db5196227337ea8eb604b7.jpg","synopsis":"Follow a singer set adrift in Paris.","info":"Clo (played by Corinne Marchand) is a pop singer who wanders around Paris while she awaits her medical test results. As Clo readies herself to meet with her doctor at 7 o'clock, she meets with several friends and strangers while trying to grapple with mortality.","logo_src":"\/uploads\/screeningResources\/42\/logo\/small_poster8a36d7fe32db5196227337ea8eb604b7.jpg","small_logo_src":"\/uploads\/screeningResources\/42\/logo\/small_poster8a36d7fe32db5196227337ea8eb604b7.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/42\/trailerFile\/?auth=da.cNaEb_aXcucGaWcHcuaJb9cObDbZbeau-boJEUg-uP4-LnBD1AGqrwp-s7n9kUpcl0kVtdlPomk3tUk5mPtrk9m4s4mRjaoQlFk5sQkd%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F42%2FtrailerFile%2F"},"f43":{"id":"43","name":"Woman in the Dunes","short_name":"Woman in the Dunes","logo":"9813dadc1dfba8e131b1890ed3b94859.jpg","synopsis":"A man finds himself stuck in a desert.","info":"Eija Okada plays an amateur entomologist who has left Tokyo to study an unclassified species of beetle that resides in a remote, vast desert; when he misses his bus back to civilization, he is persuaded to spend the night in the home of a young widow (Kiyoko Kishida) who lives in a hut at the bottom of a sand dune.","logo_src":"\/uploads\/screeningResources\/43\/logo\/small_poster9813dadc1dfba8e131b1890ed3b94859.jpg","small_logo_src":"\/uploads\/screeningResources\/43\/logo\/small_poster9813dadc1dfba8e131b1890ed3b94859.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/43\/trailerFile\/?auth=da.a4d.aWbzbedDc.cvbFdXd7cJdRaoa.d6-boJEUg-uP4-IqDC6BCpvxw-m7l8lXtet0pXncoOmJs4q5mQs4oQo1t5lRlal0tXsRpqnao3mXs8%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F43%2FtrailerFile%2F"},"f44":{"id":"44","name":"Jules and Jim","short_name":"Jules and Jim","logo":"705abdfd93e1d19f4fa98ece41557fc6.jpg","synopsis":"A story of two men in love with a woman.","info":"Hailed as one of the finest films ever made, legendary director Franois Truffaut&#8217;s early masterpiece Jules and Jim charts the relationship between two friends and the object of their mutual obsession over the course of twenty-five years.","logo_src":"\/uploads\/screeningResources\/44\/logo\/small_poster705abdfd93e1d19f4fa98ece41557fc6.jpg","small_logo_src":"\/uploads\/screeningResources\/44\/logo\/small_poster705abdfd93e1d19f4fa98ece41557fc6.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/44\/trailerFile\/?auth=da.cKbebRczaucQbVc5andjcDa5bIaMcecn-boJEUg-uP4-IoFD1CCorwp-r7r7nXtdtYrVocsQovncq2oVnaoPkSm4rVqPnwt0t2%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F44%2FtrailerFile%2F"},"f45":{"id":"45","name":"My Dinner with Andre","short_name":"My Dinner with Andre","logo":"12dbc829e2dcafbab2b6a9c82d670e6e.jpg","synopsis":"A meeting of two New York-honed personas","info":"In Louis Malle&#8217;s captivating and philosophical My Dinner with Andr, actor and playwright Wallace Shawn sits down with friend and theater director Andr Gregory at an Upper West Side restaurant, and the two proceed into an alternately whimsical and despairing confessional on love, death, money, and all the superstition in between.","logo_src":"\/uploads\/screeningResources\/45\/logo\/small_poster12dbc829e2dcafbab2b6a9c82d670e6e.jpg","small_logo_src":"\/uploads\/screeningResources\/45\/logo\/small_poster12dbc829e2dcafbab2b6a9c82d670e6e.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/45\/trailerFile\/?auth=da.agdqdYcHbXaEbZbMaxaeaCc4c5cRacdg-boJEUg-uP4-IqHFYCApAun-l6s7nUobs0qWrenOmzqepSqqk0n4t3kVl8rPncoYsbqZqRnkm6qTqaqX%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F45%2FtrailerFile%2F"},"f46":{"id":"46","name":"Food Fight","short_name":"Food Fight","logo":"3ad12746f568ca916aaefab661dbda8e.jpg","synopsis":"","info":"","logo_src":"\/uploads\/screeningResources\/46\/logo\/small_poster3ad12746f568ca916aaefab661dbda8e.jpg","small_logo_src":"\/uploads\/screeningResources\/46\/logo\/small_poster3ad12746f568ca916aaefab661dbda8e.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/46\/trailerFile\/?auth=da.a9blcQdpc1dkbDdgbSbqa8bwcrbKaqax-boJEUg-uP4-DoCE0DCquxn-t8q8oVqbkZmWrdqOqpn4l5lVlSprn1kXt0qa%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F46%2FtrailerFile%2F"},"f47":{"id":"47","name":"My Degeneration","short_name":"My Degeneration","logo":"72fce306834314ad84d5907b2d27473a.jpg","synopsis":"It's about teen love.","info":"It's about teen love.  It's about teen dreams.  It's about digging your grave with an electric guitar.  A verite, Warholian, improv-fest. Three teenage girls form a rock band for fame but end up doing it for cheeseburgers instead. ","logo_src":"\/uploads\/screeningResources\/47\/logo\/small_poster72fce306834314ad84d5907b2d27473a.jpg","small_logo_src":"\/uploads\/screeningResources\/47\/logo\/small_poster72fce306834314ad84d5907b2d27473a.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/47\/trailerFile\/?auth=da.dMcEdkbabrcSaYcec.dZaGdTd.cpdecB-boJEUg-uP4-KpBFYBxpywr-k7o9mXlbm1pXmepRoyrhrRkqkVkXrWo3kWo9mTl9m1p7m5%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F47%2FtrailerFile%2F"},"f48":{"id":"48","name":"Scumrock","short_name":"Scumrock","logo":"2e09b89fd2fa1e327a4f7081411ae92b.jpg","synopsis":"IT'S SCUMROCK...NOT PUNK ROCK!","info":"A pretentious underground filmmaker (played by Kyp Malone of band TV ON THE RADIO) struggles with his masterpiece while a scuzzy punkoid chick (Amy Davis) tries to keep her band from fading into obscurity.","logo_src":"\/uploads\/screeningResources\/48\/logo\/small_poster2e09b89fd2fa1e327a4f7081411ae92b.jpg","small_logo_src":"\/uploads\/screeningResources\/48\/logo\/small_poster2e09b89fd2fa1e327a4f7081411ae92b.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/48\/trailerFile\/?auth=da.b3bXctbEaNcMcfbJa5cvdubNa1dKcpbi-boJEUg-uP4-HoKE7BxoAwv-p6p7rWlekZtUnfqQpDsTpbt4t8k4tUs2%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F48%2FtrailerFile%2F"},"f49":{"id":"49","name":"Fame Whore","short_name":"Fame Whore","logo":"a5aa7f9a4b7d9ed335f1f120b2a8a816.jpg","synopsis":"Fame - you know you want it","info":"Three characters wrestle with the pernicious radiance of fame: a talentless stoner trust-fund brat (played by Amy Davis) tries to gain it through a multitude of hair-brained schemes, a star athlete fears losing it after a sex-scandal erupts, while a sociopathic dog lover tries to ignore it completely. ","logo_src":"\/uploads\/screeningResources\/49\/logo\/small_postera5aa7f9a4b7d9ed335f1f120b2a8a816.jpg","small_logo_src":"\/uploads\/screeningResources\/49\/logo\/small_postera5aa7f9a4b7d9ed335f1f120b2a8a816.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/49\/trailerFile\/?auth=da.afdEbVbCddd2ajdWcdbTbcbtdMa1avcD-boJEUg-uP4-HqBD5BFruxr-t8s9nVpcmZtXscnOlrtQp5kVqQsJn0o4tasW%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F49%2FtrailerFile%2F"},"f50":{"id":"50","name":"Mod F$%! Explosion","short_name":"Mod F$%! Explosion","logo":"d015f21b84e3eda45ce04bc862eb56f0.jpg","synopsis":"Mod F$%! Explosion","info":"For London, a slinky, blonde 17 year-old (played by Amy Davis), life revolves around two priorities: getting a leather jacket and losing her virginity to shy-boy M16. Standing in her way, though, are a rumble between the Mods and Japanese bikers, and a city infested with kooks and miscreants.","logo_src":"\/uploads\/screeningResources\/50\/logo\/small_posterd015f21b84e3eda45ce04bc862eb56f0.jpg","small_logo_src":"\/uploads\/screeningResources\/50\/logo\/small_posterd015f21b84e3eda45ce04bc862eb56f0.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/50\/trailerFile\/?auth=da.cxalc2cPbjbHarb8dAahdRbLbZbTapd3-boJEUg-uP4-FnCE2CypAvq-r6kaqUrenZrVldpOpzp6nTkRorkUsVmQqQkrqdr8n2r5l9pYp7p5%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F50%2FtrailerFile%2F"},"f52":{"id":"52","name":"Barbarossa","short_name":"Barbarossa","logo":"b79cc35b5c70e4a940af67e706a998a7.jpg","synopsis":"Saracen Pirates","info":"The history of Italian coastal watchtowers, the people who worked in them and the attacks by Saracen Pirates. Re-enactment of the attacks by the Saracen Pirate Khair Ad-Din on the town of Ispani in 1532.","logo_src":"\/uploads\/screeningResources\/52\/logo\/small_posterb79cc35b5c70e4a940af67e706a998a7.jpg","small_logo_src":"\/uploads\/screeningResources\/52\/logo\/small_posterb79cc35b5c70e4a940af67e706a998a7.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/52\/trailerFile\/barbarossatrailer.mp4?auth=da.aga1dYd.c6a0aCcNcib9b5aYdRdybqdZ-boJEUg-uP4-InEFYDzqzup-s7t9sVlcrYkXnfoPqolQq7nUkTm9s4m8satS%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F52%2FtrailerFile%2Fbarbarossatrailer"},"f53":{"id":"53","name":"Who Is Simon Miller?","short_name":"Who Is Simon Miller?","logo":"011d0c99683b485fb9c26148650c8448.jpg","synopsis":"Who is Simon Miller?","info":"When unassuming geologist Simon Miller mysteriously disappears one night, the Miller family is thrown into a desperate search to find him.  Simon&#8217;s wife Meredith and their two kids, Sarah, 18, and Kevin, 15, frantically search Simon&#8217;s office for information.  When they find a stash of passports, all with Simon&#8217;s picture but each with a different alias, they realize that their father has been keeping more than a few secrets.","logo_src":"\/uploads\/screeningResources\/53\/logo\/small_poster011d0c99683b485fb9c26148650c8448.jpg","small_logo_src":"\/uploads\/screeningResources\/53\/logo\/small_poster011d0c99683b485fb9c26148650c8448.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/53\/trailerFile\/30_Who_Is_Simon_Miller_Aug6_Web_Use-LARGE.mov?auth=da.d2ahdqdNbkbPchcsbxcNaXbmchdUahck-boJEUg-uP4-GnIF4DGprvo-r7s8nWtbtZmWrfqOrIk0o4qSqvt9jQlEr0s3n6t3sQmyr1q1r3kXo7q_%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F53%2FtrailerFile%2F30_Who_Is_Simon_Miller_Aug6_Web_Use-LARGE"},"f54":{"id":"54","name":"Quality Films","short_name":"Quality Films","logo":"ffc3834a3eff4b7c7f0aebb43100ffe9.jpg","synopsis":"","info":"","logo_src":"\/uploads\/screeningResources\/54\/logo\/small_posterffc3834a3eff4b7c7f0aebb43100ffe9.jpg","small_logo_src":"\/uploads\/screeningResources\/54\/logo\/small_posterffc3834a3eff4b7c7f0aebb43100ffe9.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/54\/trailerFile\/?auth=da.bZcBczckcKcLdRceclbUaCcCbjblcwaS-boJEUg-uP4-DpIE3Cxqxwu-n7o9lVqbs0sVtdlQmAoblSr3p0kbqgqSnro0l2q2sa%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F54%2FtrailerFile%2F"},"f55":{"id":"55","name":"Chops","short_name":"Chops","logo":"1fcc138159d5d26e9c1b9e9189539f23.jpg","synopsis":"It's all about the music!","info":"Each year, Jazz at Lincoln Center and its artistic director Wynton Marsalis host the Essentially Ellington Festival, a competition of high school jazz bands from across the country. Bruce Broder's documentary focuses on one Florida band's experience at the festival.","logo_src":"\/uploads\/screeningResources\/55\/logo\/small_poster1fcc138159d5d26e9c1b9e9189539f23.jpg","small_logo_src":"\/uploads\/screeningResources\/55\/logo\/small_poster1fcc138159d5d26e9c1b9e9189539f23.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/55\/trailerFile\/?auth=da.aGdLdmdydMcsdIaAaWbHcfdXdHbYbpd0-boJEUg-uP4-EqIF0DBrzwv-o5q7sVndp1tXndkPppmXm7r8mb%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F55%2FtrailerFile%2F"},"f56":{"id":"56","name":"Jig","short_name":"Jig","logo":"5068aae0449c8e00ec9a6919a4c75b30.jpg","synopsis":"...to win, they must be foot perfect!","info":"Jig tells the compelling story of the 40th Irish dancing world championships in Glasgow. Thousands of dancers, their families and teachers take part in the drama-filled seven day event where dance talent is pushed to the very limit in the quest for perfection.  Available in the US only for a limited 1-week August engagement.  Available in North America only.","logo_src":"\/uploads\/screeningResources\/56\/logo\/small_poster5068aae0449c8e00ec9a6919a4c75b30.jpg","small_logo_src":"\/uploads\/screeningResources\/56\/logo\/small_poster5068aae0449c8e00ec9a6919a4c75b30.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/56\/trailerFile\/JIG TRAILER.mov?auth=da.azb3dJdscJcPbXdjdPcHcuc3d7dvdmbE-boJEUg-uP4-HoGF3DFqwwo-t8talWndk0pXtflRmukYpX%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F56%2FtrailerFile%2FJIG+TRAILER"},"f57":{"id":"57","name":"testfilm","short_name":"testfilm","logo":"","synopsis":"testing a movie","info":"","logo_src":"\/uploads\/screeningResources\/57\/logo\/small_poster","small_logo_src":"\/uploads\/screeningResources\/57\/logo\/small_poster","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/57\/trailerFile\/?auth=da.dicddWafdUbBa5aCcCcKa2b4b4bScDdJ-boJEUg-uP4-KpEF6ACrxvu-r5s9sWqboZqVqdoQtcpXsancsVp1q2r2%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F57%2FtrailerFile%2F"},"f59":{"id":"59","name":"L'Avventura","short_name":"L'Avventura","logo":"ae9fd4ae097814d14eaf0a3e08660686.jpg","synopsis":"\"The Adventure\"\/ \"The Affair\"","info":"With this simple, elusive tale, director Michelangelo Antonioni launched himself into the forefront of the new emerging European art cinema.  At the time of the film's premiere he was 46 and had directed five previous features, all of them interesting but none of them able to massively capture the public's imagination... Forty years ago the film struck audiences with its freshness.  It still has that effect today.\"","logo_src":"\/uploads\/screeningResources\/59\/logo\/small_posterae9fd4ae097814d14eaf0a3e08660686.jpg","small_logo_src":"\/uploads\/screeningResources\/59\/logo\/small_posterae9fd4ae097814d14eaf0a3e08660686.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/59\/trailerFile\/?auth=da.cvdCaQaYdHdPdXc8d9bKcWcHbHbMdBaz-boJEUg-uP4-DqJC0Axruxo-t7kalVqds0nVndsRrvoYlnsbmbkXn6lctckalR%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F59%2FtrailerFile%2F"},"f60":{"id":"60","name":"Don't Let Me Drown","short_name":"Don't Let Me Drown","logo":"eabb1aa4e2280e6fdc3ab4a3381f0e5f.jpg","synopsis":"Only Love Can Save You","info":"In a post-September 11th world overflowing with fear and hate, two Latino teens discover that sometimes the only thing that can keep them from drowning is love.","logo_src":"\/uploads\/screeningResources\/60\/logo\/small_postereabb1aa4e2280e6fdc3ab4a3381f0e5f.jpg","small_logo_src":"\/uploads\/screeningResources\/60\/logo\/small_postereabb1aa4e2280e6fdc3ab4a3381f0e5f.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/60\/trailerFile\/?auth=da.cydQdKdlbuanbzdKd7a5ckanazbybxcL-boJEUg-uP4-GqDF4Dypruq-p8qatUrdkYnUpdoPnpr6o6lZqckQkvnVpcpStwrWjPnnp8o5ner5%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F60%2FtrailerFile%2F"},"f61":{"id":"61","name":"The Battle of Algiers","short_name":"The Battle of Algiers","logo":"345007284f817772396d402bc5d08be2.jpg","synopsis":"An account of the bloodiest revolution i","info":"One of the most influential political films in history.  Gillo Pontecorvo's The Battle of Algiers vividly recreates a key year in the tumultuous Algerian struggle for independence from the occupying French in the 1950s.  ","logo_src":"\/uploads\/screeningResources\/61\/logo\/small_poster345007284f817772396d402bc5d08be2.jpg","small_logo_src":"\/uploads\/screeningResources\/61\/logo\/small_poster345007284f817772396d402bc5d08be2.jpg","allow_hosting":"1","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/61\/trailerFile\/?auth=da.cNb5bjcHdTbfbqbwaha3cwczdybabWbK-boJEUg-uP4-LoID7CArwvs-q6m7rUpdm0pXodkPsEqZtVqQtnnTpapaq2mUqPp6mXoSolk2sXq0tVr8ta%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F61%2FtrailerFile%2F"},"f62":{"id":"62","name":"Game Time: Tackling the Past","short_name":"Game Time: Tackling the Past","logo":"91818d9aab9d6edb877b1cc75f611b1f.jpg","synopsis":"When winning is everything, what's left?","info":"Pro football star Jake Walker returns to the small hometown he left in pursuit of a Hall of Fame career. But when he finds that his contract is not being renewed, he&#8217;s forced to reconnect with the family and friends he abandoned along the way. Can this all-star overcome his painful past in order to establish his future?<br \/>\r","logo_src":"\/uploads\/screeningResources\/62\/logo\/small_poster91818d9aab9d6edb877b1cc75f611b1f.jpg","small_logo_src":"\/uploads\/screeningResources\/62\/logo\/small_poster91818d9aab9d6edb877b1cc75f611b1f.jpg","allow_hosting":"0","stream_url":"rtmp:\/\/cp113558.edgefcs.net\/ondemand\/mp4:constellation\/uploads\/screeningResources\/62\/trailerFile\/15_Game_Time_PreStreet_Sept3_Web_Use.mov?auth=da.crdWd2c2bbcQdrc6aybAa9chaYcxaOdB-boJEUg-uP4-JqJF2CBpswp-r7s7oVqbl0rUkenOktrSr5sXnRoEl0m5rWrfnQqDlSrSk2n1k1r5rZrSoboYlWlSrBsQo9q9%26aifp=v0006%26slist=constellation%2Fuploads%2FscreeningResources%2F62%2FtrailerFile%2F15_Game_Time_PreStreet_Sept3_Web_Use"}};
+</script>
+
+<div class="inner_container clearfix host_step_one">
+    
+  <div class="host_show_header">
+      <h3>Host a showtime:</span></h3>
+
+      <ul class="host_show_steps">
+          <li class="active">1. Select a Film</li>
+          <li class="host_show_steps_sep">&raquo;</li>
+          <li>2. Date &amp; Time</li>
+          <li class="host_show_steps_sep">&raquo;</li>
+          <li>3. User Information</li>
+
+      </ul>
+  </div>
+  
+  <div class="host_container">
+      <div class="host_container_top"></div>
+      <div class="host_container_center clearfix">
+          
+          <form id="host_form_zero" action="#" name="host_detail" method="POST" onSubmit="return false;">
+          
+          <div class="film_details">
+              <img src="/uploads/screeningResources/" alt="" width="150" height="220"/>
+          </div>
+
+          
+          <div class="host_form clearfix">
+              <table>
+        	    	<tr height="20">
+        	    		<td valign="bottom">
+        	    			<label>Film</label>
+        	    		</td>
+        	    	</tr>
+        	    	<tr height="40">
+
+        	    		<td valign="top">
+        	    			<div class="selectOveride">
+                      <div class="displayDiv">Select your film</div>
+                      <select id="film_id" name="film_id">
+											  													<option value="20" >&nbsp;&nbsp;&nbsp;Truth Be Told</option>
+																									<option value="2" >&nbsp;&nbsp;&nbsp;Earth Made of Glass</option>
+																									<option value="3" >&nbsp;&nbsp;&nbsp;2012: Time for Change</option>
+
+																									<option value="4" >&nbsp;&nbsp;&nbsp;The Lottery</option>
+																									<option value="5" >&nbsp;&nbsp;&nbsp;Racing Dreams</option>
+																									<option value="6" >&nbsp;&nbsp;&nbsp;In Her Shoes</option>
+																									<option value="7" >&nbsp;&nbsp;&nbsp;ANVIL</option>
+																									<option value="8" >&nbsp;&nbsp;&nbsp;JOAN RIVERS, A PIECE OF WORK</option>
+																									<option value="9" selected="selected">&nbsp;&nbsp;&nbsp;RESTREPO</option>
+
+																									<option value="10" >&nbsp;&nbsp;&nbsp;WAITING FOR SUPERMAN</option>
+																									<option value="11" >&nbsp;&nbsp;&nbsp;WE LIVE IN PUBLIC</option>
+																									<option value="14" >&nbsp;&nbsp;&nbsp;Archangel</option>
+																									<option value="15" >&nbsp;&nbsp;&nbsp;Living in Emergency</option>
+																									<option value="16" >&nbsp;&nbsp;&nbsp;Sin By Silence</option>
+																									<option value="17" >&nbsp;&nbsp;&nbsp;In Her Shoes</option>
+
+																									<option value="18" >&nbsp;&nbsp;&nbsp;My Happy Holiday</option>
+																									<option value="21" >&nbsp;&nbsp;&nbsp;My Avatar and Me</option>
+																									<option value="22" >&nbsp;&nbsp;&nbsp;Get Real! Wise Women Speak</option>
+																									<option value="23" >&nbsp;&nbsp;&nbsp;American Meth</option>
+																									<option value="24" >&nbsp;&nbsp;&nbsp;Brooklyn Rules</option>
+																									<option value="25" >&nbsp;&nbsp;&nbsp;High: The True Tale of American Marijuana</option>
+
+																									<option value="26" >&nbsp;&nbsp;&nbsp;Strip Club King</option>
+																									<option value="27" >&nbsp;&nbsp;&nbsp;The Nature of Existence</option>
+																									<option value="28" >&nbsp;&nbsp;&nbsp;Crazed Fruit</option>
+																									<option value="29" >&nbsp;&nbsp;&nbsp;Knife in the Water</option>
+																									<option value="30" >&nbsp;&nbsp;&nbsp;Divorce Italian Style</option>
+																									<option value="31" >&nbsp;&nbsp;&nbsp;L'Eclisse</option>
+
+																									<option value="32" >&nbsp;&nbsp;&nbsp;Rashomon</option>
+																									<option value="33" >&nbsp;&nbsp;&nbsp;Sweatshop</option>
+																									<option value="34" >&nbsp;&nbsp;&nbsp;Field of Vision</option>
+																									<option value="35" >&nbsp;&nbsp;&nbsp;MZUNGU</option>
+																									<option value="37" >&nbsp;&nbsp;&nbsp;Katie's Prayer</option>
+																									<option value="38" >&nbsp;&nbsp;&nbsp;Fubar: Balls to the Wall</option>
+
+																									<option value="39" >&nbsp;&nbsp;&nbsp;Ghost Player</option>
+																									<option value="40" >&nbsp;&nbsp;&nbsp;Out Late</option>
+																									<option value="41" >&nbsp;&nbsp;&nbsp;The Exterminating Angel</option>
+																									<option value="42" >&nbsp;&nbsp;&nbsp;Cleo From 5 To 7</option>
+																									<option value="43" >&nbsp;&nbsp;&nbsp;Woman in the Dunes</option>
+																									<option value="44" >&nbsp;&nbsp;&nbsp;Jules and Jim</option>
+
+																									<option value="45" >&nbsp;&nbsp;&nbsp;My Dinner with Andre</option>
+																									<option value="46" >&nbsp;&nbsp;&nbsp;Food Fight</option>
+																									<option value="47" >&nbsp;&nbsp;&nbsp;My Degeneration</option>
+																									<option value="48" >&nbsp;&nbsp;&nbsp;Scumrock</option>
+																									<option value="49" >&nbsp;&nbsp;&nbsp;Fame Whore</option>
+																									<option value="50" >&nbsp;&nbsp;&nbsp;Mod F$%! Explosion</option>
+
+																									<option value="52" >&nbsp;&nbsp;&nbsp;Barbarossa</option>
+																									<option value="53" >&nbsp;&nbsp;&nbsp;Who Is Simon Miller?</option>
+																									<option value="54" >&nbsp;&nbsp;&nbsp;Quality Films</option>
+																									<option value="55" >&nbsp;&nbsp;&nbsp;Chops</option>
+																									<option value="56" >&nbsp;&nbsp;&nbsp;Jig</option>
+																									<option value="57" >&nbsp;&nbsp;&nbsp;testfilm</option>
+
+																									<option value="59" >&nbsp;&nbsp;&nbsp;L'Avventura</option>
+																									<option value="60" >&nbsp;&nbsp;&nbsp;Don't Let Me Drown</option>
+																									<option value="61" >&nbsp;&nbsp;&nbsp;The Battle of Algiers</option>
+																									<option value="62" >&nbsp;&nbsp;&nbsp;Game Time: Tackling the Past</option>
+																							</select>
+                  	</div>
+                  	
+                  	<select name="cars">
+
+										  <option value="0">Volvo</option>
+										  <option value="1" selected="selected">Saab</option>
+										  <option value="2">Mercedes</option>
+										  <option value="3">Audi</option>
+										</select>
+        	    		</td>
+        	    	</tr>
+
+        	    </table>
+              <div class="form_row">
+                  <button id="host_next_detail" type="submit" class="button button_orange uppercase">Next &raquo;</button>
+              </div>
+              <input type="hidden" name="type" class="type" value="select" />		
+	            <input type="hidden" id="host_id" name="host_id" value="124" />
+	            <input type="hidden" id="session_id" name="session_id" value="lj2eug5bdno8pua24nbp749al2" />
+              
+          	</form>
+          </div>
+
+          
+      </div>
+      <div class="host_container_bottom"></div>
+  </div>
+</div>
+<div id="domain" style="display:none">dev.constellation.tv</div>
+<div id="current_date" style="display:none"></div>
+<div id="thistime" style="display:none"></div>
+
+</div></div><div id="footer" class="footer" role="contentinfo"><div class="inner_container">
+    <div class="left">
+    <p class="copy">&copy;2011 Constellation</p>
+
+    <ul class="footer_nav clearfix">
+        <li class="first"><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="/faq">FAQ</a></li>
+
+    </ul>
+</div> 
+<div class="right facebook_footer_block">
+  <img height="40" width="40" src="https://s3.amazonaws.com/cdn.constellation.tv/prod/images/icon-custom.png" />
+  <div class="details">
+      <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdev.constellation.tv%2Fhosting%3Ffid%3D9&t=Constellation.tv+is+great+films+viewed+online+for+yourself+or+with+your+friends." target="_new"><strong>ConstellationTv</strong> on Facebook</a>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      
+      <div class="fb-like" data-href="www.contellation.tv" data-send="false" data-width="180" data-show-faces="false"></div>
+      
+ </div>
+</div>
+</div></div><div id="zzdiv" >
+<div id="bandwidth_test"></div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25112427-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</div>  
+  
+  <script type="text/javascript" src="/js/constellation_alt_comp_v27.js"></script>
+  <script type="text/javascript" src="/flash/mediaplayer-5.7-licensed/jwplayer.js"></script>
+  <script type="text/javascript" src="/js/modal.js"></script>
+  <script type="text/javascript" src="/js/login_alt.js"></script>
+  <script type="text/javascript" src="/js/trailer_alt.js"></script>
+
+  <script type="text/javascript" src="/js/countdown_alt.js"></script>
+  <script type="text/javascript" src="/js/allfilms.js"></script>
+  <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+  <script type="text/javascript" src="/js/jquery/slides.min.jquery.js"></script>
+  <script type="text/javascript" src="/js/slideshow.js"></script>
+  <script type="text/javascript" src="/js/header.js"></script>
+
+  
+  <script type="text/javascript" src="/js/bandwidth.js"></script>
+<script type="text/javascript" src="/js/constellation_film_comp_v27.js"></script>
+<script type="text/javascript" src="/js/host.js"></script>
+  
+  </html>

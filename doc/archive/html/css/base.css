@@ -1,0 +1,275 @@
+/* =============================================================================
+   Base class helpers
+   ========================================================================== */
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.left {float: left;}
+.right {float: right;}
+.uppercase {text-transform: uppercase;}
+
+/* =============================================================================
+   Overide Fucked Css
+   ========================================================================== */
+
+
+body {
+    color: #000;
+    background: #e1e1e1!important;
+}
+
+.masterhead {
+    height:  75px!important;
+}
+#content {
+    background: #eeeeee;
+}
+.headline {
+    width: 940px!important;
+}
+
+.logo_alt a {
+    background: url("//s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/film_logo.png") no-repeat scroll left top transparent;
+    color: #8C8C8C !important;
+    float: left;
+    font-size: 20px;
+    height: 75px;
+    text-indent: 150px;
+    width: 205px;
+    margin-left: 0;
+     padding-top: 0;
+}
+.logo_alt_set li, .logo_alt_set li a {
+    float: none;
+    display: inline-block;
+}
+
+textarea {
+ font-family: "helveticaneue",Helvetica,sans-serif;
+ font-size: 12px;
+}
+
+.footer ul { padding:0}
+.footer li, .footer li a {
+    float: none;
+}
+.footer li {
+    padding: 0;
+    margin: 0;
+}
+
+/* =============================================================================
+   Header Updates
+   ========================================================================== */
+
+
+.searchbar_alt {
+    display: none;
+}
+
+.header_nav {
+    float: left;
+    font-family: "helveticaneue",verdana,helvetica,sans-serif;
+    margin: 34px 0 0 20px;
+}
+.header_nav li {
+    display: inline-block;
+    padding: 0 10px;
+}
+.header_nav a{
+    color: #C8C8C8;
+    
+}
+
+.logo_alt_set {
+    float: right;
+    padding: 0;
+    margin: 32px 0 0;
+    width: auto;
+}
+.acc_timezone_link {
+    float: none;
+}
+.header_timezone {
+    position: relative;
+    top: -18px;
+    table-layout: right;
+}
+.header_timezone > p {
+    font-size: 10px;
+} 
+
+.header_user {
+    width: 170px;
+    position: relative;
+    margin-left: 10px;
+    top: -10px;
+
+}
+.user_info {
+    position: absolute;
+    width: 170px;
+    background: #000;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 20;
+}
+.user_info li {
+    display: block;
+}
+.user_info li a {
+    display: block;
+    padding: 8px 14px;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.user_info li a:hover {
+    background: #262626;
+}
+
+.header_user_block {
+   border-radius: 5px 5px 0 0;
+   -moz-border-radius:  5px 5px 0 0;
+   -webkit-border-radius:  5px 5px 0 0;
+   padding: 10px;
+   background: url(/images/bg/header_arrow.png) 144px 17px no-repeat;
+}
+.header_user .header_user_block {
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.header_user.active .header_user_block {
+    background-color: #000;
+    -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+/*.header_user.active .user_info {
+    display: block;
+}*/
+.header_user_icon img {
+    vertical-align: middle;
+}
+
+
+
+.sub_nav {
+   background: url("../images/bg/footer_marquee.png") repeat-x scroll 0 100%;
+   font-family: "helveticaneue", helvetica, Arials, sans-serif;
+}
+
+.sub_nav li {
+    float: left;
+
+}
+.sub_nav li a {
+  font-size: 14px;
+  padding: 20px 30px;
+  display: block;
+}
+.sub_nav li.active a {
+    background: url(../images/bg/slideshow_sprite.png) 0 -15px repeat-x;
+    
+}
+
+/* =============================================================================
+   Page Header
+   ========================================================================== */
+.sub_head {
+    background: url("//s3.amazonaws.com/cdn.constellation.tv/prod/images/alt1/info_bg.png") repeat-x scroll left top transparent;
+    height: 85px;
+}
+
+.inner_container {
+    width: 940px;
+    margin: auto;
+    text-align:left;
+}
+
+h2.page_title {
+    color: #000;
+    text-transform: none;
+    float: left;
+    font-size: 38px;
+    font-family: "helveticaneuelight",Helvetica,sans-serif;
+}
+.sub_head h2.page_title {
+    line-height: 80px;
+    margin: 0;
+}
+
+
+
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+#footer {
+    background: url(/images/bg/footer-bg.png) 0 0 repeat-x!important;
+}
+#footer > div.inner_container {
+    background: url(/images/bg/footer-logo.png) 0 0 no-repeat;
+    height: 124px;
+}
+#footer .left{
+    margin: 34px 0 0 130px;
+}
+#footer .copy {
+    font-size: 13px;
+    margin: 10px 0;
+    color: #828282;
+}
+#footer .footer_nav {
+    margin: 10px 0;
+}
+#footer .footer_nav li {
+    color: #000;
+    display: block;
+    float: left;
+    padding: 0 8px;
+    font-size: 13px;
+    border-left: solid 1px #000;
+}
+#footer .footer_nav a {
+        color: #000;
+        font-size: 13px;
+    
+}
+#footer .footer_nav li.first {
+    border-left: none;
+    padding-left: 0;
+}
+
+#footer .facebook_footer_block {
+    border: solid 1px #b0b0b0;
+    background: white;
+    width: 268px;
+    height: 68px;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+}
+#footer .facebook_footer_block img {
+    float: left;
+    margin: 10px;
+     
+}
+#footer .facebook_footer_block .details {
+    float: left;
+    margin: 10px 0 0;
+    width: 200px;
+}
+#footer .facebook_footer_block a strong {
+    font-size: 14px;
+}
+#footer .facebook_footer_block a {
+    display: block;
+    margin-bottom: 8px;
+}
+.tooltip {
+    z-index: 20;
+}

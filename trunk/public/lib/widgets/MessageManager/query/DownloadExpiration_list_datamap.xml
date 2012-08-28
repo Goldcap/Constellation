@@ -1,0 +1,36 @@
+<map table="user_order_product" result="download_search" title="My Designs" docache="false" allow_add="false">
+  <column column="fk_product_sku" name="sku" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="fk_user_id" type="VARCHAR" size="" key="" order="7"></column>
+  <column column="user_order_product_total_price" type="FLOAT" size="" key="" order="10"></column>
+  <column column="user_order_guid" type="INTEGER" size="" key="PRI" order="13"></column>
+  <sql connection="ttj">
+    <sqlselect><![CDATA[
+      SELECT DISTINCT 
+      user_order_product.FK_PRODUCT_SKU,
+      user_order_product.fk_user_id, 
+      user_order_product.USER_ORDER_PRODUCT_TOTAL_PRICE, 
+      user_order.USER_ORDER_GUID 
+      FROM user_order_product
+      INNER JOIN user_order
+      ON user_order_product.FK_USER_ORDER_ID=user_order.USER_ORDER_ID
+      WHERE user_order.USER_ORDER_STATUS IN (1,2) 
+      AND user_order.USER_ORDER_DATE>=?
+      AND user_order.USER_ORDER_DATE<=?
+      AND user_order_product.USER_ORDER_PRODUCT_DOWNLOAD=1 
+      AND user_order_product.fk_product_vendor_id = 1
+    ]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <!--<criteria value="[NOW-30DAY TO NOW]" column="user_order_product_date_purchased" type="AND" constant="native"/>-->
+    <criteria table="user_order" scope="SYSTEM" value="datediff" column="user_order_date" size="-30%d" key="floor_now()" type="date"  />
+    <criteria table="user_order" scope="SYSTEM" value="datediff" column="user_order_date" size="-30%d" key="ceiling_now()" type="date"  />
+    <criteria value="1" column="user_order_product_download" />
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

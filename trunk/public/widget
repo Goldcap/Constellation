@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z "$1" ];
+then
+  echo "Usage: widget.sh widgetname"
+  exit 0
+fi
+
+php symfony page:pagewidget --op=widget --widget=$1 --env=dev --application=frontend --args=""
+
+chown apache:webusers lib/widgets/$1 -R
+chmod 775 lib/widgets/$1 -R
+
+exit 0

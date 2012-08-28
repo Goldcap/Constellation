@@ -1,0 +1,10 @@
+<smil>
+  <head>
+    <meta base="rtmp://cp113558.edgefcs.net/ondemand" />
+  </head>
+  <body>
+    <switch>
+      <video src="mp4:constellation/uploads/screeningResources/4/trailerFile/lottery-trailer.trailer.mp4?auth=da.d2cldgbcaDcXbibMamcPcUdobjd2crbq-bn2tjm-f-GpCF4BzoAww-s6s7mWldq1oVtfoQrEq0oWkSqwm4tbtasVs7mg&amp;aifp=v0006&amp;slist=constellation%2Fuploads%2FscreeningResources%2F4%2FtrailerFile%2Flottery-trailer.trailer.mp4" system-bitrate="408000" />
+    </switch>
+  </body>
+</smil>

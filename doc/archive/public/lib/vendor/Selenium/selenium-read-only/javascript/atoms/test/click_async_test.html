@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>click_async_test.html</title>
+  <script src="test_bootstrap.js"></script>
+  <script type="text/javascript">
+    goog.require('bot.action');
+    goog.require('bot.locators');
+    goog.require('goog.Uri');
+    goog.require('goog.dom');
+    goog.require('goog.events');
+    goog.require('goog.events.EventType');
+    goog.require('goog.testing.AsyncTestCase');
+    goog.require('goog.testing.jsunit');
+    goog.require('goog.userAgent');
+  </script>
+</head>
+<body>
+<iframe id="iframe" src="testdata/click_iframe.html"></iframe>
+<iframe id="other" name="other"></iframe>
+<a id="clickTarget">Click me!</a>
+<a id="clickTargetWithAChild">Click <strong>the nested</strong> element</a>
+
+<script type="text/javascript">
+  var asyncTestCase = goog.testing.AsyncTestCase.createAndInstall();
+  var iframe, iframeWin, otherFrame, otherFrameWin;
+
+  function setUp() {
+    iframe = bot.locators.findElement({id: 'iframe'});
+    iframeWin = goog.dom.getFrameContentWindow(iframe);
+    otherFrame = bot.locators.findElement({id: 'other'});
+    otherFrameWin = goog.dom.getFrameContentWindow(otherFrame);
+    continueAfterLoad(iframe, goog.nullFunction);
+    iframeWin.location = resolveUrl('testdata/click_iframe.html');
+  }
+
+  function continueAfterLoad(iframe, fn) {
+    asyncTestCase.waitForAsync('Waiting for ' + iframe.id + ' to load');
+    return goog.events.listenOnce(iframe, 'load', function() {
+      asyncTestCase.continueTesting();
+      fn();
+    });
+  }
+
+  function resolveUrl(url) {
+    return goog.Uri.resolve(window.location.href, url).toString();
+  }
+
+  function getClickTarget(url) {
+    var doc = goog.dom.getFrameContentDocument(iframe);
+    var target = bot.locators.findElement({'id': 'iframeClickTarget'}, doc);
+    target.href = resolveUrl(url);
+    return target;
+  }
+
+  function testClickDoesNotEncodeReservedButAllowedCharactersInQuery() {
+    // A bug in the closure goog.Uri module once prevented this from working.
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var clickTarget = domHelper.getElement('iframeClickTarget');
+
+    var targetHref = '?a=?/+';
+    clickTarget.href = targetHref;
+    continueAfterLoad(iframe, function() {
+      assertEquals(targetHref, iframeWin.location.search);
+    });
+    bot.action.click(clickTarget);
+  }
+
+  function testClickOnAnAbsoluteAnchorInAnIframeExecutesDefaultHandler() {
+    var clickTarget = getClickTarget('testdata/click_destination.html');
+    var targetHref = clickTarget.href;
+    continueAfterLoad(iframe, function() {
+      assertEquals(targetHref, iframeWin.location.href);
+    });
+    bot.action.click(clickTarget);
+  }
+
+  function testCanClickALinkThatCausesContentToLoadInAnotherFrame() {
+    var clickTarget = getClickTarget('testdata/click_destination.html');
+    var targetHref = clickTarget.href;
+    clickTarget.target = 'other';
+    continueAfterLoad(otherFrame, function() {
+      assertEquals(targetHref, otherFrameWin.location.href);
+    });
+    bot.action.click(clickTarget);
+  }
+
+  function testClickingOnSelfPageReloadsPage() {
+    var clickTarget = getClickTarget(iframeWin.location.href);
+    var targetHref = clickTarget.href;
+    continueAfterLoad(iframe, function() {
+      assertEquals(targetHref, iframeWin.location.href);
+    });
+    bot.action.click(clickTarget);
+  }
+
+  function testClickingOnHashDoesNotReloadThePage() {
+    var clickTarget = getClickTarget('');
+    clickTarget.href = '#';
+    // Fail immediately if the iframe is loaded.
+    var id = continueAfterLoad(iframe, fail);
+    bot.action.click(clickTarget);
+
+    // After a delay, assume page is not going to load and pass the test.
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      goog.events.unlistenByKey(id);
+    }, 250);
+  }
+
+  function testClickCorrectlyResolvesEmptyFragment() {
+    // A bug in the closure goog.Uri module once prevented this from working.
+    var clickTarget = bot.locators.findElement({id: 'clickTarget'});
+    // Make sure no other event listeners are interfering.
+    goog.events.removeAll(clickTarget);
+    clickTarget.href = '#';
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      var windowHref = window.location.href;
+      assertEquals('#', windowHref.charAt(windowHref.length - 1));
+    }, 0);
+  }
+
+  function testClickExecutesDefaultHandler() {
+    var clickTarget = bot.locators.findElement({id: 'clickTarget'});
+    // Make sure no other event listeners are interfering.
+    goog.events.removeAll(clickTarget);
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = '#' + Math.random();
+    clickTarget.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertEquals(targetHref, window.location.hash);
+    }, 0);
+  }
+
+  function testClickOnANestedElementExecutesDefaultHandler() {
+    var parent = bot.locators.findElement({id: 'clickTargetWithAChild'});
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = '#' + Math.random();
+    parent.href = targetHref;
+    var clickTarget = goog.dom.getFirstElementChild(parent);
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertEquals(targetHref, window.location.hash);
+    }, 0);
+  }
+
+  function testClickOnAnAbsoluteServerPathAnchorInAnIframeExecutesDefaultHandler() {
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var clickTarget = domHelper.getElement('iframeClickTarget');
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var testPath = window.location.pathname;
+    var targetHref = testPath.substring(0, testPath.lastIndexOf('/')) +
+        '/testdata/click_iframe.html#' + Math.random();
+    clickTarget.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertContains(targetHref, iframeWindow.location.href);
+    }, 0);
+  }
+
+  function testClickOnAnAbsoluteUrlInAnIframeExecutesDefaultHandler() {
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var clickTarget = domHelper.getElement('iframeClickTarget');
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = goog.Uri.resolve(iframeWindow.location,
+        '#' + Math.random()).toString();
+
+    // Let's make sure it is an absolute url.
+    assertContains('http', targetHref);
+    clickTarget.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertEquals(targetHref, iframeWindow.location.href);
+    }, 0);
+  }
+
+  function testClickOnAnHashOnlyAnchorInAnIframeExecutesDefaultHandler() {
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var clickTarget = domHelper.getElement('iframeClickTarget');
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = '#' + Math.random();
+    clickTarget.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertEquals(targetHref, iframeWindow.location.hash);
+    }, 0);
+  }
+
+  function testClickOnAnNestedElementInAnIframeExecutesDefaultHandler() {
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var parent = domHelper.getElement('iframeClickTargetWithAChild');
+    var clickTarget = goog.dom.getFirstElementChild(parent);
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = '#' + Math.random();
+    parent.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertEquals(targetHref, iframeWindow.location.hash);
+    }, 0);
+  }
+
+  function testClickOnAnRelativeServerPathAnchorInAnIframeExecutesDefaultHandler() {
+    var iframe = bot.locators.findElement({id: 'iframe'});
+    var iframeWindow = goog.dom.getFrameContentWindow(iframe);
+    var domHelper = goog.dom.getDomHelper(iframeWindow);
+    var clickTarget = domHelper.getElement('iframeClickTarget');
+
+    // Use a random value as we don't want to keep an old
+    // misleading hash in the url.
+    var targetHref = 'click_iframe.html#' + Math.random();
+    clickTarget.href = targetHref;
+
+    asyncTestCase.waitForAsync('click');
+    bot.action.click(clickTarget);
+
+    window.setTimeout(function() {
+      asyncTestCase.continueTesting();
+      assertContains(targetHref, iframeWindow.location.href);
+    }, 0);
+  }
+
+</script>
+</body>
+</html>

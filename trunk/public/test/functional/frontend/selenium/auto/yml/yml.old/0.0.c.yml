@@ -1,0 +1,8 @@
+click: [link=Log In]
+clickAndWait: [css=#login_twitter_link &gt; img]
+click: [id=username_or_email]
+type: [id=username_or_email, zangee3]
+click: [id=password]
+type: [id=password, mohamahm]
+clickAndWait: [id=allow]
+verifyTextPresent: [ahmed01]

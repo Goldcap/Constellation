@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<map table="table_name" result="result_name" title="result_name">
+  <column column="column_name" name="" type="INTEGER" size="" key="PRI" order="17"/>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="column_name"/>
+    <!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        -->
+  </criterion>
+  <!--<join table="foreign_table" local="local_key" foreign="foreign_key">
+    <foreigncolumn column="column_name" type="VARCHAR" size="255" key="" order="1"/>
+  </join>-->
+  <!--<pagination>
+    <pagesperpage value="5"/>
+    <recordssperpage value="5"/>
+    <page value="1" var="page"/>
+    <sort var="sort"/>
+  </pagination>-->
+</map>

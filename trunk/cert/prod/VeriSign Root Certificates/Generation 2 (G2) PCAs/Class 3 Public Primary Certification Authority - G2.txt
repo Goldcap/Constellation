@@ -1,0 +1,55 @@
+
+
+Version 1 Certificate
+
+Issuer Name:
+Country = US
+Organization = VeriSign, Inc.
+Organizational Unit = Class 3 Public Primary Certification Authority - G2
+Organizational Unit = (c) 1998 VeriSign, Inc. - For authorized use only
+Organizational Unit = VeriSign Trust Network
+
+Subject Name:
+Country = US
+Organization = VeriSign, Inc.
+Organizational Unit = Class 3 Public Primary Certification Authority - G2
+Organizational Unit = (c) 1998 VeriSign, Inc. - For authorized use only
+Organizational Unit = VeriSign Trust Network
+
+Validity Start: 05/18/1998 00:00:00 GMT
+Validity End: 08/01/2028 23:59:59 GMT
+
+Algorithm: SHA1 With RSA
+
+Cert Hash:
+85 37 1c a6 e5 50 14 3d ce 28 03 47 1b de 3a 09 
+e8 f8 77 0f 
+
+Cert Info Hash:
+d9 59 44 f5 bd 92 12 70 92 21 8f 9f 02 c7 19 c4 
+23 86 b4 99 
+
+Issuer Name and Serial Number Hash:
+c0 c9 8f 61 41 34 4d a5 0e 03 e1 cb d3 d0 df 0a 
+a5 c5 c8 03 
+
+Public Key Hash:
+1a 21 b4 95 2b 62 93 ce 18 b3 65 ec 9c 0e 93 4c 
+b3 81 e6 d4 
+
+Serial Number:
+7d d9 fe 07 cf a8 1e b7 10 79 67 fb a7 89 34 c6 
+
+
+Public Key:
+30 81 9f 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 
+05 00 03 81 8d 00 30 81 89 02 81 81 00 cc 5e d1 
+11 5d 5c 69 d0 ab d3 b9 6a 4c 99 1f 59 98 30 8e 
+16 85 20 46 6d 47 3f d4 85 20 84 e1 6d b3 f8 a4 
+ed 0c f1 17 0f 3b f9 a7 f9 25 d7 c1 cf 84 63 f2 
+7c 63 cf a2 47 f2 c6 5b 33 8e 64 40 04 68 c1 80 
+b9 64 1c 45 77 c7 d8 6e f5 95 29 3c 50 e8 34 d7 
+78 1f a8 ba 6d 43 91 95 8f 45 57 5e 7e c5 fb ca 
+a4 04 eb ea 97 37 54 30 6f bb 01 47 32 33 cd dc 
+57 9b 64 69 61 f8 9b 1d 1c 89 4f 5c 67 02 03 01 
+00 01 

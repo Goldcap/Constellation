@@ -1,0 +1,5 @@
+App Name:	dev.constellation.tv
+App URL:	http://dev.constellation.tv/
+App ID:	185162594831374
+App Secret:	33e3ffc6a1e366cc880ea97d8eb14f10
+

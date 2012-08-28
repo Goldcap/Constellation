@@ -1,0 +1,19 @@
+<map table="promotion" result="promotion" title="Promotions">
+  <column column="promotion_text" type="LONGVARCHAR" size="" key="" order="1"></column>
+  <!--<column column="promotion_start_date" type="TIMESTAMP" size="" key="" order="2"></column>
+  <column column="promotion_end_date" type="TIMESTAMP" size="" key="" order="3"></column>-->
+  <column column="promotion_duration" type="INTEGER" size="11" key="PRI" order="4"></column>
+  <column column="promotion_id" type="INTEGER" size="11" key="PRI" order="4"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <criteria value="promotion" column="object_type" constant="quoted_native"/>
+    <ascorderby column="promotion_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

@@ -1,0 +1,71 @@
+<map table="user_order" result="user_order_list_datamap" docount="false">
+  <column column="user_order_guid" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="fk_user_id" type="INTEGER" size="" key="" order="2"></column>
+  <column column="fk_affiliate_user_id" type="INTEGER" size="" key="" order="3"></column>
+  <column column="fk_vendor_id" type="INTEGER" size="" key="" order="4"></column>
+  <column column="user_order_user_fname" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="user_order_user_lname" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="user_order_user_email" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="user_order_billing_address" type="VARCHAR" size="255" key="" order="8"></column>
+  <column column="user_order_billing_address_2" type="VARCHAR" size="255" key="" order="9"></column>
+  <column column="user_order_billing_city" type="VARCHAR" size="255" key="" order="10"></column>
+  <column column="user_order_billing_state" type="VARCHAR" size="255" key="" order="11"></column>
+  <column column="user_order_billing_zip" type="VARCHAR" size="255" key="" order="12"></column>
+  <column column="user_order_billing_country" type="VARCHAR" size="255" key="" order="13"></column>
+  <column column="user_order_billing_phone" type="VARCHAR" size="255" key="" order="14"></column>
+  <column column="user_order_billing_notes" type="VARCHAR" size="255" key="" order="15"></column>
+  <column column="user_order_sales_tax" type="FLOAT" size="" key="" order="16"></column>
+  <column column="user_order_shipping" type="FLOAT" size="" key="" order="17"></column>
+  <column column="user_order_coupon" type="FLOAT" size="" key="" order="19"></column>
+  <column column="user_order_discount" type="FLOAT" size="" key="" order="19"></column>
+  <column column="user_order_subtotal" type="FLOAT" size="" key="" order="18"></column>
+  <column column="user_order_total" type="FLOAT" size="" key="" order="19"></column>
+  <column column="user_order_transaction_number" type="VARCHAR" size="255" key="" order="20"></column>
+  <column column="user_order_status" type="TINYINT" size="" key="" order="21"></column>
+  <column column="user_order_process" type="TINYINT" size="" key="" order="21"></column>
+  <column column="user_order_tracking_number" type="VARCHAR" size="255" key="" order="22"></column>
+  <column column="user_order_ship_date" type="TIMESTAMP" size="" key="" order="23"></column>
+  <column column="user_order_date" type="TIMESTAMP" size="" key="" order="24"></column>
+  <column column="user_order_conf_num" type="VARCHAR" size="255" key="" order="25"></column>
+  <column column="user_order_cc_type" type="VARCHAR" size="255" key="" order="26"></column>
+  <column column="user_order_cc_number" type="VARCHAR" size="255" key="" order="27" filter="ccMask"></column>
+  <column column="user_order_cc_number" name="user_order_cc_raw" type="VARCHAR" size="255" key="" order="27"></column>
+  <column column="user_order_cc_cvv2" type="INTEGER" size="" key="" order="28"></column>
+  <column column="user_order_cc_exp" type="INTEGER" size="" key="" order="29" filter="ccexpMask"></column>
+  <column column="user_order_ship_user_fname" type="VARCHAR" size="255" key="" order="30"></column>
+  <column column="user_order_ship_user_lname" type="VARCHAR" size="255" key="" order="31"></column>
+  <column column="user_order_ship_email" type="VARCHAR" size="255" key="" order="32"></column>
+  <column column="user_order_ship_address" type="VARCHAR" size="255" key="" order="33"></column>
+  <column column="user_order_ship_address_2" type="VARCHAR" size="255" key="" order="34"></column>
+  <column column="user_order_ship_city" type="VARCHAR" size="255" key="" order="35"></column>
+  <column column="user_order_ship_state" type="VARCHAR" size="255" key="" order="36"></column>
+  <column column="user_order_ship_zip" type="VARCHAR" size="255" key="" order="37"></column>
+  <column column="user_order_ship_country" type="VARCHAR" size="255" key="" order="38"></column>
+  <column column="user_order_ship_phone" type="VARCHAR" size="255" key="" order="39"></column>
+  <column column="user_order_fraud_score" type="FLOAT" size="4" key="" order="40"></column>
+  <column column="user_order_maxmind_object" type="LONGVARCHAR" size="" key="" order="41"></column>
+  <column column="user_order_auth_code" type="VARCHAR" size="255" key="" order="42"></column>
+  <column column="user_order_gateway_environment" type="VARCHAR" size="255" key="" order="43"></column>
+  <column column="user_order_site_id" type="TINYINT" size="" key="" order="44"></column>
+  <column column="user_order_fraud_alert" type="VARCHAR" size="255" key="" order="45"></column>
+  <column column="user_order_fraud_contact" type="VARCHAR" size="255" key="" order="46"></column>
+  <column column="user_order_ship_instructions" type="LONGVARCHAR" size="" key="" order="47"></column>
+  <column column="user_order_cod" type="TINYINT" size="" key="" order="48"></column>
+  <column column="user_order_priority" type="TINYINT" size="" key="" order="49"></column>
+  <column column="user_order_download" type="TINYINT" size="" key="" order="50"></column>
+  <column column="user_order_ip" type="VARCHAR" size="255" key="" order="51"></column>
+  <column column="user_order_response_object" type="LONGVARCHAR" size="" key="" order="52"></column>
+  <column column="user_order_payment_processor" type="LONGVARCHAR" size="" key="" order="53"></column>
+  <column column="user_order_id" type="INTEGER" size="" key="PRI" order="54"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="user_order_id"></ascorderby>
+    <criteria scope="PROCESS" value="order_id" column="user_order_id"/>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

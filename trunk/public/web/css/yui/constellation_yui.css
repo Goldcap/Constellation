@@ -1,0 +1,25 @@
+/* CSS Document */
+#doc2 {
+  width: 910px !important;
+}
+
+/* layout */
+html, body {
+  height: 100%;
+  background: #000;
+} 
+
+.headline {
+  color: white !important;
+}
+#Join_wrapper {
+  width: 910px;
+}
+
+#zzdiv {
+  width: 600px;
+}
+
+#sfWebDebug {
+  width: 600px !important;
+}

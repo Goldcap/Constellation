@@ -1,0 +1,160 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+prod:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=db.constellation.tv;dbname=constellation'
+      username: root
+      password: constellation2010
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=db.constellation.tv;dbname=constellation'
+      username: root
+      password: constellation2010
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'db.constellation.tv:constellation'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'db2.constellation.tv:constellation'
+test:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=test.db-1.constellation.tv;dbname=constellation_test'
+      username: root
+      password: constellation2010
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=test.db-1.constellation.tv;dbname=constellation_test'
+      username: root
+      password: constellation2010
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'test.db-1.constellation.tv:constellation_test'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'test.db-1.constellation.tv:constellation_test'
+stage:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_stage'
+      username: root
+      password: constellation2010
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_stage'
+      username: root
+      password: constellation2010
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'localhost:constellation_stage'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'localhost:constellation_stage'
+dev:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: '192.168.2.7:constellation_dev'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: '192.168.2.7:constellation_dev'
+mlauprete:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: '192.168.2.7:constellation_dev'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: '192.168.2.7:constellation_dev'
+andy:
+  propel:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation:
+    class: sfPropelDatabase
+    param:
+      phptype: mysql
+      dsn: 'mysql:host=localhost;dbname=constellation_dev'
+      username: root
+      password: 1hsvy5qb
+  constellation_mongo:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: 'localhost:constellation'
+  constellation_mongo_session:
+    class: MongoDatabase
+    param:
+      phptype: mongo
+      dsn: ''localhost:constellation_dev'
+all:
+  propel:
+    class:                sfPropelDatabase
+    param:
+      classname: PropelPDO
+      encoding: utf8
+      persistent: true
+      pooling: true

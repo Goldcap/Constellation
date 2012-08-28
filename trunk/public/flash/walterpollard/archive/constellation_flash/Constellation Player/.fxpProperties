@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="48475b72-80b1-4f4a-a852-d28e2c48d4d9" projectUUID="48475b72-80b1-4f4a-a852-d28e2c48d4d9" pureCatalystProject="false" sdkVersion="4.5.1" uuid="ef51a83b-6457-4086-90df-a8ea8ae41df5" version="15">
+  <projects/>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="ef51a83b-6457-4086-90df-a8ea8ae41df5"/>
+    <linked location="/libs" path="/libs" position="1" uuid="9006cdb4-ee55-4037-9a0c-f8e300d1c7e7"/>
+    <linked location="E:/_projects/constellation/constellationSVN/constellation_flash/Constellation Player/libs/CASA Lib 1.4.0/CasaLib_1.4.0.swc" path="/libs/CASA Lib 1.4.0/CasaLib_1.4.0.swc" position="2" uuid="ef51a83b-6457-4086-90df-a8ea8ae41df5"/>
+  </swc>
+  <misc/>
+  <theme/>
+  <mxmlFormattingPrefs groupAttributesByState="true" maxLineWidth="100" mxmlAlignAttributes="true" mxmlAttributeOrder="id,userLabel,includeIn,excludeFrom,visible,x,y,z,left,right,top,bottom,width,height,minWidth,minHeight,maxWidth,maxHeight,label" mxmlKeepAttributeValuesOrganized="true"/>
+</fxpProperties>

@@ -1,0 +1,105 @@
+wireless
+basement	documentary
+APMNDevice	hM67F/c\OZ
+
+mysql
+root		1hsvy5qb
+
+Fedora login
+AndyMadsen	1hsvy5qb (keychain: andymadsen)
+root		constellation2010
+
+subversion
+sites.google.com/a/constellation.tv/backup
+
+Amazon AWS
+http://aws.amazon.com/
+constellation@constellation.tv
+constellation2010
+
+jlawler@constellation.tv
+bigdipper
+
+Windows Instance:
+User: Administrator
+Pass: con2010
+
+Godaddy
+user: reidcarolin
+pass: Constellation@2011
+
+Bit.ly
+user: consetllation2010
+pass: constellation2010
+
+stage.constellation.tv
+amadsen:1hsvy5qb
+jlawler:portland
+rcarolin@constellation.tv:PCV46ha
+Designer:Gkb43ty
+
+control.akamai.com/EdgeAuth/login.jsp
+user: amadsen@constellation.tv
+pass: con2010
+
+FTP for RTMP:
+constell.upload.akamai.com
+user: consti
+pass: con2010
+    
+SSH:
+sshacs@constell.upload.akamai.com:/113554
+
+FTP for HD:
+ctvhd.upload.akamai.com
+user: conste
+pass: con2011
+
+
+OLD SERVER:
+s1.consetllation.tv
+184.73.251.6
+208.68.139.89
+
+Paypal
+user: jlawler@constellation.tv
+pass: starpower2011
+
+Paypal Dev Environment
+user: amadsen@constellation.tv
+pass: rjr457#2
+
+Fake Seller
+User: sell_1294515484_biz@constellation.tv
+Pass: 294515317
+
+Fake Buyer
+User: buyer_1294699637_per@constellation.tv
+Pass: 294699587
+
+Fake WPP:
+User: amadsen@gmail.com
+CC: 4373116335773086
+EXP: 01/2020
+
+Fake WPP:
+User: test1@constellation.tv
+CC: 4646808641270978
+EXP: 09/2016
+
+AHMED:
+root: mohamahm
+
+ZoneEdit:
+user: j00lawler
+pass: starpower2011
+
+OVGuide:
+user: constellation
+pass: constellation2011
+
+LiveMatrix:
+user: ConstellationTV
+pass: constellation2011
+
+

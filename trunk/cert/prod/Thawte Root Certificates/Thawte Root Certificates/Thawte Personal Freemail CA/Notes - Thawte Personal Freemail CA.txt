@@ -1,0 +1,2 @@
+
+The Thawte Personal Freemail CA is used as the Root CA for S/MIME certificates.  It issues the Thawte Personal Freemail Issuing CA.

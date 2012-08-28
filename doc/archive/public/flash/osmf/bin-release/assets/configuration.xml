@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--For use with OSMF Custom Player Sample-->
+<config>
+
+	<url>rtmp://llnwqa.fcod.llnwd.net/a1218/o18/lexsamplecontent/llnwsplashflv.flv</url>
+	<llnwStreamType>Streaming</llnwStreamType>
+	
+	<streamType>recorded</streamType>
+	<loop>true</loop>
+	<autoPlay>true</autoPlay>
+	<playButtonOverlay>true</playButtonOverlay>
+	<scaleMode>letterbox</scaleMode>
+	<controlBarMode>floating</controlBarMode>
+	<controlBarAutoHide>true</controlBarAutoHide>
+	<backgroundColor>000000</backgroundColor>
+	<!--poster>http://mediapm.edgesuite.net/strobe/content/test/train.jpg</poster-->
+	
+	<volume>50</volume>
+	
+	<plugin>file://C:/Documents and Settings/User/My Documents/OSMF/LimelightChromePlugin/bin-release/LimelightChromePlugin.swf</plugin>
+	<plugin>file://C:/Documents and Settings/User/My Documents/OSMF/LimelightStreamingPlugin/bin-release/LimelightStreamingPlugin.swf</plugin>
+	<!--plugin>http://llnwpm.vo.llnwd.net/o35/OSMF/StreamingPlugin/1.5/LimelightStreamingPlugin.swf</plugin-->
+	<!--plugin src="file://C:/Documents and Settings/User/My Documents/OSMF/LimelightAnalyticsPlugin/bin-release/LimelightAnalyticsPlugin.swf"/-->
+	
+</config>

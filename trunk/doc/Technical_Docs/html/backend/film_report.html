@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+			<h2>Constellation - Administrative Console</h2>
+
+		</div>
+		
+<ul id="navigation">
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/credit.html">Credit Tracking</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+				<div id="sidebar">
+	<div class="menu">
+
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/film.html">List Films</a></div>
+					<div class="item-no-border"><a href="/backend/filmManagement/edit">Add Film</a></div>
+						</div>
+	<div class="logout">
+		<a href="/backend/auth/logout">
+			Logout
+		</a>
+
+	</div>
+</div><div id="main">
+<div class="profile-basic-info" style="overflow: hidden;">
+	<div class="title">
+		<h2>Report data for "Earth Made of Glass" movie</h2>
+	</div>
+	
+	<div id="report-select">
+		<form id="select-week-form" action="" method="post">
+			<label>Select week: </label>
+
+			<select id="select-week" name="week">
+				<option value="1">Week 1 ( 2010/08/01 - 2010/08/07 )</option><option value="2">Week 2 ( 2010/08/08 - 2010/08/14 )</option><option value="3">Week 3 ( 2010/08/15 - 2010/08/21 )</option><option value="4">Week 4 ( 2010/08/22 - 2010/08/28 )</option><option value="5">Week 5 ( 2010/08/29 - 2010/09/04 )</option><option value="6">Week 6 ( 2010/09/05 - 2010/09/11 )</option><option value="7">Week 7 ( 2010/09/12 - 2010/09/18 )</option><option value="8">Week 8 ( 2010/09/19 - 2010/09/25 )</option><option value="9">Week 9 ( 2010/09/26 - 2010/10/02 )</option><option value="10">Week 10 ( 2010/10/03 - 2010/10/09 )</option><option value="11">Week 11 ( 2010/10/10 - 2010/10/16 )</option><option value="12">Week 12 ( 2010/10/17 - 2010/10/23 )</option><option value="13">Week 13 ( 2010/10/24 - 2010/10/30 )</option><option value="14">Week 14 ( 2010/10/31 - 2010/11/06 )</option><option value="15">Week 15 ( 2010/11/07 - 2010/11/13 )</option><option value="16">Week 16 ( 2010/11/14 - 2010/11/20 )</option><option value="17">Week 17 ( 2010/11/21 - 2010/11/27 )</option><option value="18">Week 18 ( 2010/11/28 - 2010/12/04 )</option><option value="19">Week 19 ( 2010/12/05 - 2010/12/11 )</option>			</select>
+
+			
+			<input type="submit" value="View Report Data">
+		</form>
+	</div>
+	
+	<div id="report-content">
+		<div class="formfield row"><label>No. Tickets Sold:</label><b>0</b></div>
+		<div class="formfield row"><label>No. VIP-Hosted Screenings:</label><b>0</b></div>
+		<div class="formfield row"><label>No. of Screenings:</label><b>0</b></div>
+
+		<div class="formfield row"><label>Total Viewers:</label><b>0</b></div>
+		<div class="formfield row"><label>Average Attendance:</label><b>0</b></div>
+		<div class="formfield row"><label>No. Recommendation Emails:</label><b>0</b></div>
+		<div class="formfield row"><label>No. User Invitees:</label><b>0</b></div>
+		<div class="formfield row"><label>Total Revenue:</label><b>$0</b></div>
+
+		<div class="export-xls-links">
+			<a id="export-weekly-xls" class="export-xls" href="http://www.constellation.tv/backend/filmManagement/xlsReport?filmId=2&week=1">Export weekly data as Excel</a>
+			<a id="export-all-xls" class="export-xls" href="http://www.constellation.tv/backend/filmManagement/xlsReport?filmId=2&week=1&all=true">Export all data as Excel</a>
+		</div>
+	</div>
+	
+</div>
+</div>			</div>
+			<!-- end CONTENT -->
+
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>

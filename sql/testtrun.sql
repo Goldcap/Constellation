@@ -1,0 +1,15 @@
+delete from user where user_id not in (124,4069,4070);
+delete from screening where screening_id != 8100;
+truncate table audience;
+truncate table payment;
+truncate table user_session;
+truncate table wtvr_message;
+truncate table wtvr_message_address;
+truncate table wtvr_message_queue_global;
+truncate table wtvr_message_queue_local;
+truncate table wtvr_message_recipient;
+truncate table wtvr_message_view;
+truncate table chat_instance;
+truncate table chat_usage;
+truncate table log_akamailog;
+truncate table log_flashlog;

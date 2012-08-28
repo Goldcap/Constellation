@@ -1,0 +1,6 @@
+template: blank
+layout: default
+title: Constellation.tv | Fowarding to your Event
+widgets:
+  page:
+    ForwardTheater:

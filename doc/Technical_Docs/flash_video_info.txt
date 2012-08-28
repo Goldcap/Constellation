@@ -1,0 +1,5 @@
+http://www.adobe.com/devnet/flash/articles/webcam_motion.html
+
+http://blog.728media.com/2009/02/24/actionscript-3-webcam-configure/
+
+http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/net/NetStream.html#includeExamplesSummary

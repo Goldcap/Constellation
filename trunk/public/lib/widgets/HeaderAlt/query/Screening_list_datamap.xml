@@ -1,0 +1,18 @@
+<map table="film" result="screening" allow_add="false">
+  <column column="audience_id" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <solr></solr>
+  <criterion distinct="true">
+    <criteria scope="PROCESS" value="startdate" column="audience_screening_end_time" constant="native" type="AND" />
+    <criteria scope="SESSION" value="user_id" column="audience_user_id" type="AND" />
+		<criteria value="2" column="audience_paid_status" />
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <ascorderby column="audience_screening_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

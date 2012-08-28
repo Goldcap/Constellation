@@ -1,0 +1,371 @@
+/* =============================================================================
+   Base class helpers
+   ========================================================================== */
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.left {float: left;}
+.right {float: right;}
+.clear {clear: both;}
+.center {text-align:center;}
+.uppercase {text-transform: uppercase;}
+strong {font-weight: bold;}
+.hide {display: none;}
+
+/* =============================================================================
+   Common
+   ========================================================================== */
+
+
+body {
+    background: #222;
+    color: #000;
+    font: 14px/17px "helveticaneue", Helvetica, sans-serif;
+}
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+#header {
+  height:  68px;
+  zoom:1;
+  border-bottom: solid 1px #222;
+  background: #000;
+  position: relative;
+  z-index:2;
+}
+.headline {
+    height: 68px;
+    width: 940px;
+    margin: 0px auto;
+}
+.header-nav {
+  float: left;
+  margin: 16px 10px 0;
+
+}
+.header-nav li {
+  float: left;
+  margin: 0 6px;
+}
+.header-nav-fb {padding-top: 8px;}
+.header-user {
+  float: right;
+  width: 240px;
+  margin-top: 18px;
+  color: #fff;
+  background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/header_arrow.png") 100% 17px no-repeat;
+  cursor: pointer;
+}
+.header-user-avatar {
+  float: left;
+  height: 32px;
+  width: 32px;
+}
+.header-user-info {
+  padding-right: 16px;
+  margin-left: 40px;
+}
+.header-user-info-username {
+  line-height: 20px;
+}
+.header-user-info-timezone {
+  font-style: italic;
+  color: #aaa;
+  font-size: 12px;
+}
+.header-user-nav {
+  height: 0;
+  width: 240px;
+  overflow: hidden;
+  background: #000;
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 69px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+
+}
+
+.header-user-nav li a {
+  color: #fff;
+  padding: 6px 10px;
+  line-height: 20px;
+  display: block;
+  border-top: solid 1px #333;
+  border-bottom: solid 1px #000;
+    -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+      -ms-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-property: background, -webkit-box-shadow;
+     -moz-transition-property: background, -moz-box-shadow;
+      -ms-transition-property: background, -ms-box-shadow;
+       -o-transition-property: background, -o-box-shadow;
+          transition-property: background, box-shadow;  
+}
+.header-user-nav li a:hover {
+  background: #222;
+  color: #eee;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,.2);
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.logo_alt a {
+    background: url("../images/bg/logo-constellation.png") no-repeat scroll left top transparent;
+    color: #8C8C8C !important;
+    float: left;
+    font-size: 20px;
+    height: 75px;
+    text-indent: 150px;
+    width: 205px;
+    margin-left: 0;
+     padding-top: 0;
+}
+
+.header-login-wrap {margin: 14px 0 0 ; color: #fff;}
+.header-login-wrap .button { vertical-align: middle;}
+.header-login-wrap .or {
+   vertical-align: middle;
+   display: inline-block;
+   margin: 0 8px;
+}
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+#content {
+    background: #eaeff6 url(../images/blue-noise.png) 0 0 repeat;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;*/
+    position: relative;
+    /*z-index:2;*/
+    zoom:1;
+    z-index: 1;
+}
+
+
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+#footer {
+    /*background: url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg/footer-bg.png") 0 0 repeat-x;*/
+}
+.footer-newsletter {
+
+}
+.footer-newsletter input[type=email] {
+  border: solid 1px #e0e0e0;
+  border-top-color: #d0d0d0;
+  border-bottom-color: #e5e5e5;
+  border-radius: 5px;
+  width: 160px;
+  font-size: 14px;
+  padding: 8px 10px!important;
+  background: #f4f4f4;
+          zoom:1;
+    -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+      -ms-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-property: background, -webkit-box-shadow;
+     -moz-transition-property: background, -moz-box-shadow;
+      -ms-transition-property: background, -ms-box-shadow;
+       -o-transition-property: background, -o-box-shadow;
+          transition-property: background, box-shadow;
+
+}
+.footer-newsletter input:hover {
+  outline: 0;
+  background: #fff;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.footer-details-wrap {
+  background: #000;
+
+  border-bottom: 1px solid #333;
+}
+#footer  div.footer-details {
+  background-image: url(../images/footer-bg-logo.png);
+  background-position: 0 -10px;
+  background-repeat: no-repeat;
+  width: 840px;
+  padding: 20px 0 20px 140px;
+}
+.footer-section {
+  float: left;
+  margin-left: 40px;
+}
+.footer-section-first {
+  margin-left: 0;
+}
+
+.footer-title {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.footer-nav-list { padding-top: 9px;}
+.footer-nav-list li {
+  float: left;
+  border-left: solid 1px #fff;
+  padding: 0 10px;
+  font-size: 16px;
+}
+.footer-nav-list li.footer-nav-list-first {
+  border-left: none;
+  padding-left: 0;
+}
+
+.footer-nav-list li a {
+  color: #fff;
+}
+
+.footer-social-nav li{
+  float: left;
+  margin : 0 10px 0 0;
+}
+.footer-social-icon {
+  height: 37px;
+  width: 35px;
+  display: inline-block;
+  background: url(../images/footer-social.png) 0 0 no-repeat;
+}
+.footer-social-facebook:hover {
+  background-position: 0 -51px;
+}
+.footer-social-twitter {
+  background-position: -50px 0;
+}
+.footer-social-twitter:hover {
+  background-position: -50px -51px;
+}
+.footer-social-tumblr {
+  background-position: -100px 0;
+}
+.footer-social-tumblr:hover {
+  background-position: -100px -51px;
+}
+.footer-social-pinterest {
+  background-position: -200px 0;
+}
+.footer-social-pinterest:hover {
+  background-position: -200px -51px;
+}
+
+#footer .left{
+    /*margin: 34px 0 0 130px;*/
+}
+#footer .copy {
+    font-size: 13px;
+    margin: 10px 0;
+    color: #828282;
+}
+#footer .footer_nav {
+    margin: 10px 0;
+}
+#footer .footer_nav li {
+    color: #000;
+    display: block;
+    float: left;
+    padding: 0 8px;
+    font-size: 13px;
+    border-left: solid 1px #000;
+}
+#footer .footer_nav a {
+        color: #000;
+        font-size: 13px;
+    
+}
+#footer .footer_nav li.first {
+    border-left: none;
+    padding-left: 0;
+}
+
+.content_inner, .inner_container {
+	width: 940px;
+	margin: auto;
+}
+
+
+
+/* Icons */
+
+.icon-calendar {
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/bg/icon-calendar.png) 0 0;
+  margin-right: 10px;
+}
+.icon-ticket {
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/bg/icon-ticket.png) 0 0;
+  margin-right: 10px;
+}
+.icon-calendar-32 {
+  height: 32px;
+  width: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/bg/calendar-icon-32.png) 0 0;
+  margin: -8px 10px -8px 0;
+}
+.icon-reminder-32 {
+  height: 32px;
+  width: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/bg/reminder-icon-32.png) 0 0;
+  margin: -8px 10px -8px 0;
+}
+.icon-add-32 {
+  height: 32px;
+  width: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/bg/add-icon-32.png) 0 0;
+  margin: -8px 10px -8px 0;
+}
+
+.icon-twitter, .icon-facebook {
+  height: 32px;
+  width: 36px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -8px 10px -8px 0;
+
+  background-image: url(../images/login-social-sprite.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;*/
+}
+.icon-twitter {
+    background-position: 0 -100px;
+}
+.icon-pinterest {
+  height: 32px;
+  width: 36px; 
+  display: inline-block;
+  vertical-align: middle;
+  margin: -8px 10px -8px 0;
+  background-image: url(http://passets-ec.pinterest.com/images/about/buttons/big-p-button.png);
+  background-position: 32 36;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+}
+

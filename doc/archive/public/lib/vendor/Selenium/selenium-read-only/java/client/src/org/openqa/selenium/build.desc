@@ -1,0 +1,143 @@
+
+java_library(name = "selenium",
+  deps = [
+    ":webdriver-api",
+    "//java/client/src/com/thoughtworks/selenium:api",
+    "//java/client/src/org/openqa/selenium/browserlaunchers",
+    "//java/client/src/org/openqa/selenium/interactions",
+    "//java/client/src/org/openqa/selenium/net",
+  ])
+
+java_library(name = "base",
+  srcs = [
+    "Capabilities.java",
+    "Platform.java",
+    "WebDriverException.java",
+    "internal/BuildInfo.java",
+  ])
+
+java_library(name = "webdriver-api",
+  srcs = [
+    "Alert.java",
+    "Beta.java",
+    "By.java",
+    "Cookie.java",
+    "Dimension.java",
+    "ElementNotVisibleException.java",
+    "HasCapabilities.java",
+    "HasInputDevices.java",
+    "HasTouchScreen.java",
+    "IllegalLocatorException.java",
+    "ImeActivationFailedException.java",
+    "ImeNotAvailableException.java",
+    "InvalidCookieDomainException.java",
+    "InvalidElementStateException.java",
+    "InvalidSelectorException.java",
+    "JavascriptExecutor.java",
+    "Keyboard.java",
+    "Keys.java",
+    "Mouse.java",
+    "NoAlertPresentException.java",
+    "NoSuchElementException.java",
+    "NoSuchFrameException.java",
+    "NoSuchWindowException.java",
+    "NotFoundException.java",
+    "OutputType.java",
+    "Point.java",
+    "Proxy.java",
+    "Rotatable.java",
+    "ScreenOrientation.java",
+    "SearchContext.java",
+    "StaleElementReferenceException.java",
+    "TakesScreenshot.java",
+    "TimeoutException.java",
+    "TouchScreen.java",
+    "UnableToSetCookieException.java",
+    "UnhandledAlertException.java",
+    "UnsupportedCommandException.java",
+    "WebDriver.java",
+    "WebElement.java",
+    "XPathLookupException.java",
+    "html5/*.java",
+    "interactions/internal/Coordinates.java",
+    "interactions/InvalidCoordinatesException.java",
+    "interactions/MoveTargetOutOfBoundsException.java",
+    "internal/FindsByClassName.java",
+    "internal/FindsByCssSelector.java",
+    "internal/FindsById.java",
+    "internal/FindsByLinkText.java",
+    "internal/FindsByName.java",
+    "internal/FindsByTagName.java",
+    "internal/FindsByXPath.java",
+    "internal/Locatable.java",
+    "internal/Lock.java",
+    "internal/SocketLock.java",
+    "internal/WrapsDriver.java",
+    "internal/WrapsElement.java",
+  ],
+  deps = [
+    ":base",
+    "//java/client/src/org/openqa/selenium/interactions:api",
+    "//java/client/src/org/openqa/selenium/internal:codecs",
+  ])
+
+# TODO(simon): Break out the selenium emulation from the v1 implementation.
+java_library(name = "selenium-api",
+  srcs = [
+    "ExplodingSupplier.java",
+    "SuppliesWebDriver.java",
+    "WebDriverCommandProcessor.java",
+    "internal/seleniumemulation/**/*.java",
+  ],
+  deps = [
+    ":webdriver-api",
+    "//java/client/src/com/thoughtworks/selenium:wait",
+    "//java/client/src/org/openqa/selenium/chrome",
+    "//java/client/src/org/openqa/selenium/firefox",
+    "//java/client/src/org/openqa/selenium/ie",
+    "//java/client/src/org/openqa/selenium/htmlunit",
+    "//third_party/java/guava-libraries",
+    "//third_party/java/json",
+  ])
+
+# Circular dependency avoidance technique
+java_library(name = "webdriver-backed-selenium",
+  srcs = [
+    "WebDriverBackedSelenium.java",
+  ],
+  resources = [
+    { "internal/seleniumemulation/injectableSelenium.js" : "org/openqa/selenium/internal/seleniumemulation/injectableSelenium.js" },
+    { "internal/seleniumemulation/htmlutils.js" : "org/openqa/selenium/internal/seleniumemulation/htmlutils.js" },
+  ],
+  deps = [
+    ":selenium-api",
+    "//java/client/src/com/thoughtworks/selenium",
+    "//java/client/src/org/openqa/selenium/internal/seleniumemulation",
+  ])
+
+java_library(name = "selenium-backed-webdriver",
+  srcs = [
+    "SeleneseCommandExecutor.java",
+  ],
+  deps = [
+    "//java/client/src/org/openqa/selenium/internal/selenesedriver",
+    "//java/client/src/org/openqa/selenium/firefox",
+    "//java/client/src/org/openqa/selenium/remote",
+  ])
+
+java_library(name = "client-combined",
+  deps = [
+    "//java/client/src/com/thoughtworks/selenium:selenium",
+    "//java/client/src/org/openqa/selenium/android",
+    "//java/client/src/org/openqa/selenium/chrome",
+    "//java/client/src/org/openqa/selenium/htmlunit",
+    "//java/client/src/org/openqa/selenium/firefox",
+    "//java/client/src/org/openqa/selenium/ie",
+    "//java/client/src/org/openqa/selenium/iphone",
+    "//java/client/src/org/openqa/selenium/remote",
+    "//java/client/src/org/openqa/selenium:selenium-api",
+    "//java/client/src/org/openqa/selenium:selenium-backed-webdriver",
+    "//java/client/src/org/openqa/selenium/support",
+    "//java/client/src/org/openqa/selenium:webdriver-backed-selenium",
+    "//third_party/java/opera-driver",
+  ])

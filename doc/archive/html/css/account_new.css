@@ -1,0 +1,37 @@
+.host_form.account_form .button {
+    width: auto;
+}
+
+.account_avatar_block {
+    float: left;
+     width: 180px;
+}
+.account_avatar_block .label{
+    color: #565656;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+}
+
+
+#avatar-input {
+margin-top: 10px;
+    position: relative;
+    width: 130px;
+/*    top: ;*/
+}
+#avatar-input input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#avatar_account_name {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+}

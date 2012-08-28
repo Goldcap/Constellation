@@ -1,0 +1,214 @@
+
+	<TABLE>
+		<TR>
+			<TD align='left'>
+	<pre>array(99) {
+  ["upcoming_film_alt_name"]=>
+  string(0) ""
+  ["upcoming_date"]=>
+  string(20) "2011-11-23T01:00:00Z"
+  ["upcoming_end_time"]=>
+  string(20) "2011-11-23T02:20:00Z"
+  ["upcoming_film_name"]=>
+  string(15) "October Country"
+  ["upcoming_name"]=>
+  string(15) "October Country"
+  ["object_id"]=>
+  string(12) "upcoming6612"
+  ["upcoming_preupcoming_time"]=>
+  string(20) "2011-11-15T05:30:00Z"
+  ["upcoming_time"]=>
+  string(20) "2011-11-23T01:00:00Z"
+  ["upcoming_film_makers"]=>
+  string(31) "Michael Palmieri & Donal Mosher"
+  ["object_type"]=>
+  string(8) "upcoming"
+  ["upcoming_post_message"]=>
+  string(0) ""
+  ["upcoming_user_fb_uid"]=>
+  string(1) "0"
+  ["upcoming_film_production_company"]=>
+  string(14) "Wishbone Films"
+  ["object_name"]=>
+  string(12) "upcoming6612"
+  ["upcoming_user_t_uid"]=>
+  string(1) "0"
+  ["upcoming_paid_status"]=>
+  string(1) "1"
+  ["upcoming_film_logo"]=>
+  string(36) "fb5157c1e664e02e8f94956b1b8367e5.jpg"
+  ["upcoming_film_trailer_file"]=>
+  string(0) ""
+  ["upcoming_seats_occupied"]=>
+  string(1) "0"
+  ["upcoming_user_full_name"]=>
+  string(16) "Michael Palmieri"
+  ["upcoming_film_movie_file"]=>
+  string(0) ""
+  ["upcoming_created_at"]=>
+  string(20) "2011-11-01T20:00:08Z"
+  ["upcoming_user_fname"]=>
+  string(7) "Michael"
+  ["upcoming_film_maker_message"]=>
+  string(0) ""
+  ["upcoming_updated_at"]=>
+  string(20) "2011-11-02T16:02:29Z"
+  ["upcoming_user_lname"]=>
+  string(8) "Palmieri"
+  ["upcoming_film_ticket_price"]=>
+  string(4) "3.99"
+  ["upcoming_film_hostbyrequest_price"]=>
+  string(4) "3.99"
+  ["upcoming_user_username"]=>
+  string(16) "Michael Palmieri"
+  ["upcoming_unique_key"]=>
+  string(15) "yPeVxHKK7W2Jaxq"
+  ["upcoming_film_status"]=>
+  string(2) "-1"
+  ["upcoming_status"]=>
+  string(1) "2"
+  ["upcoming_user_email"]=>
+  string(24) "michael@constellation.tv"
+  ["upcoming_user_bio"]=>
+  string(0) ""
+  ["upcoming_type"]=>
+  string(1) "1"
+  ["upcoming_user_password"]=>
+  string(24) "aLD6TrHUgxyBhOqmAjEiRw=="
+  ["upcoming_film_featured"]=>
+  string(5) "false"
+  ["upcoming_total_seats"]=>
+  string(3) "200"
+  ["upcoming_film_created_at"]=>
+  string(20) "2011-11-01T19:16:04Z"
+  ["upcoming_film_startdate"]=>
+  string(20) "2011-11-01T04:00:00Z"
+  ["upcoming_film_enddate"]=>
+  string(20) "2011-11-29T05:00:00Z"
+  ["upcoming_constellation_image"]=>
+  string(0) ""
+  ["upcoming_user_photo_url"]=>
+  string(36) "08814b7c46bde80ba1b1826f448ee5e4.jpg"
+  ["upcoming_film_updated_at"]=>
+  string(20) "2011-11-02T17:09:21Z"
+  ["upcoming_user_image"]=>
+  string(0) ""
+  ["upcoming_film_setup_price"]=>
+  string(4) "3.99"
+  ["upcoming_guest_name"]=>
+  string(16) "Michael Palmieri"
+  ["upcoming_guest_image"]=>
+  string(0) ""
+  ["upcoming_user_created_at"]=>
+  string(20) "2011-11-02T15:48:08Z"
+  ["upcoming_film_info"]=>
+  string(370) "October Country is a beautifully filmed portrait of an American family struggling for stability while haunted by the ghosts of war, teen pregnancy, foster care and child abuse. With rarely seen intimacy, sensitivity and respect, this vibrant documentary examines the forces that unsettle the working poor and the violence that lurks beneath the surface of American life."
+  ["upcoming_film_cast"]=>
+  string(0) ""
+  ["upcoming_user_id"]=>
+  string(4) "2911"
+  ["upcoming_description"]=>
+  string(65) "Special Screening with October Country Director Michael Palmieri."
+  ["upcoming_film_running_time"]=>
+  string(5) "01:20"
+  ["upcoming_live_webcam"]=>
+  string(1) "1"
+  ["upcoming_is_admin"]=>
+  string(1) "0"
+  ["upcoming_film_total_seats"]=>
+  string(3) "200"
+  ["upcoming_program_id"]=>
+  string(1) "0"
+  ["upcoming_film_short_name"]=>
+  string(14) "octobercountry"
+  ["upcoming_highlighted"]=>
+  string(4) "true"
+  ["upcoming_featured"]=>
+  string(4) "true"
+  ["upcoming_film_synopsis"]=>
+  string(0) ""
+  ["upcoming_credit_status"]=>
+  string(1) "0"
+  ["upcoming_default_timezone"]=>
+  string(0) ""
+  ["upcoming_film_background_image"]=>
+  string(0) ""
+  ["upcoming_film_splash_image"]=>
+  string(36) "b60528ac8947269c0202168f17695709.jpg"
+  ["upcoming_film_still_image"]=>
+  string(46) "film_next_3b7dce2ca2d17de45e90d92110a43fc5.jpg"
+  ["upcoming_receipt_status"]=>
+  string(1) "0"
+  ["upcoming_film_geoblocking_enabled"]=>
+  string(5) "false"
+  ["upcoming_film_geoblocking_type"]=>
+  string(0) ""
+  ["upcoming_default_timezone_id"]=>
+  string(16) "America/New_York"
+  ["upcoming_film_short_url"]=>
+  string(0) ""
+  ["upcoming_film_review"]=>
+  string(0) ""
+  ["upcoming_video_server_hostname"]=>
+  string(0) ""
+  ["upcoming_video_server_instance_id"]=>
+  string(0) ""
+  ["upcoming_film_allow_hostbyrequest"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_large"]=>
+  string(1) "0"
+  ["upcoming_film_use_sponsor_codes"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_largest"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_small"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_low"]=>
+  string(1) "0"
+  ["upcoming_film_cdn"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_medium"]=>
+  string(1) "0"
+  ["upcoming_film_alternate_template"]=>
+  string(1) "0"
+  ["upcoming_film_bitrate_minimum"]=>
+  string(1) "0"
+  ["upcoming_film_allow_user_hosting"]=>
+  string(1) "0"
+  ["upcoming_film_share"]=>
+  string(1) "1"
+  ["upcoming_film_sponsor_id"]=>
+  string(1) "1"
+  ["upcoming_film_id"]=>
+  string(2) "79"
+  ["upcoming_film_alternate_opts"]=>
+  string(69) "a:2:{s:15:"film_show_title";i:1;s:15:"film_text_color";s:6:"99CCFF";}"
+  ["upcoming_is_private"]=>
+  string(1) "0"
+  ["upcoming_chat_moderated"]=>
+  string(1) "0"
+  ["upcoming_has_qanda"]=>
+  string(1) "1"
+  ["upcoming_still_image"]=>
+  string(36) "3b7dce2ca2d17de45e90d92110a43fc5.jpg"
+  ["upcoming_id"]=>
+  string(4) "6612"
+  ["upcoming_film_genre"]=>
+  array(1) {
+    [0]=>
+    string(11) "Documentary"
+  }
+  ["upcoming_user_access_level"]=>
+  array(1) {
+    [0]=>
+    string(6) "Member"
+  }
+  ["upcoming_audience_count"]=>
+  string(1) "1"
+  ["upcoming_in_progress"]=>
+  bool(false)
+}
+</pre>
+	</TD>
+		</TR>
+	</TABLE>

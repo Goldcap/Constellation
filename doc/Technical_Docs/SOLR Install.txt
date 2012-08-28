@@ -1,0 +1,40 @@
+**********************************************************
+**** SOLR Install
+**********************************************************
+
+1) Follow the directions here:
+http://blog.sixsigns.com/2008/06/26/update-on-installing-jre-6-on-centos/
+(Make sure to download the 6u6 NOT 6u13 JRE)
+
+2) After downloading and building the RPM's (with errors), add the "missing" files to each SPEC in the %files section, and rebuild.
+
+Then install tomcat, pretty basic:
+
+yum install tomcat5 tomcat5-webapps tomcat5-admin-webapps
+
+svn checkout http://subversion.tattoojohnny.com/solr.tattoojohnny.com
+chown tomcat:tomcat solr.tattoojohnny.com -R
+chmod 775 solr.tattoojohnny.com -R
+#Copy Conf from correct server...
+cp solr.tattoojohnny.com/docs/tomcat5/conf/solr.xml /usr/share/tomcat5/conf/Catalina/localhost
+cp solr.tattoojohnny.com/docs/apache/proxy_ajp.conf /etc/httpd/conf.d/
+
+**********************************************************
+**** Replication
+**********************************************************
+
+For Replication, enable Rsync
+http://am3n.profusehost.net/index.php?id=70
+
+Then do this:
+http://www.mail-archive.com/solr-user@lucene.apache.org/msg06387.html
+
+
+Slave Run snappuller and snapinstaller every five minutes
+Master Run snapcleaner every Day
+
+Two Day Cleanup
+/solr/bin/snapcleaner -D 2
+
+More here:
+http://wiki.apache.org/solr/CollectionDistribution

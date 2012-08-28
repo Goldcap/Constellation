@@ -1,0 +1,94 @@
+<map table="film" result="purchase" allow_add="false">
+  <column column="payment_unique_code" type="VARCHAR" size="255" key="" order="1" hidden="true"></column>
+  <column column="payment_amount" type="LONGVARCHAR" size="" key="" order="2" format="money_us"></column>
+  <column column="payment_screening_name" type="LONGVARCHAR" size="" key="" order="7" format=""></column>
+  <column column="payment_last_four" type="LONGVARCHAR" size="" key="" order="3" format="*********%04d"></column>
+  <column column="payment_order_processor" type="LONGVARCHAR" size="" key="" order="4" format="null"></column>
+  <column column="payment_date" type="LONGVARCHAR" size="" key="" order="5" format=""></column>
+  <column column="payment_status" type="LONGVARCHAR" size="None,Declined,Approved" key="" order="6" format="enum"></column>
+  <column column="screening_date" type="LONGVARCHAR" size="" key="" order="7" format=""></column>
+  <column column="screening_guest_name" type="LONGVARCHAR" size="" key="" order="8" format=""></column>
+  <column column="screening_still_image" type="LONGVARCHAR" size="" key="" order="8" format=""></column>
+  <column column="screening_id" type="LONGVARCHAR" size="" key="" order="8" format=""></column>
+  <column column="screening_unique_key" type="LONGVARCHAR" size="" key="" order="8" format=""></column>
+  <column column="screening_name" type="LONGVARCHAR" size="" key="" order="8" format=""></column>
+  <column column="film_id" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="film_name" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="film_alt_name" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="film_still_image" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="transaction_number" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="sponsor_code" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="film_logo" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="screening_user_id" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="screening_user_full_name" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="screening_user_photo_url" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="screening_user_image" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="audience_invite_code" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <column column="audience_invite_status" type="LONGVARCHAR" size="" key="" order="9" format=""></column>
+  <sql connection="propel">
+    <sqlselect>
+      <![CDATA[select payment_unique_code,
+        payment_amount,
+        fk_screening_name,
+        payment_last_four_CC_digits,
+        payment_order_processor,
+        payment_created_at,
+        payment_status,
+      	concat(screening_date,' ',screening_time),
+      	screening_guest_name,
+      	screening_still_image,
+      	screening_id,
+      	screening_unique_key,
+        screening_name,
+      	film_id,
+      	film_name,
+      	film_alt_name,
+      	film_still_image,
+      	transaction.transaction_number,
+      	sponsor_code.sponsor_code,
+      	film_logo,
+      	user_id,
+				user_full_name,
+      	user_photo_url,
+      	user_image,
+      	audience.audience_invite_code,
+      	audience.audience_status
+        from payment 
+        inner join screening
+        on fk_screening_id = screening.screening_id
+      	left join audience
+        on fk_audience_id = audience.audience_id
+      	inner join film
+      	on screening.fk_film_id = film_id
+      	left join transaction
+      	on transaction.fk_payment_id = payment.payment_id
+      	left join sponsor_code
+      	on payment.fk_user_id = sponsor_code.fk_user_id
+      	and screening.screening_id = sponsor_code.fk_screening_id
+      	left join user
+      	on user.user_id = screening.fk_host_id
+        where payment.fk_user_id = ?
+        and payment_status > 0
+      ]]>
+    </sqlselect>
+  </sql>
+  <criterion limit="0" distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="screening_date" type="AND" />
+    <criteria scope="PROCESS" value="startdate" column="screening_date" constant="native" type="AND" />-->
+    <criteria scope="SESSION" value="user_id" />
+    <!--<criteria value="true" column="screening_film_featured"/>-->
+    <descorderby column="payment_created_at"></descorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <!--<maplinks>
+    <maplink column="Amount">
+      <attribute name="payment_unique_code"></attribute>
+    </maplink>
+  </maplinks>-->
+</map>

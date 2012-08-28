@@ -1,0 +1,23 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type: assertElementPresent,locator: link=Log In,value: Login Button Accessible}
+ - {type:click,locator: link=Log In}
+ - {type: assertElementPresent,locator: id=login_email,value: Login Email Accessible}
+ - {type: focus,locator: id=login_email}
+ - {type: type,locator: id=login_email,value: $::VISITOR_LOGIN}
+ - {type: assertElementPresent,locator: id=login_email,value: Login Password Accessible}
+ - {type: focus,locator: id=login_password}
+ - {type: type,locator: id=login_password,value: $::VISITOR_PASSWORD}
+ - {type: assertElementPresent,locator: id=login-button,value: Login Button Accessible}
+ - {type: clickAndWait,locator: id=login-button}
+ - {type: assertElementPresent,locator: id=loggedUser,value: Asserting Login Successful}
+ - {type: assertElementPresent,locator: id=timezone-select,value: Time Zone Change Link Accessible}
+ - {type:click,locator: id="timezone-select"}
+ - {type: assertElementPresent,locator: id=tzSelectorPop,value: Time Zone Popup Accessible}
+ - {type:click,locator: id="tzSelectorPop"}
+ - {type: assertElementPresent,locator: id=timezone-select,value: Time Zone Drop Down Accessible}
+ - {type:select,locator: label="Sao Paulo"}
+ - {type:clickAndWait,locator: id="timezone-button"}
+ - {type:assertTextPresent,locator: CLST}

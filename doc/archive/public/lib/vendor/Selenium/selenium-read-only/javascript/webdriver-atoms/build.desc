@@ -1,0 +1,237 @@
+
+js_binary(name = "webdriver-atoms",
+  deps = [
+    ":deps"
+  ])
+
+js_deps(name = "deps",
+  srcs = [
+    "*.js",
+    "html5/*.js",
+  ],
+  deps = "//javascript/atoms:deps")
+
+js_test(name = "test",
+  srcs = [
+    "test/*_test.html",
+    "html5/test/*_test.html",
+  ],
+  path = "/javascript/webdriver-atoms/test",
+  deps = [
+    ":deps",
+    "//java/client/test/org/openqa/selenium/javascript",
+    "//java/server/test/org/openqa/selenium:server-with-tests:uber",
+  ])
+
+js_test(name = "test_chrome",
+  srcs = [ "test/*_test.html" ],
+  path = "/javascript/webdriver-atoms/test",
+  sysproperties = [
+    { "selenium.browser" : "org.openqa.selenium.chrome.ChromeDriver" },
+  ],
+  deps = [
+    ":deps",
+    "//java/client/src/org/openqa/selenium/chrome",
+    "//java/client/test/org/openqa/selenium/javascript",
+  ])
+
+
+js_fragment(name = "clear",
+  module = "bot.action",
+  function = "bot.action.clear",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "click",
+  module = "bot.action",
+  function = "bot.action.click",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "execute_script",
+  module = "bot.inject",
+  function = "bot.inject.executeScript",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "execute_async_script",
+  module = "bot.inject",
+  function = "bot.inject.executeAsyncScript",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "find_element",
+  module = "bot.locators",
+  function = "bot.locators.findElement",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "find_elements",
+  module = "bot.locators",
+  function = "bot.locators.findElements",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_attribute",
+  module = "webdriver.element",
+  function = "webdriver.element.getAttribute",
+  deps = [ ":deps" ])
+
+js_fragment(name = "get_effective_style",
+  module = "bot.dom",
+  function = "bot.dom.getEffectiveStyle",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_location",
+  module = "goog.style",
+  function = "goog.style.getPageOffset",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_in_view_location",
+  module = "bot.dom",
+  function = "bot.dom.getInViewLocation",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_location_in_view",
+  module = "bot.dom",
+  function = "bot.dom.getLocationInView",
+  deps = [ "//javascript/atoms:deps" ])
+
+# TODO(simon): I'm not convinced this is right
+js_fragment(name = "get_size",
+  module = "goog.style",
+  function = "goog.style.getSize",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_text",
+  module = "webdriver.element",
+  function = "webdriver.element.getText",
+  deps = [ ":deps" ])
+
+js_fragment(name = "is_displayed",
+  module = "bot.dom",
+  function = "bot.dom.isShown",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "is_enabled",
+  module = "bot.dom",
+  function = "bot.dom.isEnabled",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "is_selected",
+  module = "webdriver.element",
+  function = "webdriver.element.isSelected",
+  deps = [ ":deps" ])
+
+js_fragment(name = "set_selected",
+  module = "bot.action",
+  function = "bot.action.setSelected",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "submit",
+  module = "bot.action",
+  function = "bot.action.submit",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "toggle",
+  module = "bot.action",
+  function = "bot.action.toggle",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "type",
+  module = "bot.action",
+  function = "bot.action.type",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_frame_index",
+  module = "bot.frame",
+  function = "bot.frame.getFrameIndex",
+  deps = [ "//javascript/atoms:deps" ])
+
+# TODO(simon): Consider pulling in the cookie functions from closure
+
+# HTML5 atoms
+
+js_fragment(name = "is_online",
+  module = "bot.connection",
+  function = "bot.connection.isOnline",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_current_position",
+  module = "bot.geolocation",
+  function = "bot.geolocation.getCurrentPosition",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "execute_sql",
+  module = "bot.storage.database",
+  function = "bot.storage.database.executeSql",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "set_local_storage_item",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.setItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_local_storage_item",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.getItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_local_storage_keys",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.keySet",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "remove_local_storage_item",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.removeItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "clear_local_storage",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.clear",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_local_storage_size",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.size",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_local_storage_key",
+  module = "webdriver.storage.local",
+  function = "webdriver.storage.local.key",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "set_session_storage_item",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.setItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_session_storage_item",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.getItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_session_storage_keys",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.keySet",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "remove_session_storage_item",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.removeItem",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "clear_session_storage",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.clear",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_session_storage_size",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.size",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_session_storage_key",
+  module = "webdriver.storage.session",
+  function = "webdriver.storage.session.key",
+  deps = [ "//javascript/atoms:deps" ])
+
+js_fragment(name = "get_appcache_status",
+  module = "bot.appcache",
+  function = "bot.appcache.getStatus",
+  deps = [ "//javascript/atoms:deps" ])

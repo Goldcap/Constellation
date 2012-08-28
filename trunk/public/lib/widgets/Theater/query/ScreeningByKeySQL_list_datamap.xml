@@ -1,0 +1,53 @@
+<map table="screening" result="film_list_datamap">
+  <column column="screening_date" type="DATE" size="" key="" order="1" />
+  <column column="screening_time" type="TIME" size="" key="" order="2" />
+  <column column="screening_end_time" type="DATE" size="" key="" order="1" format="dateW3XMLIN" />
+  <column column="screening_paid_status" type="TINYINT" size="1" key="" order="4"  format="%0d" />
+  <column column="screening_unique_key" type="VARCHAR" size="15" key="" order="8" />
+  <column column="screening_id" type="INTEGER" size="11" key="PRI" order="28" format="%0d" />
+  <join foreigntable="film" local="fk_film_id" foreign="film_id" left="false">
+    <foreigncolumn column="film_name" name="screening_film_name" type="VARCHAR" size="255" key="" order="1"></foreigncolumn>
+    <foreigncolumn column="film_makers" name="screening_film_makers" type="LONGVARCHAR" size="" key="" order="2"></foreigncolumn>
+    <foreigncolumn column="film_production_company" name="screening_film_production_company" type="LONGVARCHAR" size="" key="" order="3"></foreigncolumn>
+    <foreigncolumn column="film_logo" name="screening_film_logo" type="VARCHAR" size="255" key="" order="4"></foreigncolumn>
+    <foreigncolumn column="film_trailer_file" name="screening_film_trailer_file" type="VARCHAR" size="255" key="" order="5"></foreigncolumn>
+    <foreigncolumn column="film_movie_file" name="screening_film_movie_file" type="VARCHAR" size="255" key="" order="6"></foreigncolumn>
+    <foreigncolumn column="film_maker_message" name="screening_film_maker_message" type="LONGVARCHAR" size="" key="" order="7"></foreigncolumn>
+    <foreigncolumn column="film_ticket_price" name="screening_film_ticket_price" type="FLOAT" size="10" key="" order="8" format="%.02f"></foreigncolumn>
+    <foreigncolumn column="film_status" name="screening_film_status" type="TINYINT" size="4" key="" order="9" format="%0d"></foreigncolumn>
+    <foreigncolumn column="film_featured" name="screening_film_featured" type="TINYINT" size="4" key="" order="10" format="bool"></foreigncolumn>
+    <foreigncolumn column="film_created_at" name="screening_film_created_at" type="TIMESTAMP" size="" key="" order="11" util="item::dateW3XMLIN"></foreigncolumn>
+    <foreigncolumn column="film_updated_at" name="screening_film_updated_at" type="TIMESTAMP" size="" key="" order="12" util="item::dateW3XMLIN"></foreigncolumn>
+    <foreigncolumn column="film_setup_price" name="screening_film_setup_price" type="FLOAT" size="10" key="" order="13" format="%.02f"></foreigncolumn>
+    <foreigncolumn column="film_info" name="screening_film_info" type="LONGVARCHAR" size="" key="" order="14"></foreigncolumn>
+    <foreigncolumn column="film_cast" name="screening_film_cast" type="LONGVARCHAR" size="" key="" order="15"></foreigncolumn>
+    <foreigncolumn column="film_running_time" name="screening_film_running_time" type="VARCHAR" size="255" key="" order="16"></foreigncolumn>
+    <foreigncolumn column="film_total_seats" name="screening_film_total_seats" type="INTEGER" size="11" key="" order="17" format="%0d"></foreigncolumn>
+    <foreigncolumn column="film_short_name" name="screening_film_short_name" type="VARCHAR" size="255" key="" order="18"></foreigncolumn>
+    <foreigncolumn column="film_synopsis" name="screening_film_synopsis" type="VARCHAR" size="255" key="" order="19"></foreigncolumn>
+    <foreigncolumn column="film_still_image" name="screening_film_still_image" type="VARCHAR" size="255" key="" order="20"></foreigncolumn>
+    <foreigncolumn column="film_geoblocking_enabled" name="screening_film_geoblocking_enabled" type="TINYINT" size="1" key="" order="21" format="bool"></foreigncolumn>
+    <foreigncolumn column="film_geoblocking_type" name="screening_film_geoblocking_type" type="TINYINT" size="1" key="" order="22"></foreigncolumn>
+    <foreigncolumn column="film_short_url" name="screening_film_short_url" type="VARCHAR" size="255" key="" order="23"></foreigncolumn>
+    <foreigncolumn column="film_review" name="screening_film_review" type="VARCHAR" size="255" key="" order="23"></foreigncolumn>
+    <foreigncolumn column="film_startdate" name="screening_film_startdate" type="TIMESTAMP" size="" key="" order="11" format="dateW3XMLIN"></foreigncolumn>
+    <foreigncolumn column="film_enddate" name="screening_film_enddate" type="TIMESTAMP" size="" key="" order="11" format="dateW3XMLIN"></foreigncolumn>
+    <foreigncolumn column="fk_film_sponsor_id" name="screening_film_sponsor_id" type="INTEGER" size="11" order="24" format="%0d"></foreigncolumn>
+    <foreigncolumn column="film_id" name="screening_film_id" type="INTEGER" size="11" key="PRI" order="24" format="%0d"></foreigncolumn>
+  </join>
+  <join localtable="screening" local="fk_host_id" foreigntable="user" foreign="user_id" left="true">
+    <foreigncolumn column="user_id" name="screening_user_id" type="INTEGER" size="" key="PRI" order="15" format="%0d" />
+  </join>
+  
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="screening_unique_key" column="screening_unique_key" />
+    <ascorderby column="screening_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="20"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

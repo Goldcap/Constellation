@@ -1,0 +1,14 @@
+[36mREADING CONFIGURATION default[37m
+[32mSITE_URL DEFINED AS http://dev.constellation.tv/[37m
+[32mHOST_LOGIN DEFINED AS amadsen@gmail.com[37m
+[32mHOST_PASSWORD DEFINED AS console072[37m
+[32mVISITOR_LOGIN DEFINED AS amadsen@operislabs.com[37m
+[32mVISITOR_PASSWORD DEFINED AS rjr457#2[37m
+PHPUnit 3.5.14 by Sebastian Bergmann.
+
+[32mTest Succeeded[37m
+[36mCount Notices: 0[37m
+[33mCount Success: 0[37m
+[31mCount Errors: 0[37m
+[35m"Method"|"Label"|"Message"|"Status"[37m
+[36mLog output saved to /var/www/html/sites/dev.constellation.tv/public/log/0.0.a/201111072052301945/_1320682852.csv[37m

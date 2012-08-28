@@ -1,0 +1,28 @@
+<map table="pre_user" result="Preregistration">
+  <formwrapper>preuser</formwrapper>
+  <column column="pre_user_id" name="checkbox" type="INTEGER" size="11" key="PRI" order="1"></column>
+  <column column="pre_user_email" name="Email" type="VARCHAR" size="255" key="" order="2" format="null"></column>
+  <column column="pre_user_date_added" name="Date" type="TIMESTAMP" size="" key="" order="3" format="datetime" ></column>
+  <column column="pre_user_status" name="Status" type="TINYINT" size="4" key="" order="4"></column>
+  <column column="pre_user_id" type="INTEGER" size="11" key="PRI" order="5" hidden="true"></column>
+  <column column="pre_user_code" name="Code" type="VARCHAR" size="20" key="" order="6" format="null"></column>
+  <column column="pre_user_code" name="Send" type="VARCHAR" size="20" key="" order="7" format="Send Email"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="pre_user_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="50"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Email" base="/preuser/detail/">
+      <attribute name="pre_user_id"></attribute>
+    </maplink>
+    <maplink column="Send" base="/preuser/send/">
+      <attribute name="pre_user_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

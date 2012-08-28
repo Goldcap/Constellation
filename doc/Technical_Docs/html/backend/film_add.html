@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Constellation - Administrative Console" />
+    <title>Constellation - Administrative Console</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/backend/main.css" />
+
+    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript" src="/js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/js/backend/filmEdit.js"></script>
+  	  </head>
+  <body>
+    <div id="page">
+    	<div id="header">
+
+			<a href="/backend/">
+				<img alt="" class="logo" src="/images/logo.png"/>
+			</a>
+			<p class="account">
+										Welcome  (Admin)
+						<a href="/backend/auth/logout" class="border-left">Logout</a>
+							</p>
+		</div><!-- end HEADER -->
+		<div id="heading">
+
+			<h2>Constellation - Administrative Console</h2>
+		</div>
+		
+<ul id="navigation">
+				<li  class="active" >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/film.html">Film Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening.html">Screening Management</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/users.html">User Management</a>
+				<div class="hide"></div>
+
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/payment.html">Payment</a>
+
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+					<b class="rt4"></b>
+				</b>
+
+					<a href="/backend/credit.html">Credit Tracking</a>
+				<div class="hide"></div>
+			</li>
+				<li >
+				<b class="rtop">
+					<b class="rt1"></b>
+					<b class="rt2"></b>
+					<b class="rt3"></b>
+
+					<b class="rt4"></b>
+				</b>
+					<a href="/backend/screening_timing.html">Timing Statistics</a>
+				<div class="hide"></div>
+			</li>
+		
+</ul>		<!-- end NAVIGATION -->	
+		<div id="box">
+			
+		<!-- start CONTENT -->	
+			<div id="content">
+
+				<div id="sidebar">
+	<div class="menu">
+		<div class="header">Navigation:</div>
+		
+					<div class="item"><a href="/backend/film.html">List Films</a></div>
+					<div class="item-no-border"><a href="/backend/filmManagement/edit">Add Film</a></div>
+						</div>
+	<div class="logout">
+
+		<a href="/backend/auth/logout">
+			Logout
+		</a>
+	</div>
+</div><div id="main"><script type="text/javascript">
+	var configFile = '/home/constellation/project/server/web/js/tinymce/jscripts/tiny_mce/plugins/Archiv/config.php';
+</script>
+
+<div class="profile-basic-info" style="overflow: hidden;">
+	<div class="title">
+		<h2>Add/Edit a Film</h2>
+	</div>
+
+		<form action="/backend/filmManagement/update" method="POST" id="add-user-form" enctype="multipart/form-data"> 
+		<input type="hidden" name="film[id]" id="film_id" value="" />
+		<div class="formfield">
+			<label for="film[name]">Film Name:</label>
+			<input type="text" name="film[name]" id="film[name]" value="" />
+		</div>
+				<div class="formfield">
+			<label for="film[makers]">Filmmaker(s):</label>
+
+			<input type="text" name="film[makers]" id="film[makers]" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[production_company]">Production Company:</label>
+			<input type="text" name="film[production_company]" id="film[production_company]" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[total_seats]">Total Seats:</label>
+
+			<input type="text" name="film[total_seats]" id="film[total_seats]" value="100" />
+		</div>
+		<div class="formfield">
+			<label for="film[logo]">Movie Poster:</label>
+						<input type="file" name="film[logo]" id="film[logo]" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[still]">Movie Still:</label>
+
+						<input type="file" name="film[still]" id="film_logo_still" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[trailer_file]">Movie Trailer:</label>
+						<input type="file" name="film[trailer_file]" id="film[trailer_file]" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[movie_file]">Movie File:</label>
+
+						<input type="file" name="film[movie_file]" id="film[movie_file]" value="" />
+		</div>
+		<div class="formfield">
+			<label for="film[film_maker_message]">Filmmaker Message:</label>
+			<textarea name="film[film_maker_message]" id="film_maker_message">
+				 
+			</textarea>
+		</div>
+		<div class="formfield">
+			<label for="film[info]">Film Info:</label>
+
+			<textarea name="film[info]" id="film_info"></textarea>
+		</div>
+		<div class="formfield">
+			<label for="film[synopsis]">Film Synopsis: <br /><i id="characters-left">140 Characters Left</i></label>
+			<textarea name="film[synopsis]" id="film_synopsis"></textarea><br/ >
+			
+		</div>
+				<div id="director-holder">
+
+									<input type="hidden" value="0" id="directors_count" />
+		</div>
+		<a id="add_new_director" class="link" href="javascript:void(0);">[+]Add Director</a>
+		<div id="writer-holder">
+										<input type="hidden" value="0" id="writers_count" />
+		</div>
+		<a id="add_new_writer" class="link" href="javascript:void(0);">[+]Add Writer</a>
+		<div id="producer-holder">
+
+									<input type="hidden" value="0" id="producers_count" />
+		</div>
+		<a id="add_new_producer" class="link" href="javascript:void(0);">[+]Add Producer</a>
+		<div id="starring-holder">
+								<input type="hidden" value="0" id="starring_count" />
+		</div>
+		<a id="add_new_starring" class="link" href="javascript:void(0);">[+]Add Actor</a>
+		<div id="executive_producer-holder">
+
+								<input type="hidden" value="0" id="executive_producer_count" />
+		</div>
+		<a id="add_new_executive_producer" class="link" href="javascript:void(0);">[+]Add Executive Producer</a>
+		<div id="director_of_photography-holder">
+								<input type="hidden" value="0" id="director_of_photography_count" />
+		</div>
+		<a id="add_new_director_of_photography" class="link" href="javascript:void(0);">[+]Add Director of Photography</a>
+		<div id="music-holder">
+
+								<input type="hidden" value="0" id="music_count" />
+		</div>
+		<a id="add_new_music" class="link" href="javascript:void(0);">[+]Add Music</a>
+		<div id="editor-holder">
+								<input type="hidden" value="0" id="editor_count" />
+		</div>
+		<a id="add_new_editor" class="link" href="javascript:void(0);">[+]Add Editor</a>
+		<div id="co_producer-holder">
+
+								<input type="hidden" value="0" id="co_producer_count" />
+		</div>
+		<a id="add_new_co_producer" class="link" href="javascript:void(0);">[+]Add Co-producer</a>
+		<div id="co_executive_producers-holder">
+								<input type="hidden" value="0" id="co_executive_producers_count" />
+		</div>
+		<a id="add_new_co_executive_producers" class="link" href="javascript:void(0);">[+]Add Co-Executive Producers</a>
+		<div id="associate_producer-holder">
+
+								<input type="hidden" value="0" id="associate_producer_count" />
+		</div>
+		<a id="add_new_associate_producer" class="link" href="javascript:void(0);">[+]Add Associate Producer</a>
+		<div id="supported-holder">
+								<input type="hidden" value="0" id="supported_count" />
+		</div>
+		<a id="add_new_supported" class="link" href="javascript:void(0);">[+]Add Supported</a>
+		<div class="formfield">
+
+			<label for="film[running_time]">Running Time:</label>
+			<input type="text" name="film[running_time]" id="film[running_time]" value="" />
+		</div>		
+		<div class="formfield">
+			<label for="film[ticket_price]">Ticket Price:</label>
+			<label class="dollar-sign">$</label><input type="text" class="with-dollar-sign" name="film[ticket_price]" id="film[ticket_price]" value="5.00" />
+		</div>
+		<div class="formfield">
+
+			<label for="film[setup_price]">Setup Price:</label>
+			<label class="dollar-sign">$</label><input class="with-dollar-sign" type="text" name="film[setup_price]" id="film[setup_price]" value="5.00" />
+		</div>
+		<div class="formfield">
+			<label for="film[geo_blocking]">Geo Blocking:</label>
+			<input type="text" name="film[geo_blocking]" id="film[geo_blocking]" value="" />
+		</div>
+
+		<input type="submit" value="Save" />
+	</form>
+</div>	
+<script type="text/javascript">
+updateCharsLeft = function(keyCode) {
+	var text = $('#film_synopsis').val();
+	
+	if(keyCode != -1)
+	{
+		if (typeof(text) != 'undefined') 
+		{
+			var textLen = text.length;
+			if (textLen >= 140) 
+			{
+				if ((keyCode != 8) && (keyCode != 46)) 
+				{
+					$('#characters-left').html(140-textLen + " Characters Left");
+					$('#film_synopsis').attr("readonly", true);
+				}
+				else 
+				{
+					$('#film_synopsis').removeAttr("readonly");
+					$('#characters-left').html(140-textLen + " Characters Left");
+				}
+			}
+			else 
+			{
+				$('#characters-left').html(140-textLen + " Characters Left");
+			}
+		}
+	}
+	return true;
+}
+$(document).ready(function(){
+	$('#film_synopsis').keyup(
+			
+			function(key)
+			{
+	
+				var text = $(this).val();
+				updateCharsLeft(key.keyCode);
+	
+				if ((key.keyCode != 8) && (key.keyCode != 46)) 
+				{
+					if(text.length<140)
+					{
+						return true;
+					}
+					else
+					{
+						$('#film_synopsis').val(text.substr(0, 140));
+						return false;
+					}
+				}
+				else
+				{
+					return true;
+				}
+			}
+		);
+});
+</script></div>			</div>
+			<!-- end CONTENT -->
+			
+		</div>
+	</div><!-- end BOX -->
+  </body>
+</html>
+

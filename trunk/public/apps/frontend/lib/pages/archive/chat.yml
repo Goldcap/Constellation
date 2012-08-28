@@ -1,0 +1,14 @@
+template: yui1
+layout: yui
+title: Constellation.tv Chat
+javascripts: [/js/chat.js]
+css: [/css/chat_3.css]
+ual: [1]
+widgets:
+  hd:
+    Header:
+  col02:
+    Chat:
+  ft:
+    Footer:
+  zzdiv:

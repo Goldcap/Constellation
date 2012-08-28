@@ -1,0 +1,13 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      masterhead:
+        attributes: 'class="masterhead" role="banner"'
+      sub_nav:
+        attributes: 'class="sub_nav clearfix"'
+      content:
+        attributes: 'class="content"'
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  zzdiv:

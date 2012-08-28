@@ -1,0 +1,23 @@
+yum install memcached memcached-devel
+
+cd /usr/src
+wget https://launchpad.net/libmemcached/1.0/1.0.4/+download/libmemcached-1.0.4.tar.gz
+tar -zxvf   libmemcached-1.0.4.tar.gz
+cd libmemcached-1.0.4
+./configure --prefix=/
+(on fedora, I did this: ./configure --prefix=/opt/local )
+make
+make install
+(for x86_64 cp /lib/libmemcached* /lib64)
+
+svn co svn://svn.audioscrobbler.net/misc/ketama
+cd ketama/libketama
+sed -ri "s|PREFIX=/usr/local|PREFIX=/usr|" Makefile
+make clean 
+make
+sudo make install
+
+Python Memcached
+http://pypi.python.org/pypi/pylibmc#downloads
+wget http://pypi.python.org/packages/source/p/pylibmc/pylibmc-1.2.2.tar.gz#md5=94ea743e50103fcb7792e11ca62291b0
+python setup.py install --with-libmemcached=/

@@ -1,0 +1,28 @@
+<map table="user" result="User">
+  <column column="user_username" name="Username" type="VARCHAR" size="255" key="--" order="1" format="default"></column>
+  <column column="user_full_name" name="Name" type="VARCHAR" size="255" key="--" order="2" format="default"></column>
+  <column column="user_email" name="Email" type="VARCHAR" size="255"  key="--" order="3" format="null"></column>
+  <!--<column column="user_password"  name="Password" type="VARCHAR" size="255" key="" order="5" filter="decrypt"></column>-->
+  <column column="user_created_at" type="INTEGER" size="monthtimezone" key="" order="6" format="dateformat"></column>
+  <column column="user_ual" type="INTEGER" size="" key="" order="6" hidden="true"></column>
+  <column column="user_id" type="INTEGER" size="" key="PRI" order="1" hidden="true"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <descorderby column="user_created_at"></descorderby>
+    <descorderby column="user_id"></descorderby>
+    <criteria column="object_type" value="user" />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>-->
+  </criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="100"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="Username" base="/user/detail/">
+      <attribute name="user_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

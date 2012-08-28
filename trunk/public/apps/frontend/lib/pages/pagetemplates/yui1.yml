@@ -1,0 +1,14 @@
+divs:
+  doc2:
+    attributes: 'class="yui-t7"'
+    divs:
+      hd:
+        attributes: 'role="banner"'
+      bd:
+        attributes: 'role="main"'
+        divs:
+          col02:
+            attributes: 'class="yui-g"'
+      ft:
+        attributes: 'role="contentinfo"'
+  zzdiv:

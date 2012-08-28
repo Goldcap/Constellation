@@ -1,0 +1,16 @@
+dev:
+
+Consumer key
+IopNXMQcS1Xwe0TDwOKeMw
+
+Consumer secret
+Mj4ix947ICeeIikozj5BcNMyfHbPvkiKRfgSjD1rY8
+
+Request token URL
+http://twitter.com/oauth/request_token
+
+Access token URL
+http://twitter.com/oauth/access_token
+
+Authorize URL
+http://twitter.com/oauth/authorize

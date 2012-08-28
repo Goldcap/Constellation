@@ -1,0 +1,20 @@
+<map table="program" result="Program">
+  <column column="program_name" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="program_short_name" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="program_id" type="INTEGER" size="11" key="PRI" order="22"></column>
+  <criterion limit="0" distinct="true">
+    <ascorderby column="program_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="program_short_name" base="/program/detail/">
+      <attribute name="program_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

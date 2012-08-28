@@ -1,0 +1,33 @@
+#https://calomel.org/nginx.html
+#For some interesting configuration options
+#http://bretthoerner.com/blog/2008/oct/27/using-nginx-memcached-module-django/
+
+server {
+  listen       80;
+  server_name  stage.html.constellation.tv;
+  
+  root /var/www/html/sites/stage.constellation.tv/public/html;
+  index  index.html;
+  
+  access_log  /var/log/httpd/nginx_access_log main;
+  #access_log off;
+  error_log  /var/log/httpd/nginx_error_log;
+  recursive_error_pages on;
+  
+  charset utf-8;
+  sendfile off;
+  
+  location ~ ^/([^\.].*)$ {
+    
+    if ($request_filename ~ "\.(js|htc|ico|gif|jpg|png|css|html|htm)$") {
+      break;
+    }
+    
+    rewrite ^/(.*)$ /$1.html last;
+  }
+  
+  location / {
+    
+  }
+  
+}

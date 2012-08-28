@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+/*
+ * inner.css
+ *
+ * Styles for the widget container, used by all widgets
+ */
+.hulu {
+	position:relative;
+	height:40px;
+	background:#000 url(../images/skin/hulu.png) repeat-x 0 -4px;
+}
+
+/* play/pause button */
+.hulu a.play, .hulu a.pause { 
+	position:absolute;
+	width: 46px;
+	height: 40px;
+	display:block;
+	text-indent:-2000px;
+	background:url(../images/skin/hulu.png) no-repeat 10px -61px;
+	cursor:pointer;
+	border-right:1px solid #000; 
+}
+
+.hulu a.play:hover {
+	background-position:10px -105px;	
+}
+
+
+/* pause state */
+.hulu a.pause { 
+	background-position:11px -148px;
+}
+
+.hulu a.pause:hover {
+	background-position:11px -192px;	
+}
+
+/* the timeline (or "scrubber")  */
+.hulu .track {  
+	left:47px;
+	right: 171px;
+	position:absolute;
+	cursor:pointer;
+	border-left:1px solid #999;
+	height:40px;	
+}
+
+/* the draggable playhead */
+.hulu .playhead {
+	position:absolute;
+	cursor:pointer; 
+	background-color:#4ff;
+	opacity:0.3;
+	filter: alpha(opacity=30);	
+	width:3px;
+	height:40px;
+	border-right:1px solid #444;
+}
+
+/* buffer- and progress bars. upon runtime the width of these elements grows */
+.hulu .progress,
+.hulu .buffer {	
+	position:absolute;
+	background-color:#4ff;
+	filter: alpha(opacity=10);
+	opacity:0.1;
+	width:0px;
+	height:40px;
+}
+
+.hulu .buffer {
+	background-color:#fff;
+	opacity:0.1;
+	filter: alpha(opacity=10);
+}
+
+/* time display */
+.hulu .time {
+	position:absolute;		
+	width:129px;
+	right:40px;
+	padding:12px 0;
+	text-align:center;
+	border:1px solid #999;
+	border-width:0 1px;
+	font-family:futura,"Lucida Grande","bitstream vera sans","trebuchet ms",verdana,arial;	
+	font-size:12px;
+	color:#fff; 
+}
+
+/* total duration in time display */
+.hulu .time strong {
+	font-weight:normal;
+	color:#666;
+}
+
+/* mute / unmute buttons */
+.hulu a.mute,
+.hulu a.unmute {
+	position:absolute;
+	right:0px;
+	width:40px;
+	height:40px;
+	text-align:center;
+	padding:8px 0;
+	cursor:pointer;
+	text-indent:-9999em;
+	background:url(../images/skin/hulu.png) no-repeat 5px -323px;
+}
+
+.hulu a.mute:hover {
+	background-position:5px -367px;	
+}
+
+/* unmute state */
+.hulu a.unmute {
+	background-position:5px -235px;	
+}
+
+.hulu a.unmute:hover {
+	background-position:5px -279px;	
+}

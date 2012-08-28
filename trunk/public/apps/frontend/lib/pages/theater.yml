@@ -1,0 +1,11 @@
+template: cst_theater
+layout: cst_theater_new
+title: Constellation | Social Movie Events | Theater
+javascripts: []
+css: []
+widgets:
+  content:
+    Theater:
+  zzdiv:
+    BandwidthTester:
+    GoogleAnalytics:

@@ -1,0 +1,18 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+get:
+post:
+  email: test@operislabs.com
+  password: Password
+session:
+action:
+  styroaction: method
+
+wvar:
+  =getUserSession: true

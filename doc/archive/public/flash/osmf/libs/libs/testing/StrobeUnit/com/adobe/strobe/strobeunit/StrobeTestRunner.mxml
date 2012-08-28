@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*****************************************************
+*  
+*  Copyright 2009 Adobe Systems Incorporated.  All Rights Reserved.
+*  
+*****************************************************
+*  The contents of this file are subject to the Mozilla Public License
+*  Version 1.1 (the "License"); you may not use this file except in
+*  compliance with the License. You may obtain a copy of the License at
+*  http://www.mozilla.org/MPL/
+*   
+*  Software distributed under the License is distributed on an "AS IS"
+*  basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+*  License for the specific language governing rights and limitations
+*  under the License.
+*   
+*  
+*  The Initial Developer of the Original Code is Adobe Systems Incorporated.
+*  Portions created by Adobe Systems Incorporated are Copyright (C) 2009 Adobe Systems 
+*  Incorporated. All Rights Reserved. 
+*  
+*****************************************************/
+-->
+<TestRunnerBase
+	xmlns		="flexunit.flexui.*"
+	xmlns:mx	="http://www.adobe.com/2006/mxml"
+	width		="400"
+	height		="300">
+	
+	<mx:Script>
+		<![CDATA[
+			
+			import flash.filesystem.File;
+
+			import flexunit.framework.AssertionFailedError;
+			import flexunit.framework.Test;
+			import flexunit.framework.TestCase;
+			
+			// If autoexit is true, then assume we are running from Ant.
+			public var autoexit : Boolean = false;
+			public var outputDir : File;
+			
+			private var ampErrors : int = 0;
+			private var ampFailures : int = 0;
+			private var ampTests : int = 0;
+			private var xmlResults : XML = <testsuite/>;
+			
+			/**
+			 * Set the name of this test project in the <testsuite> element.
+			 */
+			override public function startTest() : void
+			{
+				xmlResults.@name = formatClassName( test.className );
+				super.startTest();
+			}
+			
+			/**
+			 * Test complete. Create a <testcase> element.
+			 */
+			override public function onSuccess( test : Test ) : void
+			{
+				var xml : XML =
+					<testcase classname={ formatClassName( TestCase( test ).className ) } name={ TestCase( test ).methodName }/>
+				xmlResults.appendChild( xml );
+				
+				super.onSuccess( test );
+			}
+			
+			/**
+			 * Assertion failure. Increment the failure count then create a <testcase> element
+			 * with a <failure> child element.
+			 */
+			override public function onFailure(test:Test, error:AssertionFailedError):void
+			{
+				super.onFailure( test, error );
+				
+				ampFailures++;
+				var xml : XML =
+					<testcase classname={ formatClassName( TestCase( test ).className ) } name={ TestCase( test ).methodName }>
+						<failure type="AssertionFailed">
+						{ error.getStackTrace() }
+						</failure>
+					</testcase>
+				xmlResults.appendChild( xml );
+			}
+			
+			/**
+			 * Unexpected test error. Increment the error count, then create a <testcase> element
+			 * with a child <error> element.
+			 */
+			override public function onError(test:Test, error:Error):void
+			{
+				super.onError( test, error );
+				
+				ampErrors++;
+				var xml : XML =
+					<testcase classname={ formatClassName( TestCase( test ).className ) } name={ TestCase( test ).methodName }>
+						<error type="UnexpectedError">{ error.getStackTrace() }</error>
+					</testcase>
+				xmlResults.appendChild( xml );
+			}
+			
+			/**
+			 * Increment the total test count.
+			 */
+			override public function onTestEnd(test:Test):void
+			{
+				ampTests++;
+				super.onTestEnd( test );
+			}
+			/**
+			 * All tests from this test project are complete. Write the final <testsuite> XML
+			 * to a file in the build/report directory, and name it after this test project.
+			 */
+			override public function onAllTestsEnd() : void
+			{
+				if ( autoexit )
+				{
+					xmlResults.@errors = ampErrors;
+					xmlResults.@failures = ampFailures;
+					xmlResults.@tests = ampTests;
+					var outputString : String = '<?xml version="1.0" encoding="utf-8"?>\n';
+					outputString += xmlResults.toXMLString();
+					
+					var file : File = outputDir.resolvePath( getLogName() + ".xml" );
+					// formatClassName( test.className + ".xml" ) );
+					var stream : FileStream = new FileStream();
+					stream.open( file, FileMode.WRITE );
+					stream.writeUTFBytes( outputString );
+					stream.close();
+				}
+				
+				super.onAllTestsEnd();
+				
+				if ( autoexit )
+				{					
+					systemManager.stage.nativeWindow.close();
+				}
+			}
+			
+			private function getLogName():String
+			{
+				if (_logName == null || _logName.length <= 0)
+				{
+					return test.className.split( "::" )[1];
+				}
+				
+				return _logName;
+			}
+			
+			private var _logName:String;
+			
+			public function set logName(name:String):void
+			{
+				_logName = name;
+			}
+			
+			/**
+			 * Re-format to the standard notation.
+			 */
+			private function formatClassName( className : String ) : String
+			{
+				return className.replace( "::", "." );
+			}
+		]]>
+	</mx:Script>
+	
+</TestRunnerBase>

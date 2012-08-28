@@ -1,0 +1,27 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+get:
+post:
+  user_email: test@operislabs.com
+  user_email_new: test@gmail.com
+  user_email_confirm: test@gmail.com
+  user_full_name: Bob Dobbs
+  user_username: bobbiedobbs
+  user_id: =user:getUserId
+session:
+action:
+  styroaction: submit
+
+dbo:
+  user: 
+    key: user_id
+    vars:
+      getUserEmail: =post:user_email_new
+      getUserFullName: =post:user_full_name
+      getUserUsername: =post:user_username

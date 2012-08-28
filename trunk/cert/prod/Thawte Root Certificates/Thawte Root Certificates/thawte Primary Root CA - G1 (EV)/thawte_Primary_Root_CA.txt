@@ -1,0 +1,83 @@
+thawte Primary Root CA Certificate
+
+Version 3 Certificate
+
+Issuer Name:
+Country = US
+Organization = thawte, Inc.
+Organizational Unit = Certification Services Division
+Organizational Unit = (c) 2006 thawte, Inc. - For authorized use only
+Common Name = thawte Primary Root CA
+
+Subject Name:
+Country = US
+Organization = thawte, Inc.
+Organizational Unit = Certification Services Division
+Organizational Unit = (c) 2006 thawte, Inc. - For authorized use only
+Common Name = thawte Primary Root CA
+
+Validity Start: 11/17/2006 00:00:00 GMT
+Validity End: 07/16/2036 23:59:59 GMT
+
+Algorithm: SHA1 With RSA
+
+Cert Hash:
+91 c6 d6 ee 3e 8a c8 63 84 e5 48 c2 99 29 5c 75 
+6c 81 7b 81 
+
+Cert Info Hash:
+85 fe f1 1b 4f 47 fe 39 52 f9 83 01 c9 f9 89 76 
+fe fe e0 ce 
+
+Issuer Name and Serial Number Hash:
+9f 6f ab fe 31 1e 07 02 7e 3c 3f f7 33 fd 01 9d 
+9c f6 82 85 
+
+Public Key Hash:
+6c ca bd 7d b4 7e 94 a5 75 99 01 b6 a7 df d4 5d 
+1c 09 1c cc 
+
+Serial Number:
+34 4e d5 57 20 d5 ed ec 49 f4 2f ce 37 db 2b 6d 
+
+
+Public Key:
+30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 
+01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 
+00 ac a0 f0 fb 80 59 d4 9c c7 a4 cf 9d a1 59 73 
+09 10 45 0c 0d 2c 6e 68 f1 6c 5b 48 68 49 59 37 
+fc 0b 33 19 c2 77 7f cc 10 2d 95 34 1c e6 eb 4d 
+09 a7 1c d2 b8 c9 97 36 02 b7 89 d4 24 5f 06 c0 
+cc 44 94 94 8d 02 62 6f eb 5a dd 11 8d 28 9a 5c 
+84 90 10 7a 0d bd 74 66 2f 6a 38 a0 e2 d5 54 44 
+eb 1d 07 9f 07 ba 6f ee e9 fd 4e 0b 29 f5 3e 84 
+a0 01 f1 9c ab f8 1c 7e 89 a4 e8 a1 d8 71 65 0d 
+a3 51 7b ee bc d2 22 60 0d b9 5b 9d df ba fc 51 
+5b 0b af 98 b2 e9 2e e9 04 e8 62 87 de 2b c8 d7 
+4e c1 4c 64 1e dd cf 87 58 ba 4a 4f ca 68 07 1d 
+1c 9d 4a c6 d5 2f 91 cc 7c 71 72 1c c5 c0 67 eb 
+32 fd c9 92 5c 94 da 85 c0 9b bf 53 7d 2b 09 f4 
+8c 9d 91 1f 97 6a 52 cb de 09 36 a4 77 d8 7b 87 
+50 44 d5 3e 6e 29 69 fb 39 49 26 1e 09 a5 80 7b 
+40 2d eb e8 27 85 c9 fe 61 fd 7e e6 7c 97 1d d5 
+9d 02 03 01 00 01 
+
+Extensions List (3):
+
+1) Basic Constraint Extension - Critical
+   Extension Value:
+   Is CA: TRUE
+   Max Path Len: N/A
+
+
+2) Key Usage Extension - Critical
+   Extension Value:
+   Key Cert Sign
+   Key CRL Sign
+
+
+3) Subject Key Identifier Extension - Non-Critical
+   Extension Value:
+   Key Identifier:
+   7b 5b 45 cf af ce cb 7a fd 31 92 1a 6a b6 f3 46 
+   eb 57 48 50 

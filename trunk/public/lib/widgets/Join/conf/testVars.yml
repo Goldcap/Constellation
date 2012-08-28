@@ -1,0 +1,24 @@
+service:
+
+get:
+post:
+  username: testertest
+  name: Test Tester
+  email: test@gmail.com
+  password: testiepass
+  password2: testiepass
+  month: 01
+  day: 01
+  year: 2012
+session:
+action:
+
+dbo:
+  user: 
+    key: user_id
+    vars:
+      getUserUsername: =post:username
+      getUserFullName: =post:name
+      getUserEmail: =post:email
+      =getUserPassword: =post:password
+      getUserBirthdayDate: '2012-01-01'

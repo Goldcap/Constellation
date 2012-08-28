@@ -1,0 +1,22 @@
+user:
+  fname: TestPass Fname
+  lname: TestPass Lname
+  email:  testpass@operislabs.com
+  username: TestPass Username
+  password: TestPassPassword
+  birthday: '1967-09-13'
+
+get:
+  op: password
+post:
+  current_password: TestPassPassword
+  new_password: Stinky
+  new_password_confirm: Stinky
+session:
+action:
+  styroaction: submit
+
+dbo:
+  user: user_id
+  vars:
+    =getUserPassword: =post:new_password

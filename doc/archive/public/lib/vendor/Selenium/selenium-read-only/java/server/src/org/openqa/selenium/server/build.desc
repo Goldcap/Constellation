@@ -1,0 +1,67 @@
+java_library(name = "server",
+  main = "org.openqa.selenium.server.SeleniumServer",
+  deps = [
+    "//java/client/src/org/openqa/selenium:client-combined",
+    ":server_lite",
+    "//third_party/java/opera-driver",
+  ])
+
+java_library(name = "server-with-tests",
+  main = "org.openqa.selenium.server.SeleniumServer",
+  srcs = [
+    "SeleniumServer.java",
+  ],
+  resources = [
+    { "../../../../../test/org/openqa/selenium/tests" : "./" }
+  ],
+  deps = [
+    ":server"
+  ])
+
+# Light version of the server for drivers that don't need to depend on all other drivers.
+# We need at least one source file in here to make this build the JAR
+# TODO(simon): Only resources should be fine
+java_library(name = "server_lite",
+  main = "org.openqa.selenium.server.SeleniumServer",
+  srcs = [ "SeleniumServer.java", ],
+  resources = [
+    "customProfileDirCUSTFF",
+    "customProfileDirCUSTFFCHROME",
+    "hudsuckr",
+    "killableprocess",
+    "konqueror",
+    "opera",
+    "sslSupport",
+    "VERSION.txt",
+    "//javascript/jsunit",
+  ],
+  deps = [
+    ":base",
+    "//javascript/selenium-core",
+  ])
+
+java_library(name = "logging",
+  srcs = [
+    "RemoteControlConfiguration.java",
+    "SslCertificateGenerator.java",
+    "log/*.java",
+  ],
+  deps = [
+    "//java/client/src/org/openqa/selenium/remote:base",
+    "//java/server/src/org/openqa/jetty",
+  ])
+
+java_library(name = "base",
+  srcs = [
+    "**/*.java",
+  ],
+  deps = [
+    ":logging",
+    "//java/server/src/cybervillains",
+    "//java/server/src/org/openqa/selenium/remote/server",
+    "//java/client/src/org/openqa/selenium/net",
+    "//java/client/src/org/openqa/selenium/support",
+    "//java/server/src/org/openqa/jetty",
+    "//third_party/java/servlet-api"
+  ])
+

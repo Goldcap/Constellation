@@ -1,0 +1,27 @@
+<map table="selenium_test" result="selenium_test_list_datamap" allow_add="false">
+	<column column="selenium_test_name" name="Test Name" type="VARCHAR" size="255" key="" order="1"></column>
+	<column column="selenium_test_scope" name="Section" type="VARCHAR" size="255" key="" order="2"></column>
+	<column column="selenium_test_description" name="Test Description" type="LONGVARCHAR" size="" key="" order="3"></column>
+	<!--<column column="selenium_test_group" type="VARCHAR" size="255" key="" order="4"></column>-->
+	<column column="selenium_test_sleep" name="Sleep Time" type="INTEGER" size="11" key="" order="5"></column>
+	<!--<column column="selenium_test_meta" type="LONGVARCHAR" size="" key="" order="6"></column>-->
+	<column column="selenium_test_latest_result" name="Result" type="VARCHAR" size="255" key="" order="6" util="formatResult"></column>
+	<column column="selenium_test_latest_result_date" name="Date" type="VARCHAR" size="255" key="" order="7"></column>
+	<column column="selenium_test_id" type="INTEGER" size="11" key="PRI" order="7" hidden="true"></column>
+	<criterion limit="0" distinct="true">
+		<ascorderby column="selenium_test_id"></ascorderby>
+		<!-- <descorderby column="column_name" />
+		<criteria value="0" column="column_name"/>--></criterion>
+	<pagination>
+		<pagesperpage value="5"></pagesperpage>
+		<recordssperpage value="50"></recordssperpage>
+		<page value="1" var="page"></page>
+		<sort var="sort"></sort>
+	</pagination>
+	<maplinks>
+		<maplink column="Test Name" base="/test/detail/">
+			<attribute name="selenium_test_id"></attribute>
+		</maplink>
+	</maplinks>
+	<textbody><![CDATA[<a href="/test/new">Add A New Test (RSpec Format from Selenium IDE)</a>]]></textbody>
+</map>

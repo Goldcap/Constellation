@@ -1,0 +1,29 @@
+<map table="product_search_results" result="product_search_results" title="Search Results" docache="false" allow_add="false">
+  <column type="VARCHAR" name="Image" column="product_sku" order="1" />
+  <column type="VARCHAR" name="Sku" column="product_sku" order="2" />
+  <column type="VARCHAR" name="Artist" column="product_artist_fname" order="4" />
+  <column type="VARCHAR" name="Name" column="product_artist_lname" order="5" />
+  <column type="VARCHAR" name="Color" column="product_color" order="6" />
+  <column type="TINYINT" name="Download" column="product_download" order="9" format="bool" />
+  <column type="VARCHAR" column="product_image_path" order="13" hidden="true"/>
+  <column type="VARCHAR" name="Size" column="product_size" order="22" />
+  <column type="VARCHAR" name="Flat_Price" column="product_price" order="24" hidden="true" util="item::productPrice" />
+  <column type="VARCHAR" name="Price" column="product_price_category_price" order="25" util="item::productPrice" />
+  <column type="VARCHAR" name="Type" column="product_type" order="26" hidden="true" />
+  
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <descorderby column="product_rank"></descorderby>
+    <criteria value="product" column="object_type" type="AND" />
+    <criteria scope="GET" value="id" column="product_keywords" type="OR" constant="pregroup_quoted_insensitive" />
+    <criteria scope="GET" value="id" column="object_name" constant="postgroup_quoted_upper" />
+    <sortopt name="rank" value="product_rank" direction="asc" default="true" force="true"  />
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="12"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

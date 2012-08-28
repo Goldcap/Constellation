@@ -1,0 +1,8 @@
+template: cst_canvas
+layout: cst_canvas
+title: Constellation | Your Online Movie Theater
+javascripts: []
+css: []
+widgets:
+  canvas:
+    Canvas:

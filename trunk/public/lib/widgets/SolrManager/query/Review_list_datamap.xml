@@ -1,0 +1,23 @@
+<map table="screening" result="audience_list_datamap">
+  <column column="fk_film_id" type="VARCHAR" size="255" key="" order="5" />
+  <join local="screening_id" foreigntable="audience" foreign="fk_screening_id" left="false">
+    <foreigncolumn column="audience_review" type="LONGVARCHAR" size="" key="" order="8"></foreigncolumn>
+  </join>
+  <join localtable="audience" local="fk_user_id" foreigntable="user" foreign="user_id" left="false">
+    <foreigncolumn column="user_full_name" name="audience_review_user_full_name" type="VARCHAR" size="255" key="" order="5" />
+    <foreigncolumn column="user_username" name="audience_review_user_username" type="VARCHAR" size="255" key="" order="8" />
+  </join>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="film_id" column="fk_film_id"/>
+    <criteria value="null" table="audience" column="audience_review" constant="ISNOTNULL" />
+    <criteria value="1" table="audience" column="audience_review_status" />
+    <ascorderby column="audience_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

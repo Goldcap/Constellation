@@ -1,0 +1,101 @@
+/* CSS Document */
+body, h4{
+font-family: Georgia, Times, serif !important;
+color: white;
+}
+
+.movie_poster {
+  margin-bottom: 10px;
+}
+
+#timer_panel {
+  margin-top: 10px !important; 
+}
+
+body.landing .column1 .timer {
+    font-size: 90px !important;
+}
+body.landing .column2 {
+  width: 500px !important;
+}
+
+body.landing .column2 .right {
+  width: 335px !important;
+}
+
+div.nosponsor {left:-9000px}
+
+.alternate_container {
+  margin-left: -30px;
+  margin-top: 60px;
+  padding-bottom: 80px;
+}
+
+.alternate {
+  margin-left: -20px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.alternate p {
+  font-size: 18px;
+  margin: 0px auto;
+  color: white;
+  width: 300px;
+  padding-bottom: 15px;
+}
+
+.alternate .subhead {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 0px !important;
+}
+
+h4 {
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.alternate h4 {
+  font-size: 52px;
+  font-weight: normal;
+  padding: 0px;
+}
+
+h4.film_info {
+  font-size: 16px !important;
+  font-weight: normal;
+  padding: 0px;
+  margin-bottom: 5px !important;
+}
+
+.alternate h3 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.alternate #alternate_film_name {
+  font-size: 38px !important;
+  font-weight: bold;
+}
+
+.alternate .begins {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 0px !important;
+}
+
+.btn_sponsor{
+  height:31px; 
+  background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-med-org.png") repeat-x top;  
+  padding:2px 20px 0; 
+  text-transform:uppercase; 
+  font:bold 16px Helvetica, sans-serif;  
+  border:none; 
+  color:#fff; 
+  cursor:pointer; 
+  margin-bottom: 20px
+}
+
+.btn_tiny_red{border:none; color:#000; font-weight: bold; padding:4px 10px 5px; font:bold 11px helveticaneue, Helvetica, sans-serif; background:url("https://s3.amazonaws.com/cdn.constellation.tv/prod/images/bg_button-red.jpg") repeat-x top; text-transform:uppercase; cursor:pointer}
+	

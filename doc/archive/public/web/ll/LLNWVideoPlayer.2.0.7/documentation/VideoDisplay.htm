@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0037) -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<TITLE>VideoDisplay</TITLE>
+<STYLE type="text/css">
+		/* This can be an external stylesheet */
+		
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif; 
+			font-size: .7em;
+			margin: 5px 5px 5px 5px;
+			background-color: #FFFFFF;
+		}
+		
+		a:link {
+			color: #006225;
+			text-decoration: none;
+		}
+		
+		a:visited {
+			color: #8CC63F;
+			text-decoration: none;
+		}
+		
+		a:hover, a:visited:hover  { 
+			background-color: #DDEEFF;
+		}
+		
+		h4 a, .index a {
+			color: #005FA9;
+		}
+		
+		h4 a:visited, .index a:visited {
+			color: #005FA9;
+		}
+		
+		h1 { 
+			font-size: 130%; 
+			margin-top: 0;
+			margin-bottom: .7em;
+		}
+		
+		h2 {   
+			font-size: 120%;
+			margin-top: 1.4em;
+			margin-bottom: .7em;
+		}
+		
+		h3 {  
+			font-size: 110%;
+			margin-top: 1.2em;
+			margin-bottom: .7em; 
+		}
+		
+		h4 { 
+			font-size: 100%; 
+			font-weight: bold;
+			margin-top: 1.2em;
+			margin-bottom: .6em; 
+		}
+		
+		hr { 
+			color: #000000;
+			height: 1px;
+			margin-top: 0em;
+			margin-bottom: 0em; 	
+		}
+		
+		p, table {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		table p, table pre {
+			margin: 0px;
+		}
+		
+		table ul, table ul ul, table li {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		
+		ol p, ul p {  
+			margin-top: .7em;
+			margin-bottom: .7em;
+		}
+		
+		ol, ul {
+			font-size: 100%; 
+			margin-top: .5em; 
+			margin-bottom: 0em; 
+			margin-left: .5em;	
+		}
+		
+		ol ul, ul ul {
+			list-style: square; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		ol ol {
+			list-style: lower-alpha; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		li {
+			margin-bottom: .7em; 
+			margin-left: -2em;
+		}
+		
+		pre {  
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		ol pre, ul pre {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		code {  
+			font-family: "Courier New", Courier, mono;
+			font-size: 100%;
+		}
+		
+		table {
+			font-size: 100%;
+			border-spacing: 0px 0px;
+			border-bottom: solid 1px #B6C0C3;
+			border-right: solid 1px #B6C0C3;
+		}
+		
+		th {
+			font-weight: bold;
+			color: #000000;
+			background-color: #D5E04D;
+			text-align: left;
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		td {
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		table th, table td {
+			padding: 0.4em 10px;
+			vertical-align: top;
+		}
+		
+		img {
+			margin: 0px 5px 0px 0px;
+			border: none;
+		}
+		
+		.code {  
+			white-space: nowrap;
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+		}
+		
+		div.procedure {
+			display:none;
+		}
+	</STYLE>
+</HEAD><BODY>
+<HR>
+
+
+<H1>VideoDisplay class</H1>
+
+
+<H4>Description</H4>
+<P>VideoDisplay Class handles displaying video streams and handles switching to new streams.</P>
+
+
+
+
+
+<H2>Method summary for the VideoDisplay class</H2>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TBODY>
+	<TR>
+		<TH>Method</TH>
+		<TH>Description</TH>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#3">
+		VideoDisplay.setMedia()</A>
+	</TD>
+	<TD>
+		<P>Method creates the video object and connects the NetStream refference to display.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#4">
+		VideoDisplay.updateVideo()</A>
+	</TD>
+	<TD>
+		<P>Method updates the video display with a new netstream</P>
+	</TD>
+	</TR>
+	
+</TBODY></TABLE>
+
+
+
+
+<H2>Property summary for the VideoDisplay class</H2>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TBODY>
+	<TR>
+		<TH>Property</TH>
+		<TH>Description</TH>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#2">
+		VideoDisplay.connectionManager</A>
+	</TD>
+	<TD>
+		<P>Method sets the connectionManager object to handle displaying net streams.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#5">
+		VideoDisplay.setHeight</A>
+	</TD>
+	<TD>
+		<P>Method sets the height of the video object.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#6">
+		VideoDisplay.setWidth</A>
+	</TD>
+	<TD>
+		<P>Method sets the width of the video object.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#7">
+		VideoDisplay.smoothing</A>
+	</TD>
+	<TD>
+		<P>Sets the video smoothing property.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#9">
+		VideoDisplay.deblocking</A>
+	</TD>
+	<TD>
+		<P>Sets the video deblocking value.</P>
+	</TD>
+	</TR>
+	
+</TBODY></TABLE>
+
+
+
+
+
+
+
+<H2><A name="3"></A>VideoDisplay.setMedia</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function setMedia(nsName:String = null):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>nsName</I></CODE>
+		: the stream to play</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method creates the video object and connects the NetStream refference to display.</P>
+	
+	
+<HR>
+
+<H2><A name="4"></A>VideoDisplay.updateVideo</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function updateVideo(nsName:String):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>nsName:</I></CODE>
+		the stream to play</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method updates the video display with a new netstream</P>
+	
+	
+<HR>
+
+
+
+<H2><A name="2"></A>VideoDisplay.connectionManager</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set connectionManager(cm:LLNWConnectionManager):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property: sets the connectionManager object to handle displaying net streams.</P>
+	
+	
+<HR>
+
+<H2><A name="5"></A>VideoDisplay.setHeight</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set setHeight(height:int):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property: sets the height of the video object.</P>
+	
+	
+<HR>
+
+<H2><A name="6"></A>VideoDisplay.setWidth</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set setWidth(width:int):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property: sets the width of the video object.</P>
+	
+	
+<HR>
+
+<H2><A name="7"></A>VideoDisplay.smoothing</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set smoothing(value:Boolean):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property: sets the video smoothing property.</P>
+	
+	
+<HR>
+
+<H2><A name="9"></A>VideoDisplay.deblocking</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set deblocking(value:int):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property: sets the video deblocking value.</P>
+	
+	
+<HR>
+</BODY></HTML>

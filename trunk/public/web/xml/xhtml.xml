@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE basedomain="wtvr" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<HEAD>
+		<TITLE>Office Depot Admin</TITLE>
+		
+    <JSCRIPT gz="TRUE" djConfig="TRUE" isdebug="false">/js/dojo/dojo/dojo.js</JSCRIPT>
+    <JSCRIPT gz="TRUE">/js/dojo/dojo/dojo_officedepot_admin.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/tiny_mce/tiny_mce.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/tinymce_init.js</JSCRIPT>
+    <!--<JSCRIPT gz="TRUE" djConfig="TRUE" isdebug="false">/js/dojo/dojo/dojo.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/wtvr_dojo_admin.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/formvalidate_v6.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/swfobject_last.js</JSCRIPT>
+    <JSCRIPT gz="FALSE">/js/wtvr_dojo.js</JSCRIPT>-->
+    <CSSCRIPT gz="TRUE">/css/officedepot_main.css</CSSCRIPT>
+    <!--<CSSCRIPT>/js/dojo/dijit/themes/tundra/tundra.css</CSSCRIPT>-->
+    <CSSCRIPT>/js/dojo/dojox/layout/resources/FloatingPane.css</CSSCRIPT>
+    <CSSCRIPT>/js/dojo/dojox/layout/resources/ResizeHandle.css</CSSCRIPT>
+		<!--<CSSCRIPT>/css/styroform.css</CSSCRIPT>
+		<CSSCRIPT>/css/grail.css</CSSCRIPT>-->
+		<CSSCRIPT>/modules/admin/html/css/admin.css</CSSCRIPT>
+	</HEAD>
+	<BODY>
+		<ONLOAD></ONLOAD>
+		
+	</BODY>
+</PAGE>

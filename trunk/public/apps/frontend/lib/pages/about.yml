@@ -1,0 +1,13 @@
+template: default
+layout: default
+title: Constellation | Social Movie Events | About Us
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    html: {html: html/aboutUs.html}
+    AboutNav: {sel: about}
+  footer:
+    FooterAlt:

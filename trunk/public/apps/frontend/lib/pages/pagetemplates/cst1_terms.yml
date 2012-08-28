@@ -1,0 +1,14 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      masterhead:
+        attributes: 'class="masterhead" role="banner"'
+      content:
+        attributes: 'class="content"'
+        divs:
+          inner-container:
+            attributes: 'class="inner_container clearfix"'
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  zzdiv:

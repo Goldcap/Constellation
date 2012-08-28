@@ -1,0 +1,13 @@
+<smil>
+  <head>
+    <meta base="rtmp://cp113558.edgefcs.net/ondemand"/>
+  </head>
+  <body>
+    <switch>
+      <video system-bitrate="800000" src="mp4:constellation/movies/20/movie-small.mov?auth%3Dda.a8duaEbwd3aLaMcAcNchdvaZa_byd.bw-bnUdJL-uP4-CqBCYBzrwuu-sLqhtGr7lXlHnxoZmSlbk3kqk0mapf%26aifp%3Dv0001%26slist%3Dconstellation%2Fmovies%2F20%2Fmovie-small"/>
+      <video system-bitrate="1200000" src="mp4:constellation/movies/20/movie-medium.mov?auth%3Dda.bZcLbibOcfcDaxd4d7cmcnd2ccdEcVaY-bnUdJL-uP4-DpID6Bxqwww-nMqitGm6n0oJmzkYrRjcl2rrs0k9ph%26aifp%3Dv0001%26slist%3Dconstellation%2Fmovies%2F20%2Fmovie-medium"/>
+      <video system-bitrate="2400000" src="mp4:constellation/movies/20/movie-large.mov?auth%3Dda.bVdxaWbIcRcjdTbpdmaObFcyc7dcaUbL-bnUdJL-uP4-JqEC6BBquww-pKpimEk5lZoJtzmWqSqcr3nqs0o9nh%26aifp%3Dv0001%26slist%3Dconstellation%2Fmovies%2F20%2Fmovie-large"/>
+      <map/>
+    </switch>
+  </body>
+</smil>

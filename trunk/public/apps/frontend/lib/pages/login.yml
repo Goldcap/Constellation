@@ -1,0 +1,8 @@
+template: cst_boxoffice
+layout: cst_default
+title: Constellation | Your Online Movie Theater | Login
+javascripts: []
+css: [/css/checkout.css]
+widgets:
+  wrapper:
+    Auth: {template: Login}

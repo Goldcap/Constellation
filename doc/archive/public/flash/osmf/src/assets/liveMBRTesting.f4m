@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://ns.adobe.com/f4m/1.0">
+	<baseURL>rtmp://llnwpm.fc.llnwd.net/llnwpm/</baseURL>
+	<urlIncludesFMSApplicationInstance>false</urlIncludesFMSApplicationInstance>
+	<media url="mp4:livestream1.f4v"  bitrate="150" width="480" height="270" />
+	<media url="mp4:livestream2.f4v"  bitrate="300" width="480" height="270" />
+	<media url="mp4:livestream3.f4v"  bitrate="650" width="640" height="360" />
+</manifest>

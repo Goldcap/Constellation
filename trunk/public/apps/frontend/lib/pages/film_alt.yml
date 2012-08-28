@@ -1,0 +1,15 @@
+template: cst0_alt
+layout: cst_film_alt
+title: Constellation | Your Online Movie Theater | Film
+javascripts: [/js/bandwidth.js]
+css: []
+widgets:
+  masterhead:
+    HeaderAlt:
+  content:
+    FilmViewAlt:
+  footer:
+    FooterAlt:
+  zzdiv:
+    BandwidthTester:
+    GoogleAnalytics:

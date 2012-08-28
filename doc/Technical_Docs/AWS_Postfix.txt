@@ -1,0 +1,10 @@
+http://docs.amazonwebservices.com/ses/latest/DeveloperGuide/index.html?IntegratingWithServer.Postfix.html
+
+Crypt::SSLeay
+Mozilla::CA
+IO::Socket::SSL
+
+libxml2-devel
+
+cp SAS.pm /usr/local/lib64/perl5
+

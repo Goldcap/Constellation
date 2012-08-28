@@ -1,0 +1,88 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+prod:
+  site_id:                       2
+  solr_ip:     db.constellation.tv
+  solr_port:     8080
+  solr_uri:     /constellation
+  twitter_key:  ENrmvsRfwzwx2KwQpv9Yw
+  twitter_secret: SdqoPkyrZbk4PpAc1Qw0DcjZ0YoDwA27bZrTAoypcQ
+  facebook_app_id:  171013966269835
+  facebook_secret: 9ce479bcec8c83c3b1351e300dfaf19b
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  domain:                        www.constellation.tv
+  .array:
+    site_admin:  [amadsen@gmail.com,amadsen@operislabs.com]  
+test:
+  site_id:                       2
+  solr_ip:     test.db-1.constellation.tv
+  solr_port:     8080
+  solr_uri:     /constellation_test
+  twitter_key:  ENrmvsRfwzwx2KwQpv9Yw
+  twitter_secret: SdqoPkyrZbk4PpAc1Qw0DcjZ0YoDwA27bZrTAoypcQ
+  facebook_app_id:  171013966269835
+  facebook_secret: 9ce479bcec8c83c3b1351e300dfaf19b
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  domain:                        test.constellation.tv
+  .array:
+    site_admin:  [amadsen@gmail.com,amadsen@operislabs.com]  
+stage:
+  site_id:                       2
+  solr_ip:     localhost
+  solr_port:     8080
+  solr_uri:     /constellation
+  twitter_key:  ENrmvsRfwzwx2KwQpv9Yw
+  twitter_secret: SdqoPkyrZbk4PpAc1Qw0DcjZ0YoDwA27bZrTAoypcQ
+  facebook_app_id:  171013966269835
+  facebook_secret: 9ce479bcec8c83c3b1351e300dfaf19b
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  domain:                        stage.constellation.tv
+  .array:
+    site_admin:  [amadsen@gmail.com,amadsen@operislabs.com]  
+dev:
+  site_id:                       2
+  solr_ip:     localhost
+  solr_port:     8080
+  solr_uri:     /constellation
+  twitter_key:  IopNXMQcS1Xwe0TDwOKeMw
+  twitter_secret: Mj4ix947ICeeIikozj5BcNMyfHbPvkiKRfgSjD1rY8
+  facebook_app_id:  185162594831374
+  facebook_secret: 33e3ffc6a1e366cc880ea97d8eb14f10
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  domain:                        dev.constellation.tv
+  .array:
+    site_admin:  [amadsen@gmail.com,amadsen@operislabs.com]  
+andy:
+  site_id:                       2
+  solr_ip:     192.168.2.107
+  solr_port:     8080
+  solr_uri:     /constellation
+  twitter_key:  IopNXMQcS1Xwe0TDwOKeMw
+  twitter_secret: Mj4ix947ICeeIikozj5BcNMyfHbPvkiKRfgSjD1rY8
+  facebook_app_id:  185162594831374
+  facebook_secret: 33e3ffc6a1e366cc880ea97d8eb14f10
+  mail_from_address:  "no-reply@constellation.tv"
+  mail_from_fname:  "Constellation"
+  mail_from_lname:  "TV"
+  domain:                        dev.constellation.tv
+  .array:
+    site_admin:  [amadsen@gmail.com,amadsen@operislabs.com]  
+
+# default values
+all:
+  site_name:                     Constellation
+  site_abbr:                     CONST
+  paypal_api_environment:         production
+  paypal_api_username:            jlawler_api1.constellation.tv
+  paypal_api_password:            TZATR27EYCBQXST8
+  paypal_api_signature:           A8HrO9DSJADwMTj7o5hHiRXqO7kRAXf-BuElnEqO1u-pWcZ-fw0xW7-6
+  ppwpp:  "live,true,USD,jlawler_api1.constellation.tv,A8HrO9DSJADwMTj7o5hHiRXqO7kRAXf-BuElnEqO1u-pWcZ-fw0xW7-6,TZATR27EYCBQXST8"
+  

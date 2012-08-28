@@ -1,0 +1,63 @@
+
+
+Version 3 Certificate
+
+Issuer Name:
+Country = ZA
+State = Western Cape
+Locality = Durbanville
+Organization = Thawte
+Organizational Unit = Thawte Certification
+Common Name = Thawte Timestamping CA
+
+Subject Name:
+Country = ZA
+State = Western Cape
+Locality = Durbanville
+Organization = Thawte
+Organizational Unit = Thawte Certification
+Common Name = Thawte Timestamping CA
+
+Validity Start: 01/01/1997 00:00:00 GMT
+Validity End: 12/31/2020 23:59:59 GMT
+
+Algorithm: MD5 With RSA
+
+Cert Hash:
+be 36 a4 56 2f b2 ee 05 db b3 d3 23 23 ad f4 45 
+08 4e d6 56 
+
+Cert Info Hash:
+50 ea f4 dc 8a 49 a3 68 cc cd 69 25 ea f3 82 da 
+65 7e 1a 39 
+
+Issuer Name and Serial Number Hash:
+b6 bd 9b c2 87 f8 2d bf c9 fd 88 cb 92 15 c5 40 
+32 2f 62 d4 
+
+Public Key Hash:
+dd bc bd 86 9c 3f 07 ed 40 e3 1b 08 ef ce c4 d1 
+88 cd 3b 15 
+
+Serial Number:
+00 
+
+Public Key:
+30 81 9f 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 
+05 00 03 81 8d 00 30 81 89 02 81 81 00 d6 2b 58 
+78 61 45 86 53 ea 34 7b 51 9c ed b0 e6 2e 18 0e 
+fe e0 5f a8 27 d3 b4 c9 e0 7c 59 4e 16 0e 73 54 
+60 c1 7f f6 9f 2e e9 3a 85 24 15 3c db 47 04 63 
+c3 9e c4 94 1a 5a df 4c 7a f3 d9 43 1d 3c 10 7a 
+79 25 db 90 fe f0 51 e7 30 d6 41 00 fd 9f 28 df 
+79 be 94 bb 9d b6 14 e3 23 85 d7 a9 41 e0 4c a4 
+79 b0 2b 1a 8b f2 f8 3b 8a 3e 45 ac 71 92 00 b4 
+90 41 98 fb 5f ed fa b7 2e 8a f8 88 37 02 03 01 
+00 01 
+
+Extensions List (1):
+
+1) Basic Constraint Extension - Critical
+   Extension Value:
+   Is CA: TRUE
+   Max Path Len: N/A

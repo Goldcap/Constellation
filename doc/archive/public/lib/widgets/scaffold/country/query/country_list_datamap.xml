@@ -1,0 +1,4 @@
+<map table="country" result="country_list_datamap"><column column="printable_name" type="VARCHAR" size="80" key="" order="1"></column><column column="iso3" type="VARCHAR" size="3" key="" order="2"></column><column column="name" type="VARCHAR" size="80" key="MUL" order="3"></column><column column="numcode" type="INTEGER" size="11" key="MUL" order="4"></column><column column="iso" type="VARCHAR" size="2" key="PRI" order="5"></column><criterion limit="0" distinct="true"><ascorderby column="iso"></ascorderby><!--
+        <descorderby column="column_name" />
+        <criteria value="0" column="column_name"/>
+        --></criterion><pagination><pagesperpage value="5"></pagesperpage><recordssperpage value="5"></recordssperpage><page value="1" var="page"></page><sort var="sort"></sort></pagination><maplinks><maplink column="name" base="/country/detail/"><attribute name="iso"></attribute></maplink></maplinks></map>

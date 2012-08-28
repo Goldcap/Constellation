@@ -1,0 +1,221 @@
+
+.comment-box {
+	padding: 14px 0;
+	font-size: 16px;
+	/*border-top: solid 1px #c0c0c0;*/
+}
+.comment-avatar {
+	float: left;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+li .comment-box {
+	/*width: 300px;*/
+	margin-top: 8px;
+	margin-left: 50px;
+}
+.comment-box-field {
+	border:solid 1px #c0c0c0;
+	border-radius: 2px;	
+	-moz-border-radius: 2px;	
+	-webkit-border-radius: 2px;
+	width: 400px;
+	font-family: 'helveticaneue', helvetica, arial, sans-serif;
+	height: 50px;
+	padding: 10px;
+	float: left;
+	line-height: 15px;
+	margin: 0 10px;
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+}
+
+.comment-box-field:focus {
+	background: #fffef5;
+	box-shadow: 0 0 5px rgba(188,222,245,0.8);
+}
+.comment-box-field + .button {
+	float: left;
+	width: 60px;
+	text-align:center;
+	padding:10px !important;
+}
+.comment-list {
+	
+}
+#comment-list.comment-loading {
+	min-height: 30px;
+	background: url(../images/ajax-loader.gif) 50% 50% no-repeat;
+}
+
+
+.comment-item-comment {
+	word-wrap: break-word;
+	color: #666;
+	line-height: 18px;
+}
+
+.comment-list > li {
+	/*border-top: solid 1px #c0c0c0;*/
+}
+.comment-list > li li {margin-left: 40px;}
+.comment-item {
+	line-height: 15px;
+	padding: 10px 0;
+	font-size: 12px;
+	position: relative;
+	min-height: 50px;
+}
+
+.comment-item-content {
+	margin-left: 62px;
+	/*padding-right: 80px;*/
+}
+.comment-item-details {
+	margin-bottom: 6px;
+	border-bottom: solid 1px #e0e0e0;
+	padding-bottom: 6px;
+}
+.comment-item-user {
+	font-size: 14px;
+	font-weight: bold;
+}
+.comment-item-time {
+	color: #9b9b9b;
+	margin-left: 4px;
+}
+.comment-item-tools {
+	margin-top:4px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-moz-transition: opacity 0.2s linear;
+}
+.comment-item:hover .comment-item-tools{
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.comment-item-tools a {
+	/*padding: 0 5px;*/
+	line-height: 10px;
+	display: inline-block;
+	*display:inline;
+	margin-right: 10px;
+	line-height: 20px;
+	vertical-align:top;
+	/*margin-right: 5px;*/
+	/*border-left: solid 1px #c0c0c0;*/
+}
+.comment-item-tools a:first-child {
+	border: none;
+	padding-left: 0;
+}
+
+/*comment-share.png*/
+.comment-item-share-fb, .comment-item-share-twitter, .comment-item-reply {
+	background: #fff url(../images/comment-share.png) 0 0 no-repeat;
+	height: 20px;
+	width:20px;
+	zoom:1;
+}
+.comment-item-share-fb {
+	background-position: -40px 0;
+}
+.comment-item-share-fb:hover {
+	background-position: -40px -20px;
+}
+.comment-item-share-twitter {
+	background-position: -20px 0;
+}
+.comment-item-share-twitter:hover {
+	background-position: -20px -20px;
+}
+.comment-item-reply {
+	background-position: 0 0;
+}
+.comment-item-reply:hover {
+	background-position: 0 -20px;
+}
+.comment-item-vote { 
+	position: absolute;
+	top: 14px;
+	/*top: 40px;*/
+	right: 0;
+	width: 60px;
+	text-align: right;
+}
+.comment-item-vote-icon {
+	height: 14px;
+	width: 18px;
+	display: inline-block;
+	background: url(../images/comment-star.png) 0 0 no-repeat;
+	cursor: pointer;
+}
+.comment-item-vote-icon:hover {
+	background-position: -17px ;
+}
+.comment-item-vote-icon.comment-item-vote-submitted {
+	background-position: -34px 0;
+	cursor: default;
+}
+.comment-item-vote-count {
+	line-height: 14px;
+	margin-left: 4px;
+	vertical-align:top;
+	font-size: 12px;
+	font-weight: bold;
+	color: #666;
+}
+.comment-pagination {
+	margin-top: 10px;
+	text-align:center;
+	border-top: 1px solid #e0e0e0;
+	padding-top: 12px;
+}
+.comment-pagination li{
+	margin: 0 4px;
+}
+
+.button-pagination {
+	background: url(../images/pages/thevow/pagination-gradient.png) 0 0 repeat-x;
+	line-height: 20px;
+	width: 34px;
+	padding: 2px 0;
+	border: solid 1px #c0c0c0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	display: inline-block;
+	text-align: center;
+	font-size: 13px;
+	color:#686868;
+	cursor: pointer;
+}
+.button-pagination:hover {
+	background-position: 0 -40px;
+}
+.button-pagination.current {
+	background: #fff;
+	color: #000;
+	cursor: default;
+}
+/*.button-pagination-next, .button-pagination-previous {
+	width: 90px;
+}*/
+.button-pagination.disabled, .button-pagination.disabled {
+	opacity: 0.5;
+	filter: alpha(opacity=60);
+	cursor: default;
+	background-position: 0 0;
+}
+
+.comment-pagination ul, .comment-pagination  li { 
+	display: inline-block;
+	*display: inline;
+}
+.comment-pagination .extend { width: 14px;}
+
+.comment-item-no-comment {font-size: 18px;padding: 20px 0 10px;}

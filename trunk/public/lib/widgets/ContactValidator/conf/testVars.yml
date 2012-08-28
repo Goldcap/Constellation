@@ -1,0 +1,8 @@
+get:
+  email: amadsen@gmail.com
+post:
+session:
+action:
+
+wvar:
+  result: '{"result":"valid"}'

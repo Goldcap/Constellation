@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="com.akamai.net.AkamaiConnection"/>
+<classEntry path="com.akamai.net.AkamaiDynamicNetStream"/>
+<classEntry path="com.akamai.net.AkamaiEnhancedNetStream"/>
+<classEntry path="com.akamai.net.AkamaiNetStream"/>
+<classEntry path="com.akamai.rss.AkamaiBOSSParser"/>
+<classEntry path="com.akamai.rss.AkamaiMediaRSS"/>
+<classEntry path="org.openvideoplayer.advertising.IAdPlayer"/>
+<classEntry path="org.openvideoplayer.advertising.IMASTAdapter"/>
+<classEntry path="org.openvideoplayer.advertising.IMASTPayloadHandler"/>
+<classEntry path="org.openvideoplayer.advertising.IMASTSource"/>
+<classEntry path="org.openvideoplayer.advertising.IMASTTarget"/>
+<classEntry path="org.openvideoplayer.advertising.IMASTTrigger"/>
+<classEntry path="org.openvideoplayer.advertising.IVPAID"/>
+<classEntry path="org.openvideoplayer.advertising.MASTAdapterEvent"/>
+<classEntry path="org.openvideoplayer.advertising.VPAIDEvent"/>
+<classEntry path="org.openvideoplayer.cc.Caption"/>
+<classEntry path="org.openvideoplayer.cc.CaptionFormat"/>
+<classEntry path="org.openvideoplayer.cc.OvpCCManager"/>
+<classEntry path="org.openvideoplayer.cc.Style"/>
+<classEntry path="org.openvideoplayer.events.OvpError"/>
+<classEntry path="org.openvideoplayer.events.OvpEvent"/>
+<classEntry path="org.openvideoplayer.net.INetConnection"/>
+<classEntry path="org.openvideoplayer.net.OvpClientProxy"/>
+<classEntry path="org.openvideoplayer.net.OvpConnection"/>
+<classEntry path="org.openvideoplayer.net.OvpCuePointManager"/>
+<classEntry path="org.openvideoplayer.net.OvpDynamicNetStream"/>
+<classEntry path="org.openvideoplayer.net.OvpNetStream"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.BandwidthRule"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.BufferRule"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.DynamicStreamBitrate"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.DynamicStreamItem"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.FrameDropRule"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.INetStreamMetrics"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.ISwitchingRule"/>
+<classEntry path="org.openvideoplayer.net.dynamicstream.MetricsProvider"/>
+<classEntry path="org.openvideoplayer.parsers.DfxpParser"/>
+<classEntry path="org.openvideoplayer.parsers.DynamicSmilParser"/>
+<classEntry path="org.openvideoplayer.parsers.ParserBase"/>
+<classEntry path="org.openvideoplayer.plugins.IOvpPlayer"/>
+<classEntry path="org.openvideoplayer.plugins.IOvpPlugIn"/>
+<classEntry path="org.openvideoplayer.plugins.OvpPlayerEvent"/>
+<classEntry path="org.openvideoplayer.rss.ContentTO"/>
+<classEntry path="org.openvideoplayer.rss.EnclosureTO"/>
+<classEntry path="org.openvideoplayer.rss.ItemTO"/>
+<classEntry path="org.openvideoplayer.rss.Media"/>
+<classEntry path="org.openvideoplayer.rss.RSSFilterFields"/>
+<classEntry path="org.openvideoplayer.rss.ThumbnailTO"/>
+<classEntry path="org.openvideoplayer.utilities.DateUtil"/>
+<classEntry path="org.openvideoplayer.utilities.FlashPlayer"/>
+<classEntry path="org.openvideoplayer.utilities.HTTPBandwidthEstimate"/>
+<classEntry path="org.openvideoplayer.utilities.StringUtil"/>
+<classEntry path="org.openvideoplayer.utilities.TimeUtil"/>
+<classEntry path="org.openvideoplayer.version.OvpVersion"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>

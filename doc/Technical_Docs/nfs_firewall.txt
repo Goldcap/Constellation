@@ -1,0 +1,39 @@
+SERVER
+
+yum install nfs-utils nfs-utils-lib
+chkconfig --levels 235 nfs on
+
+service rpcbind start ( OR service portmap start) 
+service nfs start
+service nfslock start
+
+
+vi /etc/exports
+/var/www/html/sites/share 10.32.165.130(rw,sync,no_root_squash)
+etc...
+
+exportfs -a
+
+vi /etc/sysconfig/iptables
+-A RH-Firewall-1-INPUT -p tcp -m tcp --dport 111 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 111 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 2049 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m tcp --dport 10000 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 10001 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m tcp --dport 10002:10005 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 10002:10005 -j ACCEPT
+
+vi /etc/sysconfig/nfs
+MOUNTD_PORT=10000
+STATD_PORT=10001
+LOCKD_TCPPORT=10002
+LOCKD_UDPPORT=10005
+
+CLIENT
+yum install nfs-utils nfs-utils-lib
+
+service rpcbind start
+
+vi /etc/fstab
+10.110.13.71:/var/www/html/sites/share /mnt/nfsmount nfs rw,hard,intr 0 0

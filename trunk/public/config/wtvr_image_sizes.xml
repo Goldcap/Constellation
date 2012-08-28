@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<imagesizes>
+  <imagesize name="user_large" height="193" width="193" />
+  <imagesize name="user_medium" height="286" width="240" />
+  <imagesize name="user_small" height="162" width="136" /> 
+  <imagesize name="user_large_icon" height="100" width="100" />
+  <imagesize name="user_medium_icon" height="55" width="55" />
+  <imagesize name="user_small_icon" height="35" width="35" />
+  <imagesize name="host" height="141" width="205" />
+  <imagesize name="video_large" height="236" width="420" />
+  
+  <imagesize name="vow_medium" height="370" width="370" />
+  <imagesize name="vow_small_icon" height="35" width="35" />
+  
+  <imagesize name="jump_thumb" height="0" width="260" />
+  
+
+  <imagesize name="logo_event" height="414" width="280" />
+  <imagesize name="logo_thumb" height="56" width="38" />
+  <imagesize name="logo_small_poster" height="280" width="189" />
+  <imagesize name="logo_screening_poster" height="110" width="74" />
+  <imagesize name="logo_purchase_email_poster" height="209" width="141" />
+  <imagesize name="logo_poster" height="226" width="152" />
+  <imagesize name="logo_invite_email_poster" height="149" width="100" />
+  <imagesize name="logo" height="56" width="38" />
+  <imagesize name="logo_film_logo" height="56" width="38" />
+  <imagesize name="logo_wide_poster" height="150" width="300" />
+
+  
+  <imagesize name="screening_small" height="47" width="69" />
+  <imagesize name="screening_large" height="246" width="360" />
+  <imagesize name="screening_event" height="150" width="300" />
+  <imagesize name="film_screening_small" height="34" width="73" />
+  <imagesize name="film_screening_large" height="179" width="262" />
+  <imagesize name="film_screening_next" height="160" width="160" />
+  
+  <imagesize name="still_image" height="270" width="480" />
+  <imagesize name="film_next" height="160" width="160" />
+  
+  <imagesize name="background_image" height="664" width="1020" />
+  <imagesize name="splash_image" height="300" width="940" />
+  
+  <imagesize name="poster_large" height="280" width="189" />
+  <imagesize name="poster_small" height="207" width="139" />
+  <imagesize name="poster_icon" height="111" width="74" />
+</imagesizes>

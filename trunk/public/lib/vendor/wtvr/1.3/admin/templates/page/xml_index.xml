@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE basedomain="wtvr">
+	<HEAD>
+		<TITLE>Page Title Here</TITLE>
+		<JSCRIPT gzip="TRUE">/js/dojo/dojo.js</JSCRIPT>
+    <JSCRIPT gzip="TRUE">/js/wtvr_dojo.js</JSCRIPT>
+    <JSCRIPT gzip="TRUE">/js/formvalidate_v6.js</JSCRIPT>
+		<CSSCRIPT>/css/wtvr.css</CSSCRIPT>
+		<CSSCRIPT>/css/styroform.css</CSSCRIPT>
+		<CSSCRIPT>/css/grail.css</CSSCRIPT>
+	</HEAD>
+	<BODY>
+		<ONLOAD></ONLOAD>
+		
+	</BODY>
+</PAGE>

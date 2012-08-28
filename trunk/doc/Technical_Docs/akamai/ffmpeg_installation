@@ -1,0 +1,21 @@
+FFMpeg install instructions
+----------------------------
+
+Windows
+-------
+Follow the instructions here for windows
+http://www.wowzamedia.com/forums/content.php?213-FFmpeg-with-Wowza-Server-(MPEG-TS)
+
+Linux
+-----
+As root
+# yum install ffmpeg ffmpeg-devel
+
+FFMPEG Command
+-------------
+The command to run ffmpeg is 
+ffmpeg -i <input file> -re -ar 22050 -vcodec libx264 -vpre default -f flv rtmp://localhost/<application_name>/<akamai_ingress_stream_name>
+
+Note: the default application_name is akamaiTest and the 
+default akamai_ingress_stream_name is testStream43841
+

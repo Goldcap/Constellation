@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>PHP_CodeCoverage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if IE]><script src="excanvas.compressed.js"></script><![endif]-->
+    <script src="RGraph.common.core.js" ></script>
+    <script src="RGraph.common.tooltips.js" ></script>
+    <script src="RGraph.bar.js" ></script>
+    <script src="RGraph.scatter.js" ></script>
+  </head>
+
+  <body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr><td class="title">PHP_CodeCoverage</td></tr>
+      <tr><td><div align="center"><p><a href="index.html">Back to Code Coverage report</a></p></div></td></tr>
+      <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
+    </table>
+
+    <br />
+
+    <center>
+      <table width="90%" cellpadding="2" cellspacing="1" border="0">
+        <tr>
+          <td valign="top">
+            <h2>Class Coverage Distribution</h2>
+            <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
+            <script>
+            var ccd = new RGraph.Bar('classCoverageDistribution', [17,3,0,0,0,0,0,0,0,1,0,149]);
+            ccd.Set('chart.background.barcolor1', 'white');
+            ccd.Set('chart.background.barcolor2', 'white');
+            ccd.Set('chart.colors', ['blue']);
+            ccd.Set('chart.shadow', true);
+            ccd.Set('chart.shadow.offsetx', 3);
+            ccd.Set('chart.shadow.offsety', 3);
+            ccd.Set('chart.labels', ['0%','0-10%','10-20%','20-30%','30-40%','40-50%','50-60%','60-70%','70-80%','80-90%','90-100%','100%']);
+            ccd.Set('chart.text.size', 5);
+            ccd.Draw();
+            </script>
+          </td>
+
+          <td valign="top">
+            <h2>Class Complexity</h2>
+            <canvas id="classComplexity" width="475" height="200"></canvas>
+            <script>
+            var cc = new RGraph.Scatter('classComplexity', [[0.803212851406,93,"blue","PHP_CodeCoverage"],[80,2,"blue","PHP_CodeCoverage_Driver_Xdebug"],[2.43902439024,35,"blue","PHP_CodeCoverage_Filter"],[0,32,"blue","PHP_CodeCoverage_Report_Clover"],[0,39,"blue","PHP_CodeCoverage_Report_HTML"],[0,64,"blue","PHP_CodeCoverage_Report_HTML_Node"],[0,33,"blue","PHP_CodeCoverage_Report_HTML_Node_Directory"],[0,161,"blue","PHP_CodeCoverage_Report_HTML_Node_File"],[0,9,"blue","PHP_CodeCoverage_Report_HTML_Node_Iterator"],[0,17,"blue","PHP_CodeCoverage_TextUI_Command"],[1.08303249097,85,"blue","PHP_CodeCoverage_Util"],[0,16,"blue","PHP_Compat"],[0,11,"blue","PHP_Timer"],[0,3,"blue","PHP_Token"],[0,12,"blue","PHP_TokenWithScope"],[100,0,"blue","PHP_Token_REQUIRE_ONCE"],[100,0,"blue","PHP_Token_REQUIRE"],[100,0,"blue","PHP_Token_EVAL"],[100,0,"blue","PHP_Token_INCLUDE_ONCE"],[100,0,"blue","PHP_Token_INCLUDE"],[100,0,"blue","PHP_Token_LOGICAL_OR"],[100,0,"blue","PHP_Token_LOGICAL_XOR"],[100,0,"blue","PHP_Token_LOGICAL_AND"],[100,0,"blue","PHP_Token_PRINT"],[100,0,"blue","PHP_Token_SR_EQUAL"],[100,0,"blue","PHP_Token_SL_EQUAL"],[100,0,"blue","PHP_Token_XOR_EQUAL"],[100,0,"blue","PHP_Token_OR_EQUAL"],[100,0,"blue","PHP_Token_AND_EQUAL"],[100,0,"blue","PHP_Token_MOD_EQUAL"],[100,0,"blue","PHP_Token_CONCAT_EQUAL"],[100,0,"blue","PHP_Token_DIV_EQUAL"],[100,0,"blue","PHP_Token_MUL_EQUAL"],[100,0,"blue","PHP_Token_MINUS_EQUAL"],[100,0,"blue","PHP_Token_PLUS_EQUAL"],[100,0,"blue","PHP_Token_BOOLEAN_OR"],[100,0,"blue","PHP_Token_BOOLEAN_AND"],[100,0,"blue","PHP_Token_IS_NOT_IDENTICAL"],[100,0,"blue","PHP_Token_IS_IDENTICAL"],[100,0,"blue","PHP_Token_IS_NOT_EQUAL"],[100,0,"blue","PHP_Token_IS_EQUAL"],[100,0,"blue","PHP_Token_IS_GREATER_OR_EQUAL"],[100,0,"blue","PHP_Token_IS_SMALLER_OR_EQUAL"],[100,0,"blue","PHP_Token_SR"],[100,0,"blue","PHP_Token_SL"],[100,0,"blue","PHP_Token_INSTANCEOF"],[100,0,"blue","PHP_Token_UNSET_CAST"],[100,0,"blue","PHP_Token_BOOL_CAST"],[100,0,"blue","PHP_Token_OBJECT_CAST"],[100,0,"blue","PHP_Token_ARRAY_CAST"],[100,0,"blue","PHP_Token_STRING_CAST"],[100,0,"blue","PHP_Token_DOUBLE_CAST"],[100,0,"blue","PHP_Token_INT_CAST"],[100,0,"blue","PHP_Token_DEC"],[100,0,"blue","PHP_Token_INC"],[100,0,"blue","PHP_Token_CLONE"],[100,0,"blue","PHP_Token_NEW"],[100,0,"blue","PHP_Token_EXIT"],[100,0,"blue","PHP_Token_IF"],[100,0,"blue","PHP_Token_ELSEIF"],[100,0,"blue","PHP_Token_ELSE"],[100,0,"blue","PHP_Token_ENDIF"],[100,0,"blue","PHP_Token_LNUMBER"],[100,0,"blue","PHP_Token_DNUMBER"],[100,0,"blue","PHP_Token_STRING"],[100,0,"blue","PHP_Token_STRING_VARNAME"],[100,0,"blue","PHP_Token_VARIABLE"],[100,0,"blue","PHP_Token_NUM_STRING"],[100,0,"blue","PHP_Token_INLINE_HTML"],[100,0,"blue","PHP_Token_CHARACTER"],[100,0,"blue","PHP_Token_BAD_CHARACTER"],[100,0,"blue","PHP_Token_ENCAPSED_AND_WHITESPACE"],[100,0,"blue","PHP_Token_CONSTANT_ENCAPSED_STRING"],[100,0,"blue","PHP_Token_ECHO"],[100,0,"blue","PHP_Token_DO"],[100,0,"blue","PHP_Token_WHILE"],[100,0,"blue","PHP_Token_ENDWHILE"],[100,0,"blue","PHP_Token_FOR"],[100,0,"blue","PHP_Token_ENDFOR"],[100,0,"blue","PHP_Token_FOREACH"],[100,0,"blue","PHP_Token_ENDFOREACH"],[100,0,"blue","PHP_Token_DECLARE"],[100,0,"blue","PHP_Token_ENDDECLARE"],[100,0,"blue","PHP_Token_AS"],[100,0,"blue","PHP_Token_SWITCH"],[100,0,"blue","PHP_Token_ENDSWITCH"],[100,0,"blue","PHP_Token_CASE"],[100,0,"blue","PHP_Token_DEFAULT"],[100,0,"blue","PHP_Token_BREAK"],[100,0,"blue","PHP_Token_CONTINUE"],[100,0,"blue","PHP_Token_GOTO"],[0,28,"blue","PHP_Token_FUNCTION"],[100,0,"blue","PHP_Token_CONST"],[100,0,"blue","PHP_Token_RETURN"],[100,0,"blue","PHP_Token_TRY"],[100,0,"blue","PHP_Token_CATCH"],[100,0,"blue","PHP_Token_THROW"],[100,0,"blue","PHP_Token_USE"],[100,0,"blue","PHP_Token_GLOBAL"],[100,0,"blue","PHP_Token_PUBLIC"],[100,0,"blue","PHP_Token_PROTECTED"],[100,0,"blue","PHP_Token_PRIVATE"],[100,0,"blue","PHP_Token_FINAL"],[100,0,"blue","PHP_Token_ABSTRACT"],[100,0,"blue","PHP_Token_STATIC"],[100,0,"blue","PHP_Token_VAR"],[100,0,"blue","PHP_Token_UNSET"],[100,0,"blue","PHP_Token_ISSET"],[100,0,"blue","PHP_Token_EMPTY"],[100,0,"blue","PHP_Token_HALT_COMPILER"],[0,5,"blue","PHP_Token_INTERFACE"],[100,0,"blue","PHP_Token_CLASS"],[100,0,"blue","PHP_Token_EXTENDS"],[100,0,"blue","PHP_Token_IMPLEMENTS"],[100,0,"blue","PHP_Token_OBJECT_OPERATOR"],[100,0,"blue","PHP_Token_DOUBLE_ARROW"],[100,0,"blue","PHP_Token_LIST"],[100,0,"blue","PHP_Token_ARRAY"],[100,0,"blue","PHP_Token_CLASS_C"],[100,0,"blue","PHP_Token_METHOD_C"],[100,0,"blue","PHP_Token_FUNC_C"],[100,0,"blue","PHP_Token_LINE"],[100,0,"blue","PHP_Token_FILE"],[100,0,"blue","PHP_Token_COMMENT"],[100,0,"blue","PHP_Token_DOC_COMMENT"],[100,0,"blue","PHP_Token_OPEN_TAG"],[100,0,"blue","PHP_Token_OPEN_TAG_WITH_ECHO"],[100,0,"blue","PHP_Token_CLOSE_TAG"],[100,0,"blue","PHP_Token_WHITESPACE"],[100,0,"blue","PHP_Token_START_HEREDOC"],[100,0,"blue","PHP_Token_END_HEREDOC"],[100,0,"blue","PHP_Token_DOLLAR_OPEN_CURLY_BRACES"],[100,0,"blue","PHP_Token_CURLY_OPEN"],[100,0,"blue","PHP_Token_PAAMAYIM_NEKUDOTAYIM"],[0,4,"blue","PHP_Token_NAMESPACE"],[100,0,"blue","PHP_Token_NS_C"],[100,0,"blue","PHP_Token_DIR"],[100,0,"blue","PHP_Token_NS_SEPARATOR"],[100,0,"blue","PHP_Token_DOUBLE_COLON"],[100,0,"blue","PHP_Token_OPEN_BRACKET"],[100,0,"blue","PHP_Token_CLOSE_BRACKET"],[100,0,"blue","PHP_Token_OPEN_SQUARE"],[100,0,"blue","PHP_Token_CLOSE_SQUARE"],[100,0,"blue","PHP_Token_OPEN_CURLY"],[100,0,"blue","PHP_Token_CLOSE_CURLY"],[100,0,"blue","PHP_Token_SEMICOLON"],[100,0,"blue","PHP_Token_DOT"],[100,0,"blue","PHP_Token_COMMA"],[100,0,"blue","PHP_Token_EQUAL"],[100,0,"blue","PHP_Token_LT"],[100,0,"blue","PHP_Token_GT"],[100,0,"blue","PHP_Token_PLUS"],[100,0,"blue","PHP_Token_MINUS"],[100,0,"blue","PHP_Token_MULT"],[100,0,"blue","PHP_Token_DIV"],[100,0,"blue","PHP_Token_QUESTION_MARK"],[100,0,"blue","PHP_Token_EXCLAMATION_MARK"],[100,0,"blue","PHP_Token_COLON"],[100,0,"blue","PHP_Token_DOUBLE_QUOTES"],[100,0,"blue","PHP_Token_AT"],[100,0,"blue","PHP_Token_AMPERSAND"],[100,0,"blue","PHP_Token_PERCENT"],[100,0,"blue","PHP_Token_PIPE"],[100,0,"blue","PHP_Token_DOLLAR"],[100,0,"blue","PHP_Token_CARET"],[100,0,"blue","PHP_Token_TILDE"],[100,0,"blue","PHP_Token_BACKTICK"],[0,36,"blue","PHP_Token_Stream"],[0,2,"blue","PHP_Token_Stream_CachingFactory"],[0,10,"blue","PHP_Token_Stream_TextUI_Command"]]);
+            cc.Set('chart.xmax', 100);
+            cc.Set('chart.background.barcolor1', 'white');
+            cc.Set('chart.background.barcolor2', 'white');
+            cc.Set('chart.tickmarks', 'plus');
+            cc.Set('chart.ticksize', 5);
+            cc.Set('chart.text.size', 5);
+            cc.Set('chart.ylabels', false);
+            cc.Draw();
+            </script>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <h2>Top Project Risks</h2>
+            <ul>
+              <li><a href="Token.php.html#239">PHP_Token_FUNCTION</a> (812)</li>
+              <li><a href="CodeCoverage_TextUI_Command.php.html#63">PHP_CodeCoverage_TextUI_Command</a> (306)</li>
+              <li><a href="Compat.php.html#34">PHP_Compat</a> (272)</li>
+              <li><a href="Token.php.html#111">PHP_TokenWithScope</a> (156)</li>
+              <li><a href="Timer.php.html#58">PHP_Timer</a> (132)</li>
+              <li><a href="Token_Stream_TextUI_Command.php.html#62">PHP_Token_Stream_TextUI_Command</a> (110)</li>
+              <li><a href="CodeCoverage_Report_HTML_Node_Iterator.php.html#58">PHP_CodeCoverage_Report_HTML_Node_Iterator</a> (90)</li>
+              <li><a href="Token.php.html#370">PHP_Token_INTERFACE</a> (30)</li>
+              <li><a href="Token.php.html#424">PHP_Token_NAMESPACE</a> (20)</li>
+              <li><a href="Token_Stream_CachingFactory.php.html#56">PHP_Token_Stream_CachingFactory</a> (6)</li>
+
+            </ul>
+          </td>
+
+          <td valign="top">
+            <h2>Least Tested Methods</h2>
+            <ul>
+              <li><a href="CodeCoverage_Util.php.html#325">PHP_CodeCoverage_Util::getPackageInformation</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#372">PHP_CodeCoverage_Util::getSafeFilename</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#383">PHP_CodeCoverage_Util::percent</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#264">PHP_CodeCoverage_Util::getLinesToBeIgnored</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#179">PHP_CodeCoverage_Util::getDirectory</a> (0%)</li>
+              <li><a href="CodeCoverage_TextUI_Command.php.html#264">PHP_CodeCoverage_TextUI_Command::printVersionString</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#126">PHP_CodeCoverage_Util::buildDirectoryStructure</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#159">PHP_CodeCoverage_Util::crap</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#438">PHP_CodeCoverage_Util::reducePaths</a> (0%)</li>
+              <li><a href="CodeCoverage_Util.php.html#512">PHP_CodeCoverage_Util::arrayToName</a> (0%)</li>
+
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <br />
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
+      <tr><td class="versionInfo">Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.0.4</a> using <a href="http://www.php.net/" target="_top">PHP 5.3.5</a> and PHPUnit 3.5.14 at Fri Aug 12 15:40:14 EDT 2011.</td></tr>
+    </table>
+
+    <br/>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE basedomain="wtvr" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<HEAD>
+	  <META name="TITLE" content="Office Depot Save Small Business" />
+  	<META name="DESCRIPTION" content="SMALL BUSINESSES UNITE! JOIN THE CAMPAIGN TO SAVE SMALL BUSINESS. In these tough economic times it comes down to survival of the smartest. By sharing our tips, ideas and experiences, Office Depot™ and America’s small businesses can work smarter to ensure that not only do we survive this, but that we in fact come through it stronger and better than ever before. Share your smart tip here for the chance to win a $25,000 prize package." />
+  	<META name="KEYWORDS" content="office depot, save small business, smart, tips, save, time, money, office supplies, office furniture, office products, small business" />
+    <TITLE>Office Depot Save Small Business</TITLE>
+    
+    <JSCRIPT gz="TRUE" djConfig="FALSE" isdebug="true">/js/dojo/dojo/dojo_officedepot.js</JSCRIPT>
+    <!--<JSCRIPT djConfig="FALSE" isdebug="false">/js/dojo/dojo/dojo.js</JSCRIPT>
+		<JSCRIPT>/js/wtvr_dojo.js</JSCRIPT>
+		<JSCRIPT>/js/query.js</JSCRIPT>
+		<JSCRIPT>/js/swfobject.js</JSCRIPT>
+		<JSCRIPT>/js/swfembed.js</JSCRIPT>-->
+		<CSSCRIPT gz="FALSE">/css/officedepot_main.css</CSSCRIPT>
+		<!--<CSSCRIPT>/js/dojo/dijit/themes/tundra/tundra.css</CSSCRIPT>
+		<CSSCRIPT>/css/wtvr.css</CSSCRIPT>
+    <CSSCRIPT>/css/main.css</CSSCRIPT>-->
+		<!--<CSSCRIPT>/css/styroform.css</CSSCRIPT>-->
+	</HEAD>
+	<BODY>
+		<ONLOAD></ONLOAD>
+		
+	</BODY>
+</PAGE>

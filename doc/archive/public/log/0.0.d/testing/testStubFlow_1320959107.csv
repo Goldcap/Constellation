@@ -1,0 +1,8 @@
+"Method"|"Label"|"Message"|"Status"
+"assertElementPresent","Login Button Accessible","===========","Success"
+"assertElementPresent","Signup Button Accessible","===========","Success"
+"assertElementPresent","Signup Name Field Accessible","===========","Success"
+"assertElementPresent","Signup Username Field Accessible","===========","Success"
+"assertElementPresent","Signup Month Field Accessible","===========","Success"
+"assertElementPresent","Signup Day Field Accessible","===========","Success"
+"assertElementPresent","Signup Year Field Accessible","===========","Success"

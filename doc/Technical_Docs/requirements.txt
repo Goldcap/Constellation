@@ -1,0 +1,7 @@
+pymongo
+tornado
+asyncmongo
+pylibmc
+python-memcached
+redis
+oursql

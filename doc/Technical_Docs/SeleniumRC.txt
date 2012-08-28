@@ -1,0 +1,13 @@
+Download Selenium RC
+http://seleniumhq.org/download/
+
+Download Python PIP
+curl http://python-distribute.org/distribute_setup.py | python
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+pip install -U selenium
+
+yum install xorg-x11-server-Xvfb
+Xvfb :99 -ac
+export DISPLAY=:99
+
+java -jar selenium-server-standalone-2.4.0.jar

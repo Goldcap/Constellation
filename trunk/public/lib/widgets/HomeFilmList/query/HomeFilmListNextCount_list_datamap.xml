@@ -1,0 +1,23 @@
+<map table="film" result="film_list_datamap">
+  <column column="upcoming_id" type="VARCHAR" size="" key="" order="30" ></column>
+  <solr></solr>
+  <criterion distinct="true">
+    <!--<criteria scope="PROCESS" constant="daterange" value="startdate" column="upcoming_date" name="screening_date" type="AND" />-->
+    <!--<criteria value="true" column="upcoming_featured" name="screening_featured" constant="native" type="AND" />-->
+    <!--<criteria value="[ '' TO * ]" column="upcoming_still_image" name="screening_still_image" constant="native" type="AND" />-->
+    <criteria scope="PROCESS" value="startdate" column="upcoming_end_time" constant="native" type="AND" />
+    <criteria value="1" column="upcoming_film_featured" type="AND" />
+		<criteria value="2" column="upcoming_paid_status" type="AND" />
+    <criteria value="[ 1 TO 2 ]" column="upcoming_type" constant="native" type="AND" />
+    <criteria value="[ 1 TO * ]" column="upcoming_audience_count" constant="native" type="AND" />
+    <criteria value="1" column="upcoming_film_status"/>
+    <ascorderby column="upcoming_date"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

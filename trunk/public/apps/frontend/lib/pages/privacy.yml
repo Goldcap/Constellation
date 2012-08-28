@@ -1,0 +1,14 @@
+template: default
+layout: default
+title: Constellation | Your Online Movie Theater | Privacy Policy
+javascripts: []
+css: []
+widgets:
+  header:
+    HeaderAlt:
+  content:
+    html: {html: html/privacyPolicy.html}
+    AboutNav: {sel: privacy}
+  footer:
+    FooterAlt:
+

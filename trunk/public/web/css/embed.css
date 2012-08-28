@@ -1,0 +1,18 @@
+@import url('reset.css');
+@import url('font.css');
+@import url('typography.css');
+@import url('buttons.css');
+@import url('form.css');
+
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+#canvas {
+	width: 700px;
+	margin: auto;
+	padding: 10px;
+}
+.center {
+	text-align:center;
+}

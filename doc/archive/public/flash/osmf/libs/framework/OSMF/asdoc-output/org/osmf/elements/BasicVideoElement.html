@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="BasicVideoElement,org.osmf.elements.BasicVideoElement,client,deblocking,defaultDuration,smoothing" name="keywords">
+<title>org.osmf.elements.BasicVideoElement</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'BasicVideoElement - OSMF';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">OSMF</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?org/osmf/elements/BasicVideoElement.html&amp;org/osmf/elements/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;BasicVideoElement</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class BasicVideoElement"); titleBar_setSubNav(false,true,false,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.osmf.elements</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class BasicVideoElement</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">BasicVideoElement <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../media/LoadableElementBase.html">LoadableElementBase</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="../media/MediaElement.html">MediaElement</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../elements/VideoElement.html">VideoElement</a></td>
+</tr>
+</table>
+<p></p>
+ BasicVideoElement is a media element specifically created for video playback.
+ It supports both streaming and progressive formats.
+  <p>BasicVideoElement is a lightweight alternative to VideoElement.  Whereas
+ BasicVideoElement supports only a subset of video delivery modes (specifically
+ progressive and simple RTMP streaming), VideoElement supports all video delivery
+ modes.</p>   
+ 
+ <p>The BasicVideoElement uses a NetLoader class to load and unload its media.
+ Developers requiring custom loading logic for video
+ can pass their own loaders to the BasicVideoElement constructor. 
+ These loaders should subclass NetLoader.</p>
+ <p>The basic steps for creating and using a BasicVideoElement are:
+ <ol>
+ <li>Create a new URLResource pointing to the URL of the video stream or file
+ containing the video to be loaded.</li>
+ <li>Create a new NetLoader.</li>
+ <li>Create the new BasicVideoElement, 
+ passing the NetLoader and URLResource
+ as parameters.</li>
+ <li>Get the BasicVideoElement's LoadTrait using the 
+ <code>MediaElement.getTrait(MediaTraitType.LOAD)</code> method.</li>
+ <li>Load the video using the LoadTrait's <code>load()</code> method.</li>
+ <li>Control the media using the BasicVideoElement's traits and handle its trait
+ change events.</li>
+ <li>When done with the BasicVideoElement, unload the video using the  
+ using the LoadTrait's <code>unload()</code> method.</li>
+ </ol>
+ </p>
+ 
+ The VideoElement supports Flash Media Token Authentication,  
+ for passing authentication tokens through the NetConnection.
+  The BasicVideoElement has support for the DRMTrait.  The DRMTrait implementation on 
+ this element will use the NetStreamDRMTrait, which contains the Flash Player's specific DRM
+ implementation.  The startDate, endDate, and period properties of this trait correspond
+ to the voucher validity before playback starts.  Once playback beigns these properties reflect the 
+ playback time window, as found on flash.net.drm.DRMVoucher.
+  
+ 
+ 
+ <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../net/NetLoader.html" target="">org.osmf.net.NetLoader</a>
+<br>
+<a href="../media/URLResource.html" target="">org.osmf.media.URLResource</a>
+<br>
+<a href="../media/MediaElement.html" target="">org.osmf.media.MediaElement</a>
+<br>
+<a href="../traits/package-detail.html" target="">org.osmf.traits</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#client">client</a> : <a href="../net/NetClient.html">NetClient</a>
+<div class="summaryTableDescription">[read-only]
+         The NetClient used by this object's NetStream.</div>
+</td><td class="summaryTableOwnerCol">BasicVideoElement</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../media/MediaElement.html#container">container</a> : <a href="../containers/IMediaContainer.html">IMediaContainer</a>
+<div class="summaryTableDescription">
+   The media container that this element uses.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#deblocking">deblocking</a> : int<div class="summaryTableDescription">
+   Indicates the type of filter applied to decoded video as part of post-processing.</div>
+</td><td class="summaryTableOwnerCol">BasicVideoElement</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultDuration">defaultDuration</a> : Number<div class="summaryTableDescription">
+         Defines the duration that the element's TimeTrait will expose until the
+         element's content is loaded.</div>
+</td><td class="summaryTableOwnerCol">BasicVideoElement</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../media/MediaElement.html#metadataNamespaceURLs">metadataNamespaceURLs</a> : Vector<div class="summaryTableDescription">
+   A Vector containing the namespace URLs for all Metadata
+   objects stored within this MediaElement.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../media/MediaElement.html#resource">resource</a> : <a href="../media/MediaResourceBase.html">MediaResourceBase</a>
+<div class="summaryTableDescription">
+   The media resource that this media element operates on.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#smoothing">smoothing</a> : Boolean<div class="summaryTableDescription">
+   Specifies whether the video should be smoothed (interpolated) when it is scaled.</div>
+</td><td class="summaryTableOwnerCol">BasicVideoElement</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../media/MediaElement.html#traitTypes">traitTypes</a> : Vector<div class="summaryTableDescription">
+   A Vector of MediaTraitType values representing the trait types on this
+   media element.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedPropertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedProperty" id="hideInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Properties</a>
+</div>
+<div class="showInheritedProtectedProperty" id="showInheritedProtectedProperty">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedProperty');" href="#protectedPropertySummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Properties</a>
+</div>
+</div>
+<table id="summaryTableProtectedProperty" class="summaryTable hideInheritedProtectedProperty" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../media/LoadableElementBase.html#loader">loader</a> : <a href="../traits/LoaderBase.html">LoaderBase</a>
+<div class="summaryTableDescription">
+   The LoaderBase used by this element to load resources.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/LoadableElementBase.html">LoadableElementBase</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#BasicVideoElement()">BasicVideoElement</a>(resource:<a href="../media/MediaResourceBase.html">MediaResourceBase</a> = null, loader:<a href="../net/NetLoader.html">NetLoader</a> = null)</div>
+<div class="summaryTableDescription">
+   Constructor.</div>
+</td><td class="summaryTableOwnerCol">BasicVideoElement</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#addMetadata()">addMetadata</a>(namespaceURL:String, metadata:<a href="../metadata/Metadata.html">Metadata</a>):void</div>
+<div class="summaryTableDescription"> 
+   Adds a Metadata object to this MediaElement under the specified namespace URL.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#getMetadata()">getMetadata</a>(namespaceURL:String):<a href="../metadata/Metadata.html">Metadata</a>
+</div>
+<div class="summaryTableDescription"> 
+   Returns the Metadata object that is stored under this MediaElement with
+   the specified namespace URL.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#getTrait()">getTrait</a>(type:String):<a href="../traits/MediaTraitBase.html">MediaTraitBase</a>
+</div>
+<div class="summaryTableDescription">
+   Returns the media trait of the specified type.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#hasTrait()">hasTrait</a>(type:String):Boolean</div>
+<div class="summaryTableDescription">
+   Determines whether this media element has a media trait of the
+   specified type.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#removeMetadata()">removeMetadata</a>(namespaceURL:String):<a href="../metadata/Metadata.html">Metadata</a>
+</div>
+<div class="summaryTableDescription">
+   Removes the Metadata object that was stored under this MediaElement with
+   the specified namespace URL.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable hideInheritedProtectedMethod" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#addTrait()">addTrait</a>(type:String, instance:<a href="../traits/MediaTraitBase.html">MediaTraitBase</a>):void</div>
+<div class="summaryTableDescription">
+   Adds a new media trait to this media element.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/LoadableElementBase.html#createLoadTrait()">createLoadTrait</a>(resource:<a href="../media/MediaResourceBase.html">MediaResourceBase</a>, loader:<a href="../traits/LoaderBase.html">LoaderBase</a>):<a href="../traits/LoadTrait.html">LoadTrait</a>
+</div>
+<div class="summaryTableDescription">
+   Subclasses can override this method to return a custom LoadTrait
+   subclass.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/LoadableElementBase.html">LoadableElementBase</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/LoadableElementBase.html#processLoadingState()">processLoadingState</a>():void</div>
+<div class="summaryTableDescription">
+   
+   Subclasses can override this method to do processing when the media
+   element enters the LOADING state.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/LoadableElementBase.html">LoadableElementBase</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/LoadableElementBase.html#processReadyState()">processReadyState</a>():void</div>
+<div class="summaryTableDescription">
+   Subclasses can override this method to do processing when the media
+   element enters the READY state.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/LoadableElementBase.html">LoadableElementBase</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/LoadableElementBase.html#processUnloadingState()">processUnloadingState</a>():void</div>
+<div class="summaryTableDescription">
+   Subclasses can override this method to do processing when the media
+   element enters the UNLOADING state.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/LoadableElementBase.html">LoadableElementBase</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#removeTrait()">removeTrait</a>(type:String):<a href="../traits/MediaTraitBase.html">MediaTraitBase</a>
+</div>
+<div class="summaryTableDescription">
+   Removes a media trait from this media element.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#setupTraits()">setupTraits</a>():void</div>
+<div class="summaryTableDescription">
+   Sets up the traits for this media element.</div>
+</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<div class="showHideLinks">
+<div class="hideInheritedEvent" id="hideInheritedEvent">
+<a onclick="javascript:setInheritedVisible(false,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Events</a>
+</div>
+<div class="showInheritedEvent" id="showInheritedEvent">
+<a onclick="javascript:setInheritedVisible(true,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Events</a>
+</div>
+</div>
+<table id="summaryTableEvent" class="summaryTable hideInheritedEvent" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:containerChange">containerChange</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the element's container property changed.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:mediaError">mediaError</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when an error which impacts the operation of the media
+  element occurs.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:metadataAdd">metadataAdd</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a Metadata object has been added to this media element.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:metadataRemove">metadataRemove</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a Metadata object has been removed from this media element.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:traitAdd">traitAdd</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a trait is added to the media element.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../media/MediaElement.html#event:traitRemove">traitRemove</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a trait is removed from the media element.</td><td class="summaryTableOwnerCol"><a href="../media/MediaElement.html">MediaElement</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="client"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">client</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>client:<a href="../net/NetClient.html">NetClient</a></code>&nbsp;&nbsp;[read-only]<p>
+         The NetClient used by this object's NetStream.  Will be null until this 
+         object has been loaded (as indicated by its LoadTrait entering the READY
+         state).
+          
+          </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get client():<a href="../net/NetClient.html">NetClient</a></code>
+<br>
+</div>
+<a name="deblocking"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">deblocking</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>deblocking:int</code>&nbsp;&nbsp;[read-write]<p>
+   Indicates the type of filter applied to decoded video as part of post-processing. The
+   default value is 0, which lets the video compressor apply a deblocking filter as needed.
+   See flash.media.Video for more information on deblocking modes.
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get deblocking():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set deblocking(value:int):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.media.Video</div>
+</div>
+<a name="defaultDuration"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultDuration</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultDuration:Number</code>&nbsp;&nbsp;[read-write]<p>
+         Defines the duration that the element's TimeTrait will expose until the
+         element's content is loaded.
+         
+         Setting this property to a positive value results in the element becoming
+         temporal. Any other value will remove the element's TimeTrait, unless the
+         loaded content is exposing a duration. 
+          
+          </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultDuration():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultDuration(value:Number):void</code>
+<br>
+</div>
+<a name="smoothing"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">smoothing</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>smoothing:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Specifies whether the video should be smoothed (interpolated) when it is scaled. 
+   For smoothing to work, the runtime must be in high-quality mode (the default). 
+   The default value is false (no smoothing).  Set this property to true to take
+   advantage of mipmapping image optimization.
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get smoothing():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set smoothing(value:Boolean):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">flash.media.Video</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="BasicVideoElement()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BasicVideoElement</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function BasicVideoElement(resource:<a href="../media/MediaResourceBase.html">MediaResourceBase</a> = null, loader:<a href="../net/NetLoader.html">NetLoader</a> = null)</code><p>
+   Constructor.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">resource</span>:<a href="../media/MediaResourceBase.html">MediaResourceBase</a></code> (default = <code>null</code>)<code></code> &mdash; URLResource that points to the video source that the BasicVideoElement
+   will use.  For dynamic streaming content, use a DynamicStreamingResource.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">loader</span>:<a href="../net/NetLoader.html">NetLoader</a></code> (default = <code>null</code>)<code></code> &mdash; NetLoader used to load the video.  If null, then a base NetLoader will
+   be used.
+   
+   </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; If resource is not an URLResource. 
+    
+    </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

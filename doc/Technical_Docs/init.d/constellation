@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# mongo - this script starts and stops the nginx daemon
+#
+# chkconfig:   - 85 15
+# description:  Mongo is a NoSQL server
+# processname: mongod
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "$NETWORKING" = "no" ] && exit 0
+
+trap onexit 1 2 3 15 ERR
+
+function onexit() {
+    local exit_status=${1:-$?}
+    #echo Exiting $0 with $exit_status
+    #exit $exit_status
+}
+
+start() {
+    echo $"Starting Constellation Services: "
+	service constellation_chat start
+	service constellation_activity start
+	service constellation_private start
+	service constellation_qanda start
+	service constellation_adminmessage start
+	service constellation_history start
+	return 0
+}
+
+stop() {
+    echo $"Stopping Constellation Services: "
+	service constellation_chat stop
+	service constellation_activity stop
+	service constellation_private stop
+	service constellation_qanda stop
+	service constellation_adminmessage stop
+	service constellation_history stop
+	return 0
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+    start)
+        $1
+        ;;
+    stop)
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 2
+esac

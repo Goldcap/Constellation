@@ -1,0 +1,9 @@
+template: cst_pre
+layout: cst_preuser
+title: Constellation.tv Pre Registration
+javascripts: []
+css: []
+cache: 5:MINUTE
+widgets:
+  first-splash:
+    PreUser:

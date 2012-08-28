@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/ioncube
+END
+IoncubeLicenseTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/ioncube/IoncubeLicenseTask.php
+END
+IoncubeComment.php
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/ioncube/IoncubeComment.php
+END
+IoncubeEncoderTask.php
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/www.constellation.tv/!svn/ver/4888/branches/prod/public/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/tasks/ext/ioncube/IoncubeEncoderTask.php
+END

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<module>
+	<attributes>
+    <assets>
+  		<CSSCRIPT></CSSCRIPT>
+  		<JSCRIPT></JSCRIPT>
+	  </assets>
+  </attributes>
+	<content>
+	 <!--<RESULTS name="join_welcome_header" title="welcome to the circlehood.">
+     <LIST type="css" header="false" count="8" totalcount="30" rpp="8" page="1" baseqs="/shop">
+  	   <LIST_ITEM description="find friends and goodcircles to join. start your own goodcircle. explore. or just shop. it's all good." />
+  	   <LIST_ITEM description="thank you." />
+  	 </LIST>
+    </RESULTS>-->
+	</content>
+</module>

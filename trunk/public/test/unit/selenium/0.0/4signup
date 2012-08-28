@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://stage.constellation.tv/" />
+<title>4signup</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">4signup</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log In</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main-choose-signup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=main-signup-name</td>
+	<td>uuuu1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>Click on Month dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=main-signup-username</td>
+	<td>uuuu1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=month</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=month</td>
+	<td>label=Dec</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=day</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=day</td>
+	<td>label=17</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;1972&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=year</td>
+	<td>label=1969</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main-signup-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=main-signup-email</td>
+	<td>waleed@uuuu.tv</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main-signup-password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id="main-signup-password"</td>
+	<td>uuuu1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main-signup-password2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=main-signup-password2</td>
+	<td>uuuu1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//form[@id='sign-up_form']/div[8]/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=loggedUser</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>uuuu1</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

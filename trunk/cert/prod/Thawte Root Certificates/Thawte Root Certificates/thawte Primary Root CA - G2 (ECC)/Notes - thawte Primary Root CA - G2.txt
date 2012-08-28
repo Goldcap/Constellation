@@ -1,0 +1,3 @@
+
+Key Size: ECC p-384
+Algorithm: SHA384 With ECC

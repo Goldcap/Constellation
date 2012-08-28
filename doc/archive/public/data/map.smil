@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<smil>
+  <head>
+    <!--<meta base="http://contest-f.akamaihd.net" />-->
+    <meta base="rtmp://cp113558.edgefcs.net/ondemand" />
+  </head>
+  <body>
+    <switch>
+      <map></map>
+    </switch>
+  </body>
+</smil>

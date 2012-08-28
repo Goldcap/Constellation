@@ -1,0 +1,15 @@
+Mongo Upgrade
+
+1) Update Mongo
+http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.0.2.tgz
+
+2) Update Tornado
+http://cloud.github.com/downloads/facebook/tornado/tornado-2.2.tar.gz
+
+3) Update Pymongo
+git clone git://github.com/mongodb/mongo-python-driver.git pymongo
+cd pymongo
+wget http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
+
+3) Update AsyncMongo
+git clone https://github.com/smacintyre/asyncmongo.git

@@ -1,0 +1,65 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="film_alt_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="film_makers" type="LONGVARCHAR" size="" key="" order="2"></column>
+  <column column="film_production_company" type="LONGVARCHAR" size="" key="" order="3"></column>
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="film_trailer_file" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="film_movie_file" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="film_maker_message" type="LONGVARCHAR" size="" key="" order="7"></column>
+  <column column="film_ticket_price" type="FLOAT" size="10" key="" order="8"></column>
+  <column column="film_hostbyrequest_price" type="FLOAT" size="10" key="" order="8"></column>
+  <column column="film_status" type="TINYINT" size="4" key="" order="9" format="%0d"></column>
+  <column column="film_featured" type="TINYINT" size="4" key="" order="10" format="bool"></column>
+  <column column="film_created_at" type="TIMESTAMP" size="" key="" order="11" format="dateW3XMLOUT"></column>
+  <column column="film_updated_at" type="TIMESTAMP" size="" key="" order="12" format="dateW3XMLOUT"></column>
+  <column column="film_setup_price" type="FLOAT" size="10" key="" order="13" format="%.02f"></column>
+  <column column="film_info" type="LONGVARCHAR" size="" key="" order="14"></column>
+  <column column="film_genre" type="LONGVARCHAR" size="" key="" order="15"></column>
+  <column column="film_running_time" type="VARCHAR" size="255" key="" order="16"></column>
+  <column column="film_total_seats" type="INTEGER" size="11" key="" order="17" format="%0d"></column>
+  <column column="film_short_name" type="VARCHAR" size="255" key="" order="18"></column>
+  <column column="film_synopsis" type="VARCHAR" size="255" key="" order="19"></column>
+  <column column="film_still_image" type="VARCHAR" size="255" key="" order="20"></column>
+  <column column="film_background_image" type="VARCHAR" size="255" key="" order="20"></column>
+  <column column="film_splash_image" type="VARCHAR" size="255" key="" order="20"></column>
+  <column column="film_geoblocking_enabled" type="TINYINT" size="1" key="" order="21" format="bool"></column>
+  <column column="film_geoblocking_type" type="TINYINT" size="1" key="" order="22"></column>
+  <column column="film_short_url" type="VARCHAR" size="255" key="" order="23"></column>
+  <column column="film_id" type="INTEGER" size="11" key="PRI" order="24" format="%0d"></column>
+  <column column="film_directors" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_producers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_actors" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_associate_producers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_supported" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_executive_producers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_co-producers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_co-executive_producers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_music" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_director_of_photography" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_writers" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_link" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_review" type="LONGVARCHAR" size="" key="" order="5" />
+  <column column="film_startdate" type="LONGVARCHAR" size="monthtime" key="" order="5" format="date"/>
+  <column column="film_enddate" type="LONGVARCHAR" size="monthtime" key="" order="5" format="date"/>
+  <column column="film_sponsor_id" type="INTEGER" size="11" format="%0d"></column>
+  <column column="film_share" type="INTEGER" size="11" format="%0d"></column>
+  <column column="film_use_sponsor_codes" type="INTEGER" size="11" order="24" format="%0d"></column>
+  <column column="film_allow_hostbyrequest" type="INTEGER" size="11" order="24" format="%0d"></column>
+  <column column="film_allow_user_hosting" type="INTEGER" size="11" order="24" format="%0d"></column>
+  <column column="film_alternate_template" type="INTEGER" size="11" order="24" format="%0d"></column>
+  <column column="film_alternate_opts" type="INTEGER" size="11" order="24"></column>
+  <column column="film_user_reviews" type="INTEGER" size="11" order="24"></column>
+  <solr></solr>
+  <criterion limit="0" distinct="true">
+    <criteria scope="GET" value="id" column="film_id"/>
+    <ascorderby column="film_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="1"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

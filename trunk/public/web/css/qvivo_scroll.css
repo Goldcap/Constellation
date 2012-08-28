@@ -1,0 +1,83 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #CCC;
+	font-family: Helvetica, Arial;
+	font-size: 13px;
+}
+#my_panel {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 500px;
+	height: 400px;
+	background: #EBEBEB;
+	color: #333;
+	border: 2px solid #333;
+	overflow: auto;
+}
+#my_panel p {
+	margin: 0;
+	padding: 20px 20px 0 20px;
+}
+
+/******************************
+QVIVO Scroll Bars
+******************************/
+
+.scroll_wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.content_wrapper {
+	width: 100%;
+	overflow: hidden;
+	overflow-y: auto;
+}
+.content_padding {
+	height: 20px;
+	clear: both;
+}
+.scroll_track {
+	pointer-events: none;
+	position: absolute;
+	width: 20px;
+	min-height: 50px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	background: #EBEBEB url(../img/v_scroll_base_top.png) 5px 20px no-repeat;
+}
+.scroll_track_footer {
+	width: 20px;
+	height: 100%;
+	background: url(../img/v_scroll_base_bottom.png) 5px bottom no-repeat;
+}
+.scroll_bar {
+	position: absolute;
+	width: 20px;
+	height: 10%;
+	height: 0%;
+}
+.scroll_bar_top, .scroll_bar_bottom {
+	position: absolute;
+	width: 20px;
+	left: 0;
+	height: 60%;
+	margin: 0;
+	padding: 0;
+}
+.scroll_bar_top {
+	top: 0;
+	background: url(../img/v_scroll_bar_top.png) 7px 22px no-repeat;
+}
+.scroll_bar_bottom {
+	bottom: 0;
+	background: url(../img/v_scroll_bar_bottom.png) 7px bottom no-repeat;
+}

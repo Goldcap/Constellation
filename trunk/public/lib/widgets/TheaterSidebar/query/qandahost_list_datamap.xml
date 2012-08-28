@@ -1,0 +1,28 @@
+<map table="qanda" result="qanda_list_datamap">
+  <column column="qanda_body" type="LONGVARCHAR" size="" key="" order="1"></column>
+  <column column="qanda_answered" type="TINYINT" size="1" key="" order="2"></column>
+  <column column="qanda_current" type="TINYINT" size="1" key="" order="3"></column>
+  <column column="qanda_created_at" type="TIMESTAMP" size="" key="" order="4"></column>
+  <column column="qanda_updated_at" type="TIMESTAMP" size="" key="" order="5"></column>
+  <column column="fk_screening_id" type="INTEGER" size="11" key="MUL" order="6"></column>
+  <column column="fk_user_id" type="INTEGER" size="11" key="MUL" order="7"></column>
+  <column column="qanda_sequence" type="INTEGER" size="11" key="PRI" order="8"></column>
+  <column column="qanda_id" type="INTEGER" size="11" key="PRI" order="9"></column>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="screening_id" column="fk_screening_id" />
+    <!--<criteria value="0" column="qanda_answered" />-->
+    <ascorderby column="qanda_sequence"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="0"></pagesperpage>
+    <recordssperpage value="0"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+  <maplinks>
+    <maplink column="fk_screening_id" base="/qanda/detail/">
+      <attribute name="qanda_id"></attribute>
+    </maplink>
+  </maplinks>
+</map>

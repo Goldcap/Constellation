@@ -1,0 +1,40 @@
+http://redis.io/topics/data-types-intro
+
+http://stackoverflow.com/questions/3801777/querying-in-redis
+http://pythonik.blogspot.com/2010/11/redis-patterns-search.html
+
+Install Redis
+http://redis.io/
+wget http://redis.googlecode.com/files/redis-2.4.8.tar.gz
+startup script
+https://gist.github.com/1858144
+
+
+install redis-py
+
+cd /usr/src
+yum install mercurial
+export GIT_SSL_NO_VERIFY=true
+git clone https://github.com/andymccurdy/redis-py.git
+git clone https://github.com/pietern/hiredis-py.git
+
+install hiredis (From TARBALL IF ABOVE DOESN'T WORK)
+wget http://pypi.python.org/packages/source/h/hiredis/hiredis-0.1.0.tar.gz#md5=0030abe2fd3acbecbd0d960d60844142
+
+Helpful stuff:
+http://degizmo.com/2010/03/22/getting-started-redis-and-python/
+
+
+Async Stuff, IGNORE!
+
+Install Brukva
+https://github.com/evilkost/brukva.git
+
+Redis Tornado Non-Blocking
+http://stackoverflow.com/questions/8466838/what-is-the-proper-way-to-handle-redis-connection-in-tornado-async-pub-sub
+http://supermanscott.com/elva-realtime-log-system
+
+https://github.com/goldalworming/tornado-redis-chat
+https://github.com/evilkost/brukva/issues/13
+https://github.com/goldalworming/tornado-redis-chat/blob/master/chatdemo.py
+https://groups.google.com/forum/#!msg/python-tornado/eMjagXL6Dxc/7DwkbXUUAfcJ

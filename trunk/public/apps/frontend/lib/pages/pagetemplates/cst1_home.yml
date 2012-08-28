@@ -1,0 +1,14 @@
+divs:
+  wrapper:
+    attributes: 'class="wrapper"'
+    divs:
+      masterhead:
+        attributes: 'class="masterhead" role="banner"'
+      wrapper:
+        attributes: 'class="content"'
+        divs:
+          marquee:
+          content:
+      footer:
+        attributes: 'class="footer" role="contentinfo"'
+  zzdiv:

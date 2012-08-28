@@ -1,0 +1,46 @@
+FlashVars as of v76	
+	
+	"ticketParams": encrypted ticket
+	 
+	"heartbeatInterval": interval for heartbeats 
+		default:10
+		 
+	"heartbeatLimit":number of times the heartbeat needs to fail before a heart attack
+		default:4
+		
+	"heartbeatPath":initial string to begin the path to the heartbeat
+	
+	"watermarkDuration": NOT USED
+	 
+	"sip" : ip to build heartbeat path with
+	
+	"sprt": port to build heartbeat path with
+	
+	"heartbeatProgressFailLimit": how many times can the heartbeat fail before having a heart attack
+	
+	"timestamp":the timestamp to use when creating the initial token
+	
+	"seekInto":targeted time to seek the player to when ready
+		default:0
+		
+	"filmStartTime":time value for when the movie theater time started - used in heartbeat validation
+		default:0
+		
+	"showDebugPanel": show the debug panel on start
+		default:false
+		
+	 "showTimeDebug": show the current time through a JS function call
+	 	default:false
+	 	
+	  "showTimeDebugInterval": number in seconds interval to show time with JS debug  
+	   default:10
+	  "logToDB": log to DB Boolean
+	  	default:true
+	  "logLevel": log level to use when logging to DB
+	  default:1
+	   possible values:
+	   	LEVEL_DEBUG:int = 0
+		LEVEL_WARN:int = 1
+		LEVEL_INFO:int = 2
+		LEVEL_ERROR:int = 3
+		LEVEL_FATAL:int = 4

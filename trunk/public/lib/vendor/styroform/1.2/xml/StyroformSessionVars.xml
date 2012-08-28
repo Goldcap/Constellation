@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<styroformsessionvars>
+  <sessionvars>
+    <variable>
+      <name>session_user_id</name>
+    </variable>
+    <variable>
+      <name>session_user_fname</name>
+    </variable>
+    <variable>
+      <name>session_user_lname</name>
+    </variable>
+  </sessionvars>
+</styroformsessionvars>

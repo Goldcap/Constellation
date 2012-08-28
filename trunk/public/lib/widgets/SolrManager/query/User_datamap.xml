@@ -1,0 +1,32 @@
+<map table="user" result="user_list_datamap">
+  <column column="user_id" name="object_id" type="INTEGER" size="" key="" order="1" format="user%d" />
+  <column column="user_id" name="object_type" type="INTEGER" size="" key="" order="2" format="user" />
+  <column column="user_id" name="object_name" type="INTEGER" size="" key="" order="3" format="user%0d" />
+  <column column="user_fb_uid" type="INTEGER" size="" key="" order="3" format="%0d" />
+  <column column="user_t_uid" type="INTEGER" size="" key="" order="4" format="%0d"/>
+  <column column="user_full_name" type="VARCHAR" size="255" key="" order="5"></column>
+  <column column="user_fname" type="VARCHAR" size="255" key="" order="6"></column>
+  <column column="user_lname" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="user_username" type="VARCHAR" size="255" key="" order="8"></column>
+  <column column="user_email" type="INTEGER" size="" key="" order="9" />
+  <column column="user_password" type="VARCHAR" size="255" key="" order="10"></column>
+  <column column="user_bio" type="VARCHAR" size="255" key="" order="10"></column>
+  <column column="user_tagline" type="VARCHAR" size="255" key="" order="10"></column>
+  <column column="user_ual" type="VARCHAR" size="255" key="" order="11"></column>
+  <column column="user_photo_url" type="VARCHAR" size="255" key="" order="12"></column>
+  <column column="user_image" type="VARCHAR" size="255" key="" order="13"></column>
+  <column column="user_default_timezone" type="VARCHAR" size="255" key="" order="13"></column>
+  <column column="user_created_at" type="TIMESTAMP" size="" key="" order="14" util="item::dateW3XMLIN"></column>
+  <column column="user_id" type="INTEGER" size="" key="PRI" order="15"></column>
+  <criterion limit="0" distinct="true">
+    <criteria scope="PROCESS" value="user_id" column="user_id"/>
+    <ascorderby column="user_id"></ascorderby>
+    <!--         <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="5"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

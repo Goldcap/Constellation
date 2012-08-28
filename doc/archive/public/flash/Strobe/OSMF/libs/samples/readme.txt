@@ -1,0 +1,1 @@
+The projects in the libs/samples folder represent sample libraries.  The OSMF sample libraries are intended to demonstrate how to incorporate a particular feature into a media player.  In some cases, the libraries are experimental in nature.  Unlike with the APIs in the framework/OSMF project, there is no guarantee of backwards compatibility with regard to sample library APIs.

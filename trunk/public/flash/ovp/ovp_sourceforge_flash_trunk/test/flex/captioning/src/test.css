@@ -1,0 +1,87 @@
+/*@font-face {
+	src: local("Verdana");
+	fontFamily: "Verdana";
+	unicodeRange:'U+0020-U+007E'; 
+}
+
+@font-face {
+	src: local("Verdana");
+	fontFamily: "Verdana";
+	fontWeight: bold;
+	unicodeRange:'U+0020-U+007E'; 
+}
+
+@font-face {
+	src: local("Courier");
+	fontFamily: "Courier";
+	unicodeRange:'U+0020-U+007E'; 
+}
+
+@font-face {
+	src: local("Courier");
+	fontFamily: "Courier";
+	fontWeight: bold;
+	unicodeRange:'U+0020-U+007E'; 
+}
+*/
+global {
+   color: #FFFFFF;
+   fontFamily: "Verdana";
+   fontSize: 11px;
+   fontWeight: normal;
+}
+
+.title {
+	fontSize: 20px;
+	fontWeight: normal;
+}
+
+.timeCode {
+	fontSize: 10px;
+	color: #999999;
+}
+
+.label {
+	fontSize: 10px;
+	color: #aaaaaa;
+}
+
+ComboBox {
+	color: #333333;
+	themeColor: "haloSilver";
+}
+
+
+Button {
+	themeColor: "haloSilver";
+}
+
+ProgressBar {
+	barColor: #777777;
+	borderColor: #777777;
+	color: #111111;
+}
+
+HSlider {
+	themeColor: "haloSilver";
+    dataTipStyleName: "dataTip";
+    dataTipOffset: 6;
+}
+
+.dataTip {
+    backgroundColor: black;
+}
+
+
+.cuePointContainerStyle {
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingTop: 5;
+	background-color: #000000;
+	background-alpha: 0.5;
+}
+
+.cuePointText {
+	fontSize: 14px;
+}

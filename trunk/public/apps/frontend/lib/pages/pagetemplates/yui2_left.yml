@@ -1,0 +1,21 @@
+divs:
+  doc3:
+    attributes: 'class="yui-t2"'
+    divs:
+      hd:
+        attributes: 'role="banner"'
+      bd:
+        attributes: 'role="main"'
+        divs:
+          yui-main:
+            divs:
+              yui-b-inner:
+                attributes: 'class="yui-b"'
+                divs:
+                  col02:
+                    attributes: 'class="yui-g"'
+          col04:
+            attributes: 'class="yui-b"'
+      ft:
+        attributes: 'role="contentinfo"'
+  zzdiv:

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<tt xml:lang="en" xmlns="http://www.w3.org/2006/04/ttaf1"  xmlns:tts="http://www.w3.org/2006/04/ttaf1#styling">
+	<!-- 
+		This sample has no head tag and no div tag.
+	-->
+	<body>
+		<p begin="00:00:00" dur="00:00:03">There is no style on this text showing at 0 secs for 3 secs.</p>
+		<p begin="00:00:05">Default text on default background, <span tts:color="red" tts:fontWeight="bold" tts:fontStyle="italic">red, bold, italic</span> normal.</p>
+	</body>
+</tt>

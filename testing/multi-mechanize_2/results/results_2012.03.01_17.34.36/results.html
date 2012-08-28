@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Multi-Mechanize - Results</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="Content-Language" content="en" />
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: Verdana, sans-serif;
+            font-size: 11px;
+            padding: 5px;
+        }
+        h1 {
+            font-size: 16px;
+            background: #FF9933;
+            margin-bottom: 0;
+            padding-left: 5px;
+            padding-top: 2px;
+        }
+        h2 {
+            font-size: 13px;
+            background: #C0C0C0;
+            padding-left: 5px;
+            margin-top: 2em;
+            margin-bottom: .75em;
+        }
+        h3 {
+            font-size: 12px;
+            background: #EEEEEE;
+            padding-left: 5px;
+            margin-bottom: 0.5em;
+        }
+        h4 {
+            font-size: 11px;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            margin-left: 10px;
+        }
+        td {
+            text-align: right;
+            color: #000000;
+            background: #FFFFFF;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 0;
+        }
+        th {
+            text-align: center;
+            padding-right: 10px;
+            padding-left: 10px;
+            color: #000000;
+            background: #FFFFFF;
+        }
+        div.summary {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Performance Results Report</h1>
+<h2>Summary</h2>
+<div class="summary">
+<b>transactions:</b> 695<br />
+<b>errors:</b> 0<br />
+<b>run time:</b> 600 secs<br />
+<b>rampup:</b> 600 secs<br /><br />
+<b>test start:</b> 2012-03-01 17:37:11<br />
+<b>test finish:</b> 2012-03-01 17:44:35<br /><br />
+<b>time-series interval:</b> 30 secs<br /><br /><br />
+<b>workload configuration:</b><br /><br />
+<table>
+<tr><th>group name</th><th>threads</th><th>script name</th></tr>
+<tr><td>user_group-1</td><td>100</td><td>mech_chat.py</td></tr>
+<tr><td>user_group-2</td><td>100</td><td>mech_chat.py</td></tr>
+<tr><td>user_group-3</td><td>100</td><td>mech_chat.py</td></tr>
+</table>
+</div>
+<h2>All Transactions</h2>
+<h3>Transaction Response Summary (secs)</h3>
+<table>
+<tr><th>count</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>695</td><td>145.207</td><td>166.954</td><td>175.165</td><td>179.963</td><td>183.076</td><td>197.249</td><td>9.270</td></tr>
+</table>
+<h3>Interval Details (secs)</h3>
+<table>
+<tr><th>interval</th><th>count</th><th>rate</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>1</td><td>13</td><td>0.43</td><td>152.845</td><td>157.843</td><td>160.948</td><td>161.302</td><td>165.041</td><td>165.041</td><td>3.505</td></tr>
+<tr><td>2</td><td>16</td><td>0.53</td><td>150.560</td><td>161.399</td><td>166.670</td><td>167.290</td><td>173.115</td><td>173.115</td><td>6.092</td></tr>
+<tr><td>3</td><td>14</td><td>0.47</td><td>154.776</td><td>162.373</td><td>166.567</td><td>167.117</td><td>168.037</td><td>168.037</td><td>4.425</td></tr>
+<tr><td>4</td><td>13</td><td>0.43</td><td>153.504</td><td>161.846</td><td>165.366</td><td>166.879</td><td>167.412</td><td>167.412</td><td>4.267</td></tr>
+<tr><td>5</td><td>16</td><td>0.53</td><td>156.109</td><td>162.416</td><td>165.458</td><td>167.349</td><td>167.814</td><td>167.814</td><td>3.743</td></tr>
+<tr><td>6</td><td>22</td><td>0.73</td><td>146.985</td><td>160.042</td><td>166.999</td><td>171.058</td><td>171.799</td><td>172.348</td><td>7.402</td></tr>
+<tr><td>7</td><td>28</td><td>0.93</td><td>151.148</td><td>162.208</td><td>166.195</td><td>172.956</td><td>173.054</td><td>178.389</td><td>6.131</td></tr>
+<tr><td>8</td><td>32</td><td>1.07</td><td>149.965</td><td>163.338</td><td>169.212</td><td>170.453</td><td>174.029</td><td>175.961</td><td>6.338</td></tr>
+<tr><td>9</td><td>28</td><td>0.93</td><td>152.407</td><td>164.696</td><td>168.504</td><td>174.369</td><td>175.493</td><td>182.598</td><td>6.625</td></tr>
+<tr><td>10</td><td>34</td><td>1.13</td><td>146.097</td><td>162.934</td><td>170.001</td><td>172.439</td><td>174.750</td><td>181.290</td><td>7.790</td></tr>
+<tr><td>11</td><td>29</td><td>0.97</td><td>145.207</td><td>161.678</td><td>167.497</td><td>171.756</td><td>176.527</td><td>177.321</td><td>7.629</td></tr>
+<tr><td>12</td><td>30</td><td>1.00</td><td>158.987</td><td>169.911</td><td>176.749</td><td>180.743</td><td>181.644</td><td>182.880</td><td>6.779</td></tr>
+<tr><td>13</td><td>37</td><td>1.23</td><td>160.562</td><td>175.084</td><td>181.209</td><td>184.858</td><td>192.053</td><td>197.249</td><td>7.820</td></tr>
+<tr><td>14</td><td>48</td><td>1.60</td><td>159.197</td><td>177.172</td><td>183.076</td><td>186.638</td><td>187.109</td><td>193.082</td><td>7.926</td></tr>
+<tr><td>15</td><td>35</td><td>1.17</td><td>157.437</td><td>175.069</td><td>179.963</td><td>184.046</td><td>190.303</td><td>190.822</td><td>6.852</td></tr>
+</table>
+<h3>Graphs</h3>
+<h4>Response Time: 30 sec time-series</h4>
+<img src="All_Transactions_response_times_intervals.png"></img>
+<h4>Response Time: raw data (all points)</h4>
+<img src="All_Transactions_response_times.png"></img>
+<h4>Throughput: 5 sec time-series</h4>
+<img src="All_Transactions_throughput.png"></img>
+<hr />
+<h2>Custom Timer: Chat</h2>
+<h3>Timer Summary (secs)</h3>
+<table>
+<tr><th>count</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>395</td><td>0.032</td><td>0.418</td><td>0.403</td><td>1.331</td><td>1.928</td><td>10.273</td><td>1.002</td></tr>
+</table>
+<h3>Interval Details (secs)</h3>
+<table>
+<tr><th>interval</th><th>count</th><th>rate</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>1</td><td>13</td><td>0.43</td><td>0.033</td><td>0.392</td><td>0.890</td><td>1.452</td><td>2.286</td><td>2.286</td><td>0.716</td></tr>
+<tr><td>2</td><td>16</td><td>0.53</td><td>0.035</td><td>0.186</td><td>0.068</td><td>0.162</td><td>2.050</td><td>2.050</td><td>0.498</td></tr>
+<tr><td>3</td><td>14</td><td>0.47</td><td>0.036</td><td>0.165</td><td>0.182</td><td>0.279</td><td>1.253</td><td>1.253</td><td>0.321</td></tr>
+<tr><td>4</td><td>13</td><td>0.43</td><td>0.044</td><td>0.356</td><td>0.379</td><td>1.471</td><td>1.928</td><td>1.928</td><td>0.610</td></tr>
+<tr><td>5</td><td>16</td><td>0.53</td><td>0.032</td><td>0.198</td><td>0.129</td><td>0.387</td><td>1.608</td><td>1.608</td><td>0.386</td></tr>
+<tr><td>6</td><td>22</td><td>0.73</td><td>0.038</td><td>0.183</td><td>0.209</td><td>0.610</td><td>0.699</td><td>0.935</td><td>0.244</td></tr>
+<tr><td>7</td><td>28</td><td>0.93</td><td>0.033</td><td>0.418</td><td>0.870</td><td>1.076</td><td>1.379</td><td>2.562</td><td>0.586</td></tr>
+<tr><td>8</td><td>32</td><td>1.07</td><td>0.033</td><td>0.106</td><td>0.110</td><td>0.142</td><td>0.183</td><td>1.038</td><td>0.174</td></tr>
+<tr><td>9</td><td>28</td><td>0.93</td><td>0.034</td><td>0.209</td><td>0.261</td><td>0.519</td><td>0.639</td><td>2.380</td><td>0.450</td></tr>
+<tr><td>10</td><td>34</td><td>1.13</td><td>0.034</td><td>0.123</td><td>0.137</td><td>0.183</td><td>0.501</td><td>1.071</td><td>0.188</td></tr>
+<tr><td>11</td><td>29</td><td>0.97</td><td>0.041</td><td>0.605</td><td>0.779</td><td>1.939</td><td>2.446</td><td>7.022</td><td>1.387</td></tr>
+<tr><td>12</td><td>30</td><td>1.00</td><td>0.046</td><td>1.475</td><td>1.830</td><td>2.517</td><td>7.199</td><td>10.273</td><td>2.169</td></tr>
+<tr><td>13</td><td>37</td><td>1.23</td><td>0.037</td><td>0.561</td><td>1.331</td><td>1.917</td><td>2.166</td><td>2.340</td><td>0.765</td></tr>
+<tr><td>14</td><td>48</td><td>1.60</td><td>0.039</td><td>0.337</td><td>0.375</td><td>0.854</td><td>1.359</td><td>5.126</td><td>0.792</td></tr>
+<tr><td>15</td><td>35</td><td>1.17</td><td>0.033</td><td>0.543</td><td>0.148</td><td>0.614</td><td>5.157</td><td>5.291</td><td>1.450</td></tr>
+</table>
+<h3>Graphs</h3>
+<h4>Response Time: 30 sec time-series</h4>
+<img src="Chat_response_times_intervals.png"></img>
+<h4>Response Time: raw data (all points)</h4>
+<img src="Chat_response_times.png"></img>
+<h4>Throughput: 30 sec time-series</h4>
+<img src="Chat_throughput.png"></img>
+<hr />
+<h2>Custom Timer: Payment</h2>
+<h3>Timer Summary (secs)</h3>
+<table>
+<tr><th>count</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>395</td><td>0.351</td><td>0.521</td><td>0.568</td><td>0.619</td><td>0.722</td><td>2.824</td><td>0.161</td></tr>
+</table>
+<h3>Interval Details (secs)</h3>
+<table>
+<tr><th>interval</th><th>count</th><th>rate</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>1</td><td>13</td><td>0.43</td><td>0.439</td><td>0.545</td><td>0.568</td><td>0.578</td><td>0.597</td><td>0.597</td><td>0.039</td></tr>
+<tr><td>2</td><td>16</td><td>0.53</td><td>0.457</td><td>0.500</td><td>0.510</td><td>0.551</td><td>0.574</td><td>0.574</td><td>0.029</td></tr>
+<tr><td>3</td><td>14</td><td>0.47</td><td>0.444</td><td>0.502</td><td>0.549</td><td>0.550</td><td>0.551</td><td>0.551</td><td>0.037</td></tr>
+<tr><td>4</td><td>13</td><td>0.43</td><td>0.451</td><td>0.504</td><td>0.564</td><td>0.572</td><td>0.596</td><td>0.596</td><td>0.047</td></tr>
+<tr><td>5</td><td>16</td><td>0.53</td><td>0.424</td><td>0.526</td><td>0.511</td><td>0.746</td><td>0.822</td><td>0.822</td><td>0.121</td></tr>
+<tr><td>6</td><td>22</td><td>0.73</td><td>0.377</td><td>0.481</td><td>0.527</td><td>0.537</td><td>0.540</td><td>0.631</td><td>0.058</td></tr>
+<tr><td>7</td><td>28</td><td>0.93</td><td>0.351</td><td>0.476</td><td>0.561</td><td>0.585</td><td>0.586</td><td>0.618</td><td>0.075</td></tr>
+<tr><td>8</td><td>32</td><td>1.07</td><td>0.376</td><td>0.612</td><td>0.640</td><td>0.741</td><td>1.176</td><td>2.824</td><td>0.431</td></tr>
+<tr><td>9</td><td>28</td><td>0.93</td><td>0.374</td><td>0.524</td><td>0.568</td><td>0.592</td><td>0.604</td><td>1.344</td><td>0.174</td></tr>
+<tr><td>10</td><td>34</td><td>1.13</td><td>0.373</td><td>0.511</td><td>0.568</td><td>0.577</td><td>0.755</td><td>0.778</td><td>0.084</td></tr>
+<tr><td>11</td><td>29</td><td>0.97</td><td>0.359</td><td>0.488</td><td>0.562</td><td>0.574</td><td>0.619</td><td>0.826</td><td>0.099</td></tr>
+<tr><td>12</td><td>30</td><td>1.00</td><td>0.380</td><td>0.551</td><td>0.691</td><td>0.737</td><td>0.756</td><td>0.760</td><td>0.111</td></tr>
+<tr><td>13</td><td>37</td><td>1.23</td><td>0.373</td><td>0.528</td><td>0.570</td><td>0.689</td><td>0.765</td><td>1.393</td><td>0.175</td></tr>
+<tr><td>14</td><td>48</td><td>1.60</td><td>0.372</td><td>0.495</td><td>0.546</td><td>0.629</td><td>0.642</td><td>0.759</td><td>0.081</td></tr>
+<tr><td>15</td><td>35</td><td>1.17</td><td>0.376</td><td>0.544</td><td>0.627</td><td>0.662</td><td>0.754</td><td>0.755</td><td>0.092</td></tr>
+</table>
+<h3>Graphs</h3>
+<h4>Response Time: 30 sec time-series</h4>
+<img src="Payment_response_times_intervals.png"></img>
+<h4>Response Time: raw data (all points)</h4>
+<img src="Payment_response_times.png"></img>
+<h4>Throughput: 30 sec time-series</h4>
+<img src="Payment_throughput.png"></img>
+<hr />
+<h2>Custom Timer: Signup</h2>
+<h3>Timer Summary (secs)</h3>
+<table>
+<tr><th>count</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>395</td><td>0.420</td><td>0.830</td><td>0.746</td><td>1.917</td><td>2.426</td><td>5.584</td><td>0.722</td></tr>
+</table>
+<h3>Interval Details (secs)</h3>
+<table>
+<tr><th>interval</th><th>count</th><th>rate</th><th>min</th><th>avg</th><th>80pct</th><th>90pct</th><th>95pct</th><th>max</th><th>stdev</th></tr>
+<tr><td>1</td><td>13</td><td>0.43</td><td>0.449</td><td>1.441</td><td>3.416</td><td>3.431</td><td>3.463</td><td>3.463</td><td>1.247</td></tr>
+<tr><td>2</td><td>16</td><td>0.53</td><td>0.475</td><td>0.822</td><td>0.691</td><td>2.471</td><td>2.502</td><td>2.502</td><td>0.680</td></tr>
+<tr><td>3</td><td>14</td><td>0.47</td><td>0.459</td><td>1.099</td><td>2.446</td><td>2.466</td><td>2.477</td><td>2.477</td><td>0.790</td></tr>
+<tr><td>4</td><td>13</td><td>0.43</td><td>0.464</td><td>0.743</td><td>0.705</td><td>1.617</td><td>2.354</td><td>2.354</td><td>0.575</td></tr>
+<tr><td>5</td><td>16</td><td>0.53</td><td>0.486</td><td>1.342</td><td>2.357</td><td>2.660</td><td>2.676</td><td>2.676</td><td>0.898</td></tr>
+<tr><td>6</td><td>22</td><td>0.73</td><td>0.468</td><td>0.694</td><td>0.692</td><td>0.820</td><td>1.906</td><td>1.917</td><td>0.406</td></tr>
+<tr><td>7</td><td>28</td><td>0.93</td><td>0.432</td><td>0.614</td><td>0.589</td><td>0.726</td><td>1.354</td><td>2.077</td><td>0.333</td></tr>
+<tr><td>8</td><td>32</td><td>1.07</td><td>0.420</td><td>0.819</td><td>1.346</td><td>1.664</td><td>2.236</td><td>2.478</td><td>0.587</td></tr>
+<tr><td>9</td><td>28</td><td>0.93</td><td>0.460</td><td>0.822</td><td>1.050</td><td>1.394</td><td>2.269</td><td>2.418</td><td>0.513</td></tr>
+<tr><td>10</td><td>34</td><td>1.13</td><td>0.461</td><td>0.557</td><td>0.602</td><td>0.611</td><td>0.688</td><td>0.708</td><td>0.057</td></tr>
+<tr><td>11</td><td>29</td><td>0.97</td><td>0.456</td><td>0.851</td><td>0.630</td><td>2.375</td><td>2.426</td><td>2.442</td><td>0.709</td></tr>
+<tr><td>12</td><td>30</td><td>1.00</td><td>0.447</td><td>1.003</td><td>1.495</td><td>2.373</td><td>2.417</td><td>2.736</td><td>0.724</td></tr>
+<tr><td>13</td><td>37</td><td>1.23</td><td>0.437</td><td>0.784</td><td>0.648</td><td>2.103</td><td>2.317</td><td>2.655</td><td>0.604</td></tr>
+<tr><td>14</td><td>48</td><td>1.60</td><td>0.450</td><td>0.721</td><td>0.613</td><td>1.233</td><td>1.443</td><td>5.524</td><td>0.747</td></tr>
+<tr><td>15</td><td>35</td><td>1.17</td><td>0.496</td><td>0.868</td><td>0.651</td><td>0.795</td><td>5.505</td><td>5.584</td><td>1.171</td></tr>
+</table>
+<h3>Graphs</h3>
+<h4>Response Time: 30 sec time-series</h4>
+<img src="Signup_response_times_intervals.png"></img>
+<h4>Response Time: raw data (all points)</h4>
+<img src="Signup_response_times.png"></img>
+<h4>Throughput: 30 sec time-series</h4>
+<img src="Signup_throughput.png"></img>
+<hr />
+</body>
+</html>

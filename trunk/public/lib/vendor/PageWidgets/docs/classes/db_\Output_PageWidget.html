@@ -1,0 +1,2742 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Symfony Page Widgets » \Output_PageWidget</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Symfony Page Widgets</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Class Constructor"><span class="description">Class Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#addCss" title="addCss :: Adds a CSS Link to the template output."><span class="description">Adds a CSS Link to the template output.</span><pre>addCss()</pre></a></li>
+<li class="method public inherited"><a href="#addItem" title="addItem :: Assigns an array of key/value pairs to an XMLForm. Use to apply custom
+default values to a form."><span class="description">Assigns an array of key/value pairs to an XMLForm. Use to apply custom
+default values to a form.</span><pre>addItem()</pre></a></li>
+<li class="method public inherited"><a href="#addJs" title="addJs :: Adds a Javascript to the template output."><span class="description">Adds a Javascript to the template output.</span><pre>addJs()</pre></a></li>
+<li class="method public inherited"><a href="#addList" title="addList :: Generates an HTML List from an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)"><span class="description">Generates an HTML List from an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)</span><pre>addList()</pre></a></li>
+<li class="method public inherited"><a href="#addNodeList" title="addNodeList :: Adds an XML List to an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)"><span class="description">Adds an XML List to an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)</span><pre>addNodeList()</pre></a></li>
+<li class="method public inherited"><a href="#addcredential" title="addcredential :: Add a credential to the Symfony User"><span class="description">Add a credential to the Symfony User</span><pre>addcredential()</pre></a></li>
+<li class="method public inherited"><a href="#assignWidgetVar" title='assignWidgetVar :: Merges an array value to the widget_var array. The "array" must conform to
+name/value format, but the value of the array can  be any valid php object,
+string, number, array, etc...'><span class="description">Merges an array value to the widget_var array. The "array" must conform to
+name/value format, but the value of the array can  be any valid php object,
+string, number, array, etc...</span><pre>assignWidgetVar()</pre></a></li>
+<li class="method public inherited"><a href="#blockIP" title="blockIP :: Adds an IP Address to the Blocked Sites Directory, via SecurityPageWidget"><span class="description">Adds an IP Address to the Blocked Sites Directory, via SecurityPageWidget</span><pre>blockIP()</pre></a></li>
+<li class="method public inherited"><a href="#buildResult" title="buildResult :: Transforms a WTVRData XML Schema to a WTVRData Recordset. Generally better
+to use dataMap, but this does expose some internals of the WTVR Data class."><span class="description">Transforms a WTVRData XML Schema to a WTVRData Recordset. Generally better
+to use dataMap, but this does expose some internals of the WTVR Data class.</span><pre>buildResult()</pre></a></li>
+<li class="method public "><a href="#cleanImages" title="cleanImages :: Regex match inbound content, and redirect to an image server, or CDN. Reads
+port assignment to redirect to SSL if required."><span class="description">Regex match inbound content, and redirect to an image server, or CDN. Reads
+port assignment to redirect to SSL if required.</span><pre>cleanImages()</pre></a></li>
+<li class="method public inherited"><a href="#cookieVar" title="cookieVar :: Gets the value of a COOKIE variable, returning the default if nothing is
+found."><span class="description">Gets the value of a COOKIE variable, returning the default if nothing is
+found.</span><pre>cookieVar()</pre></a></li>
+<li class="method public inherited"><a href="#createExcel" title='createExcel :: Create an Excel Spreadsheet as a Binary Stream from a PDO Result Set. The
+"Args" param should include the filename, and the location.'><span class="description">Create an Excel Spreadsheet as a Binary Stream from a PDO Result Set. The
+"Args" param should include the filename, and the location.</span><pre>createExcel()</pre></a></li>
+<li class="method public inherited"><a href="#createList" title="createList :: Create a Styroform List as an HTML Element from a PDO Result Set."><span class="description">Create a Styroform List as an HTML Element from a PDO Result Set.</span><pre>createList()</pre></a></li>
+<li class="method public inherited"><a href="#dataMap" title='dataMap :: Transforms a WTVRData XML Schema to a data object, of type "output_type", either
+an Array or XML.'><span class="description">Transforms a WTVRData XML Schema to a data object, of type "output_type", either
+an Array or XML.</span><pre>dataMap()</pre></a></li>
+<li class="method public inherited"><a href="#dbBackup" title="dbBackup :: Used to export date-specific data from tables."><span class="description">Used to export date-specific data from tables.</span><pre>dbBackup()</pre></a></li>
+<li class="method public inherited"><a href="#decodeFilename" title="decodeFilename :: Return original filename from Windows Safe Filename"><span class="description">Return original filename from Windows Safe Filename</span><pre>decodeFilename()</pre></a></li>
+<li class="method public inherited"><a href="#delimList" title="delimList :: Character Delimited Data List Generator, creates a Character Delimited
+String from a specific array."><span class="description">Character Delimited Data List Generator, creates a Character Delimited
+String from a specific array.</span><pre>delimList()</pre></a></li>
+<li class="method public inherited"><a href="#encodeFilename" title="encodeFilename :: Removes specific characters from a filename to make it Windows Safe."><span class="description">Removes specific characters from a filename to make it Windows Safe.</span><pre>encodeFilename()</pre></a></li>
+<li class="method public inherited"><a href="#forward" title="forward :: Causes a forward request to be written to the browser using
+symfony."><span class="description">Causes a forward request to be written to the browser using
+symfony.</span><pre>forward()</pre></a></li>
+<li class="method public inherited"><a href="#genExcel" title="genExcel :: Generates an Excel Binary Stream from a specific array."><span class="description">Generates an Excel Binary Stream from a specific array.</span><pre>genExcel()</pre></a></li>
+<li class="method public inherited"><a href="#genPDF" title="genPDF :: Generates a PDF Binary Stream from a specific array."><span class="description">Generates a PDF Binary Stream from a specific array.</span><pre>genPDF()</pre></a></li>
+<li class="method public inherited"><a href="#getFormMethod" title="getFormMethod :: Utility function to parse Posted form values and return the Styroform methoc."><span class="description">Utility function to parse Posted form values and return the Styroform methoc.</span><pre>getFormMethod()</pre></a></li>
+<li class="method public inherited"><a href="#getId" title='getId :: Returns the "ID" value from the URL String.'><span class="description">Returns the "ID" value from the URL String.</span><pre>getId()</pre></a></li>
+<li class="method public inherited"><a href="#getLocalFile" title='getLocalFile :: Returns the contents of a file, using "baseloc", a widget-specific file location.'><span class="description">Returns the contents of a file, using "baseloc", a widget-specific file location.</span><pre>getLocalFile()</pre></a></li>
+<li class="method public inherited"><a href="#getOp" title='getOp :: Returns the "OP" value from the URL String.'><span class="description">Returns the "OP" value from the URL String.</span><pre>getOp()</pre></a></li>
+<li class="method public inherited"><a href="#getUser" title="getUser :: Returns the Symfony User Object"><span class="description">Returns the Symfony User Object</span><pre>getUser()</pre></a></li>
+<li class="method public inherited"><a href="#getVar" title="getVar :: Returns the value of a variable, using GET."><span class="description">Returns the value of a variable, using GET.</span><pre>getVar()</pre></a></li>
+<li class="method public inherited"><a href="#greedyVar" title="greedyVar :: Returns the value of a variable, using POST, GET, SESSION, and APP."><span class="description">Returns the value of a variable, using POST, GET, SESSION, and APP.</span><pre>greedyVar()</pre></a></li>
+<li class="method public inherited"><a href="#hascredential" title="hascredential :: Check if the Symfony User has a credential"><span class="description">Check if the Symfony User has a credential</span><pre>hascredential()</pre></a></li>
+<li class="method public inherited"><a href="#ifVar" title="ifVar :: Checks for the existence of a variable, using POST, GET, SESSION, and APP."><span class="description">Checks for the existence of a variable, using POST, GET, SESSION, and APP.</span><pre>ifVar()</pre></a></li>
+<li class="method public inherited"><a href="#isAuthenticated" title="isAuthenticated :: Return if Symfony User as authenticated."><span class="description">Return if Symfony User as authenticated.</span><pre>isAuthenticated()</pre></a></li>
+<li class="method public inherited"><a href="#listDirectory" title="listDirectory :: Loop over a directory and create an XML List, returning a Styroform XML
+Dom Element List."><span class="description">Loop over a directory and create an XML List, returning a Styroform XML
+Dom Element List.</span><pre>listDirectory()</pre></a></li>
+<li class="method public inherited"><a href="#listQueries" title="listQueries :: Generate a Styroform List of Queries in a Widget Directory"><span class="description">Generate a Styroform List of Queries in a Widget Directory</span><pre>listQueries()</pre></a></li>
+<li class="method public inherited"><a href="#logItem" title="logItem :: Add a message to the Symfony Log"><span class="description">Add a message to the Symfony Log</span><pre>logItem()</pre></a></li>
+<li class="method public inherited"><a href="#newPDFPage" title="newPDFPage :: Add a Page to a PDF"><span class="description">Add a Page to a PDF</span><pre>newPDFPage()</pre></a></li>
+<li class="method public inherited"><a href="#parseFormFragment" title="parseFormFragment :: Transforms an XMLForm Form Fragment into valid HTML."><span class="description">Transforms an XMLForm Form Fragment into valid HTML.</span><pre>parseFormFragment()</pre></a></li>
+<li class="method public inherited"><a href="#postVar" title="postVar :: Returns the value of a variable, using POST."><span class="description">Returns the value of a variable, using POST.</span><pre>postVar()</pre></a></li>
+<li class="method public inherited"><a href="#processVar" title="processVar :: Returns the value of a variable, using sfConfig."><span class="description">Returns the value of a variable, using sfConfig.</span><pre>processVar()</pre></a></li>
+<li class="method public inherited"><a href="#propelArgs" title="propelArgs :: Utility function for propel queries, with arguments."><span class="description">Utility function for propel queries, with arguments.</span><pre>propelArgs()</pre></a></li>
+<li class="method public inherited"><a href="#propelInsert" title="propelInsert :: Utility function for propel queries, without arguments."><span class="description">Utility function for propel queries, without arguments.</span><pre>propelInsert()</pre></a></li>
+<li class="method public inherited"><a href="#propelQuery" title="propelQuery :: Utility function for propel queries, without arguments."><span class="description">Utility function for propel queries, without arguments.</span><pre>propelQuery()</pre></a></li>
+<li class="method public inherited"><a href="#pushItem" title="pushItem :: Assigns a WTVRData Item Array to the currently active XMLForm, using the
+currently active Crud Object. The Crud will be populated with the optional
+$id parameter. Note both the XMLForm and Crud are generated with any
+PageWidget by default."><span class="description">Assigns a WTVRData Item Array to the currently active XMLForm, using the
+currently active Crud Object. The Crud will be populated with the optional
+$id parameter. Note both the XMLForm and Crud are generated with any
+PageWidget by default.</span><pre>pushItem()</pre></a></li>
+<li class="method public inherited"><a href="#redirect" title="redirect :: Causes a browser redirect header to be written to the browser using
+symfony."><span class="description">Causes a browser redirect header to be written to the browser using
+symfony.</span><pre>redirect()</pre></a></li>
+<li class="method public inherited"><a href="#redirectHeaders" title="redirectHeaders :: Causes a browser redirect header with associated javascript redirect
+to be written to the browser."><span class="description">Causes a browser redirect header with associated javascript redirect
+to be written to the browser.</span><pre>redirectHeaders()</pre></a></li>
+<li class="method public inherited"><a href="#removecookieVar" title="removecookieVar :: Sets the value of a COOKIE variable."><span class="description">Sets the value of a COOKIE variable.</span><pre>removecookieVar()</pre></a></li>
+<li class="method public inherited"><a href="#removecredential" title="removecredential :: Remove a credential to the Symfony User"><span class="description">Remove a credential to the Symfony User</span><pre>removecredential()</pre></a></li>
+<li class="method public inherited"><a href="#removesessionVar" title="removesessionVar :: Removes a value from SESSION."><span class="description">Removes a value from SESSION.</span><pre>removesessionVar()</pre></a></li>
+<li class="method public inherited"><a href="#renderPartial" title="renderPartial :: Renders a partial view using an sfPartialView"><span class="description">Renders a partial view using an sfPartialView</span><pre>renderPartial()</pre></a></li>
+<li class="method public inherited"><a href="#returnArray" title="returnArray :: Returns an array from a WTVR Data Query."><span class="description">Returns an array from a WTVR Data Query.</span><pre>returnArray()</pre></a></li>
+<li class="method public inherited"><a href="#returnDelim" title="returnDelim :: Returns a delimited string from a WTVR XML Query."><span class="description">Returns a delimited string from a WTVR XML Query.</span><pre>returnDelim()</pre></a></li>
+<li class="method public inherited"><a href="#returnDojoJson" title="returnDojoJson :: Returns a json object in Dojo JSON Format (for use with Combo Boxes)
+from a WTVR Data Query."><span class="description">Returns a json object in Dojo JSON Format (for use with Combo Boxes)
+from a WTVR Data Query.</span><pre>returnDojoJson()</pre></a></li>
+<li class="method public inherited"><a href="#returnExcel" title="returnExcel :: Returns an Excel Binary Stream from a WTVR Data Query."><span class="description">Returns an Excel Binary Stream from a WTVR Data Query.</span><pre>returnExcel()</pre></a></li>
+<li class="method public inherited"><a href="#returnForm" title="returnForm :: Takes an XMLForm and returns HTML using the appropriate form arrays for
+values, defaults, etc..."><span class="description">Takes an XMLForm and returns HTML using the appropriate form arrays for
+values, defaults, etc...</span><pre>returnForm()</pre></a></li>
+<li class="method public inherited"><a href="#returnFormAndList" title="returnFormAndList :: Return an Styroform Form and a Styroform List as separate elements of an array."><span class="description">Return an Styroform Form and a Styroform List as separate elements of an array.</span><pre>returnFormAndList()</pre></a></li>
+<li class="method public inherited"><a href="#returnFragment" title="returnFragment :: Returns an XMLForm snippet as an html fragment, great for parsing subsections
+of a form via AJAX."><span class="description">Returns an XMLForm snippet as an html fragment, great for parsing subsections
+of a form via AJAX.</span><pre>returnFragment()</pre></a></li>
+<li class="method public inherited"><a href="#returnJson" title="returnJson :: Returns a json object from a WTVR Data Query."><span class="description">Returns a json object from a WTVR Data Query.</span><pre>returnJson()</pre></a></li>
+<li class="method public inherited"><a href="#returnList" title="returnList :: Return a Styroform List as an HTML Element."><span class="description">Return a Styroform List as an HTML Element.</span><pre>returnList()</pre></a></li>
+<li class="method public inherited"><a href="#returnListAndForm" title="returnListAndForm :: Return an Styroform Form and a Styroform List as separate elements of an array."><span class="description">Return an Styroform Form and a Styroform List as separate elements of an array.</span><pre>returnListAndForm()</pre></a></li>
+<li class="method public inherited"><a href="#returnPDF" title="returnPDF :: Generates a PDF from a specific array."><span class="description">Generates a PDF from a specific array.</span><pre>returnPDF()</pre></a></li>
+<li class="method public inherited"><a href="#sessionVar" title="sessionVar :: Returns the value of a variable, using SESSION."><span class="description">Returns the value of a variable, using SESSION.</span><pre>sessionVar()</pre></a></li>
+<li class="method public inherited"><a href="#setAuthenticated" title="setAuthenticated :: Set the Symfony User as authenticated."><span class="description">Set the Symfony User as authenticated.</span><pre>setAuthenticated()</pre></a></li>
+<li class="method public inherited"><a href="#setHeader" title="setHeader :: Sets a Header Property for the Current Page"><span class="description">Sets a Header Property for the Current Page</span><pre>setHeader()</pre></a></li>
+<li class="method public inherited"><a href="#setLayout" title="setLayout :: Assigns the Symfony Layout to the current page's output. Default for
+all pages would come from the YML Page Template, but this would be
+modified to be &quot;/app/application/templates/&quot;.$name.&quot;.php&quot;."><span class="description">Assigns the Symfony Layout to the current page's output. Default for
+all pages would come from the YML Page Template, but this would be
+modified to be "/app/application/templates/".$name.".php".</span><pre>setLayout()</pre></a></li>
+<li class="method public inherited"><a href="#setMeta" title="setMeta :: Sets a Meta Property for the Current Page"><span class="description">Sets a Meta Property for the Current Page</span><pre>setMeta()</pre></a></li>
+<li class="method public inherited"><a href="#setPDFHeader" title="setPDFHeader :: Add a Header to a PDF"><span class="description">Add a Header to a PDF</span><pre>setPDFHeader()</pre></a></li>
+<li class="method public inherited"><a href="#setProcessVar" title="setProcessVar :: Sets the value of an sfConfig variable."><span class="description">Sets the value of an sfConfig variable.</span><pre>setProcessVar()</pre></a></li>
+<li class="method public inherited"><a href="#setStatus" title="setStatus :: Sets the HTTP Status Property for the Current Page"><span class="description">Sets the HTTP Status Property for the Current Page</span><pre>setStatus()</pre></a></li>
+<li class="method public inherited"><a href="#setTemplate" title="setTemplate :: Assigns the HTML Template to the current widget's output. Default for
+all widgets is the widget name, &quot;.template.php&quot;, but this would be
+modified to be $name.&quot;.template.php&quot;."><span class="description">Assigns the HTML Template to the current widget's output. Default for
+all widgets is the widget name, ".template.php", but this would be
+modified to be $name.".template.php".</span><pre>setTemplate()</pre></a></li>
+<li class="method public inherited"><a href="#setTitle" title="setTitle :: Sets the Title of the Current Page"><span class="description">Sets the Title of the Current Page</span><pre>setTitle()</pre></a></li>
+<li class="method public inherited"><a href="#setWidgetVar" title="setWidgetVar :: Adds a name/value pair to the widget_var array. The actual value can
+be any valid php object, string, number, array, etc..."><span class="description">Adds a name/value pair to the widget_var array. The actual value can
+be any valid php object, string, number, array, etc...</span><pre>setWidgetVar()</pre></a></li>
+<li class="method public inherited"><a href="#setcookieVar" title="setcookieVar :: Sets the value of a COOKIE variable."><span class="description">Sets the value of a COOKIE variable.</span><pre>setcookieVar()</pre></a></li>
+<li class="method public inherited"><a href="#setflashVar" title="setflashVar :: Sets the value of a FLASH variable."><span class="description">Sets the value of a FLASH variable.</span><pre>setflashVar()</pre></a></li>
+<li class="method public inherited"><a href="#setgetVar" title="setgetVar :: Sets the value of a GET variable."><span class="description">Sets the value of a GET variable.</span><pre>setgetVar()</pre></a></li>
+<li class="method public inherited"><a href="#setpostVar" title="setpostVar :: Sets the value of a POST variable."><span class="description">Sets the value of a POST variable.</span><pre>setpostVar()</pre></a></li>
+<li class="method public inherited"><a href="#setsessionVar" title="setsessionVar :: Sets the value of a SESSION variable."><span class="description">Sets the value of a SESSION variable.</span><pre>setsessionVar()</pre></a></li>
+<li class="method public inherited"><a href="#sfDateTime" title="sfDateTime :: Construct a datetime element from Styroform Composite Form Elements"><span class="description">Construct a datetime element from Styroform Composite Form Elements</span><pre>sfDateTime()</pre></a></li>
+<li class="method public inherited"><a href="#showData" title='showData :: Export the "showData" setting for debugging WTVR Data.'><span class="description">Export the "showData" setting for debugging WTVR Data.</span><pre>showData()</pre></a></li>
+<li class="method public inherited"><a href="#showFile" title="showFile :: Display a file from a path using a filename. Better to use the ImageHelper
+unless using an unusual mime type."><span class="description">Display a file from a path using a filename. Better to use the ImageHelper
+unless using an unusual mime type.</span><pre>showFile()</pre></a></li>
+<li class="method public inherited"><a href="#showXML" title='showXML :: Export the "showXML" setting for debugging Styroform and WTVR Data.'><span class="description">Export the "showXML" setting for debugging Styroform and WTVR Data.</span><pre>showXML()</pre></a></li>
+<li class="method public inherited"><a href="#unblockIP" title="unblockIP :: Removes an IP Address from the Blocked Sites Directory, via SecurityPageWidget"><span class="description">Removes an IP Address from the Blocked Sites Directory, via SecurityPageWidget</span><pre>unblockIP()</pre></a></li>
+<li class="method public inherited"><a href="#userDir" title="userDir :: Returns the location of a User Specific directory."><span class="description">Returns the location of a User Specific directory.</span><pre>userDir()</pre></a></li>
+<li class="method public inherited"><a href="#xmlList" title="xmlList :: XML Data List Generator, creates an XML Tree from a specific array."><span class="description">XML Data List Generator, creates an XML Tree from a specific array.</span><pre>xmlList()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24content" title="$content :: Inbound HTML Content"><span class="description">Inbound HTML Content</span><pre>$content</pre></a></li>
+<li class="property public "><a href="#%24context" title="$context :: Inbound Symfony Context Object"><span class="description">Inbound Symfony Context Object</span><pre>$context</pre></a></li>
+<li class="property public inherited"><a href="#%24dataObj" title="$dataObj :: Container for WTVR Data Object"><span class="description">Container for WTVR Data Object</span><pre>$dataObj</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COutput_PageWidget" id="\Output_PageWidget"></a><div href="../classes/db_%5COutput_PageWidget.html" class="element class">
+<p class="short_description">Modifies output to enable auto-generated CDN Paths for assets
+<code>
+Note, this class is embedded into
+the lib/symfony/filter/sfRenderingFilter.class.php
+Line 53 - 56
+AND
+the plugins/sfErrorHandlerPlugin/lib/sfHardenedRenderingFilter.class.php
+</code></p>
+<div class="details">
+<p class="long_description"></p>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Class Constructor</h2>
+<pre>__construct(\sfContext $context) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>__construct</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>\sfContext</code><p>context</p></div>
+</div></div>
+</div>
+<a name="addCss" id="addCss"></a><div class="element clickable method public addCss" data-toggle="collapse" data-target=".addCss .collapse">
+<h2>Adds a CSS Link to the template output.</h2>
+<pre>addCss(string $css) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addCss</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addCss()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$css</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="addItem" id="addItem"></a><div class="element clickable method public addItem" data-toggle="collapse" data-target=".addItem .collapse">
+<h2>Assigns an array of key/value pairs to an XMLForm. Use to apply custom
+default values to a form.</h2>
+<pre>addItem(array $items) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code>  $item["key_1"] = "value1";
+  $item["key_2"] = "value2";
+  $this -> addItem( $item );
+</code></pre></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addItem</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addItem()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$items</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a name="addJs" id="addJs"></a><div class="element clickable method public addJs" data-toggle="collapse" data-target=".addJs .collapse">
+<h2>Adds a Javascript to the template output.</h2>
+<pre>addJs(string $js) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addJs</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addJs()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$js</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="addList" id="addList"></a><div class="element clickable method public addList" data-toggle="collapse" data-target=".addList .collapse">
+<h2>Generates an HTML List from an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)</h2>
+<pre>addList(array $listarray) : \text</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$listarray</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\text</code></div>
+</div></div>
+</div>
+<a name="addNodeList" id="addNodeList"></a><div class="element clickable method public addNodeList" data-toggle="collapse" data-target=".addNodeList .collapse">
+<h2>Adds an XML List to an XML Dom Tree using Styroform LISTELEMENT
+and LIST nodes. (See Styroform XSL for specific format)</h2>
+<pre>addNodeList(array $listarray, string $base) : \text</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addNodeList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addNodeList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$listarray</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$base</h4>
+<code>string</code><ul>
+<li>Name of node to attatch list to</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\text</code></div>
+</div></div>
+</div>
+<a name="addcredential" id="addcredential"></a><div class="element clickable method public addcredential" data-toggle="collapse" data-target=".addcredential .collapse">
+<h2>Add a credential to the Symfony User</h2>
+<pre>addcredential(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>addcredential</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::addcredential()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Credential</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="assignWidgetVar" id="assignWidgetVar"></a><div class="element clickable method public assignWidgetVar" data-toggle="collapse" data-target=".assignWidgetVar .collapse">
+<h2>Merges an array value to the widget_var array. The "array" must conform to
+name/value format, but the value of the array can  be any valid php object,
+string, number, array, etc...</h2>
+<pre>assignWidgetVar(array $array) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>assignWidgetVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::assignWidgetVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a name="blockIP" id="blockIP"></a><div class="element clickable method public blockIP" data-toggle="collapse" data-target=".blockIP .collapse">
+<h2>Adds an IP Address to the Blocked Sites Directory, via SecurityPageWidget</h2>
+<pre>blockIP() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>blockIP</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::blockIP()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="buildResult" id="buildResult"></a><div class="element clickable method public buildResult" data-toggle="collapse" data-target=".buildResult .collapse">
+<h2>Transforms a WTVRData XML Schema to a WTVRData Recordset. Generally better
+to use dataMap, but this does expose some internals of the WTVR Data class.</h2>
+<pre>buildResult(string $conf, string $limit) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>buildResult</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::buildResult()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Full Path to XML File</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>Does Query Limit Results</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="cleanImages" id="cleanImages"></a><div class="element clickable method public cleanImages" data-toggle="collapse" data-target=".cleanImages .collapse">
+<h2>Regex match inbound content, and redirect to an image server, or CDN. Reads
+port assignment to redirect to SSL if required.</h2>
+<pre>cleanImages() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>cleanImages</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="cookieVar" id="cookieVar"></a><div class="element clickable method public cookieVar" data-toggle="collapse" data-target=".cookieVar .collapse">
+<h2>Gets the value of a COOKIE variable, returning the default if nothing is
+found.</h2>
+<pre>cookieVar(string $name, string $default) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>cookieVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::cookieVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="createExcel" id="createExcel"></a><div class="element clickable method public createExcel" data-toggle="collapse" data-target=".createExcel .collapse">
+<h2>Create an Excel Spreadsheet as a Binary Stream from a PDO Result Set. The
+"Args" param should include the filename, and the location.</h2>
+<pre>createExcel(\PDO_Recordsest $rs, string $result_name, string $titlename, string $args) : \BinaryStream</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><pre><code>  $args["filename"] = "SomeFile";
+  $args["location"] = "/var/foo/bar";
+</code></pre></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>createExcel</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::createExcel()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rs</h4>
+<code>\PDO_Recordsest</code>
+</div>
+<div class="subelement argument">
+<h4>$result_name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$titlename</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\BinaryStream</code></div>
+</div></div>
+</div>
+<a name="createList" id="createList"></a><div class="element clickable method public createList" data-toggle="collapse" data-target=".createList .collapse">
+<h2>Create a Styroform List as an HTML Element from a PDO Result Set.</h2>
+<pre>createList(\PDO_Recordsest $rs, string $result_name, string $titlename, string $allowadd) : \text</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>createList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::createList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rs</h4>
+<code>\PDO_Recordsest</code>
+</div>
+<div class="subelement argument">
+<h4>$result_name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$titlename</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$allowadd</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\text</code></div>
+</div></div>
+</div>
+<a name="dataMap" id="dataMap"></a><div class="element clickable method public dataMap" data-toggle="collapse" data-target=".dataMap .collapse">
+<h2>Transforms a WTVRData XML Schema to a data object, of type "output_type", either
+an Array or XML.</h2>
+<pre>dataMap(string $conf, boolean $limit, string $output_type, object $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>dataMap</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::dataMap()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Full Path to XML File</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>boolean</code><ul>
+<li>Does Query Limit Results</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$output_type</h4>
+<code>string</code><ul>
+<li>"array,json"</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code><ul>
+<li>"array,</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="dbBackup" id="dbBackup"></a><div class="element clickable method public dbBackup" data-toggle="collapse" data-target=".dbBackup .collapse">
+<h2>Used to export date-specific data from tables.</h2>
+<pre>dbBackup(string $table, string $themonth, string $theyear) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>dbBackup</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::dbBackup()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><ul>
+<li>Name of Table</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$themonth</h4>
+<code>string</code><ul>
+<li>Month of Records to be Backed up</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$theyear</h4>
+<code>string</code><ul>
+<li>Year of Records to be Backed up</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="decodeFilename" id="decodeFilename"></a><div class="element clickable method public decodeFilename" data-toggle="collapse" data-target=".decodeFilename .collapse">
+<h2>Return original filename from Windows Safe Filename</h2>
+<pre>decodeFilename(string $file) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>decodeFilename</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::decodeFilename()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><ul>
+<li>Windows Safe Name</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="delimList" id="delimList"></a><div class="element clickable method public delimList" data-toggle="collapse" data-target=".delimList .collapse">
+<h2>Character Delimited Data List Generator, creates a Character Delimited
+String from a specific array.</h2>
+<pre>delimList(array $data, string $delim) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>delimList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::delimList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><ul>
+<li>Input Array</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$delim</h4>
+<code>string</code><ul>
+<li>Character to use as delimiter</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="encodeFilename" id="encodeFilename"></a><div class="element clickable method public encodeFilename" data-toggle="collapse" data-target=".encodeFilename .collapse">
+<h2>Removes specific characters from a filename to make it Windows Safe.</h2>
+<pre>encodeFilename(string $file) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>encodeFilename</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::encodeFilename()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><ul>
+<li>Name of the file</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="forward" id="forward"></a><div class="element clickable method public forward" data-toggle="collapse" data-target=".forward .collapse">
+<h2>Causes a forward request to be written to the browser using
+symfony.</h2>
+<pre>forward(string $module, string $action) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>forward</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::forward()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$module</h4>
+<code>string</code><ul>
+<li>Symfony module to forward</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code><ul>
+<li>Symfony action to forward</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="genExcel" id="genExcel"></a><div class="element clickable method public genExcel" data-toggle="collapse" data-target=".genExcel .collapse">
+<h2>Generates an Excel Binary Stream from a specific array.</h2>
+<pre>genExcel(string $array, string $args, string $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>genExcel</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::genExcel()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>string</code><ul>
+<li>WTVR Data Array</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>string</code><ul>
+<li>("filename,location")</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>string</code><ul>
+<li>WTVR Format Utility</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="genPDF" id="genPDF"></a><div class="element clickable method public genPDF" data-toggle="collapse" data-target=".genPDF .collapse">
+<h2>Generates a PDF Binary Stream from a specific array.</h2>
+<pre>genPDF(string $array, string $args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>genPDF</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::genPDF()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>string</code><ul>
+<li>WTVR Data Array</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>string</code><ul>
+<li>("filename,location")</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="getFormMethod" id="getFormMethod"></a><div class="element clickable method public getFormMethod" data-toggle="collapse" data-target=".getFormMethod .collapse">
+<h2>Utility function to parse Posted form values and return the Styroform methoc.</h2>
+<pre>getFormMethod() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Useful for "Login" and "Pre-Widget" sleuthing of what form has been passed.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getFormMethod</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getFormMethod()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="getId" id="getId"></a><div class="element clickable method public getId" data-toggle="collapse" data-target=".getId .collapse">
+<h2>Returns the "ID" value from the URL String.</h2>
+<pre>getId() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getId</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getId()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="getLocalFile" id="getLocalFile"></a><div class="element clickable method public getLocalFile" data-toggle="collapse" data-target=".getLocalFile .collapse">
+<h2>Returns the contents of a file, using "baseloc", a widget-specific file location.</h2>
+<pre>getLocalFile(string $file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getLocalFile</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getLocalFile()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><ul>
+<li>Name of file</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="getOp" id="getOp"></a><div class="element clickable method public getOp" data-toggle="collapse" data-target=".getOp .collapse">
+<h2>Returns the "OP" value from the URL String.</h2>
+<pre>getOp() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getOp</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getOp()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="getUser" id="getUser"></a><div class="element clickable method public getUser" data-toggle="collapse" data-target=".getUser .collapse">
+<h2>Returns the Symfony User Object</h2>
+<pre>getUser() : \sfUser</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getUser</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getUser()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\sfUser</code></div>
+</div></div>
+</div>
+<a name="getVar" id="getVar"></a><div class="element clickable method public getVar" data-toggle="collapse" data-target=".getVar .collapse">
+<h2>Returns the value of a variable, using GET.</h2>
+<pre>getVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>getVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::getVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="greedyVar" id="greedyVar"></a><div class="element clickable method public greedyVar" data-toggle="collapse" data-target=".greedyVar .collapse">
+<h2>Returns the value of a variable, using POST, GET, SESSION, and APP.</h2>
+<pre>greedyVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>greedyVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::greedyVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="hascredential" id="hascredential"></a><div class="element clickable method public hascredential" data-toggle="collapse" data-target=".hascredential .collapse">
+<h2>Check if the Symfony User has a credential</h2>
+<pre>hascredential(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>hascredential</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::hascredential()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Credential</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="ifVar" id="ifVar"></a><div class="element clickable method public ifVar" data-toggle="collapse" data-target=".ifVar .collapse">
+<h2>Checks for the existence of a variable, using POST, GET, SESSION, and APP.</h2>
+<pre>ifVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>ifVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::ifVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of variable.</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="isAuthenticated" id="isAuthenticated"></a><div class="element clickable method public isAuthenticated" data-toggle="collapse" data-target=".isAuthenticated .collapse">
+<h2>Return if Symfony User as authenticated.</h2>
+<pre>isAuthenticated() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>isAuthenticated</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::isAuthenticated()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="listDirectory" id="listDirectory"></a><div class="element clickable method public listDirectory" data-toggle="collapse" data-target=".listDirectory .collapse">
+<h2>Loop over a directory and create an XML List, returning a Styroform XML
+Dom Element List.</h2>
+<pre>listDirectory(string $path, string $url) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>listDirectory</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::listDirectory()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>Base Path of Directory</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><ul>
+<li>Base HTTP URL of Directory</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="listQueries" id="listQueries"></a><div class="element clickable method public listQueries" data-toggle="collapse" data-target=".listQueries .collapse">
+<h2>Generate a Styroform List of Queries in a Widget Directory</h2>
+<pre>listQueries(string $path) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>listQueries</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::listQueries()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>Path to Widget Query Directory</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="logItem" id="logItem"></a><div class="element clickable method public logItem" data-toggle="collapse" data-target=".logItem .collapse">
+<h2>Add a message to the Symfony Log</h2>
+<pre>logItem(string $logtype, string $message) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>logItem</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::logItem()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$logtype</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="newPDFPage" id="newPDFPage"></a><div class="element clickable method public newPDFPage" data-toggle="collapse" data-target=".newPDFPage .collapse">
+<h2>Add a Page to a PDF</h2>
+<pre>newPDFPage(\FPDFObject $pdf) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>newPDFPage</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::newPDFPage()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pdf</h4>
+<code>\FPDFObject</code>
+</div>
+</div></div>
+</div>
+<a name="parseFormFragment" id="parseFormFragment"></a><div class="element clickable method public parseFormFragment" data-toggle="collapse" data-target=".parseFormFragment .collapse">
+<h2>Transforms an XMLForm Form Fragment into valid HTML.</h2>
+<pre>parseFormFragment(string $xml, array $data, string $xsl_location, boolean $lib, boolean $inline) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::parseFormFragment()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xml</h4>
+<code>string</code><ul>
+<li>Full Path to XML Fragment</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><ul>
+<li>Default Values in Key/Value format</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$xsl_location</h4>
+<code>string</code><ul>
+<li>Full Path to XSL Document</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$lib</h4>
+<code>boolean</code><ul>
+<li>deprecated</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$inline</h4>
+<code>boolean</code><ul>
+<li>deprecated</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="postVar" id="postVar"></a><div class="element clickable method public postVar" data-toggle="collapse" data-target=".postVar .collapse">
+<h2>Returns the value of a variable, using POST.</h2>
+<pre>postVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>postVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::postVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="processVar" id="processVar"></a><div class="element clickable method public processVar" data-toggle="collapse" data-target=".processVar .collapse">
+<h2>Returns the value of a variable, using sfConfig.</h2>
+<pre>processVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>processVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::processVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="propelArgs" id="propelArgs"></a><div class="element clickable method public propelArgs" data-toggle="collapse" data-target=".propelArgs .collapse">
+<h2>Utility function for propel queries, with arguments.</h2>
+<pre>propelArgs(string $sql, array $args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>propelArgs</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::propelArgs()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><ul>
+<li>SQL Query</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a name="propelInsert" id="propelInsert"></a><div class="element clickable method public propelInsert" data-toggle="collapse" data-target=".propelInsert .collapse">
+<h2>Utility function for propel queries, without arguments.</h2>
+<pre>propelInsert(string $sql) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>propelInsert</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::propelInsert()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><ul>
+<li>SQL Query</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="propelQuery" id="propelQuery"></a><div class="element clickable method public propelQuery" data-toggle="collapse" data-target=".propelQuery .collapse">
+<h2>Utility function for propel queries, without arguments.</h2>
+<pre>propelQuery(string $sql) : <a href="http://php.net/manual/en/class.pdo.php">\PDO</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>propelQuery</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::propelQuery()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><ul>
+<li>SQL Query</li>
+</ul>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="http://php.net/manual/en/class.pdo.php">\PDO</a></code>Recordset</div>
+</div></div>
+</div>
+<a name="pushItem" id="pushItem"></a><div class="element clickable method public pushItem" data-toggle="collapse" data-target=".pushItem .collapse">
+<h2>Assigns a WTVRData Item Array to the currently active XMLForm, using the
+currently active Crud Object. The Crud will be populated with the optional
+$id parameter. Note both the XMLForm and Crud are generated with any
+PageWidget by default.</h2>
+<pre>pushItem(int $id) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>pushItem</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::pushItem()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a name="redirect" id="redirect"></a><div class="element clickable method public redirect" data-toggle="collapse" data-target=".redirect .collapse">
+<h2>Causes a browser redirect header to be written to the browser using
+symfony.</h2>
+<pre>redirect(string $url) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>redirect</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::redirect()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><ul>
+<li>URL To Redirect</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="redirectHeaders" id="redirectHeaders"></a><div class="element clickable method public redirectHeaders" data-toggle="collapse" data-target=".redirectHeaders .collapse">
+<h2>Causes a browser redirect header with associated javascript redirect
+to be written to the browser.</h2>
+<pre>redirectHeaders(string $url) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>redirectHeaders</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::redirectHeaders()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><ul>
+<li>URL To Redirect</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="removecookieVar" id="removecookieVar"></a><div class="element clickable method public removecookieVar" data-toggle="collapse" data-target=".removecookieVar .collapse">
+<h2>Sets the value of a COOKIE variable.</h2>
+<pre>removecookieVar(string $name, string $path, string $domain, string $secure) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>removecookieVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::removecookieVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>Path of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><ul>
+<li>Domain of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$secure</h4>
+<code>string</code><ul>
+<li>Only available in SSL</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="removecredential" id="removecredential"></a><div class="element clickable method public removecredential" data-toggle="collapse" data-target=".removecredential .collapse">
+<h2>Remove a credential to the Symfony User</h2>
+<pre>removecredential(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>removecredential</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::removecredential()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Credential</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="removesessionVar" id="removesessionVar"></a><div class="element clickable method public removesessionVar" data-toggle="collapse" data-target=".removesessionVar .collapse">
+<h2>Removes a value from SESSION.</h2>
+<pre>removesessionVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>removesessionVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::removesessionVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="renderPartial" id="renderPartial"></a><div class="element clickable method public renderPartial" data-toggle="collapse" data-target=".renderPartial .collapse">
+<h2>Renders a partial view using an sfPartialView</h2>
+<pre>renderPartial(\sfContext $context, string $name, string $template, array $args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>renderPartial</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::renderPartial()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>\sfContext</code><ul>
+<li>Inbound SF Context</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Partial View (for logging)</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><ul>
+<li>Location of PHP Template</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code><ul>
+<li>Passed to the view for rendering</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="returnArray" id="returnArray"></a><div class="element clickable method public returnArray" data-toggle="collapse" data-target=".returnArray .collapse">
+<h2>Returns an array from a WTVR Data Query.</h2>
+<pre>returnArray(string $conf, string $local, string $limit) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnArray</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnArray()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Location of Query</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><ul>
+<li>Is Query in standard Widget Location</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>Should query limit results</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="returnDelim" id="returnDelim"></a><div class="element clickable method public returnDelim" data-toggle="collapse" data-target=".returnDelim .collapse">
+<h2>Returns a delimited string from a WTVR XML Query.</h2>
+<pre>returnDelim(string $conf, boolean $local, boolean $limit, string $type, object $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnDelim</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnDelim()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Full Path to XML File</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code><ul>
+<li>Return from standard widget layout</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>boolean</code><ul>
+<li>Does Query Limit Results</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><ul>
+<li>String Delimiter</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code>
+</div>
+</div></div>
+</div>
+<a name="returnDojoJson" id="returnDojoJson"></a><div class="element clickable method public returnDojoJson" data-toggle="collapse" data-target=".returnDojoJson .collapse">
+<h2>Returns a json object in Dojo JSON Format (for use with Combo Boxes)
+from a WTVR Data Query.</h2>
+<pre>returnDojoJson(string $conf, string $local, string $limit) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnDojoJson</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnDojoJson()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Location of Query</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><ul>
+<li>Is Query in standard Widget Location</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>Should query limit results</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="returnExcel" id="returnExcel"></a><div class="element clickable method public returnExcel" data-toggle="collapse" data-target=".returnExcel .collapse">
+<h2>Returns an Excel Binary Stream from a WTVR Data Query.</h2>
+<pre>returnExcel(string $conf, string $local, string $limit, array $args, object $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnExcel</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnExcel()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Location of Query</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><ul>
+<li>Is Query in standard Widget Location</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>Should query limit results</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code><ul>
+<li>("filename,location")</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code><ul>
+<li>WTVR Data Format Utility</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="returnForm" id="returnForm"></a><div class="element clickable method public returnForm" data-toggle="collapse" data-target=".returnForm .collapse">
+<h2>Takes an XMLForm and returns HTML using the appropriate form arrays for
+values, defaults, etc...</h2>
+<pre>returnForm() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnForm</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnForm()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="returnFormAndList" id="returnFormAndList"></a><div class="element clickable method public returnFormAndList" data-toggle="collapse" data-target=".returnFormAndList .collapse">
+<h2>Return an Styroform Form and a Styroform List as separate elements of an array.</h2>
+<pre>returnFormAndList(string $conf, boolean $local, boolean $limit, string $type, object $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnFormAndList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnFormAndList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code>
+</div>
+</div></div>
+</div>
+<a name="returnFragment" id="returnFragment"></a><div class="element clickable method public returnFragment" data-toggle="collapse" data-target=".returnFragment .collapse">
+<h2>Returns an XMLForm snippet as an html fragment, great for parsing subsections
+of a form via AJAX.</h2>
+<pre>returnFragment(string $widget, string $filename, string $itemvar, array $array_item, boolean $inline) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnFragment</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnFragment()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$widget</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$itemvar</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$array_item</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$inline</h4>
+<code>boolean</code>
+</div>
+</div></div>
+</div>
+<a name="returnJson" id="returnJson"></a><div class="element clickable method public returnJson" data-toggle="collapse" data-target=".returnJson .collapse">
+<h2>Returns a json object from a WTVR Data Query.</h2>
+<pre>returnJson(string $conf, string $local, string $limit) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnArray</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnJson()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>Location of Query</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><ul>
+<li>Is Query in standard Widget Location</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>Should query limit results</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="returnList" id="returnList"></a><div class="element clickable method public returnList" data-toggle="collapse" data-target=".returnList .collapse">
+<h2>Return a Styroform List as an HTML Element.</h2>
+<pre>returnList(string $conf, boolean $local, boolean $limit, string $type, object $util) : \text</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\text</code></div>
+</div></div>
+</div>
+<a name="returnListAndForm" id="returnListAndForm"></a><div class="element clickable method public returnListAndForm" data-toggle="collapse" data-target=".returnListAndForm .collapse">
+<h2>Return an Styroform Form and a Styroform List as separate elements of an array.</h2>
+<pre>returnListAndForm(string $conf, boolean $local, boolean $limit, string $type, object $util) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnListAndForm</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnListAndForm()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$util</h4>
+<code>object</code>
+</div>
+</div></div>
+</div>
+<a name="returnPDF" id="returnPDF"></a><div class="element clickable method public returnPDF" data-toggle="collapse" data-target=".returnPDF .collapse">
+<h2>Generates a PDF from a specific array.</h2>
+<pre>returnPDF(string $conf, string $local, string $limit, string $args) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>returnPDF</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::returnPDF()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$conf</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$local</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>string</code><ul>
+<li>FPO copy here</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>string</code><ul>
+<li>(filename,location)</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="sessionVar" id="sessionVar"></a><div class="element clickable method public sessionVar" data-toggle="collapse" data-target=".sessionVar .collapse">
+<h2>Returns the value of a variable, using SESSION.</h2>
+<pre>sessionVar(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>sessionVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::sessionVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setAuthenticated" id="setAuthenticated"></a><div class="element clickable method public setAuthenticated" data-toggle="collapse" data-target=".setAuthenticated .collapse">
+<h2>Set the Symfony User as authenticated.</h2>
+<pre>setAuthenticated(boolean $val) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setAuthenticated</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setAuthenticated()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>boolean</code>
+</div>
+</div></div>
+</div>
+<a name="setHeader" id="setHeader"></a><div class="element clickable method public setHeader" data-toggle="collapse" data-target=".setHeader .collapse">
+<h2>Sets a Header Property for the Current Page</h2>
+<pre>setHeader(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setHeader</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setHeader()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setLayout" id="setLayout"></a><div class="element clickable method public setLayout" data-toggle="collapse" data-target=".setLayout .collapse">
+<h2>Assigns the Symfony Layout to the current page's output. Default for
+all pages would come from the YML Page Template, but this would be
+modified to be "/app/application/templates/".$name.".php".</h2>
+<pre>setLayout(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setLayout</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setLayout()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setMeta" id="setMeta"></a><div class="element clickable method public setMeta" data-toggle="collapse" data-target=".setMeta .collapse">
+<h2>Sets a Meta Property for the Current Page</h2>
+<pre>setMeta(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setMeta</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setMeta()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setPDFHeader" id="setPDFHeader"></a><div class="element clickable method public setPDFHeader" data-toggle="collapse" data-target=".setPDFHeader .collapse">
+<h2>Add a Header to a PDF</h2>
+<pre>setPDFHeader(\FPDFObject $pdf, string $header, int $widths) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setPDFHeader</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setPDFHeader()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pdf</h4>
+<code>\FPDFObject</code>
+</div>
+<div class="subelement argument">
+<h4>$header</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$widths</h4>
+<code>int</code>
+</div>
+</div></div>
+</div>
+<a name="setProcessVar" id="setProcessVar"></a><div class="element clickable method public setProcessVar" data-toggle="collapse" data-target=".setProcessVar .collapse">
+<h2>Sets the value of an sfConfig variable.</h2>
+<pre>setProcessVar(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setProcessVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setProcessVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setStatus" id="setStatus"></a><div class="element clickable method public setStatus" data-toggle="collapse" data-target=".setStatus .collapse">
+<h2>Sets the HTTP Status Property for the Current Page</h2>
+<pre>setStatus(string $status, string $message) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setStatus</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setStatus()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$status</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setTemplate" id="setTemplate"></a><div class="element clickable method public setTemplate" data-toggle="collapse" data-target=".setTemplate .collapse">
+<h2>Assigns the HTML Template to the current widget's output. Default for
+all widgets is the widget name, ".template.php", but this would be
+modified to be $name.".template.php".</h2>
+<pre>setTemplate(string $name) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setTemplate</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setTemplate()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setTitle" id="setTitle"></a><div class="element clickable method public setTitle" data-toggle="collapse" data-target=".setTitle .collapse">
+<h2>Sets the Title of the Current Page</h2>
+<pre>setTitle(string $title) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setTitle</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setTitle()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$title</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a name="setWidgetVar" id="setWidgetVar"></a><div class="element clickable method public setWidgetVar" data-toggle="collapse" data-target=".setWidgetVar .collapse">
+<h2>Adds a name/value pair to the widget_var array. The actual value can
+be any valid php object, string, number, array, etc...</h2>
+<pre>setWidgetVar(string $name, mixed $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setWidgetVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setWidgetVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code>
+</div>
+</div></div>
+</div>
+<a name="setcookieVar" id="setcookieVar"></a><div class="element clickable method public setcookieVar" data-toggle="collapse" data-target=".setcookieVar .collapse">
+<h2>Sets the value of a COOKIE variable.</h2>
+<pre>setcookieVar(string $name, string $value, string $time, string $path, string $domain, string $secure, string $httponly) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setcookieVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setcookieVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$time</h4>
+<code>string</code><ul>
+<li>Lifetime of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>Path of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><ul>
+<li>Domain of Cookie</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$secure</h4>
+<code>string</code><ul>
+<li>Only available in SSL</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$httponly</h4>
+<code>string</code><ul>
+<li>Only available in HTTP Requests</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setflashVar" id="setflashVar"></a><div class="element clickable method public setflashVar" data-toggle="collapse" data-target=".setflashVar .collapse">
+<h2>Sets the value of a FLASH variable.</h2>
+<pre>setflashVar(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setflashVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setflashVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setgetVar" id="setgetVar"></a><div class="element clickable method public setgetVar" data-toggle="collapse" data-target=".setgetVar .collapse">
+<h2>Sets the value of a GET variable.</h2>
+<pre>setgetVar(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setgetVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setgetVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setpostVar" id="setpostVar"></a><div class="element clickable method public setpostVar" data-toggle="collapse" data-target=".setpostVar .collapse">
+<h2>Sets the value of a POST variable.</h2>
+<pre>setpostVar(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setpostVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setpostVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="setsessionVar" id="setsessionVar"></a><div class="element clickable method public setsessionVar" data-toggle="collapse" data-target=".setsessionVar .collapse">
+<h2>Sets the value of a SESSION variable.</h2>
+<pre>setsessionVar(string $name, string $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>setsessionVar</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::setsessionVar()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><ul>
+<li>Name of Variable</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><ul>
+<li>Value of Variable</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="sfDateTime" id="sfDateTime"></a><div class="element clickable method public sfDateTime" data-toggle="collapse" data-target=".sfDateTime .collapse">
+<h2>Construct a datetime element from Styroform Composite Form Elements</h2>
+<pre>sfDateTime(string $elementname) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>sfDateTime</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::sfDateTime()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elementname</h4>
+<code>string</code><ul>
+<li>Name of Styroform Composite Element</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="showData" id="showData"></a><div class="element clickable method public showData" data-toggle="collapse" data-target=".showData .collapse">
+<h2>Export the "showData" setting for debugging WTVR Data.</h2>
+<pre>showData() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Will dump the query results to browser.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>showData</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::showData()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="showFile" id="showFile"></a><div class="element clickable method public showFile" data-toggle="collapse" data-target=".showFile .collapse">
+<h2>Display a file from a path using a filename. Better to use the ImageHelper
+unless using an unusual mime type.</h2>
+<pre>showFile(string $path, string $file) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>showFile</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::showFile()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><ul>
+<li>Path to File</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><ul>
+<li>Name of Stream</li>
+</ul>
+</div>
+</div></div>
+</div>
+<a name="showXML" id="showXML"></a><div class="element clickable method public showXML" data-toggle="collapse" data-target=".showXML .collapse">
+<h2>Export the "showXML" setting for debugging Styroform and WTVR Data.</h2>
+<pre>showXML() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Will dump the object (form or query) to browser.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>showXML</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::showXML()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="unblockIP" id="unblockIP"></a><div class="element clickable method public unblockIP" data-toggle="collapse" data-target=".unblockIP .collapse">
+<h2>Removes an IP Address from the Blocked Sites Directory, via SecurityPageWidget</h2>
+<pre>unblockIP() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>unblockIP</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::unblockIP()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="userDir" id="userDir"></a><div class="element clickable method public userDir" data-toggle="collapse" data-target=".userDir .collapse">
+<h2>Returns the location of a User Specific directory.</h2>
+<pre>userDir() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>userDir</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::userDir()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="xmlList" id="xmlList"></a><div class="element clickable method public xmlList" data-toggle="collapse" data-target=".xmlList .collapse">
+<h2>XML Data List Generator, creates an XML Tree from a specific array.</h2>
+<pre>xmlList(array $data, string $type, string $ret, string $base) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Type refers to the method in which a list is rendered in HTML, as CSS Divs
+or as a table with tr/td tags.</p>
+
+<p>A "standard" ret results in an HTML List element, a "return" ret
+will return the modified array, and the default is to add the list to the
+current XML Tree, if using Styroform. Base refers to the base nodeelement
+in a Styroform XML Tree that the list would be appended to.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>name</th>
+<td>xmlList</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::xmlList()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><ul>
+<li>"css,table"</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$ret</h4>
+<code>string</code><ul>
+<li>"standard,return"</li>
+</ul>
+</div>
+<div class="subelement argument">
+<h4>$base</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24content" id="$content"> </a><div class="element clickable property public $content" data-toggle="collapse" data-target=".$content .collapse">
+<h2>Inbound HTML Content</h2>
+<pre>$content : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$content</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24context" id="$context"> </a><div class="element clickable property public $context" data-toggle="collapse" data-target=".$context .collapse">
+<h2>Inbound Symfony Context Object</h2>
+<pre>$context : \sfContext</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$context</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24dataObj" id="$dataObj"> </a><div class="element clickable property public $dataObj" data-toggle="collapse" data-target=".$dataObj .collapse">
+<h2>Container for WTVR Data Object</h2>
+<pre>$dataObj : \WTVRData</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>property</th>
+<td></td>
+</tr>
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>name</th>
+<td>$dataObj</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Utils_PageWidget::$$dataObj</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2012-04-03T07:40:58-04:00.<br></footer></div>
+</div>
+</body>
+</html>

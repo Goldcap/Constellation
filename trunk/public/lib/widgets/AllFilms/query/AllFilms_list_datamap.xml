@@ -1,0 +1,53 @@
+<map table="film" result="film_list_datamap">
+  <column column="film_name" type="VARCHAR" size="255" key="" order="1"></column>
+  <column column="film_logo" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="logo_type" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="film_trailer_file" type="VARCHAR" size="255" key="" order="3"></column>
+  <column column="film_status" type="TINYINT" size="4" key="" order="4" format="%0d"></column>
+  <column column="film_featured" type="TINYINT" size="4" key="" order="5" format="bool"></column>
+  <column column="film_info" type="LONGVARCHAR" size="" key="" order="6"></column>
+  <column column="film_still_image" type="VARCHAR" size="255" key="" order="7"></column>
+  <column column="film_short_url" type="VARCHAR" size="255" key="" order="8"></column>
+  <column column="film_id" type="INTEGER" size="11" key="PRI" order="9" format="%0d"></column>
+  <column column="screening_count" type="LONGVARCHAR" size="" key="" order="10"></column>
+  <sql connection="propel">
+  	<sqlselect><![CDATA[
+		select film_name,
+		film_logo,
+		'screeningResources',
+		film_trailer_file,
+		film_status,
+		film_featured,
+		film_info,
+		film_still_image,
+		film_short_url,
+		film_id,
+		(select count(screening_id)
+              from screening
+              where screening.fk_film_id = film.film_id
+              and screening.screening_status = 2
+              and screening_date > ?) as screening_count
+		from film
+		where film.film_use_sponsor_codes <> 1
+		and film_status = 1
+		and film_preuser = 0
+		]]>
+		</sqlselect>
+  </sql>
+  <criterion distinct="true"> 
+    <criteria scope="SYSTEM" value="floor_now()" type="datetime" />
+    <sortopt name="showtimes" value="screening_count" direction="desc" default="true" />
+    <sortopt name="date" value="film_startdate" direction="desc" />
+    <sortopt name="name" value="film_name" direction="asc" force="true" />
+    <sortopt name="rename" value="film_name" direction="desc"  />
+    <sortopt name="featured" value="film_featured" direction="asc"  />
+    <sortopt name="unfeatured" value="film_featured" direction="desc"  />
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="9"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

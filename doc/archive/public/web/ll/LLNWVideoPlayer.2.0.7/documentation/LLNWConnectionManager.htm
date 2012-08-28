@@ -1,0 +1,530 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0037) -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<TITLE>LLNWConnectionManager</TITLE>
+	<STYLE type="text/css">
+		/* This can be an external stylesheet */
+		
+		body {
+			font-family: Verdana, Arial, Helvetica, sans-serif; 
+			font-size: .7em;
+			margin: 5px 5px 5px 5px;
+			background-color: #FFFFFF;
+		}
+		
+		a:link {
+			color: #006225;
+			text-decoration: none;
+		}
+		
+		a:visited {
+			color: #8CC63F;
+			text-decoration: none;
+		}
+		
+		a:hover, a:visited:hover  { 
+			background-color: #DDEEFF;
+		}
+		
+		h4 a, .index a {
+			color: #005FA9;
+		}
+		
+		h4 a:visited, .index a:visited {
+			color: #005FA9;
+		}
+		
+		h1 { 
+			font-size: 130%; 
+			margin-top: 0;
+			margin-bottom: .7em;
+		}
+		
+		h2 {   
+			font-size: 120%;
+			margin-top: 1.4em;
+			margin-bottom: .7em;
+		}
+		
+		h3 {  
+			font-size: 110%;
+			margin-top: 1.2em;
+			margin-bottom: .7em; 
+		}
+		
+		h4 { 
+			font-size: 100%; 
+			font-weight: bold;
+			margin-top: 1.2em;
+			margin-bottom: .6em; 
+		}
+		
+		hr { 
+			color: #000000;
+			height: 1px;
+			margin-top: 0em;
+			margin-bottom: 0em; 	
+		}
+		
+		p, table {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		table p, table pre {
+			margin: 0px;
+		}
+		
+		table ul, table ul ul, table li {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		
+		ol p, ul p {  
+			margin-top: .7em;
+			margin-bottom: .7em;
+		}
+		
+		ol, ul {
+			font-size: 100%; 
+			margin-top: .5em; 
+			margin-bottom: 0em; 
+			margin-left: .5em;	
+		}
+		
+		ol ul, ul ul {
+			list-style: square; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		ol ol {
+			list-style: lower-alpha; 
+			margin-top: .5em;
+			margin-left: .1em;
+		}
+		
+		li {
+			margin-bottom: .7em; 
+			margin-left: -2em;
+		}
+		
+		pre {  
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		
+		ol pre, ul pre {  
+			margin-top: .6em;
+			margin-bottom: .6em;
+		}
+		
+		code {  
+			font-family: "Courier New", Courier, mono;
+			font-size: 100%;
+		}
+		
+		table {
+			font-size: 100%;
+			border-spacing: 0px 0px;
+			border-bottom: solid 1px #B6C0C3;
+			border-right: solid 1px #B6C0C3;
+		}
+		
+		th {
+			font-weight: bold;
+			color: #000000;
+			background-color: #D5E04D;
+			text-align: left;
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		td {
+			border-top: solid 1px #B6C0C3; 
+			border-left: solid 1px #B6C0C3; 
+		}
+		
+		table th, table td {
+			padding: 0.4em 10px;
+			vertical-align: top;
+		}
+		
+		img {
+			margin: 0px 5px 0px 0px;
+			border: none;
+		}
+		
+		.code {  
+			white-space: nowrap;
+			font-family: "Courier New", Courier, mono; 
+			font-size: 100%;
+		}
+		
+		div.procedure {
+			display:none;
+		}
+	</STYLE>
+</HEAD><BODY>
+<HR>
+
+
+<H1>LLNWConnectionManager class</H1>
+
+
+<H4>Description</H4>
+<P>The LLNWConnectionManager class is used to set up connections, close connections, handles streams, handle types of streams and handle events from NetStatus. </P>
+
+
+
+
+
+<H2>Method summary for the LLNWConnectionManager class</H2>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TBODY>
+	<TR>
+		<TH>Method</TH>
+		<TH>Description</TH>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#2">
+		LLNWConnectionManager.doConnection()</A>
+	</TD>
+	<TD>
+		<P>Method is called once the connection parameters have been deciphered out side of the class.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#3">
+		LLNWConnectionManager.connectHTTP()</A>
+	</TD>
+	<TD>
+		<P>Method is called once the connection parameters have been deciphered out side of the class. Used for
+progressive download videos</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#8">
+		LLNWConnectionManager.startStatsMonitor()</A>
+	</TD>
+	<TD>
+		<P>Method handles starting a timer to track statistics.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#9">
+		LLNWConnectionManager.stopStatsMonitor()</A>
+	</TD>
+	<TD>
+		<P>Method handles stopping the timers that keep track of statistics.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#10">
+		LLNWConnectionManager.seekByPercent()</A>
+	</TD>
+	<TD>
+		<P>Seeks to <CODE>value</CODE> as a percent of the available movie.
+</P><P>Metadata keyframes are searched to find the closest keyframe.</P><P></P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#11">
+		LLNWConnectionManager.seekByTime()</A>
+	</TD>
+	<TD>
+		<P>Method handles H.264 seeking using time to find point in which to seek to.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#14">
+		LLNWConnectionManager.close()</A>
+	</TD>
+	<TD>
+		<P>Method closes NetConnection and NetStreams. Used when switching streams to prepare for a new one.</P>
+	</TD>
+	</TR>
+	
+</TBODY></TABLE>
+
+
+
+
+<H2>Property summary for the LLNWConnectionManager class</H2>
+<TABLE border="0" cellpadding="0" cellspacing="0"><TBODY>
+	<TR>
+		<TH>Property</TH>
+		<TH>Description</TH>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#4">
+		LLNWConnectionManager.netStreamName</A>
+	</TD>
+	<TD>
+		<P>Method sets the stream name to connect to.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#6">
+		LLNWConnectionManager.streamType</A>
+	</TD>
+	<TD>
+		<P>Method sets the type of stream you are playing.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#7">
+		LLNWConnectionManager.stats</A>
+	</TD>
+	<TD>
+		<P>Method handles reporting stats assigning the values to 
+a StreamStatVO for accessing outside of class.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="#f8f8f8">
+	<TD>
+		<A href="#12">
+		LLNWConnectionManager.soundTransform</A>
+	</TD>
+	<TD>
+		<P>Method exposes The sound transform object.</P>
+	</TD>
+	</TR>
+	
+	<TR bgcolor="">
+	<TD>
+		<A href="#13">
+		LLNWConnectionManager.volume</A>
+	</TD>
+	<TD>
+		<P>Method sets the volume level of the SoundTransform object.</P>
+	</TD>
+	</TR>
+	
+</TBODY></TABLE>
+
+
+
+
+
+
+
+<H2><A name="2"></A>doConnection</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function doConnection(uri:String):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>uri</I></CODE>
+		: a string representing the FMS application to connect to.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method is called once the connection parameters have been deciphered out side of the class. doConnection handles stream types of &quot;Streaming&quot; and &quot;LiveStream&quot;.</P>
+	
+	
+<HR>
+
+<H2><A name="3"></A>connectHTTP</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function connectHTTP(uri:String):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>uri</I></CODE>
+		: a string representing the full url plus file name.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method is called once the connection parameters have been deciphered out side of the class. Used for
+progressive download videos stream type of &quot;VOD&quot;.</P>
+	
+	
+<HR>
+
+<H2><A name="8"></A>startStatsMonitor</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function startStatsMonitor():void</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles starting a timer to track statistics.</P>
+	
+	
+<HR>
+
+<H2><A name="9"></A>stopStatsMonitor</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>private function stopStatsMonitor():void</CODE></P>
+	<H4>Parameters</H4>
+	
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles stopping the timers that keep track of statistics.</P>
+	
+	
+<HR>
+
+<H2><A name="10"></A>seekByPercent</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function seekByPercent(value:Number):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>value</I></CODE>
+		Percentage value to which to seek (ie - 50% of the movie)</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Seeks to <CODE>value</CODE> as a percent of the available movie.
+</P>
+<P>Metadata keyframes are searched/matched to find the closest keyframe.</P><P></P>
+	
+	
+<HR>
+
+<H2><A name="11"></A>seekByTime</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function seekByTime(value:Number):void</CODE></P>
+	<H4>Parameters</H4>
+	<P><CODE><I>value</I></CODE>
+		: a number representing the time you desire to seek to.</P>
+	<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method handles H.264 seeking using time to find point in which to seek to.</P>
+	
+	
+<HR>
+
+<H2><A name="14"></A>close</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function close():void</CODE></P>
+	<H4>Parameters</H4>
+	<H4>none</H4>
+	
+<H4>Returns</H4>
+	<P>Nothing.</P>
+	<H4>Description</H4>
+	<P>Method closes NetConnection and NetStreams. Used when switching streams to prepare for a new one.</P>
+	
+	
+<HR>
+
+
+
+<H2><A name="4"></A>netStreamName</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set netStreamName(value:String):void</CODE></P>
+	<H4>Description</H4>
+	<P>Method sets the stream name to connect to.</P>
+	
+	
+<HR>
+
+<H2><A name="6"></A>streamType</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set streamType(value:String):void</CODE></P>
+	<P>&nbsp;</P>
+	<P><strong>Parameters</strong></P>
+	<P><em>value</em>: stream type</P>
+	<H4>Description</H4>
+	<P>Method sets the type of stream you are playing:</P>
+	<P>- <em>FLVSeek</em>: Handles FLV seekable progressive videos -LLNW specific service </P>
+    <P>- <em>MOOVSeek</em>: Handles H264 moov formatted seekable videos -LLNW specific service </P>
+    <P>- <em>VOD</em>: Video on demand for http streamed videos</P>
+    <P>- <em>Streaming</em>: for streaming videos using the rtmp protocol </P>
+    <P>- <em>LiveStream</em>: for streaming live video </P>
+    <P>- <em>DVR</em>: for streaming DVR enabled videos from FMS </P>
+    <P>- <em>MBR</em>: Multibitrate video streams</P>
+<HR>
+
+<H2><A name="7"></A>stats</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function get stats():StreamStatVO</CODE></P>
+	<H4>Description</H4>
+	<P>Method handles reporting stats assigning the values to 
+a StreamStatVO for accessing outside of class. </P>
+	<P>List of values:</P>
+	<p><br/>
+	Total bytes :<br/>
+public var bytesTotal:Number;	</p>
+	<p><br>
+	  
+	  Total bytes loaded:<br>
+	  public var bytesLoaded:Number;<br>
+	  <br>
+	  <br>
+	  Current playback time:<br>
+	  public var time:Number;<br>
+	  <br>
+	  media duration:<br>
+	  public var duration:Number;</P>
+</p>
+	<P>&nbsp;</P>
+	
+	
+<HR>
+
+<H2><A name="12"></A>soundTransform</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function get soundTransform():SoundTransform</CODE></P>
+	<H4>Description</H4>
+	<P>Property; Method exposes The sound transform object.</P>
+	
+	
+<HR>
+
+<H2><A name="13"></A>volume</H2>
+	
+	<H4>Usage</H4>
+	<P>
+	<CODE>public function set volume(value:Number):void</CODE></P>
+	<H4>Description</H4>
+	<P>Property; Method sets the volume level of the SoundTransform object.</P>
+	
+	
+<HR>
+</BODY></HTML>

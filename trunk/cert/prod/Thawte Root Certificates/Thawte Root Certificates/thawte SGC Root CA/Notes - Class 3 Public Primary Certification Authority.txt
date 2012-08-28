@@ -1,0 +1,2 @@
+
+The Class 3 Public Primary Certification Authority is used as the Root CA for SGC SSL certs.  It signs the Thawte SGC Subordinate CA.

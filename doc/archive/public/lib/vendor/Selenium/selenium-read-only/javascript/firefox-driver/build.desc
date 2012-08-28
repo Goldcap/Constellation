@@ -1,0 +1,130 @@
+mozilla_xpt(name = "command_processor_xpt",
+  srcs = [ "extension/idl/nsICommandProcessor.idl" ])
+
+mozilla_xpt(name = "response_handler_xpt",
+  srcs = [ "extension/idl/nsIResponseHandler.idl" ])
+
+mozilla_xpt(name = "httpd_xpt",
+  srcs = [ "extension/idl/nsIHttpServer.idl" ])
+
+mozilla_xpt(name = "status_xpt",
+  srcs = [ "extension/idl/wdIStatus.idl" ])
+
+mozilla_xpt(name = "coordinates_xpt",
+  srcs = [ "extension/idl/wdICoordinate.idl" ])
+
+mozilla_xpt(name = "mouse_xpt",
+  srcs = [ "extension/idl/wdIMouse.idl" ])
+
+mozilla_extension(name = "webdriver",
+  content = [
+    "extension/content/**/*.js",
+    "extension/content/fxdriver.xul",
+    "extension/content/fx4driver.xul",
+    "//javascript/shared-extension",
+  ],
+  components = [
+    "extension/components/badCertListener.js",
+    "extension/components/dispatcher.js",
+    "extension/components/driver-component.js",
+    "extension/components/firefoxDriver.js",
+    "extension/components/httpd.js",
+    "extension/components/json2.js",
+    "extension/components/nsCommandProcessor.js",
+    "extension/components/promptService.js",
+    "extension/components/request.js",
+    "extension/components/response.js",
+    "extension/components/screenshooter.js",
+    "extension/components/session.js",
+    "extension/components/sessionstore.js",
+    "extension/components/socketListener.js",
+    "extension/components/webLoadingListener.js",
+    "extension/components/webdriverserver.js",
+    "extension/components/wrappedElement.js",
+    ":synthetic_mouse",
+    ":command_processor_xpt",
+    ":coordinates_xpt",
+    ":httpd_xpt",
+    ":mouse_xpt",
+    ":response_handler_xpt",
+    ":status_xpt",
+    "//cpp:native_events_xpt",
+  ],
+  resources = [
+    { "//cpp:firefox_dll" : "platform/WINNT_x86-msvc/components/webdriver-firefox.dll" },
+    { "//cpp:firefox5_dll" : "platform/WINNT_x86-msvc/components/webdriver-firefox-5.dll" },
+    { "//cpp:firefox6_dll" : "platform/WINNT_x86-msvc/components/webdriver-firefox-6.dll" },
+    { "//cpp:firefox7_dll" : "platform/WINNT_x86-msvc/components/webdriver-firefox-7.dll" },
+    { "//cpp:imehandler_dll" : "platform/WINNT_x86-msvc/components/imehandler.dll" },
+    { "//cpp:webdriver_firefox_ff3" : "platform/Linux_x86-gcc3/components/libwebdriver-firefox-ff3.so" },
+    { "//cpp:webdriver_firefox_ff4" : "platform/Linux_x86-gcc3/components/libwebdriver-firefox-ff4.so" },
+    { "//cpp:webdriver_firefox_ff5" : "platform/Linux_x86-gcc3/components/libwebdriver-firefox-ff5.so" },
+    { "//cpp:webdriver_firefox_ff6" : "platform/Linux_x86-gcc3/components/libwebdriver-firefox-ff6.so" },
+    { "//cpp:webdriver_firefox_ff7" : "platform/Linux_x86-gcc3/components/libwebdriver-firefox-ff7.so" },
+    { "//cpp:webdriver_firefox_ff4_64" : "platform/Linux_x86_64-gcc3/components/libwebdriver-firefox-ff4.so" },
+    { "//cpp:webdriver_firefox_ff5_64" : "platform/Linux_x86_64-gcc3/components/libwebdriver-firefox-ff5.so" },
+    { "//cpp:webdriver_firefox_ff6_64" : "platform/Linux_x86_64-gcc3/components/libwebdriver-firefox-ff6.so" },
+    { "//cpp:webdriver_firefox_ff7_64" : "platform/Linux_x86_64-gcc3/components/libwebdriver-firefox-ff7.so" },
+    { ":atoms" : "resource/modules/atoms.js" },
+    { ":utils" : "resource/modules/utils.js" },
+    { "js/timer.js" : "resource/modules/timer.js" },
+    { "js/evaluate.js" : "resource/evaluate.js" },
+    { "//third_party/js/sizzle" : "resource/sizzle.js" }
+  ],
+  chrome = "extension/chrome.manifest",
+  install = "extension/install.rdf")
+
+js_binary(name = "synthetic_mouse",
+  srcs = [
+    "extension/components/syntheticMouse.js",
+    "js/moz.js",
+    "js/firefox-utils.js",
+  ],
+  defines = [
+    "goog.userAgent.ASSUME_GECKO=true",
+  ],
+  externs = [
+    "js/externs.js",
+  ],
+  deps = [ "//javascript/webdriver-atoms:deps" ])
+
+# Needed because the closure library doesn't have the EXPORTED_SYMBOLS variable
+# required by the loader in firefox
+js_binary(name = "atoms",
+  srcs = [
+    "js/events.js",
+    "js/firefox-utils.js",
+    "js/moz.js",
+    "js/preconditions.js",
+    "js/exported_symbols.js",
+    "js/locators.js",
+  ],
+  defines = [
+    "goog.userAgent.ASSUME_GECKO=true",
+  ],
+  externs = [
+    "js/externs.js",
+  ],
+  deps = [ "//javascript/webdriver-atoms:deps" ])
+
+js_binary(name = "utils",
+  srcs = [
+    "js/events.js",
+    "js/errorcode.js",
+    "js/firefox-utils.js",
+    "js/logging.js",
+    "js/modals.js",
+    "js/moz.js",
+    "js/timer.js",
+    "js/utils.js",
+    "js/utils_exports.js"
+  ],
+  defines = [
+    "goog.userAgent.ASSUME_GECKO=true",
+  ],
+  externs = [
+    "js/externs.js",
+  ],
+  deps = [
+    "//javascript/webdriver-atoms:deps"
+  ])

@@ -1,0 +1,40 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+  
+get:
+post:
+  sponsor_code: "testcode123"
+  fk_film_id: 4
+  sponsor_code_user_fname: =user:getUserFname
+  sponsor_code_user_lname: =user:getUserLname
+  sponsor_code_user_username: =user:getUserUsername
+  sponsor_code_user_email: =user:getUserEmail
+  fk_user_id: =user:getUserId
+  sponsor_code_use: 100
+  sponsor_code_use_count: 2
+  sponsor_code_start_date: '2011-01-01 00:00:00'
+  sponsor_code_end_date: '2011-01-02 00:00:00'
+session:
+action:
+  styroaction: submit
+
+dbo:
+  sponsor_code: 
+    key: sponsor_code_id
+    vars:
+      getSponsorCode: =post:sponsor_code
+      getFkFilmId: =post:fk_film_id
+      getSponsorCodeUserFname: =post:sponsor_code_user_fname
+      getSponsorCodeUserLname: =post:sponsor_code_user_lname
+      getSponsorCodeUserUsername: =post:sponsor_code_user_username
+      getSponsorCodeUserEmail: =post:sponsor_code_user_email
+      getFkUserId: =post:fk_user_id
+      getSponsorCodeUse: =post:sponsor_code_use
+      getSponsorCodeUseCount: =post:sponsor_code_use_count
+      getSponsorCodeStartDate: =post:sponsor_code_start_date
+      getSponsorCodeEndDate: =post:sponsor_code_end_date

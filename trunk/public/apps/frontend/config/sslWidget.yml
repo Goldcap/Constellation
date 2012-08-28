@@ -1,0 +1,8 @@
+blindspots: [^_theater(.*)]
+direct_skips: []
+pattern_skips: [^_film(.*),^_films]
+direct: []
+#^_account(.*),
+pattern: [^_facebook(.*),^_host(.*),^_screening(.*),^_purchase(.*),^_boxoffice(.*),^_services_Tokenizer(.*)]
+#pattern: []
+

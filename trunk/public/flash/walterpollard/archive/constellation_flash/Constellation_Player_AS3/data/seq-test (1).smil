@@ -1,0 +1,11 @@
+<smil xmlns="http://www.w3.org/2005/SMIL21/Language">
+  <head>
+  </head>
+  <body>
+      <seq>
+        <video region="content" src="http://mediapm.edgesuite.net/strobe/content/test/AFaerysTale_sylviaApostol_640_500_short.flv"/>
+        <video region="content" src="http://mediapm.edgesuite.net/strobe/content/test/SpaceAloneHD_sounas_640_500_short.flv" />
+        <video region="content" src="http://mediapm.edgesuite.net/strobe/content/test/elephants_dream_768x428_24_short.flv" />
+      </seq>
+  </body>
+</smil>

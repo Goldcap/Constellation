@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" applicationComplete="startup()" backgroundColor="#000000">
+	<mx:Style source="main.css"/>
+	<mx:Script>
+		<![CDATA[
+			// JSON Library, for parsing token request
+			import com.adobe.serialization.json.*;
+			import com.zeusprod.LoadExternalSwf;
+			
+			import events.NetEvent;
+			
+			import net.FMSConnection;
+			import net.FMSStream;
+
+			// The viewer of the hostcam
+			private var liveViewerSwf:LoadExternalSwf;
+			
+			// Version Number
+			private static var version:String = "16";
+			
+			// Are we in testing mode?
+			private static var TESTING:Boolean = false;
+			private var testTimer:Timer = new Timer(2000);
+			
+			// Video width and height
+			// This is the default "large size"
+			private var videoWidth:Number = 1280;
+			private var videoHeight:Number = 720; 
+			
+			// NetStream
+			private var inStream:NetStream;
+			
+			// Reference RTMP
+			private var nc:NetConnection;
+			
+			// Normal RTMP
+			private var normalNC:NetConnection;
+			
+			// Tunnel RTMPT
+			private var altNC:NetConnection;
+			
+			// The video object
+			private var remoteVideo:Video;
+			
+			// Detect that we are done with one connection
+			private var alreadyConnected:Boolean = false;
+			
+			// Detect that we are already playing
+			private var alreadyPlaying:Boolean = false;
+			
+			// Hostname
+			private var hostName:String = "cp113558.edgefcs.net";
+			
+			// Token
+			private var token:String;
+			
+			// Server IP Information - Problematic Proxies
+			private var serverIP:String;
+			//nc.connect("rtmp://"+serverIP+"/ondemand?_fcs_vhost="+hostName);
+			
+			// This is the number of the video file from the directory
+			// It will come from slist flashvar
+			private var streamNumber:Number = 21;
+			
+			// Default slist var using streamNumber
+			private var slist:String; //="constellation/movies/" + streamNumber + "/movie-large;constellation/movies/" + streamNumber + "/movie-medium;constellation/movies/" + streamNumber + "/movie-small";
+			
+			// Default streamName using streamNumber
+			private var streamName:String; // ="constellation/movies/" + streamNumber + "/movie-small";
+			
+			// The string for requesting from Akamai
+			private var playString:String; // = "mp4" + ":" + streamName;
+			
+			// Token Requests
+			private var tokenUrlLoader:URLLoader;
+			private var tokenUrlRequest:URLRequest;
+			
+			// Akamai ident Requests
+			private var identUrlLoader:URLLoader;
+			private var identUrlRequest:URLRequest;
+			
+			// Adjustable Parameters and Constants
+			
+			// The amount to rewind when switching bitrates
+			private static var SEEKREWINDSECONDS:Number = 0;
+			
+			// Should we do a bandwidth check on connect?
+			private static var CHECKBANDWIDTH:Boolean = true;
+			// Are we on the first or later bandwidth check
+			private var laterCheckBandwidth:Boolean = false;
+
+			// Initial buffer time to get things started
+			private static var LOADINGBUFFERTIME:Number = 3; // in seconds
+			// After initial buffer is full, switch to this
+			private static var PLAYINGINGBUFFERTIME:Number = 60; // In seconds 
+			
+			// Keeping track of number of buffer emptys
+			private var bufferEmptyCount = 0;
+			// The amount allowed
+			private static var BUFFEREMPTYCOUNTTHRESHOLD = 2;
+			
+			// The number of buffer low 
+			private var bufferLowCount = 0;
+			// The number allowed before taking action
+			private static var BUFFERLOWCOUNTTHRESHOLD = 5;
+			
+			// The number of buffer highs
+			private var bufferHighCount = 0;
+			// The number allowed before taking action
+			private static var BUFFERHIGHCOUNTTHRESHOLD = 15;
+			
+			// Number FPS zeros
+			private var fpsZeroCount = 0;
+			// THe number allowed
+			private static var FPSZEROCOUNTTHRESHOLD = 2;
+			
+			// Last buffer length in stream check
+			private var lastBufferLength = 0;
+			
+			// Current stream size - 0 is low
+			private var currentStreamSize = 0;
+			// The highest stream size ..  2 is high
+			private static var MAXSTREAMSIZE = 2;
+			
+			// Timer for checking the stream
+			private static var STREAMCHECKTIMERINTERVAL = 5000; // milliseconds
+			private var streamCheckTimer:Timer = new Timer(STREAMCHECKTIMERINTERVAL);
+			
+			// Currently switching streams
+			private var currentlySwitching = false;
+			
+			// Timer for mouse movements, display fullscreen button
+			private var mouseMoveTimer:Timer;// = new Timer(2500);
+			
+			// Flashvars
+			private var flashvars:Object;
+			private var seekInto:Number = 0; // Being used, how far into the video when playing
+			private var ticketParams:String; // Being used, passed back to get token
+			private var fileType:String = "mp4"; // Or a MOV?
+			private var bitrate:String = "600,1600,2400"; // bitrate
+			
+			// The parsed bandwidth settings
+			private var largeBandwidth = 2400; // 100 kbps higher than the encoded values
+			private var mediumBandwidth = 1600;
+			private var smallBandwidth = 600;
+			private static var EXTRABANDWIDTHREQUIRED = 100 + 300; // How much to add + hostcam
+			
+			// For displaying messages
+			private static var MESSAGETIMERTIME = 15000; // Milliseconds
+			private var messageTimer:Timer;
+						
+			// For keeping track of play position
+			private var lastInStreamTime:Number = 0;
+			
+			private var streamComplete:Boolean = false;
+			
+			// Stream Check Magic..  Periodic checking buffer and bandwidth
+			private function streamCheckTimerFired(e:Event):void {
+				
+				debug("Timer Fired");
+			
+				if (!streamComplete) {
+					
+					if (inStream != null && !currentlySwitching) {
+						debug("Buffer: " + inStream.bufferLength);
+						
+						if (lastInStreamTime < inStream.time) {
+							lastInStreamTime = inStream.time;
+						}
+						
+						if (inStream.bufferTime == LOADINGBUFFERTIME && inStream.bufferLength >= LOADINGBUFFERTIME) {
+							debug("Increasing Buffer to playing buffer");
+							inStream.bufferTime = PLAYINGINGBUFFERTIME;
+							bufferHighCount = 0;
+							bufferLowCount = 0;
+						} else if (inStream.bufferLength >= PLAYINGINGBUFFERTIME) {
+							debug("Buffer High");
+							bufferHighCount++;
+							if (bufferHighCount >= BUFFERHIGHCOUNTTHRESHOLD) {
+								debug("Buffer high enough for long enough");
+								if (currentStreamSize < MAXSTREAMSIZE) {
+									if (CHECKBANDWIDTH) {
+										debug("Increasing stream, Checking bandwidth");
+										laterCheckBandwidth = true;
+										nc.call("checkBandwidth", null);
+									} else {
+										swapStream(currentStreamSize+1);
+									}
+								} else {
+									debug("Already at largest stream");
+								}
+								
+								bufferHighCount = 0;
+							}
+							bufferLowCount = 0;
+							bufferEmptyCount = 0;
+						} else if (inStream.bufferLength <= .1) {
+							debug("Buffer Empty at " + inStream.bufferLength);
+							bufferEmptyCount++;
+							if (bufferEmptyCount >= BUFFEREMPTYCOUNTTHRESHOLD) {
+								if (currentStreamSize > 0) {
+									debug("Lowering stream");
+									swapStream(currentStreamSize-1);
+								} else {
+									// Pop-up Issue here
+									debug("**************************");
+									debug("Already at smallest stream");
+									
+									//displayBufferingMessage();
+									
+								}
+								bufferEmptyCount = 0;
+							}
+							bufferHighCount = 0;
+						} else if (inStream.bufferLength >= lastBufferLength) {
+							debug("Buffer low but constant or increasing");
+							bufferHighCount = 0;
+							bufferLowCount = 0;
+							bufferEmptyCount = 0;
+						} else if (inStream.bufferTime == PLAYINGINGBUFFERTIME && 
+							inStream.bufferLength < PLAYINGINGBUFFERTIME) {
+							debug("Buffer low and not increasing");
+							bufferLowCount++;
+							
+							if (bufferLowCount >= BUFFERLOWCOUNTTHRESHOLD) {
+								debug("Buffer low enough for long enough");
+								
+								if (currentStreamSize > 0) {
+									debug("Decreasing stream");
+									swapStream(currentStreamSize-1);
+								} else {
+									
+									// Pop-up Issue here
+									debug("**************************");
+									debug("Already at smallest stream");
+									
+									//displayNotEnoughBandwidthMessage();
+								}
+							}
+						}
+						lastBufferLength = inStream.bufferLength;
+	
+						
+						// FPS Checking
+						if (inStream.currentFPS == 0 && inStream.bufferLength >= LOADINGBUFFERTIME) {
+							debug("0 FPS but there is a buffer so PLAY");
+							inStream.bufferTime = LOADINGBUFFERTIME;
+							inStream.resume();
+							//swapStream(currentStreamSize);
+						} else if (inStream.currentFPS == 0 && inStream.bufferLength < LOADINGBUFFERTIME) {
+							fpsZeroCount++;
+							if (fpsZeroCount >= FPSZEROCOUNTTHRESHOLD)
+							{
+								displayBufferingMessage();
+	
+								if (currentStreamSize > 0) {
+									debug("Decreasing stream");
+									swapStream(currentStreamSize-1);
+								} else {
+									
+									// Pop-up Issue here
+									
+									debug("**************************");
+									debug("Already at smallest stream");
+								}
+							}
+						} else {
+							fpsZeroCount = 0;
+						}
+					}
+				}
+				else
+				{
+					debug("Stream Complete");
+				}
+			}
+			
+			// First thing to run, step 1
+			private function startup():void
+			{
+				debug("startup version: " + version);
+
+				// Add some listeners
+				//stage.addEventListener(Event.FULLSCREEN,sizeChanged);
+				stage.addEventListener(Event.RESIZE, resizeHandler); 				
+				stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
+
+				// Get flashvars
+				flashvars = this.parameters;
+				if (flashvars != null) {
+					
+					// bandwidth
+					if (flashvars.bitrates != null && flashvars.bitrates != "null") {
+						bitrate = flashvars.bitrates;
+						debug("we have a bitrates flashvar: " + bitrate);
+					} else {
+						debug("ERROR, no bitrates flashvar");
+						// Default
+					}
+					
+					var bitrateArray:Array = bitrate.split(",");
+					if (bitrateArray.length == 3) {
+						if (Number(bitrateArray[0]) > Number(bitrateArray[2])) {
+							largeBandwidth =  Number(bitrateArray[0]) + EXTRABANDWIDTHREQUIRED;
+							mediumBandwidth = Number(bitrateArray[1]) + EXTRABANDWIDTHREQUIRED;
+							smallBandwidth = Number(bitrateArray[2]) + EXTRABANDWIDTHREQUIRED;
+						} else {
+							largeBandwidth = Number(bitrateArray[2]) + EXTRABANDWIDTHREQUIRED;
+							mediumBandwidth = Number(bitrateArray[1]) + EXTRABANDWIDTHREQUIRED;
+							smallBandwidth = Number(bitrateArray[0]) + EXTRABANDWIDTHREQUIRED;
+						}
+						debug("bitrate array parsed, large: " + largeBandwidth + " medium: " + mediumBandwidth + " small: " + smallBandwidth);
+					}
+					
+					// fileType
+					if (flashvars.fileType != null && flashvars.fileType != "null") {
+						fileType = flashvars.fileType;
+						debug("we have a " + fileType + " file");
+					} else {
+						fileType = "mp4";
+						debug("ERROR, no fileType");
+					}
+					
+					// ticketParams
+					if (flashvars.ticketParams != null) {
+						ticketParams = flashvars.ticketParams;
+						debug("ticketParams are: " + ticketParams);
+					} else {
+						ticketParams = null;
+						debug("no flashvars.ticketParams");
+					}
+					
+					// seekInto
+					if (flashvars.seekInto != null) {
+						seekInto = flashvars.seekInto;
+						debug("seekInto flashvar is " + seekInto);
+						
+						lastInStreamTime = seekInto;
+					} else {
+						seekInto = 0;
+						debug("seekInto flashvar is NULL");
+					}
+										
+					//debugConsole
+					if (TESTING || (flashvars.debugConsole != null && flashvars.debugConsole == "true")) {
+						// Should add the other related buttons and such in here
+						debug("in testing mode");
+						debugButton.visible = true;
+						smallstream.visible = true;
+						mediumstream.visible = true;
+						largestream.visible = true;
+						stopstream.visible = true;
+					} else {
+						debug("not in testing mode");
+						debugButton.visible = false;
+						smallstream.visible = false;
+						mediumstream.visible = false;
+						largestream.visible = false;
+						stopstream.visible = false;
+					}
+					
+					// slist
+					if (flashvars.slist != null) {
+						streamNumber = flashvars.slist;
+						debug("slist flashvar is " + streamNumber);
+					} else {
+						debug("slist flashvar is NULL, going to play film " + streamNumber);
+					}
+					
+					// This is the number of the video file from the directory
+					slist="constellation/movies/" + streamNumber + "/movie-large;constellation/movies/" + streamNumber + "/movie-medium;constellation/movies/" + streamNumber + "/movie-small";
+					streamName ="constellation/movies/" + streamNumber + "/movie-small";
+					playString = "mp4" + ":" + streamName + "." + fileType;
+				}
+				
+				// Setup Timers
+				if (TESTING) {
+					testTimer.addEventListener(TimerEvent.TIMER,testTimerFired);
+					testTimer.start();
+				}
+				
+				streamCheckTimer.addEventListener(TimerEvent.TIMER,streamCheckTimerFired);
+				streamCheckTimer.start();
+				
+				// Get the token
+				tokenUrlLoader = new URLLoader();
+				// For testing
+				//tokenUrlRequest = new URLRequest("http://stage.constellation.tv/services/Tokenizer/init?k=" + streamNumber);	
+				/* NOT TESTING */
+				tokenUrlRequest = new URLRequest("/services/Tokenizer/init");
+				tokenUrlRequest.method = URLRequestMethod.POST;
+				var postData:URLVariables = new URLVariables();
+				postData.k = ticketParams;
+				tokenUrlRequest.data = postData;
+				
+				debug("Hitting: " + tokenUrlRequest.url);
+				debug("With: " + tokenUrlRequest.data);
+				/* NOT TESTING */
+				tokenUrlLoader.addEventListener(Event.COMPLETE, tokenUrlLoaderComplete);
+				tokenUrlLoader.load(tokenUrlRequest);
+				
+				// JavaScript, External Interface
+				Security.allowDomain("constellation.tv");
+				
+				if (ExternalInterface.available) {
+					ExternalInterface.addCallback("setVolume", setVolume);
+					ExternalInterface.addCallback("showHostCam", showHostCam);
+					ExternalInterface.addCallback("hideHostCam", hideHostCam);
+					ExternalInterface.addCallback("showLiveViewer", showLiveViewer);
+					ExternalInterface.addCallback("hideLiveViewer", hideLiveViewer);
+					ExternalInterface.addCallback("camViewerStart", camViewerStart);
+					debug("setup External Interface");
+				} else {
+					debug("External Interface not available");
+				}
+								
+			}
+			
+			// From JavaScript
+			public function setVolume(theVolume:Number):void {
+				//ExternalInterface.call("alert(\"running setVolume\")");
+				debug("Setting Volume " + theVolume);
+				
+				var volumeTransform:SoundTransform = new SoundTransform();
+				volumeTransform.volume = theVolume/10;
+				if (inStream != null) {
+					inStream.soundTransform = volumeTransform;
+				}
+			}
+			
+			// Token Loaded, this is step 2
+			private function tokenUrlLoaderComplete(e:Event):void 
+			{
+				debug("tokenUrlLoaderComplete");
+				debug(tokenUrlLoader.data);
+				
+				// Parse the response
+				//{"tokenResponse":{"status":"success","token":"da.dNcMa2cOd_cLcAdfaFaVbibAcRdSbga9-boek9z-k-LpJC2Cxruwu-qZpelGr1s9qhnvonq3lHt1s7"}}
+				
+				try {
+					var decodedResults:Object = JSON.decode(tokenUrlLoader.data);
+					var tokenResponse:Object = decodedResults["tokenResponse"];
+					var status:Object = tokenResponse["status"];
+					token = String(tokenResponse["token"]);
+					
+					// No longer calling doConnection here, rather getIdent, Akamai
+					//doConnection();
+					
+					// Go on to step 3
+					getIdent();
+					
+				} catch (error:Error) {
+					// Need to do some better error handling
+					//token = "da.a1dKcsakdVcGdpcHcYcacLdncrd6dMcf-boeX5W-vga-FqHE6Axrywp-pdnKkokhrinyqhsCs1p9n3pesQkTr7";
+					
+					debug("Couldn't Parse Token");
+				}				
+			}
+			
+			// Step 3
+			// Get ident server from Akamai
+			private function getIdent():void
+			{
+				debug("getIdent");
+				
+				identUrlRequest = new URLRequest("http://"+hostName+"/fcs/ident");
+				debug("making request to: http://" + hostName + "/fcs/ident");
+				identUrlLoader = new URLLoader();
+				identUrlLoader.addEventListener(Event.COMPLETE, identUrlLoadComplete);
+				identUrlLoader.load(identUrlRequest);
+			}
+			
+			// Got ident server, step 4
+			private function identUrlLoadComplete(e:Event):void 
+			{
+				
+				debug("identUrlLoaded");
+				/*
+				<?xml version="1.0" encoding="utf-8" ?>
+				<fcs><ip>208.22.87.127</ip></fcs>
+				*/
+				debug(e.target.data);
+				
+				var identXML:XML = new XML(e.target.data);
+				serverIP = identXML.ip.text()[0];
+				debug("serverIP is " + serverIP);
+				
+				// Go to step 5
+				doConnection();
+			}
+			
+			// Step 5, do the actual connections
+			private function doConnection():void
+			{
+				debug("doConnection");
+				
+				normalNC = new NetConnection();
+				normalNC.client = this;
+				normalNC.addEventListener(NetStatusEvent.NET_STATUS,ncStatus);
+				normalNC.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+				
+				// Explicitly not checking bandwidth here as it leads to too many callbacks
+				if (serverIP != null) {
+					//nc.connect("rtmp://"+serverIP+"/ondemand?_fcs_vhost="+hostName);
+					normalNC.connect("rtmp://" + serverIP + "/ondemand/" + "mp4" + ":" + streamName + "." + fileType + "?_fcs_vhost=" + hostName + "&auth=" + token + "&aifp=v0001&slist=" + slist, false);
+					debug("connecting to " + normalNC.uri);
+				} else {
+					normalNC.connect("rtmp://" + hostName + "/ondemand/" + "mp4" + ":" + streamName + "." + fileType + "?auth=" + token + "&aifp=v0001&slist=" + slist, false);
+					debug("connecting to " + normalNC.uri);
+				}
+				debug("normalNC Connecting");
+				
+				// Tunnel Version
+				altNC = new NetConnection();
+				altNC.client = this;
+				altNC.addEventListener(NetStatusEvent.NET_STATUS,ncStatus);
+				altNC.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
+				// Explicitly not checking bandwidth here as it leads to too many callbacks
+				if (serverIP != null) {
+					altNC.connect("rtmpt://" + serverIP + ":80/ondemand/" + "mp4" + ":" + streamName + "." + fileType + "?_fcs_vhost=" + hostName + "&auth=" + token + "&aifp=v0001&slist=" + slist, false);
+					debug("connecting to " + altNC.uri);
+				} else {
+					altNC.connect("rtmpt://" + hostName + ":80/ondemand/" + "mp4" + ":" + streamName + "." + fileType + "?auth=" + token + "&aifp=v0001&slist=" + slist, false);
+					debug("connecting to " + altNC.uri);
+				}
+				debug("altNC Connecting");
+				
+			}
+			
+			private function disconnectStream():void
+			{
+				
+				if (nc.connected) {	
+					nc.close();
+				}
+				
+				alreadyConnected = false;
+			}
+			
+			// Step 6, NetConnection results Connect.Success
+			private function ncStatus(event:NetStatusEvent):void 
+			{
+				switch (event.info.code) {
+					
+					case "NetConnection.Connect.Success":
+						
+						if (!alreadyConnected) {
+							
+							// let's not run this again..
+							alreadyConnected = true;
+							
+							if (event.currentTarget == normalNC) {
+								debug("Normal NetConnection");
+								
+								if (altNC) { 
+									altNC = null;
+								}
+								
+								nc = normalNC;
+								
+							} else {
+								
+								debug("Alt NetConnection");
+								
+								if (normalNC) { 
+									normalNC = null;
+								}
+								nc = altNC;
+								
+							}
+							
+							
+							debug("Connected");
+							
+							// If desired, do bandwidth check
+							if (CHECKBANDWIDTH) {
+								debug("Calling checkBandwidth");
+								laterCheckBandwidth = false; // We are on the first one
+								// This works phenominally better than the initial call when connecting.
+								nc.call("checkBandwidth", null);
+							} else {
+								// If we aren't checking bandwidth, we'll just start the stream
+								startStream();
+							}								
+						}
+						
+						break;
+					
+					case "NetConnection.Connect.NetworkChange":
+						debug("Netconnection Network Change");
+						/*
+						if (!nc.connected) {
+						alreadyConnected = false;
+						doConnection();
+						}
+						*/
+						break;
+					
+					case "NetStream.Play.StreamNotFound":
+						debug("Stream not found");
+						
+						break;
+					
+					case "NetStream.Play.Transition":
+						debug("Transition Event " +  event.info.reason);
+						
+						break;
+					
+					case "NetStream.Buffer.Full":
+						debug("Buffer Full");
+						/*
+						if (inStream.bufferTime != PLAYINGINGBUFFERTIME) {
+						inStream.bufferTime = PLAYINGINGBUFFERTIME;
+						debug("Increased buffer to " + PLAYINGINGBUFFERTIME);
+						} else {
+						if (currentStreamSize < maxStreamSize) {
+						debug("Increasing stream");
+						swapStream(currentStreamSize+1);
+						} else {
+						debug("Already at largest stream");
+						}
+						}
+						*/
+						break;
+					
+					case "NetStream.Buffer.Empty":
+						debug("Buffer Empty");
+						if (!currentlySwitching) {
+							bufferEmptyCount++;
+							if (bufferEmptyCount >= BUFFEREMPTYCOUNTTHRESHOLD) {
+								if (currentStreamSize > 0) {
+									debug("Lowering stream");
+									swapStream(currentStreamSize-1);
+								} else {
+									debug("Already at smallest stream");
+								}
+								bufferEmptyCount = 0;
+							}
+						}
+						break;
+					
+					default:
+						debug(event.info.code);
+						
+						break;
+				}
+			}
+			
+			// Not sure this is needed, server might tell us when it is doing it
+			public function onBWCheck(... rest):Number { 
+				debug("onBWCheck");
+				return 0;
+			} 
+			
+			// Step 7
+			// This is called on the NetConnection client
+			public function onBWDone(... rest):void { 
+				debug("onBWDone Start");
+				
+				if (laterCheckBandwidth) {
+					if (rest.length > 0) {
+						// Pass this to other function
+						laterOnBWDone(Number(rest[0]));
+					}
+				} else {
+					
+					if (rest.length > 0) {
+						debug("bandwidth: " + rest[0] + " kbps");
+						var bandwidth:Number = rest[0];
+						
+						// Should be specifying the stream to play here
+						// Token needs to include these in the slist, movie-small, movie-medium
+												
+						if (bandwidth > largeBandwidth) {
+							streamName="constellation/movies/" + streamNumber + "/movie-large";	
+							currentStreamSize = 2;
+						
+						} else if (bandwidth > mediumBandwidth) {
+							streamName="constellation/movies/" + streamNumber + "/movie-medium";
+							currentStreamSize = 1;
+						
+						} else if (bandwidth > smallBandwidth) {
+							streamName="constellation/movies/" + streamNumber + "/movie-small";
+							currentStreamSize = 0;
+						
+						} else {
+							streamName="constellation/movies/" + streamNumber + "/movie-small";
+							currentStreamSize = 0;
+						
+							// Display not enough bandwidth message
+							displayNotEnoughBandwidthMessage();
+						}
+						
+						// Go on to step 8, start stream
+						debug("playing " + streamName);
+						playString = "mp4" + ":" + streamName  + "." + fileType;
+						startStream();
+					}
+				}
+				debug("onBWDone End");				
+				
+			} 	
+			
+			// This is called on the NetConnection client when we think we should switch
+			public function laterOnBWDone(bandwidth:Number):void { 
+				debug("laterOnBWDone Start");
+				if (bandwidth > largeBandwidth && currentStreamSize < 2) {
+					streamName="constellation/movies/" + streamNumber + "/movie-large";	
+					debug("bandwidth good to go");
+					swapStream(currentStreamSize+1);
+				} else if (bandwidth > mediumBandwidth && currentStreamSize < 1) {
+					streamName="constellation/movies/" + streamNumber + "/movie-medium";
+					currentStreamSize = 1;
+					debug("bandwidth good to go");
+					swapStream(currentStreamSize+1);
+				} else {
+					debug("bandwidth not good enough to notch up: bandwidth: " + bandwidth + " largeBandwidth: " + largeBandwidth + " medium: " + mediumBandwidth + " current stream: " + currentStreamSize);
+				}
+				debug("laterOnBWDone End");				
+			}
+			
+			// Messages to user
+			public function displayNotEnoughBandwidthMessage():void {
+				displayMessage("Your bandwidth seems low, you may encounter playback issues.");
+			}
+			
+			public function displayBufferingMessage():void {
+				displayMessage("Sorry - we're adjusting the stream based on your bandwidth.");
+				//"Sorry - we're adjusting the stream based on your bandwidth."
+				
+				/*
+				- If we hit "0 FPS", or if we pause the player to do a file switch, we should show a timer/dial/rotating circle of some kind with a message, "Sorry - we're adjusting the stream based on your bandwidth."
+				- If there is a pause because buffer hits 0, we should show the rotating dial with a message saying "Bandwidth low - please wait a moment while we adjust."  This second message should take priority over the first.
+				*/
+			}
+			
+			public function displayMessage(messageText:String):void {
+				messages.visible = true;
+				messages.text = messageText;
+				
+				messages.x = (stage.width - messages.width)/2;
+				messages.y = (stage.height - messages.height)/2;
+				
+				if (messageTimer == null || !messageTimer.running) {
+					messageTimer = new Timer(MESSAGETIMERTIME,1);
+					messageTimer.addEventListener(TimerEvent.TIMER,messageTimerFired);
+					messageTimer.start();
+				} else {
+					messageTimer.reset();
+					messageTimer.start();
+				}
+				
+			}
+			
+			private function messageTimerFired(e:Event):void
+			{
+				debug("Message Timer Fired, Un-display Messages");
+				messages.visible = false;		
+			}
+			
+			public function dismissMessage():void {
+				if (messages.visible == true) {
+					messages.visible = false;
+				}
+			}
+			
+			// NetStream status messages
+			public function onPlayStatus(info:Object):void { 
+				switch (info.code) { 
+					case "NetStream.Play.Complete": 
+						debug("The stream has completed"); 
+						streamComplete = true;
+						break; 
+					case "NetStream.Play.TransitionComplete":
+						debug("The stream transition has completed");
+						currentlySwitching = false;
+						break;
+					default:
+						debug("Default: " + info.code);
+						break;
+				} 
+			} 
+			
+			// This is on the NetStream client
+			public function onCuePoint(infoObject:Object):void {
+				debug("cuePoint");
+			}
+			
+			// This is on the NetStream client
+			public function onMetaData(infoObject:Object):void {
+				debug("metaData");
+				
+				videoWidth = infoObject.width;
+				videoHeight = infoObject.height;
+				
+				resizeVideo();
+				
+			}
+			
+			private function securityErrorHandler(event:SecurityErrorEvent):void {
+				debug("securityErrorHandler: " + event);
+			}
+
+			// Change stream sizes
+			private function swapStream(size:Number = 2):void {
+				// Swapping process
+				
+				currentlySwitching = true;
+				
+				var newStreamName;
+				if (size == 0) {
+					// Small
+					newStreamName="constellation/movies/" + streamNumber + "/movie-small";
+				} else if (size == 1) {
+					// Medium
+					newStreamName="constellation/movies/" + streamNumber + "/movie-medium";
+				} else {
+					size = 2;
+					// Large
+					newStreamName="constellation/movies/" + streamNumber + "/movie-large";	
+				}
+				
+				debug("Going to play: " + newStreamName);
+				
+				playString = "mp4" + ":" + newStreamName + "." + fileType;
+				
+				// Change the buffertime to the loading
+				inStream.bufferTime = LOADINGBUFFERTIME;
+				
+				// The 3.0 way:				
+				// Pause the current stream
+				inStream.pause();
+				debug("Pausing current stream");
+				
+				// Get current time
+				var seekTime:Number = seekInto;
+				if (inStream.time > lastInStreamTime) {
+					seekTime =  inStream.time - SEEKREWINDSECONDS;
+				} else {
+					seekTime = lastInStreamTime - SEEKREWINDSECONDS;
+				}
+				debug("Calculating seek position as " + seekTime);
+				
+				// Play the stream
+				//inStream.play(playString,seekTime,-1);
+				// Play from 0 and then do seek
+				inStream.play(playString, 0, -1);
+				debug("Playing new stream");
+				inStream.seek(seekTime); // Do we do this or in the play method?
+				debug("Seeking to: " + seekTime);
+				
+				// Make sure we are playing
+				inStream.resume();
+				currentlySwitching = false;
+				
+				// The 3.5 way
+				/*
+				var nsPlayOptions:NetStreamPlayOptions = new NetStreamPlayOptions(); 
+				nsPlayOptions.streamName = playString; 
+				nsPlayOptions.transition = NetStreamPlayTransitions.SWITCH; 
+				inStream.play2(nsPlayOptions); 
+				*/
+				streamName = newStreamName;
+				
+				currentStreamSize = size;
+				bufferEmptyCount = 0;
+			}
+			
+			// Step 8, play the stream
+			private function startStream():void {
+				if (!alreadyPlaying) {
+					alreadyPlaying = true;					
+					
+					// Create the NetStream
+					inStream = new NetStream(nc);
+					
+					// Listen for status events
+					inStream.addEventListener(NetStatusEvent.NET_STATUS, ncStatus);
+					
+					// The client is this class for metadata and so on
+					inStream.client = this;
+					
+					// Set the bufferTime
+					inStream.bufferTime = LOADINGBUFFERTIME;
+					
+					// 0 indicates at the start
+					// -1 indicates till the end
+					debug("Playing from : " + seekInto);
+					inStream.play(playString, 0, -1);
+					inStream.seek(seekInto);
+
+					// Add it to the stage
+					remoteVideo = new Video();
+					remoteVideo.attachNetStream(inStream);
+					videodisplay.addChild(remoteVideo);
+					
+					// Wait a second and then resize video
+					var resizeVideoTimer:Timer = new Timer(1000,1);
+					resizeVideoTimer.addEventListener(TimerEvent.TIMER,
+						function(e:Event):void {
+							debug("resize video timer fired");
+							resizeVideo();
+						}
+					);
+					resizeVideoTimer.start();
+
+				}
+				else 
+				{
+					debug("Already Playing");
+				}
+			}
+			
+			public function resizeHandler(e:Event):void {
+				resizeVideo();
+			}
+			
+			// Step 9
+			private function resizeVideo():void {
+				// Resize, maintain aspect ratio
+				
+				if (stage.width/remoteVideo.width < stage.height/remoteVideo.height) {
+					debug("Width ratio is limiting " + (stage.width/remoteVideo.width) + " " + (stage.height/remoteVideo.height)); 
+					remoteVideo.width = stage.width;
+					remoteVideo.height = stage.width/videoWidth * videoHeight; 
+				} else {
+					debug("Height ratio is limiting " + (stage.width/remoteVideo.width) + " " + (stage.height/remoteVideo.height)); 
+					remoteVideo.width = stage.height/videoHeight * videoWidth;
+					remoteVideo.height = stage.height;  
+				}
+				
+				
+				videodisplay.width = remoteVideo.width;
+				videodisplay.height = remoteVideo.height;
+				remoteVideo.x = (stage.width - remoteVideo.width)/2;
+				remoteVideo.y = (stage.height - remoteVideo.height)/2;
+				
+				debug("Stage: " + stage.width + " by " + stage.height);
+				debug("Origi: " + videoWidth + " by " + videoHeight);
+				debug("Remot: " + remoteVideo.width + " by " + remoteVideo.height);
+				debug("Video: " + videodisplay.width + " by " + videodisplay.height);
+				
+				fullscreenImage.x = remoteVideo.x + 10;
+				fullscreenImage.y = remoteVideo.y + remoteVideo.height - fullscreenImage.height - 50;
+			}			
+			
+			private function makeFullScreen():void 
+			{
+				if (stage.displayState == StageDisplayState.FULL_SCREEN || stage.displayState == 'fullScreenInteractive') 
+				{
+					stage.displayState = StageDisplayState.NORMAL;
+					debug("Make Normal");	
+				}
+				else if (stage.displayState == StageDisplayState.NORMAL)
+				{
+					stage.fullScreenSourceRect = new Rectangle(videodisplay.x,videodisplay.y,videodisplay.width,videodisplay.height);
+					//stage.displayState = 'fullScreenInteractive';
+					stage.displayState = StageDisplayState.FULL_SCREEN;
+					debug("Make Fullscreen");	
+				}
+			}
+			
+			// Mouse was moved, display fullscreen button
+			public function mouseMoveHandler(e:Event):void {
+				fullscreenImage.visible = true;
+				
+				if (mouseMoveTimer != null && mouseMoveTimer.running) {
+					mouseMoveTimer.stop();
+				}
+				mouseMoveTimer = new Timer(2500,1);
+				mouseMoveTimer.addEventListener(TimerEvent.TIMER,mouseMoveTimerFired);
+				mouseMoveTimer.start();
+			}
+			
+			// Finished timing mouse, remove full screen button
+			public function mouseMoveTimerFired(e:Event):void {
+				fullscreenImage.visible = false;	
+			}
+			
+			
+			// Testing Related
+			
+			// Testing mode timer fired
+			private function testTimerFired(e:Event):void {
+				if (TESTING) {
+					if (inStream != null) {
+						if (!currentlySwitching) {
+							debug("Time: " + (inStream.time) + " Buffer: " + inStream.bufferLength + 
+								" Playing: " + currentStreamSize + " FPS: " + inStream.currentFPS);
+						} else {
+							debug("Time: " + (inStream.time) + " Buffer: " + inStream.bufferLength + 
+								" Switching To: " + currentStreamSize + " FPS: " + inStream.currentFPS);
+						}
+					}
+				}
+			}
+			
+			public function showDebugPanel():void {
+				if (debugTextArea.visible == false) {
+					debugTextArea.visible = true;
+				} else {
+					debugTextArea.visible = false;
+				}
+			}
+			
+			public function debug(thetext:String) {
+				if (TESTING) {
+					debugTextArea.text += (new Date()).toUTCString() + ":" + thetext + "\n";
+					trace((new Date()).toString() + ":" + thetext);
+				}
+			}
+			
+			public function debugEvent(e:StatusEvent) {
+				debug(e.code);
+			}
+			
+			public function stopStream():void {
+				streamCheckTimer.stop();
+				inStream.close();	
+				
+				if (testTimer.running) {
+					testTimer.stop();
+				}
+			}
+
+			
+			// Host Camera
+			
+			private var hostcam_fmsConn:FMSConnection;
+			private var hostcam_ns:FMSStream;
+			public var hostcam_vid:Video;
+			
+			private var hostcam_cpCode:String;
+			private var hostcam_streamName:String;
+			private var hostcam_streamID:String;
+			private var hostcam_bandwidthLimit:Number;
+			private var hostcam_qualityLevel:Number;
+			private var hostcam_keyFrameInterval:Number;
+			private var hostcam_captureWidth:Number;
+			private var hostcam_captureHeight:Number;
+			private var hostcam_captureFps:Number;
+			private var hostcam_favorArea:Boolean;
+			private var hostcam_camLoopback:Boolean;
+			private var hostcam_micLoopback:Boolean;
+			private var hostcam_echoSuppression:Boolean;
+			private var hostcam_debugConsole:Boolean;
+			private var hostcam_debugAlert:Boolean;
+			private var hostcam_bufferMin:Number;
+			private var hostcam_bufferMax:Number;
+			private var hostcam_micRate:Number;
+			private var hostcam_micGain:Number;
+			private var hostcam_hostViewerWidth:Number;
+			private var hostcam_hostViewerHeight:Number;			
+			
+			private static const PAUSE_VIDEO:String = "pauseVideo";
+			private static const RESTART_VIDEO:String = "restartVideo";
+			
+			public function showHostCam():void {
+				debug("showHostCam");
+
+				// Get the specific flashvars variables for the host cam
+				hostcam_cpCode 			= (flashvars.cpCode == undefined) ? "113557" : flashvars.cpCode;
+				hostcam_streamName 		= (flashvars.streamName == undefined) ? "none" : flashvars.streamName;
+				hostcam_streamID 		= (flashvars.streamID == undefined) ? "45907" : flashvars.streamID;
+				
+				hostcam_bandwidthLimit 	= (flashvars.bandwidthLimit == undefined) ? 300000 : Number(flashvars.bandwidthLimit);
+				
+				hostcam_qualityLevel 	= (flashvars.qualityLevel == undefined) ? 0 : Number(flashvars.qualityLevel);
+				hostcam_keyFrameInterval= (flashvars.keyFrameInterval == undefined) ? 30 : Number(flashvars.keyFrameInterval);
+				hostcam_captureWidth 	= (flashvars.captureWidth == undefined) ? 320 : Number(flashvars.captureWidth);
+				hostcam_captureHeight	= (flashvars.captureHeight == undefined) ? 240 : Number(flashvars.captureHeight);
+				
+				hostcam_captureFps 		= (flashvars.captureFps == undefined) ? 20 : Number(flashvars.captureFps);
+				hostcam_bufferMin 		= (flashvars.bufferMin == undefined) ? 2 : Number(flashvars.bufferMin);
+				hostcam_bufferMax 		= (flashvars.bufferMax == undefined) ? 15 : Number(flashvars.bufferMax);
+				hostcam_micRate 		= (flashvars.micRate == undefined) ? 44 : Number(flashvars.micRate);
+				hostcam_micGain 		= (flashvars.micGain == undefined) ? 90 : Number(flashvars.micGain);
+				hostcam_hostViewerWidth = (flashvars.hostViewerWidth == undefined) ? 320 : Number(flashvars.hostViewerWidth);
+				hostcam_hostViewerHeight= (flashvars.hostViewerHeight == undefined) ? 240 : Number(flashvars.hostViewerHeight);
+				
+				hostcam_favorArea 		= (flashvars.favorArea 		== "false" || flashvars.favorArea 	  == "0") ? false : true;
+				hostcam_camLoopback 	= (flashvars.camLoopback 		== "true"  || flashvars.camLoopback 	  == "1") ? true  : false;
+				hostcam_micLoopback 	= (flashvars.micLoopback 		== "true"  || flashvars.micLoopback 	  == "1") ? true  : false;
+				hostcam_echoSuppression = (flashvars.echoSuppression 	== "false" || flashvars.echoSuppression == "0") ? false : true;
+
+				debug("hostcam defaults: 113557 none 45907");
+				debug("hostcam params: cpCode: " + hostcam_cpCode + " streamName: " + hostcam_streamName + " hostcam_streamID: " + hostcam_streamID);
+				
+				hostcam_fmsConn = new FMSConnection( hostcam_cpCode, hostcam_streamID, hostcam_streamName);
+				hostcam_fmsConn.addEventListener("DEBUG",debugEvent);
+				//hostcam_fmsConn.addEventListener( NetEvent.FC_PUBLISH_START, hostcam_createWebcamStream );
+				hostcam_fmsConn.addEventListener( NetEvent.NET_CONNECTION_FAILURE, hostcam_connectionFailure );
+				hostcam_fmsConn.addEventListener( NetEvent.NET_CONNECTION_SUCCESSFUL, hostcam_connectSuccess);
+				hostcam_fmsConn.connect( hostcam_fmsConn.entryPoint );
+				
+				try {
+					ExternalInterface.call("showQaWindow");
+					debug("Triggering JS QA Window");
+				} catch (err:Error) {
+					debug("Error in invoke QA Window");
+				}
+			}
+
+			private function hostcam_connectionFailure( evt:NetEvent ):void
+			{
+				debug("connectionFailure is reached");	
+			}
+			
+			private function hostcam_connectSuccess( evt:NetEvent ):void
+			{
+				debug("connectSuccess is reached");	
+				hostcam_createWebcamStream(evt);
+			}
+				
+			private function hostcam_createWebcamStream( evt:NetEvent ):void
+			{			
+				debug("hostcam_createWebcamStream"); 
+				
+				hostcam_vid = new Video();
+				if (isNaN(hostcam_hostViewerWidth)) {
+					hostcam_hostViewerWidth = 320;
+				}
+				if (isNaN(hostcam_hostViewerHeight)) {
+					hostcam_hostViewerHeight = 240;
+				}
+				hostcam_vid.width = hostcam_hostViewerWidth;
+				hostcam_vid.height = hostcam_hostViewerHeight;
+
+				hostcamVideoDisplay.addChild(hostcam_vid);
+				hostcamVideoDisplay.visible = true;		
+				
+				hostcam_ns  = new FMSStream( hostcam_fmsConn.nc, hostcam_vid );
+				hostcam_ns.addEventListener("DEBUG",debugEvent);
+				debug("added DEBUG listener to hostcam_ns");
+				//hostcam_ns.addEventListener(FMSStream.CAMERA_DENIED, notifyCameraDenied);
+				//hostcam_ns.addEventListener(FMSStream.CAMERA_ALLOWED, notifyCameraAllowed);
+				hostcam_ns.publishStream( hostcam_streamName, hostcam_streamID,
+					hostcam_bandwidthLimit, hostcam_qualityLevel, hostcam_keyFrameInterval,
+					hostcam_captureWidth, hostcam_captureHeight, hostcam_captureFps, hostcam_favorArea,
+					hostcam_camLoopback,
+					hostcam_bufferMin,
+					hostcam_bufferMax,
+					hostcam_echoSuppression,
+					hostcam_micLoopback,
+					hostcam_micRate,
+					hostcam_micGain);											
+			}	
+			
+			public function hideHostCam(evt:MouseEvent=null):void {
+				debug("hideHostCam");
+				
+				hostcam_ns.removeEventListener("DEBUG",debugEvent);
+				hostcam_ns.destroy();
+				hostcam_ns = null;
+				
+				hostcam_fmsConn.removeEventListener("DEBUG",debugEvent);
+				//hostcam_fmsConn.addEventListener( NetEvent.FC_PUBLISH_START, hostcam_createWebcamStream );
+				hostcam_fmsConn.removeEventListener( NetEvent.NET_CONNECTION_FAILURE, hostcam_connectionFailure );
+				hostcam_fmsConn.removeEventListener( NetEvent.NET_CONNECTION_SUCCESSFUL, hostcam_connectSuccess);
+				hostcam_fmsConn.nc.close();
+				hostcam_fmsConn = null;
+				
+				debug("Hiding the host cam");
+				hostcamVideoDisplay.removeChild(hostcam_vid);
+				hostcamVideoDisplay.visible = false;
+				
+				hostcam_vid = null;
+			}
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			private var regOffsetX:Number;
+			private var regOffsetY:Number;
+			private var liveViewerDialogBox:MovieClip;
+			private var boxAlpha:Number;
+			private var borderSize:Number;
+
+			
+			private function dragIt (evt:MouseEvent):void {
+				debug("dragIt");
+				var thisClip:MovieClip = MovieClip(evt.currentTarget);
+				debug("Got to dragit for boxClip");
+				//thisClip.addEventListener(MouseEvent.ROLL_OVER, keepDragging, false, 0, true);
+				thisClip.addEventListener(MouseEvent.ROLL_OUT, stopDragging, false, 0, true);
+				// Keep the box within the stage area - accounting for both the offset and width of the box
+				thisClip.startDrag(false, new Rectangle (-regOffsetX, -regOffsetY, 
+					stage.stageWidth + regOffsetX*2, stage.stageHeight+regOffsetY*2));
+			}
+			
+			private function stopDragging (evt:MouseEvent):void {
+				debug("stopDragging");
+				debug("Got to stopDragging");
+				var thisClip:MovieClip = MovieClip(evt.currentTarget);
+				thisClip.stopDrag();
+			}
+			
+			private function makeDialogBox (closeCallback:Function,
+											posX:Number, posY:Number,
+											border:Number,
+											w:Number, h:Number, 
+													  color:uint, alpha:Number):MovieClip {
+				debug("makeDialogBox");
+				//var holderClip:MovieClip = new MovieClip();		// Needed for offset for dragging operation
+				var boxClip:MovieClip = new MovieClip();
+				var boxWidth:Number  = w + 2 * border;
+				var boxHeight:Number = h + 2 * border;
+				boxClip.mouseChildren = true;
+				boxClip.mouseEnabled = true;
+				// Offset overything so the mouse is centered when dragging the box
+				regOffsetX = -(w/2 + border);
+				regOffsetY = -(h/2 + border);
+				//boxClip.transform.matrix = new Matrix(1, 0, 0, 1, regOffsetX, regOffsetY);
+				boxClip.graphics.beginFill(color, alpha);	// black,  with % alpha
+				boxClip.graphics.moveTo (regOffsetX, 			regOffsetY);
+				boxClip.graphics.lineTo (regOffsetX+boxWidth, 	regOffsetY);
+				boxClip.graphics.lineTo (regOffsetX+boxWidth, 	regOffsetY+boxHeight);
+				boxClip.graphics.lineTo (regOffsetX, 			regOffsetY+boxHeight);
+				boxClip.graphics.lineTo (regOffsetX, 			regOffsetY);
+				boxClip.graphics.endFill();
+				boxClip.x = posX - border + regOffsetX;
+				boxClip.y = posY - border + regOffsetY;
+				
+				boxClip.addEventListener(MouseEvent.MOUSE_DOWN, dragIt, false, 0, true); //Use a weak reference, 'cause I'm lazy
+				boxClip.addEventListener(MouseEvent.MOUSE_UP, stopDragging, false, 0, true);
+				boxClip.name += "_makeDialogBox";
+				
+				return boxClip;
+			}
+			
+			public function camViewerStart():void {
+				debug("camViewerStart");
+				//debug("AkamaiMultiPlayerExample camViewerStart");
+				if (liveViewerSwf != null) {
+					//debug("AkamaiMultiPlayerExample camViewerStart");
+					hideLiveViewer( null, false );
+				}
+				showLiveViewer();
+			}
+			
+			public function showLiveViewer():void {
+				debug("showLiveViewer");
+				var swfWidth:Number = Number(loaderInfo.parameters.viewerWidth);
+				var swfHeight:Number = Number(loaderInfo.parameters.viewerHeight);
+				var posX:Number = Number(loaderInfo.parameters.viewerPosX);
+				var posY:Number = Number(loaderInfo.parameters.viewerPosY);
+				
+				debug("Got to showLiveViewer in AS");
+				/*
+				swfWidth  = isNaN(swfWidth)  ? 275 : swfWidth,
+				swfHeight = isNaN(swfHeight) ? 205 : swfHeight
+				*/
+				swfWidth  = isNaN(swfWidth)  ? 320 : swfWidth,
+				swfHeight = isNaN(swfHeight) ? 240 : swfHeight
+				
+				if (!liveViewerSwf) {
+					//debug("LiveViewerUrl looks good: " + liveViewerUrl);
+					//debug("LiveViewerUrl width and height: " + swfWidth + ":" + swfHeight);
+					
+					if (isNaN(posX)) {
+						//posX = this.stage.stageWidth - swfWidth - borderSize*2;
+						posX = 19;
+						//debug("posX is NaN, setting to:" + posX);
+					}
+					
+					if (isNaN(posY)) {
+						posY = 19;
+					} 
+					// Compensate for other offsets, so that the x,y specified by user is position of upper-left corner
+					posX += 3*borderSize + swfWidth;
+					posY += 3*borderSize + swfHeight;
+					var showViewer:Boolean = (loaderInfo.parameters.maskViewer == undefined) ? true : loaderInfo.parameters.maskViewer;
+					
+					var swfName:String = (loaderInfo.parameters.liveViewerUrl == undefined) ? "/flash/LiveStream.swf" : "/flash/LiveStream_v" + loaderInfo.parameters.liveViewerUrl + ".swf";
+					swfName = "/flash/LiveStream_testing.swf";
+					// We basically need to recreate this every time.
+					liveViewerSwf = new LoadExternalSwf(swfName, 
+						swfWidth, swfHeight,
+						0, 0,
+						showViewer);
+					//debug("LiveViewerUrl position: " + posX + ":" + posY);
+					
+					//liveViewerSwf.x = /* -borderSize */ - swfWidth/2;
+					//liveViewerSwf.y = /* -borderSize */ - swfHeight/2;
+					liveViewerSwf.x = 0;
+					liveViewerSwf.y = 0;
+					//liveViewerSwf.width = swfWidth;
+					//liveViewerSwf.height = swfHeight;
+					//debug("LiveViewerUrl x,y: " + liveViewerSwf.x + ":" + liveViewerSwf.y);
+					
+					if (!liveViewerDialogBox) {
+						liveViewerDialogBox = makeDialogBox(hideLiveViewer, posX, posY, borderSize, 
+							swfWidth, swfHeight, 0x000000, boxAlpha);
+					}
+					// The entire viewer is destroyed when it is removed from the stage
+					// So we need to recreate it entirely.
+					liveViewerDialogBox.addChild(liveViewerSwf);
+					liveViewerDialogBox.name = "liveViewerDialogBox";
+					stage.addChild(liveViewerDialogBox);
+					liveViewerSwf.addEventListener("Host_Cam_Timeout", destroyLiveViewer);
+					
+				} else {
+					//debug("LiveViewerUrl already loaded: " + liveViewerUrl);
+				}
+			}
+			
+			public function hideLiveViewer(evt:MouseEvent=null,hideWindow:Boolean=true):void {
+				debug("hideLiveViewer");
+				if (liveViewerDialogBox) {
+					try {
+						debug("AkamaiMultiplayerExample Hiding liveViewerDialogBox");
+						stage.removeChild(liveViewerDialogBox);
+					} catch (err:Error) {
+						//debug("Error in Hiding Live Viewer");
+					}
+				}
+				//debug("Got to hideLiveViewer in AS");
+				if (liveViewerSwf) {
+					debug("AkamaiMultiplayerExample Hiding live video");
+					// This destroys the object, as it mostly destroys itself when removed from stage
+					// FIXME - need to verify this works as intended.
+					if (hideWindow) {
+						try {
+							ExternalInterface.call("hideQaWindow");
+						} catch (err:Error) {
+							debug("Error in invoke QA Window");
+						}
+					}
+					try {
+						liveViewerSwf.removeEventListener("Host_Cam_Timeout", destroyLiveViewer);
+						liveViewerDialogBox.removeChild(liveViewerSwf);
+						liveViewerSwf = null;
+					} catch (err:Error) {
+						debug("Error in Hiding Live Viewer");
+					}
+					
+				} else {
+					//debug("There was no live viewer to hide");
+				}
+			}
+			
+			public function destroyLiveViewer(evt:Event=null):void {
+				debug("destroyLiveViewer");
+				
+				if (liveViewerDialogBox) {
+					try {
+						debug("Hiding liveViewerDialogBox");
+						stage.removeChild(liveViewerDialogBox);
+					} catch (err:Error) {
+						debug("Error in Hiding Live Viewer");
+					}
+				}
+				//debug("Got to hideLiveViewer in AS");
+				if (liveViewerSwf) {
+					debug("Hiding live video");
+					try {
+						liveViewerSwf.removeEventListener("Host_Cam_Timeout", destroyLiveViewer);
+						liveViewerDialogBox.removeChild(liveViewerSwf);
+						liveViewerSwf = null;
+					} catch (err:Error) {
+						debug("Error in Hiding Live Viewer");
+					}
+					
+				} else {
+					//debug("There was no live viewer to hide");
+				}
+			}
+			
+		]]>			
+	</mx:Script>
+
+	<mx:VideoDisplay x="0" y="0" id="videodisplay" />
+
+	<mx:VideoDisplay x="0" y="0" id="hostcamVideoDisplay" visible="false" width="320" height="240" opaqueBackground="#505050" />
+	
+	<mx:Text x="0" y="0" id="messages" text="No Messages" width="400" visible="false"  color="#FFFFFF" fontSize="12" opaqueBackground="#505050" textAlign="center" />
+	
+	<mx:Button x="25" y="546" label="Small" id="smallstream" click="swapStream(0)" visible="false" />
+	<mx:Button x="100" y="546" label="Medium" id="mediumstream" click="swapStream(1)" visible="false" />
+	<mx:Button x="175" y="546" label="Large" id="largestream" click="swapStream(2)" visible="false" />
+	<mx:Button x="250" y="546" label="Stop" id="stopstream" click="stopStream()" visible="false" />
+
+	<mx:Button label="Debug" id="debugButton" click="showDebugPanel()" x="500" y="545" visible="false" />
+	
+	<mx:TextArea x="0" y="0" id="debugTextArea" width="500" height="300" borderVisible="true" text="Debug Panel" wordWrap="true" visible="false" />
+	<mx:Image id="fullscreenImage" source="@Embed(source='constellation_player_fullscreen.png')" y="0" x="0" click="makeFullScreen()" />
+	
+</mx:Application>

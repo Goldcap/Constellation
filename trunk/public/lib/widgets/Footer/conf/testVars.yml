@@ -1,0 +1,9 @@
+get:
+  action: home
+post:
+session:
+action:
+
+wvar:
+  =getFbShare: "Constellation.tv is great films viewed online for yourself or with your friends."
+  twitter_share: "Constellation.tv is great films viewed online for yourself or with your friends."

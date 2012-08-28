@@ -1,0 +1,53 @@
+#include "nsISupports.idl"
+#include "nsIArray.idl"
+#include "nsIMutableArray.idl"
+#include "nsISupportsPrimitives.idl"
+
+[scriptable, uuid(5A86850B-F376-4ae6-860D-53A441CAFCE4)]
+interface nsINativeEvents : nsISupports
+{
+/* Send keyboard input to the window of this element. May release
+ * the modifier keys, depending on the last parameter. */
+void sendKeys(in nsISupports aNode, in wstring value, in boolean releaseModifiers);
+
+/* Move the mouse from start to end */
+void mouseMove(in nsISupports aNode, in long startX, in long startY, in long endX, in long endY);
+
+/* Click the mouse at this point */
+void click(in nsISupports aNode, in long x, in long y, in long button);
+
+/* Press a mouse button down */
+void mousePress(in nsISupports aNode, in long x, in long y, in long button);
+
+/* Release a mouse button */
+void mouseRelease(in nsISupports anode, in long x, in long y, in long button);
+
+/* Check if there are unhandled keyboard events. */
+void hasUnhandledEvents(in nsISupports aNode, out boolean hasEvents);
+
+/* Input methods interactions */
+/* List of IME engines available for use on this machine (comma-separated) */
+void imeGetAvailableEngines(out nsIArray enginesList);
+
+/* Activate the engine - cause it to produce IME input. */
+void imeActivateEngine(in string engine, out boolean activationSucceeded);
+
+/* Query whether IME input is active or not. */
+void imeIsActivated(out boolean isActive);
+
+/* Get the active engine. May return a value even if the engine is not
+ * activated. */
+void imeGetActiveEngine(out AString activeEngine);
+
+/* De-activate IME input. */
+void imeDeactivate();
+
+/* Double click the mouse at this point */
+void doubleClick(in nsISupports aNode, in long x, in long y);
+
+/* Notifies the x_ignore_nofocus library of switch window events. */
+void notifyOfSwitchToWindow(in long windowId);
+
+/* Notifies the x_ignore_nofocus library of close window events. */
+void notifyOfCloseWindow(in long windowId);
+};

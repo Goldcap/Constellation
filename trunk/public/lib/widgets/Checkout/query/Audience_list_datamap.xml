@@ -1,0 +1,38 @@
+<map table="audience" result="audience_list_datamap">
+  <column column="audience_id" name="object_id" type="INTEGER" size="11" key="PRI" order="15" format="audience%d"></column>
+  <column column="audience_id" name="object_type" type="INTEGER" size="11" key="PRI" order="15" format="audience"></column>
+  <column column="audience_id" name="object_name" type="INTEGER" size="11" key="PRI" order="15" format="audience%0d"></column>
+  <column column="audience_paid_status" type="TINYINT" size="1" key="" order="1" format="%0d"></column>
+  <column column="fk_screening_unique_key" name="audience_screening_unique_key" type="VARCHAR" size="255" key="" order="2"></column>
+  <column column="fk_payment_id" name="audience_payment_id" type="INTEGER" size="11" key="" order="3" format="%0d"></column>
+  <column column="audience_invite_code" type="VARCHAR" size="255" key="" order="4"></column>
+  <column column="audience_ip_addr" type="VARCHAR" size="15" key="" order="5"></column>
+  <column column="audience_created_at" type="TIMESTAMP" size="" key="" order="6" util="item::dateW3XMLIN"></column>
+  <column column="audience_updated_at" type="TIMESTAMP" size="" key="" order="7" util="item::dateW3XMLIN"></column>
+  <column column="audience_status" type="TINYINT" size="1" key="" order="8" format="%0d"></column>
+  <column column="audience_username" type="VARCHAR" size="255" key="" order="9"></column>
+  <column column="audience_review" type="LONGVARCHAR" size="" key="" order="10"></column>
+  <column column="audience_review_status" type="LONGVARCHAR" size="" key="" order="10" format="%0d"></column>
+  <column column="audience_short_url" type="VARCHAR" size="255" key="" order="11"></column>
+  <column column="audience_ticket_price" type="FLOAT" size="" key="" order="12" format="%.02f"></column>
+  <column column="fk_user_id" name="audience_user_id" type="INTEGER" size="11" order="13" format="%0d"></column>
+  <column column="fk_screening_id" name="audience_screening_id" type="INTEGER" size="11" order="14"  format="%0d"></column>
+  <column column="audience_id" type="INTEGER" size="11" key="PRI" order="15" format="%0d"></column>
+  <join local="fk_payment_id" foreigntable="payment" foreign="payment_id" left="false">
+    <foreigncolumn column="payment_amount" type="INTEGER" size="" key="" order="3" />
+    <foreigncolumn column="payment_status" type="INTEGER" size="" key="" order="3" />
+  </join>
+  <criterion limit="0" distinct="true">
+    <criteria scope="GET" value="id" column="fk_screening_unique_key" />
+    <criteria scope="SESSION" value="user_id" column="fk_user_id" />   
+    <criteria value="2" column="audience_paid_status" />
+    <ascorderby column="audience_id"></ascorderby>
+    <!-- <descorderby column="column_name" />
+    <criteria value="0" column="column_name"/>--></criterion>
+  <pagination>
+    <pagesperpage value="5"></pagesperpage>
+    <recordssperpage value="1"></recordssperpage>
+    <page value="1" var="page"></page>
+    <sort var="sort"></sort>
+  </pagination>
+</map>

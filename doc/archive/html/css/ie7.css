@@ -1,0 +1,28 @@
+/* CSS Document */
+.barousel {
+  z-index: -1 !important;
+}
+
+#hostascreening{
+  width: 200px;  
+}
+	
+.showtimes {
+  z-index: -1;
+}
+
+#today_screenings .screening_list {
+  z-index: -1;
+}
+
+.tell_friends {
+  margin-left: 600px;
+}
+
+.one_column_alt #masterhead {
+  height: 0px;
+}
+
+#left_column {
+  border: 1px solid transparent;
+}

@@ -1,0 +1,30 @@
+user:
+  fname: TestUnit Fname
+  lname: TestUnit Lname
+  email:  test@operislabs.com
+  username: TestUnit Username
+  password: Password
+  birthday: '1967-09-13'
+
+get:
+post:
+  admin_user_fname: AATestFirst
+  admin_user_lname: AATestLast
+  admin_user_email: aatest@gmail.com
+  admin_user_password: Password
+  admin_user_phone: 2125551212
+  admin_user_cell: 9175551212
+session:
+action:
+  styroaction: submit
+
+dbo:
+  admin_user: 
+    key: admin_user_id
+    vars:
+      getAdminUserFname: =post:admin_user_fname
+      getAdminUserLname: =post:admin_user_lname
+      getAdminUserEmail: =post:admin_user_email
+      =getAdminUserPassword: =post:admin_user_password
+      getAdminUserPhone: =post:admin_user_phone
+      getAdminUserCell: =post:admin_user_cell

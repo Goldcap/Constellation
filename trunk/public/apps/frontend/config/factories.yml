@@ -1,0 +1,56 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/05-Factories
+
+prod:
+  logger:
+    class:   sfNoLogger
+    param:
+      level:   err
+      loggers: ~
+
+test:
+  response:
+    class: sfWebResponse
+    param:
+      send_http_headers: false
+
+  mailer:
+    param:
+      delivery_strategy: none
+
+dev:
+  mailer:
+    param:
+      delivery_strategy: none
+
+all:
+  all:
+  storage:
+    #class: MongoSessionStorage
+    #class: sfMySQLSessionStorage
+    #class: sfSessionStorage
+    class: CSessionStorage
+    param:
+      session_name:                       constellation_frontend
+      session_cookie_domain:              .constellation.tv 
+      #db_table:    session                # Name of the table storing the sessions
+      #database:    constellation_mongo              # Name of the database connection to use
+      # Optional parameters
+      #db_id_col:   session_uuid            # Name of the column storing the session id
+      #db_data_col: session_data            # Name of the column storing the session data
+      #db_time_col: session_time            # Name of the column storing the session timestamp
+  user:
+    param:
+      timeout:     10800     # session timeout in seconds
+      
+  routing:
+    class: sfPatternRouting
+    param:
+      generate_shortest_url:            true
+      extra_parameters_as_query_string: true
+
+  view_cache_manager:
+    class: sfViewCacheManager
+    param:
+      cache_key_use_vary_headers: true
+      cache_key_use_host_name:    true

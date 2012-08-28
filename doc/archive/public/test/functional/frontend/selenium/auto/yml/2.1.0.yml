@@ -1,0 +1,8 @@
+sleep: 0
+manager: [dev.constellation.tv,127.0.0.1,20000]
+group: test1
+test:
+ - {type: test,value: 0.0.a}
+ - {type: screenshot,value: homepage}
+ - {type: assertElementPresent,locator: css=div.slideshow_controls span.next,value: Click Marquee Next}
+ - {type: click,locator: css=div.slideshow_controls span.next}

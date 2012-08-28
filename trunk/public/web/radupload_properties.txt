@@ -1,0 +1,9 @@
+max_upload=0
+#max_file=100
+full_path=yes
+permission_denied=http://www.radupload.com/demo/plus/denied.html
+monitor.type=compact
+monitor.embed=yes
+browse=yes
+browse_button=yes
+jsnotify=yes

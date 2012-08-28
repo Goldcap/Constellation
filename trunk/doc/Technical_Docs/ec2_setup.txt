@@ -1,0 +1,18 @@
+Machine Setup
+http://www.robertsosinski.com/2008/01/26/starting-amazon-ec2-with-mac-os-x/
+
+API Tools
+https://help.ubuntu.com/community/EC2StartersGuide#Installing the API tools
+
+Getting Started
+http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/
+
+AMI Info
+http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?ComponentsAMIs.html
+
+Volume Mounting info
+https://forums.aws.amazon.com/thread.jspa?messageID=106427&#106427
+
+http://developer.amazonwebservices.com/connect/thread.jspa?messageID=99100
+http://developer.amazonwebservices.com/connect/thread.jspa?threadID=25071&tstart=0
+http://developer.amazonwebservices.com/connect/thread.jspa?threadID=24091&start=0&tstart=0
