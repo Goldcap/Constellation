@@ -22,7 +22,7 @@ multiple DB Platforms, including MySQL and SOLR. (Sorry, mostly undocumented!)
 
 https://github.com/Goldcap/Constellation/blob/master/trunk/public/lib/vendor/wtvr/1.3/WTVRData.php
 
-2) ORM Generator, for auto-magic reverse migration from a MySQL DB to the ORM.
+2) ORM Generator, for auto-magic reverse migration from a MySQL DB to the ORM, with custom CRUD wrapper classes.
 
 https://github.com/Goldcap/Constellation/blob/master/trunk/public/orm.sh
 
