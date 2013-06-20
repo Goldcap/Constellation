@@ -2,7 +2,7 @@ Constellation
 =============
 
 <h2>Overview</h2>
-Constellation.tv was a project written in a modified version of PHP using Symfony 1.4. I took the standard 
+Constellation.tv was a project written in PHP using a modified version of Symfony 1.4. I took the standard 
 MVC Pattern and converted both controller and view layers into a widget factory, using yml page descriptors 
 to collect widgets into a templated output format.
 
