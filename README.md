@@ -15,7 +15,7 @@ The yml page descriptors are here:
 https://github.com/Goldcap/Constellation/tree/master/trunk/public/apps/frontend/lib/pages
 
 <h2>Other Modifications</h2>
-A number of other enhancements were made to increase the time of delivery for the system. Among them are:
+A number of other enhancements were made to decrease the development time of the system. Among them are:
 
 1) Addition of DAL (Data Abstraction Layer) that uses XML descriptors to run all queries, using 
 multiple DB Platforms, including MySQL and SOLR. (Sorry, mostly undocumented!)
@@ -30,3 +30,6 @@ https://github.com/Goldcap/Constellation/blob/master/trunk/public/orm.sh
 
 https://github.com/Goldcap/Constellation/blob/master/trunk/public/lib/vendor/PageWidgets/CacheWidget.class.php
 
+<h2>Javascript Development</h2>
+Most of the JS Development was done by Matthew Lauprette, currently at AOL/Huffpo, so much of the credit for that 
+is due to his hard work and contributions. 
