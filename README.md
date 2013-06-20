@@ -2,13 +2,21 @@ Constellation
 =============
 
 <h2>Overview</h2>
-Constellation.tv was a project written in a modified version of Symfony 1.4. I took the standard 
+Constellation.tv was a project written in a modified version of PHP using Symfony 1.4. I took the standard 
 MVC Pattern and converted both controller and view layers into a widget factory, using yml page descriptors 
 to collect widgets into a templated output format.
 
-The notable code for this operiation is a plugin located here:
+The code for this is a library (Symfony Page Widgets) located here:
 
 https://github.com/Goldcap/Constellation/tree/master/trunk/public/lib/vendor/PageWidgets
 
 <h2>Other Modifications</h2>
-A number
+A number of other enhancements were made to increase the time of delivery for the system. Among them are:
+
+1) Addition of DAL (Data Abstraction Layer) that uses XML descriptors to run all queries, using 
+multiple DB Platforms, including MySQL and SOLR.
+
+2) ORM Generator, for auto-magic reverse migration from a MySQL DB to the ORM.
+
+3) Alternate page-level memcache plugin for use with Nginx memcached module.
+
