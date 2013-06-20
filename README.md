@@ -10,6 +10,9 @@ The code for this is a library (Symfony Page Widgets) located here:
 
 https://github.com/Goldcap/Constellation/tree/master/trunk/public/lib/vendor/PageWidgets
 
+The yml page descriptors are here:
+
+
 <h2>Other Modifications</h2>
 A number of other enhancements were made to increase the time of delivery for the system. Among them are:
 
