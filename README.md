@@ -12,6 +12,7 @@ https://github.com/Goldcap/Constellation/tree/master/trunk/public/lib/vendor/Pag
 
 The yml page descriptors are here:
 
+https://github.com/Goldcap/Constellation/tree/master/trunk/public/apps/frontend/lib/pages
 
 <h2>Other Modifications</h2>
 A number of other enhancements were made to increase the time of delivery for the system. Among them are:
